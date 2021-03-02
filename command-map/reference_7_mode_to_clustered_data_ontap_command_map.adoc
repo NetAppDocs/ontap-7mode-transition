@@ -1,0 +1,2861 @@
+---
+permalink: command-map/reference_7_mode_to_clustered_data_ontap_command_map.html
+sidebar: sidebar
+keywords: 
+summary: 'You can use the tables provided to find the ONTAP equivalents of 7-Mode commands, with the exception of the options command.'
+---
+= How 7-Mode commands map to ONTAP commands
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use the tables provided to find the ONTAP equivalents of 7-Mode commands, with the exception of the options command.
+
+The following tables list the ONTAP equivalents of the 7-Mode options command. Information about understanding these tables is also provided.
+
+xref:concept_how_to_interpret_the_7_mode_to_clustered_data_ontap_commands_options_and_configuration_files_maps.adoc[Understanding the 7-Mode to clustered Data ONTAP command map]
+
+== Navigation table
+
+|===
+a|
+
+* <<SI_A,A>>
+
+a|
+
+* <<SI_B,B>>
+
+a|
+
+* <<SI_C,C>>
+
+a|
+
+* <<SI_D,D>>
+
+a|
+
+* <<SI_E,E>>
+
+a|
+
+* <<SI_F,F>>
+
+a|
+
+* _G_
+* (no entries)
+
+a|
+
+* <<SI_H,H>>
+
+a|
+
+* <<SI_I,I>>
+
+a|
+
+* _J_
+* (no entries)
+
+a|
+
+* <<SI_K,K>>
+
+a|
+
+* <<SI_L,L>>
+
+a|
+
+* <<SI_M,M>>
+
+a|
+
+* <<SI_N,N>>
+
+a|
+
+* <<SI_O,O>>
+
+a|
+
+* <<SI_P,P>>
+
+a|
+
+* <<SI_Q,Q>>
+
+a|
+
+* <<SI_R,R>>
+
+a|
+
+* <<SI_S,S>>
+
+a|
+
+* <<SI_T,T>>
+
+a|
+
+* <<SI_U,U>>
+
+a|
+
+* <<SI_V,V>>
+
+a|
+
+* <<SI_W,W>>
+
+a|
+
+* _X_
+* (no entries)
+
+a|
+
+* <<SI_Y,Y>>
+
+a|
+
+* _Z_
+* (no entries)
+
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+|===
+
+== A
+
+|===
+| 7-Mode command| ONTAP command
+a|
+acpadmin configure
+a|
+`system node run -node {nodename|local} acpadmin configure`
+a|
+acpadmin list_all
+a|
+`system node run -node {nodename|local} acpadmin list_all`
+a|
+acpadmin stats
+a|
+`system node run -node {nodename|local} acpadmin stats`
+a|
+aggr add
+a|
+*aggr add* aggr add-disks
+
+storage aggregate add-disks
+
+a|
+aggr create
+a|
+*aggr create* storage aggregate create
+
+a|
+aggr destroy
+a|
+*aggr delete* storage aggregate delete
+
+a|
+aggr media_scrub
+a|
+`system node run -node {nodename|local} aggr media_scrub`
+a|
+aggr offline
+a|
+*aggr offline* storage aggregate offline
+
+a|
+aggr online
+a|
+*aggr online* storage aggregate online
+
+a|
+aggr options
+a|
+*aggr modify* storage aggregate {show | modify}
+
+a|
+aggr rename
+a|
+*aggr rename* storage aggregate rename
+
+a|
+aggr restrict
+a|
+*aggr restrict* storage aggregate restrict
+
+a|
+aggr scrub
+a|
+*aggr scrub* storage aggregate scrub
+
+a|
+aggr show_space
+a|
+*aggr show-space* storage aggregate show-space
+
+a|
+aggr status
+a|
+aggr show storage aggregate show
+
+a|
+aggr verify
+a|
+`system node run -node {nodename|local} aggr verify`
+a|
+autosupport destinations
+a|
+*autosupport destinations* system node autosupport destinations
+
+a|
+autosupport history
+a|
+*autosupport history* system node autosupport history
+
+a|
+autosupport manifest
+a|
+*autosupport manifest* system node autosupport manifest
+
+a|
+autosupport trigger
+a|
+*autosupport trigger* system node autosupport trigger
+
+|===
+
+== B
+
+|===
+| 7-Mode command| ONTAP command
+a|
+backup status
+a|
+`system node run -node {nodename -command backup status`
+a|
+backup terminate
+a|
+Not supported
+
+a|
+bmc
+a|
+Not supported
+
+a|
+bmc reboot
+a|
+Not supported
+
+a|
+bmc status
+a|
+Not supported
+
+a|
+bmc test
+a|
+Not supported
+
+|===
+
+== C
+
+|===
+| 7-Mode command| ONTAP command
+a|
+cdpd show-neighbors
+a|
+`system node run -node {nodename|local} -command network device-discovery show`
+a|
+cdpd show-stats
+a|
+`system node run -node {nodename|local} -command cdpd show-stats`
+a|
+cdpd zero stats
+a|
+`system node run -node {nodename|local} -command cdpd zero-stats`
+a|
+cf disable
+a|
+cf disable
+a|
+cf enable
+a|
+cf enable
+a|
+cf forcegiveback
+a|
+Not supported
+a|
+cf forcetakeover
+a|
+cf forcetakeover
+a|
+cf giveback
+a|
+*cf giveback* storage failover giveback
+
+a|
+cf hw_assist
+a|
+*cf hwassist status* storage failover hwassist show
+
+a|
+cf monitor all
+a|
+*cf monitor all* storage failover show -instance
+
+a|
+cf partner
+a|
+*cf partner* storage failover show -fields partner-name
+
+a|
+cf rsrctbl
+a|
+*cf rsrctbl* storage failover progress -table show
+
+a|
+cf status
+a|
+*cf status* storage failover show
+
+a|
+cf takeover
+a|
+*cf takeover* storage failover takeover
+
+a|
+charmap
+a|
+vserver cifs character-mapping
+a|
+cifs access
+a|
+*cifs access* vserver cifs access
+
+a|
+cifs branchcache
+a|
+*cifs branchcache* vserver cifs branchcache
+
+a|
+cifs changefilerpwd
+a|
+*cifs changefilerpwd* vserver cifs changefilerpwd
+
+a|
+cifs domaininfo
+a|
+vserver cifs {show instance|domain discovered-servers show -instance}
+
+a|
+cifs gpresult
+a|
+vserver cifs group-policy show-applied
+
+a|
+cifs gpupdate
+a|
+vserver cifs group-policy update
+
+a|
+cifs homedir
+a|
+vserver cifs home-directory
+
+a|
+cifs nbalias
+a|
+vserver cifs { add-netbios-aliases | remove-netbios-aliases | show -display-netbios-aliases }
+
+a|
+cifs prefdc
+a|
+vserver cifs domain preferred-dc
+
+a|
+cifs restart
+a|
+vserver cifs start
+a|
+cifs sessions
+a|
+vserver cifs sessions show
+a|
+cifs setup
+a|
+vserver cifs create
+
+a|
+cifs shares
+a|
+*cifs shares* vserver cifs share
+
+a|
+cifs stat
+a|
+statistics show -object cifs
+a|
+cifs terminate
+a|
+vserver cifs stop
+a|
+cifs testdc
+a|
+vserver cifs domain discovered-servers
+a|
+cifs resetdc
+a|
+*cifs resetdc* vserver cifs domain discovered-servers reset-servers
+
+a|
+clone clear
+a|
+Not supported
+a|
+clone start
+a|
+volume file clone create
+a|
+clone stop
+a|
+Not supported
+a|
+clone status
+a|
+volume file clone show
+a|
+config clone
+a|
+Not supported
+a|
+config diff
+a|
+Not supported
+a|
+config dump
+a|
+Not supported
+a|
+config restore
+a|
+Not supported
+a|
+coredump
+a|
+system node coredump
+|===
+
+== D
+
+|===
+| 7-Mode command| ONTAP command
+a|
+date
+a|
+*date* { system | cluster } date { show | modify }
+
+a|
+dcb priority
+a|
+system node run -node _nodename_ -command dcb priority
+
+a|
+dcb priority show
+a|
+system node run -node _nodename_ -command dcb priority show
+
+a|
+dcb show
+a|
+system node run -node _nodename_ -command dcb show
+
+a|
+df
+a|
+*df*
+a|
+df [aggr name]
+a|
+df -aggregate _aggregate-name_
+
+a|
+df [path name]
+a|
+df -filesys-name _path- name_
+
+a|
+df -A
+a|
+*df -A*
+a|
+df -g
+a|
+*df -g* df -gigabyte
+
+a|
+df -h
+a|
+*df -h* df -autosize
+
+a|
+df -i
+a|
+*df -i*
+a|
+df -k
+a|
+*df -k* df -kilobyte
+
+a|
+df -L
+a|
+*df -L* df -flexcache
+
+a|
+df -m
+a|
+*df -m* df -megabyte
+
+a|
+df -r
+a|
+*df -r*
+a|
+df -s
+a|
+*df -s*
+a|
+df -S
+a|
+*df -S*
+a|
+df -t
+a|
+*df -t* df -terabyte
+
+a|
+df -V
+a|
+*df -V* df -volumes
+
+a|
+df -x
+a|
+*df -x* df -skip-snapshot-lines
+
+a|
+disk assign
+a|
+*disk assign* storage disk assign
+
+a|
+disk encrypt
+a|
+system node run -node run__nodename__ -command disk encrypt
+
+a|
+disk fail
+a|
+*disk fail* storage disk fail
+
+a|
+disk maint
+a|
+*disk maint {start | abort | status | list }* system node run -node {_nodename_|local} -command disk maint {start | abort | status | list }
+
+a|
+disk remove
+a|
+*disk remove* storage disk remove
+
+a|
+disk replace
+a|
+*disk replace* storage disk replace
+
+a|
+disk sanitize
+a|
+system node run -node _nodename_ -command disk sanitize
+
+a|
+disk scrub
+a|
+storage aggregate scrub
+
+a|
+disk show
+a|
+storage disk show
+a|
+disk simpull
+a|
+system node run -node _nodename_ -command disk simpull
+
+a|
+disk simpush
+a|
+system node run -node _nodename_ -command disk simpush
+
+a|
+disk zero spares
+a|
+storage disk zerospares
+a|
+disk_fw_update
+a|
+system node image modify
+a|
+dns info
+a|
+dns show
+a|
+download
+a|
+system node image update
+a|
+du [path name]
+a|
+du -vserver _vservername_ -path __pathname__volume file show-disk-usage -vserver _vserver_name_ -path _pathname_
+
+a|
+du -h
+a|
+du -vserver _vservername_ -path _pathname_ -hvolume file show-disk-usage -vserver _vserver_name_ -path _pathname_ -h
+
+a|
+du -k
+a|
+du -vserver _vservername_ -path _pathname_ -kvolume file show-disk-usage -vserver _vserver_name_ -path _pathname_ -k
+
+a|
+du -m
+a|
+du -vserver _vservername_ -path _pathname_ -mvolume file show-disk-usage -vserver _vserver_name_ -path _pathname_ -m
+
+a|
+du -r
+a|
+du -vserver _vservername_ -path _pathname_ -rvolume file show-disk-usage -vserver _vserver_name_ -path _pathname_ -r
+
+a|
+du -u
+a|
+du -vserver _vservername_ -path _pathname_ -uvolume file show-disk-usage -vserver _vserver_name_ -path _pathname_ -u
+
+a|
+dump
+a|
+Not supportedYou must initiate the backup by using NDMP as described in tape backup documentation. For dump-to-null functionality, you must set the NDMP environment variable DUMP_TO_NULL.
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ptbrg/home.html[Data protection using tape backup]
+
+|===
+
+== E
+
+|===
+| 7-Mode command| ONTAP command
+a|
+echo
+a|
+*echo*
+a|
+ems event status
+a|
+*ems event status* event status show
+
+a|
+ems log dump
+a|
+event log show -time >__time-interval__
+
+a|
+ems log dump value
+a|
+event log show
+a|
+environment chassis
+a|
+system node run -node {_nodename_|local} -command environment chassis
+a|
+environment status
+a|
+system node run -node__nodename__ -command environment status
+
+a|
+environment shelf
+a|
+Not supported
+
+You must use the "`storage shelf`" command set.
+
+a|
+environment shelf_log
+a|
+*environment shelf_log* system node run -node {_nodename_|local} -command environment shelf_log
+
+a|
+environment shelf_stats
+a|
+system node run -node {_nodename_|local} -command environment shelf_stats
+
+a|
+environment shelf_power_status
+a|
+Not supported You must use the "`storage shelf`" command set.
+
+a|
+environment chassis
+a|
+system node run -node {_nodename_|local} -command environment chassis
+
+a|
+environment chassis list-sensors
+a|
+system node run -node {_nodename_|local} environment sensors show
+
+a|
+exportfs
+a|
+vserver export policy [rule]
+a|
+exportfs -f
+a|
+vserver export-policy cache flush
+a|
+exportfs -o
+a|
+vserver export-policy rule
+a|
+exportfs -p
+a|
+vserver export policy rule
+a|
+exportfs -q
+a|
+vserver export policy [rule]
+|===
+
+== F
+
+|===
+| 7-Mode command| ONTAP command
+a|
+fcadmin config
+a|
+system node run -node {_nodename_|local} -command fcadmin config
+
+a|
+fcadmin link_stats
+a|
+system node run -node {_nodename_|local} -command fcadmin link_stats
+
+a|
+fcadmin fcal_stats
+a|
+system node run -node {_nodename_|local} -command fcadmin fcal_stats
+
+a|
+fcadmin device_map
+a|
+system node run -node {_nodename_|local} -command fcadmin device_map
+
+a|
+fcnic
+a|
+Not supported
+a|
+fcp config
+a|
+network fcp adapter modify
+a|
+fcp nameserver
+a|
+*fcp nameserver show* vserver fcp nameserver show
+
+a|
+fcp nodename
+a|
+vserver fcp nodename
+
+a|
+fcp ping
+a|
+*fcp ping-igroup show OR fcp ping-initiator show*
+
+vserver fcp ping-igroup show OR vserver fcp ping-initiator show
+
+a|
+fcp portname
+a|
+*fcp portname show* vserver fcp portname show
+
+a|
+fcp show
+a|
+vserver fcp show
+
+a|
+fcp start
+a|
+*fcp start* vserver fcp start
+
+a|
+fcp stats
+a|
+*fcp stats* fcp adapter stats
+
+a|
+fcp status
+a|
+vserver fcp status
+
+a|
+fcp stop
+a|
+*fcp stop* vserver fcp stop
+
+a|
+fcp topology
+a|
+network fcp topology show OR vserver fcp topology show
+
+a|
+fcp wwpn-alias
+a|
+*fcp wwpn-alias* vserver fcp wwpn-alias
+
+a|
+fcp zone
+a|
+*fcp zone show*
+
+network fcp zone show
+
+a|
+fcp dump
+a|
+*fcp adapter dump* network fcp adapter dump
+
+a|
+fcp reset
+a|
+*fcp adapter reset* network fcp adapter reset
+
+a|
+fcstat link_stats
+a|
+system node run -node {_nodename_|local} -command fcstat link_stats
+
+a|
+fcstat fcal_stats
+a|
+system node run -node {_nodename_|local} -command fcstat fcal_stats
+
+a|
+fcstat device_map
+a|
+system node run -node {_nodename_|local} -command fcstat device_map
+
+a|
+file reservation
+a|
+volume file reservation
+a|
+filestats
+a|
+Not supported
+a|
+flexcache
+a|
+volume flexcache
+a|
+fpolicy
+a|
+*fpolicy* vserver fpolicy
+
+a|
+fsecurity show
+a|
+vserver security file-directory show
+
+a|
+fsecurity apply
+a|
+vserver security file-directory apply
+a|
+fsecurity status
+a|
+vserver security file-directory job-show
+a|
+fsecurity cancel
+a|
+vserver security file-directory job-stop
+a|
+fsecurity remove-guard
+a|
+vserver security file-directory remove-slag
+a|
+ftp
+a|
+Not supported
+|===
+
+== H
+
+|===
+| 7-Mode command| ONTAP command
+a|
+halt
+a|
+system node halt -node _nodename_
+
+a|
+halt -f
+a|
+system node halt inhibit -takeover true
+
+a|
+halt -d
+a|
+system node halt -dump true
+
+a|
+help
+a|
+?*Note:* You must type the question mark (?) symbol to execute this command in ONTAP.
+
+a|
+hostname
+a|
+*hostname* system hostname
+
+a|
+httpstat
+a|
+Not supportedYou must use the statistics command.
+
+|===
+
+== I
+
+|===
+| 7-Mode command| ONTAP command
+a|
+if_addr_filter_info
+a|
+system node run -note _nodename_ -command if_addr_filter_info
+a|
+ifconfig
+a|
+network interfacenetwork {interface | port}
+
+a|
+ifconfig -a
+a|
+network interface show network {interface | port} show
+
+a|
+ifconfig alias
+a|
+network interface create
+a|
+ifconfig down
+a|
+network interface modify -status-admin down
+a|
+ifconfig flowcontrol
+a|
+network port modify -flowcontrol-admin
+a|
+ifconfig mediatype
+a|
+network port modify {-duplex-admin | -speed-admin}
+a|
+ifconfig mtusize
+a|
+network port modify -mtu
+a|
+ifconfig netmask
+a|
+network interface modify -netmask
+a|
+ifconfig up
+a|
+network interface modify -status-admin up
+a|
+ifgrp create
+a|
+network port ifgrp create
+
+a|
+ifgrp add
+a|
+network port ifgrp add -port
+
+a|
+ifgrp delete
+a|
+network port ifgrp remove-port
+
+a|
+ifgrp destroy
+a|
+network port ifgrp delete
+
+a|
+ifgrp favor
+a|
+For ONTAP 9 releases, create a failover group for the two ports using the network interface failover-groups create command. Then use the network interface modify command to set the favored home port with the -home-port option and set the -autorevert option to true.
+
+NOTE: Remove the ports from the ifgrp before adding them to the failover group. It is a best practice to use ports from different NICs. This practice also prevents EMS warnings regarding insufficient redundancy.
+
+a|
+ifgrp nofavor
+a|
+For ONTAP 9 releases, use the same procedure for failover groups.
+
+a|
+ifgrp status
+a|
+system node run -node {_nodename_|local} -command ifgrp status
+
+a|
+ifgrp stat
+a|
+system node run -node {_nodename_|local} -command ifstat _ifgrp-port_
+
+a|
+ifgrp show
+a|
+network port ifgrp show
+a|
+ifinfo
+a|
+system node run -node {_nodename_|local} -command ifinfo
+
+a|
+ifstat
+a|
+system node run -node {_nodename_|local} -command ifstat
+
+a|
+igroup add
+a|
+*igroup add* lun igroup add
+
+a|
+igroup alua
+a|
+lun igroup modify -alua
+
+a|
+igroup bind
+a|
+*igroup bind* lun igroup bind
+
+a|
+igroup destroy
+a|
+*igroup delete* lun igroup delete
+
+a|
+igroup create
+a|
+*igroup create* lun igroup create
+
+a|
+igroup remove
+a|
+*igroup remove* lun igroup remove
+
+a|
+igroup rename
+a|
+*igroup rename* lun igroup rename
+
+a|
+igroup set
+a|
+igrouplun igroup set
+
+a|
+igroup show
+a|
+*igroup show* lun igroup show
+
+a|
+igroup set ostype
+a|
+igroup modify -ostype
+a|
+igroup unbind
+a|
+*igroup unbind* lun igroup unbind
+
+a|
+ipsec
+a|
+Not supported
+a|
+iscsi alias
+a|
+iscsi createvserver iscsi create OR
+
+iscsi modify
+
+vserver iscsi modify
+
+a|
+iscsi connection
+a|
+*iscsi connection* vserver iscsi connection
+
+a|
+iscsi initiator
+a|
+*iscsi initiator* vserver iscsi initiator
+
+a|
+iscsi interface
+a|
+*iscsi interface* vserver iscsi interface
+
+a|
+iscsi isns
+a|
+*iscsi isns* vserver iscsi isns
+
+a|
+iscsi portal
+a|
+*iscsi portal* vserver iscsi portal
+
+a|
+iscsi security
+a|
+*iscsi security* vserver iscsi security
+
+a|
+iscsi session
+a|
+*iscsi session* vserver iscsi session
+
+a|
+iscsi show
+a|
+*iscsi show* vserver iscsi show
+
+a|
+iscsi start
+a|
+*iscsi start* vserver iscsi start
+
+a|
+iscsi stats
+a|
+statistics {start|stop|show} -object _object_*Note:* Available at the advanced privilege level.
+
+a|
+iscsi stop
+a|
+*iscsi stop* vserver iscsi stop
+
+|===
+
+== K
+
+|===
+| 7-Mode command| ONTAP command
+a|
+key_manager
+a|
+system node run -node {_nodename_|local} -command key_manager
+a|
+keymgr
+a|
+system node run -node {_nodename_|local} -command keymgr For management interface keys, you must use the "`security certificates`" commands.
+
+|===
+
+== L
+
+|===
+| 7-Mode command| ONTAP command
+a|
+`license`
+a|
+`license show` `system license show`
+
+a|
+`license add`
+a|
+`license add` `system license add -license-code V2_license_code` **
+
+a|
+`license delete`
+a|
+`license delete` `system license delete -package package_name`
+
+a|
+`lock break`
+a|
+`vserver locks break` *Note:* Available at the advanced privilege level.
+
+a|
+`lock break -h host`
+a|
+`vserver locks break -client-address client-address`
+a|
+`lock break -net network`
+a|
+`vserver locks break -client-address-type ip address type`
+a|
+`lock break -o owner`
+a|
+`vserver locks break -owner-id owner-id`
+a|
+`lock break -p protocol`
+a|
+`vserver locks break -protocol protocol`
+a|
+`lock status`
+a|
+`vserver locks show`
+a|
+`lock status -h host`
+a|
+`vserver locks show -client-address client-address`
+a|
+`lock status -o owner`
+a|
+`vserver locks show -owner-id owner id`
+a|
+`lock status -p protocol`
+a|
+`vserver locks show -protocol protocol`
+a|
+`logger`
+a|
+`logger` `system node run -node {nodename|local} -command logger`
+
+a|
+`logout`
+a|
+`exit`
+a|
+`lun clone`
+a|
+`volume file clone create`
+a|
+`lun comment`
+a|
+`lun comment`
+a|
+`lun config_check`
+a|
+Not supported
+a|
+`lun create`
+a|
+`lun create –vserver vserver_name`
+a|
+`lun destroy`
+a|
+`lun delete`
+a|
+`lun map`
+a|
+`lun map –vserver vserver_name`
+a|
+`lun maxsize`
+a|
+`lun maxsize`
+a|
+`lun move`
+a|
+`lun move`
+a|
+`lun offline`
+a|
+`lun modify -state offline`
+a|
+`lun online`
+a|
+`lun modify -state online`
+a|
+`lun resize`
+a|
+`lun resize`
+a|
+`lun set`
+a|
+`lun set`
+a|
+`lun setup`
+a|
+`lun create`
+a|
+`lun share`
+a|
+Not supported
+a|
+`lun show`
+a|
+`lun show`
+a|
+`lun snap`
+a|
+Not supported
+a|
+`lun stats`
+a|
+`statistics show -object lun*` *Note:* Available at the advanced privilege level.
+
+a|
+`lun unmap`
+a|
+`lun unmap`
+|===
+
+== M
+
+|===
+| 7-Mode command| ONTAP command
+a|
+man
+a|
+*man*
+a|
+maxfiles
+a|
+vol modify -max-_number-of-files_ OR vol -fields files
+
+a|
+mt
+a|
+Not supported
+
+You must use the storage tape command set.
+
+|===
+
+== N
+
+|===
+| 7-Mode command| ONTAP command
+a|
+nbtstat
+a|
+vserver cifs nbtstat
+
+a|
+ndmpd
+a|
+{system | server} services ndmp
+a|
+ndmpcopy
+a|
+system node run -node {_nodename_|local} ndmpcopy
+
+a|
+ndmpd on
+a|
+*ndmpd on* system services ndmpd on
+
+a|
+ndmpd off
+a|
+*ndmpd off* system services ndmpd off
+
+a|
+ndmpd status
+a|
+{system | vserver} services ndmp status
+
+a|
+ndmpd probe
+a|
+{system | vserver} services ndmp probe
+
+a|
+ndmpd kill
+a|
+{system | vserver} services ndmp kill
+
+a|
+ndmpd killall
+a|
+{system | vserver} services ndmp kill-all
+a|
+ndmpd password
+a|
+{system | vserver} services ndmp password
+
+a|
+ndmpd version
+a|
+{system | vserver} services ndmp version
+
+a|
+ndp
+a|
+system node run -node {_nodename_|local} keymgr
+
+a|
+netdiag
+a|
+Not supportedYou must use the network interface or netstat commands.
+
+a|
+netsat
+a|
+system node run node _nodename_ command netstat
+a|
+network interface failover
+a|
+network interface show -failover
+a|
+network port vlan modify
+a|
+Not supported
+a|
+nfs off
+a|
+*nfs off* vserver nfs off
+
+a|
+nfs on
+a|
+*nfs on* vserver nfs on
+
+a|
+nfs setup
+a|
+vserver nfs create OR vserver setup
+
+a|
+nfs stat
+a|
+statistics {start | stop | show} -object nfs*
+a|
+nfs status
+a|
+vserver nfs status
+a|
+nfs vstorage
+a|
+vserver nfs modify -vstorage
+a|
+nfsstat
+a|
+statistics show -object nfs*
+|===
+
+== O
+
+|===
+| 7-Mode command| ONTAP command
+a|
+orouted
+a|
+Not supported
+|===
+
+== P
+
+|===
+| 7-Mode command| ONTAP command
+a|
+partner
+a|
+Not supported
+a|
+passwd
+a|
+security login password
+a|
+perf report -t
+a|
+statistics {start | stop | show} -object perf
+a|
+ping \{host}
+a|
+network ping {-node _nodename_ | -lif _lif-name_} -destination
+a|
+ping \{count}
+a|
+network ping {-node _nodename_ | -lif _lif-name_} -count
+a|
+ping -l interface
+a|
+network ping -lif _lif-name_
+a|
+ping -v
+a|
+network ping -node {_nodename_ | -lif _lif-name_} -verbose
+a|
+ping -s
+a|
+network ping -node {_nodename_ | -lif _lif-name_} -show-detail
+a|
+ping -R
+a|
+network ping -node {_nodename_ | -lif _lif-name_} -record-route
+a|
+pktt delete
+a|
+system node run -node {_nodename_|local} pktt delete
+
+a|
+pktt dump
+a|
+system node run -node {_nodename_|local} pktt dump
+
+a|
+pktt list
+a|
+system node run -node {_nodename_|local} pktt list
+
+a|
+pktt pause
+a|
+system node run -node {_nodename_|local} pktt pause
+
+a|
+pktt start
+a|
+system node run -node {_nodename_|local} pktt start
+
+a|
+pktt status
+a|
+system node run -node {_nodename_|local} pktt status
+
+a|
+pktt stop
+a|
+system node run -node {_nodename_|local} pktt stop
+
+a|
+portset add
+a|
+*portset add* lun portset add
+
+a|
+portset create
+a|
+*portset create* lun portset create
+
+a|
+portset delete
+a|
+*portset delete* lun portset delete
+
+a|
+portset remove
+a|
+*portset remove* lun portset remove
+
+a|
+portset show
+a|
+*portset show* lun portset show
+
+a|
+priority hybrid-cache default
+a|
+Not supported
+a|
+priority hybrid-cache set
+a|
+volume modify -volume _volume_name_ -vserver _vserver_name_ -caching-policy _policy_name_
+a|
+priority hybrid-cache show
+a|
+volume show -volume _volume_name_ -vserver _vserver_name_ -fields caching -policy
+a|
+priv set
+a|
+set -privilege
+|===
+
+== Q
+
+|===
+| 7-Mode command| ONTAP command
+a|
+qtree create
+a|
+*qtree create* volume qtree create
+
+a|
+qtree oplocks
+a|
+*qtree oplocks* volume qtree oplocks
+
+a|
+qtree security
+a|
+*qtree security* volume qtree security
+
+a|
+qtree status
+a|
+qtree show volume qtree show
+
+a|
+qtree stats
+a|
+qtree statisticsvolume qtree statistics
+
+a|
+quota allow
+a|
+quota modify -state volume quota modify -state on
+
+a|
+quota disallow
+a|
+quota modify -statevolume quota modify -state off
+
+a|
+quota off
+a|
+*quota off* volume quota off
+
+a|
+quota on
+a|
+*quota on* volume quota on
+
+a|
+quota report
+a|
+*quota report* volume quota report
+
+a|
+quota resize
+a|
+*quota resize* volume quota resize
+
+a|
+quota status
+a|
+quota show volume quota show
+
+a|
+quota logmsg
+a|
+volume quota show -fields logging, logging -interval
+|===
+
+== R
+
+|===
+| 7-Mode command| ONTAP command
+a|
+radius
+a|
+Not supported
+a|
+rdate
+a|
+Not supported
+a|
+rdfile
+a|
+Not supported
+
+a|
+reallocate off
+a|
+*reallocate off*
+a|
+reallocate measure
+a|
+*reallocate measure*
+a|
+reallocate on
+a|
+*reallocate on*
+a|
+reallocate quiesce
+a|
+*reallocate quiesce*
+a|
+reallocate restart
+a|
+*reallocate restart*
+a|
+reallocate schedule
+a|
+*reallocate schedule*
+a|
+reallocate start
+a|
+*reallocate start*
+a|
+reallocate status
+a|
+reallocate show
+a|
+reallocate stop
+a|
+*reallocate stop*
+a|
+reboot
+a|
+*reboot* system node reboot -node _nodename_
+
+a|
+reboot -d
+a|
+*reboot -d* system node reboot -dump true -node _nodename_
+
+a|
+reboot -f
+a|
+*reboot -f* reboot -inhibit-takeover true -node _nodename_
+
+a|
+restore
+a|
+Not supported
+
+You must initiate the restore by using NDMP as described in tape backup documentation.
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ptbrg/home.html[Data protection using tape backup]
+
+a|
+restore_backup
+a|
+system node restore-backup
+
+NOTE: Available at the advanced privilege level.
+
+a|
+revert_to
+a|
+system node revert-to node _nodename_ -version
+
+a|
+rlm
+a|
+Not supported
+
+a|
+route add
+a|
+*route add* network route create
+
+a|
+route delete
+a|
+*route delete* network route delete
+
+a|
+route -s
+a|
+*route show* network route show
+
+NOTE: The network routing-groups command family is deprecated in ONTAP 9 and no longer supported beginning with 9.4.
+
+|===
+
+== S
+
+|===
+| 7-Mode command| ONTAP command
+a|
+`sasadmin adapter_state`
+a|
+`system node run -node {nodename|local} -command sasadmin adapter_state`
+a|
+`sasadmin channels`
+a|
+`system node run -node {nodename|local} -command sasadmin channels`
+a|
+`sasadmin dev_stats`
+a|
+`system node run -node {nodename|local} -command sasadmin dev_stats`
+a|
+`sasadmin expander`
+a|
+`system node run -node {nodename|local} -command sasadmin expander`
+a|
+`sasadmin expander_map`
+a|
+`system node run -node {nodename|local} -command sasadmin expander_map`
+a|
+`sasadmin expander_phy_state`
+a|
+`system node run -node {nodename|local} -command sasadmin expander_phy_state`
+a|
+`sasadmin shelf`
+a|
+`storage shelf`
+a|
+`sasadmin shelf_short`
+a|
+`storage shelf`
+a|
+`sasstat dev_stats`
+a|
+`system node run -node {nodename|local} -command sasstat dev_stats`
+a|
+`sasstat adapter_state`
+a|
+`system node run -node {nodename|local} -command sasstat adapter_state`
+a|
+`sasstat expander`
+a|
+`system shelf show -port`
+a|
+`sasstat expander_map`
+a|
+`storage shelf show -module`
+a|
+`sasstat expander_phy_state`
+a|
+`system node run -node {nodename|local} sasstat expander_phy_state`
+a|
+`sasstat shelf`
+a|
+`storage shelf`
+a|
+`savecore`
+a|
+`system node coredump save-all`
+a|
+`savecore -i`
+a|
+`system node coredump config show -i`
+a|
+`savecore -l`
+a|
+`system node coredump show`
+a|
+`savecore -s`
+a|
+`system node coredump status`
+a|
+`savecore -w`
+a|
+Not supported
+a|
+`savecore -k`
+a|
+`system node coredump delete-all -type unsaved-kernel`
+a|
+`sectrace add`
+a|
+`vserver security trace create`
+a|
+`sectrace delete`
+a|
+`vserver security trace delete`
+a|
+`sectrace show`
+a|
+`vserver security trace filter show`
+a|
+`sectrace print-status`
+a|
+`vserver security trace trace-result show`
+a|
+`secureadmin addcert`
+a|
+`security certificate install`
+a|
+`secureadmin disable ssh`
+a|
+`security login modify`
+a|
+`secureadmin disable ssl`
+a|
+`security ssl modify`
+a|
+`secureadmin enable ssl`
+a|
+`security ssl modify`
+a|
+`secureadmin setup`
+a|
+`security`
+a|
+`secureadmin setup ssh`
+a|
+`security ssh {add|modify}`
+a|
+`secureadmin setup ssl`
+a|
+`security ssl {add|modify}`
+a|
+`secureadmin enable ssh`
+a|
+`security login modify`
+a|
+`secureadmin status ssh`
+a|
+`security login show`
+a|
+`secureadmin status ssl`
+a|
+`security ssl show`
+a|
+`setup`
+a|
+Not supported
+a|
+`shelfchk`
+a|
+`security ssh {add|modify}`
+a|
+`showfh`
+a|
+`security ssl {add|modify}`
+a|
+`sis config`
+a|
+`security login modify`
+a|
+`sis off`
+a|
+`security login show`
+a|
+`sis on`
+a|
+`security ssl show`
+a|
+`sis revert_to`
+a|
+Not supported
+a|
+`sis start`
+a|
+`showfh` `volume file show-filehandle`
+
+a|
+`sis stop`
+a|
+`sis off` `volume efficiency off`
+
+a|
+`smtape`
+a|
+`sis on` `volume efficiency on`
+
+a|
+`snap autodelete`
+a|
+`sis policy`
+a|
+`snap create`
+a|
+`sis revert_to` `volume efficiency revert-to`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`snap delete`
+a|
+`snap delete` `volume snapshot delete`
+
+a|
+`snap delta`
+a|
+Not supported
+
+a|
+`snap list`
+a|
+`snap show` `volume snapshot show`
+
+a|
+`snap reclaimable`
+a|
+`volume snapshot compute -reclaimable` *Note:* Available at the advanced privilege level.
+
+a|
+`snap rename`
+a|
+`snap rename` `volume snapshot rename`
+
+a|
+`snap reserve`
+a|
+volume {modify|show} --fields percent-snapshot-space --volume volume-name
+
+storage aggregate {modify|show} --fields percent-snapshot-space --aggregate aggregate-name
+
+a|
+`snap restore`
+a|
+`snap restore` `volume snapshot restore`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`snap sched`
+a|
+`volume snapshot policy`
+a|
+`snap reclaimable`
+a|
+`volume snapshot compute-reclaimable` *Note:* Available at the advanced privilege level.
+
+a|
+`snapmirror abort`
+a|
+`snapmirror abort`
+a|
+`snapmirror break`
+a|
+`snapmirror break`
+a|
+`snapmirror destinations`
+a|
+`snapmirror list-destinations`
+a|
+`snapmirror initialize`
+a|
+`snapmirror initialize`
+a|
+`snapmirror migrate`
+a|
+Not supported
+a|
+`snapmirror off`
+a|
+Not supported
+a|
+`snapmirror on`
+a|
+Not supported
+a|
+`snapmirror quiesce`
+a|
+`snapmirror quiesce`
+a|
+`snapmirror release`
+a|
+`snapmirror release`
+a|
+`snapmirror resume`
+a|
+`snapmirror resume`
+a|
+`snapmirror resync`
+a|
+`snapmirror resync`
+a|
+`snapmirror status`
+a|
+`snapmirror show`
+a|
+`snapmirror throttle`
+a|
+Not supported
+a|
+`snapmirror update`
+a|
+`snapmirror update`
+a|
+`snmp authtrap`
+a|
+`snmp authtrap`
+a|
+`snmp community`
+a|
+`snmp community`
+a|
+`snmp contact`
+a|
+`snmp contact`
+a|
+`snmp init`
+a|
+`snmp init`
+a|
+`snmp location`
+a|
+`snmp location`
+a|
+`snmp traphost`
+a|
+`snmp traphost`
+a|
+`snmp traps`
+a|
+`event route show -snmp-support true`
+a|
+`software delete`
+a|
+`system node image package delete`
+a|
+`software get`
+a|
+`system node image get`
+a|
+`software install`
+a|
+`system node image update`
+a|
+`software list`
+a|
+`system node image package show`
+a|
+`software update`
+a|
+`system node image update`
+a|
+`source`
+a|
+Not supported
+a|
+`sp reboot`
+a|
+`system service-processor reboot-sp`
+a|
+`sp setup`
+a|
+`system service-processor network modify`
+a|
+`sp status`
+a|
+`system service-processor show`
+a|
+`sp status -d`
+a|
+`system node autosupport invoke-splog`
+a|
+`sp status -v`
+a|
+`system node autosupport invoke-splog`
+a|
+`sp update`
+a|
+`system service-processor image update`
+a|
+`sp update-status`
+a|
+`system service-processor image update-progress`
+a|
+`statit`
+a|
+`statistics {start|stop|show} -preset statit`
+a|
+`stats`
+a|
+`statistics {start|stop|show} –object object` *Note:* Available at the advanced privilege level.
+
+a|
+`storage aggregate copy`
+a|
+Not supported
+a|
+`storage aggregate media_scrub`
+a|
+`system node run -node nodename -command aggr media_scrub`
+a|
+`storage aggregate snapshot`
+a|
+Not supported
+a|
+`storage aggregate split`
+a|
+Not supported
+a|
+`storage aggregate undestroy`
+a|
+Not supported
+a|
+`storage alias`
+a|
+`storage tape alias set`
+a|
+`storage array`
+a|
+`storage array`
+a|
+`storage array modify`
+a|
+`storage array modify`
+a|
+`storage array remove`
+a|
+`storage array remove`
+a|
+`storage array remove-port`
+a|
+`storage array port remove`
+a|
+`storage array show`
+a|
+`storage array show`
+a|
+`storage array show-config`
+a|
+`storage array config show`
+a|
+`storage array show luns`
+a|
+Not supported
+a|
+`storage array show-ports`
+a|
+`storage array port show`
+a|
+`storage disable adapter`
+a|
+`system node run -node {nodename|local} -command storage disable adapter`
+a|
+`storage download acp`
+a|
+`Storage shelf acp firmware update`
+a|
+`storage download shelf`
+a|
+`storage firmware download` *Note:* Available at the advanced privilege level.
+
+a|
+`storage enable adapter`
+a|
+`system node run -node {nodename|local} -command storage enable adapter`
+a|
+`storage load balance`
+a|
+`storage load balance`
+a|
+`storage load show`
+a|
+`storage load show`
+a|
+`storage show acp`
+a|
+`system node run -node {nodename|local} -command storage show acp`
+a|
+`storage show adapter`
+a|
+`system node run -node {nodename|local} -command storage show adapter`
+a|
+`storage show bridge`
+a|
+`storage bridge show`
+a|
+`storage show disk`
+a|
+`storage show disk` `storage disk show`
+
+a|
+`storage show expander`
+a|
+`storage shelf`
+a|
+`storage show fabric`
+a|
+`system node run -node {nodename|local} -command storage show fabric`
+a|
+`storage show fault`
+a|
+`system node run -node nodename -command storage show fault`
+a|
+`storage show hub`
+a|
+`system node run -node {nodename|local} -command storage show hub`
+a|
+`storage show initiators`
+a|
+`system node run -node {nodename|local} -command storage show initiators`
+a|
+`storage show mc`
+a|
+`storage tape show-media-changer`
+a|
+`storage show port`
+a|
+`storage switch`
+a|
+`storage show shelf`
+a|
+`storage shelf`
+a|
+`storage show switch`
+a|
+`storage switch show`
+a|
+`storage show tape`
+a|
+`storage tape show-tape-drive`
+a|
+`storage stats tape`
+a|
+`statistics show -object tape`
+a|
+`storage stats tape zero`
+a|
+`statistics {start|stop|show} -object tape`
+a|
+`storage unalias`
+a|
+`storage tape alias clear`
+a|
+`sysconfig`
+a|
+Not supported
+a|
+`sysconfig -a`
+a|
+`system node run -node {nodename|local} -command sysconfig -a`
+a|
+`sysconfig -A`
+a|
+`system node run -node {nodename|local} -command sysconfig -A`
+a|
+`sysconfig -ac`
+a|
+`system controller config show-errors -verbose`
+a|
+`sysconfig -c`
+a|
+`system controllers config-errors show`
+a|
+`sysconfig -d`
+a|
+`system node run -node {nodename|local} -command sysconfig -d`
+a|
+`sysconfig -D`
+a|
+`system controller config pci show-add-on devices`
+a|
+`sysconfig -h`
+a|
+`system node run -node {nodename|local} -command sysconfig -h`
+a|
+`sysconfig -m`
+a|
+`storage tape show-media-changer`
+a|
+`syconfig -M`
+a|
+`system node run -node {nodename|local} -command sysconfig -M`
+a|
+`sysconfig -p`
+a|
+Not supported
+
+You must use the following commands as alternatives:
+
+* Hypervisor information: system node virtual-machine hypervisor show
+* System disks backing stores: system node virtual-machine instance show-system-disks
+* Virtual disks backing information: storage disk show -virtual-machine-disk-info
+
+a|
+`sysconfig -P`
+a|
+`system controller config pci show-hierarchy`
+a|
+`sysconfig -r`
+a|
+Not supported
+
+To view disk information, you must use the following commands:
+
+* File system disks: storage aggregate showstatus
+* Spare disks: storage aggregate show-sparedisks
+* Broken disks: storage disk show -broken
+* Disks in the maintenance center: storage disk show -maintenance
+
+a|
+`sysconfig -t`
+a|
+`storage tape show`
+a|
+`sysconfig -v`
+a|
+`system node run -node nodename -command sysconfig -v`
+
+a|
+`sysconfig -V`
+a|
+`system node run -node {nodename|local} -command sysconfig -V`
+
+a|
+`sysstat`
+a|
+`statistics {start|stop|show} -preset systat` *Note:* Available at the advanced privilege level.
+
+a|
+`system health alert`
+a|
+`system health alert`
+a|
+`system health autosupport`
+a|
+`system health autosupport`
+a|
+`system health config`
+a|
+`system health config`
+a|
+`system health node-connectivity`
+a|
+`system health node-connectivity`
+a|
+`system health policy`
+a|
+`system health policy`
+a|
+`system health status`
+a|
+`system health status`
+a|
+`system health subsystem show`
+a|
+`system health subsystem show`
+|===
+
+== T
+
+|===
+| 7-Mode command| ONTAP command
+a|
+timezone
+a|
+*timezone*
+a|
+traceroute -m
+a|
+*traceroute -m* network traceroute { -node _nodename_ | -lif _lif-name_ } -maxttl _integer_
+
+a|
+traceroute -n
+a|
+*traceroute -n* network traceroute -node {_nodename_| -lif _lif-name_} -numeric true
+
+a|
+traceroute -p
+a|
+*traceroute -p* network traceroute { -node _nodename_ | -lif _lif-name_ } --port _integer_
+
+a|
+traceroute -q
+a|
+*traceroute -q* network traceroute { -node _nodename_ | -lif _lif-name_ } -nqueries _integer_
+
+a|
+traceroute -s
+a|
+Not supported
+
+a|
+traceroute -v
+a|
+*traceroute -v* network traceroute { -node _nodename_ | -lif _lif-name_ } -verbose [ true ]
+
+a|
+traceroute -w
+a|
+*traceroute -w* network traceroute { -node _nodename_ | -lif _lif-name_ } -waittime _integer_
+
+|===
+
+== U
+
+|===
+| 7-Mode command| ONTAP command
+a|
+ucadmin
+a|
+system node hardware unified-connect
+a|
+ups
+a|
+Not supported
+a|
+uptime
+a|
+system node show -fields uptime
+a|
+useradmin domainuser add
+a|
+security login create
+a|
+useradmin domainuser delete
+a|
+security login delete
+a|
+useradmin domainuser list
+a|
+security login show
+a|
+useradmin domainuser load
+a|
+Not supported Use "vserver cifs users-and-groups" command set.
+
+a|
+useradmin group add
+a|
+security login role create
+a|
+useradmin group delete
+a|
+security login role delete
+a|
+useradmin group list
+a|
+security login role show
+a|
+useradmin group modify
+a|
+security login role modify
+a|
+useradmin role add
+a|
+security login role create
+a|
+useradmin role delete
+a|
+security login role delete
+a|
+useradmin role list
+a|
+security login role show
+a|
+useradmin role modify
+a|
+security login role modify
+a|
+useradmin user add
+a|
+security login create
+a|
+useradmin user delete
+a|
+security login delete
+a|
+useradmin user list
+a|
+security login show
+a|
+useradmin user modify
+a|
+security login modify
+|===
+
+== V
+
+|===
+| 7-Mode command| ONTAP command
+a|
+version -b
+a|
+*version -b* OR system image show
+
+a|
+version -v
+a|
+*version -v* OR system image show
+
+a|
+vfiler
+a|
+Not supported
+a|
+vfiler run
+a|
+vserver
+a|
+vfiler start
+a|
+vserver start
+a|
+vfiler stop
+a|
+vserver stop
+a|
+vfiler status
+a|
+vserver show
+a|
+vfiler disallow
+a|
+vserver modify -disallowed-protocols
+a|
+vlan add
+a|
+network port vlan create
+a|
+vlan create
+a|
+network port vlan create
+a|
+vlan delete
+a|
+network port vlan delete
+a|
+vlan modify
+a|
+Not supported
+a|
+vlan stat
+a|
+system node run -node _nodename_ -command vlan stat
+
+a|
+vmservices
+a|
+system node run -node {_nodename_|local} vmservices
+
+a|
+volume add
+a|
+Not supported
+a|
+volume autosize
+a|
+*volume autosize*
+a|
+volume clone
+a|
+*volume clone*
+a|
+volume clone split
+a|
+*volume clone split*
+a|
+volume container
+a|
+volume show -fields aggregate
+a|
+volume copy
+a|
+Not supportedYou must use one of the following methods as described in logical storage documentation:
+
+* Create a FlexClone volume of the original volume, then move the volume to another aggregate by using the volume move command.
+* Replicate the original volume using SnapMirror, then break the SnapMirror relationship to make a read-write volume copy.
+
+http://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-vsmg%2FGUID-5578BA46-5522-4BA6-B354-5C924B8207B1.html[Logical Storage Management Guide]
+
+a|
+volume create
+a|
+*volume create*
+a|
+vol destroy
+a|
+volume destroy
+a|
+volume file fingerprint
+a|
+Not supported
+a|
+volume media_scrub
+a|
+Not supported
+a|
+volume migrate
+a|
+Not supported
+a|
+vol mirror
+a|
+Not supported
+a|
+volume move
+a|
+*volume move*
+a|
+volume offline
+a|
+*volume offline*
+a|
+volume online
+a|
+*volume online*
+a|
+volume options
+a|
+volume {show | modify}
+a|
+volume quota allow
+a|
+Not supported
+a|
+volume quota disallow
+a|
+Not supported
+a|
+volume rename
+a|
+*volume rename*
+a|
+volume restrict
+a|
+*volume restrict*
+a|
+volume scrub
+a|
+Not supported
+a|
+volume size
+a|
+*volume size*
+a|
+volume snapshot delta
+a|
+Not supported
+a|
+volume snapshot reserve
+a|
+Not supportedAlternative commands include the following:
+
+* For volumes, use: the "volume show -fields percent-snapshot-space" and "volume modify -volume _volumename_ -percent-snapshot-space _percent_" commands.
+* For aggregates, use the "storage aggregate show -fields percent-snapshot-space" and "storage aggregate modify -aggregate _aggregate name_ -percent-snapshot-space _percent_" commands.
+
+a|
+volume split
+a|
+Not supported
+a|
+volume status
+a|
+volume show
+a|
+volume verify
+a|
+Not supported
+a|
+volume wafliron
+a|
+Not supported
+a|
+vscan
+a|
+vserver vscan
+a|
+vserver cifs adupdate
+
+a|
+Not supported
+
+a|
+vserver cifs broadcast
+
+a|
+Not supported
+
+a|
+vserver cifs comment
+
+a|
+Not supported
+
+a|
+vserver cifs top
+
+a|
+Not supported
+
+a|
+vserver iscsi ip_tpgroup add
+
+a|
+Not supported
+
+a|
+vserver iscsi ip_tpgroup create
+
+a|
+Not supported
+
+a|
+vserver iscsi ip_tpgroup destroy
+
+a|
+Not supported
+
+a|
+vserver iscsi ip_tpgroup remove
+
+a|
+Not supported
+
+a|
+vserver iscsi ip_tpgroup show
+
+a|
+Not supported
+
+a|
+vserver iscsi tpgroup alua set
+
+a|
+Not supported
+
+a|
+vserver iscsi tpgroup alua show
+
+a|
+Not supported
+
+a|
+vserver services name-service dns flush
+
+a|
+Not supported
+
+|===
+
+== W
+
+|===
+| 7-Mode command| ONTAP command
+a|
+wrfile
+a|
+Not supported
+
+|===
+
+== Y
+
+|===
+| 7-Mode command| ONTAP command
+a|
+ypcat
+a|
+Not supported
+a|
+ypgroup
+a|
+Not supported
+a|
+ypmatch
+a|
+Not supported
+a|
+ypwhich
+a|
+Not supported
+|===

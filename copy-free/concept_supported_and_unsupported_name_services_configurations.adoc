@@ -1,0 +1,57 @@
+---
+permalink: copy-free/concept_supported_and_unsupported_name_services_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of the name services configurations that are transitioned by the 7-Mode Transition Tool. Some name services configurations are not transitioned to ONTAP because either these are not supported in ONTAP or these must be manually transitioned.'
+---
+= Name services transition: supported and unsupported configurations, and required manual steps
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of the name services configurations that are transitioned by the 7-Mode Transition Tool. Some name services configurations are not transitioned to ONTAP because either these are not supported in ONTAP or these must be manually transitioned.
+
+You should verify all the precheck error and warning messages to evaluate the impact of such configurations on transition.
+
+== Configurations that are transitioned
+
+At a high level, the following name services configurations are transitioned by the 7-Mode Transition Tool:
+
+* DNS configuration (/etc/resolv.conf)
+* LDAP configuration
+* NIS configuration
+* Name service switch configuration (/etc/nsswitch.conf and /etc/resolv.conf)
+* Hosts configuration (/etc/hosts)
+* UNIX users and groups (/etc/passwd and /etc/group)
+* Netgroups configuration (/etc/netgroup)
+
+See the precheck results for details about these name services configurations.
+
+== Unsupported configurations in ONTAP
+
+* NIS slave
+* NIS broadcast
+* NIS groups caching
+* Dynamic DNS
+* DNS cache
+* Shadow database
+* Host database sources other than file or DNS
++
+ONTAP supports only file and DNS for host lookup; other database sources are not supported. Host lookup order in the /etc/nsswitch.conf is ignored during transition.
+
+== Configurations that must be manually configured
+
+You must manually configure the following LDAP options on the SVMs:
+
+* ldap.usermap.attribute.unixaccount
+* ldap.password
+* ldap.usermap.base
+* ldap.ssl.enable
+
+*Related information*
+
+xref:task_customizing_configurations_for_transition.adoc[Customizing the transition of 7-Mode configurations]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]

@@ -1,0 +1,18 @@
+---
+permalink: san-host/concept_transitioning_linux_host_file_systems_on_lvm_devices.html
+sidebar: sidebar
+keywords: 
+summary: 'When you transition a Linux host file system on a Logical Volume Manager \(LVM\), you must perform specific steps to prepare for the cutover phase and you must mount the logical volumes after the transition.'
+---
+= Transitioning Linux host file systems on LVM devices
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When you transition a Linux host file system on a Logical Volume Manager (LVM), you must perform specific steps to prepare for the cutover phase and you must mount the logical volumes after the transition.
+
+*Related information*
+
+xref:task_preparing_for_cutover_phase_when_transitioning_linux_host_file_systems_on_lvm_devices.adoc[Preparing for cutover phase when transitioning Linux host file systems on LVM devices]
+
+xref:task_mounting_logical_volumes_on_linux_host_after_transition.adoc[Mounting logical volumes on Linux hosts after transition]

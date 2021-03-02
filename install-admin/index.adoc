@@ -1,0 +1,34 @@
+---
+permalink: install-admin/index.html
+sidebar: sidebar
+keywords: 
+summary: ''
+---
+= Installation and Setup Guide
+:icons: font
+:imagesdir: ../media/
+
+* xref:concept_transition_to_clustered_ontap_by_using_the_7_mode_transition_tool_7mtt_isg.adoc[Transition to clustered ONTAP by using the 7-Mode Transition Tool]
+ ** xref:concept_ontap_target_releases_supported_by_the_7_mode_transition_tool.adoc[ONTAP target releases supported by the 7-Mode Transition Tool]
+ ** xref:concept_comparison_of_copy_free_transition_and_copy_based_transition.adoc[Comparison of copy-free transition and copy-based transition]
+ ** xref:reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.adoc[Interfaces and transition capabilities available on Windows and Linux]
+* xref:concept_installing_and_uninstalling_the_7_mode_transition_tool.adoc[Installing or uninstalling the 7-Mode Transition Tool on a Windows system]
+ ** xref:concept_system_requirements_for_the_7_mode_transition_tool_on_windows.adoc[System requirements for installing the 7-Mode Transition Tool on Windows systems]
+ ** xref:task_installing_the_7_mode_transition_tool.adoc[Installing the 7-Mode Transition Tool on a Windows system]
+ ** xref:task_enabling_login_for_users_not_part_of_the_administrator_group.adoc[Enabling login for users not part of the Administrator group]
+ ** xref:task_logging_in_to_the_tool.adoc[Logging in to the 7-Mode Transition Tool]
+ ** xref:task_uninstalling_the_7_mode_transition_tool.adoc[Uninstalling the 7-Mode Transition Tool on a Windows system]
+* xref:concept_installing_and_uninstalling_the_7_mode_transition_tool_on_linux.adoc[Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based transition only)]
+ ** xref:concept_system_requirements_for_7_mode_transition_tool_on_linux.adoc[System requirements for installing 7-Mode Transition Tool on Linux]
+ ** xref:task_installing_7_mode_transition_tool_on_linux.adoc[Installing 7-Mode Transition Tool on Linux]
+ ** xref:task_uninstalling_7_mode_transition_tool_on_linux.adoc[Uninstalling 7-Mode Transition Tool on Linux]
+* xref:task_modifying_the_default_configuration_settings_of_the_7_mode_transition_tool.adoc[Modifying the configuration options of the 7-Mode Transition Tool]
+* xref:concept_troubleshooting_web_interface_issues.adoc[Troubleshooting issues]
+ ** xref:reference_tool_installation_fails_with_incompatible_os_error.adoc[Tool installation fails with an incompatible OS error]
+ ** xref:reference_installation_or_uninstallation_of_the_7_mode_transition_tool_is_blocked.adoc[Installation or uninstallation of the 7-Mode Transition Tool is blocked]
+ ** xref:reference_re_installation_or_upgrade_of_the_tool_might_fail_with_another_instance_of_tool_is_running_error_message.adoc[Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows system]
+ ** xref:reference_you_receive_the_windows_compatibility_assistant_notification_that_the_program_might_not_have_installed_correctly.adoc[Windows Program Compatibility Assistant notification displayed while installing the tool]
+* xref:reference_copyright_and_trademark.adoc[Copyright, trademark, and machine translation]
+ ** xref:reference_copyright.adoc[Copyright]
+ ** xref:reference_trademark.adoc[Trademark]
+ ** xref:generic_machine_translation_disclaimer.adoc[Machine translation]

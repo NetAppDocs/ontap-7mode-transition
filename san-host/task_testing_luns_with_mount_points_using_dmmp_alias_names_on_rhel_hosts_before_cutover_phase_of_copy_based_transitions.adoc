@@ -1,0 +1,55 @@
+---
+permalink: san-host/task_testing_luns_with_mount_points_using_dmmp_alias_names_on_rhel_hosts_before_cutover_phase_of_copy_based_transitions.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to perform a copy-based transition of your Red Hat Enterprise Linux \(RHEL\) host, you can test your transitioned clustered Data ONTAP LUNs with mount points using alias names before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
+---
+= Testing LUNs with mount points using DMMP alias names on RHEL hosts before the cutover phase of copy-based transitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) 2.2 or later and Data ONTAP 8.3.2 or later to perform a copy-based transition of your Red Hat Enterprise Linux (RHEL) host, you can test your transitioned clustered Data ONTAP LUNs with mount points using alias names before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.
+
+Your new clustered Data ONTAP LUNs must be mapped to your test host and your LUNs must be ready for transition.
+
+You should maintain hardware parity between the test host and the source host and you should perform the following steps on the test host.
+
+Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
+
+. After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
+. In the 7MTT UI, click *Apply Configuration*.
+. Obtain the new SCSI device names for the clustered Data ONTAP LUNs: `sanlun lun show`
++
+In the following example, /dev/sdl is the SCSI device name for the lun_dmmp_raw LUN, and /dev/sdk is the SCSI device name for the lun_dmmp_raw_alias LUN:
++
+----
+[root@ibmx3550-229-108 /]# sanlun lun show
+controller(7mode/E-Series)/
+vserver (cDOT/FlashRay)     lun-pathname               filename
+-----------------------------------------------------------------
+vs_brb     /vol/dmmp_raw_vol/lun_dmmp_raw              /dev/sdl
+vs_brb     /vol/dmmp_raw_alias_vol/lun_dmmp_raw_alias  /dev/sdk
+----
+
+. Configure the DMMP devices for your clustered Data ONTAP LUNs: `multipath`
+. Obtain the device handle IDs for the clustered Data ONTAP LUNs: `multipath -ll`
++
+The following is an example of a device handle ID: "`3600a09804d532d79565d47617679764d`"
+
+. Check whether an alias is defined in the /etc/multipath.conf file on the source host.
+. Manually copy the alias configuration to the /etc/multipath.conf file on the test host, but replace the 7-Mode device handle ID with the corresponding clustered Data ONTAP device handle ID.
+. Use the multipath command to configure DMMP devices for your clustered Data ONTAP LUNs.
+. Identify the file system created on the DMMP alias device: `blkid dmmp_device_name`
+. Mount the DMMP device: `mount`
+. Perform your testing as needed.
+. After you have completed your testing, shut down the test host: `shutdown -h -t0 now`
+. In the 7MTT UI, click *Finish Testing*.
+
+If your clustered Data ONTAP LUNs are to be remapped to your source host, you must prepare your source host for the cutover phase. If your clustered Data ONTAP LUNs are to remain mapped to your test host, no further steps are required on the test host.
+
+*Related information*
+
+xref:task_gathering_pretransition_information_from_the_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
+
+xref:task_preparing_for_the_cutover_phase_when_transitioning_luns_with_mount_points_using_dmmp_alias_names_on_linux_hosts.adoc[Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts]

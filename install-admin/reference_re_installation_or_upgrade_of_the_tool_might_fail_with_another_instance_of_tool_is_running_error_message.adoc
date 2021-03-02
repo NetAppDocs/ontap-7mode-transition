@@ -1,0 +1,27 @@
+---
+permalink: install-admin/reference_re_installation_or_upgrade_of_the_tool_might_fail_with_another_instance_of_tool_is_running_error_message.html
+sidebar: sidebar
+keywords: 
+summary: 'This section provides information about the error when you reinstall or upgrade the 7-Mode Transition Tool on Windows system. It also provides the reason for the error and the steps to resolve the error.'
+---
+= Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows system
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This section provides information about the error when you reinstall or upgrade the 7-Mode Transition Tool on Windows system. It also provides the reason for the error and the steps to resolve the error.
+
+* *Message*
++
+Another instance of NetApp 7-Mode Transition Tool setup or uninstall is running. Only one instance can run at a time.
+
+* *Cause*
++
+Some of the files in the 7-Mode Transition Tool installation folder are open.
+
+* *Corrective action*
+ .. Close all of the 7-Mode Transition Tool installation files.
+ .. Open the registry entry for 7-Mode Transition Tool:
+  ... Check the *INSTALLATION_STATUS* field.
+  ... If the value is INSTALLER_IS_RUNNING, change it to INSTALLED.
+ .. Retry reinstalling or upgrading the tool.

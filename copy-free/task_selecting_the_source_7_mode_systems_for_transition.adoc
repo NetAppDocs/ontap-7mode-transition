@@ -1,0 +1,35 @@
+---
+permalink: copy-free/task_selecting_the_source_7_mode_systems_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'The first step in planning a transition project is to select the source 7-Mode HA pair from which you want to transition the disk shelves, aggregates, volumes, and configurations, and then create a transition project.'
+---
+= Creating a copy-free transition project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The first step in planning a transition project is to select the source 7-Mode HA pair from which you want to transition the disk shelves, aggregates, volumes, and configurations, and then create a transition project.
+
+* The 7-Mode controllers in the HA pair must be running a supported ONTAP version on a platform that is supported for a copy-free transition.
++
+https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+
+* Both controllers in the HA configuration must be healthy.
+
+. Select the *Copy-Free Transition* migration method from the homepage and click *Start Planning*.
++
+If the controller and cluster required for a new project are not added, you can enter the details in the Enter Device Credentials pane.
+
+. Select the source 7-Mode HA pair that you want to transition.
+. Click *Create Project*.
+ .. In the Project Details window, provide a name for the project.
+ .. Select a project group to which the project should be added.
++
+You can either create a new project group or add the project to the default group.
++
+Creating a project group enables you to group and monitor related projects.
+
+ .. Click *Save*.
++
+The Select Target Cluster screen is displayed.

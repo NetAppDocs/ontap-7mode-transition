@@ -1,0 +1,35 @@
+---
+permalink: inventory-collect/task_generating_fc_zone_plan.html
+sidebar: sidebar
+keywords: 
+summary: 'After collecting information about the Data ONTAP systems, hosts, and FC switches, you can generate the FC zone plan, which is used to configure the switches in the cluster after migration.'
+---
+= Generating the FC zone plan
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After collecting information about the Data ONTAP systems, hosts, and FC switches, you can generate the FC zone plan, which is used to configure the switches in the cluster after migration.
+
+* The 7-Mode systems, hosts, and the cluster must be connected to the switch.
+* Information about the cluster, SVMs, FCP LIFs, and switches must be collected.
++
+The cluster can be connected either to the same switch as the 7-Mode system or to a new switch in the same fabric.
++
+xref:concept_supported_configurations_for_generating_an_fc_zone_plan.adoc[Supported configurations for generating an FC zone plan]
+
+. In the CLI, navigate to the ICT directory.
+. From the CLI, generate the FC zone plan: `ict --cmd generate-fc-zones --source-filers 7-mode-ip1,7mode-ip2 --dest-svm cluster-name:vserver-name --fc-switches switch-name:vsan-id1,vsan-id2 7mode_cdot_switch_inventory.xml`
++
+You must enter the VSAN ID for the Cisco switches.
++
+----
+...bin\ict>ict --cmd generate-fc-zones --source-filers system1,system2 --dest-svm vs1:fc_zone1
+ --fc-switches brocade-1,brocade-2 7mode_cdot_switch_inventory.xml
+----
++
+The FC zone plan contains zones created per the igroup configurations on the 7-Mode systems. Each zone contains a single initiator WWPN and multiple SVM target WWPNs.
+
+In a copy-based transition, you can use the FC zone plan to configure the zones either during the precutover read/write mode to verify the cluster configuration by using the test hosts, or after the cutover phase to provide data access to the initiator hosts from the cluster.
+
+In a copy-free transition, you must use the FC zone plan to configure the zones to group the initiator hosts and targets for providing data access from the cluster during apply configuration phase.

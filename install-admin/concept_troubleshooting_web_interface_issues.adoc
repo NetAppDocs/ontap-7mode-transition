@@ -1,0 +1,12 @@
+---
+permalink: install-admin/concept_troubleshooting_web_interface_issues.html
+sidebar: sidebar
+keywords: 
+summary: 'You need to be aware of some of the common issues with the 7-Mode Transition Tool and the steps to resolve them.'
+---
+= Troubleshooting issues
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You need to be aware of some of the common issues with the 7-Mode Transition Tool and the steps to resolve them.

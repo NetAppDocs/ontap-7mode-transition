@@ -1,0 +1,21 @@
+---
+permalink: copy-free/task_committing_the_7_mode_aggregates_to_clustered_data_ontap_format.html
+sidebar: sidebar
+keywords: 
+summary: 'The final step in transition is to commit the copy-free transition project. After committing the aggregates, you cannot perform a rollback to 7-Mode.'
+---
+= Committing the copy-free transition project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The final step in transition is to commit the copy-free transition project. After committing the aggregates, you cannot perform a rollback to 7-Mode.
+
+You must have manually verified the transitioned data and configurations and tested workloads and applications.
+
+All the aggregate-level Snapshot copies that were created in the export phase are deleted.
+
+. Click *Commit*.
+. In the warning message that is displayed, click *Yes*.
+
+All the preproduction testing phase restrictions are removed and the transitioned volumes can serve production data, if not done in the preproduction testing phase.

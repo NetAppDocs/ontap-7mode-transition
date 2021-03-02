@@ -1,0 +1,39 @@
+---
+permalink: copy-based/concept_considerations_for_local_users_and_groups_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of the considerations for running the transition operations when migrating CIFS local users and groups.'
+---
+= Considerations for transitioning CIFS local users and groups
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of the considerations for running the transition operations when migrating CIFS local users and groups.
+
+* If the destination cluster is running clustered Data ONTAP 8.2, transition should not be attempted for 7-Mode volumes that are serving CIFS data and are being accessed by local users and groups.
++
+The 7-Mode Transition Tool does not support the transition of local users and groups to clustered Data ONTAP 8.2.
+
+* Transition of CIFS data-serving volumes from a 7-Mode controller or a vFiler unit that has local users and groups to an SVM that has non-BUILTIN CIFS local users and groups is not supported.
++
+The SVM must have only BUILTIN CIFS local users and groups for transition.
++
+While transitioning local users and groups from a specific 7-Mode controller or a vFiler unit to a specific SVM, local users and groups from the first transition project are transitioned. In the subsequent transition of projects with the same 7-Mode controller or vFiler unit to the same SVM, the transition of local users and groups is ignored, although transition succeeds. The local user's name on the 7-Mode system must not be the same as the CIFS server name on the SVM.
+
+* You must be aware of the limits on the number of local users and groups supported in clustered Data ONTAP 8.2.1 and later.
+* A local user account with an empty password or local user accounts with passwords containing more than 14 characters on the 7-Mode system are transitioned to ONTAP software with the password `cifsUser@1`.
++
+After the transition is complete, you can access these users from the Windows system by using the password `cifsUser@1`. You must then manually change the password for such CIFS local users on the SVM by using the following command: `cifs users-and-groups local-user set-password -vserver svm_name -user-name user_name`.
+
+* If the 7-Mode Transition Tool IP address is not reachable from the target ONTAP software, the 7-Mode Transition Tool blocks the transition of CIFS local users and groups to the ONTAP software during the precheck phase. If you see this error during the precheck phase, use the `network ping -node local -destination ip_address` command to make sure the 7-Mode Transition Tool IP address is reachable from the target ONTAP software. You can edit the\etc\conf\transition-tool.conf file that is installed with the 7-Mode Transition Tool to modify any configuration option that is used by the tool, such as the 7-Mode Transition Tool IP address.
+* The SVM to which the local users and groups are transitioned must have a data LIF.
+* If a local group has multiple member system identifiers (SIDs) mapped to a single domain user or group on the 7-Mode system, the 7-Mode Transition Tool blocks the transition of local users and groups to ONTAP during the precheck phase.
++
+If you see this error during the precheck phase, you must manually remove the additional SIDs that are mapped to a single domain user or group on the 7-Mode system. You must then rerun the precheck operation with only a single SID mapped to the domain user or group.
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Troubleshooting_Workflow%3A_CIFS%3A_Device_attached_to_the_system_is_not_functioning[Troubleshooting Workflow: CIFS: Device attached to the system is not functioning]
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-cifs/home.html[SMB/CIFS management]

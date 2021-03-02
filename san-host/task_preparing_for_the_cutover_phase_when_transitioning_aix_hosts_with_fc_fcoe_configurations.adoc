@@ -1,0 +1,18 @@
+---
+permalink: san-host/task_preparing_for_the_cutover_phase_when_transitioning_aix_hosts_with_fc_fcoe_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'Before entering the cutover phase for AIX hosts with FC or FCoE configurations, you must perform specific steps.'
+---
+= Preparing for the cutover phase when transitioning AIX hosts with FC/FCoE configurations.
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before entering the cutover phase for AIX hosts with FC or FCoE configurations, you must perform specific steps.
+
+Fabric connectivity and zoning to the clustered Data ONTAP nodes must be established.
+
+For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool. Copy-free transitions are not supported on AIX hosts.
+
+. Shut down your host: `shutdown -h`

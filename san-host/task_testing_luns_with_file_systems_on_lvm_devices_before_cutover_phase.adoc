@@ -1,0 +1,70 @@
+---
+permalink: san-host/task_testing_luns_with_file_systems_on_lvm_devices_before_cutover_phase.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to perform a copy-based transition of your Red Hat Enterprise Linux \(RHEL\) host, you can test your transitioned clustered Data ONTAP LUNs with file systems on LVM devices before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
+---
+= Testing LUNs with file systems on LVM devices before the cutover phase of copy-based transitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) 2.2 or later and Data ONTAP 8.3.2 or later to perform a copy-based transition of your Red Hat Enterprise Linux (RHEL) host, you can test your transitioned clustered Data ONTAP LUNs with file systems on LVM devices before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.
+
+* Your new clustered Data ONTAP LUNs must be mapped to the test host.
+* Your LUNs must be ready for transition.
+
+You should maintain hardware parity between the test host and the source host and you should perform the following steps on the test host.
+
+Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
+
+During test mode you do not deactivate or export the volume group. For this reason, you might see file system errors when you mount the logical volumes on the test host.
+
+. After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
+. In the 7MTT UI, click *Apply Configuration*.
+. On the test host, discover your new clustered Data ONTAP LUNs: `rescan-scsi-bus.sh`
+. Verify that your new clustered Data ONTAP LUNs have been discovered: `sanlun lun show`
+. Configure DMMP devices for your clustered Data ONTAP LUNs: `multipath`
+. Obtain the device handle ID for the clustered Data ONTAP LUNs: `multipath -ll`
++
+The following is an example of a device handle ID: "`3600a09804d532d79565d47617679764d`"
+
+. Identify the DMMP devices used by the LVM: `pvscan`
++
+3600a09804d532d79565d476176797655 is an example of a DMMP device used by the LVM.
+
+. Identify the volume group: `vgscan`
+. Identify the logical volume: `lvscan`
+. Enable the logical volumes: `vgchange -ay volume_group`
+. Verify the logical volume status: `lvdisplay`
++
+The LV Status column in the output should display available.
+
+. Determine whether a mount point entry for the logical volume exists in the /etc/fstab file on the source host.
++
+In the following example, logical volume /dev/mapper/vg_7MTT-lv1 is displayed in the /etc/fstab file:
++
+----
+# /etc/fstab
+...
+tmpfs   /dev/shm  tmpfs   defaults        0 0
+devpts  /dev/pts  devpts  gid=5, mode=620 0 0
+sysfs   /sys      sysfs   defaults        0 0
+proc    /proc     proc    defaults        0 0
+/dev/mapper/vg_7MTT-lv1 /7MTT  ext4  defaults 0	0
+----
+
+. If a mount point entry for the logical volume exists in the /etc/fstab file on the source host, manually edit the /etc/fstab file on the test host to add the mount point entry.
+. Mount the mount point: `mount -a`
+. Verify that the mount points are mounted: `mount`
+. Perform your testing as needed.
+. After you have completed your testing, shut down your host: `shutdown -h -t0 now`
+. In the 7MTT UI, click *Finish Testing*.
+
+If your clustered Data ONTAP LUNs are to be remapped to your source host, you must prepare your source host for the cutover phase. If your clustered Data ONTAP LUNs are to remain mapped to your test host, no further steps are required on the test host.
+
+*Related information*
+
+xref:task_gathering_pretransition_information_from_the_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
+
+xref:task_preparing_for_cutover_phase_when_transitioning_linux_host_file_systems_on_lvm_devices.adoc[Preparing for cutover phase when transitioning Linux host file systems on LVM devices]

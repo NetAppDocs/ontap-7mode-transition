@@ -1,0 +1,93 @@
+---
+permalink: copy-free/task_removing_the_disk_shelves_from_7_mode_and_connecting_to_cluster_nodes.html
+sidebar: sidebar
+keywords: 
+summary: 'Cabling the 7-Mode disk shelves to the target cluster nodes is a manual process. After cabling the disk shelves, it is a best practice to verify the cabling by using Config Advisor. You can then verify the cabling by using the 7-Mode Transition Tool. The tool performs only a subset of the checks that are performed by Config Advisor.'
+---
+= Disconnecting disk shelves from the 7-Mode system and connecting to cluster nodes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Cabling the 7-Mode disk shelves to the target cluster nodes is a manual process. After cabling the disk shelves, it is a best practice to verify the cabling by using Config Advisor. You can then verify the cabling by using the 7-Mode Transition Tool. The tool performs only a subset of the checks that are performed by Config Advisor.
+
+You must have recorded the information about disk shelf connectivity to the 7-Mode controller ports.
+
+You must be aware of some of the considerations for connecting SAS disk shelves:
+
+* You must follow the rules for cabling SAS square and circle ports.
+* IOM6 and IOM3 shelves can be mixed in the same stack, but there should be no more than a single transition between shelves that are using different IOM types.
++
+For example, IOM6e (controller)--IOM6 (shelf)--IOM3 (shelf)--IOM3 (shelf) is a supported configuration. But IOM6e (controller)--IOM3 (shelf)--IOM6 (shelf)--IOM3 (shelf) is not a supported configuration.
+
+. Check the disk shelf IDs in the 7-Mode HA pair and the target cluster nodes:
+ .. If there are duplicate shelf IDs (if the 7-Mode disk shelf IDs are used for the disk shelves in the target cluster nodes), change the disk shelf IDs.
+  *** For SAS disk shelves, a valid shelf ID is 00 through 99.
+  *** SAS shelf IDs must be unique within the HA pair.
+https://library.netapp.com/ecm/ecm_download_file/ECMP1119629[SAS Disk Shelves Installation and Service Guide for DS4243, DS2246, DS4486, and DS4246]
+  *** For FC disk shelves, a valid shelf ID is 1 through 7.
+  *** FC shelf IDs must be unique within each FC loop.
+https://library.netapp.com/ecm/ecm_download_file/ECMP1112854[DS14mk2 FC, and DS14mk4 FC Hardware Service Guide]
+ .. Power cycle the disk shelves for the new IDs to take effect.
+. Power off the 7-Mode disk shelves.
+. Depending on whether additional ports are available on the target cluster nodes, choose one of the following options:
++
+|===
+| If...| Then...
+a|
+Additional ports are available to connect the disk shelves
+a|
+Connect the disk shelves in a new stack to the target cluster nodes in a multipath configuration.    *Note:* It is the best practice to connect the disk shelves to a separate stack. The 7-Mode Transition Tool detects the availability of the required number of ports on the target cluster nodes when prechecks are run.
+a|
+Ports are not available to connect the disk shelves
+a|
+Perform one of the following actions:
+
+ ** Add a new expansion card and connect the disk shelves in a new stack to the target cluster nodes in a multipath configuration.
++
+You must have verified that the expansion card is supported on the destination platform.
+
+ ** Connect the disk shelves to an existing stack in a multipath configuration.
+
++
+|===
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1119629[SAS Disk Shelves Installation and Service Guide for DS4243, DS2246, DS4486, and DS4246]
++
+https://library.netapp.com/ecm/ecm_download_file/ECMM1280273[DiskShelf14mk2 AT Hardware Service Guide]
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1112854[DS14mk2 FC, and DS14mk4 FC Hardware Service Guide]
+
+. Power on the disk shelves.
++
+IMPORTANT: You must wait for at least 70 seconds before you proceed.
+
+. Use Config Advisor to verify the connections.
++
+You must fix any cabling issues identified by Config Advisor.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor[NetApp Downloads: Config Advisor]
+
+. From the 7-Mode Transition Tool, click *Verify Cabling*.
++
+A message listing the important considerations for this operation is displayed.
++
+*Troubleshooting:* If there are missing disks in an aggregate, the aggregate becomes degraded and the cabling verification fails. If the number of missing disks is within a permissible limit, you can continue the transition with the degraded aggregates by running the following command from the 7-Mode Transition Tool CLI: `transition cft aggregate degraded-transition -p project_name -n 7-mode_host_name -a 7-mode_aggregate_name -i acknowledge`
++
+You can then rerun the cabling verification operation and continue with the transition. You must ensure that there are enough spare disks in the target cluster node to reconstruct these RAID groups after the aggregates are transitioned.
+
+. Click *Yes* to continue.
+. Wait for the operation to complete and perform the following steps to save the operation results and collect the tool logs:
+ .. Click *Save as CSV* to save the operation results in a file.
+ .. Click *Collect Tool Logs* to create a backup of all the transition log files.
++
+It is a best practice to save the log files after each transition operation.
+
+ .. Click *Close*.
+
++
+If the operation takes a long time to complete, you can click *Run in Background* to exit the operation results window. You should not edit the project or perform any other task when the operation is running in the background. You can then view the operations results from the Operation History tab.
+
+*Related information*
+
+xref:task_gathering_cabling_information_for_transition.adoc[Gathering cabling information for transition]

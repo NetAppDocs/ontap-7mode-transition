@@ -1,0 +1,55 @@
+---
+permalink: install-admin/task_logging_in_to_the_tool.html
+sidebar: sidebar
+keywords: 
+summary: 'You can log in to the 7-Mode Transition Tool \(web interface\) by using your credentials of the Windows system on which the tool is installed. The procedure to log in varies depending on the type of user credentials you have.'
+---
+= Logging in to the 7-Mode Transition Tool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can log in to the 7-Mode Transition Tool (web interface) by using your credentials of the Windows system on which the tool is installed. The procedure to log in varies depending on the type of user credentials you have.
+
+Guest users are not allowed to log in to the tool.
+
+. Navigate to the login page:
++
+|===
+| If you are a...| Then...
+a|
+User who is a member of the Administrator group and if you are accessing the tool (web interface) from the server on which it was installed
+a|
+Double-click the 7-Mode Transition Tool icon on your desktop.
+a|
+User who is a member of the Administrator group and if you have not installed the tool
+a|
+Use a supported browser to navigate to one of the following URLs:
+
+ ** https://IP_address:port/transition
+ ** http://IP_address:port/transition
+IP_address is the IP address of the server and port can be 8443 (default), the value specified for tool.https.port, or 8088, the value specified for the tool.http.port parameter in the transition-tool.conf file.
+
+a|
+User who is a member of the Administrator group and if you are accessing the tool (web interface) from another computer
+a|
+Use a supported browser to navigate to one of the following URLs:
+
+ ** https://IP_address:port/transition
+ ** http://IP_address:port/transition
+IP_address is the IP address of the server and port can be 8443 (default), the value specified for tool.https.port, or 8088, the value specified for the tool.http.port parameter in the transition-tool.conf file.
+
+a|
+User who is not a member of the Administrator group and if you are accessing the tool (web interface) either from the server on which it was installed or from another computer
+a|
+Use a supported browser to navigate to one of the following URLs:
+
+ ** https://IP_address:port/transition
+ ** http://IP_address:port/transition
+IP_address is the IP address of the server and port can be 8443 (default), the value specified for the tool.https.port, or 8088, the value specified for the tool.http.port parameter in the transition-tool.conf file.
+
++
+|===
+
+. If the browser displays a message about the self-signed SSL certificate, then accept the self-signed certificate to continue.
+. Log in to the web interface by using the credentials of the Windows system in which the tool is installed.

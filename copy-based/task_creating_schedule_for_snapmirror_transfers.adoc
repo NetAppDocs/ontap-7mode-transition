@@ -1,0 +1,305 @@
+---
+permalink: copy-based/task_creating_schedule_for_snapmirror_transfers.html
+sidebar: sidebar
+keywords: 
+summary: 'You can create data copy schedules to effectively manage the transition data copy operations for the volumes in a project. You can also specify the number of concurrent SnapMirror transfers to run during that schedule to ensure that any replication operation does not fail due to the concurrent SnapMirror transfers reaching the maximum limit.'
+---
+= Creating a data copy schedule for SnapMirror transfers
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can create data copy schedules to effectively manage the transition data copy operations for the volumes in a project. You can also specify the number of concurrent SnapMirror transfers to run during that schedule to ensure that any replication operation does not fail due to the concurrent SnapMirror transfers reaching the maximum limit.
+
+* The project must be in the preparation, data copy, or apply configuration (precutover) phase.
+* The 7-Mode Transition Tool service must always be running for the schedules to be effective.
+
+NOTE: The data copy schedule is used for SnapMirror baseline copy, update, and resynchronization operations.
+
+* You must create at least one data copy schedule for each project.
+* You can create a maximum of 7 schedules per project; however, the schedules cannot overlap within a project.
++
+For example, you can create customized schedules for business hours and non-business hours, DR hours and non-DR hours, and weekdays and weekends.
++
+NOTE: If the projects use the same 7-Mode controller or cluster, ensure that the data copy schedules do not overlap across different projects.
+
+* The configured schedules are applied based on the 7-Mode controller's time zone.
+* The number of concurrent SnapMirror transfers to use during the schedule is determined at run time based on the percentage of concurrent SnapMirror streams to use and the maximum limit configured.
+* The number of concurrent SnapMirror transfers to use during the schedule should be provided in such a way that the existing 7-Mode DR schedules are not affected because of the tool using the SnapMirror transfers specified with the schedule.
+* If the number of concurrent SnapMirror transfers that the tool is using is less than the configured number of concurrent SnapMirror transfers to use during the schedule, tool schedules new transfers to make use of the remaining transfers.
+* If the schedule is coming to an end or there is a reduction in number of concurrent SnapMirror transfers on the 7-Mode storage system, the tool aborts the extra transfers to ensure that it uses only the configured number of transfers at any point in time.
++
+NOTE: If a baseline is in progress and Snapshot checkpoint is not yet created, the tool does not abort the transfer but waits for the Snapshot checkpoint to be created before aborting the transfer.
+
+. Create schedules from the Data Copy Schedule page of the Dashboard by clicking *Edit Project*, and then selecting *Configure Schedule*.
+. Enter a name for the new schedule.
+. In the Recurring Days pane, select the days when the data copy operation should run.
++
+|===
+| If you want to run the data copy operations...| Then...
+a|
+Daily
+a|
+Select *Daily*.    This is the default value.
+a|
+Only on certain days
+a|
+
+ .. Select *Select Days*.
+ .. Select the days of the week.
+
++
+|===
+
+. In the Time Interval pane, specify the start time, duration, and frequency of the data copy schedule.
+ .. Enter the time the data copy operations should start by selecting the hours and minutes from the *Start Time* drop-down list.
++
+Valid values are from 00:00 to 23:30.
+
+ .. Enter the time period for which you want the data copy operations to run, select the hours and minutes from the *Duration* drop-down list.
++
+NOTE: The duration of a schedule should not exceed a week (167 hours and 30 minutes).
++
+For example, if 20:30 is specified, SnapMirror operations run for next 20 hours and 30 minutes from the start time.
+
+ .. Select the frequency at which incremental transfers should be done (within the created schedule duration) after the baseline transfer has been completed by doing one of the following:
+  *** Select the hours and minutes from the *Update Frequency* drop-down list.
+  *** Select *Continuous Updates*.
++
+The minimum delay between two consecutive updates will be 5 minutes.
+
++
+By default, SnapMirror updates run every 30 minutes.
+. In the Parameters for Transition Data Copy Operations pane, enter the SnapMirror parameters.
+ .. Specify the maximum number of concurrent SnapMirror transfers that should be used for data copy by doing one or all of the following:
+  *** Specify the percentage of the available volume SnapMirror transfers that should be used for data copy (when schedule is active), by entering the percentage in the *Maximum Number of Concurrent VSM Transfers* field.
++
+The available volume SnapMirror transfers is calculated at run time.
++
+NOTE: The maximum number of concurrent SnapMirror transfers supported on your platform is displayed in this pane.
+
+  *** Specify the maximum number of concurrent volume SnapMirror transfers that can run during this schedule in the *Not Exceeding* field.
+If you enter both values, the lowest value is used as the number of concurrent transfers.
+
++
+The number of concurrent transfers to be used for transition is calculated at run time based on the schedule and the number of configured concurrent transfers.
++
+Your platform supports a maximum of 100 concurrent volume SnapMirror transfers, 60 are currently available, and you have specified the following values:
+  *** Percentage of the available volume SnapMirror transfers option is 50%.
++
+The maximum number of concurrent transfers based on the percentage option is 50% of 60 = 30.
+
+  *** Maximum number of concurrent volume SnapMirror transfers option is 25.
+In this scenario, the tool sets the maximum number of concurrent volume SnapMirror transfers to 25, which is the lowest of the two values.
+ .. Specify the maximum bandwidth in MB/s (throttle) by doing one of the following:
++
+|===
+| If you want to...| Then...
+a|
+Utilize all the available bandwidth
+a|
+Select *Maximum*.        This is the default value.
+a|
+Specify the throttle value
+a|
+Enter the value in the *Not Exceeding* field.        Maximum allowed input value is 4194303.
++
+|===
+The throttle value is equally distributed among all the active transfers in the project.
++
+NOTE: The throttle for each transfer is determined at run time based on the number of available concurrent volume SnapMirror transfers.
++
+If the active schedule is configured with the throttle value of 200 MBps and only 10 concurrent transfers are available, each transfer uses 20 MBps bandwidth.
+
+The schedules become effective only when the project is in data copy or apply configuration (precutover) phase.
+
+== Example for planning a data copy schedule
+
+Consider a 7-Mode controller that supports 100 concurrent SnapMirror transfers with 75 DR relationships. The business requirements need SnapMirror operations to run during the following timings:
+
+|===
+| Days| Time| Currently used SnapMirror transfers
+a|
+Monday to Friday
+a|
+9:00 a.m. to 5:00 p.m.
+a|
+50% of available transfers
+a|
+Monday to Friday
+a|
+11:30 p.m. to 2:30 a.m.
+a|
+75 transfers used for DR
+a|
+Monday to Friday
+a|
+2:30 a.m. to 9:00 a.m. and
+
+5:00 p.m. to 11:30 p.m.
+
+a|
+25% of available transfers
+a|
+Saturday to Monday
+a|
+2:30 a.m. (Saturday) to 9:00 a.m. (Monday)
+
+a|
+10% of available transfers
+|===
+You can create the following data copy schedules to manage your transition data copy operations:
+
+|===
+| Schedule| Option| Value
+a|
+peak_hours
+a|
+Days Range
+a|
+Monday to Friday
+a|
+Start Time
+a|
+09:30
+a|
+Duration
+a|
+8:00
+a|
+Percentage of maximum number of concurrent transfers
+a|
+50
+a|
+Maximum number of concurrent transfers
+a|
+ 
+a|
+Throttle (MBps)
+a|
+100
+a|
+Update Frequency
+a|
+0:00
+a|
+dr_active
+a|
+Days Range
+a|
+Monday to Friday
+a|
+Start Time
+a|
+23:30
+a|
+Duration
+a|
+3:00
+a|
+Percentage of maximum number of concurrent transfers
+a|
+ 
+a|
+Maximum number of concurrent transfers
+a|
+25
+a|
+Throttle (MBps)
+a|
+200
+a|
+Update Frequency
+a|
+0:30
+a|
+non_peak_non_dr1
+a|
+Days Range
+a|
+Monday to Friday
+a|
+Start Time
+a|
+17:00
+a|
+Duration
+a|
+6:30
+a|
+Percentage of maximum number of concurrent transfers
+a|
+75
+a|
+Maximum number of concurrent transfers
+a|
+ 
+a|
+Throttle (MBps)
+a|
+300
+a|
+Update Frequency
+a|
+1:00
+a|
+non_peak_non_dr2
+a|
+Days Range
+a|
+Monday to Friday
+a|
+Start Time
+a|
+02:30
+a|
+Duration
+a|
+6:30
+a|
+Percentage of maximum number of concurrent transfers
+a|
+75
+a|
+Maximum number of concurrent transfers
+a|
+ 
+a|
+Throttle (MBps)
+a|
+300
+a|
+Update Frequency
+a|
+1:00
+a|
+week_ends
+a|
+Days Range
+a|
+Saturday
+a|
+Start Time
+a|
+02:30
+a|
+Duration
+a|
+53:30
+a|
+Percentage of maximum number of concurrent transfers
+a|
+90
+a|
+Maximum number of concurrent transfers
+a|
+ 
+a|
+Throttle (MBps)
+a|
+500
+a|
+Update Frequency
+a|
+2:00
+|===

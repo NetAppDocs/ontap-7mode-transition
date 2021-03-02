@@ -1,0 +1,57 @@
+---
+permalink: install-admin/reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.html
+sidebar: sidebar
+keywords: 
+summary: 'You can install the 7-Mode Transition Tool on Windows or Linux. You must be aware of the features and the user interfaces that are supported before installing the 7-Mode Transition Tool.'
+---
+= Interfaces and transition capabilities available on Windows and Linux
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can install the 7-Mode Transition Tool on Windows or Linux. You must be aware of the features and the user interfaces that are supported before installing the 7-Mode Transition Tool.
+
+|===
+| Migration method| Feature| Supported on Windows| Supported on Linux
+a|
+*Copy-free transition*
+a|
+Graphical user interface (GUI)
+a|
+Yes
+a|
+No
+a|
+Command-line interface (CLI)
+a|
+NoYou cannot use the CLI for creating and managing projects; however, you have to run certain commands, such as commands for ignoring blocking errors, during the transition from the Windows CLI.
+
+a|
+No
+a|
+Collect and assess
+a|
+Yes
+a|
+No
+a|
+*Copy-based transition*
+a|
+GUI
+a|
+Yes
+a|
+No
+a|
+CLI
+a|
+Yes
+a|
+Yes
+a|
+Collect and assess
+a|
+Yes
+a|
+No
+|===

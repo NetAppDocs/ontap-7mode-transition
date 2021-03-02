@@ -1,0 +1,43 @@
+---
+permalink: copy-based/task_applying_configurations_to_data_ontap_volumes.html
+sidebar: sidebar
+keywords: 
+summary: 'After the baseline data copy is completed, you can copy and apply all NAS configurations from the 7-Mode system \(including protocols and services configuration\) to the ONTAP volumes. If the target cluster is running Data ONTAP 8.3.2 or later, SAN configurations are transitioned in this phase.'
+---
+= Applying configurations to ONTAP volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After the baseline data copy is completed, you can copy and apply all NAS configurations from the 7-Mode system (including protocols and services configuration) to the ONTAP volumes. If the target cluster is running Data ONTAP 8.3.2 or later, SAN configurations are transitioned in this phase.
+
+* The configurations are applied in the precutover phase, which has two modes: precutover read-only mode and precutover read/write mode.
+* The precutover read/write mode is not supported when the project contains the following:
+ ** SAN volumes and the target cluster is running Data ONTAP 8.3.1 or earlier. In this situation, the following configurations are not applied in the precutover phase, instead they are applied during the cutover phase:
+  *** SAN configurations
+  *** Snapshot Schedule configurations
+ ** SnapLock Compliance volumes.
++
+If the project contains SnapLock Compliance volumes, then the Snapshot Schedule configurations are not applied in the precutover phase, instead these configurations are applied during the cutover phase.
++
+See xref:concept_considerations_for_transitioning_of_snaplock_compliance_volumes.adoc[Considerations for transitioning of SnapLock Compliance volumes].
+* If the target cluster is running Data ONTAP 8.3.1 or earlier, the read/write mode is not supported during precutover if any volume in the project contains LUNs.
+* If the target cluster is running Data ONTAP 8.3.1 or earlier and a project contains both SAN and NAS volumes, only NAS configurations are transitioned in the precutover phase, and these NAS configurations can be tested only in the read-only mode.
++
+SAN configurations are transitioned only in the storage cutover phase.
++
+NOTE: SAN LIFs are not configured.
+
+* If the target cluster is running Data ONTAP 8.3.1 or earlier and the project contains SAN volumes, then Snapshot schedule configuration is not applied during apply configuration (precutover) phase.
++
+These configurations are applied during the cutover phase.
+
+* If the target cluster is running Data ONTAP 8.3.1 or earlier and the project contains SAN volumes, then Snapshot schedule configuration is not applied during apply configuration (precutover) phase.
++
+These configurations are applied during the cutover phase.
+
+* Run the transition operation in read-only mode: `transition cbt precutover -p project_name -m ro_test -c max_cap_concurrent_transfers -b snapmirror_throttle`
+* Run the transition operation in read/write mode:
+ .. Apply the configurations to ONTAP: `transition cbt precutover -p project_name -m rw_test -c max_cap_concurrent_transfers -b snapmirror_throttle`
+ .. Manually test and verify the configurations in ONTAP.
+ .. Start the resynchronization operation: `transition cbt resync -p project_name`

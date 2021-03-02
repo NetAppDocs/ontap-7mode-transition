@@ -1,0 +1,16 @@
+---
+permalink: install-admin/concept_installing_and_uninstalling_the_7_mode_transition_tool_on_linux.html
+sidebar: sidebar
+keywords: 
+summary: 'You can download and install the 7-Mode Transition Tool on a Linux system by using the command-line interface. When required, you can uninstall the 7-Mode Transition Tool.'
+---
+= Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based transition only)
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can download and install the 7-Mode Transition Tool on a Linux system by using the command-line interface. When required, you can uninstall the 7-Mode Transition Tool.
+
+You can perform only copy-based transition on a Linux system. Copy-free transition is not supported on Linux.
+
+IMPORTANT: The 7-Mode Transition Tool web interface is not supported on Linux. You must use the CLI to perform copy-based transition tasks on a Linux system.

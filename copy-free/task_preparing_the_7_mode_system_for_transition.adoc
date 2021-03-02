@@ -1,0 +1,35 @@
+---
+permalink: copy-free/task_preparing_the_7_mode_system_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before starting a transition, you must complete certain tasks on the 7-Mode system, such as enabling the 7-Mode system to communicate with the target cluster, and enabling HTTPS and TLS.'
+---
+= Preparing the 7-Mode HA pair for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before starting a transition, you must complete certain tasks on the 7-Mode system, such as enabling the 7-Mode system to communicate with the target cluster, and enabling HTTPS and TLS.
+
+The HA pair must be healthy and none of the nodes must be in the takeover mode, which can be verified by using the cf status command. You can also use the NetApp AutoSupport tool to detect any errors or at risk conditions.
+
+. If HTTPS is not enabled on the storage system, enable HTTPS: `options httpd.admin.ssl.enable on`
++
+HTTPS is enabled by default.
+
+. Enable TLS on the 7-Mode storage systems for enabling the 7-Mode Transition Tool to communicate with the 7-Mode systems:
+ .. If SSL is not already enabled on the storage system, set up and start SSL: `secureadmin setup ssl`
++
+SSL is set up for the storage systems by default. If SSL has been previously set up for the storage system, you are asked whether you want to continue. You can exit the SSL setup if you do not want to make any changes.
+
+ .. Enable SSL: `options ssl.enable on`
++
+This option must be enabled for allowing communication over TLS.
+
+ .. Enable TLS: `options tls.enable on`
+ .. Disable SSLv2 and SSLv3 on the 7-Mode system: `options ssl.v2.enable off``options ssl.v3.enable off`
+
++
+The 7-Mode Transition Tool uses TLS or SSL protocols for communicating with the 7-Mode storage systems. The tool communicates with the storage system using the TLS protocol if TLS is enabled on the storage system. If TLS is disabled and SSLv3 is enabled on a storage system, the tool uses SSLv3 to communicate with the storage system.
++
+IMPORTANT: The best practice is to enable TLS and disable SSLv2 and SSLv3 in order to avoid security vulnerabilities.

@@ -1,0 +1,254 @@
+---
+permalink: copy-free/reference_example_consolidating_nfs_export_rules_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You might want to review examples of how similar 7-Mode export rules and 7-Mode Snapshot schedules are consolidated to a single NFS export policy and a single Snapshot policy in ONTAP. You might also want to understand how the consolidated policies are assigned to the transitioned volumes or qtrees with or without reusing a matching existing policy on the target SVM.'
+---
+= Examples of consolidating NFS export rules and Snapshot schedules for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might want to review examples of how similar 7-Mode export rules and 7-Mode Snapshot schedules are consolidated to a single NFS export policy and a single Snapshot policy in ONTAP. You might also want to understand how the consolidated policies are assigned to the transitioned volumes or qtrees with or without reusing a matching existing policy on the target SVM.
+
+== Example of consolidating NFS export rules for transition
+
+*NFS export rules in 7-Mode and ONTAP before transition*
+
+*7-Mode export rules*
+
+----
+/vol/vol1       -sec=sys,rw,nosuid
+/vol/vol2       -sec=sys,rw,nosuid
+/vol/vol3       -sec=sys,rw,nosuid
+----
+
+*Export policies existing in ONTAP*
+
+----
+cluster-2::> vserver export-policy show -vserver vs1
+Vserver          Policy Name
+---------------  -------------------
+vs1              default
+vs1              export_policy_1
+----
+
+The existing export policy export_policy_1 has the following export rule:
+
+----
+cluster-2::> vserver export-policy rule show -vserver vs1 -policyname export_policy_1
+             Policy          Rule    Access   Client                RO
+Vserver      Name            Index   Protocol Match                 Rule
+------------ --------------- ------  -------- --------------------- ---------
+vs1          export_policy_1 1       nfs      0.0.0.0/0             sys
+----
+
+*Export policies in ONTAP after transition with consolidation (no reuse)*
+
+Volumes vol1, vol2, and vol3 have similar export rules in 7-Mode; therefore, a new consolidated export policy, transition_export_policy_1, is assigned to these volumes after transition:
+
+----
+cluster-2::> vserver export-policy show -vserver vs1
+Vserver          Policy Name
+---------------  -------------------
+vs1              default
+vs1              export_policy_1
+vs1              transition_export_policy_1
+3 entries were displayed.
+----
+
+----
+cluster-2::> vserver export-policy rule show -vserver vs1 -policyname transition_export_policy_1
+             Policy          Rule    Access   Client                RO
+Vserver      Name            Index   Protocol Match                 Rule
+------------ --------------- ------  -------- --------------------- ---------
+vs1          transition_export_policy_1
+                             1       nfs      0.0.0.0/0             sys
+----
+
+----
+cluster-2::> volume show -vserver vs1 -volume vol1,vol2,vol3 -fields policy
+vserver volume policy
+------- ------ --------------------------
+vs1     vol1   transition_export_policy_1
+vs1     vol2   transition_export_policy_1
+vs1     vol3   transition_export_policy_1
+3 entries were displayed.
+----
+
+*Export policies in ONTAP after transition with consolidation and reuse*
+
+Volumes vol1, vol2, and vol3 have similar export rules in 7-Mode; therefore, a consolidated export policy is assigned to these volumes after transition. The export policy, export_policy_1, which matches the 7-Mode export rules, already exists on the SVM. Therefore, the policy is applied to these volumes:
+
+----
+cluster-2::> vserver export-policy show -vserver vs1
+Vserver          Policy Name
+---------------  -------------------
+vs1              default
+vs1              export_policy_1
+2 entries were displayed.
+----
+
+----
+cluster-2::> vserver export-policy rule show -vserver vs1 -policyname export_policy_1
+             Policy          Rule    Access   Client                RO
+Vserver      Name            Index   Protocol Match                 Rule
+------------ --------------- ------  -------- --------------------- ---------
+vs1          export_policy_1 1       nfs      0.0.0.0/0             sys
+----
+
+----
+cluster-2::> volume show -vserver vs1 -volume vol1,vol2,vol3 -fields policy
+vserver volume policy
+------- ------ --------------------------
+vs1     vol1   export_policy_1
+vs1     vol2   export_policy_1
+vs1     vol3   export_policy_1
+3 entries were displayed.
+----
+
+== Example of consolidating Snapshot policies for transition
+
+*Snapshot schedules in 7-Mode and ONTAP before transition*
+
+*7-Mode schedule*
+
+|===
+| 7-Mode volume| 7-Mode Snapshot schedule
+a|
+vol1
+a|
+0 2 4@8,12,16,20 (weekly Snapshot copies: 0, daily Snapshot copies: 2, hourly Snapshot copies: 6 at 2, 4, 8, 12, 16, 20 hours)
+a|
+vol2
+a|
+0 2 4@8,12,16,20
+a|
+vol3
+a|
+0 2 4@8,12,16,20
+a|
+vol4
+a|
+1 2 3@8,12,16 (weekly Snapshot copies: 1, daily Snapshot copies: 2, hourly Snapshot copies: 3 at 8,12,16 hours)
+a|
+vol5
+a|
+2 2 3@8,12,16 (weekly Snapshot copies: 2, daily Snapshot copies: 2, hourly Snapshot copies: 3 at 8,12,16 hours)
+|===
+*Snapshot policies existing in ONTAP*
+
+|===
+| Snapshot policy name| Policy details
+a|
+ScheduleWeekly
+a|
+Weekly, count: 1
+a|
+ScheduleDailyHourly4
+a|
+*Schedule details*
+
+* Schedule1: daily, count1: 2
+* Schedule2: hourly, count2: 4 every 8, 12, 16, 20 hours
+
+a|
+ScheduleHourly1
+a|
+Hourly at 8, 12, 16, 20 hours, count: 4
+|===
+*Snapshot policy in ONTAP after transition with consolidation (no reuse)*
+
+|===
+| 7-Mode volume| 7-Mode Snapshot schedule| Snapshot policy in ONTAP
+a|
+vol1
+a|
+0 2 4@8,12,16,20 (weekly Snapshot copies: 0, daily Snapshot copies: 2, hourly Snapshot copies: 4 at 8, 12, 16, 20 hours)
+a|
+*Consolidated policy for vol1, vol2, and vol3*
+
+* Name: transition_snapshot_policy_0
+* Schedule details
+ ** Schedule1: daily, count1: 2
+ ** Schedule2: hourly, count2: 4 every 8, 12, 16, 20 hours
+
+a|
+vol2
+a|
+0 2 4@8,12,16,20
+a|
+vol3
+a|
+0 2 4@8,12,16,20
+a|
+vol4
+a|
+1 2 3@8,12,16 (weekly Snapshot copies: 1, daily Snapshot copies: 2, hourly Snapshot copies: 3 at 8,12,16 hours)
+a|
+
+* Name: transition_snapshot_policy_1
+* Schedule details
+ ** Schedule1: weekly, count1: 1
+ ** Schedule2: daily, count2: 2
+ ** Schedule3: hourly, count3: 3 every 8,12,16 hours
+
+a|
+vol5
+a|
+2 2 3@8,12,16 (weekly Snapshot copies: 2, daily Snapshot copies: 2, hourly Snapshot copies: 3 at 8,12,16 hours)
+a|
+
+* Name: transition_snapshot_policy_2
+* Schedule details
+ ** Schedule1: weekly, count1: 2
+ ** Schedule2: daily, count2: 2
+ ** Schedule3: hourly, count3: 3 every 8,12,16 hours
+
+|===
+*Snapshot policy in ONTAP after transition with consolidation and reuse*
+
+|===
+| 7-Mode volume| 7-Mode Snapshot schedule| Snapshot policy in ONTAP
+a|
+vol1
+a|
+0 2 4@8,12,16,20 (weekly Snapshot copies: 0, daily Snapshot copies: 2, hourly Snapshot copies: 4 at 2, 4, 8, 12, 16, 20 hours)
+a|
+Consolidated policy for vol1, vol2, and vol3 for which the existing ONTAP policy is reused
+
+Name: ScheduleDailyHourly4
+
+a|
+vol2
+a|
+0 2 4@8,12,16,20
+a|
+vol3
+a|
+0 2 4@8,12,16,20
+a|
+vol4
+a|
+1 2 3@8,12,16 (weekly Snapshot copies: 1, daily Snapshot copies: 2, hourly Snapshot copies: 3 at 8,12,16 hours)
+a|
+
+* Name: transition_snapshot_policy_1
+* Schedule details
+ ** Schedule1: weekly, count1: 1
+ ** Schedule2: daily, count2: 2
+ ** Schedule3: hourly, count3: 3 every 8,12,16 hours
+
+a|
+vol5
+a|
+2 2 3@8,12,16 (weekly Snapshot copies: 2, daily Snapshot copies: 2, hourly Snapshot copies: 3 at 8,12,16 hours)
+a|
+
+* Name: transition_snapshot_policy_2
+* Schedule details
+ ** Schedule1: weekly, count1: 2
+ ** Schedule2: daily, count2: 2
+ ** Schedule3: hourly, count3: 3 every 8,12,16 hours
+
+|===

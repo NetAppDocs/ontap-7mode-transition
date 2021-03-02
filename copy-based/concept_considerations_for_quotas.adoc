@@ -1,0 +1,22 @@
+---
+permalink: copy-based/concept_considerations_for_quotas.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of how quotas are transitioned when “apply configuration” \(precutover\) is run in read-only and read-write mode.'
+---
+= Considerations for quotas
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of how quotas are transitioned when "`apply configuration`" (precutover) is run in read-only and read-write mode.
+
+Quotas are applied in the following ways during the precutover phase:
+
+* Read-only mode
++
+Quotas are not applied in the precutover read-only mode on the ONTAP system; they are applied only during the storage cutover phase.
+
+* Read-write mode
++
+Quotas are applied in the precutover read-write mode on the ONTAP system, so that you can test them in ONTAP. However, the quotas are removed during resynchronization (after testing is completed) of the ONTAP volumes. The quotas are applied again during the storage cutover phase.

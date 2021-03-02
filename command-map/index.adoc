@@ -1,0 +1,17 @@
+---
+permalink: command-map/index.html
+sidebar: sidebar
+keywords: 
+summary: ''
+---
+= Command Map for 7-Mode Administrators
+:icons: font
+:imagesdir: ../media/
+
+* xref:reference_7_mode_to_clustered_data_ontap_command_map.adoc[How 7-Mode commands map to ONTAP commands]
+* xref:reference_how_7_mode_options_map_to_ontap_commands.adoc[How 7-Mode options map to ONTAP commands]
+* xref:reference_how_7_mode_configuration_files_map_to_clustered_data_ontap_commands.adoc[How 7-Mode configuration files map to clustered Data ONTAP commands]
+* xref:concept_how_to_interpret_the_7_mode_to_clustered_data_ontap_commands_options_and_configuration_files_maps.adoc[How to interpret the clustered Data ONTAP commands, options, and configuration files maps for 7-Mode administrators]
+* xref:reference_copyright_and_trademark.adoc[Copyright and trademark]
+ ** xref:reference_copyright.adoc[Copyright]
+ ** xref:reference_trademark.adoc[Trademark]

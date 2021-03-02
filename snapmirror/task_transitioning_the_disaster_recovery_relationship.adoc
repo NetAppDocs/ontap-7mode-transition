@@ -1,0 +1,58 @@
+---
+permalink: snapmirror/task_transitioning_the_disaster_recovery_relationship.html
+sidebar: sidebar
+keywords: 
+summary: 'You can transition the disaster recovery \(DR\) relationship between the primary vFiler unit and the secondary vFiler unit on 7-Mode systems to a disaster recovery relationship between the source SVM and destination SVM in clusters.'
+---
+= Transitioning a disaster recovery relationship between vFiler units
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition the disaster recovery (DR) relationship between the primary vFiler unit and the secondary vFiler unit on 7-Mode systems to a disaster recovery relationship between the source SVM and destination SVM in clusters.
+
+During the transition process, the primary vFiler unit is transitioned to the source SVM, and the secondary vFiler unit is transitioned to the destination SVM.
+
+. Transition the primary vFiler unit to the source SVM, and the secondary vFiler unit to the destination SVM.
+. Stop the destination SVM by using the vserver stop command.
++
+You must not rename any volume or add any new volumes on the destination SVM.
+
+. For each transitioned primary volume, create a volume-level SnapMirror relationship with the corresponding secondary volume by using the snapmirror create command.
++
+----
+destination_cluster::> snapmirror create -source-path src_vserver:c_vol -destination-path dst_vserver:c_vol -type DP
+----
+
+. Resynchronize the volume-level SnapMirror relationships between the transitioned primary and secondary volumes by using the snapmirror resync command.
++
+For successful resynchronization, a common Snapshot copy must exist between the primary and secondary volumes.
++
+----
+destination_cluster::> snapmirror resync -destination-path
+dst_vserver:c_vol
+----
+
+. Verify that the resynchronization operation is complete, and the SnapMirror relationship is in the Snapmirrored state by using the snapmirror show command.
+. Create an SVM disaster recovery relationship between the source and destination SVMs by using the snapmirror create command with the -identity-preserve option set to true.
++
+----
+destination_cluster::> snapmirror create -source-path src_vserver: -destination-path dst_vserver: -type DP -throttle unlimited -policy DPDefault -schedule hourly -identity-preserve true
+----
+
+. Resynchronize the destination SVM from the source SVM by using the snapmirror resync command.
++
+----
+destination_cluster::> snapmirror resync dst_vserver:
+----
+
+. Verify that the resynchronization operation is complete, and the SnapMirror relationship is in the Snapmirrored state by using the snapmirror show command.
++
+----
+destination_cluster::> snapmirror show
+                                                                                    Progress
+Source               Destination     Mirror       Relationship  Total               Last
+Path           Type  Path            State        Status        Progress   Healthy  Updated
+--------       ---- ------------     -------      -------------- --------- ------- --------
+src_vserver     DP    dst_vserver    Snapmirrored  Idle           -         true    -
+----

@@ -1,0 +1,50 @@
+---
+permalink: san-host/task_reattaching_rdm_to_vms_using_vsphere_client.html
+sidebar: sidebar
+keywords: 
+summary: 'After transition of an ESXi host using the 7-Mode Transition Tool \(7MTT\), you must reattach your RDMs to virtual machines \(VMs\).'
+---
+= Reattaching RDM to VMs using vSphere Client
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transition of an ESXi host using the 7-Mode Transition Tool (7MTT), you must reattach your RDMs to virtual machines (VMs).
+
+Your stale Raw Device Mappings (RDMs) must have been removed.
+
+. Open the ESXi host or vCenter server managing the ESXi host.
+. Right-click the VM, and then select *Edit Settings*.
++
+The VM Properties window opens.
+
+. Click *Add*.
++
+The Add Hardware window opens.
+
+. Click *Hard Disk*.
+. Click *Next* to select the disk.
+. Select *Raw Device Mappings*.
+. Click *Next* to select the target LUN.
+. Select the LUN with the new clustered Data ONTAP NAA ID that you noted from the 7MTT mapping file.
+. Click *Next*.
+. Choose *Select Datastore*.
+. Select the datastore that matches the disk path that you noted in the 7MTT mapping file.
+. Click *Next*.
+. Choose either *Physical* or *Virtual* for the *Compatibility Mode*.
++
+Choose the compatibility mode noted when your stale RDM was removed.
+
+. Click *Next*.
+. Choose *Advance Options*.
+. Select the *Virtual Device Node*.
++
+Select the virtual device mode that you noted when you removed the stale RDM.
+
+. Click *Next*.
+. Click *Finish* to submit your changes.
+. Repeat the steps for all VMs with RDM attached.
+
+*Related information*
+
+xref:task_removing_stale_rdm_using_vsphere_client.adoc[Removing stale RDMs using vSphere Client]

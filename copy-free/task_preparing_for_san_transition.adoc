@@ -1,0 +1,12 @@
+---
+permalink: copy-free/task_preparing_for_san_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transitioning a SAN environment, you must understand what configurations are supported for SAN transition, create SAN LIFs on the SVM, and prepare the SAN hosts for transition.'
+---
+= Preparing for SAN transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transitioning a SAN environment, you must understand what configurations are supported for SAN transition, create SAN LIFs on the SVM, and prepare the SAN hosts for transition.

@@ -1,0 +1,85 @@
+---
+permalink: inventory-collect/task_collecting_inventory_and_generating_inventory_report.html
+sidebar: sidebar
+keywords: 
+summary: 'You can collect information about the Data ONTAP systems \(7-Mode systems and nodes of the cluster\), switches, hosts, and host applications. By using this information, you can generate inventory report that contains detailed information about the 7-Mode systems, hosts, and host applications for transition assessment.'
+---
+= Collecting inventory and generating inventory report
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can collect information about the Data ONTAP systems (7-Mode systems and nodes of the cluster), switches, hosts, and host applications. By using this information, you can generate inventory report that contains detailed information about the 7-Mode systems, hosts, and host applications for transition assessment.
+
+* You must have downloaded the ict.exe file from the NetApp Support Site.
+* You must have the user name, password, and IP addresses of the storage systems and hosts for which the inventory report is required.
+* The user name for the storage system and hosts must have sufficient privileges to execute the commands.
+* If you are adding multiple systems for inventory collection, you must have created a text file that is encoded in ASCII or UTF-8 format and contains the system details, one system per line.
++
+Each system detail must be in the following format:
++
+----
+(ontap|windows|vmware|linux|cisco|brocade)://[(domain_user\\user):[password]@](host_name|ip)
+----
++
+If you provide `*` as the password, you are prompted to enter the password at the command line.
+
+* All features must be configured and their licenses must be enabled so that the workbook can contain the inventory information about the features.
+* All storage system configurations, such as CIFS share names, user names, and group names, must be in the UTF-8 format.
+* For the FC zone plan, the 7-Mode systems and hosts must be connected to the switch.
++
+The cluster can be connected either to the same switch as the 7-Mode system or to a new switch in the same fabric.
+
+The Inventory Collect Tool can collect configuration information from a maximum of four controllers and 20 hosts simultaneously. However, for scaled configurations with quotas, qtrees, exports, or UNIX users and groups, it might take a significantly longer time for the inventory report to be generated.
+
+NOTE: You should avoid performing inventory collection operations on active storage controllers during peak hours.
+
+. In the Windows command prompt, navigate to the path where the Inventory Collect Tool is downloaded.
+. Generate the inventory report by running the ict command with the system IP address and credentials:
++
+|===
+| If you want to provide information...| Enter the following command...
+a|
+For each system by using the command-line interface
+a|
+`+ict --cmd collect --output filename (ontap|windows|vmware|linux|cisco|brocade)://[(user|domain_user)[:(password|*)]@]hostname) ...+`
+
+ ** filename is the name you want to provide for the inventory report.
+ ** ontap|windows|vmware|linux is the system type.
++
+For example, for a 7-Mode storage system, the system type is ontap and for a Linux host, the system type is linux.
+
+ ** cisco|brocade are the supported FC switches.
+ ** user|domain_user and password are the system credentials.
++
+If the controller has no password, you can enter the characters `\"\"` as the password.
+
+ ** hostname is the IP address or host name of the controller, host, or switch.
+
+a|
+For multiple systems in a text file
+a|
+`ict --cmd collect --output filename --input credentials_file.txt`     credentials_file.txt is the text file that contains the system details and credentials for multiple systems:
+
+ ** Only text files encoded in ASCII format are supported.
+ ** If you provide `*` as the password, you are prompted to enter the password at the command line.
+ ** If the controller has no password, then you can enter `""` as the password.
+
++
+|===
+*Note:* If your storage system is running Windows 7 or later and you have restricted privileges to the folder where the output XML file for the inventory report will be stored, the output files are automatically stored in the VirtualStore directory and the application runs as usual.
++
+The inventory report is created for a storage system and a Linux host. The reports generated are collected_data.xml and collected_data_InventoryWorkbook.xml:
++
+----
+
+ict --cmd collect --output collected_data ontap://root:test123@hostname1 linux://root@hostname2
+----
++
+The estimated time required for collecting inventory information per controller is displayed.
++
+The inventory workbook and inventory report are generated in XML format.
+
+. View the inventory workbook in Microsoft Excel by using Microsoft Office 2007 or later versions.
+
+You are ready to import the inventory report XML to the 7-Mode Transition Tool to assess the features and functionalities of the 7-Mode controller and hosts, and to identify how the features and functionalities work in the clustered Data ONTAP version selected for transition.

@@ -1,0 +1,116 @@
+---
+permalink: san-host/task_testing_data_luns_on_solaris_hosts_with_zfs_file_system_before_the_cutover_phase_of_copy_based_transitions.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to transition your Solaris host ZFS data LUNs, you can test your transitioned clustered Data ONTAP LUNs to verify that you can mount your MPIO device before the cutover phase.'
+---
+= Testing data LUNs on Solaris hosts with ZFS file system before the cutover phase of copy-based transitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) 2.2 or later and Data ONTAP 8.3.2 or later to transition your Solaris host ZFS data LUNs, you can test your transitioned clustered Data ONTAP LUNs to verify that you can mount your MPIO device before the cutover phase.
+
+* Your source host with ZFS data LUNs need to be offline before starting the test phase transition.
++
+See _Oracle Doc ID 1316472.1: LUN Copy Is Not Supported While ZFS Zpool Is Online_ for details.
+
+* Your new clustered Data ONTAP LUNs must be mapped to your test host and your LUNs must be ready for transition.
+* Exporting the zpool on the production host causes application disruption; all I/O operations should be stopped prior to 7-Mode LUN.
+
+You should maintain hardware parity between the test host and the source host, and you should perform the following steps on the test host.
+
+Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
+
+. On the production (source) host, export the zpool: `#zpool export pool-name`
++
+----
+# zpool export n_pool
+
+# zpool import
+  pool: n_pool
+    id: 5049703405981005579
+ state: ONLINE
+action: The pool can be imported using its name or numeric identifier.
+config:
+
+        n_pool                                   ONLINE
+          c0t60A98000383035356C2447384D396550d0  ONLINE
+          c0t60A98000383035356C2447384D39654Ed0  ONLINE
+----
+
+. After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
+. In the 7MTT UI, click *Apply Configuration*.
++
+NOTE: After this step, you can set the application back to online and start I/O operations to 7-Mode LUNs. Subsequent steps do not cause any application disruptions.
+
+. On the production host, import the zpool: `#zpool import pool-name`
++
+----
+# zpool import n_pool
+----
+
+. On the test host, rescan your new clustered Data ONTAP LUNs:
+ .. Identify the FC host ports (type fc-fabric): `#cfgadm –l`
+ .. Unconfigure the first fc-fabric port: `#cfgadm –c unconfigure c1`
+ .. Configure the 1st fc-fabric port: `#cfgadm –c unconfigure c2`
+ .. Repeat the steps for other fc-fabric ports.
+ .. Display information about the host ports and their attached devices: `# cfgadm –al`
+ .. Reload the driver: `# devfsadm –Cv``# devfsadm –i iscsi`
+. Verify that your clustered Data ONTAP LUNs are present: `#sanlun lun show`
++
+----
+# sanlun lun show
+controller(7mode)/                    device                                            host                  lun
+vserver(Cmode)       lun-pathname     filename                                          adapter    protocol   size    mode
+--------------------------------------------------------------------------------------------------------------------------
+vs_5           /vol/zfs/zfs2    /dev/rdsk/c5t600A0980383030444D2B466542485935d0s2 scsi_vhci0 FCP        6g      C
+vs_5           /vol/zfs/zfs1    /dev/rdsk/c5t600A0980383030444D2B466542485934d0s2 scsi_vhci0 FCP        6g      C
+vs_5           /vol/ufs/ufs2    /dev/rdsk/c5t600A0980383030444D2B466542485937d0s2 scsi_vhci0 FCP        5g      C
+vs_5           /vol/ufs/ufs1    /dev/rdsk/c5t600A0980383030444D2B466542485936d0s2 scsi_vhci0 FCP        5g      C
+----
+
+. Verify that the zpool planned to test is available for import: `#zpool import`
++
+----
+# zpool import
+  pool: n_pool
+    id: 5049703405981005579
+ state: ONLINE
+action: The pool can be imported using its name or numeric identifier.
+config:
+
+        n_pool                                   ONLINE
+          c5t600A0980383030444D2B466542485935d0  ONLINE
+          c5t600A0980383030444D2B466542485934d0  ONLINE
+----
+
+. Import the zpool using the pool name or the pool ID:
+ ** `#zpool import pool-name`
+ ** `#zpool import pool-id`
+
++
+----
+#zpool import n_pool
+----
++
+----
+#zpool import 5049703405981005579
+----
+. Verify that the ZFS datasets are mounted:
+ ** `zfs list`
+ ** `df -ah`
+
++
+----
+# zfs list
+NAME           USED  AVAIL  REFER  MOUNTPOINT
+n_pool        2.67G  9.08G   160K  /n_pool
+n_pool/pool1  1.50G  2.50G  1.50G  /n_pool/pool1
+n_pool/pool2  1.16G  2.84G  1.16G  /n_pool/pool2
+----
+. Perform testing as needed.
+. Shut down the test host.
+. In the 7MTT UI, click *Finish Test*.
+
+If your clustered Data ONTAP LUNs are to be remapped to your source host, you must prepare your source host for the cutover phase. If your clustered Data ONTAP LUNs are to remain mapped to your test host, no further steps are required on the test host.

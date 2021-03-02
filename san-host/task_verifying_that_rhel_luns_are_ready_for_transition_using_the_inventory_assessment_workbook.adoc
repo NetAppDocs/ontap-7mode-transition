@@ -1,0 +1,19 @@
+---
+permalink: san-host/task_verifying_that_rhel_luns_are_ready_for_transition_using_the_inventory_assessment_workbook.html
+sidebar: sidebar
+keywords: 
+summary: 'If your Red Hat Enterprise Linux \(RHEL\) 5 or RHEL 6 LUN is configured with a device mapper multipath \(DMMP\), you should verify that a file system is not configured before you transition the LUN from Data ONTAP operating in 7-Mode to clustered Data ONTAP.'
+---
+= Verifying that RHEL LUNs are ready for transition using the Inventory Assessment Workbook
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your Red Hat Enterprise Linux (RHEL) 5 or RHEL 6 LUN is configured with a device mapper multipath (DMMP), you should verify that a file system is not configured before you transition the LUN from Data ONTAP operating in 7-Mode to clustered Data ONTAP.
+
+This procedure applies to copy-based transitions and copy-free transitions.
+
+. Gather pretransition information from the _Inventory Assessment Workbook_.
+. Check whether the DMMP device entry is present under the *SAN Host File system* tab.
++
+If the DMMP device entry is not present, a file system is not configured and you can transition the LUN.

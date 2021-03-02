@@ -1,0 +1,79 @@
+---
+permalink: copy-based/concept_cifs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Some CIFS configurations are not transitioned to ONTAP because either they are not supported in ONTAP or they must be manually transitioned. You should verify all precheck error and warning messages to evaluate the impact of such configurations on transition.'
+---
+= Supported and unsupported CIFS configurations for transition to ONTAP
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Some CIFS configurations are not transitioned to ONTAP because either they are not supported in ONTAP or they must be manually transitioned. You should verify all precheck error and warning messages to evaluate the impact of such configurations on transition.
+
+== Configurations that are supported for transition
+
+At a high level, the 7-Mode Transition Tool transitions the following CIFS configurations:
+
+* CIFS preferred DC configuration
+* User mapping configuration:
+ ** /etc/usermap.cfg
+ ** wafl.nt_admin_priv_map_to_root
+* CIFS local users and groups
+* Symlink and widelink configuration (/etc/symlink.translations)
+* CIFS audit configuration
+* CIFS shares
+* CIFS share ACLs
+* CIFS home directory configuration
+* CIFS options:
+ ** cifs.gpo.enable
+ ** cifs.smb2.enable
+ ** cifs.smb2.signing.required
+ ** cifs.wins_servers
+ ** cifs.grant_implicit_exe_perms
+ ** cifs.restrict_anonymous
+* SMB2 connections to external servers, such as a domain controller. The following command implements this support:
+ ** `cifs security modify -vserver SVM1 -smb2-enabled-for-dc-connections`
+* FPolicy native file blocking configuration
+
+See the precheck results for details about these CIFS configurations.
+
+== Configurations that are not supported in ONTAP
+
+The following 7-Mode configurations are not supported in ONTAP. Therefore, these configurations cannot be transitioned.
+
+* NT4, and password authentication types
+* Separate options for SMB1 and SMB2 signing
+* CIFS statistics on a per-client basis
+* {blank}
+ ** Authentication for clients earlier than Windows NT
+* Auditing of account management events for local users and groups
+* Usermap entries with IP addresses, host names, network names, or network names with subnet specified in dotted notation
+* CIFS shares with access restriction for machine accounts
++
+Machine accounts can access all shares after transition.
+
+== Configurations that must be manually transitioned
+
+Some CIFS configurations are supported in ONTAP, but are not transitioned by the 7-Mode Transition Tool.
+
+The following CIFS configurations generate a warning message in the precheck. You must manually apply these configurations on the SVM:
+
+* Antivirus settings
+* FPolicy configurations
++
+7-Mode FPolicy and antivirus servers do not work with ONTAP. You must contact the server vendors for upgrading these servers. However, you must not decommission the 7-Mode FPolicy and antivirus servers until you commit the transition. These are required in case you decide to roll back the transition.
+
+* BranchCache configurations
+* Character mapping configuration (charmap)
+* Forcegroup attribute of CIFS shares to create files with a specified UNIX group as owning group
+* Maxusers attribute of CIFS shares to specify the maximum number of simultaneous connections allowed to a 7-Mode CIFS share
+* Storage-Level Access Guard (SLAG) configurations
+* Share-level ACLs with UNIX-style permission
+* Share ACLs for UNIX users and groups
+* LAN Manager authentication level
+* NetBIOS aliases
+* CIFS search domains
+* Some CIFS options
++
+See the precheck results for details about these options.

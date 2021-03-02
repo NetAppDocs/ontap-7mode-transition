@@ -1,0 +1,42 @@
+---
+permalink: copy-based/task_customizing_configurations_for_transition.html
+sidebar: sidebar
+keywords: 7-Mode Transition Tool
+summary: 'When planning the transition of configurations from 7-Mode to ONTAP, you can customize the configuration transition in two ways. You can ignore or skip the transition of one or more configurations. You can consolidate the 7-Mode NFS export rules, and then reuse an existing NFS export policy and Snapshot policy on the target SVM.'
+---
+= Customizing the transition of 7-Mode configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When planning the transition of configurations from 7-Mode to ONTAP, you can customize the configuration transition in two ways. You can ignore or skip the transition of one or more configurations. You can consolidate the 7-Mode NFS export rules, and then reuse an existing NFS export policy and Snapshot policy on the target SVM.
+
+You must perform this task before you apply the configuration (precutover) phase. This is because after this phase, the Plan Configuration pane is disabled for any modification. You use the command-line interface (CLI) of the 7-Mode Transition Tool for excluding the configurations that are applied during the cutover phase.
+
+The 7-Mode Transition Tool does not perform prechecks for the configuration that is excluded.
+
+By default, all 7-Mode configurations are selected for transition.
+
+It is a best practice to run the prechecks with all configurations first, and then exclude one or more configurations in the subsequent run of the prechecks. This helps you to understand which configurations are excluded from transition and which prechecks are skipped subsequently.
+
+. From the Plan Configuration page, select the following options from the *SVM Configuration* pane:
+ ** For excluding the transition of configurations, clear the check box for those configurations.
+ ** For consolidating similar 7-Mode NFS export rules to a single export policy in ONTAP, which can then be applied to the transitioned volume or qtree, select the *Consolidate NFS Export Policies on 7-Mode* check box.
+ ** For reusing an existing NFS export policy on the SVM that matches the export policy that will be created by the tool, which can then be applied to the transitioned volumes or qtrees, select the *Reuse Export Policies of SVM* check box.
+ ** For consolidating similar 7-Mode Snapshot schedules to a single Snapshot policy in ONTAP, which can then be applied to the transitioned volume, select the *Consolidate 7-Mode Snapshot Policies* check box.
+ ** For reusing an existing Snapshot policy on the SVM that matches the Snapshot policy that will be created by the tool, which can then be applied to the transitioned volumes, select the *Reuse Snapshot Policies of SVM* check box.
+. Click *Save and go to Dashboard*.
+
+*Related information*
+
+xref:concept_cifs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.adoc[Supported and unsupported CIFS configurations for transition to ONTAP]
+
+xref:concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.adoc[NFS transition: supported and unsupported configurations, and required manual steps]
+
+xref:concept_supported_and_unsupported_name_services_configurations.adoc[Name services transition: supported and unsupported configurations, and required manual steps]
+
+xref:concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.adoc[SAN transition: supported and unsupported configurations, and required manual steps]
+
+xref:reference_example_consolidating_nfs_export_rules_for_transition.adoc[Examples of consolidating NFS export rules and Snapshot schedules for transition]
+
+xref:reference_configurations_that_can_be_excluded.adoc[Configurations that can be excluded from transition]

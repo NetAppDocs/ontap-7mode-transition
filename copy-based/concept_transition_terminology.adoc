@@ -1,0 +1,52 @@
+---
+permalink: copy-based/concept_transition_terminology.html
+sidebar: sidebar
+keywords: 
+summary: 'Understanding the transition terminology related to the 7-Mode Transition Tool helps you to understand the transition process.'
+---
+= Transition terminology
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Understanding the transition terminology related to the 7-Mode Transition Tool helps you to understand the transition process.
+
+* *Collect and assess*
++
+Before transitioning data and configurations to ONTAP, you must collect information about the storage environment that includes storage systems, hosts, and applications. You must then assess the features and functionalities of these systems, and identify how these features and functionalities work in the ONTAP version selected for transition.
+
+* *Migrate*
++
+Refers to transitioning data and configurations from the 7-Mode volumes to ONTAP. Migration should be performed after assessing the 7-Mode controllers.
+
+* *Project*
++
+In the 7-Mode Transition Tool, a project enables you to configure and manage the transition of a group of volumes.
++
+Transition projects are of three types: stand-alone, primary, and secondary.
+
+ ** *Stand-alone project*
++
+Volumes in this project are either not in any SnapMirror relationship with volumes in other storage systems, or you want to transition these volumes without retaining their SnapMirror relationships.
+
+ ** *Primary project*
++
+Volumes in this project are the source volumes of a SnapMirror relationship.
+
+ ** *Secondary project*
++
+Volumes in this project are the destination volumes of a SnapMirror relationship.
+
+* *Project group*
++
+In the 7-Mode Transition Tool, a project group is a logical container that you can use to hold related migration projects. There is always one default group with Default_Group name that exists in the system.
+
+* *Transition peer relationship*
++
+Transition peer relationship is an authorization mechanism that enables SnapMirror to establish relationships between a 7-Mode storage system and an SVM in the cluster for copying data from the 7-Mode volumes to the ONTAP volumes for transition. A transition peer relationship can be created only by a cluster administrator and is initiated from the cluster.
+
+* *Transition data protection relationship*
++
+Transition data protection (TDP) relationships are volume SnapMirror relationships that are established between a 7-Mode system and an ONTAP system.
++
+Transition data protection is supported only for transition. You should not keep this relationship for long periods of time because it is not possible to resynchronize data from an ONTAP volume back to a 7-Mode volume.

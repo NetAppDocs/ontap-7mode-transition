@@ -1,0 +1,131 @@
+---
+permalink: copy-based/task_preparing_the_cluster_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transition, you must ensure that the cluster meets requirements such as allowing HTTPS, setting up intercluster LIFs, and verifying the network connectivity for transition.'
+---
+= Preparing the cluster for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transition, you must ensure that the cluster meets requirements such as allowing HTTPS, setting up intercluster LIFs, and verifying the network connectivity for transition.
+
+* The cluster and the SVM must already be set up.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html[Software setup]
++
+The target SVM must not be in an SVM disaster recovery relationship.
+
+* The cluster must be healthy and none of the nodes must be in takeover mode.
+* The target aggregates that will contain the transitioned volumes must have an SFO policy.
+* The aggregates must be on nodes that have not reached the maximum volume limit.
+* If you want to transition volumes from a 32-bit aggregate of a 7-Mode system to a 64-bit aggregate of a Data ONTAP 8.2.x cluster, you must have provided an additional 5 percent space in the destination aggregate.
++
+The additional space is required to upgrade the transitioned volume to 64-bit format.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html[Disk and aggregate management]
+
+* For establishing an SVM peer relationship when transitioning a volume SnapMirror relationship, the following conditions must be met:
+ ** The secondary cluster should not have an SVM with the same name as that of the primary SVM.
+ ** The primary cluster should not have an SVM with the same name as that of the secondary SVM.
+ ** The name of the source 7-Mode system should not conflict with any of the local SVMs or SVMs that are already peered.
+
+You should not upgrade the cluster to a different ONTAP version during transition.
+
+NOTE: You can upgrade the cluster to a patch release of the same ONTAP version, if required.
+
+. From an administration host, verify that the cluster is reachable by using the cluster-management LIF: `ssh username@cluster_mgmt_IP`
+. Enable SSLv3 or FIPS on the cluster:
++
+|===
+| If you want to enable...| Enter...
+a|
+SSLv3
+a|
+`system services web modify -sslv3-enabled true`
+a|
+FIPS 140-2 compliance
+a|
+`system services web modify -ssl-fips-enabled true`
+|===
+When FIPS 140-2 compliance is enabled, SSLv3 is disabled. ONTAP prevents you from enabling SSLv3 when FIPS 140-2 compliance is enabled. If you enable FIPS 140-2 and then subsequently disable it, SSLv3 remains disabled.
++
+IMPORTANT: The best practice is to enable FIPS because of the security vulnerabilities in SSLv3.
+
+. Verify that HTTPS is allowed on the cluster management LIF:
+ .. View the firewall policy for the cluster management LIF: `network interface show -vserver svm_name -lif cluster_mgmt_lif -fields firewall-policy`
++
+----
+cluster1::> network interface show -vserver cluster1 -lif cluster_mgmt -fields firewall-policy
+vserver lif          firewall-policy
+------- ------------ ---------------
+cluster1  cluster_mgmt mgmt
+----
+
+ .. Verify that the firewall policy associated with the cluster management LIF allows HTTPS access: `system services firewall policy show -policy mgmt`
++
+----
+cluster1::> system services firewall policy show -policy mgmt
+Policy           Service    Action IP-List
+---------------- ---------- ------ --------------------
+mgmt
+                 dns        allow  0.0.0.0/0, ::/0
+                 http       allow  0.0.0.0/0, ::/0
+                 https      allow  0.0.0.0/0, ::/0
+                 ndmp       allow  0.0.0.0/0, ::/0
+                 ntp        allow  0.0.0.0/0, ::/0
+                 rsh        deny   0.0.0.0/0, ::/0
+                 snmp       allow  0.0.0.0/0, ::/0
+                 ssh        allow  0.0.0.0/0, ::/0
+                 telnet     deny   0.0.0.0/0, ::/0
+9 entries were displayed.
+----
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System administration]
+. Create an intercluster LIF on each node of the cluster for communication between the cluster and 7-Mode system:
+ .. `network interface create -vserver svm_name -lif intercluster_lif -role intercluster -home-node home_node -home-port home_port -address ip_address -netmask netmask`
++
+----
+cluster1::> network interface create -vserver cluster1-01 -lif intercluster_lif -role intercluster -home-node cluster1-01 -home-port e0c -address 192.0.2.130 -netmask 255.255.255.0
+----
+
+ .. Create a static route.
++
+|===
+| If you are transitioning to...| Run this command...
+a|
+ONTAP 9.5 or earlier or clustered Data ONTAP 8.3.x
+a|
+network route create
++
+----
+cluster1::> network route create -vserver vs0 -destination 0.0.0.0/0 -gateway 10.61.208.1
+----
+a|
+Clustered Data ONTAP 8.2.x
+a|
+network routing-groups route create
++
+----
+cluster1::> network routing-groups route create -vserver cluster1-01 -routing-group i192.0.0.0/18 -destination 0.0.0.0/0 - gateway 192.0.2.129
+----
++
+|===
+
+ .. Verify that you can use the intercluster LIF to ping the 7-Mode system: `network ping -lif intercluster_lif -vserver svm_name -destination remote_inetaddress`
++
+----
+cluster1::> network ping -lif intercluster_lif -vserver cluster1 -destination system7mode
+system7mode is alive
+----
+
++
+For multipathing, you must have two intercluster LIFs on each node.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]
+
+*Related information*
+
+https://mysupport.netapp.com/site/docs-and-kb[NetApp Documentation: Product Library A-Z]

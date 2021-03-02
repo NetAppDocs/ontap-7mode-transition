@@ -1,0 +1,29 @@
+---
+permalink: copy-free/task_verifying_readiness_for_cutover.html
+sidebar: sidebar
+keywords: 
+summary: 'Before disconnecting client access, you can verify the readiness of the 7-Mode system for storage cutover, such as verifying whether the SP or RLM is configured on the 7-Mode system and whether the disk shelves, aggregates, and volumes are ready for transition. You can manually fix any issues before the export operation, thereby reducing the downtime.'
+---
+= Verifying that 7-Mode systems are ready for cutover
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before disconnecting client access, you can verify the readiness of the 7-Mode system for storage cutover, such as verifying whether the SP or RLM is configured on the 7-Mode system and whether the disk shelves, aggregates, and volumes are ready for transition. You can manually fix any issues before the export operation, thereby reducing the downtime.
+
+You can run this operation multiple times before the export and halt operation is initiated.
+
+. Click *Check Readiness* to verify that the 7-Mode systems are ready for cutover.
++
+Although this operation is optional, it is a best practice to verify the readiness of the systems and fix issues before the export operation in order to minimize the storage cutover window.
+
+. Wait for the operation to complete and do the following:
+ .. Click *Save as CSV* to save the operation results in a file.
+ .. Click *Collect Tool Logs* to take a backup of all the transition log files.
++
+It is a best practice to save the log files after each transition operation.
+
+ .. Click *Close* to close the operation results window.
+
++
+If the operation takes a long time to complete, you can click *Run in Background* to exit the operation results window. You should not edit the project or perform any other task when the operation is running in the background. You can then view the operations results from the Operation History tab.

@@ -1,0 +1,28 @@
+---
+permalink: san-host/concept_esxi_versions_and_features_supported_for_san_transitions_using_7mtt.html
+sidebar: sidebar
+keywords: 
+summary: 'Only certain versions and features of ESXi are supported for SAN transitions using the 7-Mode Transition Tool \(7MTT\).'
+---
+= ESXi versions and features supported for SAN transitions using 7MTT
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Only certain versions and features of ESXi are supported for SAN transitions using the 7-Mode Transition Tool (7MTT).
+
+The following versions and features are supported as listed in the Interoperability Matrix.
+
+* ESXi 5.0, 5.1, 5.5, and later
++
+You must upgrade hosts running ESX/ESXi 4.x or earlier to ESX/ESXi 5.0 or later to transition them.
+
+* VMFS3 and VMFS5 datastores
+* SAN boot configurations
+* RDM (RAW device map) devices
+* All Guest OS supported in the Interoperability Matrix
+* All SAN protocols (FC/FCoE/iSCSI)
+
+*Related information*
+
+https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]

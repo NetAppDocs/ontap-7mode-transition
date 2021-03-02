@@ -1,0 +1,29 @@
+---
+permalink: snapmirror/task_resuming_a_failed_snapmirror_transfer_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'During transition, SnapMirror baseline transfers can fail due to a number of reasons, such as loss of network connectivity, transfer aborted, or controller failover. After rectifying the cause of failure, you can resume the SnapMirror transfers if a restart checkpoint is available.'
+---
+= Resuming a failed SnapMirror baseline transfer
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+During transition, SnapMirror baseline transfers can fail due to a number of reasons, such as loss of network connectivity, transfer aborted, or controller failover. After rectifying the cause of failure, you can resume the SnapMirror transfers if a restart checkpoint is available.
+
+If the restart checkpoint for the baseline transfer is not available, you must delete and re-create the volume, reestablish the SnapMirror relationship, and initiate the transition again.
+
+. From the destination cluster, use the snapmirror show command with the -snapshot-checkpoint parameter to view the status of the baseline transfer and the restart checkpoint.
++
+----
+cluster2::> snapmirror show -destination-path dest_vserver:vol3 -fields snapshot-checkpoint
+source-path          destination-path snapshot-checkpoint
+-------------------- ---------------- -------------------
+src_system:vol3    dest_vserver:vol3 50MB
+----
+
+. If the SnapMirror checkpoint exists, use the snapmirror initialize command to resume the baseline transfer.
++
+----
+cluster2::> snapmirror initialize -destination-path dest_vserver:vol3
+----

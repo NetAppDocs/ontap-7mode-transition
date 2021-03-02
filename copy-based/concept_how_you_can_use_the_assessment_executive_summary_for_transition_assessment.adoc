@@ -1,0 +1,54 @@
+---
+permalink: copy-based/concept_how_you_can_use_the_assessment_executive_summary_for_transition_assessment.html
+sidebar: sidebar
+keywords: 
+summary: 'The transition executive summary provides a summary of the 7-Mode controllers, hosts, and FC switches in your environment. It provides an assessment report of the current features and functionality that are used and recommends the transition methodology for each volume within your storage environment. You can use the summary to plan your transition.'
+---
+= How you can use the assessment executive summary for transition assessment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The transition executive summary provides a summary of the 7-Mode controllers, hosts, and FC switches in your environment. It provides an assessment report of the current features and functionality that are used and recommends the transition methodology for each volume within your storage environment. You can use the summary to plan your transition.
+
+The executive summary has the following main sections:
+
+== Target cluster
+
+This section lists the ONTAP version of the target cluster that you selected during assessment.
+
+== Data collection summary
+
+You can view the list of 7-Mode controllers, hosts, and switches for which you have collected information. You can view the ONTAP version and model details of the 7-Mode controller. You can also view the OS type, version, and model of the hosts.
+
+== Transition feasibility and recommended transition methodology
+
+This section provides a summary of the prechecks that are run on each controller and the feasibility of transition at the controller and volume level. The volumes that belong to vFiler units that are in the stopped or inconsistent state or the volumes that are offline or restricted are not included for assessment. The report displays the count of errors and warnings reported in the precheck against each controller. You should review these errors and warnings and resolve any issues before transitioning. Details of these prechecks are available in the Config Precheck Summary tab of the assessment workbook.
+
+Based on the volume and controller configurations and the precheck summary, the executive summary provides a recommendation about the best transition methodology for each assessed volume. For example, you cannot transition 7-Mode traditional volumes or FlexCache volumes because these features are not supported in ONTAP.
+
+For most of the configurations, the 7-Mode Transition Tool is the recommended tool for transition. However, there are some workloads that cannot be transitioned by using the 7-Mode Transition Tool, and for those you should use an application-based or host-based migration method.
+
+http://www.netapp.com/us/media/tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
+
+== Storage inventory
+
+This section provides the following information:
+
+* Storage objects: Provides information about the number of storage objects, such as volumes, qtrees, LUNs, vFiler units, SnapMirror relationships, shares, and exports, in each controller.
+* Storage utilization: Provides information about the used space, available space, and space utilized by the 7-Mode controllers.
+* Licenses: Provides the list of feature licenses enabled on each controller.
+* Protocol configuration: Provides details about the protocols configured on the controllers, such as CIFS, NFS, and SAN protocols, and the versions.
+* SnapMirror interconnectivity: Provides information about the controllers or volumes that are either the source or destination of a SnapMirror relationship.
++
+You can use this information to identify controllers that are in SnapMirror relationships with the controllers listed in the report, but are not included for assessment.
+
+* SnapVault interconnectivity: Provides information about the controllers, volumes, or qtrees that are either the source or destination of a SnapVault relationship with the specified controller, volumes, or qtrees in the controller.
+
+== SVM consolidation considerations
+
+If you are considering consolidating volumes from different vFiler units or 7-Mode controllers to a single SVM, you can use the information provided in this section to identify whether 7-Mode systems are bound to different Active Directory domains, have different NIS configurations, have the same volume names or CIFS share names, and how many local users and groups there are in each controller. These considerations are important in identifying issues when consolidating different vFiler units or 7-Mode controllers and planning the transition to a single SVM.
+
+== Data collection errors
+
+This section provides details about controller and host information that could not be collected by the 7-Mode Transition Tool and the reason for the failure. Details of the data collection errors are available in the Data Collection Errors tab of the assessment workbook. You can resolve these errors and assess the systems again.

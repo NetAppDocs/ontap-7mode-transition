@@ -1,0 +1,58 @@
+---
+permalink: copy-free/concept_restrictions_for_copy_free_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of certain restrictions for transitioning 7-Mode aggregates and volumes. Some of the restrictions are due to features that are not supported in ONTAP. For some restrictions, you can perform a corrective action that enables you to continue with the transition.'
+---
+= Restrictions for transitioning 7-Mode aggregates and volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of certain restrictions for transitioning 7-Mode aggregates and volumes. Some of the restrictions are due to features that are not supported in ONTAP. For some restrictions, you can perform a corrective action that enables you to continue with the transition.
+
+== Volume types
+
+The following types of volumes are not supported for transition:
+
+* Traditional volumes
++
+You can use host-based transition methods to transition traditional volumes.
++
+http://www.netapp.com/us/media/tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
+
+* SnapLock volumes
++
+The transition of SnapLock volumes is supported to ONTAP releases 9.0 through 9.5.
+
+* FlexCache volumes
+
+== Aggregate and volume states
+
+Transition is blocked if any of the 7-Mode aggregates and volumes selected for the transition are in one of the following states:
+
+* Offline
+* Restricted
+* Inconsistent (wafl inconsistent)
+
+== FlexClone volumes
+
+The clone hierarchy and storage efficiency are preserved during the copy-free transition. However, you must ensure that the parent FlexVol volume and all of its FlexClone volumes belong to the same vFiler unit. If the FlexClone volumes are in different vFiler units from the parent volume, you must choose one of the following actions:
+
+* Move the FlexClone volumes to the vFiler unit that owns the parent FlexVol volume.
+* Split the clones from the parent FlexClone volume, and then transition these volumes as FlexVol volumes.
+
+== Volume with qtrees that belong to a different vFiler unit
+
+You cannot transition volumes with qtrees, where the qtrees are owned by a different vFiler unit than that of the volume. Before transition, you must ensure that each volume and all of its qtrees belong to the same vFiler unit by performing one of the following actions:
+
+* Move the qtrees to the vFiler unit that owns the volume.
+* Delete the qtrees.
+
+== Inode to parent pathname translation setting
+
+The inode to parent pathname translations must be enabled on each volume. You can enable the parent to pathname translations by turning off the no_i2p option:
+
+`vol options vol_name no_i2p off`
+
+You do not have to wait for the i2p scan to finish, and you can continue with the transition preparation.

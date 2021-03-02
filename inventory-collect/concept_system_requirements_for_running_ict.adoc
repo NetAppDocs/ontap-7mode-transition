@@ -1,0 +1,21 @@
+---
+permalink: inventory-collect/concept_system_requirements_for_running_ict.html
+sidebar: sidebar
+keywords: 
+summary: 'You can download and run the Inventory Collect Tool on a Windows system. The Windows system must have the required configuration to run the Inventory Collect Tool.'
+---
+= System requirements for running the Inventory Collect Tool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can download and run the Inventory Collect Tool on a Windows system. The Windows system must have the required configuration to run the Inventory Collect Tool.
+
+* The Windows system must be one of the following:
+ ** 64-bit Windows 7 Enterprise
+ ** Windows Server 2008 R2 Enterprise with SP1 or later
+ ** Windows Server 2012 R2 Standard
+*Note:* You can use a Windows virtual machine that meets the required software and hardware requirements to install the Inventory Collect Tool.
+* Dual-core x64 processor (1.0 GHz or more)
+* 4-GB RAM
+* 40-GB HDD

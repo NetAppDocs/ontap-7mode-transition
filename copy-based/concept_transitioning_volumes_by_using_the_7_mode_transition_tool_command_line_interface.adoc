@@ -1,0 +1,12 @@
+---
+permalink: copy-based/concept_transitioning_volumes_by_using_the_7_mode_transition_tool_command_line_interface.html
+sidebar: sidebar
+keywords: 
+summary: 'You can create transition projects and perform the transition in stages by using the 7-Mode Transition Tool command-line interface.'
+---
+= Transitioning volumes by using the 7-Mode Transition Tool command-line interface
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can create transition projects and perform the transition in stages by using the 7-Mode Transition Tool command-line interface.

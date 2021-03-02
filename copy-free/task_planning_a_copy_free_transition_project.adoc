@@ -1,0 +1,14 @@
+---
+permalink: copy-free/task_planning_a_copy_free_transition_project.html
+sidebar: sidebar
+keywords: 
+summary: 'Planning a copy-free transition project involves selecting the source 7-Mode controllers and target cluster nodes, mapping 7-Mode volumes to a storage virtual machine \(SVM\), selecting the LIFs to be transitioned, and running prechecks.'
+---
+= Planning a copy-free transition project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Planning a copy-free transition project involves selecting the source 7-Mode controllers and target cluster nodes, mapping 7-Mode volumes to a storage virtual machine (SVM), selecting the LIFs to be transitioned, and running prechecks.
+
+You can create multiple projects with the same target cluster HA pair nodes. You can then run prechecks and apply the SVM configurations on all these projects. However, only one project can be in the critical section window at a given time. A project is in the critical section window if the project is in any of the phases from export to commit, or if a rollback operation has been initiated for the project. You can proceed with the export and halt operation for another project only after the commit or rollback operation is completed for the project in the critical section window.

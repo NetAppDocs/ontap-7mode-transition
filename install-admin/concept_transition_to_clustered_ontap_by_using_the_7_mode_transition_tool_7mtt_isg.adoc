@@ -1,0 +1,16 @@
+---
+permalink: install-admin/concept_transition_to_clustered_ontap_by_using_the_7_mode_transition_tool_7mtt_isg.html
+sidebar: sidebar
+keywords: 
+summary: 'The 7-Mode Transition Tool enables you to collect inventory of 7-Mode controllers, hosts, switches, and applications, and assess their readiness for transition to clustered ONTAP. After assessment, you can migrate your data and configurations from 7-Mode to clustered ONTAP either by using the copy-based transition method or copy-free transition method. The 7-Mode Transition Tool can be downloaded from the NetApp Support Site and installed on a Linux or Windows system.'
+---
+= Transition to clustered ONTAP by using the 7-Mode Transition Tool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool enables you to collect inventory of 7-Mode controllers, hosts, switches, and applications, and assess their readiness for transition to clustered ONTAP. After assessment, you can migrate your data and configurations from 7-Mode to clustered ONTAP either by using the copy-based transition method or copy-free transition method. The 7-Mode Transition Tool can be downloaded from the NetApp Support Site and installed on a Linux or Windows system.
+
+Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]

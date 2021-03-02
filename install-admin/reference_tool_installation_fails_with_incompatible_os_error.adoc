@@ -1,0 +1,17 @@
+---
+permalink: install-admin/reference_tool_installation_fails_with_incompatible_os_error.html
+sidebar: sidebar
+keywords: 
+summary: 'Installation of the 7-Mode Transition Tool fails with the error message 7-Mode Transition Tool is not compatible with this version of Windows.'
+---
+= Tool installation fails with an incompatible OS error
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Installation of the 7-Mode Transition Tool fails with the error message 7-Mode Transition Tool is not compatible with this version of Windows.
+
+* *Workaround*
+ .. Right-click the NetApp_7ModeTransitionTool_Setup.exe file, and then select *Properties*.
+ .. In the Compatibility tab, click *Change settings for all users*.
+ .. Verify that the *Run this program in compatibility mode for:* check box is not selected, and then click *Apply*.

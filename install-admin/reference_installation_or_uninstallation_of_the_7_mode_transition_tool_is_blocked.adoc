@@ -1,0 +1,27 @@
+---
+permalink: install-admin/reference_installation_or_uninstallation_of_the_7_mode_transition_tool_is_blocked.html
+sidebar: sidebar
+keywords: 
+summary: 'When you use the 7-Mode Transition Tool installer or the uninstaller to perform any operation \(such as install, repair, reinstall, upgrade, uninstall\), the following error message is displayed: Another instance of NetApp 7-Mode Transition Tool Setup or Uninstall is running. Only one instance can run at a time.'
+---
+= Installation or uninstallation of the 7-Mode Transition Tool is blocked
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When you use the 7-Mode Transition Tool installer or the uninstaller to perform any operation (such as install, repair, reinstall, upgrade, uninstall), the following error message is displayed: Another instance of NetApp 7-Mode Transition Tool Setup or Uninstall is running. Only one instance can run at a time.
+
+== Workaround
+
+Before you begin, ensure that there are no open instances or dialog boxes of the 7-Mode Transition Tool. Otherwise, you might have to perform the steps again.
+
+. Open *Registry* by clicking *Start*.
+. In *Search programs and files*, enter `RegEdit`.
+. When Registry Editor is open, locate the HKEY_LOCAL_MACHINE registry hive.
+. Expand the HKEY_LOCAL_MACHINE hive by clicking the expand icon to the left of the folder icon.
+. Continue to expand the registry keys and subkeys until you locate HKEY_LOCAL_MACHINE\ SOFTWARE \NetApp \7-Mode Transition Tool.
+. Click *7-Mode Transition Tool*.
+. Right-click INSTALLATION_STATUS, and select *Modify*.
+. Change the value from INSTALLER_RUNNING to INSTALLED, and click *OK*.
+
+You should now be able to perform any operation using the 7-Mode Transition Tool installer or the uninstaller.

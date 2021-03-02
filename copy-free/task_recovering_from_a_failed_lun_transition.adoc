@@ -1,0 +1,41 @@
+---
+permalink: copy-free/task_recovering_from_a_failed_lun_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'If the transition of volumes with LUNs fails, you can use the lun transition 7-mode show command to check which LUNs were not transitioned to ONTAP, and then determine a corrective action.'
+---
+= Recovering from a failed LUN transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If the transition of volumes with LUNs fails, you can use the lun transition 7-mode show command to check which LUNs were not transitioned to ONTAP, and then determine a corrective action.
+
+. Change to advanced privilege level: `set -privilege advanced`
+. Check which LUNs failed: `lun transition 7-mode show`
+. Review the EMS logs and determine the corrective action that you must take.
+. Perform the required steps shown in the EMS message to correct the failure.
+. If any supported LUNs failed the transition, then to complete the transition: `lun transition start`
+. View the transition status of the volumes: `lun transition show`
++
+The transition status can be one of following values:
+
+ ** active: The volume is in an active SnapMirror transition relationship and not yet transitioned.
+ ** complete: All supported LUNs are transitioned for this volume.
+ ** failed: LUN transition failed for the volume.
+ ** none: The volume did not contain LUNs to transition from 7-Mode systems.
+
++
+----
+cluster1::*> lun transition show
+Vserver              Volume             Transition Status
+-------------------- ------------------ -----------------
+vs1                  vol0               none
+                     vol1               complete
+                     vol2               failed
+                     vol3               active
+----
+
+*Related information*
+
+xref:concept_considerations_for_space_when_transitioning_san_volumes.adoc[Space considerations when transitioning SAN volumes]

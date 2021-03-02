@@ -1,0 +1,29 @@
+---
+permalink: copy-free/task_selecting_the_target_cluster_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You can select the target cluster HA pair and map each 7-Mode controller in the HA pair to a corresponding target cluster node. The mapped node specifies the cluster node to which the disk shelves from the corresponding 7-Mode controller must be connected.'
+---
+= Selecting the target cluster nodes for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can select the target cluster HA pair and map each 7-Mode controller in the HA pair to a corresponding target cluster node. The mapped node specifies the cluster node to which the disk shelves from the corresponding 7-Mode controller must be connected.
+
+The target cluster must be running Data ONTAP 8.3.2 or later.
+
+You can transition the 7-Mode disk shelves to a target HA pair that has preexisting data aggregates and volumes.
+
+For a two-node cluster, you must have a data aggregate to host the root volumes of the target SVMs. For a cluster with four or more nodes, the root volumes of the SVMs can be hosted either on the target nodes of the transition or on other nodes in the cluster.
+
+. Select the target HA pair to which the 7-Mode disk shelves must be connected.
++
+The tool automatically maps each 7-Mode storage system to a target cluster node.
++
+NOTE: The disk and aggregate ownership from each 7-Mode controller is transferred to its corresponding mapped target cluster node during the import phase.
+
+. Click *Swap Node Mapping* to change the automatic assignment of source-to-target node mapping.
+. Click *Save and Continue*.
++
+The SVM and Volume Mapping screen is displayed.

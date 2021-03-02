@@ -1,0 +1,24 @@
+---
+permalink: copy-free/task_performing_manual_configuration_tasks.html
+sidebar: sidebar
+keywords: 
+summary: 'You must manually perform some configuration tasks that are required for the workloads and applications that are accessing the transitioned volumes. You can obtain the list of manual tasks from the precheck results.'
+---
+= Performing manual configuration tasks after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must manually perform some configuration tasks that are required for the workloads and applications that are accessing the transitioned volumes. You can obtain the list of manual tasks from the precheck results.
+
+. Perform the tasks listed in the precheck results for configuring features that were not transitioned by the tool or that require customization for your environment.
++
+xref:concept_supported_and_unsupported_name_services_configurations.adoc[Name services transition: supported and unsupported configurations, and required manual steps]
++
+xref:concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.adoc[NFS transition: supported and unsupported configurations, and required manual steps]
++
+xref:concept_cifs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.adoc[Supported and unsupported CIFS configurations for transition to ONTAP]
++
+xref:concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.adoc[SAN transition: supported and unsupported configurations, and required manual steps]
++
+xref:task_transitioning_a_snapmirror_relationship.adoc[Transitioning a SnapMirror relationship]

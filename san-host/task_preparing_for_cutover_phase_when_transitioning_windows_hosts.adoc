@@ -1,0 +1,28 @@
+---
+permalink: san-host/task_preparing_for_cutover_phase_when_transitioning_windows_hosts.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are transitioning a Windows host from Data ONTAP operating in 7-Mode to clustered Data ONTAP, there are steps you must perform after the transition begins, but before the cutover phase begins.'
+---
+= Preparing for cutover phase when transitioning Windows hosts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are transitioning a Windows host from Data ONTAP operating in 7-Mode to clustered Data ONTAP, there are steps you must perform after the transition begins, but before the cutover phase begins.
+
+If you are running Data ONTAP DSM, the version of Data ONTAP DSM installed on the server must be supported for the version of Data ONTAP that is running on the target clustered Data ONTAP node.
+
+If you are running MSDSM, the version of Windows Host Utilities installed on the server must be supported for the version of Data ONTAP that is running on the target clustered Data ONTAP node.
+
+* For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+* For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode operation in the 7MTT.
+
+. Use Disk Manager to take offline the disks to be transitioned.
+. If the host is booted from SAN and the boot LUN is being transitioned, shut down the boot host.
+. If the host is clustered, use Failover Cluster Manager to take offline the clustered disks, including the quorum disk.
+. If the host is running Windows Server 2003 and you need to migrate the quorum device, stop the cluster services on all cluster nodes.
+. If you are transitioning LUNs on a server that has Hyper-V enabled, perform the appropriate host side transition steps for your guest operating system.
+. If you are transitioning LUNs on a server that has Hyper-V enabled and the boot device of the guest OS resides on a Data ONTAP LUN that is being transitioned, do the following:
+ .. Shut down the guest OS.
+ .. Take offline the corresponding disk on the parent system.

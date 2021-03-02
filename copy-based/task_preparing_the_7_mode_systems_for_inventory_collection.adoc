@@ -1,0 +1,62 @@
+---
+permalink: copy-based/task_preparing_the_7_mode_systems_for_inventory_collection.html
+sidebar: sidebar
+keywords: 
+summary: 'You must ensure that the 7-Mode systems and hosts meet certain network and protocol requirements for successfully generating an assessment report.'
+---
+= Preparing the 7-Mode systems and hosts for transition assessment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must ensure that the 7-Mode systems and hosts meet certain network and protocol requirements for successfully generating an assessment report.
+
+. Enable HTTPS on the 7-Mode system: `options httpd.admin.ssl.enable on`
+. Enable TLS on the 7-Mode system: `options tls.enable on`
++
+IMPORTANT: The best practice is to enable TLS because of the security vulnerabilities in SSLv3.
+
+. Enable SSL and disable SSLv2 and SSLv3 on the 7-Mode system:
+ .. Set up and start SSL: `secureadmin setup ssl`
+ .. Enable SSL: `options ssl.enable on`
+ .. Disable SSLv2 and SSLv3: `options ssl.v2.enable off``options ssl.v3.enable off`
++
+IMPORTANT: The best practice is to disable SSLv2 and SSLv3 to avoid security vulnerabilities.
+. Enable SSH on the 7-Mode system:
+ .. Set up SSH on the 7-Mode system: `secureadmin setup -f ssh`
++
+The -f option forces the setup to run even if the SSH server is already configured.
+
+ .. Enable SSH: `secureadmin enable ssh2`
+ .. Enable password authentication on the SSH server: `options ssh.passwd_auth.enable`
+ .. Enable SSH access to the host: `options ssh.access`
+. Prepare your Windows host systems:
+ ** Enable WMI access.
++
+For more information about enabling WMI access, see the host documentation.
+
+ ** If you have Windows Server 2003, verify that you have installed the Microsoft Fibre Channel Information Tool (fcinfo) package and run the tool once on your Windows host system.
++
+This tool enables you to collect the HBA configuration information of the host.
+
+ ** If the system on which the 7-Mode Transition Tool is run does not belong to a domain, verify the following:
+  *** The host system belongs to a domain.
+  *** If the host has a local user, and the user name for that user is in the following format:
++
+[source,nolinebreak]
+----
+SystemName\Username
+----
+. Enable SSH on the Linux or ESXi host.
++
+For more information about enabling SSH, see the host documentation.
+
+. Verify that you have installed the latest NetApp Host Utilities software for each host.
++
+For information about downloading and installing the NetApp Host Utilities software, see the NetApp Support Site.
+
+. Verify that all the hosts and storage systems can be reached by the Windows system from which the 7-Mode Transition Tool is run.
+
+*Related information*
+
+http://mysupport.netapp.com/[Documentation on the NetApp Support Site: mysupport.netapp.com]
