@@ -306,4 +306,4 @@ a|
 |===
 *Related information*
 
-xref:concept_preparing_for_migration.adoc[Preparing for copy-based transition]
+xref:concept_preparing_for_copy_based_transition.adoc[Preparing for copy-based transition]

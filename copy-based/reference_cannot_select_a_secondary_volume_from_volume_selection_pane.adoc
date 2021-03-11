@@ -1,0 +1,19 @@
+---
+permalink: copy-based/reference_cannot_select_a_secondary_volume_from_volume_selection_pane.html
+sidebar: sidebar
+keywords: 
+summary: 'You cannot select a secondary volume from the Volume selection pane and transition it as a volume SnapMirror relationship if the volume is not online or if the SnapMirror relationship is broken.'
+---
+= Cannot select a secondary volume from the Volume selection pane
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You cannot select a secondary volume from the Volume selection pane and transition it as a volume SnapMirror relationship if the volume is not online or if the SnapMirror relationship is broken.
+
+== Workaround
+
+Use the ONTAP command-line to perform either of the following workarounds:
+
+* Bring the secondary volume online if it is offline.
+* Fix the SnapMirror relationship if it is broken.

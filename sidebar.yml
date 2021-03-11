@@ -6,14 +6,14 @@ entries:
   url: "/command-map/index.html"
   entries:
   - title: How 7-Mode commands map to ONTAP commands
-    url: "/command-map/reference_7_mode_to_clustered_data_ontap_command_map.html"
+    url: "/command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html"
   - title: How 7-Mode options map to ONTAP commands
-    url: "/command-map/reference_how_7_mode_options_map_to_ontap_commands.html"
+    url: "/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html"
   - title: How 7-Mode configuration files map to clustered Data ONTAP commands
-    url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_data_ontap_commands.html"
+    url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html"
   - title: How to interpret the clustered Data ONTAP commands, options, and configuration
       files maps for 7-Mode administrators
-    url: "/command-map/concept_how_to_interpret_the_7_mode_to_clustered_data_ontap_commands_options_and_configuration_files_maps.html"
+    url: "/command-map/concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.html"
 - title: copy-based
   url: "/copy-based/index.html"
   entries:
@@ -21,33 +21,33 @@ entries:
     url: "/copy-based/concept_transition_overview.html"
     entries:
     - title: Copy-based transition by using the 7-Mode Transition Tool
-      url: "/copy-based/concept_what_the_7_mode_transition_tool_is.html"
+      url: "/copy-based/concept_copy_based_transition_using_7mtt.html"
     - title: Transition terminology
       url: "/copy-based/concept_transition_terminology.html"
     - title: Limits for transition
       url: "/copy-based/reference_limits_for_transition.html"
   - title: Collecting and assessing the inventory information
-    url: "/copy-based/concept_collecting_and_assessing_the_inventory_information.html"
+    url: "/copy-based/concept_collecting_and_assessing_inventory_information.html"
     entries:
     - title: Storage, host, and FC switches version requirements for transition assessment
-      url: "/copy-based/concept_storage_and_host_version_requirements.html"
+      url: "/copy-based/concept_storage_host_fc_switches_version_requirements.html"
     - title: Preparing the 7-Mode systems and hosts for transition assessment
-      url: "/copy-based/task_preparing_the_7_mode_systems_for_inventory_collection.html"
+      url: "/copy-based/task_preparing_7_mode_systems_for_inventory_collection.html"
     - title: Assessing controllers and hosts
       url: "/copy-based/task_assessing_controllers_and_hosts.html"
       entries:
       - title: Generating an assessment report by adding systems to the 7-Mode Transition
           Tool
-        url: "/copy-based/task_generating_an_assessment_report_by_adding_systems_to_the_7_mode_transition_tool.html"
+        url: "/copy-based/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html"
       - title: Generating an assessment report by importing the inventory report XML
-        url: "/copy-based/task_generating_an_assessment_report_by_importing_the_inventory_report_xml.html"
+        url: "/copy-based/task_generating_an_assessment_report_by_importing_inventory_report_xml.html"
     - title: Generating an FC zone plan
-      url: "/copy-based/task_generating_the_fc_zone_plan.html"
+      url: "/copy-based/task_generating_fc_zone_plan.html"
       entries:
       - title: Supported configurations for generating an FC zone plan
         url: "/copy-based/concept_supported_configurations_for_generating_an_fc_zone_plan.html"
     - title: How you can use the assessment executive summary for transition assessment
-      url: "/copy-based/concept_how_you_can_use_the_assessment_executive_summary_for_transition_assessment.html"
+      url: "/copy-based/concept_how_you_can_use_assessment_executive_summary_for_transition_assessment.html"
   - title: Copy-based transition workflow
     url: "/copy-based/concept_copy_based_transition_workflow.html"
   - title: Data and configuration migration process
@@ -58,33 +58,33 @@ entries:
     - title: How you transition volumes in a SnapMirror relationship
       url: "/copy-based/concept_how_you_transition_volumes_in_a_snapmirror_relationship.html"
   - title: Preparing for copy-based transition
-    url: "/copy-based/concept_preparing_for_migration.html"
+    url: "/copy-based/concept_preparing_for_copy_based_transition.html"
     entries:
     - title: Requirements for copy-based transition
       url: "/copy-based/concept_requirements_for_copy_based_transition.html"
     - title: Port requirements for communicating with the 7-Mode Transition Tool
-      url: "/copy-based/concept_port_requirements_for_communicating_with_the_7_mode_transition_tool.html"
+      url: "/copy-based/concept_port_requirements_for_communicating_with_7mtt.html"
     - title: Restrictions for transition
-      url: "/copy-based/concept_restrictions_for_transitioning_7_mode_volumes.html"
+      url: "/copy-based/concept_restrictions_for_transition.html"
     - title: Preparing the 7-Mode system for transition
-      url: "/copy-based/task_preparing_the_7_mode_system_for_transition.html"
+      url: "/copy-based/task_preparing_7_mode_system_for_transition.html"
     - title: Preparing the network for transition
-      url: "/copy-based/task_preparing_your_network_for_transition_cft.html"
+      url: "/copy-based/task_preparing_network_for_transition.html"
       entries:
       - title: Considerations for transitioning 7-Mode IP addresses
         url: "/copy-based/concept_considerations_for_transitioning_7_mode_ip_addresses.html"
     - title: Preparing the cluster for transition
-      url: "/copy-based/task_preparing_the_cluster_for_transition.html"
+      url: "/copy-based/task_preparing_cluster_for_transition.html"
     - title: Preparing 7-Mode aggregates and volumes for transition
       url: "/copy-based/task_preparing_7_mode_volumes_and_aggregates_for_transition.html"
       entries:
       - title: Restrictions for transitioning 7-Mode volumes
         url: "/copy-based/concept_restrictions_for_copy_free_transition.html"
       - title: Preparing for transitioning to ONTAP 8.3 and later supported releases
-        url: "/copy-based/task_transitioning_to_clustered_data_ontap_8_3_from_a_7_mode_version_with_32_bit_data.html"
+        url: "/copy-based/task_transitioning_to_clustered_ontap_8_3_from_a_7_mode_version_with_32_bit_data.html"
         entries:
         - title: Expanding an aggregate to the 64-bit format
-          url: "/copy-based/task_expanding_an_aggregate_to_the_64_bit_format_without_adding_storage.html"
+          url: "/copy-based/task_expanding_an_aggregate_to_64_bit_format_without_adding_storage.html"
         - title: Finding and removing 32-bit volumes and Snapshot copies
           url: "/copy-based/task_finding_and_removing_32_bit_data_from_source_volumes_and_snapshot_copies.html"
       - title: Considerations for deduplication and compression
@@ -128,7 +128,7 @@ entries:
       - title: How NFS exports are transitioned
         url: "/copy-based/concept_how_nfs_exports_are_transitioned.html"
     - title: Preparing for SMB/CIFS transition
-      url: "/copy-based/concept_preparing_for_cifs_transition.html"
+      url: "/copy-based/concept_preparing_for_smb_cifs_transition.html"
       entries:
       - title: Prerequisites for transitioning CIFS configurations
         url: "/copy-based/concept_prerequisites_for_transitioning_cifs_configurations.html"
@@ -144,7 +144,7 @@ entries:
       - title: Preparing SAN hosts for transition
         url: "/copy-based/task_preparing_san_hosts_for_transition.html"
       - title: Configuring zones by using the FC zone plan
-        url: "/copy-based/task_configuring_zones_by_using_the_fc_zone_plan.html"
+        url: "/copy-based/task_configuring_zones_by_using_fc_zone_plan.html"
       - title: Creating SAN LIFs before transition
         url: "/copy-based/task_creating_san_lifs_before_transition.html"
       - title: 'SAN transition: supported and unsupported configurations, and required
@@ -153,7 +153,7 @@ entries:
       - title: Space considerations when transitioning SAN volumes
         url: "/copy-based/concept_considerations_for_space_when_transitioning_san_volumes.html"
     - title: Preparing data protection features for transition
-      url: "/copy-based/concept_preparing_data_protection_features_for_transition_cft.html"
+      url: "/copy-based/concept_preparing_data_protection_features_for_transition.html"
       entries:
       - title: 'Data protection transition: supported and unsupported configurations'
         url: "/copy-based/concept_supported_and_unsupported_data_protection_relationships.html"
@@ -164,7 +164,7 @@ entries:
     - title: Impact of takeover and giveback on transition
       url: "/copy-based/concept_impact_of_takeover_and_giveback_on_transition.html"
   - title: Migrating data and configuration from 7-Mode volumes
-    url: "/copy-based/task_transitioning_volumes_by_using_the_7_mode_transition_tool.html"
+    url: "/copy-based/task_transitioning_volumes_using_7mtt.html"
     entries:
     - title: Transition preparation checklist
       url: "/copy-based/reference_transition_preparation_checklist.html"
@@ -184,21 +184,20 @@ entries:
     - title: Applying 7-Mode configurations
       url: "/copy-based/task_applying_7_mode_configurations.html"
     - title: Configuring zones by using the FC zone plan
-      url: "/copy-based/task_configuring_zones_by_using_the_fc_zone_plan.html"
+      url: "/copy-based/task_configuring_zones_by_using_fc_zone_plan.html"
     - title: Performing on-demand SnapMirror updates
       url: "/copy-based/task_performing_on_demand_snapmirror_update_operation.html"
     - title: Completing a transition project
       url: "/copy-based/task_completing_a_transition_project.html"
     - title: Completing the Chain of Custody verification
-      url: "/copy-based/task_completing_the_chain_of_custody_verification.html"
+      url: "/copy-based/task_completing_chain_of_custody_verification.html"
   - title: Transitioning volumes by using the 7-Mode Transition Tool CLI
-    url: "/copy-based/concept_transitioning_volumes_using_the_7_mode_transition_tool_cli.html"
+    url: "/copy-based/concept_transitioning_volumes_using_7mtt_cli.html"
     entries:
     - title: Scenarios for selecting volumes in a project
       url: "/copy-based/concept_scenarios_for_selecting_volumes_in_a_session.html"
-    - title: Transitioning volumes by using the 7-Mode Transition Tool command-line
-        interface
-      url: "/copy-based/concept_transitioning_volumes_by_using_the_7_mode_transition_tool_command_line_interface.html"
+    - title: Transitioning volumes by using the 7-Mode Transition Tool CLI
+      url: "/copy-based/concept_transitioning_volumes_using_7mtt_cli.html"
       entries:
       - title: Creating a transition project
         url: "/copy-based/task_creating_a_transition_session.html"
@@ -215,23 +214,23 @@ entries:
       - title: Starting data copy for a transition project
         url: "/copy-based/task_starting_data_copy_for_a_transition_session.html"
       - title: Applying configurations to ONTAP volumes
-        url: "/copy-based/task_applying_configurations_to_data_ontap_volumes.html"
+        url: "/copy-based/task_applying_configurations_to_ontap_volumes.html"
       - title: Completing the transition
-        url: "/copy-based/task_completing_the_transition_process.html"
+        url: "/copy-based/task_completing_transition_process.html"
     - title: Commands for managing transition
       url: "/copy-based/reference_commands_for_managing_transition_sessions.html"
   - title: Performing manual post-transition tasks
     url: "/copy-based/task_performing_post_transition_tasks.html"
     entries:
     - title: Configuring zones by using the FC zone plan
-      url: "/copy-based/task_configuring_zones_by_using_the_fc_zone_planner.html"
+      url: "/copy-based/task_configuring_zones_by_using_fc_zone_planner.html"
     - title: Recovering from a failed LUN transition
       url: "/copy-based/task_recovering_from_a_failed_lun_transition.html"
     - title: Viewing transitioned SAN configurations
-      url: "/copy-based/task_viewing_the_transitioned_san_configurations.html"
+      url: "/copy-based/task_viewing_transitioned_san_configurations.html"
     - title: Limitations with 7-Mode Snapshot copies of LUNs managed by SnapDrive
         and SnapManager after transition
-      url: "/copy-based/concept_limitations_with_snapshot_copies_and_luns_managed_by_snapdrive_and_snapmanager_products.html"
+      url: "/copy-based/concept_limitations_with_snapshot_copies_and_luns_managed_by_snap_products.html"
     - title: Configuring cron job schedules on the remote site after transitioning
         a MetroCluster configuration
       url: "/copy-based/task_post_transition_task_for_a_metrocluster_configuration.html"
@@ -269,7 +268,7 @@ entries:
     - title: Downloading transition log files
       url: "/copy-based/task_collecting_tool_logs.html"
     - title: Log files for the 7-Mode Transition Tool
-      url: "/copy-based/concept_log_files_for_the_7_mode_transition_tool.html"
+      url: "/copy-based/concept_log_files_for_7mtt.html"
     - title: Continuing with the transition if ignorable errors occur
       url: "/copy-based/task_acknowledging_errors_to_continue_with_transition.html"
       entries:
@@ -279,13 +278,13 @@ entries:
         or switchback
       url: "/copy-based/task_transitioning_a_metrocluster_configuration_if_a_switchover_or_switchback_event_occurs.html"
     - title: Cannot select a secondary volume from the Volume selection pane
-      url: "/copy-based/reference_you_cannot_select_a_secondary_volume_from_the_volume_selection_pane_in_some_scenarios.html"
+      url: "/copy-based/reference_cannot_select_a_secondary_volume_from_volume_selection_pane.html"
     - title: Cannot select a volume for transition if the tool fails to retrieve the
         volume information
-      url: "/copy-based/reference_you_cannot_select_a_volume_for_transition_if_the_tool_fails_to_retrieve_the_volume_information.html"
+      url: "/copy-based/reference_cannot_select_volume_for_transition_if_tool_fails_to_retrieve_volume_information.html"
     - title: Cannot proceed from the Volume mapping pane if the selected SVM has no
         aggregate
-      url: "/copy-based/reference_you_cannot_proceed_from_the_volume_mapping_pane_if_the_selected_vserver_has_no_aggregate.html"
+      url: "/copy-based/reference_cannot_proceed_from_volume_mapping_pane_if_selected_svm_has_no_aggregate.html"
     - title: Compression is not enabled after transition from Data ONTAP 7.3.x
       url: "/copy-based/reference_compression_fails_to_start_after_transition.html"
 - title: copy-free
@@ -295,31 +294,31 @@ entries:
     url: "/copy-free/concept_transition_overview.html"
     entries:
     - title: Copy-free transition by using 7-Mode Transition Tool
-      url: "/copy-free/concept_copy_free_transition_by_using_7_mode_transition_tool.html"
+      url: "/copy-free/concept_copy_free_transition_using_7mtt.html"
     - title: Transition terminology
       url: "/copy-free/concept_transition_terminology.html"
   - title: Collecting and assessing the inventory information
-    url: "/copy-free/concept_collecting_and_assessing_the_inventory_information.html"
+    url: "/copy-free/concept_collecting_and_assessing_inventory_information.html"
     entries:
     - title: Storage, host, and FC switches version requirements for transition assessment
       url: "/copy-free/concept_storage_and_host_version_requirements.html"
     - title: Preparing the 7-Mode systems and hosts for transition assessment
-      url: "/copy-free/task_preparing_the_7_mode_systems_for_inventory_collection.html"
+      url: "/copy-free/task_preparing_7_mode_systems_for_inventory_collection.html"
     - title: Assessing controllers and hosts
       url: "/copy-free/task_assessing_controllers_and_hosts.html"
       entries:
       - title: Generating an assessment report by adding systems to the 7-Mode Transition
           Tool
-        url: "/copy-free/task_generating_an_assessment_report_by_adding_systems_to_the_7_mode_transition_tool.html"
+        url: "/copy-free/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html"
       - title: Generating an assessment report by importing the inventory report XML
-        url: "/copy-free/task_generating_an_assessment_report_by_importing_the_inventory_report_xml.html"
+        url: "/copy-free/task_generating_an_assessment_report_by_importing_inventory_report_xml.html"
     - title: Generating an FC zone plan
-      url: "/copy-free/task_generating_the_fc_zone_plan.html"
+      url: "/copy-free/task_generating_fc_zone_plan.html"
       entries:
       - title: Supported configurations for generating an FC zone plan
         url: "/copy-free/concept_supported_configurations_for_generating_an_fc_zone_plan.html"
     - title: How you can use the assessment executive summary for transition assessment
-      url: "/copy-free/concept_how_you_can_use_the_assessment_executive_summary_for_transition_assessment.html"
+      url: "/copy-free/concept_how_you_can_use_assessment_executive_summary_for_transition_assessment.html"
   - title: Copy-free transition workflow
     url: "/copy-free/task_copy_free_transition_workflow.html"
     entries:
@@ -331,20 +330,20 @@ entries:
     - title: Requirements for copy-free transition
       url: "/copy-free/concept_requirements_for_copy_free_transition.html"
     - title: Tools and documentation required for copy-free transition
-      url: "/copy-free/reference_additional_tools_and_documentation_for_cft.html"
+      url: "/copy-free/reference_required_tools_and_documentation.html"
     - title: Port requirements for communicating with the 7-Mode Transition Tool
-      url: "/copy-free/concept_port_requirements_for_communicating_with_the_7_mode_transition_tool.html"
+      url: "/copy-free/concept_port_requirements_for_communicating_with_7mtt.html"
     - title: Preparing the 7-Mode HA pair for transition
-      url: "/copy-free/task_preparing_the_7_mode_system_for_transition.html"
+      url: "/copy-free/task_preparing_7_mode_system_for_transition.html"
     - title: Setting up the SP or RLM on the 7-Mode systems for copy-free transition
-      url: "/copy-free/task_setting_up_the_sp_or_rlm_for_transition.html"
+      url: "/copy-free/task_setting_up_sp_or_rlm_for_transition.html"
     - title: Preparing the network for transition
-      url: "/copy-free/task_preparing_your_network_for_transition_cft.html"
+      url: "/copy-free/task_preparing_your_network_for_transition.html"
       entries:
       - title: Considerations for transitioning 7-Mode IP addresses
         url: "/copy-free/concept_considerations_for_transitioning_7_mode_ip_addresses.html"
     - title: Preparing the cluster for transition
-      url: "/copy-free/task_preparing_the_cluster_for_transition.html"
+      url: "/copy-free/task_preparing_cluster_for_transition.html"
     - title: Gathering cabling information for transition
       url: "/copy-free/task_gathering_cabling_information_for_transition.html"
       entries:
@@ -356,10 +355,10 @@ entries:
       - title: Restrictions for transitioning 7-Mode aggregates and volumes
         url: "/copy-free/concept_restrictions_for_copy_free_transition.html"
       - title: Preparing for transitioning 7-Mode systems with 32-bit aggregates
-        url: "/copy-free/task_transitioning_to_clustered_data_ontap_8_3_from_a_7_mode_version_with_32_bit_data.html"
+        url: "/copy-free/task_transitioning_to_clustered_ontap_8_3_from_a_7_mode_version_with_32_bit_data.html"
         entries:
         - title: Expanding an aggregate to the 64-bit format
-          url: "/copy-free/task_expanding_an_aggregate_to_the_64_bit_format_without_adding_storage.html"
+          url: "/copy-free/task_expanding_an_aggregate_to_64_bit_format_without_adding_storage.html"
         - title: Finding and removing 32-bit volumes and Snapshot copies
           url: "/copy-free/task_finding_and_removing_32_bit_data_from_source_volumes_and_snapshot_copies.html"
       - title: Aggregate space requirements for transition
@@ -399,7 +398,7 @@ entries:
       - title: Creating SAN LIFs before transition
         url: "/copy-free/task_creating_san_lifs_before_transition.html"
       - title: Configuring zones by using the FC zone plan
-        url: "/copy-free/task_configuring_zones_by_using_the_fc_zone_plan.html"
+        url: "/copy-free/task_configuring_zones_by_using_fc_zone_plan.html"
       - title: Preparing SAN hosts for transition
         url: "/copy-free/task_preparing_san_hosts_for_transition.html"
       - title: 'SAN transition: supported and unsupported configurations, and required
@@ -408,10 +407,10 @@ entries:
       - title: Space considerations when transitioning SAN volumes
         url: "/copy-free/concept_considerations_for_space_when_transitioning_san_volumes.html"
     - title: Preparing data protection features for transition
-      url: "/copy-free/concept_preparing_data_protection_features_for_transition_cft.html"
+      url: "/copy-free/concept_preparing_data_protection_features_for_transition.html"
       entries:
       - title: Preparing the cluster for transitioning volume SnapMirror relationships
-        url: "/copy-free/task_preparing_the_cluster_for_transitioning_volume_snapmirror_relationships.html"
+        url: "/copy-free/task_preparing_cluster_for_transitioning_volume_snapmirror_relationships.html"
       - title: 'Data protection transition: supported and unsupported configurations'
         url: "/copy-free/concept_supported_and_unsupported_data_protection_relationships.html"
   - title: Transitioning 7-Mode aggregates using copy-free transition
@@ -425,13 +424,13 @@ entries:
       - title: Adding controllers and clusters
         url: "/copy-free/task_adding_controllers_and_clusters.html"
       - title: Creating a copy-free transition project
-        url: "/copy-free/task_selecting_the_source_7_mode_systems_for_transition.html"
+        url: "/copy-free/task_selecting_source_7_mode_systems_for_transition.html"
       - title: Selecting the target cluster nodes for transition
-        url: "/copy-free/task_selecting_the_target_cluster_for_transition.html"
+        url: "/copy-free/task_selecting_target_cluster_for_transition.html"
       - title: Mapping SVMs and volumes
         url: "/copy-free/task_svm_and_volume_mapping.html"
       - title: Selecting LIFs for transition
-        url: "/copy-free/task_selecting_the_lifs_to_transition.html"
+        url: "/copy-free/task_selecting_lifs_to_transition.html"
       - title: Customizing the transition of 7-Mode configurations
         url: "/copy-free/task_customizing_configurations_for_transition.html"
         entries:
@@ -451,9 +450,9 @@ entries:
       url: "/copy-free/task_exporting_7_mode_system_and_hardware_information.html"
     - title: Disconnecting disk shelves from the 7-Mode system and connecting to cluster
         nodes
-      url: "/copy-free/task_removing_the_disk_shelves_from_7_mode_and_connecting_to_cluster_nodes.html"
+      url: "/copy-free/task_removing_disk_shelves_from_7_mode_and_connecting_to_cluster_nodes.html"
     - title: Importing 7-Mode data to ONTAP
-      url: "/copy-free/task_importing_7_mode_data_to_clustered_data_ontap.html"
+      url: "/copy-free/task_importing_7_mode_data_to_clustered_ontap.html"
   - title: Completing the transition
     url: "/copy-free/task_completing_post_transition_tasks_for_a_copy_free_transition.html"
     entries:
@@ -462,21 +461,21 @@ entries:
     - title: Rehosting transitioned volumes to a different SVM
       url: "/copy-free/task_rehosting_volumes_from_different_svms_to_a_single_svm.html"
     - title: Verifying the transitioned configurations
-      url: "/copy-free/task_verifying_the_transition_configurations.html"
+      url: "/copy-free/task_verifying_transition_configurations.html"
     - title: Performing manual configuration tasks after transition
       url: "/copy-free/task_performing_manual_configuration_tasks.html"
     - title: Testing the workloads and applications
-      url: "/copy-free/task_testing_the_workloads_and_applications.html"
+      url: "/copy-free/task_testing_workloads_and_applications.html"
     - title: Committing the copy-free transition project
-      url: "/copy-free/task_committing_the_7_mode_aggregates_to_clustered_data_ontap_format.html"
+      url: "/copy-free/task_committing_7_mode_aggregates_to_clustered_ontap_format.html"
   - title: Transitioning a SnapMirror relationship
     url: "/copy-free/task_transitioning_a_snapmirror_relationship.html"
     entries:
     - title: Transitioning HA pairs in a SnapMirror relationship in a staggered configuration
-      url: "/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_staggered_way_cft.html"
+      url: "/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_staggered_way.html"
     - title: Transitioning primary and secondary systems in a SnapMirror relationship
         in parallel
-      url: "/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_parallel_cft.html"
+      url: "/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_parallel.html"
   - title: Troubleshooting transition issues
     url: "/copy-free/concept_troubleshooting_transition_issues.html"
     entries:
@@ -488,50 +487,50 @@ entries:
     - title: Downloading transition log files
       url: "/copy-free/task_collecting_tool_logs.html"
     - title: Log files for the 7-Mode Transition Tool
-      url: "/copy-free/concept_log_files_for_the_7_mode_transition_tool.html"
+      url: "/copy-free/concept_log_files_for_7mtt.html"
     - title: Recovering from a failed LUN transition
       url: "/copy-free/task_recovering_from_a_failed_lun_transition.html"
     - title: Failed to boot the 7-Mode controller in maintenance mode
-      url: "/copy-free/reference_failed_to_boot_the_7_mode_controller_in_maintenance_mode.html"
+      url: "/copy-free/reference_failed_to_boot_7_mode_controller_in_maintenance_mode.html"
   - title: Performing a transition rollback to 7-Mode
     url: "/copy-free/concept_reverting_a_copy_free_transition_project.html"
     entries:
     - title: When to roll back a transition and when to call technical support
-      url: "/copy-free/concept_when_to_revert_and_when_to_call_technical_support_transition_cft.html"
+      url: "/copy-free/concept_when_to_revert_and_when_to_call_technical_support_transition.html"
     - title: Rolling back a copy-free transition project
       url: "/copy-free/task_performing_a_transition_rollback.html"
       entries:
       - title: Manually rolling back the transition
-        url: "/copy-free/task_running_manual_steps_for_rolling_back_the_transition.html"
+        url: "/copy-free/task_running_manual_steps_for_rolling_back_transition.html"
 - title: install-admin
   url: "/install-admin/index.html"
   entries:
   - title: Transition to clustered ONTAP by using the 7-Mode Transition Tool
-    url: "/install-admin/concept_transition_to_clustered_ontap_by_using_the_7_mode_transition_tool_7mtt_isg.html"
+    url: "/install-admin/concept_transition_to_clustered_ontap_using_7mtt.html"
     entries:
     - title: ONTAP target releases supported by the 7-Mode Transition Tool
-      url: "/install-admin/concept_ontap_target_releases_supported_by_the_7_mode_transition_tool.html"
+      url: "/install-admin/concept_ontap_target_releases_supported_by_7mtt.html"
     - title: Comparison of copy-free transition and copy-based transition
       url: "/install-admin/concept_comparison_of_copy_free_transition_and_copy_based_transition.html"
     - title: Interfaces and transition capabilities available on Windows and Linux
       url: "/install-admin/reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.html"
   - title: Installing or uninstalling the 7-Mode Transition Tool on a Windows system
-    url: "/install-admin/concept_installing_and_uninstalling_the_7_mode_transition_tool.html"
+    url: "/install-admin/concept_installing_and_uninstalling_7mtt.html"
     entries:
     - title: System requirements for installing the 7-Mode Transition Tool on Windows
         systems
-      url: "/install-admin/concept_system_requirements_for_the_7_mode_transition_tool_on_windows.html"
+      url: "/install-admin/concept_system_requirements_for_7mtt_on_windows.html"
     - title: Installing the 7-Mode Transition Tool on a Windows system
-      url: "/install-admin/task_installing_the_7_mode_transition_tool.html"
+      url: "/install-admin/task_installing_7mtt.html"
     - title: Enabling login for users not part of the Administrator group
-      url: "/install-admin/task_enabling_login_for_users_not_part_of_the_administrator_group.html"
+      url: "/install-admin/task_enabling_login_for_users_not_part_of_administrator_group.html"
     - title: Logging in to the 7-Mode Transition Tool
-      url: "/install-admin/task_logging_in_to_the_tool.html"
+      url: "/install-admin/task_logging_in_to_tool.html"
     - title: Uninstalling the 7-Mode Transition Tool on a Windows system
-      url: "/install-admin/task_uninstalling_the_7_mode_transition_tool.html"
+      url: "/install-admin/task_uninstalling_7mtt.html"
   - title: Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based
       transition only)
-    url: "/install-admin/concept_installing_and_uninstalling_the_7_mode_transition_tool_on_linux.html"
+    url: "/install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html"
     entries:
     - title: System requirements for installing 7-Mode Transition Tool on Linux
       url: "/install-admin/concept_system_requirements_for_7_mode_transition_tool_on_linux.html"
@@ -540,20 +539,20 @@ entries:
     - title: Uninstalling 7-Mode Transition Tool on Linux
       url: "/install-admin/task_uninstalling_7_mode_transition_tool_on_linux.html"
   - title: Modifying the configuration options of the 7-Mode Transition Tool
-    url: "/install-admin/task_modifying_the_default_configuration_settings_of_the_7_mode_transition_tool.html"
+    url: "/install-admin/task_modifying_default_configuration_settings_of_7mtt.html"
   - title: Troubleshooting issues
     url: "/install-admin/concept_troubleshooting_web_interface_issues.html"
     entries:
     - title: Tool installation fails with an incompatible OS error
       url: "/install-admin/reference_tool_installation_fails_with_incompatible_os_error.html"
     - title: Installation or uninstallation of the 7-Mode Transition Tool is blocked
-      url: "/install-admin/reference_installation_or_uninstallation_of_the_7_mode_transition_tool_is_blocked.html"
+      url: "/install-admin/reference_installation_or_uninstallation_of_7mtt_is_blocked.html"
     - title: Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows
         system
-      url: "/install-admin/reference_re_installation_or_upgrade_of_the_tool_might_fail_with_another_instance_of_tool_is_running_error_message.html"
+      url: "/install-admin/reference_reinstalling_or_upgrading_7mtt_fails_on_windows_system.html"
     - title: Windows Program Compatibility Assistant notification displayed while
         installing the tool
-      url: "/install-admin/reference_you_receive_the_windows_compatibility_assistant_notification_that_the_program_might_not_have_installed_correctly.html"
+      url: "/install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html"
 - title: inventory-collect
   url: "/inventory-collect/index.html"
   entries:
@@ -561,13 +560,13 @@ entries:
     url: "/inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html"
     entries:
     - title: ONTAP target releases supported by the 7-Mode Transition Tool
-      url: "/inventory-collect/concept_ontap_target_releases_supported_by_the_7_mode_transition_tool.html"
+      url: "/inventory-collect/concept_ontap_target_releases_supported_by_7mtt.html"
     - title: System requirements for running the Inventory Collect Tool
       url: "/inventory-collect/concept_system_requirements_for_running_ict.html"
     - title: Storage, host, and FC switches version requirements for inventory collection
       url: "/inventory-collect/concept_storage_and_host_version_requirements.html"
     - title: Preparing the 7-Mode systems and hosts for inventory collection
-      url: "/inventory-collect/task_preparing_the_7_mode_systems_for_inventory_collection.html"
+      url: "/inventory-collect/task_preparing_7_mode_systems_for_inventory_collection.html"
     - title: Supported configurations for generating an FC zone plan
       url: "/inventory-collect/concept_supported_configurations_for_generating_an_fc_zone_plan.html"
     - title: Syntax and options
@@ -587,7 +586,7 @@ entries:
     url: "/san-host/concept_deciding_whether_to_use_this_guide.html"
     entries:
     - title: ONTAP target releases supported by the 7-Mode Transition Tool
-      url: "/san-host/concept_ontap_target_releases_supported_by_the_7_mode_transition_tool.html"
+      url: "/san-host/concept_ontap_target_releases_supported_by_7mtt.html"
   - title: 7-Mode Transition Tool transition phases
     url: "/san-host/concept_7mtt_transition_phases.html"
   - title: VMware ESXi host remediation
@@ -610,12 +609,12 @@ entries:
         - title: Deleting VM snapshots copies using vSphere Client
           url: "/san-host/task_deleting_vm_snapshots_using_vsphere_client.html"
         - title: Removing VM snapshots using the ESXi CLI
-          url: "/san-host/task_removing_vm_snapshots_using_the_esxi_cli.html"
+          url: "/san-host/task_removing_vm_snapshots_using_esxi_cli.html"
     - title: Testing transitioned LUNs and ESXi host applications before the cutover
         phase of copy-based transitions
-      url: "/san-host/task_testing_transitioned_luns_and_esxi_host_applications_before_cutover_phase_of_copy_based_transitions.html"
+      url: "/san-host/task_testing_transitioned_luns_and_esxi_host_applications_before_cutover.html"
     - title: Downtime at apply configuration (precutover) phase of ESXi host transition
-      url: "/san-host/concept_downtime_at_pre_cut_over_phase_of_esxi_host_transition.html"
+      url: "/san-host/concept_downtime_at_precutover_phase_of_esxi_host_transition.html"
     - title: Post-transition remediation requirements for ESXi hosts
       url: "/san-host/concept_post_transition_requirements_for_esxi_hosts.html"
       entries:
@@ -654,7 +653,7 @@ entries:
     url: "/san-host/concept_linux_host_remediation.html"
     entries:
     - title: Gathering pretransition information from the Inventory Assessment Workbook
-      url: "/san-host/task_gathering_pretransition_information_from_the_inventory_assessment_workbook.html"
+      url: "/san-host/task_gathering_pretransition_information_from_inventory_assessment_workbook.html"
       entries:
       - title: What the Inventory Collect Tool is
         url: "/san-host/concept_what_the_inventory_collect_tool_is.html"
@@ -663,14 +662,14 @@ entries:
       entries:
       - title: Verifying that RHEL LUNs are ready for transition using the Inventory
           Assessment Workbook
-        url: "/san-host/task_verifying_that_rhel_luns_are_ready_for_transition_using_the_inventory_assessment_workbook.html"
+        url: "/san-host/task_verifying_that_rhel_luns_are_ready_for_transition_using_inventory_assessment_workbook.html"
       - title: Verifying that RHEL 5 LUNs are ready for transition using the CLI
         url: "/san-host/task_verifying_rhel_5_luns_are_ready_for_transition_using_cli.html"
       - title: Verifying that RHEL 6 DDMP devices are ready for transition using CLI
         url: "/san-host/task_verifying_rhel_6_ddmp_devices_are_ready_for_transition_using_cli.html"
       - title: Testing DMMP devices without file systems on RHEL hosts before the
           cutover phase of copy-based transitions
-        url: "/san-host/task_testing_dmmp_devices_without_file_systems_on_rhel_before_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_dmmp_devices_on_rhel_before_cutover.html"
       - title: Preparing for cutover when transitioning a Linux host DMMP device without
           a file system
         url: "/san-host/task_preparing_for_cutover_when_transitioning_linux_host_dmmp_device_without_file_system.html"
@@ -681,16 +680,16 @@ entries:
       entries:
       - title: Preparing RHEL LUNs with mount points using DMMP device names for transition
           using the Inventory Assessment Workbook
-        url: "/san-host/task_preparing_rhel_luns_with_mount_points_using_dmmp_device_names_for_transition_using_the_inventory_assessment_workbook.html"
+        url: "/san-host/task_preparing_rhel_luns_transition_using_inventory_assessment_workbook.html"
       - title: Preparing RHEL LUNs with mount points using DMMP alias names for transition
           using the CLI
-        url: "/san-host/task_preparing_rhel_luns_with_mount_points_using_dmmp_alias_names_for_transition_using_the_cli.html"
+        url: "/san-host/task_preparing_rhel_luns_for_transition_using_the_cli.html"
       - title: Testing DMMP devices with file systems on RHEL hosts before the cutover
           phase of copy-based transitions
         url: "/san-host/task_testing_dmmp_devices_with_file_systems_on_rhel_hosts_before_cutover_phase.html"
       - title: Preparing for the cutover phase when transitioning LUNs with mount
           points using DMMP device names on Linux hosts
-        url: "/san-host/task_preparing_for_the_cutover_phase_when_transitioning_luns_with_mount_points_using_dmmp_alias_names_on_linux_hosts.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.html"
       - title: Remounting DMMP devices on Linux hosts after transition
         url: "/san-host/task_remounting_dmmp_devices_on_linux_hosts_after_transition.html"
     - title: Transitioning LUNs with mount points using DMMP alias names
@@ -698,13 +697,13 @@ entries:
       entries:
       - title: Preparing RHEL LUNs with mount points using DMMP alias names for transition
           using the CLI
-        url: "/san-host/task_preparing_rhel_luns_with_mount_points_using_dmmp_alias_names_for_transition_using_the_cli.html"
+        url: "/san-host/task_preparing_rhel_luns_for_transition_using_the_cli.html"
       - title: Testing LUNs with mount points using DMMP alias names on RHEL hosts
           before the cutover phase of copy-based transitions
-        url: "/san-host/task_testing_luns_with_mount_points_using_dmmp_alias_names_on_rhel_hosts_before_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_luns_with_mounts_using_dmmp_aliases_on_rhel_hosts_before_cutover.html"
       - title: Preparing for the cutover phase when transitioning LUNs with mount
           points using DMMP device names on Linux hosts
-        url: "/san-host/task_preparing_for_the_cutover_phase_when_transitioning_luns_with_mount_points_using_dmmp_alias_names_on_linux_hosts.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.html"
       - title: Remounting LUNs with mount points using DMMP alias names on Linux hosts
           after transition
         url: "/san-host/task_remounting_luns_with_mount_point_using_dmmp_alias_name_on_linux_hosts_after_transition.html"
@@ -716,7 +715,7 @@ entries:
         url: "/san-host/task_testing_luns_with_file_systems_on_lvm_devices_before_cutover_phase.html"
       - title: Preparing for cutover phase when transitioning Linux host file systems
           on LVM devices
-        url: "/san-host/task_preparing_for_cutover_phase_when_transitioning_linux_host_file_systems_on_lvm_devices.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_linux_host_file_systems_on_lvm_devices.html"
       - title: Mounting logical volumes on Linux hosts after transition
         url: "/san-host/task_mounting_logical_volumes_on_linux_host_after_transition.html"
     - title: Transitioning of SAN boot LUNs
@@ -730,9 +729,9 @@ entries:
         url: "/san-host/task_preparing_for_transition_of_iscsi_san_boot_luns.html"
       - title: Testing SAN boot LUNs on RHEL hosts before the cutover phase of copy-based
           transitions
-        url: "/san-host/task_testing_san_boot_luns_on_rhel_hosts_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_san_boot_luns_on_rhel_hosts_before_cutover.html"
       - title: Preparing for the cutover phase when transitioning SAN boot LUNs
-        url: "/san-host/concept_preparing_for_the_cutover_phase_when_transitioning_san_boot_luns.html"
+        url: "/san-host/concept_preparing_for_cutover_when_transitioning_san_boot_luns.html"
       - title: Discovering SAN boot LUNs after transition
         url: "/san-host/task_discovering_san_boot_luns_after_transition.html"
   - title: Windows host remediation
@@ -744,13 +743,13 @@ entries:
       - title: What the Inventory Collect Tool is
         url: "/san-host/concept_what_the_inventory_collect_tool_is.html"
     - title: Testing transitioned LUNs on Windows hosts before the cutover phase
-      url: "/san-host/task_testing_transitioned_luns_on_windows_hosts_before_the_cutover_phase.html"
+      url: "/san-host/task_testing_transitioned_luns_on_windows_hosts_before_cutover.html"
     - title: Preparing for cutover phase when transitioning Windows hosts
-      url: "/san-host/task_preparing_for_cutover_phase_when_transitioning_windows_hosts.html"
+      url: "/san-host/task_preparing_for_cutover_when_transitioning_windows_hosts.html"
     - title: Bringing Windows hosts online after transition
       url: "/san-host/task_bringing_windows_hosts_online_after_transition.html"
     - title: Exceptions and known issues when transitioning SAN hosts to ONTAP
-      url: "/san-host/concept_exceptions_and_known_issues_when_transitioning_san_hosts_to_clustered_data_ontap.html"
+      url: "/san-host/concept_exceptions_and_known_issues_when_transitioning_san_hosts_to_clustered_ontap.html"
   - title: HP-UX host remediation
     url: "/san-host/concept_hp_ux_host_remediation.html"
     entries:
@@ -761,10 +760,10 @@ entries:
         url: "/san-host/task_preparing_to_transition_hp_ux_host_luns_with_file_systems.html"
       - title: Testing data LUNs on HP-UX hosts before the cutover phase of copy-based
           transitions
-        url: "/san-host/task_testing_data_luns_on_hp_ux_hosts_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_data_luns_on_hp_ux_hosts_before_cutover.html"
       - title: Preparing for cutover phase when transitioning HP-UX host data LUNs
           with file systems
-        url: "/san-host/task_preparing_for_cutover_phase_when_transitioning_hp_ux_host_data_luns_with_file_systems.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_hp_ux_host_data_luns_with_file_systems.html"
       - title: Mounting HP-UX host LUNs with file systems after transition
         url: "/san-host/task_mounting_hp_ux_host_luns_with_file_systems_after_transition.html"
     - title: Transitioning HP-UX host SAN boot LUNs with FC/FCoE configurations
@@ -774,12 +773,12 @@ entries:
         url: "/san-host/task_preparing_to_transition_san_boot_luns_on_hp_ux_hosts_with_fc_configurations.html"
       - title: Testing transitioned SAN boot LUNs on HP-UX hosts before the cutover
           phase of copy-based transitions
-        url: "/san-host/task_testing_transitioned_san_boot_luns_on_hp_ux_hosts_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_transitioned_san_boot_luns_on_hp_ux_hosts_before_cutover.html"
       - title: Preparing for the cutover phase when transitioning SAN boot LUNs
-        url: "/san-host/concept_preparing_for_the_cutover_phase_when_transitioning_san_boot_luns.html"
+        url: "/san-host/concept_preparing_for_cutover_when_transitioning_san_boot_luns.html"
       - title: Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after
           transition
-        url: "/san-host/task_making_a_san_boot_lun_the_primary_boot_lun_for_hp_ux_emulex_hbas_after_transition.html"
+        url: "/san-host/task_making_a_san_boot_lun_primary_for_hp_ux_emulex_hbas_after_transition.html"
       - title: Making a SAN boot LUN the primary boot LUN for HP-UX QLogic HBAs after
           transition
         url: "/san-host/task_making_san_boot_lun_primary_boot_lun_for_hp_ux_qlogic_hbas_after_transition.html"
@@ -793,10 +792,10 @@ entries:
         url: "/san-host/task_preparing_to_transition_san_boot_luns_on_aix_hosts_with_fc_fcoe_configurations.html"
       - title: Testing transitioned SAN boot LUNs on AIX hosts before the cutover
           phase of copy-based transitions
-        url: "/san-host/task_testing_transitioned_san_boot_luns_on_aix_hosts_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_transitioned_san_boot_luns_on_aix_hosts_before_cutover.html"
       - title: Preparing for the cutover phase when transitioning AIX hosts with FC/FCoE
           configurations.
-        url: "/san-host/task_preparing_for_the_cutover_phase_when_transitioning_aix_hosts_with_fc_fcoe_configurations.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_aix_hosts_with_fc_fcoe_configurations.html"
       - title: Booting from SAN boot LUN on AIX hosts with FC/FCoE configurations
           after transition
         url: "/san-host/task_booting_from_san_boot_lun_on_aix_hosts_with_fc_fcoe_configurations_after_transition.html"
@@ -807,10 +806,10 @@ entries:
         url: "/san-host/task_preparing_to_transition_aix_data_host_luns_with_file_systems.html"
       - title: Testing transitioned LUNs on AIX hosts before the cutover phase of
           copy-based transitions
-        url: "/san-host/task_testing_transitioned_luns_on_aix_hosts_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_transitioned_luns_on_aix_hosts_before_cutover.html"
       - title: Preparing for cutover phase when transitioning AIX host data LUNs with
           file systems
-        url: "/san-host/task_preparing_for_cutover_phase_when_transitioning_aix_data_luns_with_file_systems.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_aix_data_luns_with_file_systems.html"
       - title: Mounting AIX host data LUNs with file systems after transition
         url: "/san-host/task_mounting_aix_host_luns_with_file_systems_after_transition.html"
   - title: Solaris host remediation
@@ -823,10 +822,10 @@ entries:
         url: "/san-host/task_preparing_to_transition_solaris_host_data_luns_with_zfs_file_system.html"
       - title: Testing data LUNs on Solaris hosts with ZFS file system before the
           cutover phase of copy-based transitions
-        url: "/san-host/task_testing_data_luns_on_solaris_hosts_with_zfs_file_system_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_data_luns_on_solaris_hosts_with_zfs_file_system_before_cutover.html"
       - title: Preparing for cutover phase when transitioning Solaris host data LUNs
           with ZFS file systems
-        url: "/san-host/task_preparing_for_cutover_phase_when_transitioning_solaris_host_data_luns_with_zfs_file_systems.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_solaris_host_data_luns_with_zfs_file_systems.html"
       - title: Mounting Solaris host LUNs with ZFS file systems after transition
         url: "/san-host/task_mounting_solaris_host_luns_with_zfs_file_systems_after_transition.html"
     - title: Transitioning Solaris host data LUNs with Sun Volume Manager
@@ -836,19 +835,19 @@ entries:
         url: "/san-host/task_preparing_to_transition_solaris_host_data_luns_with_sun_volume_manager.html"
       - title: Testing data LUNs on Solaris hosts with Sun Volume Manager before the
           cutover phase of copy-based transitions
-        url: "/san-host/task_testing_data_luns_on_solaris_hosts_with_sun_volume_manager_svm_before_the_cutover_phase_of_copy_based_transitions.html"
+        url: "/san-host/task_testing_data_luns_on_solaris_hosts_with_sun_volume_manager_svm_before_cutover.html"
       - title: Preparing for cutover phase when transitioning Solaris host Sun Volume
           Manager data LUNs
-        url: "/san-host/task_preparing_for_cutover_phase_when_transitioning_solaris_host_sun_volume_manager_data_luns.html"
+        url: "/san-host/task_preparing_for_cutover_when_transitioning_solaris_host_sun_volume_manager_data_luns.html"
       - title: Mounting Solaris host LUNs with Solaris Volume Manager after transition
         url: "/san-host/task_mounting_solaris_host_luns_with_sun_volume_manager_after_transition.html"
   - title: Rolling back LUNs to 7-Mode after transition
     url: "/san-host/concept_rolling_back_luns_to_7_mode_after_transition.html"
     entries:
     - title: Rolling back ONTAP LUNs to 7-Mode LUNs on RHEL hosts
-      url: "/san-host/task_rolling_back_clustered_data_ontap_luns_back_to_data_ontap_operating_in_7_mode_on_rhel_hosts.html"
+      url: "/san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_rhel_hosts.html"
     - title: Rolling back ONTAP LUNs to 7-Mode LUNs on Windows hosts
-      url: "/san-host/task_rolling_back_clustered_data_ontap_luns_back_to_data_ontap_operating_in_7_mode_on_windows_hosts.html"
+      url: "/san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_windows_hosts.html"
 - title: snapmirror
   url: "/snapmirror/index.html"
   entries:
@@ -864,7 +863,7 @@ entries:
         - title: Features not supported for SAN transition
           url: "/snapmirror/concept_unsupported_7_mode_san_functions.html"
       - title: 7-Mode version requirements for transition
-        url: "/snapmirror/reference_7_mode_data_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.html"
+        url: "/snapmirror/reference_7_mode_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.html"
       - title: Considerations for using SnapMirror for transition
         url: "/snapmirror/concept_considerations_for_using_snapmirror_for_transition.html"
       - title: Space considerations when transitioning SAN volumes
@@ -877,9 +876,9 @@ entries:
       - title: License requirements for transition
         url: "/snapmirror/concept_licensing_requirements_for_transition.html"
       - title: Preparing the 7-Mode system for transition
-        url: "/snapmirror/task_preparing_the_7_mode_system_for_transition.html"
+        url: "/snapmirror/task_preparing_7_mode_system_for_transition.html"
       - title: Preparing the cluster for transition
-        url: "/snapmirror/task_preparing_the_cluster_for_transition.html"
+        url: "/snapmirror/task_preparing_cluster_for_transition.html"
       - title: Creating a transition peer relationship
         url: "/snapmirror/task_creating_a_transition_peering_relationship.html"
       - title: Configuring a TCP window size for SnapMirror relationships
@@ -893,23 +892,23 @@ entries:
         url: "/snapmirror/task_transitioning_a_data_protection_relationship.html"
         entries:
         - title: Transitioning a secondary volume
-          url: "/snapmirror/task_transitioning_the_secondary_volume.html"
+          url: "/snapmirror/task_transitioning_secondary_volume.html"
         - title: Transitioning a primary volume
           url: "/snapmirror/task_transitioning_a_primary_volume.html"
       - title: Transitioning a volume SnapMirror relationship in parallel
         url: "/snapmirror/task_transitioning_a_volume_snapmirror_relationship_in_parallel.html"
   - title: Transitioning a disaster recovery relationship between vFiler units
-    url: "/snapmirror/task_transitioning_the_disaster_recovery_relationship.html"
+    url: "/snapmirror/task_transitioning_disaster_recovery_relationship.html"
   - title: Recovering from a disaster at the 7-Mode site during transition
-    url: "/snapmirror/task_recovering_from_a_disaster_at_7_mode_during_transition.html"
+    url: "/snapmirror/task_recovering_from_a_disaster_at_7_mode_site_during_transition.html"
     entries:
     - title: Redirecting clients to the clustered Data ONTAP secondary volume after
         a disaster
-      url: "/snapmirror/task_redirecting_clients_to_the_clustered_data_ontap_secondary_volume.html"
+      url: "/snapmirror/task_redirecting_clients_to_clustered_ontap_secondary_volume.html"
     - title: Transitioning the 7-Mode primary as a stand-alone volume
-      url: "/snapmirror/task_transitioning_the_7_mode_primary_as_a_standalone_volume_transitioning_the_7_mode_primary_as_a_standalone_volume.html"
+      url: "/snapmirror/task_transitioning_7_mode_primary_as_a_standalone_volume.html"
     - title: Redirecting clients to the clustered Data ONTAP primary volume
-      url: "/snapmirror/task_redirecting_clients_to_the_clustered_data_ontap_primary_volume_after_disaster.html"
+      url: "/snapmirror/task_redirecting_clients_to_clustered_ontap_primary_volume_after_disaster.html"
   - title: Troubleshooting transition issues when using SnapMirror
     url: "/snapmirror/reference_troubleshooting.html"
     entries:

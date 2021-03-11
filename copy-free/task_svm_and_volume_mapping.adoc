@@ -54,7 +54,7 @@ All the target clustered Data ONTAP volumes are mounted with junction paths with
 +
 All the target clustered Data ONTAP volumes are mounted with junction paths with the 7-Mode volume name in the format /source_volume_name after transition.
 
-. Click image:../media/edit_schedule.gif[Edit icon] to modify the name of the target clustered Data ONTAP volume.
+. Click image:../media/delete_me_edit_schedule.gif[Edit icon] to modify the name of the target clustered Data ONTAP volume.
 +
 By default, the target clustered Data ONTAP volume has the same name as the 7-Mode volume. If a volume with the same name as the 7-Mode volume already exists on the SVM, the target volume is automatically assigned a new name.
 

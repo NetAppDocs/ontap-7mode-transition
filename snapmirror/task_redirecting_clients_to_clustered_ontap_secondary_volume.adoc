@@ -1,0 +1,28 @@
+---
+permalink: snapmirror/task_redirecting_clients_to_clustered_ontap_secondary_volume.html
+sidebar: sidebar
+keywords: 
+summary: 'If you have established a SnapMirror disaster recovery \(DR\) relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume and if a disaster occurs at the 7-Mode primary site, you must redirect client access to the clustered Data ONTAP secondary volume.'
+---
+= Redirecting clients to the clustered Data ONTAP secondary volume after a disaster
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you have established a SnapMirror disaster recovery (DR) relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume and if a disaster occurs at the 7-Mode primary site, you must redirect client access to the clustered Data ONTAP secondary volume.
+
+. From the secondary cluster, use the snapmirror break command to break the SnapMirror relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
++
+----
+sec_cluster::> snapmirror break -destination-path dst_vserver:dst_c_vol
+----
+
+. From the secondary cluster, use the snapmirror delete command to delete the SnapMirror relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
++
+----
+sec_cluster::> snapmirror delete -destination-path dst_vserver:dst_c_vol
+----
+
+. Redirect client access to the clustered Data ONTAP secondary volume.
++
+For more information about setting up client access in clustered Data ONTAP, see the _Clustered Data ONTAP File Access and Protocols Management Guide_.

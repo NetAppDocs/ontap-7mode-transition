@@ -1,0 +1,50 @@
+---
+permalink: copy-free/task_importing_7_mode_data_to_clustered_ontap.html
+sidebar: sidebar
+keywords: 
+summary: 'After verifying the cabling and resolving any issues, you can run the import operation. In this phase, the disk ownership is assigned to the mapped cluster nodes, and the 7-Mode aggregates, volumes, and LUNs are converted to the ONTAP format. All the volume-level and LUN-level configurations are also applied.'
+---
+= Importing 7-Mode data to ONTAP
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After verifying the cabling and resolving any issues, you can run the import operation. In this phase, the disk ownership is assigned to the mapped cluster nodes, and the 7-Mode aggregates, volumes, and LUNs are converted to the ONTAP format. All the volume-level and LUN-level configurations are also applied.
+
+The following operations are performed by the tool in this phase:
+
+* 7-Mode disks are assigned to the mapped target cluster nodes.
+* All the 7-Mode aggregates, volumes, and LUNs are converted to the ONTAP format.
+* The 7-Mode IP addresses that were selected for transition are configured on the SVMs in the administrative up state.
+* The following configurations are applied:
+ ** NFS export rules
+ ** CIFS shares
+ ** CIFS ACLs configuration
+ ** CIFS home directory configuration
+ ** CIFS symbolic links
+ ** Quota configuration
+ ** Snapshot copy schedules
+ ** LUN maps and igroups
+
+. Click *Import*.
++
+*Troubleshooting:* If there are missing disks in an aggregate, the aggregate becomes degraded and the import operation fails. If the number of missing disks is within a permissible limit, you can continue the transition with the degraded aggregates by running the following command from the 7-Mode Transition Tool CLI: `transition cft aggregate degraded-transition -p project-name -n 7-mode-host-name -a 7-mode-aggregate-name -i acknowledge`
++
+You can then rerun the cabling verification operation and continue with the transition. You must make sure that there are enough spare disks in the target cluster node to reconstruct these RAID groups after the aggregates are transitioned.
++
+A warning message is displayed, listing the important considerations for this operation.
+
+. Click *Yes* to continue.
++
+The operation results are displayed.
+
+. Wait for the operation to complete and do the following:
+ .. Click *Save as CSV* to save the operation results in a file.
+ .. Click *Collect Tool Logs* to take a backup of all the transition log files.
++
+It is a best practice to save the log files after each transition operation.
+
+ .. Click *Close* to close the operation results window.
+
++
+If the operation takes a long time to complete, you can click *Run in Background* to exit the operation results window. You should not edit the project or perform any other task when the operation is running in the background. You can then view the operations results from the Operation History tab.

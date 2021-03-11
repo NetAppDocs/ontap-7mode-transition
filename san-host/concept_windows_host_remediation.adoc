@@ -15,6 +15,6 @@ If you are using the 7-Mode Transition Tool (7MTT) to move from Data ONTAP opera
 
 xref:task_preparing_windows_hosts_for_transition.adoc[Preparing Windows hosts for transition]
 
-xref:task_preparing_for_cutover_phase_when_transitioning_windows_hosts.adoc[Preparing for cutover phase when transitioning Windows hosts]
+xref:task_preparing_for_cutover_when_transitioning_windows_hosts.adoc[Preparing for cutover phase when transitioning Windows hosts]
 
 xref:task_bringing_windows_hosts_online_after_transition.adoc[Bringing Windows hosts online after transition]

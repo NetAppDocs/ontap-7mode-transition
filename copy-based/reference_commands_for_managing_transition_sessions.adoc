@@ -265,4 +265,4 @@ For more information about these commands, see the man pages for the 7-Mode Tran
 
 *Related information*
 
-xref:task_transitioning_volumes_by_using_the_7_mode_transition_tool.adoc[Migrating data and configuration from 7-Mode volumes]
+xref:task_transitioning_volumes_using_7mtt.adoc[Migrating data and configuration from 7-Mode volumes]

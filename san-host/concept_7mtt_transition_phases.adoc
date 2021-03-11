@@ -13,8 +13,8 @@ You can use the 7-Mode Transition Tool (7MTT) to perform a copy-free transition 
 
 The CFT phases are as follows:
 
-image::../media/cft_phases.gif[Copy-free transition phases]
+image::../media/delete_me_cft_phases.gif[Copy-free transition phases]
 
 The CBT phases are as follows:
 
-image::../media/transition_operational_flow.gif[Copy-based transition phases]
+image::../media/delete_me_transition_operational_flow.gif[Copy-based transition phases]

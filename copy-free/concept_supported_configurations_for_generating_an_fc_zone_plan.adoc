@@ -15,8 +15,8 @@ The 7-Mode systems (single controller or an HA pair), hosts, and cluster can be 
 
 The following figure illustrates a configuration in which the 7-Mode systems, hosts, and cluster are connected to the switches in the same fabric:
 
-image::../media/fc_zone_config1.gif[The following figure illustrates a configuration in which the 7-Mode systems, hosts, and cluster are connected to the switches in the same fabric]
+image::../media/delete_me_fc_zone_config1.gif[The following figure illustrates a configuration in which the 7-Mode systems, hosts, and cluster are connected to the switches in the same fabric]
 
 The following figure illustrates a configuration in which the 7-Mode systems and cluster are connected to switches in different fabrics:
 
-image::../media/fc_zone_config2.gif[The following figure illustrates a configuration in which the 7-Mode systems and cluster are connected to switches in different fabric]
+image::../media/delete_me_fc_zone_config2.gif[The following figure illustrates a configuration in which the 7-Mode systems and cluster are connected to switches in different fabric]

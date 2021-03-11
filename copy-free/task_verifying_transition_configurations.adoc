@@ -1,0 +1,15 @@
+---
+permalink: copy-free/task_verifying_transition_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'After successfully importing the 7-Mode volumes and configurations, you must manually verify the transitioned aggregates, volumes, LUNs, and configurations.'
+---
+= Verifying the transitioned configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After successfully importing the 7-Mode volumes and configurations, you must manually verify the transitioned aggregates, volumes, LUNs, and configurations.
+
+. Verify that the 7-Mode aggregates, volumes, and LUNs as well as the CIFS shares, NFS exports, and LUN mappings are transitioned.
+. Verify that all the 7-Mode configurations are retained.

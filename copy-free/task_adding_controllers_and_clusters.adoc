@@ -26,7 +26,7 @@ For a cluster, you can specify the IP address or FQDN of the cluster-management 
 The 7-Mode controllers are added to the "`7-Mode Controllers`" table and clusters are added to the "`Clustered Data ONTAP Systems`" table.
 
 . Repeat Steps 2 and 3 to add all of the controllers and clusters that you require for the transition.
-. If the Status column indicates that the credentials of the system are missing or the credentials have changed from what was initially entered in the tool, click the image:../media/edit_schedule.gif[] icon, and then enter the credentials again.
+. If the Status column indicates that the credentials of the system are missing or the credentials have changed from what was initially entered in the tool, click the image:../media/delete_me_edit_schedule.gif[] icon, and then enter the credentials again.
 . Click *Next*.
 +
 The Select Source Systems screen is displayed.

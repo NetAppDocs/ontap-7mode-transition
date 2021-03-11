@@ -50,6 +50,6 @@ If your clustered Data ONTAP LUNs are to be remapped to your source host, you mu
 
 *Related information*
 
-xref:task_gathering_pretransition_information_from_the_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
+xref:task_gathering_pretransition_information_from_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
 
-xref:task_preparing_for_the_cutover_phase_when_transitioning_luns_with_mount_points_using_dmmp_alias_names_on_linux_hosts.adoc[Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts]
+xref:task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.adoc[Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts]

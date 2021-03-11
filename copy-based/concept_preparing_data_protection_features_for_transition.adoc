@@ -1,0 +1,12 @@
+---
+permalink: copy-based/concept_preparing_data_protection_features_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You must perform some manual steps for transitioning 7-Mode SnapMirror relationships. You must also be aware of the data protection relationships that are supported and unsupported for transition.'
+---
+= Preparing data protection features for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must perform some manual steps for transitioning 7-Mode SnapMirror relationships. You must also be aware of the data protection relationships that are supported and unsupported for transition.

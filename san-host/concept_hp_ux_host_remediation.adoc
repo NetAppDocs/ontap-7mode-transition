@@ -13,6 +13,6 @@ If you are using the 7-Mode Transition Tool (7MTT) to move from Data ONTAP opera
 
 *Related information*
 
-xref:task_making_a_san_boot_lun_the_primary_boot_lun_for_hp_ux_emulex_hbas_after_transition.adoc[Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after transition]
+xref:task_making_a_san_boot_lun_primary_for_hp_ux_emulex_hbas_after_transition.adoc[Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after transition]
 
 xref:task_making_san_boot_lun_primary_boot_lun_for_hp_ux_qlogic_hbas_after_transition.adoc[Making a SAN boot LUN the primary boot LUN for HP-UX QLogic HBAs after transition]

@@ -60,5 +60,5 @@ Manually remove all configurations that were applied by the tool from the SVMs.
 You can view the configurations that are applied on the SVMs from the Operations History tab.
 
 +
-xref:task_running_manual_steps_for_rolling_back_the_transition.adoc[Manual steps for rolling back the transition]
+xref:task_running_manual_steps_for_rolling_back_transition.adoc[Manual steps for rolling back the transition]
 . After completing all the manual steps, click *Verify 7-Mode* from the 7-Mode Transition Tool to verify that the 7-Mode controllers are ready to serve data.

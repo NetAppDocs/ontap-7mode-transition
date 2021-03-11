@@ -203,4 +203,4 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SA
 
 *Related information*
 
-xref:task_transitioning_volumes_by_using_the_7_mode_transition_tool.adoc[Migrating data and configuration from 7-Mode volumes]
+xref:task_transitioning_volumes_using_7mtt.adoc[Migrating data and configuration from 7-Mode volumes]

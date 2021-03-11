@@ -13,7 +13,7 @@ Before transition of a Red Hat Enterprise Linux (RHEL) DMMP device without a fil
 
 *Related information*
 
-xref:task_verifying_that_rhel_luns_are_ready_for_transition_using_the_inventory_assessment_workbook.adoc[Verifying that RHEL LUNs are ready for transition using the Inventory Assessment Workbook]
+xref:task_verifying_that_rhel_luns_are_ready_for_transition_using_inventory_assessment_workbook.adoc[Verifying that RHEL LUNs are ready for transition using the Inventory Assessment Workbook]
 
 xref:task_verifying_rhel_5_luns_are_ready_for_transition_using_cli.adoc[Verifying that RHEL 5 LUNs are ready for transition using the CLI]
 

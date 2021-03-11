@@ -11,7 +11,7 @@ summary: 'Before starting the copy-free transition, you must identify the 7-Mode
 [.lead]
 Before starting the copy-free transition, you must identify the 7-Mode HA pair to transition, understand the requirements and restrictions for migration, and prepare the 7-Mode systems and cluster for transition. You must also be aware of the Data ONTAP features that are supported and unsupported for transition.
 
-image::../media/cft_preparation_workflow.gif[]
+image::../media/delete_me_cft_preparation_workflow.gif[]
 
 *Related information*
 

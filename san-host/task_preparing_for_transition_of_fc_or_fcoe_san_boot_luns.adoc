@@ -56,4 +56,4 @@ LABEL=SwapPartition  swap  swap   defaults    0 0
 
 *Related information*
 
-xref:task_gathering_pretransition_information_from_the_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
+xref:task_gathering_pretransition_information_from_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
