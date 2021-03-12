@@ -1,0 +1,30 @@
+---
+permalink: snapmirror/concept_considerations_for_using_snapmirror_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of certain considerations when running transition operations simultaneously with SnapMirror or SnapVault operations occurring in the 7-Mode system, such as the maximum number of concurrent SnapMirror transfers, data copy schedules, and using multiple paths for transition.'
+---
+= Considerations for using SnapMirror for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of certain considerations when running transition operations simultaneously with SnapMirror or SnapVault operations occurring in the 7-Mode system, such as the maximum number of concurrent SnapMirror transfers, data copy schedules, and using multiple paths for transition.
+
+== Maximum number of concurrent SnapMirror transfers
+
+During transition, the maximum number of concurrent SnapMirror transfers supported on the 7-Mode and ONTAP systems depend on the number of volume SnapMirror replication operations allowed for a specific storage system model.
+
+For information about the maximum number of concurrent volume SnapMirror transfers for your system model, see the _Data ONTAP Data Protection Online Backup and Recovery Guide for 7-Mode_.
+
+== Data copy schedules
+
+Data copy schedules for transition operations should not overlap with the existing schedules for SnapMirror or SnapVault operations running on the 7-Mode system.
+
+== Using multiple paths for transition
+
+You can specify two paths for transition by using a data copy IP address and a multipath IP address. However, both paths can be used only for load-balancing, not for failover.
+
+*Related information*
+
+http://mysupport.netapp.com/[Documentation on the NetApp Support Site: mysupport.netapp.com]

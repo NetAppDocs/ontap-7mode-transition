@@ -1,0 +1,40 @@
+---
+permalink: san-host/task_testing_san_boot_luns_on_rhel_hosts_before_cutover.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later, and Data ONTAP 8.3.2 or later to perform a copy-based transition your Red Hat Enterprise Linux \(RHEL\) host, you can test your transitioned ONTAP SAN boot LUNs before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
+---
+= Testing SAN boot LUNs on RHEL hosts before the cutover phase of copy-based transitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) 2.2 or later, and Data ONTAP 8.3.2 or later to perform a copy-based transition your Red Hat Enterprise Linux (RHEL) host, you can test your transitioned ONTAP SAN boot LUNs before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.
+
+Your new ONTAP LUNs must be mapped to your test host and your LUNs must ready for transition.
+
+You should maintain hardware parity between the test host and the source host.
+
+* For copy-based transitions, you must perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool.
+* For copy-free transitions, you must perform these steps after the Import Data and Configuration operation in the 7-Mode Transition Tool.
+
+. For FC and FCoE configurations only:
+ .. Enter the HBA BIOS settings mode.
+ .. Choose *Rescan* to discover the ONTAP SAN boot LUNs on the host.
+ .. Remove the 7-Mode boot LUN ID.
+ .. Add the ONTAP boot LUN ID in the HBA BIOS.
+ .. Exit the HBA BIOS settings mode, and then reboot the host.
+. After the host reboots, change the IP address and host name on the test host.
+. Verify that your new ONTAP LUNs have been discovered: `sanlun lun show`
+. Configure DMMP devices for your ONTAP LUNs: `multipath -ll`
+. Perform your testing as needed.
+. Shut down the test host: `shutdown -h -t0 now`
+. In the 7-Mode Transition Tool user interface (UI), click *Finish Testing*.
+
+If your ONTAP LUNs are to be remapped to your source host, you must prepare your source host for the cutover phase. If your ONTAP LUNs are to remain mapped to your test host, no further steps are required on the test host.
+
+*Related information*
+
+xref:task_gathering_pretransition_information_from_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]
+
+xref:concept_preparing_for_cutover_when_transitioning_san_boot_luns.adoc[Preparing for the cutover phase when transitioning SAN boot LUNs]

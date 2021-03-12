@@ -1,0 +1,64 @@
+---
+permalink: copy-free/task_performing_a_transition_rollback.html
+sidebar: sidebar
+keywords: 
+summary: 'You can roll back a transition if you want to revert to 7-Mode at any stage of the copy-free transition before the transitioned aggregates are committed. Rollback is a manual operation. You can use the 7-Mode Transition Tool to generate the manual steps that you have to perform for a rollback.'
+---
+= Rolling back a copy-free transition project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can roll back a transition if you want to revert to 7-Mode at any stage of the copy-free transition before the transitioned aggregates are committed. Rollback is a manual operation. You can use the 7-Mode Transition Tool to generate the manual steps that you have to perform for a rollback.
+
+* You must ensure that no volume or aggregate transition operations are running on the cluster.
++
+You can use the job show -jobtype transition command.
+
+* None of the 7-Mode aggregates must be committed.
++
+NOTE: You cannot perform the rollback if even one 7-Mode aggregate is committed.
+
+* The target cluster nodes must not be in takeover mode.
+
+. Click *Rollback Prechecks* to verify that the project is eligible for a rollback.
++
+If the precheck reports issues, you must fix them manually and rerun the precheck operation. For example, if you have created any new volumes or LUNs during preproduction testing, you must delete them manually.
+
+. Click *Generate Rollback Steps* to generate the list of manual steps that you have to perform for a successful rollback.
+. Click *Save As CSV* to save the manual steps in a file.
++
+You can copy the rollback commands from the file and run them.
+
+. Depending on the transition phase from which you decide to roll back, perform the required manual steps:
+ ** *Import or preproduction testing phase*
+  ... Run the rollback commands on the cluster and click *Confirm*.
+  ... Connect the 7-Mode disk shelves to the 7-Mode controllers, verify the cabling manually, and click *Confirm*.
+  ... Run the rollback commands on the 7-Mode controllers and click *Confirm*.
+  ... View the configurations that are applied on the SVMs from the Operations History tab.
+  ... Manually remove all configurations that were applied by the tool from the SVMs.
+ ** *Cabling phase*
+  ... Connect the 7-Mode disk shelves to the 7-Mode controllers, verify the cabling manually, and click *Confirm*.
++
+You must ensure that the 7-Mode cabling matches the way it was at the start of the project.
++
+NOTE: You should use Config Advisor to verify the cabling.
+
+  ... Run the rollback commands on the 7-Mode controllers and click *Confirm*.
+  ... Manually remove all configurations that were applied by the tool from the SVMs.
++
+You can view the configurations that are applied on the SVMs from the Operations History tab.
+ ** *Export phase*
+  ... Run the rollback commands on the 7-Mode controllers and click *Confirm*.
+  ... Manually remove all configurations that were applied by the tool from the SVMs.
++
+You can view the configurations that are applied on the SVMs from the Operations History tab.
+ ** *SVM provision phase*
++
+Manually remove all configurations that were applied by the tool from the SVMs.
++
+You can view the configurations that are applied on the SVMs from the Operations History tab.
+
++
+xref:task_running_manual_steps_for_rolling_back_transition.adoc[Manual steps for rolling back the transition]
+. After completing all the manual steps, click *Verify 7-Mode* from the 7-Mode Transition Tool to verify that the 7-Mode controllers are ready to serve data.

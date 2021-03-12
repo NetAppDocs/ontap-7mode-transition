@@ -1,0 +1,91 @@
+---
+permalink: copy-based/task_editing_or_deleting_snapmirror_transfer_schedule.html
+sidebar: sidebar
+keywords: 
+summary: 'You can edit or delete data copy schedules that are used for SnapMirror baseline copy, update, and resynchronization operations, if you have other DR schedules configured or modified that require the transition data copy schedule to be modified.'
+---
+= Editing or deleting a data copy schedule for SnapMirror transfers
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can edit or delete data copy schedules that are used for SnapMirror baseline copy, update, and resynchronization operations, if you have other DR schedules configured or modified that require the transition data copy schedule to be modified.
+
+The project must be in the preparation, data copy, or apply configuration (precutover) phase.
+
+* After a schedule is edited, it takes up to 5 minutes for it to become effective.
+* If the throttle limit is changed in the schedule when there are active transfers, the new throttle limit is not applicable for the currently running SnapMirror transfers.
++
+After the current transfer is completed for a particular SnapMirror relationship, a new throttle limit is considered for the subsequent operations for that SnapMirror relationship.
+
+* If you want the throttle limit to be effective immediately for the current SnapMirror transfers, you must pause and resume the project.
+
+. From the Dashboard, select a project, and then click Configure Schedule.
++
+All the existing schedules for the project are displayed.
++
+You can also edit or delete schedules from the Configure Schedule option.
+
+. Edit or delete a schedule:
++
+|===
+| If you want to...| Then...
+a|
+Edit an existing schedule
+a|
+
+ .. Click image:../media/edit_schedule.gif[].
++
+The Modify Schedule dialog box is displayed.
++
+NOTE: You can edit the schedule and SnapMirror parameters for the data copy operations.
+
+ .. Make the required changes, and then click *Save*.
+
+a|
+Delete a schedule
+a|
+
+ .. Click image:../media/delete_schedule.gif[].
++
+The schedule is deleted from the pane.
++
+NOTE: At least one schedule is required for data transfers. Therefore, you should not delete all of the schedules.
+
++
+|===
+
+== Example
+
+The following example illustrates how the throttle limit is applied when there are active SnapMirror transfers in the project.
+
+|===
+| Schedule| Number of volumes and data copy state| Maximum number of concurrent SnapMirror transfers| Throttle limit| Throttle used by each transfer
+a|
+Before modifying
+a|
+Five volumes waiting for baseline
+a|
+Five
+a|
+500 MBps
+a|
+100 MBps
+a|
+After modifying
+a|
+
+* For two volumes, baseline is in progress using 100 MBps throttle
+* For three volumes, baseline is completed and are waiting for updates
+
+a|
+Five
+a|
+250 MBps
+a|
+
+* Two volumes that are in baseline continue to use the 100 MBps throttle
+* Three volumes for which the baseline is completed use the modified 50 MBps throttle for the updates
+
+|===
+When the baseline copy for the two volumes is completed, the new throttle limit of 50 MBps is used for these volume SnapMirror relationships while scheduling the next data copy operations.

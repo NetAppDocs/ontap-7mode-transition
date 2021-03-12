@@ -1,0 +1,29 @@
+---
+permalink: san-host/task_testing_transitioned_san_boot_luns_on_aix_hosts_before_cutover.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to transition your 7-Mode Windows host LUNs, you can test your transitioned clustered Data ONTAP LUNs before the cutover phase to verify that they are functioning as desired.'
+---
+= Testing transitioned SAN boot LUNs on AIX hosts before the cutover phase of copy-based transitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) 2.2 or later and Data ONTAP 8.3.2 or later to transition your 7-Mode Windows host LUNs, you can test your transitioned clustered Data ONTAP LUNs before the cutover phase to verify that they are functioning as desired.
+
+Your 7-Mode LUNs must be ready for transition.
+
+You should maintain hardware parity between the test host and the source host, and you should perform the following steps on the test host.
+
+Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
+
+. After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
+. In the 7MTT UI, click *Apply Configuration*.
+. On the test host, log in to the Hardware Management Console, and then boot your host in the *SMS* menu.
+. After the host boots, change the IP address and host name.
+. Verify that your clustered Data ONTAP LUNs are present: `sanlun lun show`
+. Perform your testing as needed.
+. Shut down the test host: `shutdown -h`
+. In the 7MTT UI, click *Finish Testing*.
+
+If your clustered Data ONTAP LUNs are to be remapped to your source host, you must prepare your source host for the cutover phase. If your clustered Data ONTAP LUNs are to remain mapped to your test host, no further steps are required on the test host.

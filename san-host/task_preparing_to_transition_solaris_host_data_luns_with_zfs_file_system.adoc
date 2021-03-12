@@ -1,0 +1,71 @@
+---
+permalink: san-host/task_preparing_to_transition_solaris_host_data_luns_with_zfs_file_system.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you transition Solaris host LUNs with ZFS file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must gather information you need for the transition process.'
+---
+= Preparing to transition Solaris host data LUNs with ZFS file system
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you transition Solaris host LUNs with ZFS file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must gather information you need for the transition process.
+
+This applies to copy-based transitions and copy-free transitions.
+
+. On the 7-Mode controller, identify the name of the LUN to be transitioned: `lun show`
++
+----
+ fas8040-shu01> lun show
+        /vol/ufs/ufs1                  5g (5368709120)    (r/w, online, mapped)
+        /vol/ufs/ufs2                  5g (5368709120)    (r/w, online, mapped)
+        /vol/zfs/zfs1                  6g (6442450944)    (r/w, online, mapped)
+        /vol/zfs/zfs2                  6g (6442450944)    (r/w, online, mapped)
+----
+
+. On the host, locate the SCSI device file name for the LUN: `sanlun lun show`
++
+The SCSI device file name is located in the `device filename` column.
++
+----
+# sanlun lun show
+controller(7mode)/                    device                                            host                  lun
+vserver(Cmode)       lun-pathname     filename                                          adapter    protocol   size    mode
+--------------------------------------------------------------------------------------------------------------------------
+fas8040-shu01        /vol/zfs/zfs2    /dev/rdsk/c0t60A98000383035356C2447384D396550d0s2 scsi_vhci0 FCP        6g      7
+fas8040-shu01        /vol/zfs/zfs1    /dev/rdsk/c0t60A98000383035356C2447384D39654Ed0s2 scsi_vhci0 FCP        6g      7
+fas8040-shu01        /vol/ufs/ufs2    /dev/rdsk/c0t60A98000383035356C2447384D39654Ad0s2 scsi_vhci0 FCP        5g      7
+fas8040-shu01        /vol/ufs/ufs1    /dev/rdsk/c0t60A98000383035356C2447384D396548d0s2 scsi_vhci0 FCP        5g      7
+----
+
+. List the zpool: `zpool list`
+. Record the zpool and get the disks associated with the zpool: `zpool status pool-name`
++
+----
+# zpool list
+NAME     SIZE  ALLOC   FREE  CAP  HEALTH  ALTROOT
+n_pool  11.9G  2.67G  9.27G  22%  ONLINE  -
+
+# zpool status
+  pool: n_pool
+ state: ONLINE
+ scan: none requested
+config:
+
+        NAME                                     STATE     READ WRITE CKSUM
+        n_pool                                   ONLINE       0     0     0
+          c0t60A98000383035356C2447384D396550d0  ONLINE       0     0     0
+          c0t60A98000383035356C2447384D39654Ed0  ONLINE       0     0     0
+
+errors: No known data errors
+----
+
+. List and record the ZFS datasets within a ZFS storage pool: `zfs list`
++
+----
+# zfs list
+NAME           USED  AVAIL  REFER  MOUNTPOINT
+n_pool        2.67G  9.08G   160K  /n_pool
+n_pool/pool1  1.50G  2.50G  1.50G  /n_pool/pool1
+n_pool/pool2  1.16G  2.84G  1.16G  /n_pool/pool2
+----

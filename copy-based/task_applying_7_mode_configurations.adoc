@@ -1,0 +1,98 @@
+---
+permalink: copy-based/task_applying_7_mode_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'After the baseline data copy is completed, you can copy and apply all configurations from the 7-Mode system \(including protocols and services configuration\) to the ONTAP volumes. If the target cluster is running any version from ONTAP 8.3.2 and later supported releases, SAN configuration is transitioned in this phase.'
+---
+= Applying 7-Mode configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After the baseline data copy is completed, you can copy and apply all configurations from the 7-Mode system (including protocols and services configuration) to the ONTAP volumes. If the target cluster is running any version from ONTAP 8.3.2 and later supported releases, SAN configuration is transitioned in this phase.
+
+If you are transitioning SAN volumes, you must have created at least one data LIF of the appropriate protocol (iSCSI or FC) for every node in the cluster.
+
+* The configurations are applied in the apply configuration (precutover) phase, which has two modes: precutover read-only mode and precutover read/write mode.
+
+The precutover read/write mode is not supported when the project contains:
+
+* SAN volumes and the target cluster is running Data ONTAP 8.3.1 or earlier. In this situation, the following configurations are not applied in the precutover phase, instead they are applied during the cutover phase:
+ ** SAN configurations
+ ** Snapshot Schedule configurations
+* SnapLock Compliance volumes.
++
+If the project contains SnapLock Compliance volumes, then the Snapshot Schedule configurations are not applied in the precutover phase, instead these configurations are applied during the cutover phase.
++
+See xref:concept_considerations_for_transitioning_of_snaplock_compliance_volumes.adoc[Considerations for transitioning of SnapLock Compliance volumes].
+
+. From the Dashboard, select the project.
+. Apply the configurations:
++
+|===
+| If you want to apply all configurations in...| Then...
+a|
+Read-only mode
+a|
+Click *Apply Configuration*.
+a|
+Read/write mode
+a|
+
+ .. Select the *Test Mode* check box.
+ .. Click *Apply Configuration*.
++
+The ONTAP volumes are made read/write and you can test the configurations and data access operations.
+
+ .. Select *Apply configuration in test mode* in the Apply Configuration (Precutover) dialog box.
+
++
+|===
+
+. Select the *Customize the number of concurrent SnapMirror transfers and Throttle limit for this operation* check box to specify the number of SnapMirror data copy operations and throttle limit:
+ .. Enter the maximum number of concurrent SnapMirror transfers to run during transition.
+ .. Enter the percentage of available streams that can be used for SnapMirror transfers.
++
+By default, the tool uses 50% of the available volume SnapMirror transfers.
+
+ .. Either enter a throttle limit or select *Maximum* to use the maximum bandwidth.
++
+By default, the tool uses maximum throttle for configuration transition.
+. Select the *Transition Kerberos Configuration* check box to provide UNIX-based or Microsoft AD based Kerberos server configuration details for transition.
++
+NOTE: This option is enabled only when Kerberos is configured on the source 7-Mode storage system.
+
+ .. Enter the Kerberos server details such as the host name, IP address, user name, and password.
+
++
+NOTE: To transition the Kerberos configuration, at least one LIF has to be transitioned as part of the project and the LIF must be resolvable to a host name.
+
+. Click *Continue*.
++
+The Operation Progress dialog box is displayed, and the copy configuration operation is started.
+
+. If the configuration transition is performed in read/write mode, click *Finish Testing* after the testing and verification of the configurations is complete.
++
+This mode should be used only for testing purposes. All data written to the cluster on the volumes being migrated during test mode is lost.
++
+The tool reestablishes the SnapMirror relationship and resynchronizes (based on the active schedule for that project at that time) the ONTAP volumes. Any data written to the 7-Mode is resynchronized with the ONTAP volumes.
++
+NOTE: For a successful resynchronization, a common Snapshot copy must exist between the 7-Mode and clustered Data ONTAP volumes. You should not manually delete the common Snapshot copy; otherwise, resynchronization fails.
+
+The 7-Mode IP addresses remain operational. The LIFs are configured on the storage virtual machine (SVM) in the following ways:
+
+* Existing 7-Mode IP addresses are created in the administrative down state.
++
+During the storage cutover, these IP addresses are removed from the 7-Mode system and the corresponding storage virtual machine (SVM) LIFs are brought to the administrative up state. If you select the precutover read/write mode, you must use a different LIF to gain access to the volumes being migrated to the cluster.
+
+* New IP addresses are created in the administrative up state.
++
+If you select the precutover read/write mode, these LIFs can be used for testing access to the volumes being migrated in the cluster.
+
+*Related information*
+
+xref:task_managing_logical_interfaces.adoc[Managing logical interfaces]
+
+xref:concept_considerations_for_quotas.adoc[Considerations for quotas]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT_v2.0%2F%2FTransitioned_Data_ONTAP_features[7MTT v2.0/Transitioned Data ONTAP features]

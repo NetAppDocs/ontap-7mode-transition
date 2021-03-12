@@ -1,0 +1,36 @@
+---
+permalink: copy-based/task_performing_on_demand_snapmirror_update_operation.html
+sidebar: sidebar
+keywords: 
+summary: 'You can perform SnapMirror incremental updates for all the volumes before the cutover operation to reduce the cutover time.'
+---
+= Performing on-demand SnapMirror updates
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can perform SnapMirror incremental updates for all the volumes before the cutover operation to reduce the cutover time.
+
+* You cannot perform on-demand SnapMirror updates when incremental data transfers are scheduled after baseline data copy and after precutover operation.
+* This is an optional task.
+
+. Click *Update Now* to perform a manual SnapMirror update.
++
+The Transition Update dialog box is displayed, where you can choose to customize the number of SnapMirror transfers and throttle limit for this operation.
+
+. Select the *Customize the number of concurrent SnapMirror transfers and Throttle limit for this operation* check box to specify the number of SnapMirror data copy operations and throttle limit.
+ .. Enter the maximum number of concurrent SnapMirror transfers to run during transition.
+ .. Enter the percentage of available streams that the tool can use for SnapMirror transfers.
++
+By default, the tool uses 50% of the available volume SnapMirror transfers.
+
+ .. Enter the throttle limit to use the maximum bandwidth.
++
+By default, the tool uses maximum throttle for configuration transition.
+. Click *Continue*.
+
+*Related information*
+
+xref:task_starting_baseline_data_copy.adoc[Starting baseline data copy]
+
+xref:task_creating_schedule_for_snapmirror_transfers.adoc[Creating a data copy schedule for SnapMirror transfers]

@@ -1,0 +1,24 @@
+---
+permalink: san-host/concept_transitioning_rhel_dmmp_devices_without_file_systems.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transition of a Red Hat Enterprise Linux \(RHEL\) DMMP device without a file system, you must verify that the DMMP device does not have a file system. You must also perform specific steps to prepare for the cutover phase, and after transition you must replace the WWID.'
+---
+= Transitioning RHEL DMMP devices without file systems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transition of a Red Hat Enterprise Linux (RHEL) DMMP device without a file system, you must verify that the DMMP device does not have a file system. You must also perform specific steps to prepare for the cutover phase, and after transition you must replace the WWID.
+
+*Related information*
+
+xref:task_verifying_that_rhel_luns_are_ready_for_transition_using_inventory_assessment_workbook.adoc[Verifying that RHEL LUNs are ready for transition using the Inventory Assessment Workbook]
+
+xref:task_verifying_rhel_5_luns_are_ready_for_transition_using_cli.adoc[Verifying that RHEL 5 LUNs are ready for transition using the CLI]
+
+xref:task_verifying_rhel_6_ddmp_devices_are_ready_for_transition_using_cli.adoc[Verifying that RHEL 6 DDMP devices are ready for transition using CLI]
+
+xref:task_preparing_for_cutover_when_transitioning_linux_host_dmmp_device_without_file_system.adoc[Preparing for cutover when transitioning a Linux host DMMP device without a file system]
+
+xref:task_replacing_7_mode_wwids_on_linux_host_after_transition_of_luns.adoc[Replacing 7-Mode LUN WWIDs on Linux hosts after transition of LUNs]

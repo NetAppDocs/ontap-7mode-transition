@@ -1,0 +1,50 @@
+---
+permalink: copy-free/task_selecting_lifs_to_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You can optionally specify the LIFs that you want to configure on the SVMs after transition. These LIFs can be existing IP addresses on the 7-Mode systems or they can be new LIFs. Only NAS LIFs are transitioned. FC and iSCSI LIFs must be manually configured before the SVM provision phase.'
+---
+= Selecting LIFs for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can optionally specify the LIFs that you want to configure on the SVMs after transition. These LIFs can be existing IP addresses on the 7-Mode systems or they can be new LIFs. Only NAS LIFs are transitioned. FC and iSCSI LIFs must be manually configured before the SVM provision phase.
+
+The LIFs that are selected for transition are configured on the SVMs during the SVM provision phase in the following ways:
+
+* Existing 7-Mode IP addresses that are selected for transition are created in the administrative down state.
++
+These IP addresses can continue to serve data in 7-Mode until the cutover starts. During the import phase, these IP addresses are configured in the administrative up state.
+
+* New IP addresses are created in the administrative up state.
++
+You can use these LIFs to test the connectivity of the SVMs to the name servers after the SVM provision phase.
+
+. In the LIF configuration tab, choose one of the following options:
++
+|===
+| If you want to transition...| Then...
+a|
+An existing IP address on the 7-Mode system
+a|
+
+ .. Click *Select 7-Mode LIF*.
+ .. Select the IP address that you want to transition, and then specify the target SVM and other network parameters.
+ .. Click *Save*.
+
+a|
+A new IP address
+a|
+
+ .. Click *Add New LIF*.
+ .. Specify the IP address that you want to configure, the target SVM, and other network parameters.
+ .. Click *Save*.
+
++
+|===
+*Note:* The target ports must be in the same IPspace as the target SVM.
+
+. Click *Next*.
++
+The Plan Configuration tab is displayed.

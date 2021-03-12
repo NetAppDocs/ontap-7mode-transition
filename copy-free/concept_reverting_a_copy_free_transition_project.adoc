@@ -1,0 +1,16 @@
+---
+permalink: copy-free/concept_reverting_a_copy_free_transition_project.html
+sidebar: sidebar
+keywords: 
+summary: 'Rollback refers to discontinuing the transition to ONTAP system and reverting to 7-Mode system. Transition rollback is manual; however, the 7-Mode Transition Tool provides the list of manual tasks you have to perform for a rollback.'
+---
+= Performing a transition rollback to 7-Mode
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Rollback refers to discontinuing the transition to ONTAP system and reverting to 7-Mode system. Transition rollback is manual; however, the 7-Mode Transition Tool provides the list of manual tasks you have to perform for a rollback.
+
+You can roll back a transition project in the SVM provision, export, cabling, import, or preproduction testing phase. You cannot roll back after the transition project is committed.
+
+Any new data written or modified, such as LUNs or LUN clones, in the transitioned volumes will be lost after a rollback. The volumes will be reverted to their original 7-Mode state.

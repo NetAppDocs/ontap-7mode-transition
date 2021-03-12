@@ -1,0 +1,309 @@
+---
+permalink: copy-based/reference_transition_preparation_checklist.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you start transition, you should verify that you have met all of the prerequisites for transition.'
+---
+= Transition preparation checklist
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you start transition, you should verify that you have met all of the prerequisites for transition.
+
+* <<GUID-68A43934-762E-4420-8786-B964D4F27FA4,Data ONTAP version requirements>>
+* <<GUID-3CCD5B55-A4BA-4A50-835A-0AC870F4D3E4,Licensing requirements>>
+* <<GUID-29E0D01A-AD9D-45EB-85B4-7F304B8D0154,SnapMirror requirements on the 7-Mode system>>
+* <<GUID-8C3B7B21-86CE-4EC3-ABF7-4B3CB31C7DCB,Volume options on the 7-Mode system>>
+* <<GUID-DA1532C1-5602-4EA8-9138-B65AF9345F52,Managing access to the cluster>>
+* <<GUID-33670507-2A55-425F-8281-68D08B1DF463,Managing access to the 7-Mode system>>
+* <<GUID-F45E6F24-730D-4FC2-B077-9AFBF4ED9607,Networking requirements>>
+* <<GUID-D02F2E4A-08C0-47FB-B8B0-78258E30026B,Port requirements>>
+* <<GUID-C9A67EF0-BE14-4B6E-B73A-7E626E590CC6,NFS requirements>>
+* <<GUID-3406C1E5-72A3-44E2-B76F-7C5FDB6D19C3,CIFS requirements>>
+
+== ONTAP version requirements
+
+|===
+| Item| Yes
+a|
+Supported 7-Mode version https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+
+a|
+ 
+a|
+Your cluster must be running one of the following Data ONTAP versions:
+
+* Data ONTAP 8.2.x
+* Data ONTAP 8.3.x
+
+a|
+ 
+a|
+You must transition to one of the following ONTAP releases:
+
+* Using 7-Mode Transition Tool 3.3.3:
+ ** ONTAP 9.8 or earlier supported releases
+* Using 7-Mode Transition Tool 3.3.2:
+ ** ONTAP 9.7P2 or later 9.7 P release (earlier 9.7 releases are not supported)
+ ** ONTAP 9.6P7 or later 9.6 P release (earlier 9.6 releases are not supported)
+ ** ONTAP 9.5 or earlier ONTAP 9 release
+ ** Clustered Data ONTAP 8.1.4P4 or later 8.x release
+* Using 7-Mode Transition Tool 3.3.1:
+ ** ONTAP 9.5 or earlier ONTAP 9 release
+ ** Clustered Data ONTAP 8.1.4P4 or later 8.x release
+
+a|
+ 
+|===
+
+== Licensing requirements
+
+|===
+| Item| Yes
+a|
+SnapMirror license is enabled on the 7-Mode system
+a|
+ 
+a|
+SnapMirror licenses are enabled on the primary and secondary clusters for transitioning a volume SnapMirror relationship
+a|
+ 
+a|
+CIFS license is enabled on the cluster, if it is enabled on the 7-Mode system
+a|
+ 
+a|
+NFS license is enabled on the cluster, if it is enabled on the 7-Mode system
+a|
+ 
+a|
+iSCSI license is enabled on the cluster, if it is enabled on the 7-Mode system
+a|
+ 
+a|
+FC license is enabled on the cluster, if it is enabled on the 7-Mode system
+a|
+ 
+a|
+Other feature licenses, if available on the 7-Mode system, are added to the cluster
+a|
+ 
+|===
+
+== SnapMirror requirements on the 7-Mode system
+
+|===
+| Item| Yes
+a|
+SnapMirror license
+a|
+ 
+a|
+options snapmirror.enable on
+a|
+ 
+a|
+options interface.snapmirror.blocked ""
+a|
+ 
+a|
+Verify if one of the following is true:
+
+* The snapmirror.access option is set to all
+* The snapmirror.access option is set to the IP addresses of all the intercluster LIFs on the cluster
+* If the snapmirror.access option is set to legacy and the snapmirror.checkip.enable option is off, the SVM name is added to the /etc/snapmirror.allow file
+* If the snapmirror.access option is set to legacy and the snapmirror.checkip.enable option is on, the IP addresses of the intercluster LIFs are added to the /etc/snapmirror.allow file
+
+a|
+ 
+|===
+
+== Volume settings on the 7-Mode system
+
+|===
+| Item| Yes
+a|
+Volume is online
+a|
+ 
+a|
+Volume is not restricted
+a|
+ 
+a|
+The following volume options are disabled:
+
+* no_i2p
+* read_realloc
+* nvfail
+
+a|
+ 
+|===
+
+== Managing access to the cluster
+
+|===
+| Item| Yes
+a|
+SSL is enabled system services web show
+
+a|
+ 
+a|
+HTTPS is allowed on the cluster-management LIF system services firewall policy show
+
+a|
+ 
+|===
+
+== Managing access to the 7-Mode system
+
+|===
+| Item| Yes
+a|
+HTTPS is enabledoptions httpd.admin.ssl.enable on
+
+a|
+ 
+a|
+SSL is enabled secureadmin setup ssl
+
+options ssl.enable on
+
+a|
+ 
+a|
+SSLv2 and SSLv3 are disabledoptions ssl.v2.enable off
+
+options ssl.v3.enable off
+
+a|
+ 
+|===
+
+== Networking requirements
+
+|===
+| Item| Yes
+a|
+Cluster is reachable using the cluster-management LIF
+a|
+ 
+a|
+One or more intercluster LIFs are set up on each node of the cluster For multipathing, two intercluster LIFs are required on each node
+
+a|
+ 
+a|
+Static routes are created for the intercluster LIFs
+a|
+ 
+a|
+7-Mode system and cluster are reachable from the Windows system on which 7-Mode Transition Tool is installed
+a|
+ 
+a|
+NTP server is configured and the 7-Mode system time is synchronized with the cluster time
+a|
+ 
+|===
+
+== Port requirements
+
+|===
+| Item| Yes
+a|
+7-Mode system
+
+* 10565/TCP
+* 10566/TCP
+* 10567/TCP
+* 10568/TCP
+* 10569/TCP
+* 10670/TCP
+* 80/TCP
+* 443/TCP
+
+a|
+ 
+a|
+Cluster
+
+* 10565/TCP
+* 10566/TCP
+* 10567/TCP
+* 10568/TCP
+* 10569/TCP
+* 10670/TCP
+* 11105/TCP
+* 80/TCP
+* 443/TCP
+
+a|
+ 
+|===
+
+== NFS requirements
+
+|===
+| Item| Yes
+a|
+NFS license is added to the cluster
+a|
+ 
+a|
+DNS entry must be configured for AD domain on the SVM
+a|
+ 
+a|
+NFS is added to the list of allowed protocols for the SVM
+a|
+ 
+a|
+Clock skews between KDC and the cluster is less than or equal to 5 minutes
+a|
+ 
+|===
+
+== CIFS requirements
+
+|===
+| Item| Yes
+a|
+CIFS license is added to the cluster
+a|
+ 
+a|
+If MultiStore license is enabled, CIFS must be added to the list of allowed protocols for the vFiler unit that owns the transitioning volumes
+a|
+ 
+a|
+CIFS is set up and running on the 7-Mode system
+a|
+ 
+a|
+Authentication type in 7-Mode for CIFS is Active Directory (AD) or Workgroup
+a|
+ 
+a|
+CIFS is added to the list of allowed protocols for the SVM
+a|
+ 
+a|
+DNS is configured for the SVM
+a|
+ 
+a|
+CIFS server is configured for the SVM
+a|
+ 
+a|
+CIFS is running on the SVM
+a|
+ 
+|===
+*Related information*
+
+xref:concept_preparing_for_copy_based_transition.adoc[Preparing for copy-based transition]

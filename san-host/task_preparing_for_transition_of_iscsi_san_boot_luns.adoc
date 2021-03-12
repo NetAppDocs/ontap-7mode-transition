@@ -1,0 +1,82 @@
+---
+permalink: san-host/task_preparing_for_transition_of_iscsi_san_boot_luns.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you transition an iSCSI SAN boot LUN, you must perform specific steps on the host. Transition of Red Hat Enterprise Linux \(RHEL\) 5.x is not supported. Transition of RHEL 6 is supported.'
+---
+= Preparing for transition of iSCSI SAN boot LUNs
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you transition an iSCSI SAN boot LUN, you must perform specific steps on the host. Transition of Red Hat Enterprise Linux (RHEL) 5.x is not supported. Transition of RHEL 6 is supported.
+
+You must have the following information from the _Inventory Assessment Workbook_:
+
+* Name of the LUN that RHEL 6 is installed on
+* DMMP device name for the transition LUN
+* Logical volume (LV) name
+* Volume group (VG) name
+* Physical volume (PV) devices
+* Logical Volume Manager (LVM) names and mount directories on which RHEL 6 /boot and root (/) partitions are installed
+* File system configured on DMMP
+* iSCSI sessions for 7-Mode controllers
+* Grub information
+* IQN number of the storage virtual machine (SVM) where the iSCSI SAN boot LUN will be created
+* LIF IP address of the clustered Data ONTAP SVM where the iSCSI SAN boot LUN will be created
+
+This procedure applies to copy-based transitions and copy-free transitions.
+
+. Verify that the DMMP device exists in the /dev/mapper directory: `ls /dev/mapper/DMMP_device_name`
++
+If the DMMP device is not displayed, the device might be using an alias or a user-friendly name.
+
+. Determine whether the DMMP device is part of an LVM: `blkid`
++
+If the DMMP device TYPE value is LVM2_member, the DMMP is part of an LVM.
+
+. Obtain the mount point details of the / and /boot partitions from the /etc/fstab file:
+ ** If the /boot partition is installed on a DMMP device, check how it is referenced to mount in the /etc/fstab file at boot time.
+ ** If the /boot partition is mounted using the file system UUID that you obtained using the blkid command output, then no pretransition change are required.
+. If the /boot partition is referenced in /etc/fstab file by its DMMP device name, replace the DMMP device name with the file system UUID name.
+. For iSCSI SAN booted hosts, edit the /boot/grub/grub.conf file to create a new kernel command-line entry that includes the clustered Data ONTAP controller's IQN number and iSCSI session information.
++
+This example shows the /boot/grub/grub.conf file before editing. The kernel command line has the 7-Mode controller's IQN number and iSCSI session information.
++
+----
+title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64)
+    	root (hd0,0)
+	kernel /vmlinuz-2.6.32-431.el6.x86_64 ro root=/dev/mapper/vg_ibmx3550m3229-LogVol00 ifname=eth0:5c:f3:fc:ba:46:d8 rd_NO_LUKS netroot=iscsi:@10.226.228.241::3260::iqn.1992-08.com.netapp:sn.1574168453 LANG=en_US.UTF-8 rd_LVM_LV=vg_ibmx3550m3229/LogVol01 rd_LVM_LV=vg_ibmx3550m3229/LogVol00 rd_NO_MD netroot=iscsi:@10.226.228.155::3260::iqn.1992-08.com.netapp:sn.1574168453 iscsi_initiator= iqn.1994-08.com.redhat:229.167 crashkernel=auto ip=eth0:dhcp
+	initrd /initramfs-2.6.32-431.el6.x86_64.img
+----
++
+This example shows the /boot/grub/grub.conf file after adding a new title with the cDOT suffix, and the new kernel command line with the clustered Data ONTAP controller's IQN number and iSCSI session information:
++
+----
+title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64) - cDOT
+    	root (hd0,0)
+	kernel /vmlinuz-2.6.32-431.el6.x86_64 ro root=/dev/mapper/vg_ibmx3550m3229-LogVol00 ifname=eth0:5c:f3:fc:ba:46:d8 rd_NO_LUKS netroot=iscsi:@10.226.228.99::3260:: ::iqn.1992-08.com.netapp:sn.81c4f5cc4aa611e5b1ad00a0985d4dbe:vs.15 LANG=en_US.UTF-8 rd_LVM_LV=vg_ibmx3550m3229/LogVol01 rd_LVM_LV=vg_ibmx3550m3229/LogVol00 rd_NO_MD netroot=iscsi:@10.226.228.98::3260:: ::iqn.1992-08.com.netapp:sn.81c4f5cc4aa611e5b1ad00a0985d4dbe:vs.15 netroot=iscsi:@10.226.228.97::3260:: ::iqn.1992-08.com.netapp:sn.81c4f5cc4aa611e5b1ad00a0985d4dbe:vs.15 netroot=iscsi:@10.226.228.96::3260:: ::iqn.1992-08.com.netapp:sn.81c4f5cc4aa611e5b1ad00a0985d4dbe:vs.15 iscsi_initiator= iqn.1994-08.com.redhat:229.167 crashkernel=auto ip=eth0:dhcp
+	initrd /initramfs-2.6.32-431.el6.x86_64.img
+----
+
+. Back up the existing initramfs file.
++
+----
+# cd /boot
+# cp initramfs-2.6.32-71.el6.x86_64.img initramfs-2.6.32-
+71.el6.x86_64.img.img_bak
+----
+
+. Update the 7-Mode kernel line in the /boot/grub/grub.conf file with the backup initrd image name.
++
+For RHEL 6.4 and later, verify that the clustered Data ONTAP kernel line is appended with "`rdloaddriver=scsi_dh_alua`" in the /boot/grub/grub.conf file.
+
+. If the /boot/grub/grub.conf file is updated, then update the kernel initial RAM disk (initramfs).
++
+The initramfs file must be re-created so that the new clustered Data ONTAP IQN number and iSCSI sessions are referenced, and so that the host establishes an iSCSI connection with clustered Data ONTAP controllers at boot time.
+
+. Re-create the initrd image by using the dracut -force --add multipath --verbose command.
+
+*Related information*
+
+xref:task_gathering_pretransition_information_from_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]

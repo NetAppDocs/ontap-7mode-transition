@@ -1,0 +1,20 @@
+---
+permalink: san-host/concept_transition_of_san_boot_luns.html
+sidebar: sidebar
+keywords: 
+summary: 'You must reboot SAN boot LUNs before you transition from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\). You must perform specific steps to prepare for the cutover phase, and after transition you must discover your LUNs.'
+---
+= Transitioning of SAN boot LUNs
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must reboot SAN boot LUNs before you transition from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool (7MTT). You must perform specific steps to prepare for the cutover phase, and after transition you must discover your LUNs.
+
+*Related information*
+
+xref:task_preparing_for_transition_of_fc_or_fcoe_san_boot_luns.adoc[Preparing for transition of FC or FCoE SAN boot LUNs on RHEL hosts]
+
+xref:task_preparing_for_transition_of_iscsi_san_boot_luns.adoc[Preparing for transition of iSCSI SAN boot LUNs]
+
+xref:task_discovering_san_boot_luns_after_transition.adoc[Discovering SAN boot LUNs after transition]

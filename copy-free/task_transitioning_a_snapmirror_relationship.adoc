@@ -1,0 +1,22 @@
+---
+permalink: copy-free/task_transitioning_a_snapmirror_relationship.html
+sidebar: sidebar
+keywords: 
+summary: 'You can transition the secondary HA pair first, set up a staggered SnapMirror relationship between the 7-Mode primary volumes and clustered Data ONTAP secondary volumes, and then transition the primary HA pair later. In some scenarios, you must transition the secondary and primary HA pairs of a 7-Mode SnapMirror relationship in parallel.'
+---
+= Transitioning a SnapMirror relationship
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition the secondary HA pair first, set up a staggered SnapMirror relationship between the 7-Mode primary volumes and clustered Data ONTAP secondary volumes, and then transition the primary HA pair later. In some scenarios, you must transition the secondary and primary HA pairs of a 7-Mode SnapMirror relationship in parallel.
+
+If all the primary volumes belong to one HA pair and all the secondary volumes belong to the other HA pair, you can transition by using the staggered method.
+
+If either HA pair has a mix of primary and secondary volumes, you must transition by using the parallel method.
+
+After transitioning the primary and secondary HA pairs, you must manually set up the volume SnapMirror relationship in clustered Data ONTAP after transition. For a successful resynchronization, at least one common Snapshot copy, which is created in Data ONTAP 8.1 or later, must exist between the primary and secondary volumes of the SnapMirror relationship.
+
+*Related information*
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html[Cluster management using System Manager]

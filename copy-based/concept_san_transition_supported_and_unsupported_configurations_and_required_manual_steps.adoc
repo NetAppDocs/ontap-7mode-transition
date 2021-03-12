@@ -1,0 +1,76 @@
+---
+permalink: copy-based/concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of the SAN configurations that are transitioned by the 7-Mode Transition Tool. You should also be aware of the 7-Mode SAN features that are not supported in ONTAP, so that you can take any necessary actions before the transition.'
+---
+= SAN transition: supported and unsupported configurations, and required manual steps
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of the SAN configurations that are transitioned by the 7-Mode Transition Tool. You should also be aware of the 7-Mode SAN features that are not supported in ONTAP, so that you can take any necessary actions before the transition.
+
+You should verify all of the precheck error and warning messages to evaluate the impact of such configurations on transition.
+
+== Configurations that are transitioned
+
+The following SAN configurations are transitioned by the 7-Mode Transition Tool:
+
+* FC and iSCSI services
+* igroups and LUN maps
++
+NOTE:
+
+ ** 7-Mode igroups that are not mapped to any LUNs are not transitioned to the target SVMs.
+ ** For clustered Data ONTAP 8.3.0 and 8.3.1, the transition of igroups and LUN mapping configurations is not supported during the precutover operation.
++
+Instead, the required igroups are created during the cutover operation. For primary and stand-alone volumes, LUNs are mapped to igroups during the cutover operation. However, for secondary volumes, the mapping of LUNs to igroups is not supported during the cutover operation. You must manually map the secondary LUNs after completing the transition of primary volumes.
+
+ ** For ONTAP 8.3.2 and later supported releases, igroups and LUN mapping configurations are applied during the precutover operation.
+
+== Unsupported configurations in ONTAP
+
+The unsupported configurations in ONTAP are as follows:
+
+* 7-Mode Snapshot copy-backed LUN clones
++
+Snapshot copy-backed LUN clones present in the Snapshot copies are not supported for any restore operation. These LUNs are not accessible in ONTAP. You must split or delete the 7-Mode Snapshot copy-backed LUN clones before transition.
+
+* LUNs with an ostype parameter value of vld, image, or any user-defined string
++
+You must either change the value of the ostype parameter for such LUNs or delete the LUNs before transition.
+
+* LUN clone split
++
+You must either wait for the active LUN clone split operations to finish or abort the LUN clone split and delete the LUN before transition.
+
+The following 7-Mode features enable you to continue with the transition process, but are not supported in ONTAP:
+
+* The lun share command
++
+Sharing a LUN over NAS protocols
+
+* SnapValidator
+
+== Configurations that must be manually transitioned
+
+The following configurations must be transitioned manually:
+
+* SAN LIFs
++
+You must manually create the LIFs before transition.
+
+* Portsets
++
+You must manually configure igroups that are bound to a portset after transition.
+
+* iSCSI access list information
+* iSNS configuration
+* iSCSI CHAP and RADIUS configurations
+
+*Related information*
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]

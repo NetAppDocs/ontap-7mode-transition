@@ -1,0 +1,16 @@
+---
+permalink: inventory-collect/concept_where_to_find_information_about_transition_assessment.html
+sidebar: sidebar
+keywords: 
+summary: 'You can find information about assessing storage systems, hosts, and host applications to verify that they are ready for transition in the 7-Mode Transition Tool Copy-Based Transition Guide. The guide provides details about how to import the inventory report you created for controllers and hosts and how to assess these controllers and hosts to verify that they are ready for transition.'
+---
+= Where to find information about transition assessment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can find information about assessing storage systems, hosts, and host applications to verify that they are ready for transition in the _7-Mode Transition Tool Copy-Based Transition Guide_. The guide provides details about how to import the inventory report you created for controllers and hosts and how to assess these controllers and hosts to verify that they are ready for transition.
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

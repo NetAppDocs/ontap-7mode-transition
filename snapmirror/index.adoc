@@ -1,0 +1,42 @@
+---
+permalink: snapmirror/index.html
+sidebar: sidebar
+keywords: 
+summary: ''
+---
+= 7-Mode Data Transition Using SnapMirror® Technology
+:icons: font
+:imagesdir: ../media/
+
+* xref:task_transitioning_7_mode_volumes_using_snapmirror.adoc[Transitioning 7-Mode volumes using SnapMirror]
+ ** xref:concept_planning_for_transition.adoc[Planning for transition]
+  *** xref:concept_features_and_volumes_not_supported_for_transition.adoc[Features and volumes not supported for transition]
+   **** xref:concept_unsupported_7_mode_san_functions.adoc[Features not supported for SAN transition]
+  *** xref:reference_7_mode_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.adoc[7-Mode version requirements for transition]
+  *** xref:concept_considerations_for_using_snapmirror_for_transition.adoc[Considerations for using SnapMirror for transition]
+  *** xref:concept_considerations_for_space_when_transitioning_san_volumes.adoc[Space considerations when transitioning SAN volumes]
+  *** xref:concept_guidelines_for_transitioning_snaplock_volumes.adoc[Guidelines for transitioning SnapLock volumes]
+ ** xref:task_preparing_for_transition.adoc[Preparing for transition]
+  *** xref:concept_licensing_requirements_for_transition.adoc[License requirements for transition]
+  *** xref:task_preparing_7_mode_system_for_transition.adoc[Preparing the 7-Mode system for transition]
+  *** xref:task_preparing_cluster_for_transition.adoc[Preparing the cluster for transition]
+  *** xref:task_creating_a_transition_peering_relationship.adoc[Creating a transition peer relationship]
+  *** xref:task_configuring_a_tcp_window_size_for_snapmirror_relationships.adoc[Configuring a TCP window size for SnapMirror relationships]
+ ** xref:task_transitioning_volumes.adoc[Transitioning volumes]
+  *** xref:task_transitioning_a_stand_alone_volume.adoc[Transitioning a stand-alone volume]
+  *** xref:task_transitioning_a_data_protection_relationship.adoc[Transitioning a volume SnapMirror relationship in a staggered configuration]
+   **** xref:task_transitioning_secondary_volume.adoc[Transitioning a secondary volume]
+   **** xref:task_transitioning_a_primary_volume.adoc[Transitioning a primary volume]
+  *** xref:task_transitioning_a_volume_snapmirror_relationship_in_parallel.adoc[Transitioning a volume SnapMirror relationship in parallel]
+* xref:task_transitioning_disaster_recovery_relationship.adoc[Transitioning a disaster recovery relationship between vFiler units]
+* xref:task_recovering_from_a_disaster_at_7_mode_site_during_transition.adoc[Recovering from a disaster at the 7-Mode site during transition]
+ ** xref:task_redirecting_clients_to_clustered_ontap_secondary_volume.adoc[Redirecting clients to the clustered Data ONTAP secondary volume after a disaster]
+ ** xref:task_transitioning_7_mode_primary_as_a_standalone_volume.adoc[Transitioning the 7-Mode primary as a stand-alone volume]
+ ** xref:task_redirecting_clients_to_clustered_ontap_primary_volume_after_disaster.adoc[Redirecting clients to the clustered Data ONTAP primary volume]
+* xref:reference_troubleshooting.adoc[Troubleshooting transition issues when using SnapMirror]
+ ** xref:task_resuming_a_failed_snapmirror_transfer_transition.adoc[Resuming a failed SnapMirror baseline transfer]
+ ** xref:task_recovering_from_a_failed_lun_transition.adoc[Recovering from a failed LUN transition]
+* xref:reference_copyright_and_trademark.adoc[Copyright, trademark, and machine translation]
+ ** xref:reference_copyright.adoc[Copyright]
+ ** xref:reference_trademark.adoc[Trademark]
+ ** xref:generic_machine_translation_disclaimer.adoc[Machine translation]

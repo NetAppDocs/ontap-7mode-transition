@@ -1,0 +1,22 @@
+---
+permalink: copy-free/task_collecting_tool_logs.html
+sidebar: sidebar
+keywords: 
+summary: 'The 7-Mode Transition Tool creates log files that provide processing details of the transition assessment and migration operations run on your system.'
+---
+= Downloading transition log files
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool creates log files that provide processing details of the transition assessment and migration operations run on your system.
+
+. Click *Logs* in the top menu.
+. Click *Collect Project Logs* to collect logs related to all of the projects.
+. To collect logs for a given projects, locate the projects from the project list, and then click *Download*.
++
+The logs are downloaded as a .zip file, and the folder name is the timestamp.
+
+*Related information*
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp[How to upload a file to NetApp]

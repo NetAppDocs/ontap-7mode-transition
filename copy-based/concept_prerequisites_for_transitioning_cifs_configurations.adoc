@@ -1,0 +1,97 @@
+---
+permalink: copy-based/concept_prerequisites_for_transitioning_cifs_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'CIFS configurations are transitioned by the 7-Mode Transition Tool only when certain prerequisites are met on the 7-Mode system and cluster. If any of the conditions are not met, the tool does not transition the configuration.'
+---
+= Prerequisites for transitioning CIFS configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+CIFS configurations are transitioned by the 7-Mode Transition Tool only when certain prerequisites are met on the 7-Mode system and cluster. If any of the conditions are not met, the tool does not transition the configuration.
+
+== 7-Mode prerequisites
+
+* The CIFS license must be added.
+* If the MultiStore license is enabled, CIFS must be added to the list of allowed protocols for the vFiler unit that owns the transitioning volumes.
+* CIFS must be set up and running during transition.
+* The authentication type for CIFS must be Active Directory (AD) or Workgroup.
+
+== Cluster prerequisites
+
+* The CIFS license must be added.
+* CIFS must be added to the list of allowed protocols for the SVM.
+* DNS must be configured for the SVM.
+* The following CIFS authentication methods are supported in different ONTAP versions:
+ ** Clustered Data ONTAP 8.2.x and 8.3.x support AD authentication.
+ ** ONTAP 9.0 or later supports AD authentication and Workgroup authentication.
+* Use the following table to decide which authentication must be used on the target SVM:
++
+|===
+| 7-Mode authentication method| Clustered Data ONTAP 8.2.x and 8.3.x authentication method| ONTAP 9.5 or earlier authentication method
+a|
+AD
+a|
+AD
+a|
+AD
+a|
+Workgroup
+a|
+AD
+a|
+Workgroup or AD
+|===
+
+* You can transition CIFS configuration from 7-Mode to ONTAP if the AD domains does not match between 7-Mode CIFS server and target SVM CIFS server. The tool triggers an ignorable blocking error when an AD domain name mismatch is detected. To proceed with the transition, acknowledge the blocking error.
+* The CIFS server must be manually configured before the apply configuration phase (precutover).
++
+You can create the CIFS server on the SVM in the following two ways:
++
+|===
+| If you want to...| Do the following...
+a|
+Transfer or preserve the CIFS server identity to the target SVM
+a|
+
+ ** You must plan to transition all of the volumes in the source 7-Mode system or vFiler unit in a single project.
++
+This plan is required because the 7-Mode system loses the original CIFS server identity after the transition and cannot serve clients. The maximum number of volumes that can be transitioned in one project is 160; therefore, to preserve the CIFS server identity, the 7-Mode system can have a maximum of 160 volumes and all these volumes must be transitioned in a single project.
+
++
+You have the following two options to create the CIFS server:
+
+ .. Applicable for all versions of ONTAP:
+  *** Before the "`apply configuration`" phase (precutover), you must reconfigure the CIFS server on the 7-Mode system by using a temporary CIFS identity.
++
+This reconfiguration allows the original CIFS server identity to be configured on the SVM. You must verify that the CIFS server is running on the 7-Mode system during the "`apply configuration`" phase (precutover) operation with the new temporary identity. This action is required to read CIFS configurations from 7-Mode during precutover.
+
+  *** You must configure the CIFS server on the target SVM with the original 7-Mode CIFS identity.
+  *** After these conditions are met, you can perform the precutover operation.
++
+You must then plan to perform the storage cutover immediately after precutover for enabling client access to ONTAP volumes.
+ .. Applicable for ONTAP releases 9.0 through 9.5:
+  *** Use the vserver cifs modify command to change the CIFS server name (CIFS Server NetBIOS Name).
++
+Using this feature, you should create a CIFS server on the target SVM with a temporary identity, and then perform the apply configuration (precutover) operation.
+
+  *** After the "`apply configuration`"' phase, you can run the vserver cifs modify command on the target cluster to replace the target SVM CIFS identity with the 7-Mode CIFS identity.
+
+a|
+Use a new identity
+a|
+
+ ** Before the "`apply configuration`" phase (precutover), you must configure the CIFS server on the target SVM with a new CIFS identity.
+ ** You must verify that the CIFS server is up and running on the 7-Mode system during the "`apply configuration`" phase (precutover) operation.
++
+This action is required to read CIFS configurations from 7-Mode systems during the "`apply configuration`" phase (precutover).
+
++
+After these conditions are met, you can perform the precutover operation. You can then test the SVM configurations and plan to perform the storage cutover operation.
++
+|===
+
+*Related information*
+
+xref:concept_considerations_for_local_users_and_groups_transition.adoc[Considerations for transitioning CIFS local users and groups]

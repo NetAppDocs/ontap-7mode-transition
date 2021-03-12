@@ -1,0 +1,31 @@
+---
+permalink: install-admin/task_installing_7mtt.html
+sidebar: sidebar
+keywords: 
+summary: 'You can install the 7-Mode Transition Tool on a Windows system by using the wizard-based installer.'
+---
+= Installing the 7-Mode Transition Tool on a Windows system
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can install the 7-Mode Transition Tool on a Windows system by using the wizard-based installer.
+
+* You must have reviewed the system requirements for the 7-Mode Transition Tool.
++
+xref:concept_system_requirements_for_7mtt_on_windows.adoc[System requirements for the 7-Mode Transition Tool on Windows]
+
+* You must have the necessary administrator privileges to install and launch the application.
+* You must have cleared the browser cache by pressing Ctrl+F5.
++
+You must clear the cache every time you install a new version of the tool.
+
+. Download the software from the NetApp Support Site.
++
+http://mysupport.netapp.com/NOW/cgi-bin/software[NetApp Downloads: Software]
+
+. Run the NetApp_7ModeTransitionTool_Setup.exe file.
+. In the 7-Mode Transition Tool Setup welcome screen, click *Next*.
+. Follow the on-screen prompts to continue with the installation.
+. Select *Launch the tool* to open the 7-Mode Transition Tool immediately after the installation.
+. Click *Finish* to complete the installation.

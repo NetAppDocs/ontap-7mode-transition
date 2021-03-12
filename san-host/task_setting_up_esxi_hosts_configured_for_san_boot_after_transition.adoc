@@ -1,0 +1,32 @@
+---
+permalink: san-host/task_setting_up_esxi_hosts_configured_for_san_boot_after_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'If your ESXi host was configured for SAN boot before transition from Data ONTAP operating in 7-Mode, you must perform several steps before using the host after transition.'
+---
+= Setting up ESXi hosts configured for SAN boot after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your ESXi host was configured for SAN boot before transition from Data ONTAP operating in 7-Mode, you must perform several steps before using the host after transition.
+
+* For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7MTT.
+* For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.
+
+. Reconfigure your FC and FCoE HBA BIOS to boot from the SAN boot LUN of the clustered Data ONTAP system.
+. Boot the ESXi host.
+. Reset the host configurations to the pretransition settings.
+. For iSCSI hosts, see how to reconfigure your VMware iSCSI initiator.
++
+xref:concept_reconfiguration_of_vmware_software_iscsi_initiator.adoc[Reconfigure your VMware iSCSI initiator]
+
+. Remount the VMFS datastores created from the boot LUN in the default installation.
+
+*Related information*
+
+xref:task_remounting_vmfs_volumes_after_transition_using_vsphere_client.adoc[Remounting VMFS volumes after transition using vSphere Client]
+
+xref:task_remounting_vmfs_volumes_after_transition_using_esxi_cli_console.adoc[Remounting VMFS volumes after transition using the ESXi CLI]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html[SAN administration]

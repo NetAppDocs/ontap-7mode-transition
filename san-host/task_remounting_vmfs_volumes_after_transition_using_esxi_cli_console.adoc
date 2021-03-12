@@ -1,0 +1,38 @@
+---
+permalink: san-host/task_remounting_vmfs_volumes_after_transition_using_esxi_cli_console.html
+sidebar: sidebar
+keywords: 
+summary: 'After transition, you can use the ESXi CLI to remount your volumes and bring your datastores and VMs to their pretransition states.'
+---
+= Remounting VMFS volumes after transition using the ESXi CLI
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transition, you can use the ESXi CLI to remount your volumes and bring your datastores and VMs to their pretransition states.
+
+The original 7-Mode LUN must be unmapped or offline.
+
+These steps apply to volumes and spanned volumes.
+
+. Log in to the ESXi console using SSH.
+. List the newly added LUNs with existing VMFS signatures and VMFS labels: `# esxcfg-volume -l`
++
+The following is an example of the LUNs listed with VMFS signatures and VMFS labels.
++
+----
+# esxcfg-volume -l
+VMFS UUID/label: 53578567-5b5c363e-21bb-001ec9d631cb/datastore1
+Can mount: Yes
+Can resignature: Yes
+Extent name: naa.600a098054314c6c445d446f79716475:1 range: 0 - 409599
+(MB)
+----
+
+. Remount the VMFS volumes persistently with the same signature:
+ ** For regular volumes: `esxcfg-volume -M|--persistent-mount VMFS UUID|label`
+ ** For spanned volumes: `# esxcfg-volume -M vmfs-span-ds`
+
+*Related information*
+
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1011387[VMware KB: vSphere handling of LUNs detected as snapshot LUNs]

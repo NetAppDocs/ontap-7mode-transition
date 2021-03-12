@@ -1,0 +1,31 @@
+---
+permalink: copy-free/concept_considerations_for_transitioning_dns_and_ldap_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'You should be aware of how the DNS, NIS, and LDAP configurations in Data ONTAP operating in 7-Mode are transitioned and applied in ONTAP.'
+---
+= Considerations for transitioning DNS, NIS, and LDAP configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should be aware of how the DNS, NIS, and LDAP configurations in Data ONTAP operating in 7-Mode are transitioned and applied in ONTAP.
+
+== Considerations for DNS transition
+
+For DNS configurations, a maximum of six domain names and three name servers per SVM are supported in ONTAP. If the unique number of domain names or name servers across 7-Mode systems and the target SVM exceed the supported limit, the 7-Mode Transition Tool reports a blocking error. To continue with the transition, you should ignore the transition of the DNS configuration from the tool.
+
+NOTE: If you ignore the transition of the DNS configuration, you must manually configure DNS on the target SVM.
+
+== Considerations for NIS transition
+
+* The length of the NIS domain name on the 7-Mode system must not exceed 64 characters.
+* For transitioning to target cluster versions running ONTAP 9.1 or earlier, the nis.servers option on the 7-Mode system must be configured only with IP addresses, and not a fully qualified domain name (FQDN).
++
+You must configure the nis.servers option on the 7-Mode system with IP addresses before transition if you are transitioning to a cluster running ONTAP 9.1 or earlier. Transition is supported if you have the nis.servers option on the 7-Mode system configured with an FQDN and you are transitioning to a cluster running any version of ONTAP between 9.2 and 9.5.
+
+== Considerations for LDAP transition
+
+* If separate base values and scope values are specified for user mapping (ldap.usermap.base) and user password (ldap.base.passwd) lookups in the 7-Mode system, the base values and scope values for only the user password are transitioned.
++
+The base values and scope values are used for user mapping and user password lookups in ONTAP, which can cause security issues. You must manually add the base values and scope values for user mapping to the user distinguished name (DN) option in ONTAP after transition, if required.

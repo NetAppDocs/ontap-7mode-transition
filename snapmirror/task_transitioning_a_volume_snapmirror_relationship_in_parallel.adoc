@@ -1,0 +1,48 @@
+---
+permalink: snapmirror/task_transitioning_a_volume_snapmirror_relationship_in_parallel.html
+sidebar: sidebar
+keywords: 
+summary: 'You can transition the primary and secondary volumes of a 7-Mode SnapMirror relationship in parallel and in the same cutover window. You must then manually set up the volume SnapMirror relationship in the ONTAP clusters after transition. You must use this method for transitioning SnapLock Compliance volumes.'
+---
+= Transitioning a volume SnapMirror relationship in parallel
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition the primary and secondary volumes of a 7-Mode SnapMirror relationship in parallel and in the same cutover window. You must then manually set up the volume SnapMirror relationship in the ONTAP clusters after transition. You must use this method for transitioning SnapLock Compliance volumes.
+
+* You must have set up the primary and secondary clusters and SVMs.
+* For establishing anSVM peer relationship when transitioning a volume SnapMirror relationship, the following conditions must be met:
+ ** The secondary cluster should not have an SVM with the same name as that of the primary SVM.
+ ** The primary cluster should not have an SVM with the same name as that of the secondary SVM.
+ ** You must have reviewed the information about preparing for transition.
++
+xref:task_preparing_for_transition.adoc[Preparing for transition]
+
+A 7-Mode SnapMirror relationship between SnapLock Compliance volumes must be transitioned in parallel because SnapMirror resynchronization of a transition data protection (TDP) relationship with SnapLock Compliance volumes is not supported. Therefore, you cannot establish a SnapMirror disaster recovery (DR) relationship between 7-Mode primary volumes and ONTAP secondary volumes with SnapLock Compliance volumes.
+
+. Transition the secondary and primary volumes of the SnapMirror relationship by following the steps for transitioning a standalone volume.
++
+Before transitioning the 7-Mode secondary volumes, no manual intervention is required for the 7-Mode SnapMirror relationships. This ensures that the 7-Mode secondary volumes are transitioned as read-only volumes to ONTAP.
++
+xref:task_transitioning_a_stand_alone_volume.adoc[Transitioning a stand-alone volume]
+
+. Create an intercluster SVM peer relationship between the SVMs that contain the transitioned primary and secondary volumes.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System administration]
+
+. Create a volume SnapMirror relationship between the transitioned primary and secondary volumes.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-cg/home.html[Volume disaster recovery express preparation]
+
+. On the destination volume, resynchronize the source volume and destination volume of the SnapMirror relationship.
++
+IMPORTANT: At least one common Snapshot copy must exist between the source and destination volumes.
+
+. Monitor the status of the SnapMirror data transfers.
++
+IMPORTANT: You must not perform any operation, such as volume move or SnapMirror break, on the source and destination volumes until the resynchronization is completed successfully. You must ensure that the resynchronization is not aborted and completes successfully; otherwise, the volumes can change to an inconsistent state.
+
+*Related information*
+
+xref:concept_guidelines_for_transitioning_snaplock_volumes.adoc[Guidelines for transitioning SnapLock volumes]

@@ -1,0 +1,56 @@
+---
+permalink: san-host/task_bringing_windows_hosts_online_after_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'After you transition your LUNs using the 7-Mode Transition Tool \(7MTT\) for Windows hosts, you must complete several steps to bring your host online and begin servicing data again.'
+---
+= Bringing Windows hosts online after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you transition your LUNs using the 7-Mode Transition Tool (7MTT) for Windows hosts, you must complete several steps to bring your host online and begin servicing data again.
+
+If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the _7-Mode Transition Tool Copy-Free Transition Guide_ for details.
+
+* For copy-based transitions (CBTs), perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+* For CFTs, perform these steps after completing the Import & Data Configuration operation in the 7MTT.
+
+. Generate the 7-Mode to ONTAP LUN mapping file:
+ ** For copy-based transitions, run the following command from the host where the 7MTT is installed: `transition cbt export lunmap -p project-name -o file_path`
++
+For example: `transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv`
+
+ ** For copy-free transitions, run the following command from the system where the 7MTT is installed: `transition cft export lunmap -p project-name -s svm-name -o output-file`
++
+NOTE: You must run this command for each of your storage virtual machines (SVMs).
++
+For example: `transition cft export lunmap -p SANWorkLoad -s svml -o c:/Libraries/Documents/7-to-C-LUN-MAPPING-svml.csv`
+. If the Windows host is SAN-booted and the boot LUN was transitioned, power on the host.
+. Update the FC BIOS to enable the system to boot from the LUN on the clustered Data ONTAP controller.
++
+See the HBA documentation for more information.
+
+. On the Windows host, rescan the disks from the Disk Manager.
+. Obtain the LUN serial numbers, LUN IDs, and corresponding Windows physical disk numbers of the LUNs mapped to the host.
+ ** For systems running Data ONTAP ONTAPDSM: Use the Data ONTAPDSM Management Extension Snap-In or the get-sandisk Windows PowerShell cmdlet.
+ ** For systems running MSDSM: Use the Inventory Collect Tool (ICT).
++
+The LUN ID, LUN serial number, and corresponding serial number is captured under the SAN Host LUNs tab.
+. Use the LUN serial numbers, LUN IDs, and corresponding Windows physical disk numbers of the LUNs along with the LUN map output and the data collected in the pretransition state, to determine whether the LUNs have transitioned successfully.
+. Note whether the physical disk numbers of the transitioned LUNs have changed.
+. Bring your disks online.
+ ** Use Windows Disk Manager to bring online disks that are not part of Cluster Failover.
+ ** Use Failover Cluster Manager to bring online disks that are part of Cluster Failover.
+. If the host you are transitioning is running Windows Server 2003 and you have migrated the quorum device, start the cluster services on all of the cluster nodes.
+. If Hyper-V is enabled on the host and pass-through devices are configured to the VMs, modify the settings from Hyper-V Manager.
++
+The physical disk number of the LUN corresponding to the pass-through device might have changed as a result of the transition.
+
+*Related information*
+
+xref:concept_what_the_inventory_collect_tool_is.adoc[What the Inventory Collect Tool is]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-cft/home.html[Copy-free transition]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

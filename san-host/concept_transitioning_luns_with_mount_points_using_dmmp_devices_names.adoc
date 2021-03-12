@@ -1,0 +1,22 @@
+---
+permalink: san-host/concept_transitioning_luns_with_mount_points_using_dmmp_devices_names.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transitioning a LUN with a mount point using a DMMP device name, you must replace the DMMP device name with its corresponding file system UUID number. You must perform specific steps to prepare for the cutover phase and you must remount the DMMP devices on the host after transition. You perform the same procedures for Red Hat Enterprise Linux \(RHEL\) 5 and RHEL 6.'
+---
+= Transitioning LUNs with mount points using DMMP device names
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transitioning a LUN with a mount point using a DMMP device name, you must replace the DMMP device name with its corresponding file system UUID number. You must perform specific steps to prepare for the cutover phase and you must remount the DMMP devices on the host after transition. You perform the same procedures for Red Hat Enterprise Linux (RHEL) 5 and RHEL 6.
+
+*Related information*
+
+xref:task_preparing_rhel_luns_transition_using_inventory_assessment_workbook.adoc[Preparing RHEL LUNs with mount points using DMMP device names for transition using the Inventory Assessment Workbook]
+
+xref:task_preparing_rhel_luns_for_transition_using_the_cli.adoc[Preparing RHEL LUNs with mount points using DMMP alias names for transition using the CLI]
+
+xref:task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.adoc[Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts]
+
+xref:task_remounting_dmmp_devices_on_linux_hosts_after_transition.adoc[Remounting DMMP devices on Linux hosts after transition]

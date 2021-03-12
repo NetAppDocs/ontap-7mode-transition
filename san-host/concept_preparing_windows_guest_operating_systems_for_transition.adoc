@@ -1,0 +1,15 @@
+---
+permalink: san-host/concept_preparing_windows_guest_operating_systems_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'If your Windows VMs use physical compatible RDM \(PTRDM\) devices, you must take the disks offline on the Windows VM before transition. You can use Disk Manager to take the disks offline.'
+---
+= Preparing Windows guest operating systems for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your Windows VMs use physical compatible RDM (PTRDM) devices, you must take the disks offline on the Windows VM before transition. You can use Disk Manager to take the disks offline.
+
+* For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+* For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.

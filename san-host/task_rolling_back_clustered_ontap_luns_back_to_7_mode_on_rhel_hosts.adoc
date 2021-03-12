@@ -1,0 +1,32 @@
+---
+permalink: san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_rhel_hosts.html
+sidebar: sidebar
+keywords: 
+summary: 'If your ONTAP LUNs are not performing as you expect after transition from Data ONTAP operating in 7-Mode, you can rollback from ONTAP to 7-Mode LUNs on a Red Hat Enterprise Linux \(RHEL\) 5 or RHEL 6 host.'
+---
+= Rolling back ONTAP LUNs to 7-Mode LUNs on RHEL hosts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your ONTAP LUNs are not performing as you expect after transition from Data ONTAP operating in 7-Mode, you can rollback from ONTAP to 7-Mode LUNs on a Red Hat Enterprise Linux (RHEL) 5 or RHEL 6 host.
+
+Your 7-Mode LUNs must be mapped back to your RHEL 5 or RHEL 6 host.
+
+. Discover the 7-Mode LUNs: `rescan-scsi-bus.sh`
+. Configure your DMMP devices for 7-Mode LUNs: `multipath`
+. Verify your 7-Mode LUNs: `sanlun lun show`
+. Determine the 7-Mode LUN device handle ID: `multipath -ll device_handle_name`
+. If the host was configured with Logical Volume Manager (LVM), do the following:
+ .. Import the volume group: `vgimport vg_name`
+ .. Verify the volume group status: `vgdisplay`
+ .. Enable logical volumes: `vgchange -ay vg_name`
+ .. Verify logical volume status: `lvdisplay`
++
+The LV Status should be displayed as available.
+
+ .. Mount the logical volumes from the ONTAP LUN to its respective mount point directory: `mount lv_name mount_point`
++
+If the mount points are defined in the etc/fstab file, you can also use the mount -a command to mount the logical volumes.
+
+ .. Verify the mount points: `mount`

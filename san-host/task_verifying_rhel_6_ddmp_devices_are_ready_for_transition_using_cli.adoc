@@ -1,0 +1,21 @@
+---
+permalink: san-host/task_verifying_rhel_6_ddmp_devices_are_ready_for_transition_using_cli.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you transition your Red Hat Enterprise Linux \(RHEL\) 6 DMMP device, you must verify that it is not part of a Logical Volume Manager \(LVM\) and that it does not have a file system.'
+---
+= Verifying that RHEL 6 DDMP devices are ready for transition using CLI
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you transition your Red Hat Enterprise Linux (RHEL) 6 DMMP device, you must verify that it is not part of a Logical Volume Manager (LVM) and that it does not have a file system.
+
+. Gather pretransition information from the _Inventory Assessment Workbook_.
+. Verify that the DMMP device exists in the /dev/mapper directory: `ls /dev/mapper/ DMMP_device_name`
++
+If the DMMP device is not displayed, the device might be using an alias or a user-friendly name.
+
+. Determine whether the DMMP device is part of an LVM and whether the DMMP device has a file system: `blkid`
++
+If the DMMP device is not part of an LVM and has no file system the device entry should not be displayed in blkidoutput.

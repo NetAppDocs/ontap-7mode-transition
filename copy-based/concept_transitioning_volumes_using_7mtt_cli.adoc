@@ -1,0 +1,14 @@
+---
+permalink: copy-based/concept_transitioning_volumes_using_7mtt_cli.html
+sidebar: sidebar
+keywords: 
+summary: 'The 7-Mode Transition Tool provides commands that enable you to transition 7-Mode volumes. If you have the 7-Mode Transition Tool installed on a Linux system, you must use the CLI to perform the transition.'
+---
+= Transitioning volumes by using the 7-Mode Transition Tool CLI
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool provides commands that enable you to transition 7-Mode volumes. If you have the 7-Mode Transition Tool installed on a Linux system, you must use the CLI to perform the transition.
+
+The tool collects the 7-Mode storage system's volume and IP address information, verifies the 7-Mode configuration, and interacts with the cluster to apply the configuration on the SVM.

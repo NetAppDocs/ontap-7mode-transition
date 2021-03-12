@@ -1,0 +1,36 @@
+---
+permalink: copy-based/task_configuring_zones_by_using_fc_zone_planner.html
+sidebar: sidebar
+keywords: 
+summary: 'After completing the transition, you must configure the zones by using the FC zone plan to group the initiator hosts and targets for providing data access from the cluster.'
+---
+= Configuring zones by using the FC zone plan
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After completing the transition, you must configure the zones by using the FC zone plan to group the initiator hosts and targets for providing data access from the cluster.
+
+* The cluster and initiator hosts must be connected to the switch.
+* The FC zone script file must be accessible.
+
+. Log in to the CLI of the switch.
+. Copy and execute the required zone commands one at a time.
++
+The following example runs the zone commands on the switch:
++
+----
+switch1:admin>config terminal
+# Enable NPIV feature
+feature npiv
+zone name auto_transition_igroup_d31_194bf3 vsan 10
+member pwwn 21:00:00:c0:dd:19:4b:f3
+member pwwn 20:07:00:a0:98:32:99:07
+member pwwn 20:09:00:a0:98:32:99:07
+.......
+.......
+.......
+copy running-config startup-config
+----
+
+The initiator hosts can access data from the cluster.

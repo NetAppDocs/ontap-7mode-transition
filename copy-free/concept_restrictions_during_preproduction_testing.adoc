@@ -1,0 +1,99 @@
+---
+permalink: copy-free/concept_restrictions_during_preproduction_testing.html
+sidebar: sidebar
+keywords: 
+summary: 'Some operations are blocked and some operations are not recommended during preproduction testing. These restrictions are imposed for allowing a rollback to 7-Mode if you do not want to commit the transition.'
+---
+= Restrictions during preproduction testing
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Some operations are blocked and some operations are not recommended during preproduction testing. These restrictions are imposed for allowing a rollback to 7-Mode if you do not want to commit the transition.
+
+== Operations that are blocked
+
+|===
+| Operation| Description
+a|
+Automatically deleting (autodelete) aggregate Snapshot copies
+a|
+Because the 7-Mode aggregate-level Snapshot copies created during the export operation are required in case of a rollback, the Snapshot copies are not deleted automatically when the used space in the aggregate grows. *Important:* You must monitor the free physical space in the aggregate and ensure that the aggregates do not run out of space during the testing.
+
+a|
+Moving volumes to another aggregate
+a|
+
+* You cannot move volumes to the transitioned aggregates.
+* You can move volumes from the transitioned aggregates to aggregates in the cluster.
+
+a|
+Copying or moving LUNs across volumes
+a|
+
+* You cannot copy or move LUNs to the transitioned volumes.
+* You can copy or move LUNs from the transitioned volumes to other volumes in the cluster.
+
+a|
+Creating an aggregate
+a|
+This operation is restricted on the target cluster HA pair. You can create aggregates on other nodes in the cluster.
+a|
+Destroying an aggregate
+a|
+Because the 7-Mode aggregate-level Snapshot copies created during the export operation are required in case of a rollback, the transitioned aggregates cannot be destroyed.
+a|
+Setting up a transitioned aggregate as the root aggregate
+a|
+The transitioned aggregates cannot be selected as root aggregates. Additionally, you cannot modify the HA policy of the transitioned aggregates to CFO.
+a|
+Performing file copy operations
+a|
+
+* You cannot move or copy files (single file copy-on-demand) to the transitioned volumes.
+* You can move or copy files from the transitioned volumes to other volumes in the cluster.
+
+a|
+Mirroring an existing aggregate
+a|
+The operation is blocked on all the aggregates in the cluster.
+a|
+Upgrading or reverting the Data ONTAP version on the target cluster nodes
+a|
+You must commit the project before upgrading or reverting the target cluster nodes.
+a|
+Adding disks
+a|
+You cannot run the storage aggregate add-disks command in the admin privilege level. However, you can run this command in the advanced privilege level. *Important:* You must ensure that only the spare disks from the 7-Mode disk shelves are added for increasing the space in the transitioned aggregates. You must add spare disks by using the -disklist parameter (the -diskcount parameter must not be used).
+
+a|
+Designating a transitioned volume as the SVM root volume
+a|
+You cannot run the volume make-vsroot command on the transitioned volumes.
+|===
+
+== Operations that are not recommended
+
+|===
+| Operation| Corrective action before rollback
+a|
+Relocating aggregatesThe ownership of the transitioned aggregate is changed to its HA partner.
+
+a|
+Swap the aggregate ownership before rollback because the 7-Mode Transition Tool maps the aggregates to the 7-Mode controllers based on the target node mapping information saved in the project.
+a|
+Creating volumes on the transitioned aggregates
+a|
+You must delete these volumes or move them to different aggregates.
+a|
+Renaming aggregates or volumes
+a|
+Rename the aggregates or volumes to their original names.
+a|
+Changing the RAID type
+a|
+The RAID type must match the 7-Mode RAID type if you decide to roll back to 7-Mode.
+|===
+*Related information*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr/GUID-5CB10C70-AC11-41C0-8C16-B4D0DF916E9B.html[ONTAP 9 commands]

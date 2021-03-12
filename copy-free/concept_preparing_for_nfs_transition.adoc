@@ -1,0 +1,14 @@
+---
+permalink: copy-free/concept_preparing_for_nfs_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'If NFS is licensed and NFS service is running on the systems operating in 7-Mode, you must manually prepare the cluster and target SVM for transitioning NFS configurations. You must also be aware of what configurations are transitioned.'
+---
+= Preparing for NFS transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If NFS is licensed and NFS service is running on the systems operating in 7-Mode, you must manually prepare the cluster and target SVM for transitioning NFS configurations. You must also be aware of what configurations are transitioned.
+
+Some NFS configurations operating in 7-Mode are not supported in ONTAP. Some configurations are not transitioned by the 7-Mode Transition Tool and must be manually applied to the SVM.

@@ -1,0 +1,35 @@
+---
+permalink: san-host/task_testing_data_luns_on_hp_ux_hosts_before_cutover.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to perform a copy-based transition of your HP-UX host data LUNs, you can test your transitioned clustered Data ONTAP LUNs to verify that you can mount your MPIO device before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
+---
+= Testing data LUNs on HP-UX hosts before the cutover phase of copy-based transitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) 2.2 or later and Data ONTAP 8.3.2 or later to perform a copy-based transition of your HP-UX host data LUNs, you can test your transitioned clustered Data ONTAP LUNs to verify that you can mount your MPIO device before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.
+
+Your new ONTAP LUNs must be mapped to your test host and your LUNs must be ready for transition
+
+You should maintain hardware parity between the test host and the source host, and you should perform the following steps on the test host.
+
+Your ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
+
+. After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
+. In the 7MTT UI, click *Apply Configuration*.
+. On the test host, rescan your new ONTAP LUNs: `ioscan -fnC disk`
+. Verify that your ONTAP LUNs are present: `sanlun lun show`
+. Copy the /tmp/mapfile.vg01 mapfile previously copied to your external source to your new host.
+. Use the mapfile to import the volume group: `vgimport -s -m /tmp/mapfile/vg01 vg01`
+. Verify that the VG Status is displayed as available: `vgdisplay`
+. Convert the legacy Device Special Filename (DSF) to persistent DSF: `vgdsf -c /dev/vg01`
+. Use the mount command to manually mount each of the logical volumes.
+. Run the fsckcommand if you are prompted to do so.
+. Verify the mount points: `bdf`
+. Perform your testing as needed.
+. Shut down the test host.
+. In the 7MTT UI, click *Finish Test*.
+
+If your ONTAP LUNs must be remapped to your source host, then you must prepare your source host for the cutover phase. If your ONTAP LUNs must remain mapped to your test host, then no further steps are required on the test host.

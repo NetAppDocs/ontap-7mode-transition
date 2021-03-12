@@ -1,0 +1,29 @@
+---
+permalink: san-host/task_preparing_for_cutover_when_transitioning_hp_ux_host_data_luns_with_file_systems.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are transitioning an HP host data LUN with a file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.'
+---
+= Preparing for cutover phase when transitioning HP-UX host data LUNs with file systems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are transitioning an HP host data LUN with a file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.
+
+If you are using an FC configuration, fabric connectivity and zoning to the clustered Data ONTAP nodes must be established.
+
+If you are using an iSCSI configuration, the iSCSI sessions to the clustered Data ONTAP nodes must be discovered and logged in.
+
+For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT). Copy-free transitions are not supported for HP-UX hosts.
+
+. Stop I/O on all mount points.
+. Shut down each application accessing the LUNs according to the recommendations of the application vendor.
+. Unmount all of the mount points: `umount mount_point`
+. Export your volume group and write the VGID and logical volumes for the volume group to a mapfile: `vgexport -p -s -m /tmp/mapfile.vg01 vg01`
+. Make a backup copy of the mapfile.vg01 file to an external source.
+. Disable the volume group: `vgchange -a n vg_name`
+. Export the volume group: `vgexport vg_name`
+. Verify that the volume group has been exported: `vgdisplay`
++
+The exported volume group information should not be displayed in the output.

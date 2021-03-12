@@ -1,0 +1,30 @@
+---
+permalink: san-host/task_discovering_san_boot_luns_after_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'After transition of your SAN boot LUNs from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must discover the SAN boot LUNs on your host. This is necessary for copy-based transitions \(CBTs\) and copy-free transitions \(CFTs\). This applies to FC, FCoE, and iSCSI configurations.'
+---
+= Discovering SAN boot LUNs after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transition of your SAN boot LUNs from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must discover the SAN boot LUNs on your host. This is necessary for copy-based transitions (CBTs) and copy-free transitions (CFTs). This applies to FC, FCoE, and iSCSI configurations.
+
+If you are doing a CFT, procedures for vol rehost must be complete. See the _7-Mode Transition Tool Copy-Free Transition Guide_ for details.
+
+. Boot the host.
+. For FC and FCoE configurations only:
+ .. Enter the HBA BIOS settings mode.
+ .. Choose *Rescan* to discover the clustered Data ONTAP SAN boot LUNs on the host.
+ .. Remove the 7-Mode boot LUN ID.
+ .. Add the clustered Data ONTAP boot LUN ID in the HBA BIOS.
+ .. Exit the HBA BIOS settings mode, and then reboot the host.
+. After the reboot is complete, verify the clustered Data ONTAP LUNs: `sanlun lun show`
+. Verify the DMMP device: `multipath -ll`
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-cft/home.html[Copy-free transition]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

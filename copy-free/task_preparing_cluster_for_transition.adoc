@@ -1,0 +1,79 @@
+---
+permalink: copy-free/task_preparing_cluster_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transition, you must prepare the cluster to communicate with the 7-Mode Transition Tool and prepare the SVMs for transition. You can transition to a target HA pair that has data aggregates.'
+---
+= Preparing the cluster for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transition, you must prepare the cluster to communicate with the 7-Mode Transition Tool and prepare the SVMs for transition. You can transition to a target HA pair that has data aggregates.
+
+* The cluster must already be set up and the target cluster nodes must be joined to the cluster.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html[Software setup]
+
+* The SVMs must be created and assigned to an IPspace.
+* You can transition the 7-Mode disk shelves to a target HA pair that has preexisting data aggregates and volumes.
++
+For a two-node cluster, you must have a data aggregate to host the root volumes of the target SVMs. For a cluster with four or more nodes, the root volumes of the SVMs can be hosted either on the target nodes of the transition or on other nodes in the cluster.
+
+You should not upgrade the cluster to a different ONTAP version during transition.
+
+NOTE: You can upgrade the cluster to a patch release of the same ONTAP version, if required.
+
+. From an administration host, verify that the cluster is reachable by using the cluster-management LIF: `ssh username@cluster_mgmt_IP`
+. Enable SSLv3 or FIPS on the cluster:
++
+|===
+| If you want to enable...| Enter...
+a|
+SSLv3
+a|
+`system services web modify -sslv3-enabled true`
+a|
+FIPS 140-2 compliance
+a|
+`system services web modify -ssl-fips-enabled true`
+|===
+When FIPS 140-2 compliance is enabled, SSLv3 is disabled. ONTAP prevents you from enabling SSLv3 when FIPS 140-2 compliance is enabled. If you enable FIPS 140-2 and then subsequently disable it, SSLv3 remains disabled.
++
+IMPORTANT: The best practice is to enable FIPS because of the security vulnerabilities in SSLv3.
+
+. Verify that HTTPS is allowed on the cluster management LIF:
+ .. View the firewall policy for the cluster management LIF: `network interface show -vserver svm_name -lif cluster_mgmt_lif -fields firewall-policy`
++
+----
+cluster1::> network interface show -vserver cluster1 -lif cluster_mgmt -fields firewall-policy
+vserver lif          firewall-policy
+------- ------------ ---------------
+cluster1  cluster_mgmt mgmt
+----
+
+ .. Verify that the firewall policy associated with the cluster management LIF allows HTTPS access: `system services firewall policy show -policy mgmt`
++
+----
+cluster1::> system services firewall policy show -policy mgmt
+Policy           Service    Action IP-List
+---------------- ---------- ------ --------------------
+mgmt
+                 dns        allow  0.0.0.0/0, ::/0
+                 http       allow  0.0.0.0/0, ::/0
+                 https      allow  0.0.0.0/0, ::/0
+                 ndmp       allow  0.0.0.0/0, ::/0
+                 ntp        allow  0.0.0.0/0, ::/0
+                 rsh        deny   0.0.0.0/0, ::/0
+                 snmp       allow  0.0.0.0/0, ::/0
+                 ssh        allow  0.0.0.0/0, ::/0
+                 telnet     deny   0.0.0.0/0, ::/0
+9 entries were displayed.
+----
+
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System administration]
+
+*Related information*
+
+https://mysupport.netapp.com/site/docs-and-kb[NetApp Documentation: Product Library A-Z]

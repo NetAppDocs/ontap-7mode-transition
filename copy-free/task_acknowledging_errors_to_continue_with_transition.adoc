@@ -1,0 +1,26 @@
+---
+permalink: copy-free/task_acknowledging_errors_to_continue_with_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'During the transition, you might encounter some errors that block the transition. You can choose to ignore some of these errors by acknowledging the issues through the 7-Mode Transition Tool CLI. You should rerun the failed operation after ignoring the error to continue with the transition.'
+---
+= Continuing with the transition if ignorable errors occur
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+During the transition, you might encounter some errors that block the transition. You can choose to ignore some of these errors by acknowledging the issues through the 7-Mode Transition Tool CLI. You should rerun the failed operation after ignoring the error to continue with the transition.
+
+When you acknowledge an error, it means that you have understood the impact of these errors and acknowledged them.
+
+You must rerun the transition operation after ignoring the error. In some cases, after you acknowledge the issue, Data ONTAP performs corrective actions on the affected aggregates and volumes when the operation is run the next time.
+
+. If the transition operation results in any ignorable errors, run the following command from the 7-Mode Transition Tool CLI: `transition cft ignorableerrors add -p project_name -c ignorable_errorcategory`
++
+ignorable_errorcategory is the type of error that you can ignore.
++
+xref:reference_ignorable_errors_during_transition.adoc[Ignorable errors during transition]
+
+. Rerun the transition operation.
++
+The blocking error changes to a warning and the error is shown as acknowledged. You can continue the transition with the warning.

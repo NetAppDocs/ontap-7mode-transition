@@ -1,0 +1,14 @@
+---
+permalink: copy-based/task_consolidating_snapshot_policies_and_cron_schedules_on_transitioned_volumes.html
+sidebar: sidebar
+keywords: 
+summary: 'The 7-Mode Transition Tool generates unique schedules per transitioned volume. Because of this, a large number of cron schedules can be created after the transition, so you need to know how to consolidate them after transition.'
+---
+= Consolidating cron schedules from transitioned volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool generates unique schedules per transitioned volume. Because of this, a large number of cron schedules can be created after the transition, so you need to know how to consolidate them after transition.
+
+. Consolidate the cron schedules after transition by using the job schedule cron command.

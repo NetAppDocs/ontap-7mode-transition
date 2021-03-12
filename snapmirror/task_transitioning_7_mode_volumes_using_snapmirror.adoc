@@ -1,0 +1,44 @@
+---
+permalink: snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html
+sidebar: sidebar
+keywords: 
+summary: ''
+---
+= Transitioning 7-Mode volumes using SnapMirror
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition 7-Mode volumes in a NAS and SAN environment to clustered Data ONTAP volumes by using clustered Data ONTAP SnapMirror commands. You must then set up the protocols, services, and other configuration on the cluster after the transition is complete.
+
+*Recommendation:* You should use the 7-Mode Transition Tool for copy-based transition to transition 7-Mode volumes because the tool provides prechecks to verify both 7-Mode and the cluster in every step of the migration process, which helps you to avoid many potential issues. The tool significantly simplifies the migration of all protocols, network, and services configurations along with the data migration.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+
+This procedure provides the high-level tasks you have to perform for transition using SnapMirror.
+
+. xref:concept_planning_for_transition.adoc[Verify that the volumes you plan to transition are supported for transition].
+. xref:task_preparing_7_mode_system_for_transition.adoc[Prepare the 7-Mode system for transition].
+. xref:task_preparing_cluster_for_transition.adoc[Prepare the cluster for transition].
+. xref:task_creating_a_transition_peering_relationship.adoc[Create a transition peer relationship between the 7-Mode system as the source and the SVM as the destination].
+. xref:task_transitioning_volumes.adoc[Copy the data from the 7-Mode volume to the clustered Data ONTAP volume by creating a SnapMirror relationship between the two volumes].
+
+After data migration finishes, you must perform the following tasks:
+
+* Optional: Create a data LIF on the SVM to enable client access.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management].
+
+* Configure protocols, networking, and services on the SVM.
+ ** https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management].
+ ** http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-cifs/home.html[SMB/CIFS management]
+ ** https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
+* Create igroups and map LUNs
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html[SAN administration]
+
+* If you transition volumes with LUNs, you must perform the required post-transition tasks on the hosts before restoring access to the transitioned clustered Data ONTAP volumes.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SAN host transition and remediation]
+
+https://mysupport.netapp.com/site/global/dashboard[NetApp Support]
