@@ -1,0 +1,75 @@
+---
+permalink: copy-free/concept_aggregate_space_considerations_during_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transition, you must ensure that the 7-Mode aggregates have adequate free space. The 7-Mode Transition Tool performs various space checks on the aggregates based on the physical space, logical space, space occupied by Snapshot copies, and space guarantee settings. You must also be aware of the space considerations with Flash Pool aggregates.'
+---
+= Aggregate space requirements for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transition, you must ensure that the 7-Mode aggregates have adequate free space. The 7-Mode Transition Tool performs various space checks on the aggregates based on the physical space, logical space, space occupied by Snapshot copies, and space guarantee settings. You must also be aware of the space considerations with Flash Pool aggregates.
+
+== Physical space in the aggregates
+
+Transition is blocked if the free space is less than 5% of the physical space in the 7-Mode aggregates. The best practice is to have at least 20% free space in the 7-Mode aggregates before transition.
+
+The additional space is required in the aggregates for the following reasons:
+
+* Creating the aggregate-level Snapshot copy for each 7-Mode aggregate during the export phase
+* Testing the workload on the transitioned aggregates with new data in the preproduction testing phase
+
+If you do not have additional space, you can add disks to the 7-Mode systems before transition. If adding disks is not feasible or if you can ensure that only limited amount of data is written on the transitioned volumes during the preproduction phase, the 7-Mode Transition Tool allows you to acknowledge this error and continue with the transition. However, you must continue to monitor the aggregate space during the transition and ensure that the aggregates do not grow in the preproduction testing phase.
+
+== Logical space in the aggregates
+
+If the logical space in the 7-Mode aggregates is more than 97% full, 7-Mode Transition Tool throws a blocking error during precheck. You can ignore this error during the planning phase and continue with the transition; however, you must ensure that the logical space used is less than 97% before the export and halt operation by either reducing the size of the volumes in such aggregates or adding more disks to the aggregates. You cannot ignore this error in the export and halt phase.
+
+== Snapshot spill
+
+If the Snapshot copies in the 7-Mode aggregates occupy more space than the allocated space for Snapshot copy reserve, the creation of aggregate-level Snapshot copies in the export and halt operation might fail. 7-Mode Transition Tool throws a blocking error during precheck for this condition. In such conditions, you must delete all the existing aggregate-level Snapshot copies during the planning phase.
+
+If you do not want to delete the existing Snapshot copies, you can ignore this error during the planning phase and continue with the transition; however, you must ensure that the Snapshot copy used capacity percentage is less than 100% before the export and halt operation.
+
+== Space guarantee settings
+
+7-Mode Transition Tool throws a blocking error during precheck if the 7-Mode controllers have volumes with the following space guarantee settings:
+
+* Volume-guaranteed volumes with guarantee disabled
+* File-guaranteed volumes
+* *Volume-guaranteed volumes with guarantee disabled*
++
+In some cases, the space guarantee is disabled for the volume guaranteed volumes because of lack of space in the aggregates.
++
+You must create sufficient free space on the 7-Mode aggregates and then enable space guarantee for such 7-Mode volumes by using the following 7-Mode command: `vol options volume_name guarantee volume`
++
+If you do not want to perform any corrective actions on 7-Mode, you can ignore this error. After the transition, examine the volumes for which guarantee is disabled and enable the guarantee manually by using the following command: `volume modify -vserver -volume -space-guarantee volume`
+
+* *File-guaranteed volumes*
++
+File guarantee is not supported in ONTAP.
++
+If you have file-guaranteed volumes, you must perform one of the following actions:
+
+ ** If the 7-Mode volumes contain space-reserved LUNs or files, change the space guarantee type of the volumes to volume by using the 7-Mode command: `vol options volume_name guarantee volume`
++
+You must ensure that there is enough free space on the 7-Mode aggregates before running this command.
+
+ ** If the 7-Mode volumes do not contain any space-reserved LUNs or files, change the space guarantee of the volumes to none by using the following 7-Mode command: `vol options volume_name guarantee none`
+If you do not want to perform any corrective actions on 7-Mode, you can ignore this error and continue with the transition.
+
++
+During the transition, if these volumes contain space-reserved LUNs or files, their space guarantee will be automatically converted to volume, but the space guarantee will be disabled initially. You must create sufficient free space on the aggregates and then manually enable the guarantee by using the following command: `volume modify -vserver -volume -space-guarantee volume`
++
+If the volumes do not contain any space-reserved LUNs or files, their space guarantee will be automatically converted to none during the transition.
+
+== Additional consideration for Flash Pool aggregates
+
+Transition is not supported if the free space in the SSDs of Flash Pool aggregates is less than 5% of the total disk space of the SSDs. You must either disable the SSD cache or add more SSDs to continue with the transition.
+
+*Related information*
+
+xref:reference_ignorable_errors_during_transition.adoc[Ignorable errors during transition]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-psmg/home.html[Disk and aggregate management]

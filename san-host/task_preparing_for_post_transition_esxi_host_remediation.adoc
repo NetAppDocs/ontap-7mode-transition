@@ -1,0 +1,38 @@
+---
+permalink: san-host/task_preparing_for_post_transition_esxi_host_remediation.html
+sidebar: sidebar
+keywords: 
+summary: 'After the 7-Mode Transition Tool \(7MTT\) transition is complete, you must perform various ESXi host remediation tasks. There are several steps you must complete before you can perform those tasks.'
+---
+= Preparing for post-transition ESXi host remediation
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After the 7-Mode Transition Tool (7MTT) transition is complete, you must perform various ESXi host remediation tasks. There are several steps you must complete before you can perform those tasks.
+
+* For copy-based transitions (CBTs), perform these steps before initiating the Storage Cutover operation in the 7MTT.
+* For copy-free transitions (CFTs), perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.
+
+. Generate the 7-Mode to ONTAP LUN mapping file:
+ ** For CBTs, run the following command from the Linux host where 7MTT is installed: `transition cbt export lunmap -p project-name -o file_path`
++
+For example: `transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv`
+
+ ** For CFTs, run the following command from the system where the 7MTT is installed: `transition cft export lunmap -p project-name -s svm-name -o output-file`
++
+For example: `transition cft export lunmap -p SanWorkLoad -s svm1 -o c:/Libraires/Documents/7-to-C-LUN-MAPPING-svm1.csv`
++
+NOTE: You must run this command for each of your storage virtual machines (SVMs).
+. Verify that igroup and initiator mappings are present.
++
+7MTT re-creates the same igroup with initiators used in Data ONTAP operating in 7-Mode, and remaps the clustered Data ONTAP LUN to the host.
+
+. Verify that zoning is appropriate for the new clustered Data ONTAP target.
+. If you are doing a copy-free transition (CFT), run vol rehost.
++
+See the _7-Mode Transition Tool Copy-Free Transition Guide_ for vol rehost procedures.
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-cft/home.html[Copy-free transition]

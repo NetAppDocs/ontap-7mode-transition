@@ -1,0 +1,42 @@
+---
+permalink: copy-free/concept_severity_levels_for_precheck_messages.html
+sidebar: sidebar
+keywords: 
+summary: 'You can verify whether the 7-Mode volumes can be transitioned by running the transition precheck operation. Transition precheck reports all the transition issues. Transition issues are assigned different severity levels, depending on the impact of the issue on the transition process.'
+---
+= Severity levels for precheck messages
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can verify whether the 7-Mode volumes can be transitioned by running the transition precheck operation. Transition precheck reports all the transition issues. Transition issues are assigned different severity levels, depending on the impact of the issue on the transition process.
+
+The issues detected by the prechecks are classified into the following categories:
+
+* *Error*
++
+Configurations that cannot be transitioned.
++
+You cannot continue the transition if there is even one error. The following are a few example configurations on the 7-Mode system that cause an error:
+
+ ** Traditional volumes
+ ** SnapLock volumes
+ ** Offline volumes
+
+* *Warning*
++
+Configurations that can cause minor problems after transition.
++
+Features that are supported in ONTAP, but are not transitioned by the 7-Mode Transition Tool, also generate a warning message. You can continue the transition with these warnings. However, after the transition you might lose some of these configurations or might have to complete some manual tasks for enabling these configurations in ONTAP.
++
+The following are a few example configurations on the 7-Mode system that generate a warning:
+
+ ** IPv6
+ ** NFSv2
+ ** NDMP configurations
+ ** Interface groups and VLANs
+ ** Routing Information Protocol (RIP)
+
+* *Information*
++
+Configurations that have been successfully transitioned.

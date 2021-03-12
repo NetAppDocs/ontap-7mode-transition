@@ -1,0 +1,33 @@
+---
+permalink: snapmirror/concept_planning_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before copying data from 7-Mode volumes to clustered ONTAP volumes, you must understand when to use SnapMirror to perform the transition and review the information for supported 7-Mode versions and supported volumes for transition. You must also be aware of certain transition considerations.'
+---
+= Planning for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before copying data from 7-Mode volumes to clustered ONTAP volumes, you must understand when to use SnapMirror to perform the transition and review the information for supported 7-Mode versions and supported volumes for transition. You must also be aware of certain transition considerations.
+
+You should review the _Release Notes_ for the transition target release in case there are any transition issues.
+
+https://library.netapp.com/ecmdocs/ECMLP2492508/html/frameset.html[ONTAP 9 Release Notes]
+
+SnapMirror relationships between 7-Mode and clustered ONTAP volumes are supported in the following releases:
+
+* ONTAP 9.8 and later releases
+* ONTAP 9.7P2 and later 9.7 releases
+* ONTAP 9.6P7 and later 9.6 releases
+* ONTAP 9.0 to ONTAP 9.5
+
+You can use SnapMirror to transition data in the following scenarios:
+
+* The 7-Mode Transition Tool does not support your requirements for transition; for example, the 7-Mode Transition Tool requires a Windows or Linux host that might be unavailable in your environment.
++
+*Recommendation:* You should use the 7-Mode Transition Tool to transition 7-Mode volumes because the tool provides prechecks to verify the feasibility of transition and migrates all protocol, network, and services configurations along with the data.
++
+You can install and use the 7-Mode Transition Tool to perform the prechecks for transitioning and then use SnapMirror commands to perform the data migration from the 7-Mode volume to the clustered ONTAP volume.
+
+* The cluster and storage virtual machine (SVM) are already configured and only the data has to be transitioned from the 7-Mode volumes to the clustered ONTAP volumes.

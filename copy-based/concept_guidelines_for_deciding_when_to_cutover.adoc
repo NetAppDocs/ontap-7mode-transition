@@ -1,0 +1,22 @@
+---
+permalink: copy-based/concept_guidelines_for_deciding_when_to_cutover.html
+sidebar: sidebar
+keywords: 
+summary: 'Because transition cutover is disruptive to clients, you must plan the activity to minimize the downtime. You must schedule the cutover during a low-activity window. You should update the ONTAP volumes and wait for the transfers to complete before disconnecting clients and initiating storage cutover for reducing the downtime.'
+---
+= Guidelines for deciding when to perform cutover
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Because transition cutover is disruptive to clients, you must plan the activity to minimize the downtime. You must schedule the cutover during a low-activity window. You should update the ONTAP volumes and wait for the transfers to complete before disconnecting clients and initiating storage cutover for reducing the downtime.
+
+You must keep monitoring the SnapMirror status for each volume. If the last transfer duration of the previous few updates for the volume is within an acceptable limit, most of the data changes in the volume should have been copied and the time for final data update during cutover should be within the acceptable limit.
+
+You can derive the approximate downtime depending on the number of volumes that are transitioned.
+
+To minimize the cutover time, the network latency between the 7-Mode Transition Tool and storage systems should be minimum. For transitioning a volume SnapMirror relationship, the network latency between the tool and the primary systems should be minimum.
+
+*Related information*
+
+xref:task_performing_on_demand_snapmirror_update_operation.adoc[Performing on-demand SnapMirror updates]

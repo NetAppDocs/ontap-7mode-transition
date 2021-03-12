@@ -1,0 +1,24 @@
+---
+permalink: copy-based/task_preparing_san_hosts_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'Before transitioning a SAN environment, you must perform some manual steps to prepare the SAN hosts for transition.'
+---
+= Preparing SAN hosts for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before transitioning a SAN environment, you must perform some manual steps to prepare the SAN hosts for transition.
+
+You must have generated the inventory workbook for the SAN hosts by using the Inventory Collect Tool.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-ict-icg/home.html[Host and storage transition information collection]
+
+. Verify that the host is supported for transition.
++
+https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+
+. Perform the pretransition steps on the host.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SAN host transition and remediation]

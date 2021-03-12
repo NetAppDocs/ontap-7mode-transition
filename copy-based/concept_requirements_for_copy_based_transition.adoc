@@ -1,0 +1,58 @@
+---
+permalink: copy-based/concept_requirements_for_copy_based_transition.html
+sidebar: sidebar
+keywords: ONTAP releases,licenses,7MTT service
+summary: 'You must be aware of the ONTAP release requirements, licensing requirements, and 7-Mode Transition Tool requirements for copy-based transition.'
+---
+= Requirements for copy-based transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of the ONTAP release requirements, licensing requirements, and 7-Mode Transition Tool requirements for copy-based transition.
+
+* *Data ONTAP 7-Mode source systems*
++
+For a list of the 7-Mode releases supported for migration by the 7-Mode Transition Tool, see the https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool].
+
+* *ONTAP target systems*
++
+Copy-based transitions are supported to these ONTAP target releases.
++
+|===
+| If your transition target is running ...| You must use this 7-Mode Transition Tool version ...
+a|
+ONTAP 9.8 or earlier supported releases
+a|
+3.3.3
+a|
+ONTAP 9.7P2 or later 9.7 P release    *Note:* Earlier 9.7 releases are not supported.
+a|
+3.3.2
+a|
+ONTAP 9.6P7 or later 9.6 P release    *Note:* Earlier 9.6 releases are not supported.
+a|
+3.3.2
+a|
+ONTAP 9.5 or earlier ONTAP 9 release
+a|
+3.3.2 or 3.3.1
+a|
+Clustered Data ONTAP 8.1.4P4 or later 8.x release
+a|
+3.3.2 or 3.3.1
+|===
+
+* *Licensing requirements*
++
+SnapMirror must be licensed on the 7-Mode storage system. If the 7-Mode system does not have a SnapMirror license, you can obtain a temporary SnapMirror license for transition from your sales representative.
++
+SnapLock must be licensed on the destination cluster if Chain of Custody verification must be performed.
+
+* *7-Mode Transition Tool service*
++
+For the data copy schedules to take effect, the 7-Mode Transition Tool service must be always up and running on the Windows or Linux system on which the tool is installed. However, it does not require the web interface to be active or open for the schedules to take effect. You can close the web interface and re-log in whenever required.
+
+* *Storage, host, and FC switch version requirements for transition assessment*
++
+For the list of 7-Mode versions, hosts, and FC switches that are supported for assessment by the 7-Mode Transition Tool, see the https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool].

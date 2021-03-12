@@ -1,0 +1,16 @@
+---
+permalink: copy-based/concept_storage_host_fc_switches_version_requirements.html
+sidebar: sidebar
+keywords: 
+summary: 'You must be aware of the versions of Data ONTAP operating in 7-Mode, hosts, and FC switches that are supported for transition assessment.'
+---
+= Storage, host, and FC switches version requirements for transition assessment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must be aware of the versions of Data ONTAP operating in 7-Mode, hosts, and FC switches that are supported for transition assessment.
+
+For the list of 7-Mode versions, hosts, and FC switches that are supported for assessment by the 7-Mode Transition Tool, see the NetApp Interoperability Matrix Tool.
+
+https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]

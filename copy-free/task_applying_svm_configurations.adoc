@@ -1,0 +1,67 @@
+---
+permalink: copy-free/task_applying_svm_configurations.html
+sidebar: sidebar
+keywords: 
+summary: 'You must manually apply some configurations before the SVM provision phase. You can then apply all configurations that are defined in the 7-Mode controller \(files in the /etc directory\) or at the vFiler unit level to the mapped SVMs by using the tool.'
+---
+= Applying SVM configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must manually apply some configurations before the SVM provision phase. You can then apply all configurations that are defined in the 7-Mode controller (files in the /etc directory) or at the vFiler unit level to the mapped SVMs by using the tool.
+
+If you do not want to transition all configurations to the target SVMs, you must have set the properties for the configurations to be excluded on the SVMs.
+
+xref:task_customizing_configurations_for_transition.adoc[Customizing the transition of 7-Mode configurations]
+
+* Configurations such as NFS exports, CIFS shares, and LUN mapping are not applied to the SVM in the SVM provision phase.
+* The following configurations are applied by the tool on the SVMs in the SVM provision phase:
+ ** *Name services*
+  *** DNS configuration
+  *** LDAP configuration
+  *** NIS configuration
+  *** Name service switch configuration
+  *** Hosts configuration
+  *** UNIX users and groups
+  *** Netgroups configuration
+ ** *Networking*
+  *** Existing 7-Mode IP addresses that are selected for transition are created in the administrative down state.
++
+During the import phase, these IP addresses are configured in the administrative up state.
+
+  *** New IP addresses are created in the administrative up state.
+ ** *NFS*
++
+NFS options
+
+ ** *CIFS*
+  *** CIFS preferred DC configuration
+  *** User mapping configuration
+  *** Widelinks configuration
+  *** CIFS options
+  *** Audit configuration
+ ** *SAN*
++
+FC and iSCSI services
+* IMPORTANT: You cannot rerun this operation after it is completed successfully.
+
+Therefore, if you make any changes to the 7-Mode controller-level configurations after this operation, you must manually transition the configurations to the target SVMs before the export phase. For example, if you add a new vFiler unit to the 7-Mode controller and map it to an SVM after this operation, you must manually transition the configurations of that vFiler unit to the mapped SVM. Another example is if you add some UNIX users on the 7-Mode controller after the SVM provision phase, you must create these UNIX users manually on the mapped SVMs.
+
+. Click *Apply SVM Config* to apply the 7-Mode configurations to the target SVMs.
++
+A confirmation message that lists important considerations for this operation is displayed.
+
+. Click *Yes* to continue.
+. After the operation is complete, perform the following steps:
+ .. Click *Save as CSV* to save the operation results in a file.
+ .. Click *Collect Project Logs* to create a backup of all of the transition log files.
++
+It is a best practice to save the log files after each transition operation.
+
+ .. Click *Close* to close the operation results window.
+
++
+If the operation takes a long time to complete, you can click *Run in Background* to exit the operation results window. You should not edit the project or perform any other task when the operation is running in the background. You can then view the operations results from the Operation History tab.
+. Verify and test the configurations that are applied to the target SVMs manually and make the required changes.
+. Manually verify the connectivity to external name servers.

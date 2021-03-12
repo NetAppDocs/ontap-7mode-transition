@@ -1,0 +1,64 @@
+---
+permalink: copy-free/task_svm_and_volume_mapping.html
+sidebar: sidebar
+keywords: 
+summary: 'You should map each 7-Mode controller in the HA pair to a target SVM. If you have vFiler units, you should select a target SVM for each vFiler unit. The volumes from the 7-Mode controller or vFiler unit are transitioned to the mapped SVM.'
+---
+= Mapping SVMs and volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should map each 7-Mode controller in the HA pair to a target SVM. If you have vFiler units, you should select a target SVM for each vFiler unit. The volumes from the 7-Mode controller or vFiler unit are transitioned to the mapped SVM.
+
+You must have created the SVMs on the target cluster.
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html[Cluster management using System Manager]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System administration]
+
+A vFiler unit can be mapped only to a single SVM. Volumes from any other 7-Mode controller or vFiler unit cannot be transitioned to a mapped SVM.
+
+. In the SVM and Volume Mapping tab, select the target SVM to which you want to transition the volumes from each 7-Mode controller or vFiler unit.
++
+The target SVM can be in the default or non-default IPspace.
+
+. Depending on whether you want to apply the same junction path policy for the volumes in all the SVMs or a different junction path policy for the volumes in each SVM, choose one of the following actions:
++
+|===
+| If you want to...| Then...
+a|
+Apply the same junction path policy to all the SVMs
+a|
+
+ .. Click *Apply*.
+ .. Select an option for the junction path policy.
+ .. Click *OK*.
+
+a|
+Specify the junction path policy for each SVM
+a|
+Select the junction path policy from the drop-down list for each target SVM.
+|===
+The junction path policy specifies the path with which the target clustered Data ONTAP volumes must be mounted for client access. You can add one of the following values for the junction path policy:
+
+ ** *Preserve 7-Mode mount paths*
++
+Retains the same junction paths as that being used on the source 7-Mode volumes and the volumes are mounted with junction paths in the format /vol/source_volume_name after transition.
+
+ ** *Use clustered Data ONTAP volume name*
++
+All the target clustered Data ONTAP volumes are mounted with junction paths with the clustered Data ONTAP volume name in the format /target_volume_name after transition.
+
+ ** *Use 7-Mode volume name*
++
+All the target clustered Data ONTAP volumes are mounted with junction paths with the 7-Mode volume name in the format /source_volume_name after transition.
+
+. Click image:../media/delete_me_edit_schedule.gif[Edit icon] to modify the name of the target clustered Data ONTAP volume.
++
+By default, the target clustered Data ONTAP volume has the same name as the 7-Mode volume. If a volume with the same name as the 7-Mode volume already exists on the SVM, the target volume is automatically assigned a new name.
+
+. Click *Save Mapping* for each mapped SVM.
+. Click *Next*.
++
+The Networking screen is displayed.

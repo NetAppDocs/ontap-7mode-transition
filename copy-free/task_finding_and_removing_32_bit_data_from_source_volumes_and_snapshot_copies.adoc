@@ -1,0 +1,53 @@
+---
+permalink: copy-free/task_finding_and_removing_32_bit_data_from_source_volumes_and_snapshot_copies.html
+sidebar: sidebar
+keywords: 
+summary: 'Even if you have expanded all of your aggregates to the 64-bit format, some 32-bit or mixed-format FlexVol volumes or Snapshot copies can remain. These volumes and Snapshot copies must be removed before your data can be accessed by a cluster running Data ONTAP 8.3 or later.'
+---
+= Finding and removing 32-bit volumes and Snapshot copies
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Even if you have expanded all of your aggregates to the 64-bit format, some 32-bit or mixed-format FlexVol volumes or Snapshot copies can remain. These volumes and Snapshot copies must be removed before your data can be accessed by a cluster running Data ONTAP 8.3 or later.
+
+* You must have expanded all 32-bit aggregates on the system to the 64-bit format.
+
+You must repeat the steps in this task for each aggregate that contains 32-bit volumes and Snapshot copies.
+
+. Enter advanced mode: `priv set advanced`
+. Display the format of all volumes in the aggregate: `aggr 64bit-upgrade status aggr_name -all`
++
+Each volume in the aggregate is displayed with its format.
+
+. For each 32-bit or mixed-format volume, determine the reason that the volume has not been expanded to the 64-bit format, and then take the appropriate action.
++
+If you cannot determine the reason that the volume was not expanded, retry the aggregate expansion.
++
+|===
+| If the volume...| Then...
+a|
+Is the destination of a SnapMirror relationship
+a|
+Expand the aggregate containing the source volume to the 64-bit format.
+a|
+Is a read-only volume (but not a SnapMirror destination)
+a|
+Make the volume writable and retry the expansion, or destroy the volume.
+a|
+Did not expand because of insufficient free space in the volume or aggregate
+a|
+Increase the free space in the volume or aggregate and retry the expansion.
+|===
+All 32-bit and mixed-format volumes in the aggregate are now 64-bit. You can confirm this by repeating the previous step.
+
+. Display the format of all Snapshot copies on the system: `snap list -fs-block-format`
+. Remove the 32-bit Snapshot copies by using the snap delete command.
++
+IMPORTANT: This action deletes the data in the Snapshot copies. You must be certain that you do not need to retain the Snapshot copies before you delete them. Alternatively, you can wait for the 32-bit Snapshot copies to be aged out. The amount of time this takes depends on your Snapshot copy schedule.
++
+If a Snapshot copy is the base Snapshot copy for a FlexClone volume, you must split the FlexClone volume from its parent before you can remove the Snapshot copy.
++
+All 32-bit Snapshot copies are removed. You can confirm this by repeating the previous step.
+
+. Return to the administrative privilege level: `priv set admin`

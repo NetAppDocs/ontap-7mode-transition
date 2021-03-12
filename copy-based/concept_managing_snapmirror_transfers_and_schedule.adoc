@@ -1,0 +1,20 @@
+---
+permalink: copy-based/concept_managing_snapmirror_transfers_and_schedule.html
+sidebar: sidebar
+keywords: 
+summary: 'In the data copy phase, the clustered Data ONTAP volumes are updated periodically with the data from the 7-Mode volumes based on a data copy schedule. You can create, edit, and delete the data copy schedule to be used for SnapMirror baseline copy, update, and resynchronization operations.'
+---
+= Managing SnapMirror transfers and schedule
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+In the data copy phase, the clustered Data ONTAP volumes are updated periodically with the data from the 7-Mode volumes based on a data copy schedule. You can create, edit, and delete the data copy schedule to be used for SnapMirror baseline copy, update, and resynchronization operations.
+
+You can manage the copy operations for all the volumes selected for transition by specifying multiple data copy schedules comprising details such as, start time, duration, update frequency, the number of concurrent SnapMirror transfers to run during that schedule, and throttle limit.
+
+You can provide multiple concurrent transfers count and throttle limit for different time periods, such as weekday, weekend, business hours, non-business hours, DR schedules, and non-DR schedules.
+
+*Related information*
+
+xref:task_creating_a_transition_project.adoc[Creating a transition project]

@@ -1,0 +1,23 @@
+---
+permalink: copy-based/concept_considerations_for_chain_of_custody_verification_for_7_mode_snaplock_volumes.html
+sidebar: sidebar
+keywords: 7-Mode Transition Tool
+summary: 'You should be aware of the considerations for using Chain of Custody verification for 7-Mode SnapLock volumes.'
+---
+= Considerations for using Chain of Custody verification for 7-Mode SnapLock volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should be aware of the considerations for using Chain of Custody verification for 7-Mode SnapLock volumes.
+
+* The SnapLock Chain of Custody verification must be performed only if it is a requirement for the transition of SnapLock volumes.
++
+You can perform the Chain of Custody verification for all or a subset of SnapLock volumes in the project.
+
+* The SnapLock Chain of Custody verification can take a significant amount of time based on the number of files on the 7-Mode SnapLock volumes.
+* The Chain of Custody verification is supported only for read/write 7-Mode SnapLock volumes
++
+The Chain of Custody verification is not supported for read-only volumes.
+
+* The Chain of Custody verification is not supported for SnapLock volumes containing files that have names with non-ASCII characters.

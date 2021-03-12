@@ -1,0 +1,46 @@
+---
+permalink: copy-based/task_starting_baseline_data_copy.html
+sidebar: sidebar
+keywords: 
+summary: 'After you create a project and complete the precheck operation, you must initiate data copy from the 7-Mode volumes to ONTAP. You can start baseline data copy operation for individual projects. You should stop unnecessary system processes and network activity during the data copy.'
+---
+= Starting baseline data copy
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you create a project and complete the precheck operation, you must initiate data copy from the 7-Mode volumes to ONTAP. You can start baseline data copy operation for individual projects. You should stop unnecessary system processes and network activity during the data copy.
+
+You must have created at least one data copy schedule.
+
+You can estimate the time to complete baseline transfers and evaluate the performance achieved by volume SnapMirror transfers in your environment by performing a test migration. The following are some of the factors that can affect performance:
+
+* Transition data copy schedule options selected
++
+This schedule controls both the maximum number of SnapMirror concurrent transfers and the maximum bandwidth to be used for the transfers.
+
+* Maximum number of concurrent volume SnapMirror transfers supported by the 7-Mode source controllers
+* Network bandwidth between the 7-Mode source and ONTAP destination controllers
++
+Network traffic that is unrelated to the migration activity must be minimized so that the throughput is maximized and response time is minimized between the source and destination systems.
+
+* Performance capabilities of both the source and destination controllers
++
+The source and destination systems should have optimum CPU utilization and memory available.
+
+* Number of 7-Mode volume SnapMirror transfers occurring during the data copy
+
+. From Dashboard, select the project for which you want to start the baseline data copy.
+. Click *Start Baseline*.
++
+The precheck is run once again in the background, and if no errors are detected, the baseline transfer is started based on the data copy schedule. The Operation Progress dialog box displays the information about the status of the precheck operations run during the baseline data copy.
+
+. Click the *Volumes* tab to view the status and progress of the baseline transfer.
++
+To view the detailed SnapMirror details of each volume, you can click *View Transition Details*. The number of concurrent SnapMirror transfers is based on the input provided in the schedule that is currently active. You can track the active schedule from the Data Copy Schedule tab on Dashboard.
++
+After the baseline data copy operation is completed, the incremental SnapMirror updates start based on the schedule provided while creating the project.
+
+*Related information*
+
+xref:task_creating_schedule_for_snapmirror_transfers.adoc[Creating a data copy schedule for SnapMirror transfers]

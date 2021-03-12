@@ -1,0 +1,30 @@
+---
+permalink: copy-based/task_adding_controllers_and_clusters.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you start the transition, you must add the 7-Mode controllers and clusters that are required for the transition. The 7-Mode controllers that are included for assessment are automatically added for migration.'
+---
+= Adding controllers and clusters
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you start the transition, you must add the 7-Mode controllers and clusters that are required for the transition. The 7-Mode controllers that are included for assessment are automatically added for migration.
+
+* The 7-Mode controller and cluster information that you provide is not persistent.
++
+If the 7-Mode Transition Tool service is restarted, the tool prompts you for information about controllers and clusters that are part of active projects. You must provide the same host name that you provided for your system when you created the project.
+
+* If a 7-Mode controller is part of an HA pair, the tool does not request for credentials of the HA partner of the 7-Mode controller (unless the HA partner is part of another active project.)
+
+. From the top pane, click *Storage Systems*.
+. In the *Hostname* field, enter the FQDN or IP address of the 7-Mode controller or the ONTAP system.
++
+For a cluster, you can specify the IP address or FQDN of the cluster-management interface. For a 7-Mode controller, you must specify the IP address of the default vFiler unit, because the IP addresses of individual vFiler units are not accepted.
+
+. Enter the administrator credentials for the specified host, and then click *Add*.
++
+The 7-Mode controllers are added to the "`7-Mode Controllers`" table and clusters are added to the "`Clustered Data ONTAP Systems`" table.
+
+. Repeat Steps 2 and 3 to add all of the controllers and clusters that you require for the transition.
+. If the Status column indicates that the credentials of the system are missing or the credentials have changed from what was initially entered in the tool, click the image:../media/edit_schedule.gif[] icon, and then enter the credentials again.

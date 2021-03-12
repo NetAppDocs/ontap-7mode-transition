@@ -1,0 +1,59 @@
+---
+permalink: san-host/task_preparing_for_transition_of_fc_or_fcoe_san_boot_luns.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you transition an FC or FCoE SAN boot LUN, you must perform specific steps on your Red Hat Enterprise Linux \(RHEL\) host.'
+---
+= Preparing for transition of FC or FCoE SAN boot LUNs on RHEL hosts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you transition an FC or FCoE SAN boot LUN, you must perform specific steps on your Red Hat Enterprise Linux (RHEL) host.
+
+You must have the following information from the _Inventory Assessment Workbook_:
+
+* 7-Mode LUN name on which RHEL 5 or RHEL 6 is installed
+* SCSI device name for the transition LUN
+* DMMP device name for the transition LUN
+* Mount directory
+* File system configured on the DMMP device
+* UUID number of the /boot partition
+* Name of the initrid image
+
+This procedure applies to copy-based transitions and copy-free transitions.
+
+. Verify that the DMMP device exists in the /dev/mapper directory: `ls /dev/mapper/ DMMP_device_name`
++
+If you cannot locate the DMMP device, then it might be using an alias or user-friendly name.
+
+. Identify the DMMP devices and Logical Volume Manager (LVM) names on which the RHEL 5 or RHEL 6 operating system /boot and root (/) directories are installed: `df - h`
++
+By default, RHEL 5 and RHEL 6 are installed on the root (/) partition on the logical volume. If the root partition is installed on the logical volume, then no pretransition changes to the configuration are required.
+
+. If the /boot partition is installed on the DMMP device, confirm how the /boot partition is referenced to mount in /etc/fstab at boot time.
+. If the /boot partition is referenced in /etc/fstab by its DMMP device name, replace the DMMP device name with the file system UUID name.
+. Make a backup of the /etc/fstab file: `cp /etc/fstab /etc/fstab_pre_transition_file_name`
+. Edit the /etc/fstab file to replace the DMMP device name with its respective file system UUID number.
+. Make a backup of the initrd image file: `cp /boot/initrd_image_file_nameinitrd_image_file_name.bak`
+. For RHEL 5 only:
+ .. In the /etc/mutipath.conf file, identify the SWAP partition device.
++
+In the following example, /dev/VolGroup00/LogVol01 is the SWAP partition device: /dev/VolGroup00/LogVol01 swap swap defaults 0 0
+
+ .. Create a label for mounting the swap partition: `swapoff swap-partition_device``mkswap -L label-for-swapswap-partition-device``swapon swap-partition_device`
+ .. Replace the SWAP partition device name in the /etc/fstab file with THE SWAP label.
++
+The updated line in the /etc/fstab file should be as follows:
++
+----
+LABEL=SwapPartition  swap  swap   defaults    0 0
+----
+. Re-create the initrd image.
+ ** For RHEL5: `mkinitrd -f/boot/ initrd-"'uname-r'".img 'uname-r' --with multipath`
+ ** For RHEL 6: `dracut --force --add multipath --verbose`
+. Restart the host to boot from the new initrd image.
+
+*Related information*
+
+xref:task_gathering_pretransition_information_from_inventory_assessment_workbook.adoc[Gathering pretransition information from the Inventory Assessment Workbook]

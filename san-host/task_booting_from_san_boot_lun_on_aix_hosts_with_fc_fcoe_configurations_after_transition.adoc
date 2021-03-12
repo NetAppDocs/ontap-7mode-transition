@@ -1,0 +1,57 @@
+---
+permalink: san-host/task_booting_from_san_boot_lun_on_aix_hosts_with_fc_fcoe_configurations_after_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'After transitioning a SAN boot LUN on an AIX host with an FC or FCoE configuration, you must perform certain steps to boot your host from the SAN boot LUN.'
+---
+= Booting from SAN boot LUN on AIX hosts with FC/FCoE configurations after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transitioning a SAN boot LUN on an AIX host with an FC or FCoE configuration, you must perform certain steps to boot your host from the SAN boot LUN.
+
+For copy-based transitions, you must perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool. Copy-free transitions are not supported on AIX hosts.
+
+. Log in to the Hardware Management Console (HMC), and then boot your host in the SMS menu.
+. Select the host.
+. Select *Operations* > *Activate* > *Profile*.
+. Click the Advanced tab.
+. Select *SMS*, and then click *OK*.
+. In the SMS Main Menu, enter `5` to select *5. Select Boot Options*.
+. Enter `1` to select *1. Select Install/Boot Device*.
+. Enter `5` to select *5. List all Devices*.
+. Enter the device number of the ONTAP SAN boot LUN that you want to boot with.
++
+In the following example, the desired LUN is option 5:
++
+----
+Select Device
+Device 	Current 	Device
+Number		Position	Name
+1.   -   PCIe2 4-port 1GbE Adapter
+     ( loc=U78CB.001.WZS062Y-P1-C12-T1 )
+2.   -   PCIe2 4-port 1GbE Adapter
+     ( loc=U78CB.001.WZS062Y-P1-C12-T2 )
+3.   -   PCIe2 4-port 1GbE Adapter
+     ( loc=U78CB.001.WZS062Y-P1-C12-T3 )
+4.   -   PCIe2 4-port 1GbE Adapter
+     ( loc=U78CB.001.WZS062Y-P1-C12-T4 )
+5.   -   107 GB		FC Harddisk, part=2 (AIX 7.1.0)
+     ( loc=U78CB.001.WZS062Y-P1-C7-T1-W232200a09830ca3a-L0000000000000000 )
+6.   -   107 GB		FC Harddisk, part=2 (AIX 7.1.0)
+     ( loc=U78CB.001.WZS062Y-P1-C7-T2-W232200a09830ca3a-L0000000000000000 )
+---------------------------------------------------------------
+Navigation keys:
+M = return to Main Menu  N = Next page of list
+ESC key = return to previous screen   X = eXit System Management Services
+---------------------------------------------------------------
+Type menu item number and press Enter or select Navigation keys: 5
+----
+
+. Enter `2` to select *2. Normal Mode Boot*.
+. Enter `1` to exit the SMS menu.
+. Wait for your operating system to boot.
+. Display the LUN path name: `sanlun lun show`
++
+The output in the mode column should have changed from 7 to C.

@@ -1,0 +1,51 @@
+---
+permalink: san-host/task_reattaching_rdm_using_esxi_cli_console.html
+sidebar: sidebar
+keywords: 
+summary: 'After transition from Data ONTAP operating in 7-Mode to clustered Data ONTAP you must reattach your raw device mapping \(RDM\).'
+---
+= Reattaching RDM using ESXi the CLI/console
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transition from Data ONTAP operating in 7-Mode to clustered Data ONTAP you must reattach your raw device mapping (RDM).
+
+* You must retrieve the RDM disk file listed in the Disk column of the _Inventory Assessment Workbook_.
+* You must retrieve the new clustered Data ONTAP LUN naa ID from the 7MTT mapping file.
+
+. Log in to the ESXi console using SSH.
+. Use the mv command to make a backup of the RDM disk file and the associated device file.
++
+The RDM disk file is listed in the Disk column of the _Inventory Assessment Workbook_.
++
+If the RDM disk file is /vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-winbus-A.vmdk, you would issue the following command:``mv /vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-winbus-A.vmdk /vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-win-bus-A.vmdk _bak``
+
+ ** For physical compatibility RDM (PTRDM): `mv RDM_disk_file_name-rdmp.vdmk RDM_disk_file_name-rdmp.vdmk_bak`
++
+For example:
++
+mv/vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-winbus-A-rdmp.vmdk/vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-winbus-A/VM2-win-bus-A-rdmp.vmdk _bak
+
+ ** For virtual compatibility RDM (NPTRDM): `mv RDM_disk_file_name-rdmp.vdmk RDM_disk_file_name-rdmp.vdmk_bak`
++
+For example:
++
+mv/vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-winbus-A-rdmp.vmdk/vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-winbus-A/VM2-win-bus-A-rdmp.vmdk _bak
+
+. Use the new clustered Data ONTAP LUN naa ID and the RDM disk file to re-create the RDM configuration and device files.
+ ** For PTRDM: `# vmkfstools –z /vmfs/devices/disks/new_clustered_Data_ONTAP_naa_ID.vmdk`
++
+For example: `vmkfstools –z /vmfs/devices/disks/naa.600a098054314c6c442b446f79712313 /vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-win-bus-A.vmdk`
+
+ ** For NPTRDM: `# vmkfstools –r /vmfs/devices/disks/new_clustered_Data_ONTAP_naa_ID.vmdk`
++
+For example: `vmkfstools –r /vmfs/devices/disks/naa.600a098054314c6c442b446f79712313 /vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A/VM2-win-bus-A.vmdk`
+. Confirm that the configuration and pointer files are created: `# ls /vmfs/volumes/datastore/VM_directory`
++
+`#ls /vmfs/volumes/53a3ac3d-df5aca03-3a94-001ec9d631cb/VM2-win-bus-A`
++
+The new configuration and pointer files are displayed under the VM directory path.
+
+. Repeat the steps for all VMs with RDM attached.
+. Restart the hostd and vpxa agents in the ESXi host: `/etc/init.d/hostd/restart``/etc/init.d/vpxa/restart`

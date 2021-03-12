@@ -1,0 +1,29 @@
+---
+permalink: san-host/task_mounting_aix_host_luns_with_file_systems_after_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'After transitioning AIX host data LUNs with file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must mount the LUNs.'
+---
+= Mounting AIX host data LUNs with file systems after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transitioning AIX host data LUNs with file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must mount the LUNs.
+
+After LUN transition, the Logical Volume Manager (LVM) attributes, such as the logical volume name and volume group name, do not change. You continue to use the pretransition logical volume name and volume group name for post-transition configuration.
+
+For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool. Copy-free transitions are not supported on AIX hosts.
+
+. Discover your new clustered Data ONTAP LUNs: `cfgmgr`
+. Verify that your clustered Data ONTAP LUNs have been discovered: `sanlun lun show`
++
+Your clustered Data ONTAP LUNs should be listed and the output in the mode column should be changed from 7 to C.
+
+. Import your volume group: `importvg -y vg_namepv_name`
++
+You can use any physical volume name in your volume group.
+
+. Verify that your volume group was imported: `lsvg vg_name`
+. Mount each device: `mount -o log=/dev/loglv00 file_systemmount_point`
+. Verify the mount points: `df`

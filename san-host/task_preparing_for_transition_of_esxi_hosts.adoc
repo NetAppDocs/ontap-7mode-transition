@@ -1,0 +1,44 @@
+---
+permalink: san-host/task_preparing_for_transition_of_esxi_hosts.html
+sidebar: sidebar
+keywords: 
+summary: 'You must complete several prerequisite tasks before you use the 7-Mode Transition Tool \(7MTT\) to transition your ESXi hosts from Data ONTAP operating in 7-Mode to ONTAP.'
+---
+= Preparing for transition of ESXi hosts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must complete several prerequisite tasks before you use the 7-Mode Transition Tool (7MTT) to transition your ESXi hosts from Data ONTAP operating in 7-Mode to ONTAP.
+
+. Configure clustered Data ONTAP as described in the _7-Mode Transition Tool Copy-Based Transition Guide_ or the _7-Mode Transition Tool Copy-Free Transition Guide_ based on the type of transition that you are performing.
+. Gather the following information for the ESXi hosts that you are transitioning:
+ ** IP address
+ ** Host name
+ ** Authentication details
+. Complete the zoning between FC or FCoE hosts and new clustered Data ONTAP nodes.
++
+You can use the Collect and Assess feature to generate the zoning plan.
+
+. Use the Interoperability Matrix to verify that the following are supported for transition to clustered Data ONTAP:
+ ** Your version of Data ONTAP operating in 7-Mode
++
+In some cases, you might have to upgrade your version of Data ONTAP operating in 7-Mode to a 7MTT SAN compatible version. For example, Data ONTAP 7.3.7 operating in 7-Mode is not compatible for transitions using the 7MTT. If you are running this version, you must upgrade it before initiating transition.
+
+ ** Your ESXi host configuration
+ ** Your HBA driver and firmware
++
+For iSCSI, only software initiators are supported. For FC and FCoE, only QLogic and Emulex initiators are supported. If your ESXi FC or FCoE initiator is not supported, you must upgrade to a version that is supported by clustered Data ONTAP as described in the Interoperability Matrix.
+. If configured, disable VMware high availability (HA) and Distributed Resource Scheduler (DRS).
++
+VMware HA and DRS are not supported during transition.
+
+*Related information*
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61584[NetApp Documentation: 7-Mode Transition Tool]
+
+https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+
+http://kb.vmware.com/kb/2032893[Retaining resource pools when disabling VMware DRS clusters in the vSphere Web Client]
+
+http://kb.vmware.com/kb/1008025[Disabling VMware High Availability (HA)]

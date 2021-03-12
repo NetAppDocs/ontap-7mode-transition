@@ -1,0 +1,14 @@
+---
+permalink: copy-based/concept_copy_based_transition_workflow.html
+sidebar: sidebar
+keywords: 
+summary: 'The copy-based transition workflow involves preparing for migration, migrating data and configurations, and performing post-transition configurations.'
+---
+= Copy-based transition workflow
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The copy-based transition workflow involves preparing for migration, migrating data and configurations, and performing post-transition configurations.
+
+image::../media/cbt_workflow.gif[]

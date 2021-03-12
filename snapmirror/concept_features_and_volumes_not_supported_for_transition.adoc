@@ -1,0 +1,40 @@
+---
+permalink: snapmirror/concept_features_and_volumes_not_supported_for_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You cannot transition certain 7-Mode volumes, such as traditional volumes, and certain 7-Mode features, such as synchronous SnapMirror relationships, because some features might not be available in clustered Data ONTAP.'
+---
+= Features and volumes not supported for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You cannot transition certain 7-Mode volumes, such as traditional volumes, and certain 7-Mode features, such as synchronous SnapMirror relationships, because some features might not be available in clustered Data ONTAP.
+
+You can transition a 7-Mode volume only to an SVM.
+
+You cannot transition the following 7-Mode volumes or configurations:
+
+* Restricted or offline volumes
+* Traditional volumes
+* Volumes with NFS-to-CIFS character mapping (charmap)
+* Volumes with Storage-Level Access Guard configurations
+* Volumes that contain qtrees with Storage-Level Access Guard configurations
++
+If the target cluster is running Data ONTAP 8.3.1 or later, you can transition volumes that contain qtrees with this configuration.
+
+* Volumes with the no_i2p option enabled.
+* FlexCache volumes
+* 32-bit volumes and 64-bit volumes that have 32-bit Snapshot copies if the destination cluster is running Data ONTAP 8.3 or later
+* FlexClone volumes
++
+FlexClone volumes can be transitioned as FlexVol volumes, but the clone hierarchy and storage efficiency will be lost.
+
+* Root volume of a vFiler unit, where the root volume is based on a qtree that belongs to the default vFiler unit
+* Synchronous SnapMirror configuration
+* Qtree SnapMirror relationships
+* IPv6 configurations
+* SnapVault relationships
+* Network compression for SnapMirror
+* Restoring the destination volume to a specific Snapshot copy (SnapMirror break -s command)
+* Volume move operation

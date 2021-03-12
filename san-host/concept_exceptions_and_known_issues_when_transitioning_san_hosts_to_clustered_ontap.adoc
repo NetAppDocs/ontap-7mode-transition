@@ -1,0 +1,20 @@
+---
+permalink: san-host/concept_exceptions_and_known_issues_when_transitioning_san_hosts_to_clustered_ontap.html
+sidebar: sidebar
+keywords: 
+summary: 'You should be aware of certain exceptions and known issues when transitioning SAN hosts from Data ONTAP operating in 7-Mode to later versions of ONTAP.'
+---
+= Exceptions and known issues when transitioning SAN hosts to ONTAP
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should be aware of certain exceptions and known issues when transitioning SAN hosts from Data ONTAP operating in 7-Mode to later versions of ONTAP.
+
+* For transitioning Hyper-Virtual Machine (VMs) with only VHD or VHDX file types, you can use storage live migration instead of the 7-Mode Transition Tool (7MTT).
++
+For details about Hyper-V storage live migration, see the Microsoft documentation.
+
+* If you used the same igroup name on both nodes of the 7-Mode controller, the transition tool might fail to resolve the igroup conflict.
++
+Bug ID https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=769715[769715].

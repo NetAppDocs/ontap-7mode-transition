@@ -1,0 +1,166 @@
+---
+permalink: copy-free/reference_ignorable_errors_during_transition.html
+sidebar: sidebar
+keywords: 
+summary: 'You might encounter some ignorable errors during the transition. These errors can occur during the precheck, cabling, import, or commit operation of a copy-free transition project. You must acknowledge these errors before continuing with transition.'
+---
+= Ignorable errors during transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might encounter some ignorable errors during the transition. These errors can occur during the precheck, cabling, import, or commit operation of a copy-free transition project. You must acknowledge these errors before continuing with transition.
+
+When you add any ignorable error category to the copy-free transition project by using the 7-Mode Transition Tool CLI, it means that you have understood the impact of the error. You must rerun the transition operation after ignoring the error. At this time, the blocking error changes to a warning message, and the error is shown as "`acknowledged`". You can continue the transition with the warning.
+
+== Precheck operation: ignorable error categories
+
+|===
+| Category| When the error is displayed
+a|
+ignore-source-not-multipath
+a|
+7-Mode disk shelves are not in a multipath configuration.
+a|
+ignore-target-not-multipath
+a|
+Disk shelves in the target cluster nodes are not in a multipath configuration.
+a|
+ignore-source-storage-fault
+a|
+7-Mode disk shelves have some fault (as displayed in the output of the storage show fault command).
+a|
+ignore-target-storage-fault
+a|
+Disk shelves in the target cluster nodes have some fault (as displayed in the output of the `system node run -node node_name -command storage show fault` command).
+a|
+ignore-target-port-requirement
+a|
+Target cluster nodes do not have a sufficient number of ports available to connect the 7-Mode disk shelves.
+a|
+ignore-aggr-space-less-than-5-percent
+a|
+7-Mode aggregates are out of space because the free space in the 7-Mode aggregates is less than 5% of physical space.
+a|
+ignore-aggr-logical-space-more-than-97-percent
+a|
+7-Mode aggregates are out of space because the logical space in the aggregate is more than 97% full.
+a|
+ignore-aggr-snapshot-spill-more-than-4-percent
+a|
+7-Mode aggregates are out of space because Snapshot copies occupy more space than that allocated for the Snapshot copy reserve.
+a|
+ignore-aggr-physical-space-more-than-89-percent-and-snapshot-spill
+a|
+7-Mode aggregates are out of space because the total used physical space is more than 89% and the Snapshot copies occupy more space than that allocated for the Snapshot copy reserve.
+a|
+ignore-volumes-with-file-gurantee
+a|
+7-Mode volumes have space guarantee set to file, which is not supported in ONTAP.
+a|
+ignore-volumes-with-disabled-gurantees
+a|
+Space guarantee of volumes is currently disabled due to lack of space in the volumes.
+a|
+nfs-qtrees-exported
+a|
+Qtree export rules are present in the 7-Mode system.Acknowledging this error means that you have understood the differences in the qtree export rules between Data ONTAP operating in 7-Mode and ONTAP. You might have to perform some manual steps after the NFS exports rules are applied by the 7-Mode Transition Tool.
+
+https://kb.netapp.com/support/index?page=content&id=8010371[NetApp KB Article 8010371:7MTT Precheck 10111 - Transitioning 7-Mode volumes that have qtree-level exports]
+
+a|
+ignore-configuration-limits-check
+a|
+Objects and configurations to be transitioned exceed a certain limit.The storage cutover can take a long time and you must prepare for the downtime.
+
+https://kb.netapp.com/support/index?page=content&id=3014882[NetApp KB Article 3014882: Considerations for reducing the storage cutover time during Copy-Free Transition]
+
+a|
+ignore-cifs-ad-domain-mismatch
+a|
+The 7-Mode Transition Tool continues with the transition of the CIFS configuration even if the CIFS Active Directory domain of the 7-Mode system is different from the CIFS Active Directory domain of the target SVM.You must ensure that the CIFS Active Directory domains of the 7-Mode system and the target SVM are trusted domains. Otherwise, the transition of CIFS configurations to the target SVM fails.
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_transition_CIFS_configurations_when_Active_Directory_Domain_of_CIFS_server_on_7-Mode_and_target_SVM_are_different[How to transition CIFS configurations when Active Directory Domain of CIFS server on 7-Mode and target SVM are different]
+
+|===
+
+== Cabling verification operation: ignorable error categories
+
+|===
+| Category| When the error is displayed
+a|
+ignore-missing-spare-disks
+a|
+One or more 7-Mode spare disks are not detected by the target cluster nodes.
+a|
+ignore-missing-degraded-aggr-disks
+a|
+Cannot detect up to two disks from any of the 7-Mode RAID-DP RAID groups or one disk from any of the 7-Mode RAID-4 RAID groups on the target cluster nodes. Continuing with the transition makes such aggregates degraded after the aggregates are transitioned.
+
+|===
+
+== Import operation: ignorable error categories
+
+If you add an ignorable error category to the copy-free transition project during the import operation, Data ONTAP performs some corrective action on the aggregates and volumes in addition to changing the blocking error to a warning.
+
+|===
+| Category| When the error is displayed| Corrective action if the error is acknowledged and import operation is run again
+a|
+ignore-aggregates-with-32bit-snapshot-for-import
+a|
+32-bit Snapshot copies are detected in the 7-Mode aggregate.
+a|
+32-bit Snapshot copies are deleted from all of the 7-Mode aggregates that are part of this project.
+a|
+transition-dirty-aggregates-during-import
+a|
+One of the transitioning aggregates was not cleanly shut down on the 7-Mode storage system.
+a|
+All of the 7-Mode aggregates that were not cleanly shut down are transitioned.This might result in data loss after transition.
+
+a|
+ignore-aggregates-not-being-online-for-import
+a|
+The aggregate was not online when the 7-Mode storage system was halted.
+a|
+All of the offline aggregates are brought online.
+a|
+ignore-volumes-with-32bit-snapshot-for-import
+a|
+32-bit Snapshot copies are detected in the 7-Mode volume.
+a|
+32-bit Snapshot copies are deleted from all of the 7-Mode volumes that are part of this project.
+a|
+ignore-volumes-with-dirty-file-system-for-import
+a|
+One of the transitioning volumes was not cleanly shut down on the 7-Mode storage system.
+a|
+All of the 7-Mode volumes that were not cleanly shut down are transitioned.This might result in data loss after transition.
+
+a|
+transition-offline-volumes-during-import
+a|
+The volume was not online when the 7-Mode storage system was halted.
+a|
+All of the offline volumes are brought online.
+a|
+transition-restricted-volumes-during-import
+a|
+The volume was in the restricted state when the 7-Mode storage system was halted.
+a|
+All of the restricted volumes are brought online.
+|===
+
+== Commit operation: ignorable error categories
+
+If you add an ignorable error category to the copy-free transition project during the commit operation, ONTAP performs some corrective action on the aggregates and volumes in addition to changing the blocking error to a warning.
+
+|===
+| Category| When the error is displayed| Corrective action if the error is acknowledged and commit operation is run again
+a|
+ignore-commit-offline-aggregates
+a|
+Some of the transitioned aggregates are offline.
+a|
+All of the offline aggregates are brought online.
+|===

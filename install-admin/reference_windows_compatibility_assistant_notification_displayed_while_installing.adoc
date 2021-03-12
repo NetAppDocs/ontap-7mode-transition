@@ -1,0 +1,14 @@
+---
+permalink: install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html
+sidebar: sidebar
+keywords: 
+summary: 'Sometimes while installing the tool, you receive the Windows Program Compatibility Assistant notification that the program might not have installed correctly. This notification does not necessarily indicate that the program did not install correctly.'
+---
+= Windows Program Compatibility Assistant notification displayed while installing the tool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Sometimes while installing the tool, you receive the Windows Program Compatibility Assistant notification that the program might not have installed correctly. This notification does not necessarily indicate that the program did not install correctly.
+
+You can ignore this notification by clicking *This program installed correctly*.
