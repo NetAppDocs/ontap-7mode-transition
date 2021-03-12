@@ -150,19 +150,19 @@ a|
 a|
 acp.domain
 a|
-`system node run -node {nodename\|local} options acp.domain`
+`system node run -node {nodename\\\|local} options acp.domain`
 a|
 acp.enabled
 a|
-`system node run -node {nodename\|local} options acp.enabled`
+`system node run -node {nodename\\\|local} options acp.enabled`
 a|
 acp.netmask
 a|
-`system node run -node {nodename\|local} options acp.netmask`
+`system node run -node {nodename\\\|local} options acp.netmask`
 a|
 acp.port
 a|
-`system node run -node {nodename\|local} options acp.port`
+`system node run -node {nodename\\\|local} options acp.port`
 a|
 auditlog.enable
 a|
@@ -198,15 +198,15 @@ Not supported
 a|
 autosupport.content
 a|
-`system node autosupport modify -node nodename -remove -private -data {true\|false}`
+`system node autosupport modify -node nodename -remove -private -data {true\\\|false}`
 a|
 autosupport.doit
 a|
-`system node autosupport invoke -node nodename -type {all\|test}`
+`system node autosupport invoke -node nodename -type {all\\\|test}`
 a|
 autosupport.enable
 a|
-`system node autosupport modify -node nodename -state {enable\|disable}`
+`system node autosupport modify -node nodename -state {enable\\\|disable}`
 a|
 autosupport.from
 a|
@@ -214,7 +214,7 @@ a|
 a|
 autosupport.local_collection
 a|
-`system node autosupport modify -node nodename -local-collection {true\|false}`
+`system node autosupport modify -node nodename -local-collection {true\\\|false}`
 a|
 autosupport.mailhost
 a|
@@ -250,7 +250,7 @@ a|
 a|
 autosupport.performance_data.enable
 a|
-`system node autosupport modify -node nodename -perf {true\|false}`
+`system node autosupport modify -node nodename -perf {true\\\|false}`
 a|
 autosupport.periodic.tx_window
 a|
@@ -266,7 +266,7 @@ a|
 a|
 autosupport.support.enable
 a|
-`system node autosupport modify -node nodename -support {enable\|disable}`
+`system node autosupport modify -node nodename -support {enable\\\|disable}`
 a|
 autosupport.support.proxy
 a|
@@ -278,7 +278,7 @@ a|
 a|
 autosupport.support.transport
 a|
-`system node autosupport modify -node nodename -transport {http\|https\|smtp}`
+`system node autosupport modify -node nodename -transport {http\\\|https\\\|smtp}`
 a|
 autosupport.to
 a|
@@ -286,7 +286,7 @@ a|
 a|
 autosupport.validate_digital_certificate
 a|
-`system node autosupport modify -node nodename -validate-digital-certificate {true\|false}`
+`system node autosupport modify -node nodename -validate-digital-certificate {true\\\|false}`
 |===
 
 == B
@@ -306,15 +306,15 @@ Not supported
 a|
 cdpd.enable
 a|
-`system node run -node {nodename\|local} options cdpd.enable`
+`system node run -node {nodename\\\|local} options cdpd.enable`
 a|
 cdpd.holdtime
 a|
-`system node run -node {nodename\|local} options cdpd.holdtime`
+`system node run -node {nodename\\\|local} options cdpd.holdtime`
 a|
 cdpd.interval
 a|
-`system node run -node {nodename\|local} options cdpd.interval`
+`system node run -node {nodename\\\|local} options cdpd.interval`
 a|
 cf.giveback.auto.after.panic.takeover
 a|
@@ -489,12 +489,12 @@ a|
 a|
 cifs.home_dirs_public
 a|
-`vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled {true\|false}` *Note:* Available at the advanced privilege level.
+`vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled {true\\\|false}` *Note:* Available at the advanced privilege level.
 
 a|
 cifs.home_dirs_public_for_admin
 a|
-`vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled{true\|false}` *Note:* Available at the advanced privilege level.
+`vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled{true\\\|false}` *Note:* Available at the advanced privilege level.
 
 a|
 cifs.idle_timeout
@@ -675,23 +675,23 @@ Not supported
 a|
 disk.maint_center.enable
 a|
-`system node run -node {nodename\|local} options disk.maint_center.enable`
+`system node run -node {nodename\\\|local} options disk.maint_center.enable`
 a|
 disk.maint_center.max_disks
 a|
-`system node run -node {nodename\|local} options disk.maint_center.max_disks`
+`system node run -node {nodename\\\|local} options disk.maint_center.max_disks`
 a|
 disk.maint_center.rec_allowed_entries
 a|
-`system node run -node {nodename\|local} options disk.maint_center.rec_allowed_entries`
+`system node run -node {nodename\\\|local} options disk.maint_center.rec_allowed_entries`
 a|
 disk.maint_center.spares_check
 a|
-`system node run -node {nodename\|local} options disk.maint_center.spares_check`
+`system node run -node {nodename\\\|local} options disk.maint_center.spares_check`
 a|
 disk.powercycle.enable
 a|
-`system node run -node {nodename\|local} options disk.powercycle.enable`
+`system node run -node {nodename\\\|local} options disk.powercycle.enable`
 a|
 disk.recovery_needed.count
 a|
@@ -729,7 +729,7 @@ Not supported
 a|
 ems.autosuppress.enable
 a|
-`event config modify -suppression \{on\|off\}` *Note:* Available at the advanced privilege level.
+`event config modify -suppression \{on\\\|off\}` *Note:* Available at the advanced privilege level.
 
 |===
 
@@ -764,27 +764,27 @@ Not supported
 a|
 flexscale.enable
 a|
-`system node run -node node_name|local} options flexscale.enable`
+`system node run -node node_name\|local} options flexscale.enable`
 a|
 flexscale.lopri_blocks
 a|
-`system node run -node node_name|local} options flexscale.lopri_blocks`
+`system node run -node node_name\|local} options flexscale.lopri_blocks`
 a|
 flexscale.normal_data_blocks
 a|
-`system node run -node node_name|local} options flexscale.normal_data_blocks`
+`system node run -node node_name\|local} options flexscale.normal_data_blocks`
 a|
 flexscale.pcs_high_res
 a|
-`system node run -node node_name|local} options flexscale.pcs_high_res`
+`system node run -node node_name\|local} options flexscale.pcs_high_res`
 a|
 flexscale.pcs_size
 a|
-`system node run -node node_name|local} options flexscale.pcs_size`
+`system node run -node node_name\|local} options flexscale.pcs_size`
 a|
 flexscale.rewarm
 a|
-`system node run -node node_name|local} options flexscale.rewarm`
+`system node run -node node_name\|local} options flexscale.rewarm`
 a|
 fpolicy.enable
 a|
@@ -898,7 +898,7 @@ Not supported
 a|
 httpd.admin.enable
 a|
-`vserver services web modify -enabled{true\|false}`
+`vserver services web modify -enabled{true\\\|false}`
 a|
 httpd.admin.hostsequiv.enable
 a|
@@ -984,7 +984,7 @@ a|
 a|
 ip.fastpath.enable
 a|
-`system node run -node node_name|local} options ip.fastpath.enable` *Note:* Beginning with ONTAP 9.2, fastpath is no longer supported.
+`system node run -node node_name\|local} options ip.fastpath.enable` *Note:* Beginning with ONTAP 9.2, fastpath is no longer supported.
 
 a|
 ip.ipsec.enable
@@ -997,27 +997,27 @@ Not supported
 a|
 ip.path_mtu_discovery.enable
 a|
-`system node run -node node_name|local} options ip.path_mtu_discovery.enable`
+`system node run -node node_name\|local} options ip.path_mtu_discovery.enable`
 a|
 ip.ping_throttle.alarm_interval
 a|
-`system node run -nodenode_name |local} options ip.ping_throttle.alarm_node_nameinterval`
+`system node run -nodenode_name \|local} options ip.ping_throttle.alarm_node_nameinterval`
 a|
 ip.ping_throttle.drop_level
 a|
-`system node run -node|local} options ip.ping_throttle.drop.level`
+`system node run -node\|local} options ip.ping_throttle.drop.level`
 a|
 ip.tcp.abc.enable
 a|
-`system node run -nodenode_name|local} options ip.tcp.abc.enable`
+`system node run -nodenode_name\|local} options ip.tcp.abc.enable`
 a|
 ip.tcp.abc.l_limit
 a|
-`system node run -nodenode_name|local} options ip.tcp.abc.l_limit`
+`system node run -nodenode_name\|local} options ip.tcp.abc.l_limit`
 a|
 ip.tcp.batching.enable
 a|
-`system node run -nodenode_name|local} options ip.tcp.batching.enable`
+`system node run -nodenode_name\|local} options ip.tcp.batching.enable`
 a|
 ip.tcp.newreno.enable
 a|
@@ -1025,11 +1025,11 @@ Not supported
 a|
 ip.tcp.rfc3390.enable
 a|
-`system node run -nodenode_name|local} options ip.tcp.rfc3390.enable`
+`system node run -nodenode_name\|local} options ip.tcp.rfc3390.enable`
 a|
 ip.tcp.sack.enable
 a|
-`system node run -nodenode_name|local} options ip.tcp.sack.enable`
+`system node run -nodenode_name\|local} options ip.tcp.sack.enable`
 a|
 ip.v6.enable
 a|
@@ -1399,7 +1399,7 @@ a|
 a|
 nfs.max_num_aux_groups
 a|
-`vserver nfs \{ show \| modify \} -extended-groups-limit`
+`vserver nfs \{ show \\\| modify \} -extended-groups-limit`
 a|
 nfs.mount_rootonly
 a|
@@ -1578,7 +1578,7 @@ NOTE: All RAID options have 7-Mode-compatible nodeshell shortcuts of the form `o
 a|
 raid
 a|
-`storage raid-options \{ modify \| show\}`
+`storage raid-options \{ modify \\\| show\}`
 a|
 raid.background_disk_fw_update.enable
 a|
@@ -1590,7 +1590,7 @@ a|
 a|
 raid.disk.timeout.enable
 a|
-`system node run -node {node_name|local} options raid.disk.timeout.enable`
+`system node run -node {node_name\|local} options raid.disk.timeout.enable`
 a|
 raid.disktype.enable
 a|
@@ -1603,43 +1603,43 @@ a|
 a|
 raid.lost_write.enable
 a|
-`storage raid-options \{ modify \| show \} -name raid.media_scrub.enable`
+`storage raid-options \{ modify \\\| show \} -name raid.media_scrub.enable`
 a|
 raid.media_scrub.rate
 a|
-`storage raid-options \{ modify \| show \}-name raid.media_scrub.rate`
+`storage raid-options \{ modify \\\| show \}-name raid.media_scrub.rate`
 a|
 raid.min_spare_count
 a|
-`storage raid-options \{ modify \| show \}-name raid.min_spare_count`
+`storage raid-options \{ modify \\\| show \}-name raid.min_spare_count`
 a|
 raid.mix.hdd.disktype.capacity
 a|
-`storage raid-options \{ modify \| show \}-name raid.mix.hdd.disktype.capacity`
+`storage raid-options \{ modify \\\| show \}-name raid.mix.hdd.disktype.capacity`
 a|
 raid.mix.hdd.disktype.performance
 a|
-`storage raid-options \{ modify \| show \}-name raid.mix.hdd.disktype.performance`
+`storage raid-options \{ modify \\\| show \}-name raid.mix.hdd.disktype.performance`
 a|
 raid.mix.hdd.rpm.capacity
 a|
-`storage raid-options \{ modify \| show \} -name raid.mix.hdd.rpm.capacity`
+`storage raid-options \{ modify \\\| show \} -name raid.mix.hdd.rpm.capacity`
 a|
 raid.mix.hdd.rpm.performance
 a|
-`storage raid-options \{ modify \| show \} -name raid.mix.hdd.rpm.performance`
+`storage raid-options \{ modify \\\| show \} -name raid.mix.hdd.rpm.performance`
 a|
 raid.mirror_read_plex_pref
 a|
-`storage raid-options \{ modify \| show \}-name raid.mirror_read_plex_pref`
+`storage raid-options \{ modify \\\| show \}-name raid.mirror_read_plex_pref`
 a|
 raid.reconstruct.perf_impact
 a|
-`storage raid-options \{ modify \| show \}-name raid.reconstruct.perf_impact`
+`storage raid-options \{ modify \\\| show \}-name raid.reconstruct.perf_impact`
 a|
 raid.resync.perf_impact
 a|
-`storage raid-options \{ modify \| show \}-name raid.resync.perf_impact`
+`storage raid-options \{ modify \\\| show \}-name raid.resync.perf_impact`
 a|
 raid.rpm.ata.enable
 a|
@@ -1651,23 +1651,23 @@ Not supported
 a|
 raid.scrub.duration
 a|
-`storage raid-options \{ modify \| show \}-name raid.scrub.duration`
+`storage raid-options \{ modify \\\| show \}-name raid.scrub.duration`
 a|
 raid.scrub.perf_impact
 a|
-`storage raid-options \{ modify \| show \}-name raid.scrub.perf_impact`
+`storage raid-options \{ modify \\\| show \}-name raid.scrub.perf_impact`
 a|
 raid.scrub.schedule
 a|
-`storage raid-options \{ modify \| show \}-name raid.scrub.schedule`
+`storage raid-options \{ modify \\\| show \}-name raid.scrub.schedule`
 a|
 raid.timeout
 a|
-`storage raid-options \{ modify \| show \}-name raid.timeout`
+`storage raid-options \{ modify \\\| show \}-name raid.timeout`
 a|
 raid.verify.perf_impact
 a|
-`storage raid-options\{ modify \| show \}-name raid.verify.perf_impact`
+`storage raid-options\{ modify \\\| show \}-name raid.verify.perf_impact`
 a|
 replication.logical.reserved_transfers
 a|
@@ -1932,7 +1932,7 @@ Not supported
 a|
 ssh.passwd_auth.enable
 a|
-`security login \{ show \| create \| delete \}-user-or-group-name user_name -application ssh -authmethod publickey -role role_name -vserver vserver_name`
+`security login \{ show \\\| create \\\| delete \}-user-or-group-name user_name -application ssh -authmethod publickey -role role_name -vserver vserver_name`
 a|
 ssh.pubkey_auth.enable
 a|
@@ -2074,15 +2074,15 @@ a|
 a|
 wafl.inconsistent.asup_frequency.blks
 a|
-`system node run -node{node_name|local} options wafl.inconsistent.asup_frequency.blks`
+`system node run -node{node_name\|local} options wafl.inconsistent.asup_frequency.blks`
 a|
 wafl.inconsistent.asup_frequency.time
 a|
-`system node run -node{node_name|local} options wafl.inconsistent.asup_frequency.time`
+`system node run -node{node_name\|local} options wafl.inconsistent.asup_frequency.time`
 a|
 wafl.inconsistent.ems_suppress
 a|
-`system node run -node{node_name|local} options wafl.inconsistent.ems_suppress`
+`system node run -node{node_name\|local} options wafl.inconsistent.ems_suppress`
 a|
 wafl.maxdirsize
 a|

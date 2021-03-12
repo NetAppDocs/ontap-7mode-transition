@@ -143,15 +143,15 @@ a|
 a|
 acpadmin configure
 a|
-`system node run -node {nodename|local} acpadmin configure`
+`system node run -node {nodename\|local} acpadmin configure`
 a|
 acpadmin list_all
 a|
-`system node run -node {nodename|local} acpadmin list_all`
+`system node run -node {nodename\|local} acpadmin list_all`
 a|
 acpadmin stats
 a|
-`system node run -node {nodename|local} acpadmin stats`
+`system node run -node {nodename\|local} acpadmin stats`
 a|
 aggr add
 a|
@@ -172,7 +172,7 @@ a|
 a|
 aggr media_scrub
 a|
-`system node run -node {nodename|local} aggr media_scrub`
+`system node run -node {nodename\|local} aggr media_scrub`
 a|
 aggr offline
 a|
@@ -186,7 +186,7 @@ a|
 a|
 aggr options
 a|
-*aggr modify* storage aggregate {show | modify}
+*aggr modify* storage aggregate {show \| modify}
 
 a|
 aggr rename
@@ -216,7 +216,7 @@ aggr show storage aggregate show
 a|
 aggr verify
 a|
-`system node run -node {nodename|local} aggr verify`
+`system node run -node {nodename\|local} aggr verify`
 a|
 autosupport destinations
 a|
@@ -281,15 +281,15 @@ Not supported
 a|
 cdpd show-neighbors
 a|
-`system node run -node {nodename|local} -command network device-discovery show`
+`system node run -node {nodename\|local} -command network device-discovery show`
 a|
 cdpd show-stats
 a|
-`system node run -node {nodename|local} -command cdpd show-stats`
+`system node run -node {nodename\|local} -command cdpd show-stats`
 a|
 cdpd zero stats
 a|
-`system node run -node {nodename|local} -command cdpd zero-stats`
+`system node run -node {nodename\|local} -command cdpd zero-stats`
 a|
 cf disable
 a|
@@ -363,7 +363,7 @@ a|
 a|
 cifs domaininfo
 a|
-vserver cifs {show instance|domain discovered-servers show -instance}
+vserver cifs {show instance\|domain discovered-servers show -instance}
 
 a|
 cifs gpresult
@@ -383,7 +383,7 @@ vserver cifs home-directory
 a|
 cifs nbalias
 a|
-vserver cifs { add-netbios-aliases | remove-netbios-aliases | show -display-netbios-aliases }
+vserver cifs { add-netbios-aliases \| remove-netbios-aliases \| show -display-netbios-aliases }
 
 a|
 cifs prefdc
@@ -470,7 +470,7 @@ system node coredump
 a|
 date
 a|
-*date* { system | cluster } date { show | modify }
+*date* { system \| cluster } date { show \| modify }
 
 a|
 dcb priority
@@ -579,7 +579,7 @@ a|
 a|
 disk maint
 a|
-*disk maint {start | abort | status | list }* system node run -node {_nodename_|local} -command disk maint {start | abort | status | list }
+*disk maint {start \| abort \| status \| list }* system node run -node {_nodename_\|local} -command disk maint {start \| abort \| status \| list }
 
 a|
 disk remove
@@ -695,7 +695,7 @@ event log show
 a|
 environment chassis
 a|
-system node run -node {_nodename_|local} -command environment chassis
+system node run -node {_nodename_\|local} -command environment chassis
 a|
 environment status
 a|
@@ -711,12 +711,12 @@ You must use the "`storage shelf`" command set.
 a|
 environment shelf_log
 a|
-*environment shelf_log* system node run -node {_nodename_|local} -command environment shelf_log
+*environment shelf_log* system node run -node {_nodename_\|local} -command environment shelf_log
 
 a|
 environment shelf_stats
 a|
-system node run -node {_nodename_|local} -command environment shelf_stats
+system node run -node {_nodename_\|local} -command environment shelf_stats
 
 a|
 environment shelf_power_status
@@ -726,12 +726,12 @@ Not supported You must use the "`storage shelf`" command set.
 a|
 environment chassis
 a|
-system node run -node {_nodename_|local} -command environment chassis
+system node run -node {_nodename_\|local} -command environment chassis
 
 a|
 environment chassis list-sensors
 a|
-system node run -node {_nodename_|local} environment sensors show
+system node run -node {_nodename_\|local} environment sensors show
 
 a|
 exportfs
@@ -762,22 +762,22 @@ vserver export policy [rule]
 a|
 fcadmin config
 a|
-system node run -node {_nodename_|local} -command fcadmin config
+system node run -node {_nodename_\|local} -command fcadmin config
 
 a|
 fcadmin link_stats
 a|
-system node run -node {_nodename_|local} -command fcadmin link_stats
+system node run -node {_nodename_\|local} -command fcadmin link_stats
 
 a|
 fcadmin fcal_stats
 a|
-system node run -node {_nodename_|local} -command fcadmin fcal_stats
+system node run -node {_nodename_\|local} -command fcadmin fcal_stats
 
 a|
 fcadmin device_map
 a|
-system node run -node {_nodename_|local} -command fcadmin device_map
+system node run -node {_nodename_\|local} -command fcadmin device_map
 
 a|
 fcnic
@@ -864,17 +864,17 @@ a|
 a|
 fcstat link_stats
 a|
-system node run -node {_nodename_|local} -command fcstat link_stats
+system node run -node {_nodename_\|local} -command fcstat link_stats
 
 a|
 fcstat fcal_stats
 a|
-system node run -node {_nodename_|local} -command fcstat fcal_stats
+system node run -node {_nodename_\|local} -command fcstat fcal_stats
 
 a|
 fcstat device_map
 a|
-system node run -node {_nodename_|local} -command fcstat device_map
+system node run -node {_nodename_\|local} -command fcstat device_map
 
 a|
 file reservation
@@ -967,12 +967,12 @@ system node run -note _nodename_ -command if_addr_filter_info
 a|
 ifconfig
 a|
-network interfacenetwork {interface | port}
+network interfacenetwork {interface \| port}
 
 a|
 ifconfig -a
 a|
-network interface show network {interface | port} show
+network interface show network {interface \| port} show
 
 a|
 ifconfig alias
@@ -989,7 +989,7 @@ network port modify -flowcontrol-admin
 a|
 ifconfig mediatype
 a|
-network port modify {-duplex-admin | -speed-admin}
+network port modify {-duplex-admin \| -speed-admin}
 a|
 ifconfig mtusize
 a|
@@ -1037,12 +1037,12 @@ For ONTAP 9 releases, use the same procedure for failover groups.
 a|
 ifgrp status
 a|
-system node run -node {_nodename_|local} -command ifgrp status
+system node run -node {_nodename_\|local} -command ifgrp status
 
 a|
 ifgrp stat
 a|
-system node run -node {_nodename_|local} -command ifstat _ifgrp-port_
+system node run -node {_nodename_\|local} -command ifstat _ifgrp-port_
 
 a|
 ifgrp show
@@ -1051,12 +1051,12 @@ network port ifgrp show
 a|
 ifinfo
 a|
-system node run -node {_nodename_|local} -command ifinfo
+system node run -node {_nodename_\|local} -command ifinfo
 
 a|
 ifstat
 a|
-system node run -node {_nodename_|local} -command ifstat
+system node run -node {_nodename_\|local} -command ifstat
 
 a|
 igroup add
@@ -1173,7 +1173,7 @@ a|
 a|
 iscsi stats
 a|
-statistics {start|stop|show} -object _object_*Note:* Available at the advanced privilege level.
+statistics {start\|stop\|show} -object _object_*Note:* Available at the advanced privilege level.
 
 a|
 iscsi stop
@@ -1189,11 +1189,11 @@ a|
 a|
 key_manager
 a|
-system node run -node {_nodename_|local} -command key_manager
+system node run -node {_nodename_\|local} -command key_manager
 a|
 keymgr
 a|
-system node run -node {_nodename_|local} -command keymgr For management interface keys, you must use the "`security certificates`" commands.
+system node run -node {_nodename_\|local} -command keymgr For management interface keys, you must use the "`security certificates`" commands.
 
 |===
 
@@ -1256,7 +1256,7 @@ a|
 a|
 `logger`
 a|
-`logger` `system node run -node {nodename|local} -command logger`
+`logger` `system node run -node {nodename\|local} -command logger`
 
 a|
 `logout`
@@ -1371,11 +1371,11 @@ vserver cifs nbtstat
 a|
 ndmpd
 a|
-{system | server} services ndmp
+{system \| server} services ndmp
 a|
 ndmpcopy
 a|
-system node run -node {_nodename_|local} ndmpcopy
+system node run -node {_nodename_\|local} ndmpcopy
 
 a|
 ndmpd on
@@ -1390,36 +1390,36 @@ a|
 a|
 ndmpd status
 a|
-{system | vserver} services ndmp status
+{system \| vserver} services ndmp status
 
 a|
 ndmpd probe
 a|
-{system | vserver} services ndmp probe
+{system \| vserver} services ndmp probe
 
 a|
 ndmpd kill
 a|
-{system | vserver} services ndmp kill
+{system \| vserver} services ndmp kill
 
 a|
 ndmpd killall
 a|
-{system | vserver} services ndmp kill-all
+{system \| vserver} services ndmp kill-all
 a|
 ndmpd password
 a|
-{system | vserver} services ndmp password
+{system \| vserver} services ndmp password
 
 a|
 ndmpd version
 a|
-{system | vserver} services ndmp version
+{system \| vserver} services ndmp version
 
 a|
 ndp
 a|
-system node run -node {_nodename_|local} keymgr
+system node run -node {_nodename_\|local} keymgr
 
 a|
 netdiag
@@ -1456,7 +1456,7 @@ vserver nfs create OR vserver setup
 a|
 nfs stat
 a|
-statistics {start | stop | show} -object nfs*
+statistics {start \| stop \| show} -object nfs*
 a|
 nfs status
 a|
@@ -1496,15 +1496,15 @@ security login password
 a|
 perf report -t
 a|
-statistics {start | stop | show} -object perf
+statistics {start \| stop \| show} -object perf
 a|
 ping \{host}
 a|
-network ping {-node _nodename_ | -lif _lif-name_} -destination
+network ping {-node _nodename_ \| -lif _lif-name_} -destination
 a|
 ping \{count}
 a|
-network ping {-node _nodename_ | -lif _lif-name_} -count
+network ping {-node _nodename_ \| -lif _lif-name_} -count
 a|
 ping -l interface
 a|
@@ -1512,49 +1512,49 @@ network ping -lif _lif-name_
 a|
 ping -v
 a|
-network ping -node {_nodename_ | -lif _lif-name_} -verbose
+network ping -node {_nodename_ \| -lif _lif-name_} -verbose
 a|
 ping -s
 a|
-network ping -node {_nodename_ | -lif _lif-name_} -show-detail
+network ping -node {_nodename_ \| -lif _lif-name_} -show-detail
 a|
 ping -R
 a|
-network ping -node {_nodename_ | -lif _lif-name_} -record-route
+network ping -node {_nodename_ \| -lif _lif-name_} -record-route
 a|
 pktt delete
 a|
-system node run -node {_nodename_|local} pktt delete
+system node run -node {_nodename_\|local} pktt delete
 
 a|
 pktt dump
 a|
-system node run -node {_nodename_|local} pktt dump
+system node run -node {_nodename_\|local} pktt dump
 
 a|
 pktt list
 a|
-system node run -node {_nodename_|local} pktt list
+system node run -node {_nodename_\|local} pktt list
 
 a|
 pktt pause
 a|
-system node run -node {_nodename_|local} pktt pause
+system node run -node {_nodename_\|local} pktt pause
 
 a|
 pktt start
 a|
-system node run -node {_nodename_|local} pktt start
+system node run -node {_nodename_\|local} pktt start
 
 a|
 pktt status
 a|
-system node run -node {_nodename_|local} pktt status
+system node run -node {_nodename_\|local} pktt status
 
 a|
 pktt stop
 a|
-system node run -node {_nodename_|local} pktt stop
+system node run -node {_nodename_\|local} pktt stop
 
 a|
 portset add
@@ -1789,27 +1789,27 @@ NOTE: The network routing-groups command family is deprecated in ONTAP 9 and no 
 a|
 `sasadmin adapter_state`
 a|
-`system node run -node {nodename|local} -command sasadmin adapter_state`
+`system node run -node {nodename\|local} -command sasadmin adapter_state`
 a|
 `sasadmin channels`
 a|
-`system node run -node {nodename|local} -command sasadmin channels`
+`system node run -node {nodename\|local} -command sasadmin channels`
 a|
 `sasadmin dev_stats`
 a|
-`system node run -node {nodename|local} -command sasadmin dev_stats`
+`system node run -node {nodename\|local} -command sasadmin dev_stats`
 a|
 `sasadmin expander`
 a|
-`system node run -node {nodename|local} -command sasadmin expander`
+`system node run -node {nodename\|local} -command sasadmin expander`
 a|
 `sasadmin expander_map`
 a|
-`system node run -node {nodename|local} -command sasadmin expander_map`
+`system node run -node {nodename\|local} -command sasadmin expander_map`
 a|
 `sasadmin expander_phy_state`
 a|
-`system node run -node {nodename|local} -command sasadmin expander_phy_state`
+`system node run -node {nodename\|local} -command sasadmin expander_phy_state`
 a|
 `sasadmin shelf`
 a|
@@ -1821,11 +1821,11 @@ a|
 a|
 `sasstat dev_stats`
 a|
-`system node run -node {nodename|local} -command sasstat dev_stats`
+`system node run -node {nodename\|local} -command sasstat dev_stats`
 a|
 `sasstat adapter_state`
 a|
-`system node run -node {nodename|local} -command sasstat adapter_state`
+`system node run -node {nodename\|local} -command sasstat adapter_state`
 a|
 `sasstat expander`
 a|
@@ -1837,7 +1837,7 @@ a|
 a|
 `sasstat expander_phy_state`
 a|
-`system node run -node {nodename|local} sasstat expander_phy_state`
+`system node run -node {nodename\|local} sasstat expander_phy_state`
 a|
 `sasstat shelf`
 a|
@@ -1905,11 +1905,11 @@ a|
 a|
 `secureadmin setup ssh`
 a|
-`security ssh {add|modify}`
+`security ssh {add\|modify}`
 a|
 `secureadmin setup ssl`
 a|
-`security ssl {add|modify}`
+`security ssl {add\|modify}`
 a|
 `secureadmin enable ssh`
 a|
@@ -1929,11 +1929,11 @@ Not supported
 a|
 `shelfchk`
 a|
-`security ssh {add|modify}`
+`security ssh {add\|modify}`
 a|
 `showfh`
 a|
-`security ssl {add|modify}`
+`security ssl {add\|modify}`
 a|
 `sis config`
 a|
@@ -2004,9 +2004,9 @@ a|
 a|
 `snap reserve`
 a|
-volume {modify|show} --fields percent-snapshot-space --volume volume-name
+volume {modify\|show} --fields percent-snapshot-space --volume volume-name
 
-storage aggregate {modify|show} --fields percent-snapshot-space --aggregate aggregate-name
+storage aggregate {modify\|show} --fields percent-snapshot-space --aggregate aggregate-name
 
 a|
 `snap restore`
@@ -2163,11 +2163,11 @@ a|
 a|
 `statit`
 a|
-`statistics {start|stop|show} -preset statit`
+`statistics {start\|stop\|show} -preset statit`
 a|
 `stats`
 a|
-`statistics {start|stop|show} –object object` *Note:* Available at the advanced privilege level.
+`statistics {start\|stop\|show} –object object` *Note:* Available at the advanced privilege level.
 
 a|
 `storage aggregate copy`
@@ -2228,7 +2228,7 @@ a|
 a|
 `storage disable adapter`
 a|
-`system node run -node {nodename|local} -command storage disable adapter`
+`system node run -node {nodename\|local} -command storage disable adapter`
 a|
 `storage download acp`
 a|
@@ -2241,7 +2241,7 @@ a|
 a|
 `storage enable adapter`
 a|
-`system node run -node {nodename|local} -command storage enable adapter`
+`system node run -node {nodename\|local} -command storage enable adapter`
 a|
 `storage load balance`
 a|
@@ -2253,11 +2253,11 @@ a|
 a|
 `storage show acp`
 a|
-`system node run -node {nodename|local} -command storage show acp`
+`system node run -node {nodename\|local} -command storage show acp`
 a|
 `storage show adapter`
 a|
-`system node run -node {nodename|local} -command storage show adapter`
+`system node run -node {nodename\|local} -command storage show adapter`
 a|
 `storage show bridge`
 a|
@@ -2274,7 +2274,7 @@ a|
 a|
 `storage show fabric`
 a|
-`system node run -node {nodename|local} -command storage show fabric`
+`system node run -node {nodename\|local} -command storage show fabric`
 a|
 `storage show fault`
 a|
@@ -2282,11 +2282,11 @@ a|
 a|
 `storage show hub`
 a|
-`system node run -node {nodename|local} -command storage show hub`
+`system node run -node {nodename\|local} -command storage show hub`
 a|
 `storage show initiators`
 a|
-`system node run -node {nodename|local} -command storage show initiators`
+`system node run -node {nodename\|local} -command storage show initiators`
 a|
 `storage show mc`
 a|
@@ -2314,7 +2314,7 @@ a|
 a|
 `storage stats tape zero`
 a|
-`statistics {start|stop|show} -object tape`
+`statistics {start\|stop\|show} -object tape`
 a|
 `storage unalias`
 a|
@@ -2326,11 +2326,11 @@ Not supported
 a|
 `sysconfig -a`
 a|
-`system node run -node {nodename|local} -command sysconfig -a`
+`system node run -node {nodename\|local} -command sysconfig -a`
 a|
 `sysconfig -A`
 a|
-`system node run -node {nodename|local} -command sysconfig -A`
+`system node run -node {nodename\|local} -command sysconfig -A`
 a|
 `sysconfig -ac`
 a|
@@ -2342,7 +2342,7 @@ a|
 a|
 `sysconfig -d`
 a|
-`system node run -node {nodename|local} -command sysconfig -d`
+`system node run -node {nodename\|local} -command sysconfig -d`
 a|
 `sysconfig -D`
 a|
@@ -2350,7 +2350,7 @@ a|
 a|
 `sysconfig -h`
 a|
-`system node run -node {nodename|local} -command sysconfig -h`
+`system node run -node {nodename\|local} -command sysconfig -h`
 a|
 `sysconfig -m`
 a|
@@ -2358,7 +2358,7 @@ a|
 a|
 `syconfig -M`
 a|
-`system node run -node {nodename|local} -command sysconfig -M`
+`system node run -node {nodename\|local} -command sysconfig -M`
 a|
 `sysconfig -p`
 a|
@@ -2398,12 +2398,12 @@ a|
 a|
 `sysconfig -V`
 a|
-`system node run -node {nodename|local} -command sysconfig -V`
+`system node run -node {nodename\|local} -command sysconfig -V`
 
 a|
 `sysstat`
 a|
-`statistics {start|stop|show} -preset systat` *Note:* Available at the advanced privilege level.
+`statistics {start\|stop\|show} -preset systat` *Note:* Available at the advanced privilege level.
 
 a|
 `system health alert`
@@ -2446,22 +2446,22 @@ a|
 a|
 traceroute -m
 a|
-*traceroute -m* network traceroute { -node _nodename_ | -lif _lif-name_ } -maxttl _integer_
+*traceroute -m* network traceroute { -node _nodename_ \| -lif _lif-name_ } -maxttl _integer_
 
 a|
 traceroute -n
 a|
-*traceroute -n* network traceroute -node {_nodename_| -lif _lif-name_} -numeric true
+*traceroute -n* network traceroute -node {_nodename_\| -lif _lif-name_} -numeric true
 
 a|
 traceroute -p
 a|
-*traceroute -p* network traceroute { -node _nodename_ | -lif _lif-name_ } --port _integer_
+*traceroute -p* network traceroute { -node _nodename_ \| -lif _lif-name_ } --port _integer_
 
 a|
 traceroute -q
 a|
-*traceroute -q* network traceroute { -node _nodename_ | -lif _lif-name_ } -nqueries _integer_
+*traceroute -q* network traceroute { -node _nodename_ \| -lif _lif-name_ } -nqueries _integer_
 
 a|
 traceroute -s
@@ -2471,12 +2471,12 @@ Not supported
 a|
 traceroute -v
 a|
-*traceroute -v* network traceroute { -node _nodename_ | -lif _lif-name_ } -verbose [ true ]
+*traceroute -v* network traceroute { -node _nodename_ \| -lif _lif-name_ } -verbose [ true ]
 
 a|
 traceroute -w
 a|
-*traceroute -w* network traceroute { -node _nodename_ | -lif _lif-name_ } -waittime _integer_
+*traceroute -w* network traceroute { -node _nodename_ \| -lif _lif-name_ } -waittime _integer_
 
 |===
 
@@ -2625,7 +2625,7 @@ system node run -node _nodename_ -command vlan stat
 a|
 vmservices
 a|
-system node run -node {_nodename_|local} vmservices
+system node run -node {_nodename_\|local} vmservices
 
 a|
 volume add
@@ -2696,7 +2696,7 @@ a|
 a|
 volume options
 a|
-volume {show | modify}
+volume {show \| modify}
 a|
 volume quota allow
 a|
