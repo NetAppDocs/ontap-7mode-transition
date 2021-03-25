@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_configuring_zones_by_using_fc_zone_plan.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, configure, zone, fc, zone, plan
 summary: 'Before transitioning a SAN FC environment, you must configure zones by using the FC zone planner to group the initiator hosts and targets.'
 ---
 = Configuring zones by using the FC zone plan
@@ -14,6 +14,7 @@ Before transitioning a SAN FC environment, you must configure zones by using the
 * The cluster and initiator hosts must be connected to the switch.
 * The FC zone script file must be accessible.
 
+.Steps
 . If there are any changes to the igroup configurations on the 7-Mode systems, modify and regenerate the FC zone plan.
 +
 xref:task_generating_an_assessment_report_by_adding_systems_to_7mtt.adoc[Generating an assessment report by adding systems to the 7-Mode Transition Tool]

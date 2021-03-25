@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, cutover, phase, lun, point, dmmp, device, names
 summary: 'If you are transitioning a LUN with a mount point using an alias name on a Linux host, there are several steps you must perform before entering the cutover phase.'
 ---
 = Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts
@@ -18,10 +18,15 @@ For iSCSI configurations, your iSCSI sessions must be discovered and logged in t
 * For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
 * For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.
 
+.Steps
 . Stop I/O to the mount points.
 . Shut down the applications that are accessing the LUNs according to the application vendor's recommendations.
-. Unmount DMMP devices: `umount dir_name`
-. Flush the 7-Mode LUN DMMP device ID: `multipath -f device_name`
+. Unmount DMMP devices:
++
+`*umount _dir_name_*`
+. Flush the 7-Mode LUN DMMP device ID:
++
+`*multipath -f _device_name_*`
 +
 If needed, you can get the DDMP device name from the *OS Device ID* column under the *SAN Host LUNs* tab in the _Inventory Assessment Workbook_.
 

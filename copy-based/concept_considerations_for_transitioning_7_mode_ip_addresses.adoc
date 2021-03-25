@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_transitioning_7_mode_ip_addresses.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, 7, mode, ip, address
 summary: 'You must be aware of certain considerations when transitioning 7-Mode IP addresses to storage virtual machines \(SVMs\) in ONTAP.'
 ---
 = Considerations for transitioning 7-Mode IP addresses

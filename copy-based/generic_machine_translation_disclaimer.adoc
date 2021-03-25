@@ -1,8 +1,8 @@
 ---
 permalink: copy-based/generic_machine_translation_disclaimer.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, copy, based, transition, machine, translation
+summary: 'See important information about localized content at netapp.com.'
 ---
 = Machine translation
 :icons: font

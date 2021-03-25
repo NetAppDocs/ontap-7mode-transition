@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_creating_a_transition_project.html
 sidebar: sidebar
-keywords: 
+keywords: create, transition, project, ontap, copy, based, transition
 summary: 'Creating a transition project includes selecting and mapping 7-Mode volumes to the storage virtual machine \(SVM\), mapping  interfaces, and creating data copy schedules for SnapMirror relationships.'
 ---
 = Creating a transition project
@@ -19,6 +19,7 @@ If the target cluster is running Data ONTAP 8.3.1 or earlier and you want to run
 
 If the project contains SnapLock Compliance volumes and you want to run the precutover operation in read/write mode for non-SnapLock Compliance volumes, then you must create separate projects for SnapLock Compliance volumes and non-SnapLock Compliance volumes. This action is required because the precutover read/write mode is not supported if you have SnapLock Compliance volumes in your project.
 
+.Steps
 . Select the *Copy-Based Transition* migration method from the homepage, and then click *Start Planning*.
 +
 If the controller and cluster that are required by the new project have not been added, you can enter the details in the Enter Device Credentials pane.
@@ -31,13 +32,14 @@ The Select Source Volume page appears.
  .. From the 7-Mode Controller pane, select the 7-Mode controller or the vFiler unit from which you want to add volumes.
  .. Add the volumes that you want to include in the project group:
 +
+[options="header"]
 |===
 | If you want to transition...| Then...
 a|
 Stand-alone volumes
 a|
-        Select *Transition as stand-alone* for the volumes that you want to transition.
-+
+Select *Transition as stand-alone* for the volumes that you want to transition.
+
 A stand-alone project is created if you select the first volume from this column.
 a|
 Volume SnapMirror relationship
@@ -73,7 +75,7 @@ The SVMs are loaded in the Select SVM pane.
  .. Click *Next*.
 
 +
-For transitioning 7-Mode volumes to a MetroCluster configuration in ONTAP, the SVM subtype must be sync-source.
+For transitioning 7-Mode volumes to a MetroCluster configuration in ONTAP, the SVM subtype must be `sync-source`.
 +
 If you select an SVM that belongs to clustered Data ONTAP 8.2, a dialog box is displayed to confirm whether local users and groups or CIFS shares or files are configured on the 7-Mode storage system. The 7-Mode Transition Tool does not support the transition of local users and groups to clustered Data ONTAP 8.2. If you have local users and groups, you can select an SVM that belongs to ONTAP 8.2.1 and later supported releases.
 . In the SVM audit logs destination path dialog box, enter a path on the destination SVM to enable transition of the audit configuration from the 7-Mode storage system.
@@ -91,6 +93,7 @@ If all of the volumes and qtrees that are included in the project are configured
 +
 NOTE: FC and iSCSI LIFs cannot be transitioned. You must manually create them on the SVM.
 +
+[options="header"]
 |===
 | If you want to...| Then...
 a|

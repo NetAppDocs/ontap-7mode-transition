@@ -1,8 +1,8 @@
 ---
 permalink: install-admin/index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, install, index
+summary: 'Index for 7-Mode Transition Tool Installation and Setup Guide.'
 ---
 = Installation and Setup Guide
 :icons: font

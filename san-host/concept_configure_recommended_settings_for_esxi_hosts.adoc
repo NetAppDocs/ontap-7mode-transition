@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_configure_recommended_settings_for_esxi_hosts.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, recommended, settings, esxi, hosts
 summary: 'After you complete the post-transition remediation steps for your ESXi host, you should apply the recommended ESXi host settings for clustered Data ONTAP on the host.'
 ---
 = Recommended settings for ESXi hosts after transition remediation

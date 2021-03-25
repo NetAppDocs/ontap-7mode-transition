@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_replacing_7_mode_wwids_on_linux_host_after_transition_of_luns.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, 7, mode, wwids, linux, lun
 summary: 'After LUN transition, the 7-Mode LUN WWID changes. You must replace it with the corresponding ONTAP LUN WWID before you can begin servicing data.'
 ---
 = Replacing 7-Mode LUN WWIDs on Linux hosts after transition of LUNs
@@ -13,35 +13,61 @@ After LUN transition, the 7-Mode LUN WWID changes. You must replace it with the 
 
 If you are doing a copy-free transition (CFT), then procedures for vol rehost must be complete.
 
-See the _7-Mode Transition Tool Copy-Free Transition Guide_ for details.
+See the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide_]for details.
 
 * For copy-based transitions (CBTs), perform these steps after completing the Storage cutover operation in the 7MTT.
 * For CFTs, perform these steps after the Import Data & Configuration operation in the 7MTT is complete.
 
+.Steps
 . Generate the 7-Mode to ONTAP LUN mapping file:
- ** For CBTs, run the following command from the Linux host where the 7MTT is installed: `transition cbt export lunmap -p project-name -o file_path`
+ ** For CBTs, run the following command from the Linux host where the 7MTT is installed:
+ +
+`*transition cbt export lunmap -p project-name -o _file_path_*`
 +
-For example: `transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv`
+For example:
++
+`*transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv*`
 
- ** For CFTs, run the following command from the system where the 7MTT is installed: `transition cft export lunmap -p project-name -s svm-name -o output-file`
+ ** For CFTs, run the following command from the system where the 7MTT is installed:
+ +
+`*transition cft export lunmap -p _project-name_ -s _svm-name_ -o _output-file_*`
 +
-For example: `transition cft export lunmap -p SanWorkLoad -s svml -0 c:/Libraries/Documents/7-to-C-LUN-MAPPING-svml.csv`
+For example:
++
+`*transition cft export lunmap -p SanWorkLoad -s svml -0 c:/Libraries/Documents/7-to-C-LUN-MAPPING-svml.csv*`
 +
 NOTE: You must run this command for each of your storage virtual machines (SVMs).
+
 . Make a note of the new ONTAP LUN device handle ID from the LUN mapping file.
 . Remove the SCSI devices created for 7-Mode LUNs:
- ** To remove all of the SCSI devices: `rescan-scsi-bus.sh -r`
- ** To remove each SCSI device individually: `echo 1> /sys/block/SCSI_ID/delete`
+ ** To remove all of the SCSI devices:
+ +
+`*rescan-scsi-bus.sh -r*`
+ ** To remove each SCSI device individually:
+ +
+`*echo 1> /sys/block/__SCSI_ID__/delete*`
 +
 This command must be executed on all 7-Mode LUN SCSI devices. See the SCSI Device ID column on the SAN Host LUNs tab of the _Inventory Assessment Workbook_ to identify the SCSI device IDs for the LUNs.
-. Discover new ONTAP LUNs: `rescan-scsi-bus.sh`
-. Identify the SCSI devices of the new ONTAP LUNs: `sanlun lun show`
-. Get the WWIDs for the new ONTAP LUNs: `/lib/udev/scsi_id -g -u -d /dev SCSI_dev`
-. If a DMMP alias is defined, then update the /etc/multipath.conf file to replace the 7-Mode LUN WWID with its corresponding ONTAP LUN WWID, so that the DMMP alias points to the clustered Data ONTAP LUN: `cat /etc/multipath.conf`
-. Configure the DMMP devices: `multipath`
-. Verify that the DMMP alias is correctly referencing the ONTAP LUN WWID: `multipath -11`
+. Discover new ONTAP LUNs:
 +
-In the following sample output, the DMMP alias dmmp_raw_lun is referencing 3600a098051764b2d4f3f453135452d31 as the ONTAP WWID:
+`*rescan-scsi-bus.sh*`
+. Identify the SCSI devices of the new ONTAP LUNs:
++
+`*sanlun lun show*`
+. Get the WWIDs for the new ONTAP LUNs:
++
+`*/lib/udev/scsi_id -g -u -d /dev _SCSI_dev_*`
+. If a DMMP alias is defined, then update the /etc/multipath.conf file to replace the 7-Mode LUN WWID with its corresponding ONTAP LUN WWID, so that the DMMP alias points to the clustered Data ONTAP LUN:
++
+`*cat /etc/multipath.conf*`
+. Configure the DMMP devices:
++
+`*multipath*`
+. Verify that the DMMP alias is correctly referencing the ONTAP LUN WWID:
++
+`*multipath -11*`
++
+In the following sample output, the DMMP alias `dmmp_raw_lun` is referencing `3600a098051764b2d4f3f453135452d31` as the ONTAP WWID:
 +
 ----
 root@IBMx3550M3-229-169 ~]# multipath -ll dmmp_raw_lun
@@ -56,7 +82,5 @@ dmmp_raw_lun (3600a098051764b2d4f3f453135452d31) dm-8 NETAPP, LUN C-Mode
 ----
 
 *Related information*
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-cft/home.html[Copy-free transition]
 
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

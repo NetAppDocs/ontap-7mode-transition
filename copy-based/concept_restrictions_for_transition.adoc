@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_restrictions_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, restrictions
 summary: 'You must be aware of certain restrictions for transitioning some 7-Mode volumes and configurations.'
 ---
 = Restrictions for transition

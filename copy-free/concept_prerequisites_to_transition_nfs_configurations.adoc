@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_prerequisites_to_transition_nfs_configurations.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, prerequisites, nfs, configurations
 summary: 'NFS configurations are transitioned by the 7-Mode Transition Tool only when certain prerequisites are met on the 7-Mode system and the cluster. If any of the conditions are not met, the tool does not transition the configuration.'
 ---
 = Prerequisites for transitioning NFS configurations
@@ -19,9 +19,9 @@ NFS configurations are transitioned by the 7-Mode Transition Tool only when cert
 +
 Even after client access is disconnected and you prepare to start the export phase, the service must be running on the 7-Mode systems.
 
-* If you want to transition in-memory export rules, you must add them to the /etc/exports file before transition.
+* If you want to transition in-memory export rules, you must add them to the `/etc/exports` file before transition.
 +
-The 7-Mode Transition Tool transitions only the persistent export rules that are defined in the /etc/exports file.
+The 7-Mode Transition Tool transitions only the persistent export rules that are defined in the `/etc/exports` file.
 
 == Cluster prerequisites
 

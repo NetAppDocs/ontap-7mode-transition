@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_setting_up_esxi_hosts_configured_for_san_boot_after_transition.html
 sidebar: sidebar
-keywords: 
+keywords: esxi, configured, boot, ontap, san, host, transition
 summary: 'If your ESXi host was configured for SAN boot before transition from Data ONTAP operating in 7-Mode, you must perform several steps before using the host after transition.'
 ---
 = Setting up ESXi hosts configured for SAN boot after transition
@@ -14,6 +14,7 @@ If your ESXi host was configured for SAN boot before transition from Data ONTAP 
 * For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7MTT.
 * For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.
 
+.Steps
 . Reconfigure your FC and FCoE HBA BIOS to boot from the SAN boot LUN of the clustered Data ONTAP system.
 . Boot the ESXi host.
 . Reset the host configurations to the pretransition settings.

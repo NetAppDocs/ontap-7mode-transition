@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_preparing_cluster_for_transitioning_volume_snapmirror_relationships.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, prepare, cluster, snapmirror, relationship
 summary: 'For transitioning 7-Mode volume SnapMirror relationships, you must add the SnapMirror license to the source and destination clusters. You must also create a cluster peer relationship between the clusters to which the primary and secondary volumes of the SnapMirror relationships are transitioned and create the SnapMirror schedules.'
 ---
 = Preparing the cluster for transitioning volume SnapMirror relationships
@@ -11,14 +11,19 @@ summary: 'For transitioning 7-Mode volume SnapMirror relationships, you must add
 [.lead]
 For transitioning 7-Mode volume SnapMirror relationships, you must add the SnapMirror license to the source and destination clusters. You must also create a cluster peer relationship between the clusters to which the primary and secondary volumes of the SnapMirror relationships are transitioned and create the SnapMirror schedules.
 
-You must have recorded the SnapMirror schedules defined in the /etc/snapmirror.conf file of the 7-Mode secondary system.
+You must have recorded the SnapMirror schedules defined in the `/etc/snapmirror.conf` file of the 7-Mode secondary system.
 
-. Add the SnapMirror license on both the source and destination clusters: `system license add license_code`
+.Steps
+. Add the SnapMirror license on both the source and destination clusters:
++
+`*system license add _license_code_*`
 . From each cluster, create the cluster peer relationship.
 +
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html[Cluster and SVM peering express configuration]
 
-. Create schedules on the secondary SVMs that match the schedules in the 7-Mode secondary system: `job schedule cron create`
+. Create schedules on the secondary SVMs that match the schedules in the 7-Mode secondary system:
++
+`*job schedule cron create*`
 
 *Related information*
 

@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_committing_7_mode_aggregates_to_clustered_ontap_format.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, commit, project
 summary: 'The final step in transition is to commit the copy-free transition project. After committing the aggregates, you cannot perform a rollback to 7-Mode.'
 ---
 = Committing the copy-free transition project
@@ -15,6 +15,7 @@ You must have manually verified the transitioned data and configurations and tes
 
 All the aggregate-level Snapshot copies that were created in the export phase are deleted.
 
+.Steps
 . Click *Commit*.
 . In the warning message that is displayed, click *Yes*.
 

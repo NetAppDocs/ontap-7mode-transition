@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_managing_snapmirror_transfers_and_schedule.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, manage, snapmirror, transfer, schedule
 summary: 'In the data copy phase, the clustered Data ONTAP volumes are updated periodically with the data from the 7-Mode volumes based on a data copy schedule. You can create, edit, and delete the data copy schedule to be used for SnapMirror baseline copy, update, and resynchronization operations.'
 ---
 = Managing SnapMirror transfers and schedule

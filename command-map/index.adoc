@@ -1,8 +1,8 @@
 ---
 permalink: command-map/index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, command, map, transition, index
+summary: 'Index for Command Map for 7-Mode Administrators Guide.'
 ---
 = Command Map for 7-Mode Administrators
 :icons: font

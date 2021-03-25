@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_exceptions_and_known_issues_when_transitioning_san_hosts_to_clustered_ontap.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, exceptions, issues, san, host
 summary: 'You should be aware of certain exceptions and known issues when transitioning SAN hosts from Data ONTAP operating in 7-Mode to later versions of ONTAP.'
 ---
 = Exceptions and known issues when transitioning SAN hosts to ONTAP

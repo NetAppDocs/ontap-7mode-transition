@@ -1,7 +1,7 @@
 ---
 permalink: command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, command, map, transition, commands, options
 summary: 'In Data ONTAP operating in 7-Mode, you execute the options command to set configurable storage system software options. In ONTAP, you use command parameters to set these options. You can use the provided tables to view how 7-Mode commands map to ONTAP commands.'
 ---
 = How 7-Mode options map to ONTAP commands
@@ -9,2100 +9,2094 @@ summary: 'In Data ONTAP operating in 7-Mode, you execute the options command to 
 :imagesdir: ../media/
 
 [.lead]
-In Data ONTAP operating in 7-Mode, you execute the options command to set configurable storage system software options. In ONTAP, you use command parameters to set these options. You can use the provided tables to view how 7-Mode commands map to ONTAP commands.
+In Data ONTAP operating in 7-Mode, you execute the `options` command to set configurable storage system software options. In ONTAP, you use command parameters to set these options. You can use the provided tables to view how 7-Mode commands map to ONTAP commands.
 
-In the "`7-Mode command`" column, the base options command is not shown, for the sake of clarity. Where you see acp.domain, the actual long form of the command is options acp.domain.
+In the "`7-Mode command`" column, the base options command is not shown, for the sake of clarity. Where you see `acp.domain`, the actual long form of the command is options `acp.domain`.
 
 The "`Understanding the 7-Mode to clustered Data ONTAP command mapping`" section contains information about how the tables in this chapter are organized.
 
 xref:concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.adoc[Understanding the 7-Mode to clustered Data ONTAP command mapping]
 
-== Navigation table
+== A-E
 
-|===
-a|
-
-* <<SI_A,A>>
-
-a|
-
-* <<SI_B,B>>
-
-a|
-
-* <<SI_C,C>>
-
-a|
-
-* <<SI_D,D>>
-
-a|
-
-* <<SI_E,E>>
-
-a|
-
-* <<SI_F,F>>
-
-a|
-
-* _G_
-* (no entries)
-
-a|
-
-* <<SI_H,H>>
-
-a|
-
-* <<SI_I,I>>
-
-a|
-
-* _J_
-* (no entries)
-
-a|
-
-* <<SI_K,K>>
-
-a|
-
-* <<SI_L,L>>
-
-a|
-
-* _M_
-* (no entries)
-
-a|
-
-* <<SI_N,N>>
-
-a|
-
-* _O_
-* (no entries)
-
-a|
-
-* <<SI_P,P>>
-
-a|
-
-* <<SI_Q,Q>>
-
-a|
-
-* <<SI_R,R>>
-
-a|
-
-* <<SI_S,S>>
-
-a|
-
-* <<SI_T,T>>
-
-a|
-
-* _U_
-* (no entries)
-
-a|
-
-* _V_
-* (no entries)
-
-a|
-
-* <<SI_W,W>>
-
-a|
-
-* _X_
-* (no entries)
-
-a|
-
-* _Y_
-* (no entries)
-
-a|
-
-* _Z_
-* (no entries)
-
-a|
- 
-a|
- 
-a|
- 
-a|
- 
-|===
-
-== A
-
+=== A
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-acp.domain
+`acp.domain`
 a|
-`system node run -node {nodename\|local} options acp.domain`
+`*system node run -node {nodename\|local} options acp.domain*`
 a|
-acp.enabled
+`acp.enabled`
 a|
-`system node run -node {nodename\|local} options acp.enabled`
+`*system node run -node {nodename\|local} options acp.enabled*`
 a|
-acp.netmask
+`acp.netmask`
 a|
-`system node run -node {nodename\|local} options acp.netmask`
+`*system node run -node {nodename\|local} options acp.netmask*`
 a|
-acp.port
+`acp.port`
 a|
-`system node run -node {nodename\|local} options acp.port`
+`*system node run -node {nodename\|local} options acp.port*`
 a|
-auditlog.enable
+`auditlog.enable`
 a|
-security audit
+`security audit`
 a|
-auditlog.max_file_size
-a|
-Not supported
-a|
-auditlog.readonly_api.enable
-a|
-security audit
-a|
-autologout.console.enable
-a|
-`system timeout modify -timeout`
-a|
-autologout.console.timeout
-a|
-`system timeout modify -timeout`
-a|
-autologout.telnet.enable
+`auditlog.max_file_size`
 a|
 Not supported
 a|
-autologout.telnet.timeout
+`auditlog.readonly_api.enable`
+a|
+`security audit`
+a|
+`autologout.console.enable`
+a|
+`*system timeout modify -timeout*`
+a|
+`autologout.console.timeout`
+a|
+`*system timeout modify -timeout*`
+a|
+`autologout.telnet.enable`
 a|
 Not supported
 a|
-autosupport.cifs.verbose
+`autologout.telnet.timeout`
 a|
 Not supported
 a|
-autosupport.content
+`autosupport.cifs.verbose`
 a|
-`system node autosupport modify -node nodename -remove -private -data {true\|false}`
+Not supported
 a|
-autosupport.doit
+`autosupport.content`
 a|
-`system node autosupport invoke -node nodename -type {all\|test}`
+`*system node autosupport modify -node _nodename_ -remove -private -data {true\|false}*`
 a|
-autosupport.enable
+`autosupport.doit`
 a|
-`system node autosupport modify -node nodename -state {enable\|disable}`
+`*system node autosupport invoke -node _nodename_ -type {all\|test}*`
 a|
-autosupport.from
+`autosupport.enable`
 a|
-`system node autosupport modify -node nodename -from`
+`*system node autosupport modify -node _nodename_ -state {enable\|disable}*`
 a|
-autosupport.local_collection
+`autosupport.from`
 a|
-`system node autosupport modify -node nodename -local-collection {true\|false}`
+`*system node autosupport modify -node _nodename_ -from*`
 a|
-autosupport.mailhost
+`autosupport.local_collection`
 a|
-`system node autosupport modify -node nodename -mail-hosts`
+`*system node autosupport modify -node _nodename_ -local-collection {true\|false}*`
 a|
-autosupport.max_http_size
+`autosupport.mailhost`
 a|
-`system node autosupport modify -node nodename -max-http-size`
+`*system node autosupport modify -node _nodename_ -mail-hosts*`
 a|
-autosupport.max_smtp_size
+`autosupport.max_http_size`
 a|
-`system node autosupport modify -node nodename -max-smtp-size`
+`*system node autosupport modify -node _nodename_ -max-http-size*`
 a|
-autosupport.minimal.subject.id
+`autosupport.max_smtp_size`
 a|
-`system node autosupport modify -node nodename -hostname-subj`
+`*system node autosupport modify -node _nodename_ -max-smtp-size*`
 a|
-autosupport.nht_data.enable (not in smf)
+`autosupport.minimal.subject.id`
 a|
-`autosupport modify -nht` `system node autosupport modify -nht`
+`*system node autosupport modify -node _nodename_ -hostname-subj*`
 a|
-autosupport.noteto
+`autosupport.nht_data.enable` (not in smf)
 a|
-`system node autosupport modify -node nodename -noteto`
+`*autosupport modify -nht*`
+
+`*system node autosupport modify -nht*`
 a|
-autosupport.partner.to
+`autosupport.noteto`
 a|
-`system node autosupport modify -node nodename -partner-address`
+`*system node autosupport modify -node _nodename_ -noteto*`
 a|
-autosupport.performance_data.doit
+`autosupport.partner.to`
 a|
-`system node autosupport invoke -node nodename -type performance`
+`*system node autosupport modify -node _nodename_ -partner-address*`
 a|
-autosupport.performance_data.enable
+`autosupport.performance_data.doit`
 a|
-`system node autosupport modify -node nodename -perf {true\|false}`
+`*system node autosupport invoke -node _nodename_ -type performance*`
 a|
-autosupport.periodic.tx_window
+`autosupport.performance_data.enable`
 a|
-`system node autosupport modify -node nodename -periodic-tx-window`
+`*system node autosupport modify -node _nodename_ -perf {true\|false}*`
 a|
-autosupport.retry.count
+`autosupport.periodic.tx_window`
 a|
-`system node autosupport modify -node nodename -retry-count`
+`*system node autosupport modify -node _nodename_ -periodic-tx-window*`
 a|
-autosupport.retry.interval
+`autosupport.retry.count`
 a|
-`system node autosupport modify -node nodename -retry-interval`
+`*system node autosupport modify -node _nodename_ -retry-count*`
 a|
-autosupport.support.enable
+`autosupport.retry.interval`
 a|
-`system node autosupport modify -node nodename -support {enable\|disable}`
+`*system node autosupport modify -node _nodename_ -retry-interval*`
 a|
-autosupport.support.proxy
+`autosupport.support.enable`
 a|
-`system node autosupport modify -node nodename -proxy-url`
+`*system node autosupport modify -node _nodename_ -support {enable\|disable}*`
 a|
-autosupport.support.reminder
+`autosupport.support.proxy`
 a|
-`system node autosupport show -node nodename -fields reminder`
+`*system node autosupport modify -node _nodename_ -proxy-url*`
 a|
-autosupport.support.transport
+`autosupport.support.reminder`
 a|
-`system node autosupport modify -node nodename -transport {http\|https\|smtp}`
+`*system node autosupport show -node _nodename_ -fields reminder*`
 a|
-autosupport.to
+`autosupport.support.transport`
 a|
-`system node autosupport modify -node nodename -to`
+`*system node autosupport modify -node _nodename_ -transport {http\|https\|smtp}*`
 a|
-autosupport.validate_digital_certificate
+`autosupport.to`
 a|
-`system node autosupport modify -node nodename -validate-digital-certificate {true\|false}`
+`*system node autosupport modify -node _nodename_ -to*`
+a|
+`autosupport.validate_digital_certificate`
+a|
+`*system node autosupport modify -node nodename -validate-digital-certificate {true\|false}*`
 |===
 
-== B
+=== B
 
-|===
-| 7-Mode option| Clustered Data ONTAP command
-a|
-backup.log.enable
-a|
-Not supported
-|===
-
-== C
-
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-cdpd.enable
+`backup.log.enable`
 a|
-`system node run -node {nodename\|local} options cdpd.enable`
+Not supported
+|===
+
+=== C
+
+[options="header"]
+|===
+| 7-Mode option| Clustered Data ONTAP command
 a|
-cdpd.holdtime
+`cdpd.enable`
 a|
-`system node run -node {nodename\|local} options cdpd.holdtime`
+`*system node run -node {nodename\|local} options cdpd.enable*`
 a|
-cdpd.interval
+`cdpd.holdtime`
 a|
-`system node run -node {nodename\|local} options cdpd.interval`
+`*system node run -node {nodename\|local} options cdpd.holdtime*`
 a|
-cf.giveback.auto.after.panic.takeover
+`cdpd.interval`
 a|
-`storage failover modify -auto-giveback-after-panic`
+`*system node run -node {nodename\|local} options cdpd.interval*`
 a|
-cf.giveback.auto.cancel.on_network_failure
+`cf.giveback.auto.after.panic.takeover`
+a|
+`*storage failover modify -auto-giveback-after-panic*`
+a|
+`cf.giveback.auto.cancel.on_network_failure`
 a|
 Not supported
 a|
-cf.giveback.auto.delay.seconds
+`cf.giveback.auto.delay.seconds`
 a|
-`storage failover modify -delay-seconds`
+`*storage failover modify -delay-seconds*`
 a|
-cf.giveback.auto.enable
+`cf.giveback.auto.enable`
 a|
-`storage failover modify -auto-giveback`
+`*storage failover modify -auto-giveback*`
 a|
-cf.hw_assist.enable
+`cf.hw_assist.enable`
 a|
-`storage failover modify -hwassist`
+`*storage failover modify -hwassist*`
 a|
-cf.hw_assist.partner.address
+`cf.hw_assist.partner.address`
 a|
-`storage failover modify -hwassist-partner-ip`
+`*storage failover modify -hwassist-partner-ip*`
 a|
-cf.hw_assist.partner.port
+`cf.hw_assist.partner.port`
 a|
-`storage failover modify -hwassist-partner-port`
+`*storage failover modify -hwassist-partner-port*`
 a|
-cf.mode
+`cf.mode`
 a|
-`storage failover modify -mode`
+`*storage failover modify -mode*`
 a|
-cf.remote_syncmirror.enable
+`cf.remote_syncmirror.enable`
 a|
 Not supported
 a|
-cf.sfoaggr_maxtime
+`cf.sfoaggr_maxtime`
 a|
-`storage failover modify -aggregate-migration-timeout` *Note:* Available at the advanced privilege level.
+`*storage failover modify -aggregate-migration-timeout*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cf.takeover.change_fsid
+`cf.takeover.change_fsid`
 a|
 Not supported
 a|
-cf.takeover.detection.seconds
+`cf.takeover.detection.seconds`
 a|
-`storage failover modify -detection-time`
+`*storage failover modify -detection-time*`
 a|
-cf.takeover.on_disk_shelf_miscompare
+`cf.takeover.on_disk_shelf_miscompare`
 a|
 Not supported
 a|
-cf.takeover.on_failure
+`cf.takeover.on_failure`
 a|
-`storage failover modify -onfailure` *Note:* Available at the advanced privilege level.
+`*storage failover modify -onfailure*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cf.takeover.on_network_interface_failure
+`cf.takeover.on_network_interface_failure`
 a|
 Not supported
 a|
-cf.takeover.on_network_interface_failure.policy all_nics
+`cf.takeover.on_network_interface_failure.policy all_nics`
 a|
 Not supported
 a|
-cf.takeover.on_panic
+`cf.takeover.on_panic`
 a|
-`storage failover modify -onpanic`
+`*storage failover modify -onpanic*`
 a|
-cf.takeover.on_reboot
+`cf.takeover.on_reboot`
 a|
-`storage failover modify -onreboot`
+`*storage failover modify -onreboot*`
 a|
-cf.takeover.on_short_uptime
+`cf.takeover.on_short_uptime`
 a|
-`storage failover modify -onshort-uptime` *Note:* Available at the advanced privilege level.
+`*storage failover modify -onshort-uptime*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cifs.LMCompatibilityLevel
+`cifs.LMCompatibilityLevel`
 a|
-`vserver cifs security modify -lm-compatibility-level`
+`*vserver cifs security modify -lm-compatibility-level*`
 a|
-cifs.audit.autosave.file.extension
-a|
-Not supported
-a|
-cifs.audit.autosave.file.limit
-a|
-`vserver audit modify -rotate-limit`
-a|
-cifs.audit.autosave.onsize.enable
+`cifs.audit.autosave.file.extension`
 a|
 Not supported
 a|
-cifs.audit.autosave.onsize.threshold
+`cifs.audit.autosave.file.limit`
+a|
+`*vserver audit modify -rotate-limit*`
+a|
+`cifs.audit.autosave.onsize.enable`
 a|
 Not supported
 a|
-cifs.audit.autosave.ontime.enable
+`cifs.audit.autosave.onsize.threshold`
 a|
 Not supported
 a|
-cifs.audit.autosave.ontime.interval
+`cifs.audit.autosave.ontime.enable`
 a|
 Not supported
 a|
-cifs.audit.enable
-a|
-`vserver audit`
-a|
-cifs.audit.file_access_events.enable
-a|
-`vserver audit modify -events`
-a|
-cifs.audit.nfs.filter.filename
+`cifs.audit.autosave.ontime.interval`
 a|
 Not supported
 a|
-cifs.audit.logon_events.enable
+`cifs.audit.enable`
 a|
-`vserver audit modify -events cifs-logon-logoff`
+`*vserver audit*`
 a|
-cifs.audit.logsize
+`cifs.audit.file_access_events.enable`
 a|
-Not supported
+`*vserver audit modify -events*`
 a|
-cifs.audit.nfs.enable
-a|
-`vserver audit modify -events file-ops`
-a|
-cifs.audit.nfs.filter.filename
+`cifs.audit.nfs.filter.filename`
 a|
 Not supported
 a|
-cifs.audit.saveas
+`cifs.audit.logon_events.enable`
 a|
-`vserver audit modify -destination`
+`*vserver audit modify -events cifs-logon-logoff*`
 a|
-cifs.bypass_traverse_checking
-a|
-`vserver cifs users-and-groups privilege`
-a|
-cifs.comment
-a|
-`vserver cifs create -comment`
-a|
-cifs.enable_share_browsing
-a|
-vserver cifs share
-a|
-cifs.gpo.enable
-a|
-`vserver cifs group-policy`
-a|
-cifs.gpo.trace.enable
+`cifs.audit.logsize`
 a|
 Not supported
 a|
-cifs.grant_implicit_exe_perms
+`cifs.audit.nfs.enable`
 a|
-`vserver cifs options modify -read-grant-exec`
+`*vserver audit modify -events file-ops*`
 a|
-cifs.guest_account
+`cifs.audit.nfs.filter.filename`
 a|
 Not supported
 a|
-cifs.home_dir_namestyle
+`cifs.audit.saveas`
 a|
-`vserver cifs share create`
+`*vserver audit modify -destination*`
 a|
-cifs.home_dirs_public
+`cifs.bypass_traverse_checking`
 a|
-`vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled {true\|false}` *Note:* Available at the advanced privilege level.
+`*vserver cifs users-and-groups privilege*`
+a|
+`cifs.comment`
+a|
+`*vserver cifs create -comment*`
+a|
+`cifs.enable_share_browsing`
+a|
+`vserver cifs share`
+a|
+`cifs.gpo.enable`
+a|
+`*vserver cifs group-policy*`
+a|
+`cifs.gpo.trace.enable`
+a|
+Not supported
+a|
+`cifs.grant_implicit_exe_perms`
+a|
+`*vserver cifs options modify -read-grant-exec*`
+a|
+`cifs.guest_account`
+a|
+Not supported
+a|
+`cifs.home_dir_namestyle`
+a|
+`*vserver cifs share create*`
+a|
+`cifs.home_dirs_public`
+a|
+`*vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled {true\|false}*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cifs.home_dirs_public_for_admin
+`cifs.home_dirs_public_for_admin`
 a|
-`vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled{true\|false}` *Note:* Available at the advanced privilege level.
+`*vserver cifs home-directory modify -is-home-dirs-access-for-public-enabled{true\|false}*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cifs.idle_timeout
+`cifs.idle_timeout`
 a|
-`vserver cifs options modify -client-session-timeout`
+`*vserver cifs options modify -client-session-timeout*`
 a|
-cifs.ipv6.enable
+`cifs.ipv6.enable`
 a|
 Not supported
 a|
-cifs.max_mpx
+`cifs.max_mpx`
 a|
-`vserver cifs options modify -max-mpx`
+`*vserver cifs options modify -max-mpx*`
 a|
-cifs.ms_snapshot_mode
-a|
-Not supported
-a|
-cifs.mapped_null_user_extra_group
-a|
-`vserver cifs options modify -win-name-for-null-user`
-a|
-cifs.netbios_over_tcp.enable
+`cifs.ms_snapshot_mode`
 a|
 Not supported
 a|
-cifs.nfs_root_ignore_acl
+`cifs.mapped_null_user_extra_group`
 a|
-`vserver nfs modify -ignore-nt-acl-for-root` *Note:* Available at the advanced privilege level.
+`_vserver cifs options modify -win-name-for-null-user_`
+a|
+`cifs.netbios_over_tcp.enable`
+a|
+Not supported
+a|
+`cifs.nfs_root_ignore_acl`
+a|
+`*vserver nfs modify -ignore-nt-acl-for-root*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cifs.ntfs_ignore_unix_security_ops
+`cifs.ntfs_ignore_unix_security_ops`
 a|
-`vserver nfs modify -ntfs-unix-security-ops` *Note:* Available at the advanced privilege level.
+`*vserver nfs modify -ntfs-unix-security-ops*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-cifs.oplocks.enable
+`cifs.oplocks.enable`
 a|
 `vserver cifs share properties add -share-properties`
 a|
-cifs.oplocks.opendelta*
+`cifs.oplocks.opendelta*`
 a|
 Not supported
 a|
-cifs.perm_check_ro_del_ok
+`cifs.perm_check_ro_del_ok`
 a|
-`vserver cifs options modify -is-read-only-delete-enabled`
+`*vserver cifs options modify -is-read-only-delete-enabled*`
 a|
-cifs.perm_check_use_gid
-a|
-Not supported
-a|
-cifs.restrict_anonymous
-a|
-`vserver cifs options modify -restrict-anonymous`
-a|
-cifs.save_case
+`cifs.perm_check_use_gid`
 a|
 Not supported
 a|
-cifs.scopeid
+`cifs.restrict_anonymous`
+a|
+`*vserver cifs options modify -restrict-anonymous*`
+a|
+`cifs.save_case`
 a|
 Not supported
 a|
-cifs.search_domains
-a|
-`vserver cifs domain name-mapping-search`
-a|
-cifs.show_dotfiles
-a|
-is-hide-dotfiles-enabled
-a|
-cifs.show_snapshot
-a|
-`vserver cifs share properties add -share-properties`
-a|
-cifs.shutdown_msg_level
+`cifs.scopeid`
 a|
 Not supported
 a|
-cifs.signing.enable
+`cifs.search_domains`
 a|
-`vserver cifs security modify -is-signing-required`
+`*vserver cifs domain name-mapping-search*`
 a|
-cifs.smb2.client.enable
+`cifs.show_dotfiles`
 a|
-Not supported
+`is-hide-dotfiles-enabled`
 a|
-cifs.smb2.durable_handle.enable
+`cifs.show_snapshot`
 a|
-Not supported
+`*vserver cifs share properties add -share-properties*`
 a|
-cifs.smb2.durable_handle.timeout
-a|
-Not supported
-a|
-cifs.smb2.enable
-a|
-`vserver cifs options modify -smb2-enabled`
-a|
-cifs.smb2.signing.required
-a|
-`vserver cifs security modify -is-signing-required`
-a|
-cifs.smb2_1.branch_cache.enable
-a|
-`vserver cifs share properties`
-a|
-cifs.smb2_1.branch_cache.hash_time_out
+`cifs.shutdown_msg_level`
 a|
 Not supported
 a|
-cifs.snapshot_file_folding.enable
+`cifs.signing.enable`
+a|
+`*vserver cifs security modify -is-signing-required*`
+a|
+`cifs.smb2.client.enable`
 a|
 Not supported
 a|
-cifs.symlinks.cycleguard
+`cifs.smb2.durable_handle.enable`
 a|
 Not supported
 a|
-cifs.symlinks.enable
-a|
-`vserver cifs share modify -symlink-properties`
-a|
-cifs.universal_nested_groups.enable
+`cifs.smb2.durable_handle.timeout`
 a|
 Not supported
 a|
-cifs.W2K_password_change
+`cifs.smb2.enable`
 a|
-`vserver cifs domain password change`
+`*vserver cifs options modify -smb2-enabled*`
 a|
-cifs.W2K_password_change_interval
+`cifs.smb2.signing.required`
 a|
-`vserver cifs domain password change schedule`
+`*vserver cifs security modify -is-signing-required*`
 a|
-cifs.W2K_password_change_within
+`cifs.smb2_1.branch_cache.enable`
 a|
-`vserver cifs domain password change schedule`
+`*vserver cifs share properties*`
 a|
-cifs.widelink.ttl
-a|
-Not supported
-a|
-console.encoding
+`cifs.smb2_1.branch_cache.hash_time_out`
 a|
 Not supported
 a|
-coredump.dump.attempts
+`cifs.snapshot_file_folding.enable`
 a|
-`system node coredump config modify -coredump-attempts`
+Not supported
 a|
-coredump.metadata_only
+`cifs.symlinks.cycleguard`
 a|
-`system node coredump config modify -sparsecore-enabled true`
+Not supported
+a|
+`cifs.symlinks.enable`
+a|
+`*vserver cifs share modify -symlink-properties*`
+a|
+`cifs.universal_nested_groups.enable`
+a|
+Not supported
+a|
+`cifs.W2K_password_change`
+a|
+`*vserver cifs domain password change*`
+a|
+`cifs.W2K_password_change_interval`
+a|
+`*vserver cifs domain password change schedule*`
+a|
+`cifs.W2K_password_change_within`
+a|
+`*vserver cifs domain password change schedule*`
+a|
+`cifs.widelink.ttl`
+a|
+Not supported
+a|
+`console.encoding`
+a|
+Not supported
+a|
+`coredump.dump.attempts`
+a|
+`*system node coredump config modify -coredump-attempts*`
+a|
+`coredump.metadata_only`
+a|
+`*system node coredump config modify -sparsecore-enabled true*`
 |===
 
-== D
+=== D
 
-|===
-| 7-Mode option| Clustered Data ONTAP command
-a|
-disk.asup_on_mp_loss
-a|
-`system node autosupport trigger modify dsk.redun.fault`
-a|
-disk.auto_assign
-a|
-`storage disk option modify -autoassign`
-a|
-disk.auto_assign_shelf
-a|
-`storage disk option modify -autoassign-shelf`
-a|
-disk.maint_center.allowed_entries
-a|
-Not supported
-a|
-disk.maint_center.enable
-a|
-`system node run -node {nodename\|local} options disk.maint_center.enable`
-a|
-disk.maint_center.max_disks
-a|
-`system node run -node {nodename\|local} options disk.maint_center.max_disks`
-a|
-disk.maint_center.rec_allowed_entries
-a|
-`system node run -node {nodename\|local} options disk.maint_center.rec_allowed_entries`
-a|
-disk.maint_center.spares_check
-a|
-`system node run -node {nodename\|local} options disk.maint_center.spares_check`
-a|
-disk.powercycle.enable
-a|
-`system node run -node {nodename\|local} options disk.powercycle.enable`
-a|
-disk.recovery_needed.count
-a|
-Not supported
-a|
-disk.target_port.cmd_queue_depth
-a|
-`storage array modify -name array_name -max-queue-depth`
-a|
-dns.cache.enable
-a|
-Not supported
-a|
-dns.domainname
-a|
-`vserver services name-service dns modify -domains`
-a|
-dns.enable
-a|
-`vserver services name-service dns modify -state`
-a|
-dns.update.enable
-a|
-Not supported
-a|
-dns.update.ttl
-a|
-Not supported
-|===
-
-== E
-
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-ems.autosuppress.enable
+`disk.asup_on_mp_loss`
 a|
-`event config modify -suppression \{on\|off\}` *Note:* Available at the advanced privilege level.
-
-|===
-
-== F
-
-|===
-| 7-Mode option| Clustered Data ONTAP command
+`*system node autosupport trigger modify dsk.redun.fault*`
 a|
-fcp.enable
+`disk.auto_assign`
 a|
-`fcp start`
+`*storage disk option modify -autoassign*`
 a|
-flexcache.access
+`disk.auto_assign_shelf`
+a|
+`*storage disk option modify -autoassign-shelf*`
+a|
+`disk.maint_center.allowed_entries`
 a|
 Not supported
 a|
-flexcache.deleg.high_water
+`disk.maint_center.enable`
+a|
+`*system node run -node {nodename\|local} options disk.maint_center.enable*`
+a|
+`disk.maint_center.max_disks`
+a|
+`*system node run -node {nodename\|local} options disk.maint_center.max_disks*`
+a|
+`disk.maint_center.rec_allowed_entries`
+a|
+`*system node run -node {nodename\|local} options disk.maint_center.rec_allowed_entries*`
+a|
+`disk.maint_center.spares_check`
+a|
+`*system node run -node {nodename\|local} options disk.maint_center.spares_check*`
+a|
+`disk.powercycle.enable`
+a|
+`*system node run -node {nodename\|local} options disk.powercycle.enable*`
+a|
+`disk.recovery_needed.count`
 a|
 Not supported
 a|
-flexcache.deleg.low_water
+`disk.target_port.cmd_queue_depth`
+a|
+`*storage array modify -name _array_name_ -max-queue-depth*`
+a|
+`dns.cache.enable`
 a|
 Not supported
 a|
-flexcache.enable
+`dns.domainname`
+a|
+`*vserver services name-service dns modify -domains*`
+a|
+`dns.enable`
+a|
+`*vserver services name-service dns modify -state*`
+a|
+`dns.update.enable`
 a|
 Not supported
 a|
-flexcache.per_client_stats
-a|
-Not supported
-a|
-flexscale.enable
-a|
-`system node run -node node_name\|local} options flexscale.enable`
-a|
-flexscale.lopri_blocks
-a|
-`system node run -node node_name\|local} options flexscale.lopri_blocks`
-a|
-flexscale.normal_data_blocks
-a|
-`system node run -node node_name\|local} options flexscale.normal_data_blocks`
-a|
-flexscale.pcs_high_res
-a|
-`system node run -node node_name\|local} options flexscale.pcs_high_res`
-a|
-flexscale.pcs_size
-a|
-`system node run -node node_name\|local} options flexscale.pcs_size`
-a|
-flexscale.rewarm
-a|
-`system node run -node node_name\|local} options flexscale.rewarm`
-a|
-fpolicy.enable
-a|
-`vserver fpolicy enable`
-a|
-fpolicy.i2p_ems_interval
-a|
-Not supported
-a|
-fpolicy.multiple_pipes
-a|
-Not supported
-a|
-ftpd.3way.enable
-a|
-Not supported
-a|
-ftpd.anonymous.enable
-a|
-Not supported
-a|
-ftpd.anonymous.home_dir
-a|
-Not supported
-a|
-ftpd.anonymous.name
-a|
-Not supported
-a|
-ftpd.auth_style
-a|
-Not supported
-a|
-ftpd.bypass_traverse_checking
-a|
-Not supported
-a|
-ftpd.dir.override
-a|
-Not supported
-a|
-ftpd.dir.restriction
-a|
-Not supported
-a|
-ftpd.enable
-a|
-Not supported
-a|
-ftpd.explicit.allow_secure_data_conn
-a|
-Not supported
-a|
-ftpd.explicit.enable
-a|
-Not supported
-a|
-ftpd.idle_timeout
-a|
-Not supported
-a|
-ftpd.implicit.enable
-a|
-Not supported
-a|
-ftpd.ipv6.enable
-a|
-Not supported
-a|
-ftpd.locking
-a|
-Not supported
-a|
-ftpd.log.enable
-a|
-Not supported
-a|
-ftpd.log.filesize
-a|
-Not supported
-a|
-ftpd.log.nfiles
-a|
-Not supported
-a|
-ftpd.max_connections
-a|
-Not supported
-a|
-ftpd.max_connections_threshold
-a|
-Not supported
-a|
-ftpd.tcp_window_size
+`dns.update.ttl`
 a|
 Not supported
 |===
 
-== H
+=== E
 
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-httpd.access
+`ems.autosuppress.enable`
 a|
-Not supported
-a|
-httpd.admin.access
-a|
-Not supported
-a|
-httpd.admin.enable
-a|
-`vserver services web modify -enabled{true\|false}`
-a|
-httpd.admin.hostsequiv.enable
-a|
-Not supported
-a|
-httpd.admin.max_connections
-a|
-Not supported
-a|
-httpd.admin.ssl.enable
-a|
-`security ssl`
-a|
-httpd.admin.top-page.authentication
-a|
-Not supported
-a|
-httpd.bypass_traverse_checking
-a|
-Not supported
-a|
-httpd.enable
-a|
-Not supported
-a|
-httpd.ipv6.enable
-a|
-Not supported
-a|
-httpd.log.format
-a|
-Not supported
-a|
-httpd.method.trace.enable
-a|
-Not supported
-a|
-httpd.rootdir
-a|
-Not supported
-a|
-httpd.timeout
-a|
-Not supported
-a|
-httpd.timewait.enable
-a|
-Not supported
+`*event config modify -suppression {_on\|off_}*`
+
+NOTE: Available at the advanced privilege level.
+
 |===
 
-== I
+== F-K
 
+[options="header"]
+=== F
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-ifgrp.failover.link_degraded
+`fcp.enable`
+a|
+`*fcp start*`
+a|
+`flexcache.access`
 a|
 Not supported
 a|
-interface.blocked.cifs
-a|
-`network interface create -data-protocol`
-a|
-interface.blocked.iscsi
-a|
-`network interface create -data-protocol`
-a|
-interface.blocked.mgmt_data_traffic
-a|
-`network interface create -role`
-a|
-interface.blocked.ndmp
-a|
-`system services firewall policy modify -policy policy_name -service ndmp`
-a|
-interface.blocked.nfs
-a|
-`network interface create -data-protocol`
-a|
-interface.blocked.snapmirror
-a|
-`network interface create -role`
-a|
-ip.fastpath.enable
-a|
-`system node run -node node_name\|local} options ip.fastpath.enable` *Note:* Beginning with ONTAP 9.2, fastpath is no longer supported.
-
-a|
-ip.ipsec.enable
+`flexcache.deleg.high_water`
 a|
 Not supported
 a|
-ip.match_any_ifaddr
+`flexcache.deleg.low_water`
 a|
 Not supported
 a|
-ip.path_mtu_discovery.enable
-a|
-`system node run -node node_name\|local} options ip.path_mtu_discovery.enable`
-a|
-ip.ping_throttle.alarm_interval
-a|
-`system node run -nodenode_name \|local} options ip.ping_throttle.alarm_node_nameinterval`
-a|
-ip.ping_throttle.drop_level
-a|
-`system node run -node\|local} options ip.ping_throttle.drop.level`
-a|
-ip.tcp.abc.enable
-a|
-`system node run -nodenode_name\|local} options ip.tcp.abc.enable`
-a|
-ip.tcp.abc.l_limit
-a|
-`system node run -nodenode_name\|local} options ip.tcp.abc.l_limit`
-a|
-ip.tcp.batching.enable
-a|
-`system node run -nodenode_name\|local} options ip.tcp.batching.enable`
-a|
-ip.tcp.newreno.enable
+`flexcache.enable`
 a|
 Not supported
 a|
-ip.tcp.rfc3390.enable
-a|
-`system node run -nodenode_name\|local} options ip.tcp.rfc3390.enable`
-a|
-ip.tcp.sack.enable
-a|
-`system node run -nodenode_name\|local} options ip.tcp.sack.enable`
-a|
-ip.v6.enable
-a|
-`network options ipv6 modify`
-a|
-ip.v6.ra_enable
+`flexcache.per_client_stats`
 a|
 Not supported
 a|
-iscsi.auth.radius.enable
+`flexscale.enable`
+a|
+`*system node run -node _node_name_\|local} options flexscale.enable*`
+a|
+`flexscale.lopri_blocks`
+a|
+`*system node run -node _node_name_\|local} options flexscale.lopri_blocks*`
+a|
+`flexscale.normal_data_blocks`
+a|
+`*system node run -node _node_name_\|local} options flexscale.normal_data_blocks*`
+a|
+`flexscale.pcs_high_res`
+a|
+`*system node run -node _node_name_\|local} options flexscale.pcs_high_res*`
+a|
+`flexscale.pcs_size`
+a|
+`*system node run -node _node_name_\|local} options flexscale.pcs_size*`
+a|
+`flexscale.rewarm`
+a|
+`*system node run -node _node_name_\|local} options flexscale.rewarm*`
+a|
+`fpolicy.enable`
+a|
+`*vserver fpolicy enable*`
+a|
+`fpolicy.i2p_ems_interval`
 a|
 Not supported
 a|
-iscsi.enable
+`fpolicy.multiple_pipes`
 a|
-`iscsi start`
+Not supported
 a|
-iscsi.max_connections_per_session
+`ftpd.3way.enable`
 a|
-`iscsi modify -max -conn-per-session`
+Not supported
 a|
-iscsi.max_error_recovery_level
+`ftpd.anonymous.enable`
 a|
-`iscsi modify -max-error-recovery-level`
+Not supported
+a|
+`ftpd.anonymous.home_dir`
+a|
+Not supported
+a|
+`ftpd.anonymous.name`
+a|
+Not supported
+a|
+`ftpd.auth_style`
+a|
+Not supported
+a|
+`ftpd.bypass_traverse_checking`
+a|
+Not supported
+a|
+`ftpd.dir.override`
+a|
+Not supported
+a|
+`ftpd.dir.restriction`
+a|
+Not supported
+a|
+`ftpd.enable`
+a|
+Not supported
+a|
+`ftpd.explicit.allow_secure_data_conn`
+a|
+Not supported
+a|
+`ftpd.explicit.enable`
+a|
+Not supported
+a|
+`ftpd.idle_timeout`
+a|
+Not supported
+a|
+`ftpd.implicit.enable`
+a|
+Not supported
+a|
+`ftpd.ipv6.enable`
+a|
+Not supported
+a|
+`ftpd.locking`
+a|
+Not supported
+a|
+`ftpd.log.enable`
+a|
+Not supported
+a|
+`ftpd.log.filesize`
+a|
+Not supported
+a|
+`ftpd.log.nfiles`
+a|
+Not supported
+a|
+`ftpd.max_connections`
+a|
+Not supported
+a|
+`ftpd.max_connections_threshold`
+a|
+Not supported
+a|
+`ftpd.tcp_window_size`
+a|
+Not supported
 |===
 
-== K
+=== H
 
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-kerberos.file_keytab.principal
+`httpd.access`
+a|
+`Not supported`
+a|
+`httpd.admin.access`
 a|
 Not supported
 a|
-kerberos.file_keytab.realmipal
+`httpd.admin.enable`
+a|
+`*vserver services web modify -enabled{true\|false}*`
+a|
+`httpd.admin.hostsequiv.enable`
+a|
+Not supported
+a|
+`httpd.admin.max_connections`
+a|
+Not supported
+a|
+`httpd.admin.ssl.enable`
+a|
+`*security ssl*`
+a|
+`httpd.admin.top-page.authentication`
+a|
+Not supported
+a|
+`httpd.bypass_traverse_checking`
+a|
+Not supported
+a|
+`httpd.enable`
+a|
+Not supported
+a|
+`httpd.ipv6.enable`
+a|
+Not supported
+a|
+`httpd.log.format`
+a|
+Not supported
+a|
+`httpd.method.trace.enable`
+a|
+Not supported
+a|
+`httpd.rootdir`
+a|
+Not supported
+a|
+`httpd.timeout`
+a|
+Not supported
+a|
+`httpd.timewait.enable`
 a|
 Not supported
 |===
 
-== L
+=== I
 
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-ldap.ADdomain
+`ifgrp.failover.link_degraded`
 a|
-`vserver services name-service ldap client modify -ad-domain`
+Not supported
 a|
-ldap.base
+`interface.blocked.cifs`
 a|
-`vserver services name-service ldap client modify -base-dn`
+`*network interface create -data-protocol*`
 a|
-ldap.base.group
+`interface.blocked.iscsi`
 a|
-`ldap client modify -group-dn ldap DN-group-scope` *Note:* Available at the advanced privilege level.
+`*network interface create -data-protocol*`
+a|
+`interface.blocked.mgmt_data_traffic`
+a|
+`*network interface create -role*`
+a|
+`interface.blocked.ndmp`
+a|
+`*system services firewall policy modify -policy _policy_name_ -service ndmp*`
+a|
+`interface.blocked.nfs`
+a|
+`*network interface create -data-protocol*`
+a|
+`interface.blocked.snapmirror`
+a|
+`*network interface create -role*`
+a|
+`ip.fastpath.enable`
+a|
+`*system node run -node _node_name_\|local} options ip.fastpath.enable*`
+
+NOTE: Beginning with ONTAP 9.2, fastpath is no longer supported.
 
 a|
-ldap.base.netgroup
+`ip.ipsec.enable`
 a|
-`ldap client modify -netgroup-dn ldap DN-netgroup-scope` *Note:* Available at the advanced privilege level.
+Not supported
+a|
+`ip.match_any_ifaddr`
+a|
+Not supported
+a|
+`ip.path_mtu_discovery.enable`
+a|
+`*system node run -node__node_name__\|local} options ip.path_mtu_discovery.enable*`
+a|
+`ip.ping_throttle.alarm_interval`
+a|
+`*system node run -node__node_name__ \|local} options ip.ping_throttle.alarm___node_name__interval*`
+a|
+`ip.ping_throttle.drop_level`
+a|
+`*system node run -node\|local} options ip.ping_throttle.drop.level*`
+a|
+`ip.tcp.abc.enable`
+a|
+`*system node run -node__node_name__\|local} options ip.tcp.abc.enable*`
+a|
+`ip.tcp.abc.l_limit`
+a|
+`*system node run -node__node_name__\|local} options ip.tcp.abc.l_limit*`
+a|
+`ip.tcp.batching.enable`
+a|
+`*system node run -node__node_name__\|local} options ip.tcp.batching.enable*`
+a|
+`ip.tcp.newreno.enable`
+a|
+Not supported
+a|
+`ip.tcp.rfc3390.enable`
+a|
+`*system node run -node__node_name__\|local} options ip.tcp.rfc3390.enable*`
+a|
+`ip.tcp.sack.enable`
+a|
+`*system node run -node__node_name__\|local} options ip.tcp.sack.enable*`
+a|
+`ip.v6.enable`
+a|
+`*network options ipv6 modify*`
+a|
+`ip.v6.ra_enable`
+a|
+Not supported
+a|
+`iscsi.auth.radius.enable`
+a|
+Not supported
+a|
+`iscsi.enable`
+a|
+`*iscsi start*`
+a|
+`iscsi.max_connections_per_session`
+a|
+`*iscsi modify -max -conn-per-session*`
+a|
+`iscsi.max_error_recovery_level`
+a|
+`*iscsi modify -max-error-recovery-level*`
+|===
+
+[options="header"]
+=== K
+|===
+| 7-Mode option| Clustered Data ONTAP command
+a|
+`kerberos.file_keytab.principal`
+a|
+Not supported
+a|
+`kerberos.file_keytab.realmipal`
+a|
+Not supported
+|===
+
+== O-Q
+
+=== L
+
+[options="header"]
+|===
+| 7-Mode option| Clustered Data ONTAP command
+a|
+`ldap.ADdomain`
+a|
+`*vserver services name-service ldap client modify -ad-domain*`
+a|
+`ldap.base`
+a|
+`*vserver services name-service ldap client modify -base-dn*`
+a|
+`ldap.base.group`
+a|
+`*ldap client modify -group-dn ldap DN-group-scope*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.base.passwd
+`ldap.base.netgroup`
 a|
-`vserver services ldap client modify -user-dn` *Note:* Available at the advanced privilege level.
+`*ldap client modify -netgroup-dn ldap DN-netgroup-scope*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.enable
+`ldap.base.passwd`
 a|
-`vserver services name-service ldap modify`
-a|
-ldap.minimum_bind_level
-a|
-`vserver services name-service ldap client modify -min-bind-level`
-a|
-ldap.name
-a|
-`vserver services name-service ldap client modify -bind-dn`
-a|
-ldap.nssmap.attribute.gecos
-a|
-`ldap client schema modify -gecos-attribute` *Note:* Available at the advanced privilege level.
+`*vserver services ldap client modify -user-dn*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.gidNumber
+`ldap.enable`
 a|
-`ldap client schema modify -gid-number-attribute` *Note:* Available at the advanced privilege level.
+`*vserver services name-service ldap modify*`
+a|
+`ldap.minimum_bind_level`
+a|
+`*vserver services name-service ldap client modify -min-bind-level*`
+a|
+`ldap.name`
+a|
+`*vserver services name-service ldap client modify -bind-dn*`
+a|
+`ldap.nssmap.attribute.gecos`
+a|
+`*ldap client schema modify -gecos-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.groupname
+`ldap.nssmap.attribute.gidNumber`
 a|
-`ldap client schema modify -cn-group-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -gid-number-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.homeDirectory
+`ldap.nssmap.attribute.groupname`
 a|
-`ldap client schema modify -home-directory-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -cn-group-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.loginShell
+`ldap.nssmap.attribute.homeDirectory`
 a|
-`ldap client schema modify -login-shell-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -home-directory-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.memberNisNetgroup
+`ldap.nssmap.attribute.loginShell`
 a|
-`ldap client schema modify -member-nis-netgroup-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -login-shell-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.memberUid
+`ldap.nssmap.attribute.memberNisNetgroup`
 a|
-`ldap client schema modify -member-uid-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -member-nis-netgroup-attribute*`
+
+NOTE:  Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.netgroupname
+`ldap.nssmap.attribute.memberUid`
 a|
-`ldap client schema modify -cn-netgroup-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -member-uid-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.nisNetgroupTriple
+`ldap.nssmap.attribute.netgroupname`
+a|
+`*ldap client schema modify -cn-netgroup-attribute*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`ldap.nssmap.attribute.nisNetgroupTriple`
 a|
 ldap client schema modify -nis-netgroup-triple-attribute
 
 NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.uid
+`ldap.nssmap.attribute.uid`
 a|
-`ldap client schema modify -uid-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -uid-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.uidNumber
+`ldap.nssmap.attribute.uidNumber`
 a|
-`ldap client schema modify -uid-number-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -uid-number-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.attribute.userPassword
+`ldap.nssmap.attribute.userPassword`
 a|
-`ldap client schema modify -user-password-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -user-password-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.objectClass.nisNetgroup
+`ldap.nssmap.objectClass.nisNetgroup`
 a|
-`ldap client schema modify -nis-netgroup-object-class` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -nis-netgroup-object-class*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.objectClass.posixAccount
+`ldap.nssmap.objectClass.posixAccount`
 a|
-`ldap client schema modify -posix-account-object-class` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -posix-account-object-class*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.nssmap.objectClass.posixGroup
+`ldap.nssmap.objectClass.posixGroup`
 a|
-`ldap client schema modify -posix-group-object-class` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -posix-group-object-class*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.passwd
+`ldap.passwd`
 a|
-`vserver services name-service ldap client modify-bind-password`
+`*vserver services name-service ldap client modify-bind-password*`
 a|
-ldap.port
+`ldap.port`
 a|
-`vserver services name-service ldap client modify -port`
+`*vserver services name-service ldap client modify -port*`
 a|
-ldap.servers
+`ldap.servers`
 a|
-`vserver services name-service ldap client modify -servers`
+`*vserver services name-service ldap client modify -servers*`
 a|
-ldap.servers.preferred
+`ldap.servers.preferred`
 a|
-`vserver services name-service ldap client modify -preferred-ad-servers`
+`*vserver services name-service ldap client modify -preferred-ad-servers*`
 a|
-ldap.ssl.enable
+`ldap.ssl.enable`
 a|
 Not supported
 a|
-ldap.timeout
+`ldap.timeout`
 a|
-`vserver services name-service ldap client modify -query-timeout`
+`*vserver services name-service ldap client modify -query-timeout*`
 a|
-ldap.usermap.attribute.windowsaccount
+`ldap.usermap.attribute.windowsaccount`
 a|
-`ldap client schema modify -windows-account-attribute` *Note:* Available at the advanced privilege level.
+`*ldap client schema modify -windows-account-attribute*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.usermap.base
+`ldap.usermap.base`
 a|
-`ldap client modify -user-dnldap DN-user-scope` *Note:* Available at the advanced privilege level.
+`*ldap client modify -user-dnldap DN-user-scope*`
+
+NOTE: Available at the advanced privilege level.
 
 a|
-ldap.usermap.enable
+`ldap.usermap.enable`
 a|
 Not supported
 a|
-licensed_feature.fcp.enable
+`licensed_feature.fcp.enable`
 a|
 Not supported
 a|
-licensed_feature.flex_clone.enable
+`licensed_feature.flex_clone.enable`
 a|
 Not supported
 a|
-licensed_feature.flexcache_nfs.enable
+`licensed_feature.flexcache_nfs.enable`
 a|
 Not supported
 a|
-licensed_feature.iscsi.enable
+`licensed_feature.iscsi.enable`
 a|
 Not supported
 a|
-licensed_feature.multistore.enable
+`licensed_feature.multistore.enable`
 a|
 Not supported
 a|
-licensed_feature.nearstore_option.enable
+`licensed_feature.nearstore_option.enable`
 a|
 Not supported
 a|
-licensed_feature.vld.enable
+`licensed_feature.vld.enable`
 a|
 Not supported
 a|
-locking.grace_lease_seconds
+`locking.grace_lease_seconds`
 a|
-`vserver nfs modify -v4-grace-seconds`
+`*vserver nfs modify -v4-grace-seconds*`
 a|
-lun.clone_restore
-a|
-Not supported
-a|
-lun.partner_unreachable.linux.asc
+`lun.clone_restore`
 a|
 Not supported
 a|
-lun.partner_unreachable.linux.ascq
+`lun.partner_unreachable.linux.asc`
 a|
 Not supported
 a|
-lun.partner_unreachable.linux.behavior
+`lun.partner_unreachable.linux.ascq`
 a|
 Not supported
 a|
-lun.partner_unreachable.linux.hold_time
+`lun.partner_unreachable.linux.behavior`
 a|
 Not supported
 a|
-lun.partner_unreachable.linux.scsi_status
+`lun.partner_unreachable.linux.hold_time`
 a|
 Not supported
 a|
-lun.partner_unreachable.linux.skey
+`lun.partner_unreachable.linux.scsi_status`
 a|
 Not supported
 a|
-lun.partner_unreachable.vmware.behavior
+`lun.partner_unreachable.linux.skey`
 a|
 Not supported
 a|
-lun.partner_unreachable.vmware.hold_time
+`lun.partner_unreachable.vmware.behavior`
+a|
+Not supported
+a|
+`lun.partner_unreachable.vmware.hold_time`
 a|
 Not supported
 |===
 
-== N
+=== N
 
-|===
-| 7-Mode option| Clustered Data ONTAP command
-a|
-ndmpd.abort_on_disk_error
-a|
-`options ndmpd.abort_on_disk_error` *Note:* Available at the advanced privilege level.
-
-a|
-ndmpd.access
-a|
-`system services firewall policy modify -policy * -service ndmp -allow-list`
-a|
-ndmpd.authtype
-a|
-`system services ndmpd modify -clear-text`
-a|
-ndmpd.connectlog.enabled
-a|
-Not supported
-a|
-ndmpd.data_port_range
-a|
-Not supported
-a|
-ndmpd.enable
-a|
-Not supported
-a|
-ndmpd.ignore_ctime.enabled
-a|
-Not supported
-a|
-ndmpd.maxversion
-a|
-Not supported
-a|
-ndmpd.offset_map.enable
-a|
-Not supported
-a|
-ndmpd.password_length
-a|
-Not supported
-a|
-ndmpd.preferred_interface
-a|
-Not supported
-a|
-ndmpd.tcpnodelay.enable
-a|
-Not supported
-a|
-ndmpd.tcpwinsize
-a|
-Not supported
-a|
-nfs.assist.queue.limit
-a|
-Not supported
-a|
-nfs.authsys.extended_groups_ns.enable
-a|
-`vserver nfs modify -auth-sys-extended-groups` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.export.allow_provisional_access
-a|
-Not supported
-a|
-nfs.export.auto-update
-a|
-Not supported
-a|
-nfs.export.exportfs_comment_on_delete
-a|
-Not supported
-a|
-nfs.export.harvest.timeout
-a|
-Not supported
-a|
-nfs.export.neg.timeout
-a|
-Not supported
-a|
-nfs.kerberos.enable
-a|
-`vserver nfs kerberos realm create`
-a|
-nfs.kerberos.file_keytab.enable
-a|
-Not supported
-a|
-nfs.kerberos.file_keytab.principal
-a|
-`vserver nfs kerberos realm create`
-a|
-nfs.kerberos.file_keytab.realm
-a|
-`vserver nfs kerberos realm create`
-a|
-nfs.max_num_aux_groups
-a|
-`vserver nfs \{ show \| modify \} -extended-groups-limit`
-a|
-nfs.mount_rootonly
-a|
-`vserver nfs modify -mount-rootonly`
-a|
-nfs.netgroup.strict
-a|
-Not supported
-a|
-nfs.nfs_rootonly
-a|
-`vserver nfs modify -nfs-rootonly`
-a|
-nfs.per_client_stats.enable
-a|
-`statistics settings modify -client stats` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.require_valid_mapped_uid
-a|
-`vserver name-mapping create`
-a|
-nfs.response.trace
-a|
-`vserver nfs modify -trace-enabled` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.response.trigger
-a|
-`vserver nfs modify -trigger` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.rpcsec.ctx.high
-a|
-`nfs modify -rpcsec-ctx-high` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.rpcsec.ctx.idle
-a|
-`nfs modify -rpcsec-ctx-idle` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.tcp.enable
-a|
-`vserver nfs modify -tcp`
-a|
-nfs.thin_prov.ejuke
-a|
-`vserver nfs modify -enable-ejukebox` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.udp.enable
-a|
-`vserver nfs modify -udp`
-a|
-nfs.udp.xfersize
-a|
-`vserver nfs modify -udp-max-xfer-size` *Note:* Available at the advanced privilege level.
-
-a|
-nfs.v2.df_2gb_lim
-a|
-Not supported
-a|
-nfs.v2.enable
-a|
-Not supported
-a|
-nfs.v3.enable
-a|
-`vserver nfs modify -v3`
-a|
-nfs.v4.acl.enable
-a|
-`vserver nfs modify -v4.0-acl`
-a|
-nfs.v4.enable
-a|
-`vserver nfs modify -v4.0`
-a|
-nfs.v4.id.allow_numerics
-a|
-`vserver nfs modify -v4-numeric-ids`
-a|
-nfs.v4.id.domain
-a|
-`vserver nfs modify -v4-id-domain`
-a|
-nfs.v4.read_delegation
-a|
-`vserver nfs modify -v4.0-read-delegation`
-a|
-nfs.v4.write_delegation
-a|
-`vserver nfs modify -v4.0-write-delegation`
-a|
-nfs.vstorage.enable
-a|
-`vserver nfs modify -vstorage`
-a|
-nfs.webnfs.enable
-a|
-Not supported
-a|
-nfs.webnfs.rootdir
-a|
-Not supported
-a|
-nfs.webnfs.rootdir.set
-a|
-Not supported
-a|
-nis.domainname
-a|
-`vserver services name-service nis-domain modify -domain`
-a|
-nis.enable
-a|
-`vserver services name-service nis-domain modify -active`
-a|
-nis.group_update.enable
-a|
-Not supported
-a|
-nis.group_update_schedule
-a|
-Not supported
-a|
-nis.netgroup.domain_search.enable
-a|
-Not supported
-a|
-nis.servers
-a|
-`vserver services name-service nis-domain modify -servers`
-a|
-nis.slave.enable
-a|
-Not supported
-a|
-nlm.cleanup.timeout
-a|
-Not supported
-|===
-
-== P
-
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-pcnfsd.enable
+`ndmpd.abort_on_disk_error`
+a|
+`*options ndmpd.abort_on_disk_error*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`ndmpd.access`
+a|
+`*system services firewall policy modify -policy * -service ndmp -allow-list*`
+a|
+`ndmpd.authtype`
+a|
+`*system services ndmpd modify -clear-text*`
+a|
+`ndmpd.connectlog.enabled`
 a|
 Not supported
 a|
-pcnfsd.umask
+`ndmpd.data_port_range`
+a|
+`Not supported`
+a|
+`ndmpd.enable`
+a|
+Not supported
+a|
+`ndmpd.ignore_ctime.enabled`
+a|
+Not supported
+a|
+`ndmpd.maxversion`
+a|
+Not supported
+a|
+`ndmpd.offset_map.enable`
+a|
+Not supported
+a|
+`ndmpd.password_length`
+a|
+Not supported
+a|
+`ndmpd.preferred_interface`
+a|
+Not supported
+a|
+`ndmpd.tcpnodelay.enable`
+a|
+Not supported
+a|
+`ndmpd.tcpwinsize`
+a|
+Not supported
+a|
+`nfs.assist.queue.limit`
+a|
+Not supported
+a|
+`nfs.authsys.extended_groups_ns.enable`
+a|
+`_vserver nfs modify -auth-sys-extended-groups_`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.export.allow_provisional_access`
+a|
+Not supported
+a|
+`nfs.export.auto-update`
+a|
+Not supported
+a|
+`nfs.export.exportfs_comment_on_delete`
+a|
+Not supported
+a|
+`nfs.export.harvest.timeout`
+a|
+Not supported
+a|
+`nfs.export.neg.timeout`
+a|
+Not supported
+a|
+`nfs.kerberos.enable`
+a|
+`*vserver nfs kerberos realm create*`
+a|
+`nfs.kerberos.file_keytab.enable`
+a|
+Not supported
+a|
+`nfs.kerberos.file_keytab.principal`
+a|
+`*vserver nfs kerberos realm create*`
+a|
+`nfs.kerberos.file_keytab.realm`
+a|
+`*vserver nfs kerberos realm create*`
+a|
+`nfs.max_num_aux_groups`
+a|
+`*vserver nfs \{ show \| modify \} -extended-groups-limit*`
+a|
+`nfs.mount_rootonly`
+a|
+`*vserver nfs modify -mount-rootonly*`
+a|
+`nfs.netgroup.strict`
+a|
+Not supported
+a|
+`nfs.nfs_rootonly`
+a|
+`*vserver nfs modify -nfs-rootonly*`
+a|
+`nfs.per_client_stats.enable`
+a|
+`*statistics settings modify -client stats*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.require_valid_mapped_uid`
+a|
+`*vserver name-mapping create*`
+a|
+`nfs.response.trace`
+a|
+`*vserver nfs modify -trace-enabled*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.response.trigger`
+a|
+`*vserver nfs modify -trigger*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.rpcsec.ctx.high`
+a|
+`*nfs modify -rpcsec-ctx-high*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.rpcsec.ctx.idle`
+a|
+`*nfs modify -rpcsec-ctx-idle*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.tcp.enable`
+a|
+`*vserver nfs modify -tcp*`
+a|
+`nfs.thin_prov.ejuke`
+a|
+`*vserver nfs modify -enable-ejukebox*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.udp.enable`
+a|
+`*vserver nfs modify -udp*`
+a|
+`nfs.udp.xfersize`
+a|
+`*vserver nfs modify -udp-max-xfer-size*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`nfs.v2.df_2gb_lim`
+a|
+`Not supported
+a|
+`nfs.v2.enable`
+a|
+`Not supported
+a|
+`nfs.v3.enable`
+a|
+`*vserver nfs modify -v3*`
+a|
+`nfs.v4.acl.enable`
+a|
+`*vserver nfs modify -v4.0-ac*l`
+a|
+`nfs.v4.enable`
+a|
+`*vserver nfs modify -v4.0*`
+a|
+`nfs.v4.id.allow_numerics`
+a|
+`*vserver nfs modify -v4-numeric-ids*`
+a|
+`nfs.v4.id.domain`
+a|
+`*vserver nfs modify -v4-id-domain*`
+a|
+`nfs.v4.read_delegation`
+a|
+`*vserver nfs modify -v4.0-read-delegation*`
+a|
+`nfs.v4.write_delegation`
+a|
+`*vserver nfs modify -v4.0-write-delegation*`
+a|
+`nfs.vstorage.enable`
+a|
+`*vserver nfs modify -vstorage*`
+a|
+`nfs.webnfs.enable`
+a|
+Not supported
+a|
+`nfs.webnfs.rootdir`
+a|
+Not supported
+a|
+`nfs.webnfs.rootdir.set`
+a|
+Not supported
+a|
+`nis.domainname`
+a|
+`*vserver services name-service nis-domain modify -domain*`
+a|
+`nis.enable`
+a|
+`*vserver services name-service nis-domain modify -active*`
+a|
+`nis.group_update.enable`
+a|
+Not supported
+a|
+`nis.group_update_schedule`
+a|
+Not supported
+a|
+`nis.netgroup.domain_search.enable`
+a|
+Not supported
+a|
+`nis.servers`
+a|
+`*vserver services name-service nis-domain modify -servers*`
+a|
+`nis.slave.enable`
+a|
+Not supported
+a|
+`nlm.cleanup.timeout`
 a|
 Not supported
 |===
 
-== Q
+=== P
 
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-qos.classify.count_all_matches
+`pcnfsd.enable`
+a|
+Not supported
+a|
+`pcnfsd.umask`
 a|
 Not supported
 |===
 
-== R
+=== Q
 
-NOTE: All RAID options have 7-Mode-compatible nodeshell shortcuts of the form `options option_name`.
-
-|===
-| 7-Mode option| Clustered Data ONTAP command
-a|
-raid
-a|
-`storage raid-options \{ modify \| show\}`
-a|
-raid.background_disk_fw_update.enable
-a|
-`storage disk option modify -bkg-firmware-update`
-a|
-raid.disk.copy.auto.enable
-a|
-`storage raid-options modify -raid.disk.copy.auto.enable`
-a|
-raid.disk.timeout.enable
-a|
-`system node run -node {node_name\|local} options raid.disk.timeout.enable`
-a|
-raid.disktype.enable
-a|
-Not supported
-a|
-raid.disktype.enable
-a|
-`raid-options modify raid.lost_write.enable` *Note:* Available at the advanced privilege level.
-
-a|
-raid.lost_write.enable
-a|
-`storage raid-options \{ modify \| show \} -name raid.media_scrub.enable`
-a|
-raid.media_scrub.rate
-a|
-`storage raid-options \{ modify \| show \}-name raid.media_scrub.rate`
-a|
-raid.min_spare_count
-a|
-`storage raid-options \{ modify \| show \}-name raid.min_spare_count`
-a|
-raid.mix.hdd.disktype.capacity
-a|
-`storage raid-options \{ modify \| show \}-name raid.mix.hdd.disktype.capacity`
-a|
-raid.mix.hdd.disktype.performance
-a|
-`storage raid-options \{ modify \| show \}-name raid.mix.hdd.disktype.performance`
-a|
-raid.mix.hdd.rpm.capacity
-a|
-`storage raid-options \{ modify \| show \} -name raid.mix.hdd.rpm.capacity`
-a|
-raid.mix.hdd.rpm.performance
-a|
-`storage raid-options \{ modify \| show \} -name raid.mix.hdd.rpm.performance`
-a|
-raid.mirror_read_plex_pref
-a|
-`storage raid-options \{ modify \| show \}-name raid.mirror_read_plex_pref`
-a|
-raid.reconstruct.perf_impact
-a|
-`storage raid-options \{ modify \| show \}-name raid.reconstruct.perf_impact`
-a|
-raid.resync.perf_impact
-a|
-`storage raid-options \{ modify \| show \}-name raid.resync.perf_impact`
-a|
-raid.rpm.ata.enable
-a|
-Not supported
-a|
-raid.rpm.fcal.enable
-a|
-Not supported
-a|
-raid.scrub.duration
-a|
-`storage raid-options \{ modify \| show \}-name raid.scrub.duration`
-a|
-raid.scrub.perf_impact
-a|
-`storage raid-options \{ modify \| show \}-name raid.scrub.perf_impact`
-a|
-raid.scrub.schedule
-a|
-`storage raid-options \{ modify \| show \}-name raid.scrub.schedule`
-a|
-raid.timeout
-a|
-`storage raid-options \{ modify \| show \}-name raid.timeout`
-a|
-raid.verify.perf_impact
-a|
-`storage raid-options\{ modify \| show \}-name raid.verify.perf_impact`
-a|
-replication.logical.reserved_transfers
-a|
-`snapmirror set-options -xdp-source-xfer-reserve-pct`
-a|
-replication.throttle.enable
-a|
-`snapmirror modify -throttle`
-a|
-replication.volume.reserved_transfers
-a|
-`snapmirror set-options -dp-source-xfer-reserve-pct`
-a|
-replication.volume.use_auto_resync
-a|
-Not supported
-a|
-rpc.mountd.tcp.port
-a|
-`vserver nfs modify -mountd-port` *Note:* Available at the advanced privilege level.
-
-a|
-rpc.mountd.udp.port
-a|
-`vserver nfs modify -mountd-port` *Note:* Available at the advanced privilege level.
-
-a|
-rpc.nlm.tcp.port
-a|
-`vserver nfs modify -nlm-port` *Note:* Available at the advanced privilege level.
-
-a|
-rpc.nlm.udp.port
-a|
-`vserver nfs modify -nlm-port` *Note:* Available at the advanced privilege level.
-
-a|
-rpc.nsm.tcp.port
-a|
-`vserver nfs modify -nsm-port` *Note:* Available at the advanced privilege level.
-
-a|
-rpc.nsm.udp.port
-a|
-`vserver nfs modify -nsm-port` *Note:* Available at the advanced privilege level.
-
-a|
-rpc.pcnfsd.tcp.port
-a|
-Not supported
-a|
-rpc.pcnfsd.udp.port
-a|
-Not supported
-a|
-rpc.rquotad.udp.port
-a|
-`vserver nfs modify -rquotad-port` *Note:* Available at the advanced privilege level.
-
-a|
-rquotad.enable
-a|
-`vserver nfs modify -rquota`
-a|
-rsh.access
-a|
-`system services firewall policy create -policy mgmt -service rsh -allow-list`
-a|
-rsh.enable
-a|
-`system services firewall policy create -policy mgmt -service rsh -allow-list`
-|===
-
-== S
-
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-security.admin.authentication
+`qos.classify.count_all_matches`
 a|
-`security login modify`
+Not supported
+|===
+
+=== R
+
+NOTE: All RAID options have 7-Mode-compatible nodeshell shortcuts of the form `options _option_name_`.
+
+[options="header"]
+|===
+| 7-Mode option| Clustered Data ONTAP command
 a|
-security.admin.nsswitchgroup
+`raid`
 a|
-`vserver modify`
+`*storage raid-options \{ modify \| show\}*`
 a|
-security.passwd.firstlogin.enable
+`raid.background_disk_fw_update.enable`
 a|
-`security login role config modify`
+`*storage disk option modify -bkg-firmware-update*`
 a|
-security.passwd.lockout.numtries
+`raid.disk.copy.auto.enable`
 a|
-`security login role config modify`
+`*storage raid-options modify -raid.disk.copy.auto.enable*`
 a|
-security.passwd.rootaccess.enable
+`raid.disk.timeout.enable`
+a|
+`*system node run -node {_node_name_\|local} options raid.disk.timeout.enable*`
+a|
+`raid.disktype.enable`
 a|
 Not supported
 a|
-security.passwd.rules.enable
+`raid.disktype.enable`
 a|
-`security login role config modify`
+`*raid-options modify raid.lost_write.enable*`
+
+NOTE: Available at the advanced privilege level.
+
 a|
-security.passwd.rules.everyone
+`raid.lost_write.enable`
 a|
-`security login role config modify`
+`*storage raid-options \{ modify \| show \} -name raid.media_scrub.enable*`
 a|
-security.passwd.rules.history
+`raid.media_scrub.rate`
 a|
-`security login role config modify`
+`*storage raid-options \{ modify \| show \}-name raid.media_scrub.rate*`
 a|
-security.passwd.rules.maximum
+`raid.min_spare_count`
 a|
-`security login role config modify`
+`*storage raid-options \{ modify \| show \}-name raid.min_spare_count*`
 a|
-security.passwd.rules.minimum
+`raid.mix.hdd.disktype.capacity`
 a|
-`security login role config modify`
+`*storage raid-options \{ modify \| show \}-name raid.mix.hdd.disktype.capacity*`
 a|
-security.passwd.rules.minimum.alphabetic
+`raid.mix.hdd.disktype.performance`
 a|
-Not supported
+`*storage raid-options \{ modify \| show \}-name raid.mix.hdd.disktype.performance*`
 a|
-security.passwd.rules.minimum.digit
+`raid.mix.hdd.rpm.capacity`
 a|
-`security login role config modify`
+`*storage raid-options \{ modify \| show \} -name raid.mix.hdd.rpm.capacity*`
 a|
-security.passwd.rules.minimum.symbol
+`raid.mix.hdd.rpm.performance`
 a|
-Not supported
+`*storage raid-options \{ modify \| show \} -name raid.mix.hdd.rpm.performance*`
 a|
-sftp.auth_style
+`raid.mirror_read_plex_pref`
 a|
-Not supported
+`*storage raid-options \{ modify \| show \}-name raid.mirror_read_plex_pref*`
 a|
-sftp.dir_override
+`raid.reconstruct.perf_impact`
 a|
-Not supported
+`*storage raid-options \{ modify \| show \}-name raid.reconstruct.perf_impact*`
 a|
-sftp.dir_restriction
+`raid.resync.perf_impact`
 a|
-Not supported
+`*storage raid-options \{ modify \| show \}-name raid.resync.perf_impact*`
 a|
-sftp.enable
-a|
-Not supported
-a|
-sftp.idle_timeout
-a|
-Not supported
-a|
-sftp.locking
+`raid.rpm.ata.enable`
 a|
 Not supported
 a|
-sftp.log_enable
+`raid.rpm.fcal.enable`
 a|
 Not supported
 a|
-sftp.log_filesize
+`raid.scrub.duration`
+a|
+`*storage raid-options \{ modify \| show \}-name raid.scrub.duration*`
+a|
+`raid.scrub.perf_impact`
+a|
+`*storage raid-options \{ modify \| show \}-name raid.scrub.perf_impact*`
+a|
+`raid.scrub.schedule`
+a|
+`*storage raid-options \{ modify \| show \}-name raid.scrub.schedule*`
+a|
+`raid.timeout`
+a|
+`*storage raid-options \{ modify \| show \}-name raid.timeout*`
+a|
+`raid.verify.perf_impact`
+a|
+`*storage raid-options\{ modify \| show \}-name raid.verify.perf_impact*`
+a|
+`replication.logical.reserved_transfers`
+a|
+`*snapmirror set-options -xdp-source-xfer-reserve-pct*`
+a|
+`replication.throttle.enable`
+a|
+`*snapmirror modify -throttle*`
+a|
+`replication.volume.reserved_transfers`
+a|
+`*snapmirror set-options -dp-source-xfer-reserve-pct*`
+a|
+`replication.volume.use_auto_resync`
 a|
 Not supported
 a|
-sftp.log_nfiles
+`rpc.mountd.tcp.port`
+a|
+`*vserver nfs modify -mountd-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rpc.mountd.udp.port`
+a|
+`*vserver nfs modify -mountd-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rpc.nlm.tcp.port`
+a|
+`*vserver nfs modify -nlm-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rpc.nlm.udp.port`
+a|
+`*vserver nfs modify -nlm-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rpc.nsm.tcp.port`
+a|
+`*vserver nfs modify -nsm-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rpc.nsm.udp.port`
+a|
+`*vserver nfs modify -nsm-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rpc.pcnfsd.tcp.port`
 a|
 Not supported
 a|
-sftp.max_connections
+`rpc.pcnfsd.udp.port`
 a|
 Not supported
 a|
-sftp.max_connections_threshold
+`rpc.rquotad.udp.port`
+a|
+`*vserver nfs modify -rquotad-port*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`rquotad.enable`
+a|
+`*vserver nfs modify -rquota*`
+a|
+`rsh.access`
+a|
+`*system services firewall policy create -policy mgmt -service rsh -allow-list*`
+a|
+`rsh.enable`
+a|
+`*system services firewall policy create -policy mgmt -service rsh -allow-list*`
+|===
+
+== S-Z
+
+=== S
+
+[options="header"]
+|===
+| 7-Mode option| Clustered Data ONTAP command
+a|
+`security.admin.authentication`
+a|
+`*security login modify*`
+a|
+`security.admin.nsswitchgroup`
+a|
+`*vserver modify*`
+a|
+`security.passwd.firstlogin.enable`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.lockout.numtries`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rootaccess.enable`
 a|
 Not supported
 a|
-sftp.override_client_permissions
+`security.passwd.rules.enable`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rules.everyone`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rules.history`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rules.maximum`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rules.minimum`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rules.minimum.alphabetic`
 a|
 Not supported
 a|
-sis.max_vfiler_active_ops
+`security.passwd.rules.minimum.digit`
+a|
+`*security login role config modify*`
+a|
+`security.passwd.rules.minimum.symbol`
 a|
 Not supported
 a|
-snaplock.autocommit_period
+`sftp.auth_style`
 a|
 Not supported
 a|
-snaplock.compliance.write_verify
+`sftp.dir_override`
 a|
 Not supported
 a|
-snaplock.log.default_retention
+`sftp.dir_restriction`
 a|
 Not supported
 a|
-snaplock.log.maximum_size
+`sftp.enable`
 a|
 Not supported
 a|
-snapmirror.access
-a|
-`snapmirror create`
-a|
-snapmirror.checkip.enable
+`sftp.idle_timeout`
 a|
 Not supported
 a|
-snapmirror.cmode.suspend
-a|
-`snapmirror quiesce`
-a|
-snapmirror.delayed_acks.enable
+`sftp.locking`
 a|
 Not supported
 a|
-snapmirror.vsm.volread.smtape_enable
+`sftp.log_enable`
 a|
 Not supported
 a|
-snapvalidator.version
+`sftp.log_filesize`
 a|
 Not supported
 a|
-snapvault.access
-a|
-`vserver peer`
-a|
-snapvault.enable
+`sftp.log_nfiles`
 a|
 Not supported
 a|
-snapvault.lockvault_log_volume
+`sftp.max_connections`
 a|
 Not supported
 a|
-snapvault.preservesnap
+`sftp.max_connections_threshold`
+a|
+Not supported
+a|
+`sftp.override_client_permissions`
+a|
+Not supported
+a|
+`sis.max_vfiler_active_ops`
+a|
+Not supported
+a|
+`snaplock.autocommit_period`
+a|
+Not supported
+a|
+`snaplock.compliance.write_verify`
+a|
+Not supported
+a|
+`snaplock.log.default_retention`
+a|
+Not supported
+a|
+`snaplock.log.maximum_size`
+a|
+Not supported
+a|
+`snapmirror.access`
+a|
+`*snapmirror create*`
+a|
+`snapmirror.checkip.enable`
+a|
+Not supported
+a|
+`snapmirror.cmode.suspend`
+a|
+`*snapmirror quiesce*`
+a|
+`snapmirror.delayed_acks.enable`
+a|
+Not supported
+a|
+`snapmirror.vsm.volread.smtape_enable`
+a|
+Not supported
+a|
+`snapvalidator.version`
+a|
+Not supported
+a|
+`snapvault.access`
+a|
+`*vserver peer*`
+a|
+`snapvault.enable`
+a|
+Not supported
+a|
+`snapvault.lockvault_log_volume`
+a|
+Not supported
+a|
+`snapvault.preservesnap`
 a|
 `snapmirror policy`
 a|
-snapvault.snapshot_for_dr_backup
+`snapvault.snapshot_for_dr_backup`
 a|
 Not supported
 a|
-snmp.access
+`snmp.access`
 a|
-`system services firewall policy modify -policy policy_name-service snmp -allow-list`
+`*system services firewall policy modify -policy __policy_name__-service snmp -allow-list*`
 a|
-snmp.enable
-a|
-Not supported
-a|
-ssh.access
-a|
-`system services firewall policy modify -policy policy_name-service ssh -allow-list`
-a|
-ssh.enable
-a|
-`system services firewall policy modify -policy policy_name-service ssh -allow-list`
-a|
-ssh.idle.timeout
+`snmp.enable`
 a|
 Not supported
 a|
-ssh.passwd_auth.enable
+`ssh.access`
 a|
-`security login \{ show \| create \| delete \}-user-or-group-name user_name -application ssh -authmethod publickey -role role_name -vserver vserver_name`
+`*system services firewall policy modify -policy __policy_name_-service ssh -allow-list*`
 a|
-ssh.pubkey_auth.enable
+`ssh.enable`
 a|
-`security login modify -authmethod publickey`
+`*system services firewall policy modify -policy __policy_name__-service ssh -allow-list*`
 a|
-ssh1.enable
+`ssh.idle.timeout`
 a|
 Not supported
 a|
-ssh2.enable
+`ssh.passwd_auth.enable`
+a|
+`*security login \{ show \| create \| delete \}-user-or-group-name _user_name_ -application ssh -authmethod publickey -role _role_name_ -vserver _vserver_name_*`
+a|
+`ssh.pubkey_auth.enable`
+a|
+`*security login modify -authmethod publickey*`
+a|
+`ssh1.enable`
+a|
+Not supported
+a|
+`ssh2.enable`
 a|
 Not supported
 a|
 ssl.enable
 a|
-`security ssl modify -server -enabled`
+`*security ssl modify -server -enabled*`
 a|
-ssl.v2.enable
+`ssl.v2.enable`
 a|
-`system services web modify -sslv2-enabled`
+`*system services web modify -sslv2-enabled*`
 a|
-ssl.v3.enable
+`ssl.v3.enable`
 a|
-`system services web modify -sslv3-enabled`
+`*system services web modify -sslv3-enabled*`
 a|
-stats.archive.frequency_config
-a|
-Not supported
-|===
-
-== T
-
-|===
-| 7-Mode option| Clustered Data ONTAP command
-a|
-tape.reservations
-a|
-`options tape.reservations`
-a|
-telnet.access
-a|
-`system services firewall policy create -policy mgmt -service telnet -allow-list`
-a|
-telnet.distinct.enable
-a|
-Not supported
-a|
-telnet.enable
-a|
-`system services firewall policy create -policy mgmt -service telnet -allow-list`
-a|
-tftpd.enable
-a|
-Not supported
-a|
-tftpd.logging
-a|
-Not supported
-a|
-tftpd.max_connections
-a|
-Not supported
-a|
-tftpd.rootdir
-a|
-Not supported
-a|
-timed.enable
-a|
-`system services ntp config modify -enabled`
-a|
-timed.log
-a|
-Not supported
-a|
-timed.max_skew
-a|
-Not supported
-a|
-timed.min_skew
-a|
-Not supported
-a|
-timed.proto
-a|
-Not supported
-a|
-timed.sched
-a|
-Not supported
-a|
-timed.servers
-a|
-`cluster time-service ntp server`
-a|
-timed.window
-a|
-Not supported
-a|
-trusted.hosts
+`stats.archive.frequency_config`
 a|
 Not supported
 |===
 
-== V
+=== T
 
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-vol.move.cutover.cpu.busy.limit
+`tape.reservations`
+a|
+`*options tape.reservations*`
+a|
+`telnet.access`
+a|
+`*system services firewall policy create -policy mgmt -service telnet -allow-list*`
+a|
+`telnet.distinct.enable`
 a|
 Not supported
 a|
-vol.move.cutover.disk.busy.limit
+`telnet.enable`
+a|
+`*system services firewall policy create -policy mgmt -service telnet -allow-list*`
+a|
+`tftpd.enable`
 a|
 Not supported
 a|
-vsm.smtape.concurrent.cascade.support
+`tftpd.logging`
 a|
 Not supported
 a|
- 
+`tftpd.max_connections`
 a|
- 
+Not supported
+a|
+`tftpd.rootdir`
+a|
+Not supported
+a|
+`timed.enable`
+a|
+`*system services ntp config modify -enabled*`
+a|
+`timed.log`
+a|
+Not supported
+a|
+`timed.max_skew`
+a|
+Not supported
+a|
+`timed.min_skew`
+a|
+Not supported
+a|
+`timed.proto`
+a|
+Not supported
+a|
+`timed.sched`
+a|
+Not supported
+a|
+`timed.servers`
+a|
+`_cluster time-service ntp server_`
+a|
+`timed.window`
+a|
+Not supported
+a|
+`trusted.hosts`
+a|
+Not supported
 |===
 
-== W
 
+=== V
+
+[options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
-wafl.default_nt_user
-a|
-`vserver nfs modify -default-win-user`
-a|
-wafl.default_unix_user
-a|
-`vserver cifs options modify -default-unix-user`
-a|
-wafl.inconsistent.asup_frequency.blks
-a|
-`system node run -node{node_name\|local} options wafl.inconsistent.asup_frequency.blks`
-a|
-wafl.inconsistent.asup_frequency.time
-a|
-`system node run -node{node_name\|local} options wafl.inconsistent.asup_frequency.time`
-a|
-wafl.inconsistent.ems_suppress
-a|
-`system node run -node{node_name\|local} options wafl.inconsistent.ems_suppress`
-a|
-wafl.maxdirsize
-a|
-`vol create -maxdir-size` *Note:* Available at the advanced privilege level.
-
-a|
-wafl.nt_admin_priv_map_to_root
-a|
-`vserver name-mapping create`
-a|
-wafl.root_only_chown
-a|
-`vserver nfs modify -chown-mode` *Note:* Available at the advanced privilege level.
-
-a|
-wafl.wcc_minutes_valid
+`vol.move.cutover.cpu.busy.limit`
 a|
 Not supported
 a|
-webdav.enable
+`vol.move.cutover.disk.busy.limit`
+a|
+Not supported
+a|
+`vsm.smtape.concurrent.cascade.support`
+a|
+Not supported
+a|
+
+a|
+
+|===
+
+=== W
+
+[options="header"]
+|===
+| 7-Mode option| Clustered Data ONTAP command
+a|
+`wafl.default_nt_user`
+a|
+`*vserver nfs modify -default-win-user*`
+a|
+`wafl.default_unix_user`
+a|
+`*vserver cifs options modify -default-unix-user*`
+a|
+`wafl.inconsistent.asup_frequency.blks`
+a|
+`*system node run -node{_node_name_\|local} options wafl.inconsistent.asup_frequency.blks*`
+a|
+`wafl.inconsistent.asup_frequency.time`
+a|
+`*system node run -node{_node_name_\|local} options wafl.inconsistent.asup_frequency.time*`
+a|
+`wafl.inconsistent.ems_suppress`
+a|
+`*system node run -node{_node_name_\|local} options wafl.inconsistent.ems_suppress*`
+a|
+`wafl.maxdirsize`
+a|
+`*vol create -maxdir-size*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`wafl.nt_admin_priv_map_to_root`
+a|
+`*vserver name-mapping create*`
+a|
+`wafl.root_only_chown`
+a|
+`*vserver nfs modify -chown-mode*`
+
+NOTE: Available at the advanced privilege level.
+
+a|
+`wafl.wcc_minutes_valid`
+a|
+Not supported
+a|
+`webdav.enable`
 a|
 Not supported
 |===

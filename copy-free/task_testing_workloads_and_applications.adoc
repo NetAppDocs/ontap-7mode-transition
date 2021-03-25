@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_testing_workloads_and_applications.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, test, workload, application
 summary: 'You should manually test all workloads and applications in the preproduction environment. You can then start production for a brief duration to evaluate if rollback is required before committing the project.'
 ---
 = Testing the workloads and applications
@@ -19,6 +19,7 @@ Some operations are restricted during preproduction testing.
 
 xref:concept_restrictions_during_preproduction_testing.adoc[Restrictions during preproduction testing]
 
+.Steps
 . Connect clients to the transitioned volumes.
 . If you have SAN workloads, perform the post-transition host remediation tasks on the SAN hosts.
 +
@@ -29,17 +30,24 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SA
 +
 *Troubleshooting:* If you run out of space on the transitioned aggregates, you can add disks.
 
- .. Log in to the advanced privilege level: `set -privilege advanced`
- .. Select the spare disks from the 7-Mode disk shelves and add disks to increase the space in the transitioned aggregates: `storage aggregate add-disks -aggregate aggr_name -disklist disk1`
+ .. Log in to the advanced privilege level:
+ +
+`*set -privilege advanced*`
+ .. Select the spare disks from the 7-Mode disk shelves and add disks to increase the space in the transitioned aggregates:
+ +
+`*storage aggregate add-disks -aggregate _aggr_name_ -disklist _disk1_*`
 +
 If 7-Mode spare disks are not available, you can use spare disks from the disk shelves in the cluster nodes; however, doing so complicates the rollback process.
 
 You can start serving production data.
 
-IMPORTANT: You can serve data in the production environment for a brief duration to ensure that the workloads are operating correctly in a production environment and a rollback to 7-Mode is not required. You must not prolong this phase and must not delay committing the copy-free transition project for the following reasons:
+[IMPORTANT]
+====
+You can serve data in the production environment for a brief duration to ensure that the workloads are operating correctly in a production environment and a rollback to 7-Mode is not required. You must not prolong this phase and must not delay committing the copy-free transition project for the following reasons:
 
 * The probability of running out of space in the transitioned aggregates increases as new data is written to the volumes.
 * Any new data written to the volumes during this stage will not be available during rollback.
+====
 
 *Related information*
 

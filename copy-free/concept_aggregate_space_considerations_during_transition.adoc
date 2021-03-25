@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_aggregate_space_considerations_during_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, aggregate, space, requirements
 summary: 'Before transition, you must ensure that the 7-Mode aggregates have adequate free space. The 7-Mode Transition Tool performs various space checks on the aggregates based on the physical space, logical space, space occupied by Snapshot copies, and space guarantee settings. You must also be aware of the space considerations with Flash Pool aggregates.'
 ---
 = Aggregate space requirements for transition
@@ -42,9 +42,13 @@ If you do not want to delete the existing Snapshot copies, you can ignore this e
 +
 In some cases, the space guarantee is disabled for the volume guaranteed volumes because of lack of space in the aggregates.
 +
-You must create sufficient free space on the 7-Mode aggregates and then enable space guarantee for such 7-Mode volumes by using the following 7-Mode command: `vol options volume_name guarantee volume`
+You must create sufficient free space on the 7-Mode aggregates and then enable space guarantee for such 7-Mode volumes by using the following 7-Mode command:
 +
-If you do not want to perform any corrective actions on 7-Mode, you can ignore this error. After the transition, examine the volumes for which guarantee is disabled and enable the guarantee manually by using the following command: `volume modify -vserver -volume -space-guarantee volume`
+`*vol options _volume_name_ guarantee volume*`
++
+If you do not want to perform any corrective actions on 7-Mode, you can ignore this error. After the transition, examine the volumes for which guarantee is disabled and enable the guarantee manually by using the following command:
++
+`*volume modify -vserver -volume -space-guarantee volume*`
 
 * *File-guaranteed volumes*
 +
@@ -52,15 +56,21 @@ File guarantee is not supported in ONTAP.
 +
 If you have file-guaranteed volumes, you must perform one of the following actions:
 
- ** If the 7-Mode volumes contain space-reserved LUNs or files, change the space guarantee type of the volumes to volume by using the 7-Mode command: `vol options volume_name guarantee volume`
+ ** If the 7-Mode volumes contain space-reserved LUNs or files, change the space guarantee type of the volumes to volume by using the 7-Mode command:
+ +
+`*vol options _volume_name_ guarantee volume*`
 +
 You must ensure that there is enough free space on the 7-Mode aggregates before running this command.
 
- ** If the 7-Mode volumes do not contain any space-reserved LUNs or files, change the space guarantee of the volumes to none by using the following 7-Mode command: `vol options volume_name guarantee none`
+ ** If the 7-Mode volumes do not contain any space-reserved LUNs or files, change the space guarantee of the volumes to none by using the following 7-Mode command:
+ +
+`*vol options _volume_name_ guarantee none*`
 If you do not want to perform any corrective actions on 7-Mode, you can ignore this error and continue with the transition.
 
 +
-During the transition, if these volumes contain space-reserved LUNs or files, their space guarantee will be automatically converted to volume, but the space guarantee will be disabled initially. You must create sufficient free space on the aggregates and then manually enable the guarantee by using the following command: `volume modify -vserver -volume -space-guarantee volume`
+During the transition, if these volumes contain space-reserved LUNs or files, their space guarantee will be automatically converted to `volume`, but the space guarantee will be disabled initially. You must create sufficient free space on the aggregates and then manually enable the guarantee by using the following command:
++
+`*volume modify -vserver -volume -space-guarantee volume*`
 +
 If the volumes do not contain any space-reserved LUNs or files, their space guarantee will be automatically converted to none during the transition.
 

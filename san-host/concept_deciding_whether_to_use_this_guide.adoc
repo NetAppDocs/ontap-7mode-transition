@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_deciding_whether_to_use_this_guide.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, san, host, remediation, guide
 summary: 'If you are transitioning data and configurations from Data ONTAP operating in 7-Mode to clustered Data ONTAP 8.3 or later using the 7-Mode Transition Tool \(7MTT\) 2.2 or later, you must perform remediation steps for SAN hosts before and after transition.'
 ---
 = Deciding whether to use the SAN Host Transition and Remediation Guide

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_completing_chain_of_custody_verification.html
 sidebar: sidebar
-keywords: 7-Mode Transition Tool
+keywords: ontap, copy, based, transition, complete, chain, custody, verification
 summary: 'If one or more SnapLock volumes are selected for Chain of Custody verification, then you must perform the Chain of Custody operation to generate a Chain of Custody report.'
 ---
 = Completing the Chain of Custody verification

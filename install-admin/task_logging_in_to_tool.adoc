@@ -1,7 +1,7 @@
 ---
 permalink: install-admin/task_logging_in_to_tool.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, install, login, transition, tool
 summary: 'You can log in to the 7-Mode Transition Tool \(web interface\) by using your credentials of the Windows system on which the tool is installed. The procedure to log in varies depending on the type of user credentials you have.'
 ---
 = Logging in to the 7-Mode Transition Tool
@@ -13,8 +13,10 @@ You can log in to the 7-Mode Transition Tool (web interface) by using your crede
 
 Guest users are not allowed to log in to the tool.
 
+.Steps
 . Navigate to the login page:
 +
+[options="header"]
 |===
 | If you are a...| Then...
 a|
@@ -26,27 +28,27 @@ User who is a member of the Administrator group and if you have not installed th
 a|
 Use a supported browser to navigate to one of the following URLs:
 
- ** https://IP_address:port/transition
- ** http://IP_address:port/transition
-IP_address is the IP address of the server and port can be 8443 (default), the value specified for tool.https.port, or 8088, the value specified for the tool.http.port parameter in the transition-tool.conf file.
+ ** `https://_IP_address:port_/transition`
+ ** `http://_IP_address:port_/transition`
+`_IP_address_` is the IP address of the server and `_port_` can be 8443 (default), the value specified for `_tool.https.port_`, or 8088, the value specified for the `_tool.http.port_` parameter in the `_transition-tool.conf_` file.
 
 a|
 User who is a member of the Administrator group and if you are accessing the tool (web interface) from another computer
 a|
 Use a supported browser to navigate to one of the following URLs:
 
- ** https://IP_address:port/transition
- ** http://IP_address:port/transition
-IP_address is the IP address of the server and port can be 8443 (default), the value specified for tool.https.port, or 8088, the value specified for the tool.http.port parameter in the transition-tool.conf file.
+ ** `https://_IP_address:port_/transition`
+ ** `http://_IP_address:port_/transition`
+`_IP_address_` is the IP address of the server and port can be 8443 (default), the value specified for `_tool.https.port_`, or 8088, the value specified for the `_tool.http.port_` parameter in the `_transition-tool.conf_` file.
 
 a|
 User who is not a member of the Administrator group and if you are accessing the tool (web interface) either from the server on which it was installed or from another computer
 a|
 Use a supported browser to navigate to one of the following URLs:
 
- ** https://IP_address:port/transition
- ** http://IP_address:port/transition
-IP_address is the IP address of the server and port can be 8443 (default), the value specified for the tool.https.port, or 8088, the value specified for the tool.http.port parameter in the transition-tool.conf file.
+ ** `https://_IP_address:port_/transition`
+ ** `http://_IP_address:port_/transition`
+`_IP_address_` is the IP address of the server and port can be 8443 (default), the value specified for the `_tool.https.port_`, or 8088, the value specified for the `_tool.http.port_` parameter in the `_transition-tool.conf_` file.
 
 +
 |===

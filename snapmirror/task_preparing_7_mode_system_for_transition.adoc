@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/task_preparing_7_mode_system_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, prepare, system, snapmirror
 summary: 'Before starting a transition, you must complete certain tasks on the 7-Mode system, such as adding the SnapMirror license and the 7-Mode system to communicate with the target cluster.'
 ---
 = Preparing the 7-Mode system for transition
@@ -13,17 +13,26 @@ Before starting a transition, you must complete certain tasks on the 7-Mode syst
 
 All the 7-Mode volumes that you want to transition must be online.
 
+.Steps
 . Add and enable the SnapMirror license on the 7-Mode system:
- .. Add the SnapMirror license on the 7-Mode system: `license add license_code`
+ .. Add the SnapMirror license on the 7-Mode system:
 +
-license_code is the license code you purchased.
+`*license add _license_code_*`
++
+`_license_code_` is the license code you purchased.
 
- .. Enable the SnapMirror functionality: `options snapmirror.enable on`
+ .. Enable the SnapMirror functionality:
++
+`*options snapmirror.enable on*`
 . Configure the 7-Mode system and the target cluster to communicate with each other by choosing one of the following options:
- ** Set the snapmirror.access option to all.
- ** Set the value of the snapmirror.access option to the IP addresses of all the LIFs on the cluster.
- ** If the snapmirror.access option is legacy and the snapmirror.checkip.enable option is off, add the SVM name to the /etc/snapmirror.allow file.
- ** If the snapmirror.access option is legacy and the snapmirror.checkip.enable option is on, add the IP addresses of the LIFs to the /etc/snapmirror.allow file.
+ ** Set the `snapmirror.access` option to all.
+ ** Set the value of the `snapmirror.access` option to the IP addresses of all the LIFs on the cluster.
+ ** If the `snapmirror.access` option is `legacy` and the `snapmirror.checkip.enable` option is `off`, add the SVM name to the `/etc/snapmirror.allow` file.
+ ** If the `snapmirror.access` option is `legacy` and the `snapmirror.checkip.enable` option is `on`, add the IP addresses of the LIFs to the `/etc/snapmirror.allow` file.
 . Depending on the Data ONTAP version of your 7-Mode system, perform the following steps:
- .. Allow SnapMirror traffic on all the interfaces: `options interface.blocked.snapmirror ""`
- .. If you are running Data ONTAP version 7.3.7, 8.0.3, or 8.1 and you are using the IP address of the e0M interface as the management IP address to interact with 7-Mode Transition Tool, allow data traffic on the e0M interface: `options interface.blocked.mgmt_data_traffic off`
+ .. Allow SnapMirror traffic on all the interfaces:
++
+`*options interface.blocked.snapmirror ""*`
+ .. If you are running Data ONTAP version 7.3.7, 8.0.3, or 8.1 and you are using the IP address of the e0M interface as the management IP address to interact with 7-Mode Transition Tool, allow data traffic on the e0M interface:
++
+`*options interface.blocked.mgmt_data_traffic off*`

@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/reference_copy_free_transition_project_planning_worksheet.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, project, planning, worksheet
 summary: 'You can use the copy-free transition planning worksheets to record information about node mapping, SVM mapping, volume mapping, and LIFs to transition. The worksheets are useful when creating a transition project by using the 7-Mode Transition Tool. You should be aware of the guidelines for completing the worksheets.'
 ---
 = Copy-free transition project planning worksheets
@@ -27,336 +27,340 @@ The IP addresses for the LIFs can either be existing on the 7-Mode system or can
 
 == Node mapping
 
+[options="header"]
 |===
 | 7-Mode controller| Mapped cluster node
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 |===
 
 == SVM and volume mapping
 
+[options="header"]
 |===
 | 7-Mode controller| vFiler unit or controller| Mapped SVM| 7-Mode volume| SVM volume
-a|
- 
-a|
- 
-a|
- 
+.8+a|
+
+.4+a|
+
+.4+a|
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
+
+.4+a|
+
+.4+a|
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
+.8+a|
+
+.8+a|
+
+.8+a|
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 a|
 
 a|
- 
+
 |===
 
 == LIF mapping (7-Mode IP addresses)
 
+[options="header"]
 |===
 | 7-Mode controller| vFiler unit or controller| Mapped SVM| 7-Mode IP address| Netmask| Default gateway| Home node| Home port
-a|
- 
-a|
- 
-a|
- 
+.6+a|
+
+.3+a|
+
+.3+a|
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
+
 a|
- 
-a|
- 
-a|
- 
+
+.3+a|
+
+.3+a|
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
- 
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+.4+a|
+
+.4+a|
+
+.4+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
 |===
 
 == LIF mapping (new LIFs)
 
+[options="header"]
 |===
 | SVM| New IP address| Netmask| Default gateway| Home node| Home port
-a|
- 
+.3+a|
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
+
 a|
- 
-a|
- 
-a|
- 
+
+.3+a|
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
-a|
- 
-a|
- 
-a|
- 
+
 a|
 
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
- 
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+.3+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
+a|
+
 |===
 
 == Example
@@ -365,6 +369,7 @@ The following table shows an example of completed worksheets for a 7-Mode HA pai
 
 *Node mapping*
 
+[options="header"]
 |===
 | 7-Mode controller| Mapped cluster node
 a|
@@ -378,15 +383,16 @@ cluster1_02
 |===
 *SVM and volume mapping*
 
+[options="header"]
 |===
 | 7-Mode controller| Mapped cluster node| vFiler unit or controller| Mapped SVM| 7-Mode volume| SVM volume
-a|
+.4+a|
 hostA_7mode
-a|
+.4+a|
 cluster1_01
-a|
+.2+a|
 vfilerA
-a|
+.2+a|
 svm1
 a|
 volA
@@ -396,9 +402,9 @@ a|
 volB
 a|
 volB
-a|
+.2+a|
 vfilerB
-a|
+.2+a|
 svm2
 a|
 vol1
@@ -408,13 +414,13 @@ a|
 vol2
 a|
 vol_cifs
-a|
+.4+a|
 hostB_7mode
-a|
+.4+a|
 cluster1_02
-a|
+.4+a|
 Not applicable
-a|
+.4+a|
 svm3
 a|
 vol3
@@ -435,13 +441,14 @@ vol6
 |===
 *LIF mapping (7-Mode IP addresses)*
 
+[options="header"]
 |===
 | 7-Mode controller| vFiler unit or controller| Mapped SVM| Existing 7-Mode IP| Netmask| Default gateway| Home node| Home port
-a|
+.4+a|
 hostA_7mode
-a|
+.2+a|
 vfilerA
-a|
+.2+a|
 svm1
 a|
 192.0.2.129
@@ -463,35 +470,35 @@ a|
 cluster1_02
 a|
 e0b
-a|
+.2+a|
 vfilerB
-a|
+.2+a|
 svm2
 a|
 -
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
 -
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
- 
-a|
+
+.2+a|
 hostB_7mode
-a|
+.2+a|
 Not applicable
-a|
+.2+a|
 svm3
 a|
 192.0.2.110
@@ -516,31 +523,32 @@ e0d
 |===
 *LIF mapping (new LIFs)*
 
+[options="header"]
 |===
 | SVM| New IP address| Netmask| Default gateway| Home node| Home port
-a|
+.2+a|
 svm1
 a|
 -
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
 -
 a|
- 
+
 a|
- 
+
 a|
- 
+
 a|
- 
-a|
+
+.2+a|
 svm2
 a|
 192.0.2.130
@@ -562,7 +570,7 @@ a|
 cluster1_02
 a|
 e1d
-a|
+.2+a|
 svm3
 a|
 192.0.2.136

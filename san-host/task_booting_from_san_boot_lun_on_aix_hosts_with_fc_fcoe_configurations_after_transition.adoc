@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_booting_from_san_boot_lun_on_aix_hosts_with_fc_fcoe_configurations_after_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, booting, san, lun, aix, host, fc, fcoe, configuration
 summary: 'After transitioning a SAN boot LUN on an AIX host with an FC or FCoE configuration, you must perform certain steps to boot your host from the SAN boot LUN.'
 ---
 = Booting from SAN boot LUN on AIX hosts with FC/FCoE configurations after transition
@@ -18,9 +18,9 @@ For copy-based transitions, you must perform these steps after completing the St
 . Select *Operations* > *Activate* > *Profile*.
 . Click the Advanced tab.
 . Select *SMS*, and then click *OK*.
-. In the SMS Main Menu, enter `5` to select *5. Select Boot Options*.
-. Enter `1` to select *1. Select Install/Boot Device*.
-. Enter `5` to select *5. List all Devices*.
+. In the SMS Main Menu, enter `*5*` to select *5. Select Boot Options*.
+. Enter `*1*` to select *1. Select Install/Boot Device*.
+. Enter `*5*` to select *5. List all Devices*.
 . Enter the device number of the ONTAP SAN boot LUN that you want to boot with.
 +
 In the following example, the desired LUN is option 5:
@@ -49,9 +49,11 @@ ESC key = return to previous screen   X = eXit System Management Services
 Type menu item number and press Enter or select Navigation keys: 5
 ----
 
-. Enter `2` to select *2. Normal Mode Boot*.
-. Enter `1` to exit the SMS menu.
+. Enter `*2*` to select *2. Normal Mode Boot*.
+. Enter `*1*` to exit the SMS menu.
 . Wait for your operating system to boot.
-. Display the LUN path name: `sanlun lun show`
+. Display the LUN path name:
 +
-The output in the mode column should have changed from 7 to C.
+`*sanlun lun show*`
++
+The output in the mode column should have changed from `7` to `C`.

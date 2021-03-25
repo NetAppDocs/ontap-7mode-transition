@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_flexclone_volumes.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, flexclone, volume
 summary: 'When transitioning FlexClone volumes to the SVM, the clones are split from the parent volumes and are transitioned as FlexVol volumes to the destination cluster. As a result, the clone hierarchy and storage efficiency are lost in the transition process.'
 ---
 = Considerations for FlexClone volumes

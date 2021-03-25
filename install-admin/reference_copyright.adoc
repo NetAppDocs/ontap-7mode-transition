@@ -1,8 +1,8 @@
 ---
 permalink: install-admin/reference_copyright.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, install, copyright
+summary: 'Copyright information for 7-Mode Transition Tool Installation and Setup Guide.'
 ---
 = Copyright
 :icons: font

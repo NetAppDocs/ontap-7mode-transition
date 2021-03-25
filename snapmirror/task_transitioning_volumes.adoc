@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/task_transitioning_volumes.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, snapmirror, transition, volume, data, protection, relationship, stand, alone
 summary: 'You can transition a stand-alone volume or volumes that are in data protection relationships \(in volume SnapMirror relationships\) by using SnapMirror technology.'
 ---
 = Transitioning volumes

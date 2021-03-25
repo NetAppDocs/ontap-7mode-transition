@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_requirements_for_copy_based_transition.html
 sidebar: sidebar
-keywords: ONTAP releases,licenses,7MTT service
+keywords: ontap, copy, based, transition, requirements
 summary: 'You must be aware of the ONTAP release requirements, licensing requirements, and 7-Mode Transition Tool requirements for copy-based transition.'
 ---
 = Requirements for copy-based transition
@@ -19,6 +19,7 @@ For a list of the 7-Mode releases supported for migration by the 7-Mode Transiti
 +
 Copy-based transitions are supported to these ONTAP target releases.
 +
+[options="header"]
 |===
 | If your transition target is running ...| You must use this 7-Mode Transition Tool version ...
 a|
@@ -26,11 +27,17 @@ ONTAP 9.8 or earlier supported releases
 a|
 3.3.3
 a|
-ONTAP 9.7P2 or later 9.7 P release    *Note:* Earlier 9.7 releases are not supported.
+ONTAP 9.7P2 or later 9.7 P release
+
+NOTE: Earlier 9.7 releases are not supported.
+
 a|
 3.3.2
 a|
-ONTAP 9.6P7 or later 9.6 P release    *Note:* Earlier 9.6 releases are not supported.
+ONTAP 9.6P7 or later 9.6 P release
+
+NOTE: Earlier 9.6 releases are not supported.
+
 a|
 3.3.2
 a|

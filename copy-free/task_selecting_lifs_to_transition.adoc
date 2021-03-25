@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_selecting_lifs_to_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, select, lif
 summary: 'You can optionally specify the LIFs that you want to configure on the SVMs after transition. These LIFs can be existing IP addresses on the 7-Mode systems or they can be new LIFs. Only NAS LIFs are transitioned. FC and iSCSI LIFs must be manually configured before the SVM provision phase.'
 ---
 = Selecting LIFs for transition
@@ -21,8 +21,10 @@ These IP addresses can continue to serve data in 7-Mode until the cutover starts
 +
 You can use these LIFs to test the connectivity of the SVMs to the name servers after the SVM provision phase.
 
+.Steps
 . In the LIF configuration tab, choose one of the following options:
 +
+[options="header"]
 |===
 | If you want to transition...| Then...
 a|
@@ -43,7 +45,7 @@ a|
 
 +
 |===
-*Note:* The target ports must be in the same IPspace as the target SVM.
+NOTE: The target ports must be in the same IPspace as the target SVM.
 
 . Click *Next*.
 +

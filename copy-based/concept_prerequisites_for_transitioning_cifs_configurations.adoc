@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_prerequisites_for_transitioning_cifs_configurations.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, prerequisites, cifs, configurations
 summary: 'CIFS configurations are transitioned by the 7-Mode Transition Tool only when certain prerequisites are met on the 7-Mode system and cluster. If any of the conditions are not met, the tool does not transition the configuration.'
 ---
 = Prerequisites for transitioning CIFS configurations
@@ -28,6 +28,7 @@ CIFS configurations are transitioned by the 7-Mode Transition Tool only when cer
  ** ONTAP 9.0 or later supports AD authentication and Workgroup authentication.
 * Use the following table to decide which authentication must be used on the target SVM:
 +
+[options="header"]
 |===
 | 7-Mode authentication method| Clustered Data ONTAP 8.2.x and 8.3.x authentication method| ONTAP 9.5 or earlier authentication method
 a|
@@ -49,6 +50,7 @@ Workgroup or AD
 +
 You can create the CIFS server on the SVM in the following two ways:
 +
+[options="header"]
 |===
 | If you want to...| Do the following...
 a|
@@ -72,11 +74,11 @@ This reconfiguration allows the original CIFS server identity to be configured o
 +
 You must then plan to perform the storage cutover immediately after precutover for enabling client access to ONTAP volumes.
  .. Applicable for ONTAP releases 9.0 through 9.5:
-  *** Use the vserver cifs modify command to change the CIFS server name (CIFS Server NetBIOS Name).
+  *** Use the `vserver cifs modify` command to change the CIFS server name (CIFS Server NetBIOS Name).
 +
 Using this feature, you should create a CIFS server on the target SVM with a temporary identity, and then perform the apply configuration (precutover) operation.
 
-  *** After the "`apply configuration`"' phase, you can run the vserver cifs modify command on the target cluster to replace the target SVM CIFS identity with the 7-Mode CIFS identity.
+  *** After the "`apply configuration`"' phase, you can run the `vserver cifs modify` command on the target cluster to replace the target SVM CIFS identity with the 7-Mode CIFS identity.
 
 a|
 Use a new identity

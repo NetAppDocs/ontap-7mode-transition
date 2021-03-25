@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_adding_controllers_and_clusters.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, add, controller, clusters
 summary: 'Before you start the transition, you must add the 7-Mode controllers and clusters that are required for the transition. The 7-Mode controllers that are included for assessment are automatically added for migration.'
 ---
 = Adding controllers and clusters
@@ -22,6 +22,7 @@ If the 7-Mode Transition Tool service is restarted, the tool prompts you for inf
 +
 For a cluster, you can specify the IP address or FQDN of the cluster-management interface. For a 7-Mode controller, you must specify the IP address of the default vFiler unit, because the IP addresses of individual vFiler units are not accepted.
 
+.Steps
 . Enter the administrator credentials for the specified host, and then click *Add*.
 +
 The 7-Mode controllers are added to the "`7-Mode Controllers`" table and clusters are added to the "`Clustered Data ONTAP Systems`" table.

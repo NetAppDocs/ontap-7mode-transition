@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_running_prechecks.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, run, prechecks
 summary: 'You can run prechecks to identify any issues before you start a transition. Prechecks verify that the 7-Mode sources, ONTAP targets, and configurations are valid for your transition. You can run prechecks any number of times.'
 ---
 = Running prechecks
@@ -13,6 +13,7 @@ You can run prechecks to identify any issues before you start a transition. Prec
 
 The prechecks run more than 200 different checks. For example, the tool checks for items such as if volumes are online and network access exists between the systems.
 
+.Steps
 . From Dashboard, select the project for which you want to run the prechecks.
 . Click *Run Prechecks*.
 +

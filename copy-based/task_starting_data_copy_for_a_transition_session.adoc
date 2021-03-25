@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_starting_data_copy_for_a_transition_session.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, start, data, copy, project
 summary: 'You can initiate a data copy from 7-Mode volumes to ONTAP volumes for a baseline transfer. The baseline transfer starts when the data copy schedules configured in a project becomes active. After the baseline transfer is complete, the ONTAP volumes are updated periodically based on the data copy schedule.'
 ---
 = Starting data copy for a transition project
@@ -22,9 +22,12 @@ If you are transitioning to an existing SVM, the volumes are created during this
 
 SnapMirror relationships are created between 7-Mode and ONTAP volumes.
 
-. Start the data copy: `transition start -p project_name`
+.Steps
+. Start the data copy:
 +
-If the start operation fails and data copy is not started, you must resolve the issues and run the transition start command again.
+`*transition start -p _project_name_*`
++
+If the start operation fails and data copy is not started, you must resolve the issues and run the `transition start` command again.
 +
 ----
 7-Mode Transition Tool>transition start -p project_finance

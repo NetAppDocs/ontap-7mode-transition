@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_supported_and_unsupported_name_services_configurations.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, name, services, required, manual, steps, supported, unsupported
 summary: 'You must be aware of the name services configurations that are transitioned by the 7-Mode Transition Tool. Some name services configurations are not transitioned to ONTAP because either these are not supported in ONTAP or these must be manually transitioned.'
 ---
 = Name services transition: supported and unsupported configurations, and required manual steps
@@ -17,13 +17,13 @@ You should verify all the precheck error and warning messages to evaluate the im
 
 At a high level, the following name services configurations are transitioned by the 7-Mode Transition Tool:
 
-* DNS configuration (/etc/resolv.conf)
+* DNS configuration (`/etc/resolv.conf`)
 * LDAP configuration
 * NIS configuration
-* Name service switch configuration (/etc/nsswitch.conf and /etc/resolv.conf)
-* Hosts configuration (/etc/hosts)
-* UNIX users and groups (/etc/passwd and /etc/group)
-* Netgroups configuration (/etc/netgroup)
+* Name service switch configuration (`/etc/nsswitch.conf` and `/etc/resolv.conf`)
+* Hosts configuration (`/etc/hosts`)
+* UNIX users and groups (`/etc/passwd` and `/etc/group`)
+* Netgroups configuration (`/etc/netgroup`)
 
 See the precheck results for details about these name services configurations.
 
@@ -37,16 +37,16 @@ See the precheck results for details about these name services configurations.
 * Shadow database
 * Host database sources other than file or DNS
 +
-ONTAP supports only file and DNS for host lookup; other database sources are not supported. Host lookup order in the /etc/nsswitch.conf is ignored during transition.
+ONTAP supports only file and DNS for host lookup; other database sources are not supported. Host lookup order in the `/etc/nsswitch.conf` is ignored during transition.
 
 == Configurations that must be manually configured
 
 You must manually configure the following LDAP options on the SVMs:
 
-* ldap.usermap.attribute.unixaccount
-* ldap.password
-* ldap.usermap.base
-* ldap.ssl.enable
+* `ldap.usermap.attribute.unixaccount`
+* `ldap.password`
+* `ldap.usermap.base`
+* `ldap.ssl.enable`
 
 *Related information*
 

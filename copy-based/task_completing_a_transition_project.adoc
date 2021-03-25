@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_completing_a_transition_project.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, complete, project
 summary: 'You can complete a transition by completing the individual projects. Because this operation is disruptive, you should evaluate when to run it. When transitioning volumes in a SnapMirror relationship, the secondary project must be completed before completing the transition of the primary project.'
 ---
 = Completing a transition project

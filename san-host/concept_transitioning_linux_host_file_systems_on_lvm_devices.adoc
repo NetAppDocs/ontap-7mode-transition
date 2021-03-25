@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_transitioning_linux_host_file_systems_on_lvm_devices.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, linux, host, file, systems, lvm, devices
 summary: 'When you transition a Linux host file system on a Logical Volume Manager \(LVM\), you must perform specific steps to prepare for the cutover phase and you must mount the logical volumes after the transition.'
 ---
 = Transitioning Linux host file systems on LVM devices

@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_testing_transitioned_luns_and_esxi_host_applications_before_cutover.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, lun, esxi, applications, cutover, phase, copy, based
 summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to transition an ESXi host, you can test your transitioned clustered Data ONTAP LUNs to verify that you can bring your host and applications online before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
 ---
 = Testing transitioned LUNs and ESXi host applications before the cutover phase of copy-based transitions
@@ -27,14 +27,19 @@ You must maintain hardware parity between the test host and the source host and 
 
 Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
 
+.Steps
 . After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
 . In the 7MTT UI, click *Apply Configuration*.
 . Zone the clustered Data ONTAP nodes on the test host.
 . Log in to the clustered Data ONTAP node, and then add new test host initiators to the igroup created by the 7MTT during the test phase.
-. Navigate to C:\Program Files\NetApp\operating in 7-Mode Transition Tool\.
-. Generate the 7-Mode to clustered Data ONTAP LUN mapping file from the Linux host where the 7MTT is installed: `transition cbt export lunmap -p project-name -o file_path`
+. Navigate to `C:\Program Files\NetApp\operating in 7-Mode Transition Tool\`.
+. Generate the 7-Mode to clustered Data ONTAP LUN mapping file from the Linux host where the 7MTT is installed:
 +
-For example: `transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv`
+`*transition cbt export lunmap -p _project-name_ -o _file_path_*`
++
+For example:
++
+`*transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv*`
 
 . Bring the test host online.
  ** xref:concept_reconfiguration_of_vmware_software_iscsi_initiator.adoc[Reconfigure your VMware software iSCSI initiator after transition]

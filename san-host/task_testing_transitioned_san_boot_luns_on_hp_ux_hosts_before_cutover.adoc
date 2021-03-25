@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_testing_transitioned_san_boot_luns_on_hp_ux_hosts_before_cutover.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, boot, lun, hp, ux, cutover, phase, copy, based
 summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to transition your HP-UX host SAN boot LUNs, you can test your transitioned clustered Data ONTAP LUNs before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
 ---
 = Testing transitioned SAN boot LUNs on HP-UX hosts before the cutover phase of copy-based transitions
@@ -17,13 +17,18 @@ You should maintain hardware parity between the test host and the source host, a
 
 Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
 
+.Steps
 . After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
 . In the 7MTT UI, click *Apply Configuration*.
 . On the test host, enter the HBA BIOS.
 . Change the IP address and host name on the test host.
-. Verify that your clustered Data ONTAP LUNs are present on the test host: `sanlun lun show`
+. Verify that your clustered Data ONTAP LUNs are present on the test host:
++
+`*sanlun lun show*`
 . Perform your testing as needed.
-. Shut down the test host: `shutdown -h -y 0`
+. Shut down the test host:
++
+`*shutdown -h -y 0*`
 . In the 7MTT UI, click *Finish Testing*.
 
 If your clustered Data ONTAP LUNs are to be remapped to your source host, you must prepare your source host for the cutover phase. If your clustered Data ONTAP LUNs are to remain mapped to your test host, no further steps are required on the test host.

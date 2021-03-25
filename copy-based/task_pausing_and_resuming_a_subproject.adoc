@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_pausing_and_resuming_a_subproject.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, pause, resume, project
 summary: 'You can pause and resume a project for which data copy has started.'
 ---
 = Pausing and resuming a project

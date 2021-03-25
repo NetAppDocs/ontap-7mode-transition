@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_performing_post_transition_tasks.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, perform, manual, post, tasks
 summary: 'After the storage cutover finishes successfully and transition is completed, you must perform some post-transition tasks for configuring features that are not transitioned, before enabling client access to the ONTAP volumes.'
 ---
 = Performing manual post-transition tasks
@@ -11,6 +11,7 @@ summary: 'After the storage cutover finishes successfully and transition is comp
 [.lead]
 After the storage cutover finishes successfully and transition is completed, you must perform some post-transition tasks for configuring features that are not transitioned, before enabling client access to the ONTAP volumes.
 
+.Steps
 . Manual: Perform the required steps to configure features that were not transitioned, as listed in the precheck report.
 +
 For example, you must manually configure IPv6 and FPolicy after transition.

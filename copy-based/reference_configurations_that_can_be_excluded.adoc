@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/reference_configurations_that_can_be_excluded.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, configurations, excluded
 summary: 'You can customize the configuration transition by excluding some volume-level or SVM-level configurations for NFS, CIFS, SAN, and name services configurations from transition by specifying the property name with the transition cbt property-set command of the 7-Mode Transition Tool CLI.'
 ---
 = Configurations that can be excluded from transition
@@ -9,136 +9,143 @@ summary: 'You can customize the configuration transition by excluding some volum
 :imagesdir: ../media/
 
 [.lead]
-You can customize the configuration transition by excluding some volume-level or SVM-level configurations for NFS, CIFS, SAN, and name services configurations from transition by specifying the property name with the transition cbt property-set command of the 7-Mode Transition Tool CLI.
+You can customize the configuration transition by excluding some volume-level or SVM-level configurations for NFS, CIFS, SAN, and name services configurations from transition by specifying the property name with the `transition cbt property-set` command of the 7-Mode Transition Tool CLI.
 
 == NFS
 
+[options="header"]
 |===
 | 7-Mode configuration to exclude| Property name
 a|
 Export policies
 a|
-ignore-nfs-exports-transition
+`ignore-nfs-exports-transition`
 a|
 NFS options
 a|
-ignore-nfs-options-transition
+`ignore-nfs-options-transition`
 a|
 All NFS configurations
 a|
-ignore-all-nfs-configurations-transition
+`ignore-all-nfs-configurations-transition`
 |===
 
 == CIFS
 
+[options="header"]
 |===
 | 7-Mode configuration to exclude| Property name
 a|
 Local users and groups
 a|
-ignore-local-users-groups-transition
+`ignore-local-users-groups-transition`
 a|
 Home directory paths
 a|
-ignore-cifs-home-directory-paths-transition
+`ignore-cifs-home-directory-paths-transition`
 a|
 Symbolic links
 a|
-ignore-cifs-symlinks-transition
+`ignore-cifs-symlinks-transition`
 a|
 Widelinks
 a|
-ignore-cifs-widelinks-transition
+`ignore-cifs-widelinks-transition`
 a|
 Shares and Share ACLs
 a|
-ignore-cifs-shares-and-acls-transition
+`ignore-cifs-shares-and-acls-transition`
 a|
 CIFS options
 a|
-ignore-cifs-options-transition
+`ignore-cifs-options-transition`
 a|
 Name mapping
 a|
-ignore-cifs-name-mapping-transition
+`ignore-cifs-name-mapping-transition`
 a|
 Audit configuration
 a|
-ignore-cifs-audit-transition
+`ignore-cifs-audit-transition`
 a|
 Preferred domain controller list
 a|
-ignore-cifs-preferred-domain-controllers-list-transition
+`ignore-cifs-preferred-domain-controllers-list-transition`
 a|
 All CIFS configurations
 a|
-ignore-all-cifs-configurations-transition
+`ignore-all-cifs-configurations-transition`
 |===
 
 == Name services
 
+[options="header"]
 |===
 | 7-Mode configuration to exclude| Property name
 a|
 Netgroups
 a|
-ignore-netgroups-transition
+`ignore-netgroups-transition`
 a|
 UNIX users and groups
 a|
-ignore-unix-users-groups-transition
+`ignore-unix-users-groups-transition`
 a|
 NIS
 a|
-ignore-nis-transition
+`ignore-nis-transition`
 a|
 DNS
 a|
-ignore-dns-transition
+`ignore-dns-transition`
 a|
 LDAP
 a|
-ignore-ldap-transition
+`ignore-ldap-transition`
 a|
-/etc/nsswitch.conf file
+`/etc/nsswitch.conf` file
 a|
-ignore-nsswitch-transition
+`ignore-nsswitch-transition`
 a|
 LDAP-based user mapping
 a|
-ignore-nmswitch-transition
+`ignore-nmswitch-transition`
 a|
-/etc/hosts files
+`/etc/hosts` files
 a|
-ignore-etc-hosts-transition
+`ignore-etc-hosts-transition`
 a|
 All name services configurations
 a|
-ignore-all-nameservices-configurations-transition
+`ignore-all-nameservices-configurations-transition`
 |===
 
 == SAN
 
+[options="header"]
 |===
 | 7-Mode configuration to exclude| Property name
 a|
 igroup and LUN mapping
 a|
-ignore-igroup-and-lunmapping-transition
+`ignore-igroup-and-lunmapping-transition`
 a|
 All configurations
 a|
-ignore-all-san-configurations-transition
+`ignore-all-san-configurations-transition`
 |===
 
 == Snapshot schedules
 
+[options="header"]
 |===
 | 7-Mode configuration to exclude| Property name
 a|
 Snapshot schedules
 a|
-ignore-snapshot-schedule-transition *Note:* If this option is set to true, the 'default' Snapshot policy is applied to the transitioned volumes.
+ignore-snapshot-schedule-transition
+
+NOTE: If this option is set to true, the 'default' Snapshot policy is applied to the transitioned volumes.
 
 |===
 *Related information*

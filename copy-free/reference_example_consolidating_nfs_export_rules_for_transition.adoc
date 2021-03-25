@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/reference_example_consolidating_nfs_export_rules_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, examples, nfs, export, rules, snapshot, schedules
 summary: 'You might want to review examples of how similar 7-Mode export rules and 7-Mode Snapshot schedules are consolidated to a single NFS export policy and a single Snapshot policy in ONTAP. You might also want to understand how the consolidated policies are assigned to the transitioned volumes or qtrees with or without reusing a matching existing policy on the target SVM.'
 ---
 = Examples of consolidating NFS export rules and Snapshot schedules for transition
@@ -113,6 +113,7 @@ vs1     vol3   export_policy_1
 
 *7-Mode schedule*
 
+[options="header"]
 |===
 | 7-Mode volume| 7-Mode Snapshot schedule
 a|
@@ -138,6 +139,7 @@ a|
 |===
 *Snapshot policies existing in ONTAP*
 
+[options="header"]
 |===
 | Snapshot policy name| Policy details
 a|
@@ -159,6 +161,7 @@ Hourly at 8, 12, 16, 20 hours, count: 4
 |===
 *Snapshot policy in ONTAP after transition with consolidation (no reuse)*
 
+[options="header"]
 |===
 | 7-Mode volume| 7-Mode Snapshot schedule| Snapshot policy in ONTAP
 a|
@@ -208,6 +211,7 @@ a|
 |===
 *Snapshot policy in ONTAP after transition with consolidation and reuse*
 
+[options="header"]
 |===
 | 7-Mode volume| 7-Mode Snapshot schedule| Snapshot policy in ONTAP
 a|

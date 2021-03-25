@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_transitioning_of_snaplock_audit_volumes.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, snaplock, audit, volumes
 summary: 'The 7-Mode Transition Tool supports the transition of SnapLock Audit volumes. The workflow to transition SnapLock Audit volumes is the same as the transition of SnapLock Compliance volumes.'
 ---
 = Considerations for transitioning of SnapLock Audit volumes

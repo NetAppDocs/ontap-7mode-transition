@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/reference_troubleshooting.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, troubleshoot, transition, snapmirror, issues, problems
 summary: 'Troubleshooting information helps you to identify and resolve issues that occur when transitioning 7-Mode data using SnapMirror commands.'
 ---
 = Troubleshooting transition issues when using SnapMirror

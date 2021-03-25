@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_transition_terminology.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, terminology
 summary: 'Understanding the transition terminology related to the 7-Mode Transition Tool helps you to understand the transition process.'
 ---
 = Transition terminology

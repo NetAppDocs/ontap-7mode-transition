@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_gathering_pretransition_information_from_inventory_assessment_workbook.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, pretransition, information, inventory, assessment, workbook
 summary: 'There is information in the Inventory Assessment Workbook that you need in various phases of the transition. You should gather and record this information before you begin the transition so that you can reference it as needed throughout the process.'
 ---
 = Gathering pretransition information from the Inventory Assessment Workbook
@@ -11,6 +11,7 @@ summary: 'There is information in the Inventory Assessment Workbook that you nee
 [.lead]
 There is information in the _Inventory Assessment Workbook_ that you need in various phases of the transition. You should gather and record this information before you begin the transition so that you can reference it as needed throughout the process.
 
+.Steps
 . Use the Inventory Collect Tool (ICT) to generate the _Inventory Assessment Workbook_.
 . Open the _Inventory Assessment Workbook_.
 . Go to the *LUN* tab.

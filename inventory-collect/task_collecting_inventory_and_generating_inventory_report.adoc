@@ -1,7 +1,7 @@
 ---
 permalink: inventory-collect/task_collecting_inventory_and_generating_inventory_report.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, collect, inventory, generating, inventory, report, transition
 summary: 'You can collect information about the Data ONTAP systems \(7-Mode systems and nodes of the cluster\), switches, hosts, and host applications. By using this information, you can generate inventory report that contains detailed information about the 7-Mode systems, hosts, and host applications for transition assessment.'
 ---
 = Collecting inventory and generating inventory report
@@ -11,16 +11,14 @@ summary: 'You can collect information about the Data ONTAP systems \(7-Mode syst
 [.lead]
 You can collect information about the Data ONTAP systems (7-Mode systems and nodes of the cluster), switches, hosts, and host applications. By using this information, you can generate inventory report that contains detailed information about the 7-Mode systems, hosts, and host applications for transition assessment.
 
-* You must have downloaded the ict.exe file from the NetApp Support Site.
+* You must have downloaded the `ict.exe` file from the NetApp Support Site.
 * You must have the user name, password, and IP addresses of the storage systems and hosts for which the inventory report is required.
 * The user name for the storage system and hosts must have sufficient privileges to execute the commands.
 * If you are adding multiple systems for inventory collection, you must have created a text file that is encoded in ASCII or UTF-8 format and contains the system details, one system per line.
 +
 Each system detail must be in the following format:
 +
-----
-(ontap|windows|vmware|linux|cisco|brocade)://[(domain_user\\user):[password]@](host_name|ip)
-----
+`(ontap|windows|vmware|linux|cisco|brocade)://[(_domain_user__\\__user__):_[password]@](host_name|ip)__`
 +
 If you provide `*` as the password, you are prompted to enter the password at the command line.
 
@@ -35,31 +33,34 @@ The Inventory Collect Tool can collect configuration information from a maximum 
 NOTE: You should avoid performing inventory collection operations on active storage controllers during peak hours.
 
 . In the Windows command prompt, navigate to the path where the Inventory Collect Tool is downloaded.
-. Generate the inventory report by running the ict command with the system IP address and credentials:
+. Generate the inventory report by running the `ict` command with the system IP address and credentials:
 +
+[options="header"]
 |===
 | If you want to provide information...| Enter the following command...
 a|
 For each system by using the command-line interface
 a|
-`+ict --cmd collect --output filename (ontap|windows|vmware|linux|cisco|brocade)://[(user|domain_user)[:(password|*)]@]hostname) ...+`
+`*ict --cmd collect --output _filename_ (ontap\|windows\|vmware\|linux\|cisco\|brocade)://[(_user_\|_domain_user_)[:(_password_\|***)]@]_hostname_) ...*
 
- ** filename is the name you want to provide for the inventory report.
- ** ontap|windows|vmware|linux is the system type.
+ ** `_filename_` is the name you want to provide for the inventory report.
+ ** `ontap\|windows\|vmware\|linux` is the system type.
 +
 For example, for a 7-Mode storage system, the system type is ontap and for a Linux host, the system type is linux.
 
- ** cisco|brocade are the supported FC switches.
- ** user|domain_user and password are the system credentials.
+ ** `cisco\|brocade` are the supported FC switches.
+ ** `_user\|domain_user_` and `_password_` are the system credentials.
 +
 If the controller has no password, you can enter the characters `\"\"` as the password.
 
- ** hostname is the IP address or host name of the controller, host, or switch.
+ ** `_hostname_` is the IP address or host name of the controller, host, or switch.
 
 a|
 For multiple systems in a text file
 a|
-`ict --cmd collect --output filename --input credentials_file.txt`     credentials_file.txt is the text file that contains the system details and credentials for multiple systems:
+`*ict --cmd collect --output _filename_ --input _credentials_file.txt_*`
+
+`_credentials_file.txt_` is the text file that contains the system details and credentials for multiple systems:
 
  ** Only text files encoded in ASCII format are supported.
  ** If you provide `*` as the password, you are prompted to enter the password at the command line.
@@ -67,12 +68,12 @@ a|
 
 +
 |===
-*Note:* If your storage system is running Windows 7 or later and you have restricted privileges to the folder where the output XML file for the inventory report will be stored, the output files are automatically stored in the VirtualStore directory and the application runs as usual.
 +
-The inventory report is created for a storage system and a Linux host. The reports generated are collected_data.xml and collected_data_InventoryWorkbook.xml:
+NOTE: If your storage system is running Windows 7 or later and you have restricted privileges to the folder where the output XML file for the inventory report will be stored, the output files are automatically stored in the `VirtualStore` directory and the application runs as usual.
++
+The inventory report is created for a storage system and a Linux host. The reports generated are `collected_data.xml` and `collected_data_InventoryWorkbook.xml`:
 +
 ----
-
 ict --cmd collect --output collected_data ontap://root:test123@hostname1 linux://root@hostname2
 ----
 +

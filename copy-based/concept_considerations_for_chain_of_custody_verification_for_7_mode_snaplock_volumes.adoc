@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_chain_of_custody_verification_for_7_mode_snaplock_volumes.html
 sidebar: sidebar
-keywords: 7-Mode Transition Tool
+keywords: ontap, copy, based, transition, chain, custody, verification, snaplock, volumes, considerations
 summary: 'You should be aware of the considerations for using Chain of Custody verification for 7-Mode SnapLock volumes.'
 ---
 = Considerations for using Chain of Custody verification for 7-Mode SnapLock volumes

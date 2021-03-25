@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_preparing_for_metrocluster_configuration_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, prepare, metrocluster, configuration
 summary: 'Before transitioning to a MetroCluster configuration, you must understand the requirements and considerations for transitioning 7-Mode volumes to a MetroCluster configuration in ONTAP.'
 ---
 = Preparing for MetroCluster configuration transition
@@ -14,7 +14,7 @@ Before transitioning to a MetroCluster configuration, you must understand the re
 == Prerequisites
 
 * The MetroCluster configuration in ONTAP must already be set up.
-* The SVM type must be sync-source.
+* The SVM type must be `sync-source`.
 * The 7-Mode controllers must not be in a taken over state or waiting for a giveback.
 * The nodes in the MetroCluster configuration in ONTAP must not be switched over or waiting for a switchback.
 

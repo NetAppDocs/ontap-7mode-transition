@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_preparing_windows_guest_operating_systems_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, windows, guest, operating, systems
 summary: 'If your Windows VMs use physical compatible RDM \(PTRDM\) devices, you must take the disks offline on the Windows VM before transition. You can use Disk Manager to take the disks offline.'
 ---
 = Preparing Windows guest operating systems for transition

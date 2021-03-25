@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_reattaching_rdm_to_vms_using_vsphere_client.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, rdm, vm, vshpere, client
 summary: 'After transition of an ESXi host using the 7-Mode Transition Tool \(7MTT\), you must reattach your RDMs to virtual machines \(VMs\).'
 ---
 = Reattaching RDM to VMs using vSphere Client
@@ -13,6 +13,7 @@ After transition of an ESXi host using the 7-Mode Transition Tool (7MTT), you mu
 
 Your stale Raw Device Mappings (RDMs) must have been removed.
 
+.Steps
 . Open the ESXi host or vCenter server managing the ESXi host.
 . Right-click the VM, and then select *Edit Settings*.
 +

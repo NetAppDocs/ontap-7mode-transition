@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/concept_planning_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, plan, clustered, volumes, snapmirror
 summary: 'Before copying data from 7-Mode volumes to clustered ONTAP volumes, you must understand when to use SnapMirror to perform the transition and review the information for supported 7-Mode versions and supported volumes for transition. You must also be aware of certain transition considerations.'
 ---
 = Planning for transition

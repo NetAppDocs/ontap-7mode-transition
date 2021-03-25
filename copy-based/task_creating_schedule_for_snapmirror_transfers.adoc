@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_creating_schedule_for_snapmirror_transfers.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, create, data, copy, schedule, snapmirror, transfer
 summary: 'You can create data copy schedules to effectively manage the transition data copy operations for the volumes in a project. You can also specify the number of concurrent SnapMirror transfers to run during that schedule to ensure that any replication operation does not fail due to the concurrent SnapMirror transfers reaching the maximum limit.'
 ---
 = Creating a data copy schedule for SnapMirror transfers
@@ -31,10 +31,12 @@ NOTE: If the projects use the same 7-Mode controller or cluster, ensure that the
 +
 NOTE: If a baseline is in progress and Snapshot checkpoint is not yet created, the tool does not abort the transfer but waits for the Snapshot checkpoint to be created before aborting the transfer.
 
+.Steps
 . Create schedules from the Data Copy Schedule page of the Dashboard by clicking *Edit Project*, and then selecting *Configure Schedule*.
 . Enter a name for the new schedule.
 . In the Recurring Days pane, select the days when the data copy operation should run.
 +
+[options="header"]
 |===
 | If you want to run the data copy operations...| Then...
 a|
@@ -93,6 +95,7 @@ The maximum number of concurrent transfers based on the percentage option is 50%
 In this scenario, the tool sets the maximum number of concurrent volume SnapMirror transfers to 25, which is the lowest of the two values.
  .. Specify the maximum bandwidth in MB/s (throttle) by doing one of the following:
 +
+[options="header"]
 |===
 | If you want to...| Then...
 a|
@@ -117,6 +120,7 @@ The schedules become effective only when the project is in data copy or apply co
 
 Consider a 7-Mode controller that supports 100 concurrent SnapMirror transfers with 75 DR relationships. The business requirements need SnapMirror operations to run during the following timings:
 
+[options="header"]
 |===
 | Days| Time| Currently used SnapMirror transfers
 a|
@@ -150,9 +154,10 @@ a|
 |===
 You can create the following data copy schedules to manage your transition data copy operations:
 
+[options="header"]
 |===
 | Schedule| Option| Value
-a|
+.7+a|
 peak_hours
 a|
 Days Range
@@ -173,7 +178,7 @@ a|
 a|
 Maximum number of concurrent transfers
 a|
- 
+
 a|
 Throttle (MBps)
 a|
@@ -182,7 +187,7 @@ a|
 Update Frequency
 a|
 0:00
-a|
+.7+a|
 dr_active
 a|
 Days Range
@@ -199,7 +204,7 @@ a|
 a|
 Percentage of maximum number of concurrent transfers
 a|
- 
+
 a|
 Maximum number of concurrent transfers
 a|
@@ -212,7 +217,7 @@ a|
 Update Frequency
 a|
 0:30
-a|
+.7+a|
 non_peak_non_dr1
 a|
 Days Range
@@ -233,7 +238,7 @@ a|
 a|
 Maximum number of concurrent transfers
 a|
- 
+
 a|
 Throttle (MBps)
 a|
@@ -242,7 +247,7 @@ a|
 Update Frequency
 a|
 1:00
-a|
+.7+a|
 non_peak_non_dr2
 a|
 Days Range
@@ -263,7 +268,7 @@ a|
 a|
 Maximum number of concurrent transfers
 a|
- 
+
 a|
 Throttle (MBps)
 a|
@@ -272,7 +277,7 @@ a|
 Update Frequency
 a|
 1:00
-a|
+.7+a|
 week_ends
 a|
 Days Range
@@ -293,7 +298,7 @@ a|
 a|
 Maximum number of concurrent transfers
 a|
- 
+
 a|
 Throttle (MBps)
 a|

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_preparing_7_mode_systems_for_inventory_collection.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, prepare, host, assessment
 summary: 'You must ensure that the 7-Mode systems and hosts meet certain network and protocol requirements for successfully generating an assessment report.'
 ---
 = Preparing the 7-Mode systems and hosts for transition assessment
@@ -11,25 +11,46 @@ summary: 'You must ensure that the 7-Mode systems and hosts meet certain network
 [.lead]
 You must ensure that the 7-Mode systems and hosts meet certain network and protocol requirements for successfully generating an assessment report.
 
-. Enable HTTPS on the 7-Mode system: `options httpd.admin.ssl.enable on`
-. Enable TLS on the 7-Mode system: `options tls.enable on`
+.Steps
+. Enable HTTPS on the 7-Mode system:
++
+`*options httpd.admin.ssl.enable on*`
+. Enable TLS on the 7-Mode system:
++
+`*options tls.enable on*`
 +
 IMPORTANT: The best practice is to enable TLS because of the security vulnerabilities in SSLv3.
 
 . Enable SSL and disable SSLv2 and SSLv3 on the 7-Mode system:
- .. Set up and start SSL: `secureadmin setup ssl`
- .. Enable SSL: `options ssl.enable on`
- .. Disable SSLv2 and SSLv3: `options ssl.v2.enable off``options ssl.v3.enable off`
+.. Set up and start SSL:
++
+`*secureadmin setup ssl*`
+.. Enable SSL:
++
+`*options ssl.enable on*`
+.. Disable SSLv2 and SSLv3:
++
+`*options ssl.v2.enable off*`
++
+`*options ssl.v3.enable off*`
 +
 IMPORTANT: The best practice is to disable SSLv2 and SSLv3 to avoid security vulnerabilities.
 . Enable SSH on the 7-Mode system:
- .. Set up SSH on the 7-Mode system: `secureadmin setup -f ssh`
+ .. Set up SSH on the 7-Mode system:
 +
-The -f option forces the setup to run even if the SSH server is already configured.
+`*secureadmin setup -f ssh*`
++
+The `-f` option forces the setup to run even if the SSH server is already configured.
 
- .. Enable SSH: `secureadmin enable ssh2`
- .. Enable password authentication on the SSH server: `options ssh.passwd_auth.enable`
- .. Enable SSH access to the host: `options ssh.access`
+ .. Enable SSH:
++
+`*secureadmin enable ssh2*`
+ .. Enable password authentication on the SSH server:
++
+`*options ssh.passwd_auth.enable*`
+ .. Enable SSH access to the host:
+ +
+ `*options ssh.access*`
 . Prepare your Windows host systems:
  ** Enable WMI access.
 +

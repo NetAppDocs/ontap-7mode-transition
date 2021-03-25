@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_mounting_hp_ux_host_luns_with_file_systems_after_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, mount, hp, ux, host, lun, file, system
 summary: 'After transitioning HP-UX host LUNs with file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must mount the LUNs.'
 ---
 = Mounting HP-UX host LUNs with file systems after transition
@@ -13,17 +13,34 @@ After transitioning HP-UX host LUNs with file systems from Data ONTAP operating 
 
 For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT). Copy-free transitions are not supported for HP-UX hosts.
 
-. Discover new clustered Data ONTAP LUNs: `ioscan -fnC disk`
-. Verify that the clustered Data ONTAP LUNs have been discovered: `sanlun lun show`
-. Verify that the lun-pathname for the clustered Data ONTAP LUNs is the same as the lun-pathname for the 7-Mode LUNs prior to transition.
-. Verify that the output in the mode column has changed from 7 to C.
-. Use the mapfile file to import the volume group: `vgimport -s -v -m /tmp/mapfile.vg01 /dev/vg01"`
-. Activate the logical volumes: `vgchange -a y vg_name`
-. Convert the legacy Device Special Filename (DSF) to persistent DSF: `vgdsf -c /dev/vg01`
-. Verify that the VG Status is displayed as available: `vgdisplay`
-. Manually mount each of the devices: `mount -F vxfs -o largefiles device_namemount_point`
+.Steps
+. Discover new clustered Data ONTAP LUNs:
++
+`*ioscan -fnC disk*`
+. Verify that the clustered Data ONTAP LUNs have been discovered:
++
+`*sanlun lun show*`
+. Verify that the `lun-pathname` for the clustered Data ONTAP LUNs is the same as the `lun-pathname` for the 7-Mode LUNs prior to transition.
+. Verify that the output in the mode column has changed from `7` to `C`.
+. Use the `mapfile` file to import the volume group:
++
+`*vgimport -s -v -m /tmp/mapfile.vg01 /dev/vg01"*`
+. Activate the logical volumes:
++
+`*vgchange -a y _vg_name_*`
+. Convert the legacy Device Special Filename (DSF) to persistent DSF:
++
+`*vgdsf -c /dev/vg01*`
+. Verify that the VG Status is displayed as available:
++
+`*vgdisplay*`
+. Manually mount each of the devices:
++
+`*mount -F vxfs -o largefiles _device_name mount_point_*`
 . Run the fsck command if you are prompted to do so.
-. Verify the mount points: `bdf`
+. Verify the mount points:
++
+`*bdf*`
 +
 The following example shows how the mount points should be displayed:
 +

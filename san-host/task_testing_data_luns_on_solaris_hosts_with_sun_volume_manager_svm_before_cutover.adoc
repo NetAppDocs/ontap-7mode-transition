@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_testing_data_luns_on_solaris_hosts_with_sun_volume_manager_svm_before_cutover.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, testing, data, solaris, sun, volume, manager, cutover, copy, based
 summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to transition your Solaris host ZFS data LUNs, you can test your transitioned clustered Data ONTAP LUNs to verify that you can mount your MPIO device before the cutover phase. Your source host can continue to run I/O to your source 7-Mode LUNs during testing.'
 ---
 = Testing data LUNs on Solaris hosts with Sun Volume Manager before the cutover phase of copy-based transitions
@@ -19,10 +19,23 @@ You should maintain hardware parity between the test host and the source host, a
 
 Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
 
-. On the production host, disable the disk sets: `metaset -s svm -t``metaset -s svm -A disable``metaset -s svm -r``metaset -s svm -P``metaset`
+.Steps
+. On the production host, disable the disk sets:
++
+`*metaset -s svm -t*`
++
+`*metaset -s svm -A disable*`
++
+`*metaset -s svm -r*`
++
+`*metaset -s svm -P*`
++
+`*metaset*`
 . After the baseline data copy is complete, select *Test Mode* in the 7MTT user interface (UI).
 . In the 7MTT UI, click *Apply Configuration*.
-. In the production host, import the disk sets: `metaimport –s set-name`
+. In the production host, import the disk sets:
++
+`*metaimport –s _set-name_*`
 +
 ----
 # metaimport -s svm
@@ -54,13 +67,27 @@ Device                                           Reloc  Device ID
 ----
 
 . On the test host, rescan your new clustered Data ONTAP LUNs:
- .. Identify the FC host ports (type fc-fabric): `#cfgadm –l`
- .. Unconfigure the first fc-fabric port: `#cfgadm –c unconfigure c1`
- .. Configure the first fc-fabric port: `#cfgadm –c unconfigure c2`
+ .. Identify the FC host ports (type fc-fabric):
+ +
+`*#cfgadm –l*`
+ .. Unconfigure the first fc-fabric port:
+ +
+`*#cfgadm –c unconfigure c1*`
+ .. Configure the first fc-fabric port:
+ +
+`*#cfgadm –c unconfigure c2*`
  .. Repeat the steps for the other fc-fabric ports.
- .. Display information about the host ports and their attached devices: `# cfgadm –al`
- .. Reload the driver: `# devfsadm –Cv``# devfsadm –i iscsi`
-. Verify that your clustered Data ONTAP LUNs are present: `sanlun lun show`
+ .. Display information about the host ports and their attached devices:
+ +
+`*# cfgadm –al*`
+ .. Reload the driver:
+ +
+`*# devfsadm –Cv*`
++
+`*# devfsadm –i iscsi*`
+. Verify that your clustered Data ONTAP LUNs are present:
++
+`*sanlun lun show*`
 +
 ----
 # sanlun lun show
@@ -73,7 +100,9 @@ vs_5           /vol/ufs/ufs2    /dev/rdsk/c5t600A0980383030444D2B466542485937d0s
 vs_5           /vol/ufs/ufs1    /dev/rdsk/c5t600A0980383030444D2B466542485936d0s2 scsi_vhci0 FCP        5g      C
 ----
 
-. Verify that the Sun Volume Manager planned to test is available for import: `metaimport –r –v`
+. Verify that the Sun Volume Manager planned to test is available for import:
++
+`*metaimport –r –v*`
 +
 ----
 # metaimport -r -v
@@ -83,9 +112,11 @@ c5t600A0980383030444D2B466542485937d0           16         8192      a m     luo
 c5t600A0980383030444D2B466542485936d0           16         8192      a       luo
 ----
 
-. Import the metaset with a new name: `metaimport –s set-namedisk-id`
+. Import the metaset with a new name:
 +
-Disk-id is obtained from the metaimport --r --v command.
+`*metaimport –s _set-name disk-id_*`
++
+Disk-id is obtained from the `metaimport --r --v` command.
 +
 ----
 # metaimport -s svm c5t600A0980383030444D2B466542485937d0
@@ -96,8 +127,12 @@ More info:
   metaimport -r -v c5t600A0980383030444D2B466542485937d0
 ----
 
-. Check whether the metaset is available: `metaset`
-. Run the file system check: `fsck -F ufs /dev/md/svm/rdsk/d1`
+. Check whether the metaset is available:
++
+`*metaset*`
+. Run the file system check:
++
+`*fsck -F ufs /dev/md/svm/rdsk/d1*`
 . Use the mount command to manually mount.
 . Perform testing as needed.
 . Shut down the test host.

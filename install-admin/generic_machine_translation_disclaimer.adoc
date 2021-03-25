@@ -1,8 +1,8 @@
 ---
 permalink: install-admin/generic_machine_translation_disclaimer.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, install, machine, translation
+summary: 'See important information about localized content at netapp.com.'
 ---
 = Machine translation
 :icons: font

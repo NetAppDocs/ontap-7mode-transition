@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_to_transition_solaris_host_data_luns_with_sun_volume_manager.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, transition, solaris, host, lun, sun, volume, manager
 summary: 'Before you transition Solaris host data LUNs with Sun Volume Manager from ONTAP operating in 7-Mode to clustered ONTAP, you must gather information you need for the transition process.'
 ---
 = Preparing to transition Solaris host LUNs with Sun Volume Manager
@@ -13,7 +13,10 @@ Before you transition Solaris host data LUNs with Sun Volume Manager from ONTAP 
 
 This task applies to copy-based transitions and copy-free transitions.
 
-. Display your LUNs to identify the name of the LUNs to be transitioned: `lun show`
+.Steps
+. Display your LUNs to identify the name of the LUNs to be transitioned:
++
+`*lun show*`
 +
 ----
  fas8040-shu01> lun show
@@ -23,7 +26,9 @@ This task applies to copy-based transitions and copy-free transitions.
         /vol/zfs/zfs2                  6g (6442450944)    (r/w, online, mapped)
 ----
 
-. On the host, locate the device file name for the LUN: `#sanlun lun show`
+. On the host, locate the device file name for the LUN:
++
+`*#sanlun lun show*`
 +
 The device file name is listed in the `device filename` column.
 +
@@ -38,7 +43,11 @@ fas8040-shu01        /vol/ufs/ufs2    /dev/rdsk/c0t60A98000383035356C2447384D396
 fas8040-shu01        /vol/ufs/ufs1    /dev/rdsk/c0t60A98000383035356C2447384D396548d0s2 scsi_vhci0 FCP        5g
 ----
 
-. List and record the SVM, and then get the disks associated with the SVM: `metaset``metaset -s set-name`
+. List and record the SVM, and then get the disks associated with the SVM:
++
+`*metaset*`
++
+`*metaset -s _set-name_*`
 +
 ----
 # metaset
@@ -70,7 +79,9 @@ Device                                           Reloc  Device ID
 /dev/dsk/c0t60A98000383035356C2447384D39654Ad0   Yes    id1,sd@n60a98000383035356c2447384d39654a
 ----
 
-. List and record the mount points: `df –ah`
+. List and record the mount points:
++
+`*df –ah*`
 +
 ----
 # df -ah

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_applying_7_mode_configurations.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, apply, 7, mode, configuration
 summary: 'After the baseline data copy is completed, you can copy and apply all configurations from the 7-Mode system \(including protocols and services configuration\) to the ONTAP volumes. If the target cluster is running any version from ONTAP 8.3.2 and later supported releases, SAN configuration is transitioned in this phase.'
 ---
 = Applying 7-Mode configurations
@@ -26,9 +26,11 @@ If the project contains SnapLock Compliance volumes, then the Snapshot Schedule 
 +
 See xref:concept_considerations_for_transitioning_of_snaplock_compliance_volumes.adoc[Considerations for transitioning of SnapLock Compliance volumes].
 
+.Steps
 . From the Dashboard, select the project.
 . Apply the configurations:
 +
+[options="header"]
 |===
 | If you want to apply all configurations in...| Then...
 a|
@@ -46,7 +48,6 @@ The ONTAP volumes are made read/write and you can test the configurations and da
 
  .. Select *Apply configuration in test mode* in the Apply Configuration (Precutover) dialog box.
 
-+
 |===
 
 . Select the *Customize the number of concurrent SnapMirror transfers and Throttle limit for this operation* check box to specify the number of SnapMirror data copy operations and throttle limit:
@@ -63,7 +64,6 @@ By default, the tool uses maximum throttle for configuration transition.
 NOTE: This option is enabled only when Kerberos is configured on the source 7-Mode storage system.
 
  .. Enter the Kerberos server details such as the host name, IP address, user name, and password.
-
 +
 NOTE: To transition the Kerberos configuration, at least one LIF has to be transitioned as part of the project and the LIF must be resolvable to a host name.
 

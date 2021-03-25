@@ -1,8 +1,8 @@
 ---
 permalink: snapmirror/index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, snapmirror, transition, index, data
+summary: 'Index for 7-Mode Data Transition Using SnapMirror Technology.'
 ---
 = 7-Mode Data Transition Using SnapMirror® Technology
 :icons: font

@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_esxi_versions_and_features_supported_for_san_transitions_using_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: esxi, ontap, san, host, transition, versions, san, 7mtt, features
 summary: 'Only certain versions and features of ESXi are supported for SAN transitions using the 7-Mode Transition Tool \(7MTT\).'
 ---
 = ESXi versions and features supported for SAN transitions using 7MTT

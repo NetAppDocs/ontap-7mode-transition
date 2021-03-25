@@ -1,8 +1,8 @@
 ---
 permalink: inventory-collect/index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: 7, mode, ontap, host, storage, information, collection
+summary: 'Index for Host and Storage Information Collection Guide.'
 ---
 = Host and Storage Information Collection Guide
 :icons: font

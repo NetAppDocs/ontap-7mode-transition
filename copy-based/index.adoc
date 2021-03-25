@@ -1,8 +1,8 @@
 ---
 permalink: copy-based/index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, copy, based, transition, index
+summary: 'Index for 7-Mode Transition Tool Copy-Based Transition Guide.'
 ---
 = Copy-Based Transition Guide
 :icons: font

@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/reference_copy_free_transition_cabling_worksheet.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, cabling, worksheet
 summary: 'You can use the copy-free transition cabling worksheet to plan your cabling. You must record information about the ports and disk shelves connected to the 7-Mode controllers and target cluster nodes. You should also record the ports to use for connecting the 7-Mode disk shelves to the target cluster nodes.'
 ---
 = Copy-free transition cabling worksheet
@@ -19,11 +19,12 @@ image::../media/cft_cabling_plan_worksheet.gif[]
 
 == Sample cabling worksheet
 
+[options="header"]
 |===
-| 7-Mode cabling| Clustered Data ONTAP cabling
-| Controller A (host name): 7hostA| Node A (host name): cluster1-01
-| Location: Colorado Floor: Third Rack: 8| Location: Colorado Floor: Fifth Rack: 3
-| Module A Ports| Module B Ports| Shelf Type/Asset Tag| Shelf IDs| Module A Ports| Module B Ports| Shelf Type/Asset Tag| Shelf IDs
+4+| 7-Mode cabling 4+| Clustered Data ONTAP cabling
+4+| Controller A (host name): 7hostA 4+| Node A (host name): cluster1-01
+4+| Location: Colorado Floor: Third Rack: 8 4+| Location: Colorado Floor: Fifth Rack: 3
+| Module A Ports | Module B Ports | Shelf Type/Asset Tag | Shelf IDs | Module A Ports | Module B Ports | Shelf Type/Asset Tag | Shelf IDs
 a|
 1a
 a|
@@ -88,13 +89,13 @@ a|
 DS4243/143921-4
 a|
 14-15
-a|
+4+a|
 *Controller B (host name): 7hostB*
-a|
+4+a|
 *Node B (host name):cluster1-02*
-a|
+4+a|
 *Location: Colorado Floor: Third Rack: 8*
-a|
+4+a|
 *Location: Colorado Floor: Fifth Rack: 3*
 a|
 *Module A Ports*

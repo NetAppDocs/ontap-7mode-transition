@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_testing_data_luns_on_solaris_hosts_with_zfs_file_system_before_cutover.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, data, lun, solaris, zfs, cutover, copy, based
 summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) 2.2 or later and Data ONTAP 8.3.2 or later to transition your Solaris host ZFS data LUNs, you can test your transitioned clustered Data ONTAP LUNs to verify that you can mount your MPIO device before the cutover phase.'
 ---
 = Testing data LUNs on Solaris hosts with ZFS file system before the cutover phase of copy-based transitions
@@ -22,7 +22,9 @@ You should maintain hardware parity between the test host and the source host, a
 
 Your clustered Data ONTAP LUNs are in read/write mode during testing. They convert to read-only mode when testing is complete and you are preparing for the cutover phase.
 
-. On the production (source) host, export the zpool: `#zpool export pool-name`
+. On the production (source) host, export the zpool:
++
+`*#zpool export _pool-name_*`
 +
 ----
 # zpool export n_pool
@@ -44,20 +46,36 @@ config:
 +
 NOTE: After this step, you can set the application back to online and start I/O operations to 7-Mode LUNs. Subsequent steps do not cause any application disruptions.
 
-. On the production host, import the zpool: `#zpool import pool-name`
+. On the production host, import the zpool:
++
+`*#zpool import _pool-name_*`
 +
 ----
 # zpool import n_pool
 ----
 
 . On the test host, rescan your new clustered Data ONTAP LUNs:
- .. Identify the FC host ports (type fc-fabric): `#cfgadm –l`
- .. Unconfigure the first fc-fabric port: `#cfgadm –c unconfigure c1`
- .. Configure the 1st fc-fabric port: `#cfgadm –c unconfigure c2`
+ .. Identify the FC host ports (type fc-fabric):
+ +
+`*#cfgadm –l*`
+ .. Unconfigure the first fc-fabric port:
+ +
+`*#cfgadm –c unconfigure c1*`
+ .. Configure the 1st fc-fabric port:
+ +
+`*#cfgadm –c unconfigure c2*`
  .. Repeat the steps for other fc-fabric ports.
- .. Display information about the host ports and their attached devices: `# cfgadm –al`
- .. Reload the driver: `# devfsadm –Cv``# devfsadm –i iscsi`
-. Verify that your clustered Data ONTAP LUNs are present: `#sanlun lun show`
+ .. Display information about the host ports and their attached devices:
+ +
+`*# cfgadm –al*`
+ .. Reload the driver:
+ +
+`*# devfsadm –Cv*`
++
+`*# devfsadm –i iscsi*`
+. Verify that your clustered Data ONTAP LUNs are present:
++
+`*#sanlun lun show*`
 +
 ----
 # sanlun lun show
@@ -70,7 +88,9 @@ vs_5           /vol/ufs/ufs2    /dev/rdsk/c5t600A0980383030444D2B466542485937d0s
 vs_5           /vol/ufs/ufs1    /dev/rdsk/c5t600A0980383030444D2B466542485936d0s2 scsi_vhci0 FCP        5g      C
 ----
 
-. Verify that the zpool planned to test is available for import: `#zpool import`
+. Verify that the zpool planned to test is available for import:
++
+`*#zpool import*`
 +
 ----
 # zpool import
@@ -86,8 +106,8 @@ config:
 ----
 
 . Import the zpool using the pool name or the pool ID:
- ** `#zpool import pool-name`
- ** `#zpool import pool-id`
+ ** `*#zpool import pool-name*`
+ ** `*#zpool import pool-id*`
 
 +
 ----
@@ -98,8 +118,8 @@ config:
 #zpool import 5049703405981005579
 ----
 . Verify that the ZFS datasets are mounted:
- ** `zfs list`
- ** `df -ah`
+ ** `*zfs list*`
+ ** `*df -ah*`
 
 +
 ----

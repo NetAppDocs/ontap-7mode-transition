@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_when_to_revert_and_when_to_call_technical_support_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, roll, back, transition, technical, support
 summary: 'You can roll back without assistance when performing a rollback on test or lab clusters, but you must call technical support if you encounter problems during or after transition, or if you want to roll back a transition performed on a production cluster.'
 ---
 = When to roll back a transition and when to call technical support

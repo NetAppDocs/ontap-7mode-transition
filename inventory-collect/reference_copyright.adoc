@@ -1,8 +1,8 @@
 ---
 permalink: inventory-collect/reference_copyright.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: 7, mode, copyright, host, storage, information, collection, transition, copyright
+summary: 'Copyright information for Host and Storage Information Collection Guide'
 ---
 = Copyright
 :icons: font

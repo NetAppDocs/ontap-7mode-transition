@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_hp_ux_host_remediation.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, hp, ux, host, remediation
 summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) to move from Data ONTAP operating in 7-Mode to clustered Data ONTAP in a SAN environment, you must perform a series of steps on your HP-UX host before and after the transition to avoid transition complications.'
 ---
 = HP-UX host remediation

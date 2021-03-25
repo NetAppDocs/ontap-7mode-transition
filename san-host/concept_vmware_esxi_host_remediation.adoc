@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_vmware_esxi_host_remediation.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, esxi, host, remediation
 summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) to move from Data ONTAP operating in 7-Mode to clustered Data ONTAP in a SAN environment, you must perform a series of steps on your VMware ESXi hosts before the Data ONTAP transition. You must power down your hosts before cutover and you must perform another series of steps after transition before you can begin servicing data.'
 ---
 = VMware ESXi host remediation

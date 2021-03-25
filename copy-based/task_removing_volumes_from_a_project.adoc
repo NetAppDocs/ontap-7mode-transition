@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_removing_volumes_from_a_project.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, remove, volumes, project
 summary: 'You can remove the failed volumes from a project during the transition process and abort a volume SnapMirror relationship.'
 ---
 = Removing volumes from a project

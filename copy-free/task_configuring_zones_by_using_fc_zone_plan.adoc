@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_configuring_zones_by_using_fc_zone_plan.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, zones, fc, plans
 summary: 'Before transitioning a SAN FC environment, you must configure zones by using the FC zone planner to group the initiator hosts and targets.'
 ---
 = Configuring zones by using the FC zone plan

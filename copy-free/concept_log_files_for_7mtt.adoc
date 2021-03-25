@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_log_files_for_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, log, files, tool
 summary: 'The 7-Mode Transition Tool creates log files that provide processing details of the transition operations that have occurred on your system. The log files are located in the logs directory of the path where 7-Mode Transition Tool is installed.'
 ---
 = Log files for the 7-Mode Transition Tool
@@ -15,51 +15,53 @@ You can also use the EMS messages related to SnapMirror logs from the 7-Mode sys
 
 The following table lists the log files that are related to a particular transition project:
 
+[options="header"]
 |===
 | Log file path| Contains information about...
 a|
-project_name/transition.log
+`_project_name_/transition.log`
 a|
 Debug messages that are specific to a project
 a|
-project_name/zapi-outbound.log
+`_project_name_/zapi-outbound.log`
 a|
 Output of all the Data ONTAP APIs that are executed by 7-Mode Transition Tool for a particular project
 |===
 The following table lists the log files that are not related to any particular project:
 
+[options="header"]
 |===
 | Log file path| Contains information about...
 a|
-transition-gui.log
+`transition-gui.log`
 a|
 Entries of all the actions performed by using the web interface
 a|
-default/audit.log
+`default/audit.log`
 a|
 
 * All the parameters, such as HTTP or HTTPS port and log directory path, that are used by the tool every time 7-Mode Transition Tool is run
 * All the transition commands that are executed with the outputs
 
 a|
-default/default/transition.log
+`default/default/transition.log`
 a|
 Debug messages that are not specific to any project
 a|
-default/STREAM_MANAGEMENT/stream_management.log
+`default/STREAM_MANAGEMENT/stream_management.log`
 a|
 Debug messages that are logged by the scheduler while managing the schedules and which do not belong to any project
 a|
-default/default/zapi-outbound.log
+`default/default/zapi-outbound.log`
 a|
 Output of all the Data ONTAP APIs that are executed by 7-Mode Transition Tool and which do not belong to any project
 a|
-default/STREAM_MANAGEMENT/zapi-outbound.log
+`default/STREAM_MANAGEMENT/zapi-outbound.log`
 a|
 Output of all the Data ONTAP APIs that are executed by the 7-Mode Transition Tool scheduler while managing the schedules and which do not belong to any project
 
 a|
-server-console.log
+`server-console.log`
 a|
 Log entries of all the packet exchanges done with the 7-Mode Transition Tool server. This file helps in troubleshooting issues related to a server crash.
 

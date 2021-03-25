@@ -1,8 +1,8 @@
 ---
 permalink: copy-free/index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, transition, copy, free, index
+summary: 'Index for the Copy-Free Transition Guide.'
 ---
 = Copy-Free Transition Guide
 :icons: font

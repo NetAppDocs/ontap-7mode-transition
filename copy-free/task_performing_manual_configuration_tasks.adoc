@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_performing_manual_configuration_tasks.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, performing, manual, configuration
 summary: 'You must manually perform some configuration tasks that are required for the workloads and applications that are accessing the transitioned volumes. You can obtain the list of manual tasks from the precheck results.'
 ---
 = Performing manual configuration tasks after transition
@@ -11,6 +11,7 @@ summary: 'You must manually perform some configuration tasks that are required f
 [.lead]
 You must manually perform some configuration tasks that are required for the workloads and applications that are accessing the transitioned volumes. You can obtain the list of manual tasks from the precheck results.
 
+.Steps
 . Perform the tasks listed in the precheck results for configuring features that were not transitioned by the tool or that require customization for your environment.
 +
 xref:concept_supported_and_unsupported_name_services_configurations.adoc[Name services transition: supported and unsupported configurations, and required manual steps]

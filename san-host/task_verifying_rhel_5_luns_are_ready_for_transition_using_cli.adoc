@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_verifying_rhel_5_luns_are_ready_for_transition_using_cli.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, rhel, 5, lun, cli
 summary: 'If your Red Hat Enterprise Linux \(RHEL\) 5 LUN is configured with a device mapper multipath \(DMMP\), you should verify that a file system is not configured before you transition the LUN from Data ONTAP operating in 7-Mode to clustered Data ONTAP.'
 ---
 = Verifying that RHEL 5 LUNs are ready for transition using the CLI
@@ -11,11 +11,18 @@ summary: 'If your Red Hat Enterprise Linux \(RHEL\) 5 LUN is configured with a d
 [.lead]
 If your Red Hat Enterprise Linux (RHEL) 5 LUN is configured with a device mapper multipath (DMMP), you should verify that a file system is not configured before you transition the LUN from Data ONTAP operating in 7-Mode to clustered Data ONTAP.
 
-. Locate the SCSI device name for the LUN to be transitioned: `sanlun lunshow`
-. Identify the DMMP device name for the LUN: `multipath -11`
+.Steps
+. Locate the SCSI device name for the LUN to be transitioned:
 +
-The DMMP device name can be a device handle ID (WWID) such as 360a980003753456258244538554b4b53, or it can be an alias, such as, dmmp_raw_lun.
+`*sanlun lunshow*`
+. Identify the DMMP device name for the LUN:
++
+`*multipath -11*`
++
+The DMMP device name can be a device handle ID (WWID) such as `360a980003753456258244538554b4b53`, or it can be an alias, such as, `dmmp_raw_lun`.
 
-. Verify that the LUN does not have a file system: `dumpe2fs/dev/mapper/DMMP device name`
+. Verify that the LUN does not have a file system:
++
+`*dumpe2fs/dev/mapper/__DMMP device name__*`
 +
 If the LUN does not have a file system, Couldn't find valid filesystem superblock is displayed in the output.

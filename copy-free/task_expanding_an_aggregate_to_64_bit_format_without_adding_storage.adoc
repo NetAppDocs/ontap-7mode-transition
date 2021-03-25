@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_expanding_an_aggregate_to_64_bit_format_without_adding_storage.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, expanding, aggregate, 64, bit
 summary: 'If your system contains 32-bit aggregates, you must expand them to the 64-bit format on your 7-Mode system before transitioning to Data ONTAP 8.3 or later versions, because those versions of Data ONTAP do not support the 32-bit format.'
 ---
 = Expanding an aggregate to the 64-bit format
@@ -15,10 +15,16 @@ If your system contains 32-bit aggregates, you must expand them to the 64-bit fo
 
 For volumes in a SnapMirror relationship, the destination volume inherits the format of the source volume while the mirror is intact. If the aggregate you are expanding contains a destination volume whose source is a 32-bit volume and you break the mirror before expanding the aggregate, the destination volume is expanded to the 64-bit format. However, if you reestablish the mirror and the source volume is still 32-bit, the destination volume returns to the 32-bit format. For this reason, you must expand the aggregate containing the source volume before reestablishing the SnapMirror relationship if you want to expand all 32-bit volumes in the aggregate to the 64-bit format.
 
-. Enter advanced privilege mode: `priv set advanced`
-. Initiate the expansion: `aggr 64bit-upgrade start aggr_name`
+.Steps
+. Enter advanced privilege mode:
++
+`*priv set advanced*`
+. Initiate the expansion:
++
+`*aggr 64bit-upgrade start _aggr_name_*`
 . Perform the appropriate action:
 +
+[options="header"]
 |===
 | If the command...| Then...
 a|
@@ -28,18 +34,23 @@ Proceed to the next step.
 a|
 Indicates that one or more volumes could not be expanded because they did not have enough space
 a|
-Retry the command, adding the grow-all option.
+Retry the command, adding the `grow-all` option.
 a|
 Indicates that the expansion could not be completed for some other reason
 a|
 Perform the appropriate action, based on the issue outlined in the error message.
 |===
 
-. Display the status of the expansion: `aggr 64bit-upgrade status aggr_name`
+. Display the status of the expansion:
++
+`*aggr 64bit-upgrade status _aggr_name_*`
 +
 The current status of the expansion is displayed. When the message indicates that there is no upgrade in progress, the expansion is complete.
 
-. Confirm that all volumes in the aggregate are 64-bit format: `aggr 64bit-upgrade status aggr_name -all`
-. Return to administrative privilege mode: `priv set admin`
+. Confirm that all volumes in the aggregate are 64-bit format:
++
+`*aggr 64bit-upgrade status _aggr_name_ -all*`
+. Return to administrative privilege mode:
+`*priv set admin*`
 
 The aggregate is expanded to the 64-bit format. However, even if all volumes are expanded, some 32-bit Snapshot copies might remain. The presence of 32-bit Snapshot copies in the source volumes prevents an upgrade or transition to Data ONTAP 8.3 or later.

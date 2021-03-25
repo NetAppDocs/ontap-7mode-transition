@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_how_nfs_exports_are_transitioned.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, nfs, exports
 summary: 'You must be aware of how NFS exports are configured on the SVM after transition. You might have to perform some manual steps if the 7-Mode export configurations are not supported in ONTAP.'
 ---
 = How NFS exports are transitioned

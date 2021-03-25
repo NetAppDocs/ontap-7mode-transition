@@ -1,7 +1,7 @@
 ---
 permalink: install-admin/concept_system_requirements_for_7mtt_on_windows.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, install, system, requirements, windows, transition, tool
 summary: 'You must ensure that the Windows host meets the required configuration to install and run the 7-Mode Transition Tool.'
 ---
 = System requirements for installing the 7-Mode Transition Tool on Windows systems
@@ -11,9 +11,7 @@ summary: 'You must ensure that the Windows host meets the required configuration
 [.lead]
 You must ensure that the Windows host meets the required configuration to install and run the 7-Mode Transition Tool.
 
-Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported hosts and known issues.
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[Release Notes] for the latest information about supported hosts and known issues.
 
 == Hardware requirements
 
@@ -41,7 +39,8 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode 
   *** Windows Server 2019 Datacenter
  ** For 7-Mode Transition Tool version 3.3.3, you can also use one of the following operating system versions:
   *** Windows 10 Professional
-*Note:* You can use a Windows virtual machine that meets the required software requirements and hardware requirements to install the 7-Mode Transition Tool.
++
+NOTE: You can use a Windows virtual machine that meets the required software requirements and hardware requirements to install the 7-Mode Transition Tool.
 * 64-bit Oracle Java Runtime Environment (JRE) 1.8 update 144
 +
 NOTE: If the Windows host does not have JRE or has 32-bit JRE installed, the 7-Mode Transition Tool installer automatically installs 64-bit JRE 1.8 update 144. If an earlier version of 64-bit JRE is installed, the installer automatically updates JRE to JRE 1.8 update 144.
@@ -58,9 +57,9 @@ To access the web interface, the Windows system on which the tool is installed m
 
 * Port 8443 of the 7-Mode Transition Tool server must be available.
 +
-If port 8443 is not available, or if you want to use a different port, you must change the port specified by the tool.https.port parameter in the $INSTALL_DIR\etc\conf\transition-tool.conf file.
+If port 8443 is not available, or if you want to use a different port, you must change the port specified by the `tool.https.port` parameter in the `$INSTALL_DIR\etc\conf\transition-tool.conf` file.
 +
-The best practice is to use HTTPS for accessing the web interface. However, if you want to use HTTP for accessing the web interface, port 8088 must be available. For an alternative to port 8088, you must change the port specified by the tool.http.port parameter in the transition-tool.conf file.
+The best practice is to use HTTPS for accessing the web interface. However, if you want to use HTTP for accessing the web interface, port 8088 must be available. For an alternative to port 8088, you must change the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
 +
 NOTE: You must restart the 7-Mode Transition Tool service after changing the port in the configuration file.
 
@@ -70,10 +69,10 @@ To transition netgroups and CIFS local users and groups, the following requireme
 
 * Port 8088 of the 7-Mode Transition Tool must be available.
 +
-For an alternative to port 8088, you must change the port specified by the tool.http.port parameter in the transition-tool.conf file, and then restart the 7-Mode Transition Tool service.
+For an alternative to port 8088, you must change the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file, and then restart the 7-Mode Transition Tool service.
 
 * Each node in the cluster must have at least one data LIF configured for the target SVM.
-* All of the SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the tool.http.port parameter in the transition-tool.conf file.
+* All of the SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
 +
 NOTE: You must ensure that firewalls do not block this traffic.
 

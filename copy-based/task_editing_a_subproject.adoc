@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_editing_a_subproject.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, edit, project
 summary: 'You can edit a project to add or remove volumes, and to modify the transition configurations.'
 ---
 = Editing a project
@@ -16,6 +16,7 @@ You can edit a project to add or remove volumes, and to modify the transition co
 
 You can edit a project to change the volumes that are selected for transition. You can also edit a project to change the SVM mapping, volume mapping, and interface mapping, as well as the data copy schedule. You cannot change the project type or the vFiler unit when editing a project.
 
-. From the Dashboard window, select the project that you want to edit.
+.Steps
+. From the *Dashboard* window, select the project that you want to edit.
 . Click *Edit Project*, and then select the required step from the drop-down list.
 . Complete the wizard to edit your project.

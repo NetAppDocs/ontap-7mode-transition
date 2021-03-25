@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_restrictions_during_preproduction_testing.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, preproduction, testing, restrictions
 summary: 'Some operations are blocked and some operations are not recommended during preproduction testing. These restrictions are imposed for allowing a rollback to 7-Mode if you do not want to commit the transition.'
 ---
 = Restrictions during preproduction testing
@@ -13,12 +13,15 @@ Some operations are blocked and some operations are not recommended during prepr
 
 == Operations that are blocked
 
+[options="header"]
 |===
 | Operation| Description
 a|
 Automatically deleting (autodelete) aggregate Snapshot copies
 a|
-Because the 7-Mode aggregate-level Snapshot copies created during the export operation are required in case of a rollback, the Snapshot copies are not deleted automatically when the used space in the aggregate grows. *Important:* You must monitor the free physical space in the aggregate and ensure that the aggregates do not run out of space during the testing.
+Because the 7-Mode aggregate-level Snapshot copies created during the export operation are required in case of a rollback, the Snapshot copies are not deleted automatically when the used space in the aggregate grows.
+
+IMPORTANT: You must monitor the free physical space in the aggregate and ensure that the aggregates do not run out of space during the testing.
 
 a|
 Moving volumes to another aggregate
@@ -64,20 +67,25 @@ You must commit the project before upgrading or reverting the target cluster nod
 a|
 Adding disks
 a|
-You cannot run the storage aggregate add-disks command in the admin privilege level. However, you can run this command in the advanced privilege level. *Important:* You must ensure that only the spare disks from the 7-Mode disk shelves are added for increasing the space in the transitioned aggregates. You must add spare disks by using the -disklist parameter (the -diskcount parameter must not be used).
+You cannot run the `storage aggregate add-disks` command in the admin privilege level. However, you can run this command in the advanced privilege level.
+
+IMPORTANT: You must ensure that only the spare disks from the 7-Mode disk shelves are added for increasing the space in the transitioned aggregates. You must add spare disks by using the `-disklist` parameter (the `-diskcount` parameter must not be used).
 
 a|
 Designating a transitioned volume as the SVM root volume
 a|
-You cannot run the volume make-vsroot command on the transitioned volumes.
+You cannot run the `volume make-vsroot` command on the transitioned volumes.
 |===
 
 == Operations that are not recommended
 
+[options="header"]
 |===
 | Operation| Corrective action before rollback
 a|
-Relocating aggregatesThe ownership of the transitioned aggregate is changed to its HA partner.
+Relocating aggregates
+
+The ownership of the transitioned aggregate is changed to its HA partner.
 
 a|
 Swap the aggregate ownership before rollback because the 7-Mode Transition Tool maps the aggregates to the 7-Mode controllers based on the target node mapping information saved in the project.

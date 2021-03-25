@@ -1,8 +1,8 @@
 ---
 permalink: install-admin/reference_trademark.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, install, trademark
+summary: 'Trademark information for 7-Mode Transition Tool Installation and Setup Guide.'
 ---
 = Trademark
 :icons: font

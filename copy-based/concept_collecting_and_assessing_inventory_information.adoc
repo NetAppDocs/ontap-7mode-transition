@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_collecting_and_assessing_inventory_information.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, collect, assess, inventory, information
 summary: 'You can collect inventory information from controllers, hosts, and FC switches. You can then assess features and functionalities of these systems, and identify how these features and functionalities work in the ONTAP version that is selected for transition.'
 ---
 = Collecting and assessing the inventory information

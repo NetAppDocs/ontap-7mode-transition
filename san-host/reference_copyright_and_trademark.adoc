@@ -1,8 +1,8 @@
 ---
 permalink: san-host/reference_copyright_and_trademark.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, san, host, transition, copyright, trademark
+summary: 'Copyright and trademark information for the SAN Host Transition and Remediation Guide.'
 ---
 = Copyright and trademark
 :icons: font

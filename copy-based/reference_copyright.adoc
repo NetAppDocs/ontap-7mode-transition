@@ -1,8 +1,8 @@
 ---
 permalink: copy-based/reference_copyright.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, copy, based, transition, copyright
+summary: 'Copyright information for 7-Mode Transition Tool Copy-Based Transition Guide.'
 ---
 = Copyright
 :icons: font

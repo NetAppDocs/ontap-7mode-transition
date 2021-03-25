@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_performing_on_demand_snapmirror_update_operation.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, perform, demand, snapmirror, updates
 summary: 'You can perform SnapMirror incremental updates for all the volumes before the cutover operation to reduce the cutover time.'
 ---
 = Performing on-demand SnapMirror updates

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_using_snapmirror_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, snapmirror
 summary: 'You can create data copy schedules and customize the SnapMirror data transfers for transition operations without affecting the existing 7-Mode to 7-Mode SnapMirror or SnapVault operations.'
 ---
 = Considerations for using SnapMirror for transition
@@ -15,7 +15,7 @@ You can create data copy schedules and customize the SnapMirror data transfers f
 
 During transition, the maximum number of concurrent SnapMirror transfers supported on the 7-Mode and ONTAP systems depend on the number of volume SnapMirror replication operations allowed for a specific storage system model.
 
-For information about the maximum number of concurrent volume SnapMirror transfers for your system model, see the _Data ONTAP Data Protection Online Backup and Recovery Guide for 7-Mode_.
+For information about the maximum number of concurrent volume SnapMirror transfers for your system model, see the link:https://library.netapp.com/ecm/ecm_get_file/ECMP1635994[Data ONTAP Data Protection Online Backup and Recovery Guide for 7-Mode].
 
 == Data copy schedules
 
@@ -43,7 +43,5 @@ You can specify two paths for transition by using a data copy IP address and a m
 xref:concept_guidelines_for_creating_a_data_copy_schedule.adoc[Considerations for creating a data copy schedule]
 
 xref:task_creating_schedule_for_snapmirror_transfers.adoc[Creating a data copy schedule for SnapMirror transfers]
-
-https://library.netapp.com/ecm/ecm_download_file/ECMP1368826[Data ONTAP 8.2 Data Protection Online Backup and Recovery Guide for 7-Mode]
 
 http://mysupport.netapp.com/[Documentation on the NetApp Support Site: mysupport.netapp.com]

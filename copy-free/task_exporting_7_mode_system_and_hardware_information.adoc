@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_exporting_7_mode_system_and_hardware_information.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, exporte, storage, configurations, halt
 summary: 'The cutover window for the transition starts from the export phase. In this phase, the tool collects system information, disk shelf details, and storage configurations from the 7-Mode systems, and then halts the 7-Mode storage systems.'
 ---
 = Exporting storage configurations and halting 7-Mode systems
@@ -28,6 +28,7 @@ If you decide to revert to 7-Mode at any stage of transition, these Snapshot cop
  ** Removes disk ownerships from the 7-Mode controllers
  ** Disables disk autoassignment on the target cluster nodes
 
+.Steps
 . Click *Export & Halt*.
 +
 A message that lists important considerations for this operation is displayed.

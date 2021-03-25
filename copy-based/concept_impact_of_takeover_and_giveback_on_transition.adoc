@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_impact_of_takeover_and_giveback_on_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, impact, takeover, giveback
 summary: 'Transition operations, such as transition prepare, start, pause, resume, or complete, fail during a controller takeover or giveback.'
 ---
 = Impact of takeover and giveback on transition

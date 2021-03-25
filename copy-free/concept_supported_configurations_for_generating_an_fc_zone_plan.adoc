@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_supported_configurations_for_generating_an_fc_zone_plan.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, supported, fc, zone, plan, generate
 summary: 'You must be aware of the supported configurations of 7-Mode systems, hosts, FC switches, and the cluster to generate the FC zone plan. You should use the plan to configure zones for the cluster after migration.'
 ---
 = Supported configurations for generating an FC zone plan

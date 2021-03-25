@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/reference_required_tools_and_documentation.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, tools, documentation, required
 summary: 'The Config Advisor is the required tool for copy-free transition. You should use Config Advisor to verify the cabling of the disk shelves. Additional documentation is also available for SAN host remediation.'
 ---
 = Tools and documentation required for copy-free transition

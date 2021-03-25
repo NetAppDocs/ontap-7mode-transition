@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_assessing_controllers_and_hosts.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, assess, controllers, hosts
 summary: 'You can collect and assess information about the controllers and hosts by using either the 7-Mode Transition Tool or the Inventory Collect Tool, depending on the security regulations in your environment.'
 ---
 = Assessing controllers and hosts

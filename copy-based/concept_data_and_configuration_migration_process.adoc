@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_data_and_configuration_migration_process.html
 sidebar: sidebar
-keywords: 7-Mode Transition Tool
+keywords: ontap, copy, based, transition, data, configuration, migration, process
 summary: 'The data and configuration migration process using the 7-Mode Transition Tool consists of the following phases: preparation, baseline data copy, apply configuration \(precutover\), and storage cutover. If you have SnapLock volumes for Chain of Custody verification, Chain of Custody verification is additional phase after the cutover.'
 ---
 = Data and configuration migration process
@@ -45,7 +45,7 @@ At a high level during storage cutover, clients are disconnected, a final data t
 
 Disconnecting clients or servers from the source storage volume prevents additional writes from being performed while the final copy is being executed. Before disconnecting clients, it is a best practice to perform an incremental update to minimize the downtime.
 
-Storage access must be disconnected only for the volumes that are being migrated. Access to storage can be discontinued from the storage side or the client side. The best practice is to discontinue connectivity from the storage side. For example, if a CIFS client is accessing a volume named "`user01`" on a 7-Mode storage system, you can use the cifs terminate -v user01 command to disable access to all of the CIFS shares on the volume (discontinuing client access from the storage side). The IP addresses, mount points, or even share names might change as a result of the migration, and therefore client access might be discontinued from the client side as well. As long as clients cannot write any new data to the storage container that is being migrated, you can use either or both of these methods for discontinuing access.
+Storage access must be disconnected only for the volumes that are being migrated. Access to storage can be discontinued from the storage side or the client side. The best practice is to discontinue connectivity from the storage side. For example, if a CIFS client is accessing a volume named "`user01`" on a 7-Mode storage system, you can use the `cifs terminate -v user01` command to disable access to all of the CIFS shares on the volume (discontinuing client access from the storage side). The IP addresses, mount points, or even share names might change as a result of the migration, and therefore client access might be discontinued from the client side as well. As long as clients cannot write any new data to the storage container that is being migrated, you can use either or both of these methods for discontinuing access.
 
 After clients are disconnected, the 7-Mode Transition Tool executes a final copy so that both the source and destination datasets are at parity. The 7-Mode Transition Tool configures the data LIFs on the SVM. Some configuration changes that were not transitioned during precutover, such as applying SAN configurations and quotas, are also applied to the SVM at this time.
 

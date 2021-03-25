@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_what_the_inventory_collect_tool_is.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, inventory, collect, tool
 summary: 'The Inventory Collect Tool \(ICT\) is a stand-alone utility for collecting configuration and inventory information about 7-Mode storage controllers, hosts attached to controllers, and applications running on these hosts for assessing the transition readiness of these systems. You can use the ICT to generate information about your LUNs and the configuration that you need for transition.'
 ---
 = What the Inventory Collect Tool is

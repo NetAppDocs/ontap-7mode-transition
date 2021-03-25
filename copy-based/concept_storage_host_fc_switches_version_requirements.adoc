@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_storage_host_fc_switches_version_requirements.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, storage, host, fc, switches, version, requirements, assessment
 summary: 'You must be aware of the versions of Data ONTAP operating in 7-Mode, hosts, and FC switches that are supported for transition assessment.'
 ---
 = Storage, host, and FC switches version requirements for transition assessment

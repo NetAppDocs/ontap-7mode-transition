@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, nfs, transition, supported, unsupported, required, manual, steps, configuration
 summary: 'Some NFS configurations are not transitioned to ONTAP because they are not supported in ONTAP, there are functionality differences from 7-Mode, or they must be manually transitioned. You should verify all of the precheck errors and warning messages to evaluate the impact of such configurations on transition.'
 ---
 = NFS transition: supported and unsupported configurations, and required manual steps
@@ -16,27 +16,27 @@ Some NFS configurations are not transitioned to ONTAP because they are not suppo
 At a high level, the following NFS configurations are transitioned by the 7-Mode Transition Tool:
 
 * NFS options:
- ** nfs.udp.xfersize
- ** nfs.v4.id.domain
- ** nfs.v4.acl.max.aces
- ** nfs.tcp.xfersize
- ** nfs.rpcsec.ctx.high
- ** nfs.rpcsec.ctx.idle
- ** nfs.response.trigger
- ** wafl.default_nt_user
- ** nfs.mount_rootonly
- ** nfs.tcp.enable
- ** nfs.udp.enable
- ** nfs.response.trace
- ** nfs.v4.read_delegation
- ** nfs.v4.write_delegation
- ** nfs.v4.acl.enable
- ** nfs.vstorage.enable
- ** nfs.v3.enable
- ** nfs.v4.enable
+ ** `nfs.udp.xfersize`
+ ** `nfs.v4.id.domain`
+ ** `nfs.v4.acl.max.aces`
+ ** `nfs.tcp.xfersize`
+ ** `nfs.rpcsec.ctx.high`
+ ** `nfs.rpcsec.ctx.idle`
+ ** `nfs.response.trigger`
+ ** `wafl.default_nt_user`
+ ** `nfs.mount_rootonly`
+ ** `nfs.tcp.enable`
+ ** `nfs.udp.enable`
+ ** `nfs.response.trace`
+ ** `nfs.v4.read_delegation`
+ ** `nfs.v4.write_delegation`
+ ** `nfs.v4.acl.enable`
+ ** `nfs.vstorage.enable`
+ ** `nfs.v3.enable`
+ ** `nfs.v4.enable`
 * NFS export rule:
 +
-If the export rule is configured with the -actual option, the exported path (alias path) is ignored and the export rule is configured with the actual path.
+If the export rule is configured with the `-actual` option, the exported path (alias path) is ignored and the export rule is configured with the actual path.
 
 * Export rules with Kerberos security krb5p
 * Kerberos configuration
@@ -64,14 +64,14 @@ The following NFS configurations generate a warning message in the precheck oper
 
 * NFS audit configuration
 * NFS options:
- ** rpc.nsm.tcp.port
- ** rpc.nsm.udp.port
- ** rpc.mountd.tcp.port
- ** rpc.mountd.udp.port
- ** nfs.export.neg.timeout
- ** nfs.export.pos.timeout
- ** nfs.export.harvest.timeout
-Use the vserver nfs modify command to modify the configuration of an NFS-enabled storage virtual machine (SVM).
+ ** `rpc.nsm.tcp.port`
+ ** `rpc.nsm.udp.port`
+ ** `rpc.mountd.tcp.port`
+ ** `rpc.mountd.udp.port`
+ ** `nfs.export.neg.timeout`
+ ** `nfs.export.pos.timeout`
+ ** `nfs.export.harvest.timeout`
+Use the `vserver nfs modify` command to modify the configuration of an NFS-enabled storage virtual machine (SVM).
 * Export rules with Kerberos security krb5p
 
 == Configurations that are functionally different in ONTAP
@@ -81,7 +81,7 @@ The following NFS configurations are functionally different in ONTAP:
 * NFS export rules
 * NFS export access cache
 * NFS diagnostic commands
-* Support for the showmount command
+* Support for the `showmount` command
 * NFS Kerberos encryption
 * NLM version support
 

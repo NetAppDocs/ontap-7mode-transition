@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_generating_fc_zone_plan.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, fc, zone, plan
 summary: 'For FC switches, you must generate an FC zone plan as part of the transition assessment report to configure the zones for grouping the initiator hosts and targets after the migration.'
 ---
 = Generating an FC zone plan
@@ -18,6 +18,7 @@ xref:concept_supported_configurations_for_generating_an_fc_zone_plan.adoc[Suppor
 * You must have created the required target SVMs and FC LIFs on the cluster.
 * The FC LIFs that are created on the target SVMs will have WWPN, which are different from 7-Mode WWPNs. Therefore, perform FC zoning while you transition SAN for FCP.
 
+.Steps
 . In the Collect and Assess section, click *Add Systems*.
 . In the Add System window, perform one of the following actions:
  ** Add a single system:
@@ -48,6 +49,6 @@ If you do not plan to consolidate the FC LUNs, you must generate the FC zone pla
  .. Specify a prefix for the file name of the reports.
  .. Click *Generate Report*.
 
-The FC zone plan is generated as a .zip file. The plan contains zones created per the igroup configurations on the 7-Mode systems. Each zone contains a single initiator WWPN and multiple SVM target WWPNs.
+The FC zone plan is generated as a `.zip` file. The plan contains zones created per the igroup configurations on the 7-Mode systems. Each zone contains a single initiator WWPN and multiple SVM target WWPNs.
 
 You must use the FC zone plan for configuring the zones to group the initiator hosts and targets for providing data access from the cluster.
