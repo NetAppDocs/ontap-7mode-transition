@@ -23,8 +23,8 @@ before_install:
 - sed -i 's/permalink\:\s*\/search\.html/permalink\:\ inventory-collect\/search\.html/g' ./inventory-collect/search.html
 - cp -rl dependencies/jekyll/search.html ./san-host/search.html
 - sed -i 's/permalink\:\s*\/search\.html/permalink\:\ san-host\/search\.html/g' ./san-host/search.html
-- cp -rl dependencies/jekyll/search.html ./snap-mirror/search.html
-- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ snap-mirror\/search\.html/g' ./snap-mirror/search.html
+- cp -rl dependencies/jekyll/search.html ./snapmirror/search.html
+- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ snapmirror\/search\.html/g' ./snapmirror/search.html
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
 - sudo apt-get -y install graphicsmagick graphicsmagick-libmagick-dev-compat libmagickwand-dev
 script:
