@@ -648,8 +648,8 @@ entries:
     - title: Resuming a failed SnapMirror baseline transfer
       url: "/snapmirror/task_resuming_a_failed_snapmirror_transfer_transition.html"
     - title: Recovering from a failed LUN transition
-      url: "/snapmirror/task_recovering_from_a_failed_lun_transition.html"      
-- title: san-host
+      url: "/snapmirror/task_recovering_from_a_failed_lun_transition.html"
+- title: SAN host transition and remediation
   url: "/san-host/index.html"
   entries:
   - title: Deciding whether to use the SAN Host Transition and Remediation Guide

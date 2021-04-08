@@ -2,4 +2,6 @@
 permalink: index.html
 sidebar: sidebar
 ---
-= Main
+= 7-Mode Transition Documentation
+
+Welcome to the 7-Mode Transition Information Library. Here you will find documentation for 7-Mode Transition including how to install and setup the 7-Mode Transition Tool, how to transition data using SnapMirror commands, how to perform a copy-base or copy-free transition, how to collect information for transition, and pre/post transition procedures for SAN hosts.
