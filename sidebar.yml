@@ -2,7 +2,9 @@
 entries:
 - title: Home
   url: "/index.html"
-- title: command-map
+- title: Release Notes
+  url: "/releasenotes.html"
+- title: Command map for 7-Mode administrators
   url: "/command-map/index.html"
   entries:
   - title: How 7-Mode commands map to ONTAP commands
@@ -14,7 +16,58 @@ entries:
   - title: How to interpret the clustered Data ONTAP commands, options, and configuration
       files maps for 7-Mode administrators
     url: "/command-map/concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.html"
-- title: copy-based
+- title: 7-Mode Transition Tool installation and administration
+  url: "/install-admin/index.html"
+  entries:
+  - title: Transition to clustered ONTAP by using the 7-Mode Transition Tool
+    url: "/install-admin/concept_transition_to_clustered_ontap_using_7mtt.html"
+    entries:
+    - title: ONTAP target releases supported by the 7-Mode Transition Tool
+      url: "/install-admin/concept_ontap_target_releases_supported_by_7mtt.html"
+    - title: Comparison of copy-free transition and copy-based transition
+      url: "/install-admin/concept_comparison_of_copy_free_transition_and_copy_based_transition.html"
+    - title: Interfaces and transition capabilities available on Windows and Linux
+      url: "/install-admin/reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.html"
+  - title: Installing or uninstalling the 7-Mode Transition Tool on a Windows system
+    url: "/install-admin/concept_installing_and_uninstalling_7mtt.html"
+    entries:
+    - title: System requirements for installing the 7-Mode Transition Tool on Windows
+        systems
+      url: "/install-admin/concept_system_requirements_for_7mtt_on_windows.html"
+    - title: Installing the 7-Mode Transition Tool on a Windows system
+      url: "/install-admin/task_installing_7mtt.html"
+    - title: Enabling login for users not part of the Administrator group
+      url: "/install-admin/task_enabling_login_for_users_not_part_of_administrator_group.html"
+    - title: Logging in to the 7-Mode Transition Tool
+      url: "/install-admin/task_logging_in_to_tool.html"
+    - title: Uninstalling the 7-Mode Transition Tool on a Windows system
+      url: "/install-admin/task_uninstalling_7mtt.html"
+  - title: Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based
+      transition only)
+    url: "/install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html"
+    entries:
+    - title: System requirements for installing 7-Mode Transition Tool on Linux
+      url: "/install-admin/concept_system_requirements_for_7_mode_transition_tool_on_linux.html"
+    - title: Installing 7-Mode Transition Tool on Linux
+      url: "/install-admin/task_installing_7_mode_transition_tool_on_linux.html"
+    - title: Uninstalling 7-Mode Transition Tool on Linux
+      url: "/install-admin/task_uninstalling_7_mode_transition_tool_on_linux.html"
+  - title: Modifying the configuration options of the 7-Mode Transition Tool
+    url: "/install-admin/task_modifying_default_configuration_settings_of_7mtt.html"
+  - title: Troubleshooting issues
+    url: "/install-admin/concept_troubleshooting_web_interface_issues.html"
+    entries:
+    - title: Tool installation fails with an incompatible OS error
+      url: "/install-admin/reference_tool_installation_fails_with_incompatible_os_error.html"
+    - title: Installation or uninstallation of the 7-Mode Transition Tool is blocked
+      url: "/install-admin/reference_installation_or_uninstallation_of_7mtt_is_blocked.html"
+    - title: Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows
+        system
+      url: "/install-admin/reference_reinstalling_or_upgrading_7mtt_fails_on_windows_system.html"
+    - title: Windows Program Compatibility Assistant notification displayed while
+        installing the tool
+      url: "/install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html"
+- title: Copy-based transition
   url: "/copy-based/index.html"
   entries:
   - title: Transition overview
@@ -287,7 +340,7 @@ entries:
       url: "/copy-based/reference_cannot_proceed_from_volume_mapping_pane_if_selected_svm_has_no_aggregate.html"
     - title: Compression is not enabled after transition from Data ONTAP 7.3.x
       url: "/copy-based/reference_compression_fails_to_start_after_transition.html"
-- title: copy-free
+- title: Copy-free transition
   url: "/copy-free/index.html"
   entries:
   - title: Transition overview
@@ -502,58 +555,7 @@ entries:
       entries:
       - title: Manually rolling back the transition
         url: "/copy-free/task_running_manual_steps_for_rolling_back_transition.html"
-- title: install-admin
-  url: "/install-admin/index.html"
-  entries:
-  - title: Transition to clustered ONTAP by using the 7-Mode Transition Tool
-    url: "/install-admin/concept_transition_to_clustered_ontap_using_7mtt.html"
-    entries:
-    - title: ONTAP target releases supported by the 7-Mode Transition Tool
-      url: "/install-admin/concept_ontap_target_releases_supported_by_7mtt.html"
-    - title: Comparison of copy-free transition and copy-based transition
-      url: "/install-admin/concept_comparison_of_copy_free_transition_and_copy_based_transition.html"
-    - title: Interfaces and transition capabilities available on Windows and Linux
-      url: "/install-admin/reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.html"
-  - title: Installing or uninstalling the 7-Mode Transition Tool on a Windows system
-    url: "/install-admin/concept_installing_and_uninstalling_7mtt.html"
-    entries:
-    - title: System requirements for installing the 7-Mode Transition Tool on Windows
-        systems
-      url: "/install-admin/concept_system_requirements_for_7mtt_on_windows.html"
-    - title: Installing the 7-Mode Transition Tool on a Windows system
-      url: "/install-admin/task_installing_7mtt.html"
-    - title: Enabling login for users not part of the Administrator group
-      url: "/install-admin/task_enabling_login_for_users_not_part_of_administrator_group.html"
-    - title: Logging in to the 7-Mode Transition Tool
-      url: "/install-admin/task_logging_in_to_tool.html"
-    - title: Uninstalling the 7-Mode Transition Tool on a Windows system
-      url: "/install-admin/task_uninstalling_7mtt.html"
-  - title: Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based
-      transition only)
-    url: "/install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html"
-    entries:
-    - title: System requirements for installing 7-Mode Transition Tool on Linux
-      url: "/install-admin/concept_system_requirements_for_7_mode_transition_tool_on_linux.html"
-    - title: Installing 7-Mode Transition Tool on Linux
-      url: "/install-admin/task_installing_7_mode_transition_tool_on_linux.html"
-    - title: Uninstalling 7-Mode Transition Tool on Linux
-      url: "/install-admin/task_uninstalling_7_mode_transition_tool_on_linux.html"
-  - title: Modifying the configuration options of the 7-Mode Transition Tool
-    url: "/install-admin/task_modifying_default_configuration_settings_of_7mtt.html"
-  - title: Troubleshooting issues
-    url: "/install-admin/concept_troubleshooting_web_interface_issues.html"
-    entries:
-    - title: Tool installation fails with an incompatible OS error
-      url: "/install-admin/reference_tool_installation_fails_with_incompatible_os_error.html"
-    - title: Installation or uninstallation of the 7-Mode Transition Tool is blocked
-      url: "/install-admin/reference_installation_or_uninstallation_of_7mtt_is_blocked.html"
-    - title: Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows
-        system
-      url: "/install-admin/reference_reinstalling_or_upgrading_7mtt_fails_on_windows_system.html"
-    - title: Windows Program Compatibility Assistant notification displayed while
-        installing the tool
-      url: "/install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html"
-- title: inventory-collect
+- title: Host and storage transition information collection
   url: "/inventory-collect/index.html"
   entries:
   - title: Collecting storage and host inventory information
@@ -579,6 +581,74 @@ entries:
       url: "/inventory-collect/reference_collection_and_assessment_commands.html"
     - title: Where to find information about transition assessment
       url: "/inventory-collect/concept_where_to_find_information_about_transition_assessment.html"
+- title: 7-Mode data transition using SnapMirror
+  url: "/snapmirror/index.html"
+  entries:
+  - title: Transitioning 7-Mode volumes using SnapMirror
+    url: "/snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html"
+    entries:
+    - title: Planning for transition
+      url: "/snapmirror/concept_planning_for_transition.html"
+      entries:
+      - title: Features and volumes not supported for transition
+        url: "/snapmirror/concept_features_and_volumes_not_supported_for_transition.html"
+        entries:
+        - title: Features not supported for SAN transition
+          url: "/snapmirror/concept_unsupported_7_mode_san_functions.html"
+      - title: 7-Mode version requirements for transition
+        url: "/snapmirror/reference_7_mode_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.html"
+      - title: Considerations for using SnapMirror for transition
+        url: "/snapmirror/concept_considerations_for_using_snapmirror_for_transition.html"
+      - title: Space considerations when transitioning SAN volumes
+        url: "/snapmirror/concept_considerations_for_space_when_transitioning_san_volumes.html"
+      - title: Guidelines for transitioning SnapLock volumes
+        url: "/snapmirror/concept_guidelines_for_transitioning_snaplock_volumes.html"
+    - title: Preparing for transition
+      url: "/snapmirror/task_preparing_for_transition.html"
+      entries:
+      - title: License requirements for transition
+        url: "/snapmirror/concept_licensing_requirements_for_transition.html"
+      - title: Preparing the 7-Mode system for transition
+        url: "/snapmirror/task_preparing_7_mode_system_for_transition.html"
+      - title: Preparing the cluster for transition
+        url: "/snapmirror/task_preparing_cluster_for_transition.html"
+      - title: Creating a transition peer relationship
+        url: "/snapmirror/task_creating_a_transition_peering_relationship.html"
+      - title: Configuring a TCP window size for SnapMirror relationships
+        url: "/snapmirror/task_configuring_a_tcp_window_size_for_snapmirror_relationships.html"
+    - title: Transitioning volumes
+      url: "/snapmirror/task_transitioning_volumes.html"
+      entries:
+      - title: Transitioning a stand-alone volume
+        url: "/snapmirror/task_transitioning_a_stand_alone_volume.html"
+      - title: Transitioning a volume SnapMirror relationship in a staggered configuration
+        url: "/snapmirror/task_transitioning_a_data_protection_relationship.html"
+        entries:
+        - title: Transitioning a secondary volume
+          url: "/snapmirror/task_transitioning_secondary_volume.html"
+        - title: Transitioning a primary volume
+          url: "/snapmirror/task_transitioning_a_primary_volume.html"
+      - title: Transitioning a volume SnapMirror relationship in parallel
+        url: "/snapmirror/task_transitioning_a_volume_snapmirror_relationship_in_parallel.html"
+  - title: Transitioning a disaster recovery relationship between vFiler units
+    url: "/snapmirror/task_transitioning_disaster_recovery_relationship.html"
+  - title: Recovering from a disaster at the 7-Mode site during transition
+    url: "/snapmirror/task_recovering_from_a_disaster_at_7_mode_site_during_transition.html"
+    entries:
+    - title: Redirecting clients to the clustered Data ONTAP secondary volume after
+        a disaster
+      url: "/snapmirror/task_redirecting_clients_to_clustered_ontap_secondary_volume.html"
+    - title: Transitioning the 7-Mode primary as a stand-alone volume
+      url: "/snapmirror/task_transitioning_7_mode_primary_as_a_standalone_volume.html"
+    - title: Redirecting clients to the clustered Data ONTAP primary volume
+      url: "/snapmirror/task_redirecting_clients_to_clustered_ontap_primary_volume_after_disaster.html"
+  - title: Troubleshooting transition issues when using SnapMirror
+    url: "/snapmirror/reference_troubleshooting.html"
+    entries:
+    - title: Resuming a failed SnapMirror baseline transfer
+      url: "/snapmirror/task_resuming_a_failed_snapmirror_transfer_transition.html"
+    - title: Recovering from a failed LUN transition
+      url: "/snapmirror/task_recovering_from_a_failed_lun_transition.html"      
 - title: san-host
   url: "/san-host/index.html"
   entries:
@@ -848,71 +918,7 @@ entries:
       url: "/san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_rhel_hosts.html"
     - title: Rolling back ONTAP LUNs to 7-Mode LUNs on Windows hosts
       url: "/san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_windows_hosts.html"
-- title: snapmirror
-  url: "/snapmirror/index.html"
-  entries:
-  - title: Transitioning 7-Mode volumes using SnapMirror
-    url: "/snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html"
-    entries:
-    - title: Planning for transition
-      url: "/snapmirror/concept_planning_for_transition.html"
-      entries:
-      - title: Features and volumes not supported for transition
-        url: "/snapmirror/concept_features_and_volumes_not_supported_for_transition.html"
-        entries:
-        - title: Features not supported for SAN transition
-          url: "/snapmirror/concept_unsupported_7_mode_san_functions.html"
-      - title: 7-Mode version requirements for transition
-        url: "/snapmirror/reference_7_mode_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.html"
-      - title: Considerations for using SnapMirror for transition
-        url: "/snapmirror/concept_considerations_for_using_snapmirror_for_transition.html"
-      - title: Space considerations when transitioning SAN volumes
-        url: "/snapmirror/concept_considerations_for_space_when_transitioning_san_volumes.html"
-      - title: Guidelines for transitioning SnapLock volumes
-        url: "/snapmirror/concept_guidelines_for_transitioning_snaplock_volumes.html"
-    - title: Preparing for transition
-      url: "/snapmirror/task_preparing_for_transition.html"
-      entries:
-      - title: License requirements for transition
-        url: "/snapmirror/concept_licensing_requirements_for_transition.html"
-      - title: Preparing the 7-Mode system for transition
-        url: "/snapmirror/task_preparing_7_mode_system_for_transition.html"
-      - title: Preparing the cluster for transition
-        url: "/snapmirror/task_preparing_cluster_for_transition.html"
-      - title: Creating a transition peer relationship
-        url: "/snapmirror/task_creating_a_transition_peering_relationship.html"
-      - title: Configuring a TCP window size for SnapMirror relationships
-        url: "/snapmirror/task_configuring_a_tcp_window_size_for_snapmirror_relationships.html"
-    - title: Transitioning volumes
-      url: "/snapmirror/task_transitioning_volumes.html"
-      entries:
-      - title: Transitioning a stand-alone volume
-        url: "/snapmirror/task_transitioning_a_stand_alone_volume.html"
-      - title: Transitioning a volume SnapMirror relationship in a staggered configuration
-        url: "/snapmirror/task_transitioning_a_data_protection_relationship.html"
-        entries:
-        - title: Transitioning a secondary volume
-          url: "/snapmirror/task_transitioning_secondary_volume.html"
-        - title: Transitioning a primary volume
-          url: "/snapmirror/task_transitioning_a_primary_volume.html"
-      - title: Transitioning a volume SnapMirror relationship in parallel
-        url: "/snapmirror/task_transitioning_a_volume_snapmirror_relationship_in_parallel.html"
-  - title: Transitioning a disaster recovery relationship between vFiler units
-    url: "/snapmirror/task_transitioning_disaster_recovery_relationship.html"
-  - title: Recovering from a disaster at the 7-Mode site during transition
-    url: "/snapmirror/task_recovering_from_a_disaster_at_7_mode_site_during_transition.html"
-    entries:
-    - title: Redirecting clients to the clustered Data ONTAP secondary volume after
-        a disaster
-      url: "/snapmirror/task_redirecting_clients_to_clustered_ontap_secondary_volume.html"
-    - title: Transitioning the 7-Mode primary as a stand-alone volume
-      url: "/snapmirror/task_transitioning_7_mode_primary_as_a_standalone_volume.html"
-    - title: Redirecting clients to the clustered Data ONTAP primary volume
-      url: "/snapmirror/task_redirecting_clients_to_clustered_ontap_primary_volume_after_disaster.html"
-  - title: Troubleshooting transition issues when using SnapMirror
-    url: "/snapmirror/reference_troubleshooting.html"
-    entries:
-    - title: Resuming a failed SnapMirror baseline transfer
-      url: "/snapmirror/task_resuming_a_failed_snapmirror_transfer_transition.html"
-    - title: Recovering from a failed LUN transition
-      url: "/snapmirror/task_recovering_from_a_failed_lun_transition.html"
+
+
+- title: Legal Notices
+  url: "/reference_legal_notices.html"
