@@ -32,8 +32,7 @@ entries:
           url: "/san-host/task_deleting_vm_snapshots_using_vsphere_client.html"
         - title: Removing VM snapshots using the ESXi CLI
           url: "/san-host/task_removing_vm_snapshots_using_esxi_cli.html"
-    - title: Testing transitioned LUNs and ESXi host applications before the cutover
-        phase of copy-based transitions
+    - title: Testing transitioned LUNs and ESXi host applications before the cutover phase of copy-based transitions
       url: "/san-host/task_testing_transitioned_luns_and_esxi_host_applications_before_cutover.html"
     - title: Downtime at apply configuration (precutover) phase of ESXi host transition
       url: "/san-host/concept_downtime_at_precutover_phase_of_esxi_host_transition.html"
@@ -42,8 +41,7 @@ entries:
       entries:
       - title: Preparing for post-transition ESXi host remediation
         url: "/san-host/task_preparing_for_post_transition_esxi_host_remediation.html"
-      - title: Reregistering VMs after transition on non-SAN boot ESXi hosts using
-          vSphere Client
+      - title: Reregistering VMs after transition on non-SAN boot ESXi hosts using vSphere Client
         url: "/san-host/task_reregistering_vms_after_transition_on_non_san_boot_esxi_host_using_vsphere_client.html"
       - title: Reconfiguration of VMware software iSCSI initiator after transition
         url: "/san-host/concept_reconfiguration_of_vmware_software_iscsi_initiator.html"
@@ -82,61 +80,48 @@ entries:
     - title: Transitioning RHEL DMMP devices without file systems
       url: "/san-host/concept_transitioning_rhel_dmmp_devices_without_file_systems.html"
       entries:
-      - title: Verifying that RHEL LUNs are ready for transition using the Inventory
-          Assessment Workbook
+      - title: Verifying that RHEL LUNs are ready for transition using the Inventory Assessment Workbook
         url: "/san-host/task_verifying_that_rhel_luns_are_ready_for_transition_using_inventory_assessment_workbook.html"
       - title: Verifying that RHEL 5 LUNs are ready for transition using the CLI
         url: "/san-host/task_verifying_rhel_5_luns_are_ready_for_transition_using_cli.html"
       - title: Verifying that RHEL 6 DDMP devices are ready for transition using CLI
         url: "/san-host/task_verifying_rhel_6_ddmp_devices_are_ready_for_transition_using_cli.html"
-      - title: Testing DMMP devices without file systems on RHEL hosts before the
-          cutover phase of copy-based transitions
+      - title: Testing DMMP devices without file systems on RHEL hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_dmmp_devices_on_rhel_before_cutover.html"
-      - title: Preparing for cutover when transitioning a Linux host DMMP device without
-          a file system
+      - title: Preparing for cutover when transitioning a Linux host DMMP device without a file system
         url: "/san-host/task_preparing_for_cutover_when_transitioning_linux_host_dmmp_device_without_file_system.html"
       - title: Replacing 7-Mode LUN WWIDs on Linux hosts after transition of LUNs
         url: "/san-host/task_replacing_7_mode_wwids_on_linux_host_after_transition_of_luns.html"
     - title: Transitioning LUNs with mount points using DMMP device names
       url: "/san-host/concept_transitioning_luns_with_mount_points_using_dmmp_devices_names.html"
       entries:
-      - title: Preparing RHEL LUNs with mount points using DMMP device names for transition
-          using the Inventory Assessment Workbook
+      - title: Preparing RHEL LUNs with mount points using DMMP device names for transition using the Inventory Assessment Workbook
         url: "/san-host/task_preparing_rhel_luns_transition_using_inventory_assessment_workbook.html"
-      - title: Preparing RHEL LUNs with mount points using DMMP alias names for transition
-          using the CLI
+      - title: Preparing RHEL LUNs with mount points using DMMP alias names for transition using the CLI
         url: "/san-host/task_preparing_rhel_luns_for_transition_using_the_cli.html"
-      - title: Testing DMMP devices with file systems on RHEL hosts before the cutover
-          phase of copy-based transitions
+      - title: Testing DMMP devices with file systems on RHEL hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_dmmp_devices_with_file_systems_on_rhel_hosts_before_cutover_phase.html"
-      - title: Preparing for the cutover phase when transitioning LUNs with mount
-          points using DMMP device names on Linux hosts
+      - title: Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts
         url: "/san-host/task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.html"
       - title: Remounting DMMP devices on Linux hosts after transition
         url: "/san-host/task_remounting_dmmp_devices_on_linux_hosts_after_transition.html"
     - title: Transitioning LUNs with mount points using DMMP alias names
       url: "/san-host/concept_transitioning_luns_with_mount_points_using_dmmp_alias_names.html"
       entries:
-      - title: Preparing RHEL LUNs with mount points using DMMP alias names for transition
-          using the CLI
+      - title: Preparing RHEL LUNs with mount points using DMMP alias names for transition using the CLI
         url: "/san-host/task_preparing_rhel_luns_for_transition_using_the_cli.html"
-      - title: Testing LUNs with mount points using DMMP alias names on RHEL hosts
-          before the cutover phase of copy-based transitions
+      - title: Testing LUNs with mount points using DMMP alias names on RHEL hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_luns_with_mounts_using_dmmp_aliases_on_rhel_hosts_before_cutover.html"
-      - title: Preparing for the cutover phase when transitioning LUNs with mount
-          points using DMMP device names on Linux hosts
+      - title: Preparing for the cutover phase when transitioning LUNs with mount points using DMMP device names on Linux hosts
         url: "/san-host/task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.html"
-      - title: Remounting LUNs with mount points using DMMP alias names on Linux hosts
-          after transition
+      - title: Remounting LUNs with mount points using DMMP alias names on Linux hosts after transition
         url: "/san-host/task_remounting_luns_with_mount_point_using_dmmp_alias_name_on_linux_hosts_after_transition.html"
     - title: Transitioning Linux host file systems on LVM devices
       url: "/san-host/concept_transitioning_linux_host_file_systems_on_lvm_devices.html"
       entries:
-      - title: Testing LUNs with file systems on LVM devices before the cutover phase
-          of copy-based transitions
+      - title: Testing LUNs with file systems on LVM devices before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_luns_with_file_systems_on_lvm_devices_before_cutover_phase.html"
-      - title: Preparing for cutover phase when transitioning Linux host file systems
-          on LVM devices
+      - title: Preparing for cutover phase when transitioning Linux host file systems on LVM devices
         url: "/san-host/task_preparing_for_cutover_when_transitioning_linux_host_file_systems_on_lvm_devices.html"
       - title: Mounting logical volumes on Linux hosts after transition
         url: "/san-host/task_mounting_logical_volumes_on_linux_host_after_transition.html"
@@ -149,8 +134,7 @@ entries:
         url: "/san-host/task_preparing_for_transition_of_fc_or_fcoe_san_boot_luns.html"
       - title: Preparing for transition of iSCSI SAN boot LUNs
         url: "/san-host/task_preparing_for_transition_of_iscsi_san_boot_luns.html"
-      - title: Testing SAN boot LUNs on RHEL hosts before the cutover phase of copy-based
-          transitions
+      - title: Testing SAN boot LUNs on RHEL hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_san_boot_luns_on_rhel_hosts_before_cutover.html"
       - title: Preparing for the cutover phase when transitioning SAN boot LUNs
         url: "/san-host/concept_preparing_for_cutover_when_transitioning_san_boot_luns.html"
@@ -180,11 +164,9 @@ entries:
       entries:
       - title: Preparing to transition HP-UX host LUNs with file systems
         url: "/san-host/task_preparing_to_transition_hp_ux_host_luns_with_file_systems.html"
-      - title: Testing data LUNs on HP-UX hosts before the cutover phase of copy-based
-          transitions
+      - title: Testing data LUNs on HP-UX hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_data_luns_on_hp_ux_hosts_before_cutover.html"
-      - title: Preparing for cutover phase when transitioning HP-UX host data LUNs
-          with file systems
+      - title: Preparing for cutover phase when transitioning HP-UX host data LUNs with file systems
         url: "/san-host/task_preparing_for_cutover_when_transitioning_hp_ux_host_data_luns_with_file_systems.html"
       - title: Mounting HP-UX host LUNs with file systems after transition
         url: "/san-host/task_mounting_hp_ux_host_luns_with_file_systems_after_transition.html"
@@ -193,16 +175,13 @@ entries:
       entries:
       - title: Preparing to transition SAN boot LUNs on HP-UX hosts with FC configurations
         url: "/san-host/task_preparing_to_transition_san_boot_luns_on_hp_ux_hosts_with_fc_configurations.html"
-      - title: Testing transitioned SAN boot LUNs on HP-UX hosts before the cutover
-          phase of copy-based transitions
+      - title: Testing transitioned SAN boot LUNs on HP-UX hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_transitioned_san_boot_luns_on_hp_ux_hosts_before_cutover.html"
       - title: Preparing for the cutover phase when transitioning SAN boot LUNs
         url: "/san-host/concept_preparing_for_cutover_when_transitioning_san_boot_luns.html"
-      - title: Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after
-          transition
+      - title: Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after transition
         url: "/san-host/task_making_a_san_boot_lun_primary_for_hp_ux_emulex_hbas_after_transition.html"
-      - title: Making a SAN boot LUN the primary boot LUN for HP-UX QLogic HBAs after
-          transition
+      - title: Making a SAN boot LUN the primary boot LUN for HP-UX QLogic HBAs after transition
         url: "/san-host/task_making_san_boot_lun_primary_boot_lun_for_hp_ux_qlogic_hbas_after_transition.html"
   - title: AIX host remediation
     url: "/san-host/concept_aix_host_remediation.html"
@@ -212,25 +191,20 @@ entries:
       entries:
       - title: Preparing to transition SAN boot LUNs on AIX hosts with FC/FCoE configurations
         url: "/san-host/task_preparing_to_transition_san_boot_luns_on_aix_hosts_with_fc_fcoe_configurations.html"
-      - title: Testing transitioned SAN boot LUNs on AIX hosts before the cutover
-          phase of copy-based transitions
+      - title: Testing transitioned SAN boot LUNs on AIX hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_transitioned_san_boot_luns_on_aix_hosts_before_cutover.html"
-      - title: Preparing for the cutover phase when transitioning AIX hosts with FC/FCoE
-          configurations.
+      - title: Preparing for the cutover phase when transitioning AIX hosts with FC/FCoE configurations.
         url: "/san-host/task_preparing_for_cutover_when_transitioning_aix_hosts_with_fc_fcoe_configurations.html"
-      - title: Booting from SAN boot LUN on AIX hosts with FC/FCoE configurations
-          after transition
+      - title: Booting from SAN boot LUN on AIX hosts with FC/FCoE configurations after transition
         url: "/san-host/task_booting_from_san_boot_lun_on_aix_hosts_with_fc_fcoe_configurations_after_transition.html"
     - title: Transitioning AIX host data LUNs with file systems
       url: "/san-host/concept_transitioning_aix_host_data_luns_with_file_systems.html"
       entries:
       - title: Preparing to transition AIX host data LUNs with file systems
         url: "/san-host/task_preparing_to_transition_aix_data_host_luns_with_file_systems.html"
-      - title: Testing transitioned LUNs on AIX hosts before the cutover phase of
-          copy-based transitions
+      - title: Testing transitioned LUNs on AIX hosts before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_transitioned_luns_on_aix_hosts_before_cutover.html"
-      - title: Preparing for cutover phase when transitioning AIX host data LUNs with
-          file systems
+      - title: Preparing for cutover phase when transitioning AIX host data LUNs with file systems
         url: "/san-host/task_preparing_for_cutover_when_transitioning_aix_data_luns_with_file_systems.html"
       - title: Mounting AIX host data LUNs with file systems after transition
         url: "/san-host/task_mounting_aix_host_luns_with_file_systems_after_transition.html"
@@ -242,11 +216,9 @@ entries:
       entries:
       - title: Preparing to transition Solaris host data LUNs with ZFS file system
         url: "/san-host/task_preparing_to_transition_solaris_host_data_luns_with_zfs_file_system.html"
-      - title: Testing data LUNs on Solaris hosts with ZFS file system before the
-          cutover phase of copy-based transitions
+      - title: Testing data LUNs on Solaris hosts with ZFS file system before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_data_luns_on_solaris_hosts_with_zfs_file_system_before_cutover.html"
-      - title: Preparing for cutover phase when transitioning Solaris host data LUNs
-          with ZFS file systems
+      - title: Preparing for cutover phase when transitioning Solaris host data LUNs with ZFS file systems
         url: "/san-host/task_preparing_for_cutover_when_transitioning_solaris_host_data_luns_with_zfs_file_systems.html"
       - title: Mounting Solaris host LUNs with ZFS file systems after transition
         url: "/san-host/task_mounting_solaris_host_luns_with_zfs_file_systems_after_transition.html"
@@ -255,11 +227,9 @@ entries:
       entries:
       - title: Preparing to transition Solaris host LUNs with Sun Volume Manager
         url: "/san-host/task_preparing_to_transition_solaris_host_data_luns_with_sun_volume_manager.html"
-      - title: Testing data LUNs on Solaris hosts with Sun Volume Manager before the
-          cutover phase of copy-based transitions
+      - title: Testing data LUNs on Solaris hosts with Sun Volume Manager before the cutover phase of copy-based transitions
         url: "/san-host/task_testing_data_luns_on_solaris_hosts_with_sun_volume_manager_svm_before_cutover.html"
-      - title: Preparing for cutover phase when transitioning Solaris host Sun Volume
-          Manager data LUNs
+      - title: Preparing for cutover phase when transitioning Solaris host Sun Volume Manager data LUNs
         url: "/san-host/task_preparing_for_cutover_when_transitioning_solaris_host_sun_volume_manager_data_luns.html"
       - title: Mounting Solaris host LUNs with Solaris Volume Manager after transition
         url: "/san-host/task_mounting_solaris_host_luns_with_sun_volume_manager_after_transition.html"

@@ -16,8 +16,7 @@ entries:
   - title: Installing or uninstalling the 7-Mode Transition Tool on a Windows system
     url: "/install-admin/concept_installing_and_uninstalling_7mtt.html"
     entries:
-    - title: System requirements for installing the 7-Mode Transition Tool on Windows
-        systems
+    - title: System requirements for installing the 7-Mode Transition Tool on Windows systems
       url: "/install-admin/concept_system_requirements_for_7mtt_on_windows.html"
     - title: Installing the 7-Mode Transition Tool on a Windows system
       url: "/install-admin/task_installing_7mtt.html"
@@ -27,8 +26,7 @@ entries:
       url: "/install-admin/task_logging_in_to_tool.html"
     - title: Uninstalling the 7-Mode Transition Tool on a Windows system
       url: "/install-admin/task_uninstalling_7mtt.html"
-  - title: Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based
-      transition only)
+  - title: Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based transition only)
     url: "/install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html"
     entries:
     - title: System requirements for installing 7-Mode Transition Tool on Linux
@@ -46,9 +44,7 @@ entries:
       url: "/install-admin/reference_tool_installation_fails_with_incompatible_os_error.html"
     - title: Installation or uninstallation of the 7-Mode Transition Tool is blocked
       url: "/install-admin/reference_installation_or_uninstallation_of_7mtt_is_blocked.html"
-    - title: Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows
-        system
+    - title: Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows system
       url: "/install-admin/reference_reinstalling_or_upgrading_7mtt_fails_on_windows_system.html"
-    - title: Windows Program Compatibility Assistant notification displayed while
-        installing the tool
+    - title: Windows Program Compatibility Assistant notification displayed while installing the tool
       url: "/install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html"

@@ -23,8 +23,7 @@ entries:
     - title: Assessing controllers and hosts
       url: "/copy-based/task_assessing_controllers_and_hosts.html"
       entries:
-      - title: Generating an assessment report by adding systems to the 7-Mode Transition
-          Tool
+      - title: Generating an assessment report by adding systems to the 7-Mode Transition Tool
         url: "/copy-based/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html"
       - title: Generating an assessment report by importing the inventory report XML
         url: "/copy-based/task_generating_an_assessment_report_by_importing_inventory_report_xml.html"
@@ -91,14 +90,12 @@ entries:
         url: "/copy-based/concept_considerations_for_transitioning_of_snaplock_audit_volumes.html"
       - title: Considerations for transitioning of 7-Mode SnapLock options
         url: "/copy-based/concept_considerations_for_transitioning_of_7_mode_snaplock_options.html"
-      - title: Considerations for using Chain of Custody verification for 7-Mode SnapLock
-          volumes
+      - title: Considerations for using Chain of Custody verification for 7-Mode SnapLock volumes
         url: "/copy-based/concept_considerations_for_chain_of_custody_verification_for_7_mode_snaplock_volumes.html"
     - title: Preparing to transition name services
       url: "/copy-based/concept_preparing_for_name_services_transition.html"
       entries:
-      - title: 'Name services transition: supported and unsupported configurations,
-          and required manual steps'
+      - title: 'Name services transition: supported and unsupported configurations, and required manual steps'
         url: "/copy-based/concept_supported_and_unsupported_name_services_configurations.html"
       - title: Considerations for transitioning DNS, NIS, and LDAP configurations
         url: "/copy-based/concept_considerations_for_transitioning_dns_and_ldap_configurations.html"
@@ -109,8 +106,7 @@ entries:
       entries:
       - title: Prerequisites for transitioning NFS configurations
         url: "/copy-based/concept_prerequisites_to_transition_nfs_configurations.html"
-      - title: 'NFS transition: supported and unsupported configurations, and required
-          manual steps'
+      - title: 'NFS transition: supported and unsupported configurations, and required manual steps'
         url: "/copy-based/concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html"
       - title: How NFS exports are transitioned
         url: "/copy-based/concept_how_nfs_exports_are_transitioned.html"
@@ -134,8 +130,7 @@ entries:
         url: "/copy-based/task_configuring_zones_by_using_fc_zone_plan.html"
       - title: Creating SAN LIFs before transition
         url: "/copy-based/task_creating_san_lifs_before_transition.html"
-      - title: 'SAN transition: supported and unsupported configurations, and required
-          manual steps'
+      - title: 'SAN transition: supported and unsupported configurations, and required manual steps'
         url: "/copy-based/concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.html"
       - title: Space considerations when transitioning SAN volumes
         url: "/copy-based/concept_considerations_for_space_when_transitioning_san_volumes.html"
@@ -193,8 +188,7 @@ entries:
         entries:
         - title: Configurations that can be excluded from transition
           url: "/copy-based/reference_configurations_that_can_be_excluded.html"
-        - title: Examples of consolidating NFS export rules and Snapshot schedules
-            for transition
+        - title: Examples of consolidating NFS export rules and Snapshot schedules for transition
           url: "/copy-based/reference_example_consolidating_nfs_export_rules_for_transition.html"
       - title: Running prechecks
         url: "/copy-based/task_running_precheck_on_a_session.html"
@@ -215,11 +209,9 @@ entries:
       url: "/copy-based/task_recovering_from_a_failed_lun_transition.html"
     - title: Viewing transitioned SAN configurations
       url: "/copy-based/task_viewing_transitioned_san_configurations.html"
-    - title: Limitations with 7-Mode Snapshot copies of LUNs managed by SnapDrive
-        and SnapManager after transition
+    - title: Limitations with 7-Mode Snapshot copies of LUNs managed by SnapDrive and SnapManager after transition
       url: "/copy-based/concept_limitations_with_snapshot_copies_and_luns_managed_by_snap_products.html"
-    - title: Configuring cron job schedules on the remote site after transitioning
-        a MetroCluster configuration
+    - title: Configuring cron job schedules on the remote site after transitioning a MetroCluster configuration
       url: "/copy-based/task_post_transition_task_for_a_metrocluster_configuration.html"
     - title: Deleting 7-Mode volume Snapshot copies from transitioned volumes
       url: "/copy-based/task_deleting_7_mode_volume_snapshot_copies_from_transitioned_volumes.html"
@@ -261,16 +253,13 @@ entries:
       entries:
       - title: Ignorable errors during transition
         url: "/copy-based/reference_ignorable_errors_during_transition.html"
-    - title: Transitioning a MetroCluster configuration that failed due to switchover
-        or switchback
+    - title: Transitioning a MetroCluster configuration that failed due to switchover or switchback
       url: "/copy-based/task_transitioning_a_metrocluster_configuration_if_a_switchover_or_switchback_event_occurs.html"
     - title: Cannot select a secondary volume from the Volume selection pane
       url: "/copy-based/reference_cannot_select_a_secondary_volume_from_volume_selection_pane.html"
-    - title: Cannot select a volume for transition if the tool fails to retrieve the
-        volume information
+    - title: Cannot select a volume for transition if the tool fails to retrieve the volume information
       url: "/copy-based/reference_cannot_select_volume_for_transition_if_tool_fails_to_retrieve_volume_information.html"
-    - title: Cannot proceed from the Volume mapping pane if the selected SVM has no
-        aggregate
+    - title: Cannot proceed from the Volume mapping pane if the selected SVM has no aggregate
       url: "/copy-based/reference_cannot_proceed_from_volume_mapping_pane_if_selected_svm_has_no_aggregate.html"
     - title: Compression is not enabled after transition from Data ONTAP 7.3.x
       url: "/copy-based/reference_compression_fails_to_start_after_transition.html"

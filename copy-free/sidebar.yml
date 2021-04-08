@@ -21,8 +21,7 @@ entries:
     - title: Assessing controllers and hosts
       url: "/copy-free/task_assessing_controllers_and_hosts.html"
       entries:
-      - title: Generating an assessment report by adding systems to the 7-Mode Transition
-          Tool
+      - title: Generating an assessment report by adding systems to the 7-Mode Transition Tool
         url: "/copy-free/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html"
       - title: Generating an assessment report by importing the inventory report XML
         url: "/copy-free/task_generating_an_assessment_report_by_importing_inventory_report_xml.html"
@@ -92,8 +91,7 @@ entries:
       entries:
       - title: Prerequisites for transitioning NFS configurations
         url: "/copy-free/concept_prerequisites_to_transition_nfs_configurations.html"
-      - title: 'NFS transition: supported and unsupported configurations, and required
-          manual steps'
+      - title: 'NFS transition: supported and unsupported configurations, and required manual steps'
         url: "/copy-free/concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html"
       - title: How NFS exports are transitioned
         url: "/copy-free/concept_how_nfs_exports_are_transitioned.html"
@@ -115,8 +113,7 @@ entries:
         url: "/copy-free/task_configuring_zones_by_using_fc_zone_plan.html"
       - title: Preparing SAN hosts for transition
         url: "/copy-free/task_preparing_san_hosts_for_transition.html"
-      - title: 'SAN transition: supported and unsupported configurations, and required
-          manual steps'
+      - title: 'SAN transition: supported and unsupported configurations, and required manual steps'
         url: "/copy-free/concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.html"
       - title: Space considerations when transitioning SAN volumes
         url: "/copy-free/concept_considerations_for_space_when_transitioning_san_volumes.html"
@@ -148,8 +145,7 @@ entries:
       - title: Customizing the transition of 7-Mode configurations
         url: "/copy-free/task_customizing_configurations_for_transition.html"
         entries:
-        - title: Examples of consolidating NFS export rules and Snapshot schedules
-            for transition
+        - title: Examples of consolidating NFS export rules and Snapshot schedules for transition
           url: "/copy-free/reference_example_consolidating_nfs_export_rules_for_transition.html"
       - title: Running prechecks
         url: "/copy-free/task_running_prechecks.html"
@@ -162,8 +158,7 @@ entries:
       url: "/copy-free/task_verifying_readiness_for_cutover.html"
     - title: Exporting storage configurations and halting 7-Mode systems
       url: "/copy-free/task_exporting_7_mode_system_and_hardware_information.html"
-    - title: Disconnecting disk shelves from the 7-Mode system and connecting to cluster
-        nodes
+    - title: Disconnecting disk shelves from the 7-Mode system and connecting to cluster nodes
       url: "/copy-free/task_removing_disk_shelves_from_7_mode_and_connecting_to_cluster_nodes.html"
     - title: Importing 7-Mode data to ONTAP
       url: "/copy-free/task_importing_7_mode_data_to_clustered_ontap.html"
@@ -187,8 +182,7 @@ entries:
     entries:
     - title: Transitioning HA pairs in a SnapMirror relationship in a staggered configuration
       url: "/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_staggered_way.html"
-    - title: Transitioning primary and secondary systems in a SnapMirror relationship
-        in parallel
+    - title: Transitioning primary and secondary systems in a SnapMirror relationship in parallel
       url: "/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_parallel.html"
   - title: Troubleshooting transition issues
     url: "/copy-free/concept_troubleshooting_transition_issues.html"
