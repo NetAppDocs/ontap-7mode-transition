@@ -18,7 +18,8 @@ xref:concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administra
 
 == A-E
 
-=== A
+[.lead]
+*A*
 
 [options="header"]
 |===
@@ -152,7 +153,8 @@ a|
 
 |===
 
-=== B
+[.lead]
+*B*
 
 [options="header"]
 |===
@@ -188,7 +190,8 @@ Not supported
 
 |===
 
-=== C
+[.lead]
+*C*
 
 [options="header"]
 |===
@@ -398,7 +401,8 @@ a|
 system node coredump
 |===
 
-=== D
+[.lead]
+*D*
 
 [options="header"]
 |===
@@ -606,7 +610,8 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ptbrg/home.html[Data
 
 |===
 
-=== E
+[.lead]
+*E*
 
 [options="header"]
 |===
@@ -694,7 +699,8 @@ vserver export policy [rule]
 
 == F-J
 
-=== F
+[.lead]
+*F*
 
 [options="header"]
 |===
@@ -860,7 +866,8 @@ a|
 Not supported
 |===
 
-=== H
+[.lead]
+*H*
 
 [options="header"]
 |===
@@ -899,7 +906,8 @@ Not supportedYou must use the statistics command.
 
 |===
 
-=== I
+[.lead]
+*I*
 
 [options="header"]
 |===
@@ -1130,7 +1138,9 @@ a|
 
 == K-O
 
-=== K
+[.lead]
+*K*
+
 [options="header"]
 |===
 | 7-Mode command| ONTAP command
@@ -1145,7 +1155,8 @@ system node run -node {_nodename_\|local} -command keymgr For management interfa
 
 |===
 
-=== L
+[.lead]
+*L*
 
 [options="header"]
 |===
@@ -1298,7 +1309,8 @@ a|
 `*lun unmap*`
 |===
 
-=== M
+[.lead]
+*M*
 
 [options="header"]
 |===
@@ -1321,7 +1333,8 @@ You must use the storage tape command set.
 
 |===
 
-=== N
+[.lead]
+*N*
 
 [options="header"]
 |===
@@ -1434,7 +1447,8 @@ a|
 statistics show -object nfs*
 |===
 
-=== O
+[.lead]
+*O*
 
 [options="header"]
 |===
@@ -1447,7 +1461,8 @@ Not supported
 
 == P-T
 
-=== P
+[.lead]
+*P*
 
 [options="header"]
 |===
@@ -1566,7 +1581,8 @@ a|
 set -privilege
 |===
 
-=== Q
+[.lead]
+*Q*
 
 [options="header"]
 |===
@@ -1637,7 +1653,8 @@ a|
 volume quota show -fields logging, logging -interval
 |===
 
-=== R
+[.lead]
+*R*
 
 [options='header']
 |===
@@ -1763,7 +1780,8 @@ NOTE: The network routing-groups command family is deprecated in ONTAP 9 and no 
 
 |===
 
-=== S
+[.lead]
+*S*
 
 [options="header"]
 |===
@@ -2445,7 +2463,8 @@ a|
 `*system health subsystem show*`
 |===
 
-=== T
+[.lead]
+*T*
 
 [options="header"]
 |===
@@ -2505,7 +2524,9 @@ network traceroute { -node _nodename_ \| -lif _lif-name_ } -waittime _integer_
 
 == U-Z
 
-=== U
+[.lead]
+*U*
+
 [options="header"]
 |===
 | 7-Mode command| ONTAP command
@@ -2588,7 +2609,8 @@ a|
 security login modify
 |===
 
-=== V
+[.lead]
+*V*
 
 [options="header"]
 |===
@@ -2859,7 +2881,8 @@ Not supported
 
 |===
 
-=== W
+[.lead]
+*W*
 
 [options="header"]
 |===
@@ -2871,7 +2894,8 @@ Not supported
 
 |===
 
-=== Y
+[.lead]
+*Y*
 
 [options="header"]
 |===

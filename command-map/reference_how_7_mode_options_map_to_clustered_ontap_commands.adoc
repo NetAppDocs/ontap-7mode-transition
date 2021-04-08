@@ -19,7 +19,9 @@ xref:concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administra
 
 == A-E
 
-=== A
+[.lead]
+*A*
+
 [options="header"]
 |===
 | 7-Mode option| Clustered Data ONTAP command
@@ -167,7 +169,8 @@ a|
 `*system node autosupport modify -node nodename -validate-digital-certificate {true\|false}*`
 |===
 
-=== B
+[.lead]
+*B*
 
 [options="header"]
 |===
@@ -178,7 +181,8 @@ a|
 Not supported
 |===
 
-=== C
+[.lead]
+*C*
 
 [options="header"]
 |===
@@ -546,7 +550,8 @@ a|
 `*system node coredump config modify -sparsecore-enabled true*`
 |===
 
-=== D
+[.lead]
+*D*
 
 [options="header"]
 |===
@@ -617,7 +622,8 @@ a|
 Not supported
 |===
 
-=== E
+[.lead]
+*E*
 
 [options="header"]
 |===
@@ -633,8 +639,10 @@ NOTE: Available at the advanced privilege level.
 
 == F-K
 
+[.lead]
+*F*
+
 [options="header"]
-=== F
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
@@ -783,7 +791,8 @@ a|
 Not supported
 |===
 
-=== H
+[.lead]
+*H*
 
 [options="header"]
 |===
@@ -850,7 +859,8 @@ a|
 Not supported
 |===
 
-=== I
+[.lead]
+*I*
 
 [options="header"]
 |===
@@ -960,8 +970,10 @@ a|
 `*iscsi modify -max-error-recovery-level*`
 |===
 
+[.lead]
+*K*
+
 [options="header"]
-=== K
 |===
 | 7-Mode option| Clustered Data ONTAP command
 a|
@@ -976,7 +988,8 @@ Not supported
 
 == O-Q
 
-=== L
+[.lead]
+*L*
 
 [options="header"]
 |===
@@ -1239,7 +1252,8 @@ a|
 Not supported
 |===
 
-=== N
+[.lead]
+*N*
 
 [options="header"]
 |===
@@ -1509,7 +1523,8 @@ a|
 Not supported
 |===
 
-=== P
+[.lead]
+*P*
 
 [options="header"]
 |===
@@ -1524,7 +1539,8 @@ a|
 Not supported
 |===
 
-=== Q
+[.lead]
+*Q*
 
 [options="header"]
 |===
@@ -1535,7 +1551,8 @@ a|
 Not supported
 |===
 
-=== R
+[.lead]
+*R*
 
 NOTE: All RAID options have 7-Mode-compatible nodeshell shortcuts of the form `options _option_name_`.
 
@@ -1726,7 +1743,8 @@ a|
 
 == S-Z
 
-=== S
+[.lead]
+*S*
 
 [options="header"]
 |===
@@ -1949,7 +1967,8 @@ a|
 Not supported
 |===
 
-=== T
+[.lead]
+*T*
 
 [options="header"]
 |===
@@ -2024,8 +2043,8 @@ a|
 Not supported
 |===
 
-
-=== V
+[.lead]
+*V*
 
 [options="header"]
 |===
@@ -2048,7 +2067,8 @@ a|
 
 |===
 
-=== W
+[.lead]
+*W*
 
 [options="header"]
 |===
