@@ -1,25 +1,12 @@
 ---
 permalink: inventory-collect/index.html
 sidebar: sidebar
-keywords: 7, mode, ontap, host, storage, information, collection
-summary: 'Index for Host and Storage Information Collection Guide.'
+keywords: 7, mode, ontap, host, storage, information, collection, transition, assessment
+summary: "Describes how to collect information about ONTAP and 7-Mode systems, switches, hosts, and host applications, and generate an inventory report that you can use with the 7-Mode Transition Tool for assessing whether the systems are ready for transition."
 ---
 = Host and Storage Information Collection Guide
 :icons: font
 :imagesdir: ../media/
 
-* xref:concept_collecting_host_and_storage_inventory_information_for_transition_assessment.adoc[Collecting storage and host inventory information]
- ** xref:concept_ontap_target_releases_supported_by_7mtt.adoc[ONTAP target releases supported by the 7-Mode Transition Tool]
- ** xref:concept_system_requirements_for_running_ict.adoc[System requirements for running the Inventory Collect Tool]
- ** xref:concept_storage_and_host_version_requirements.adoc[Storage, host, and FC switches version requirements for inventory collection]
- ** xref:task_preparing_7_mode_systems_for_inventory_collection.adoc[Preparing the 7-Mode systems and hosts for inventory collection]
- ** xref:concept_supported_configurations_for_generating_an_fc_zone_plan.adoc[Supported configurations for generating an FC zone plan]
- ** xref:reference_syntax_and_options.adoc[Syntax and options]
- ** xref:task_collecting_inventory_and_generating_inventory_report.adoc[Collecting inventory and generating inventory report]
- ** xref:task_generating_fc_zone_plan.adoc[Generating the FC zone plan]
- ** xref:reference_collection_and_assessment_commands.adoc[Collection and assessment commands]
- ** xref:concept_where_to_find_information_about_transition_assessment.adoc[Where to find information about transition assessment]
-* xref:reference_copyright_and_trademark.adoc[Copyright, trademark, and machine translation]
- ** xref:reference_copyright.adoc[Copyright]
- ** xref:reference_trademark.adoc[Trademark]
- ** xref:generic_machine_translation_disclaimer.adoc[Machine translation]
+[.lead]
+This guide describes how to collect information about ONTAP and 7-Mode systems, switches, hosts, and host applications, and generate an inventory report that you can use with the 7-Mode Transition Tool for assessing whether the systems are ready for transition.
