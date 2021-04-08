@@ -1,0 +1,54 @@
+section: install-admin
+title: 7-Mode Transition Tool installation and administration
+entries:
+- title: 7-Mode Transition Tool installation and administration
+  url: "/install-admin/index.html"
+  entries:
+  - title: Transition to clustered ONTAP by using the 7-Mode Transition Tool
+    url: "/install-admin/concept_transition_to_clustered_ontap_using_7mtt.html"
+    entries:
+    - title: ONTAP target releases supported by the 7-Mode Transition Tool
+      url: "/install-admin/concept_ontap_target_releases_supported_by_7mtt.html"
+    - title: Comparison of copy-free transition and copy-based transition
+      url: "/install-admin/concept_comparison_of_copy_free_transition_and_copy_based_transition.html"
+    - title: Interfaces and transition capabilities available on Windows and Linux
+      url: "/install-admin/reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.html"
+  - title: Installing or uninstalling the 7-Mode Transition Tool on a Windows system
+    url: "/install-admin/concept_installing_and_uninstalling_7mtt.html"
+    entries:
+    - title: System requirements for installing the 7-Mode Transition Tool on Windows
+        systems
+      url: "/install-admin/concept_system_requirements_for_7mtt_on_windows.html"
+    - title: Installing the 7-Mode Transition Tool on a Windows system
+      url: "/install-admin/task_installing_7mtt.html"
+    - title: Enabling login for users not part of the Administrator group
+      url: "/install-admin/task_enabling_login_for_users_not_part_of_administrator_group.html"
+    - title: Logging in to the 7-Mode Transition Tool
+      url: "/install-admin/task_logging_in_to_tool.html"
+    - title: Uninstalling the 7-Mode Transition Tool on a Windows system
+      url: "/install-admin/task_uninstalling_7mtt.html"
+  - title: Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based
+      transition only)
+    url: "/install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html"
+    entries:
+    - title: System requirements for installing 7-Mode Transition Tool on Linux
+      url: "/install-admin/concept_system_requirements_for_7_mode_transition_tool_on_linux.html"
+    - title: Installing 7-Mode Transition Tool on Linux
+      url: "/install-admin/task_installing_7_mode_transition_tool_on_linux.html"
+    - title: Uninstalling 7-Mode Transition Tool on Linux
+      url: "/install-admin/task_uninstalling_7_mode_transition_tool_on_linux.html"
+  - title: Modifying the configuration options of the 7-Mode Transition Tool
+    url: "/install-admin/task_modifying_default_configuration_settings_of_7mtt.html"
+  - title: Troubleshooting issues
+    url: "/install-admin/concept_troubleshooting_web_interface_issues.html"
+    entries:
+    - title: Tool installation fails with an incompatible OS error
+      url: "/install-admin/reference_tool_installation_fails_with_incompatible_os_error.html"
+    - title: Installation or uninstallation of the 7-Mode Transition Tool is blocked
+      url: "/install-admin/reference_installation_or_uninstallation_of_7mtt_is_blocked.html"
+    - title: Reinstalling or upgrading the 7-Mode Transition Tool fails on Windows
+        system
+      url: "/install-admin/reference_reinstalling_or_upgrading_7mtt_fails_on_windows_system.html"
+    - title: Windows Program Compatibility Assistant notification displayed while
+        installing the tool
+      url: "/install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html"
