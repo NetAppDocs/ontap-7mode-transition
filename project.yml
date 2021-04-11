@@ -6,7 +6,7 @@ sidebar:
       url: /releasenotes.html
     - section: command-map
     - section: install-admin
-    - section: copy-base
+    - section: copy-based
     - section: copy-free
     - section: inventory-collect
     - section: snapmirror
