@@ -9,4 +9,14 @@ summary: "Describes the pre-transition and post-transition procedures for VMware
 :imagesdir: ../media/
 
 [.lead]
-This guide describes the pre-transition and post-transition procedures for VMware ESXi, Red Hat Linux, and Windows hosts when transitioning data and configurations to ONTAP using the 7-Mode Transition Tool.
+If you are transitioning data and configurations from Data ONTAP operating in 7-Mode to clustered Data ONTAP 8.3 or later using the 7-Mode Transition Tool (7MTT) 2.2 or later, you must perform remediation steps for SAN hosts before and after transition.
+
+The _7-Mode Transition Tool SAN Host Transition and Remediation Guide_ provides the necessary pretransition and post-transition steps for VMware ESXi, Windows, Red Hat Enterprise Linux (RHEL), HP-UX, and AIX hosts.
+
+*Related information*
+
+xref:/copy-based/index.html[Copy-based transition]
+
+xref:/copy-free/index.html[Copy-free transition]
+
+xref:/install-admin/index.html[7-Mode Transition Tool installation and administration]
