@@ -69,7 +69,7 @@ pri_cluster::> snapmirror show -destination-path src_vserver:src_c_vol
          Total Transfer Time in Seconds: 43405
 ----
 
-  ... <<STEP_C5D6B3C2109E48658FD85B4EB718855B,#STEP_C5D6B3C2109E48658FD85B4EB718855B>>
+  ... Go to step 3.
 
 a|
 Perform scheduled update transfers

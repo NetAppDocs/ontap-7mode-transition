@@ -140,7 +140,7 @@ cluster1::> snapmirror show -destination-path vs1:dst_vol
          Total Transfer Time in Seconds: 11
 ----
 
-  ... Go to <<STEP_33254BEE7D2648F0A9C08FF48CF8E0F3,#STEP_33254BEE7D2648F0A9C08FF48CF8E0F3>>.
+  ... Go to step 3.
 
 a|
 Perform scheduled update transfers
