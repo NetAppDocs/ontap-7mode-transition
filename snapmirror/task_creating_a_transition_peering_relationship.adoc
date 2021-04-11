@@ -52,6 +52,6 @@ The following output shows the transition peer relationships of the SVM vs1:
 cluster1::> vserver peer transition show
 Vserver  Source Filer  Multi Path Address   Local LIFs
 -------  ------------  -----------------    ---------
-vs1      src2	  	-					-
-vs1      src3	  	-					-
+vs1      src2	         	-				    	-
+vs1      src3	        	-				     	-
 ----
