@@ -64,10 +64,8 @@ This tool enables you to collect the HBA configuration information of the host.
   *** The host system belongs to a domain.
   *** If the host has a local user, and the user name for that user is in the following format:
 +
-[source,nolinebreak]
-----
-SystemName\Username
-----
+`SystemName\Username`
+
 . Enable SSH on the Linux or ESXi host.
 +
 For more information about enabling SSH, see the host documentation.
