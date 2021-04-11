@@ -47,7 +47,3 @@ bash-4.2# ./configure
 bash-4.2# service transition-service status
 The transition-service (NetApp 7-Mode Transition Tool server) is running. PID=38384.
 ----
-
-*Related information*
-
-https://mysupport.netapp.com/site/global/dashboard[NetApp Support]

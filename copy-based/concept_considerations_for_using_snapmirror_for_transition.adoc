@@ -43,5 +43,3 @@ You can specify two paths for transition by using a data copy IP address and a m
 xref:concept_guidelines_for_creating_a_data_copy_schedule.adoc[Considerations for creating a data copy schedule]
 
 xref:task_creating_schedule_for_snapmirror_transfers.adoc[Creating a data copy schedule for SnapMirror transfers]
-
-http://mysupport.netapp.com/[Documentation on the NetApp Support Site: mysupport.netapp.com]

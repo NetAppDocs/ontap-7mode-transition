@@ -69,7 +69,3 @@ For more information about enabling SSH, see the host documentation.
 For information about downloading and installing the NetApp Host Utilities software, see the NetApp Support Site.
 
 . Verify that all the hosts and storage systems can be reached by the Windows system from which the Inventory Collect Tool is run.
-
-*Related information*
-
-http://mysupport.netapp.com/[Documentation on the NetApp Support Site: mysupport.netapp.com]

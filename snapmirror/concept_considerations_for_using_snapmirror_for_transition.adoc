@@ -24,7 +24,3 @@ Data copy schedules for transition operations should not overlap with the existi
 == Using multiple paths for transition
 
 You can specify two paths for transition by using a data copy IP address and a multipath IP address. However, both paths can be used only for load-balancing, not for failover.
-
-*Related information*
-
-http://mysupport.netapp.com/[Documentation on the NetApp Support Site: mysupport.netapp.com]

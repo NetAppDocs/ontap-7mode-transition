@@ -21,7 +21,7 @@ You must complete several prerequisite tasks before you use the 7-Mode Transitio
 +
 You can use the Collect and Assess feature to generate the zoning plan.
 
-. Use the Interoperability Matrix to verify that the following are supported for transition to clustered Data ONTAP:
+. Use the link:https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool] to verify that the following are supported for transition to clustered Data ONTAP:
  ** Your version of Data ONTAP operating in 7-Mode
 +
 In some cases, you might have to upgrade your version of Data ONTAP operating in 7-Mode to a 7MTT SAN compatible version. For example, Data ONTAP 7.3.7 operating in 7-Mode is not compatible for transitions using the 7MTT. If you are running this version, you must upgrade it before initiating transition.
@@ -35,10 +35,6 @@ For iSCSI, only software initiators are supported. For FC and FCoE, only QLogic 
 VMware HA and DRS are not supported during transition.
 
 *Related information*
-
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61584[NetApp Documentation: 7-Mode Transition Tool]
-
-https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
 
 http://kb.vmware.com/kb/2032893[Retaining resource pools when disabling VMware DRS clusters in the vSphere Web Client]
 

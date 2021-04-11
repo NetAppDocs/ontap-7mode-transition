@@ -27,4 +27,4 @@ xref:reference_transition_preparation_checklist.adoc[Transition preparation chec
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT_v2.0%2F%2FTransitioned_Data_ONTAP_features[7MTT v2.0/Transitioned Data ONTAP features]
 
-https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+link:https://mysupport.netapp.com/matrix/imt.jsp?components=68128;&solution=1&isHWU&src=IMT[NetApp Interoperability Matrix Tool^]

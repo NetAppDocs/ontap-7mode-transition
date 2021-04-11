@@ -135,7 +135,3 @@ system7mode is alive
 For multipathing, you must have two intercluster LIFs on each node.
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]
-
-*Related information*
-
-https://mysupport.netapp.com/site/docs-and-kb[NetApp Documentation: Product Library A-Z]

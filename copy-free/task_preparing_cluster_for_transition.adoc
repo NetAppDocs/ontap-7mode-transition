@@ -80,7 +80,3 @@ mgmt
 
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System administration]
-
-*Related information*
-
-https://mysupport.netapp.com/site/docs-and-kb[NetApp Documentation: Product Library A-Z]
