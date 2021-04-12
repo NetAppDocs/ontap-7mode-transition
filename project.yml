@@ -16,27 +16,27 @@ sidebar:
 
 homepage:
   tiles:
-    - title: Get Started
+    - title: Get started
       links:
         - title: What's new
           summary: What's new with 7-Mode Transition
           url: releasenotes.html
-        - title: Collect data needed for tansition
-          summary: Discover how to collect information essential to your transition
-          url: /inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html
         - title: Install the 7-Mode Transition Tool
           summary: Use the tool collect inventory of 7-Mode controllers, hosts, switches, and applications, and assess their readiness for transition
           url: /install-admin/concept_transition_to_clustered_ontap_using_7mtt.html
+        - title: Collect data needed for transition
+          summary: Discover how to collect information essential to your transition
+          url: /inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html
     - title: Command map for 7-mode administrators
       links:
         - title: How 7-Mode commands map to ONTAP commands
-          summary: Understand how Astra works.
+          summary: Find the ONTAP equivalents of 7-Mode commands
           url: /command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html
         - title: How 7-Mode options map to ONTAP commands
-          summary:
+          summary: View how 7-Mode the options commands map to ONTAP command parameters
           url: "/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html"
         - title: How 7-Mode configuration files map to clustered Data ONTAP commands
-          summary:
+          summary: View how 7-Mode configuration files map to clustered Data ONTAP configuration commands
           url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html"
     - title: Ways to transition
       links:
@@ -49,7 +49,7 @@ homepage:
         - title: Transition data using SnapMirror
           summary: Understand how to transition data from 7-Mode using SnapMirror commands
           url: /snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html
-    - title: SAN host transition and redediation
+    - title: SAN host transition and remediation
       links:
         - title: VMware ESXi
           summary: Understand pre/post transition steps for ESXi
