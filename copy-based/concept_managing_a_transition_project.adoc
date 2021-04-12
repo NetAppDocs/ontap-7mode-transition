@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_managing_a_transition_project.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, manage, project
 summary: 'You can manage transition projects by using the 7-Mode Transition Tool \(web interface\). You can edit, pause, resume, abort, delete, and run prechecks on a project.'
 ---
 = Managing a transition project

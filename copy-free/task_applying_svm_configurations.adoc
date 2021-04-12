@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_applying_svm_configurations.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, apply, svm, configurations
 summary: 'You must manually apply some configurations before the SVM provision phase. You can then apply all configurations that are defined in the 7-Mode controller \(files in the /etc directory\) or at the vFiler unit level to the mapped SVMs by using the tool.'
 ---
 = Applying SVM configurations
@@ -9,7 +9,7 @@ summary: 'You must manually apply some configurations before the SVM provision p
 :imagesdir: ../media/
 
 [.lead]
-You must manually apply some configurations before the SVM provision phase. You can then apply all configurations that are defined in the 7-Mode controller (files in the /etc directory) or at the vFiler unit level to the mapped SVMs by using the tool.
+You must manually apply some configurations before the SVM provision phase. You can then apply all configurations that are defined in the 7-Mode controller (files in the `/etc` directory) or at the vFiler unit level to the mapped SVMs by using the tool.
 
 If you do not want to transition all configurations to the target SVMs, you must have set the properties for the configurations to be excluded on the SVMs.
 
@@ -44,10 +44,15 @@ NFS options
  ** *SAN*
 +
 FC and iSCSI services
-* IMPORTANT: You cannot rerun this operation after it is completed successfully.
++
+[IMPORTANT]
+====
+You cannot rerun this operation after it is completed successfully.
 
 Therefore, if you make any changes to the 7-Mode controller-level configurations after this operation, you must manually transition the configurations to the target SVMs before the export phase. For example, if you add a new vFiler unit to the 7-Mode controller and map it to an SVM after this operation, you must manually transition the configurations of that vFiler unit to the mapped SVM. Another example is if you add some UNIX users on the 7-Mode controller after the SVM provision phase, you must create these UNIX users manually on the mapped SVMs.
+====
 
+.Steps
 . Click *Apply SVM Config* to apply the 7-Mode configurations to the target SVMs.
 +
 A confirmation message that lists important considerations for this operation is displayed.

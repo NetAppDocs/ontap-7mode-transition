@@ -1,8 +1,8 @@
 ---
 permalink: snapmirror/reference_trademark.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, transition, snapmirror, trademark
+summary: 'Trademark information for 7-Mode Data Transition Using SnapMirror Technology.'
 ---
 = Trademark
 :icons: font

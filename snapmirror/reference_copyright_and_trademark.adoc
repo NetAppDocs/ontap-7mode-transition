@@ -1,8 +1,8 @@
 ---
 permalink: snapmirror/reference_copyright_and_trademark.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, copyright, trademark, machine, translation
+summary: 'Copyright and trademark for 7-Mode Data Transition Using SnapMirror Technology.'
 ---
 = Copyright, trademark, and machine translation
 :icons: font

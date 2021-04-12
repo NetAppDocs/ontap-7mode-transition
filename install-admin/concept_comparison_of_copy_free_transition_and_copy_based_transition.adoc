@@ -1,7 +1,7 @@
 ---
 permalink: install-admin/concept_comparison_of_copy_free_transition_and_copy_based_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, install, copy, free, transition, based
 summary: 'You can use the 7-Mode Transition Tool to migrate your data and configurations from 7-Mode to ONTAP by using either copy-based transition or copy-free transition. It is important to understand the differences between the two methods before transition.'
 ---
 = Comparison of copy-free transition and copy-based transition
@@ -11,6 +11,7 @@ summary: 'You can use the 7-Mode Transition Tool to migrate your data and config
 [.lead]
 You can use the 7-Mode Transition Tool to migrate your data and configurations from 7-Mode to ONTAP by using either copy-based transition or copy-free transition. It is important to understand the differences between the two methods before transition.
 
+[options="header"]
 |===
 | Parameter| Copy-free transition| Copy-based transition
 a|
@@ -41,7 +42,9 @@ Longer duration (initial baseline and update transfer time varies based on workl
 a|
 Disruption to data access
 a|
-In the range of hours *Important:* In most cases, the storage cutover time can be 3 through 8 hours. Cutover time includes the time taken by the tool to perform two automated operations--the export and halt operation and the import operation--as well as the time taken for manually cabling the disk shelves to the new controllers. The export and halt operation and the import operation together can take up to 2 hours. Cabling of the disk shelves can take from 1 hour through 6 hours.
+In the range of hours
+
+IMPORTANT: In most cases, the storage cutover time can be 3 through 8 hours. Cutover time includes the time taken by the tool to perform two automated operations--the export and halt operation and the import operation--as well as the time taken for manually cabling the disk shelves to the new controllers. The export and halt operation and the import operation together can take up to 2 hours. Cabling of the disk shelves can take from 1 hour through 6 hours.
 
 This cutover time guidance does not include the time taken for the required preproduction testing and assumes an error-free transition without unexpected failures such as a disk failure.
 

@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_for_cutover_when_transitioning_aix_data_luns_with_file_systems.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, cutover, phase, aix, data, lun
 summary: 'If you are transitioning an AIX host data LUN with a file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.'
 ---
 = Preparing for cutover phase when transitioning AIX host data LUNs with file systems
@@ -15,13 +15,24 @@ Fabric connectivity and zoning to the clustered Data ONTAP nodes must be establi
 
 For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool. Copy-free transitions are not supported on AIX hosts.
 
+.Steps
 . Stop I/O on all of the mount points.
 . Shut down each application accessing the LUNs according to the recommendations of the application vendor.
-. Unmount all of the mount points: `umount mount_point`
-. Disable the volume group: `varyoffvq vg_name`
-. Export the volume group: `exportvg vg_name`
-. Verify the volume group status: `lsvg`
+. Unmount all of the mount points:
++
+`*umount _mount_point_*`
+. Disable the volume group:
++
+`*varyoffvq _vg_name_*`
+. Export the volume group:
++
+`*exportvg _vg_name_*`
+. Verify the volume group status:
++
+`*lsvg*`
 +
 The exported volume group should not be listed in the output.
 
-. If there are any stale entries, remove them: `rmdev -Rdl hdisk#`
+. If there are any stale entries, remove them:
++
+`*rmdev -Rdl hdisk#*`

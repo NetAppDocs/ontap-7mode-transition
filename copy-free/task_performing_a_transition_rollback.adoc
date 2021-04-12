@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_performing_a_transition_rollback.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, roll, back, project
 summary: 'You can roll back a transition if you want to revert to 7-Mode at any stage of the copy-free transition before the transitioned aggregates are committed. Rollback is a manual operation. You can use the 7-Mode Transition Tool to generate the manual steps that you have to perform for a rollback.'
 ---
 = Rolling back a copy-free transition project
@@ -13,7 +13,7 @@ You can roll back a transition if you want to revert to 7-Mode at any stage of t
 
 * You must ensure that no volume or aggregate transition operations are running on the cluster.
 +
-You can use the job show -jobtype transition command.
+You can use the `job show -jobtype transition` command.
 
 * None of the 7-Mode aggregates must be committed.
 +
@@ -21,6 +21,7 @@ NOTE: You cannot perform the rollback if even one 7-Mode aggregate is committed.
 
 * The target cluster nodes must not be in takeover mode.
 
+.Steps
 . Click *Rollback Prechecks* to verify that the project is eligible for a rollback.
 +
 If the precheck reports issues, you must fix them manually and rerun the precheck operation. For example, if you have created any new volumes or LUNs during preproduction testing, you must delete them manually.

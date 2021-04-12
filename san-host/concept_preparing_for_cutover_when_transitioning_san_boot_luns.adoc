@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_preparing_for_cutover_when_transitioning_san_boot_luns.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, cutover, phase, san, boot, lun
 summary: 'If you are transitioning SAN boot LUNs from Data ONTAP operating in 7-Mode to clustered Data ONTAP, there are certain prerequisites you must be aware of before entering the cutover phase.'
 ---
 = Preparing for the cutover phase when transitioning SAN boot LUNs

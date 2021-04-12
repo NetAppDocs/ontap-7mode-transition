@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_remounting_vmfs_volumes_after_transition_using_vsphere_client.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, remount, vmfs, volumes, vshpere, client
 summary: 'After transition, you must remount your VMFS volumes to bring your datastores and virtual machines \(VMs\) to their pretransition states. If you are not familiar with the ESXi CLI or it is more convenient in your environment, you can use vSphere Client to remount your volumes.'
 ---
 = Remounting VMFS volumes after transition using vSphere Client
@@ -13,6 +13,7 @@ After transition, you must remount your VMFS volumes to bring your datastores an
 
 These steps apply to volumes and spanned volumes.
 
+.Steps
 . Log in to the ESXi host or the vCenter Server managing the ESXi host.
 . Under *Hosts and Clusters*, select the ESXi host.
 . Navigate to *Configuration* > *Hardware* > *Storage*.

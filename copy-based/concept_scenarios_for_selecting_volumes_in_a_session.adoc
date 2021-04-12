@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_scenarios_for_selecting_volumes_in_a_session.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, scenarios, selecting, volumes, project
 summary: 'Planning a project composition and deciding which 7-Mode volumes to transition in a single transition operation can help in reducing the downtime for applications. Understanding some sample scenarios can help you while creating projects in your environment.'
 ---
 = Scenarios for selecting volumes in a project

@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, assessment, report, add, transition, tool
 summary: 'You can collect inventory information for controllers, hosts, and FC switches by adding the systems to the 7-Mode Transition Tool. You can then create an assessment report to assess the features and functionalities of those systems, and to identify how they work in the ONTAP version selected for transition.'
 ---
 = Generating an assessment report by adding systems to the 7-Mode Transition Tool
@@ -13,7 +13,7 @@ You can collect inventory information for controllers, hosts, and FC switches by
 
 * The user name for the storage system and hosts must have sufficient privileges to execute the commands listed in the readme file.
 +
-The readme file is located at 7-Mode_Transition_Tool_installed_location\bin\ict.
+The readme file is located at `_7-Mode_Transition_Tool_installed_location\bin\ict`.
 
 * You must have prepared the 7-Mode systems, hosts, and FC switches for transition assessment.
 * For assessing Windows systems, you must have a domain user account.
@@ -21,9 +21,8 @@ The readme file is located at 7-Mode_Transition_Tool_installed_location\bin\ict.
 +
 Each system details must be in the following format:
 +
-----
-(ontap|windows|vmware|linux|cisco|brocade)://[(user|domain_user)[:password]@](host_name|ip)
-----
+`(ontap|windows|vmware|linux|cisco|brocade)://[(_user|domain_user_)[_:password_]@](_host_name|ip_)`
+
 
 * The controller or host must be accessible by the system on which the 7-Mode Transition Tool is installed and run.
 * All features must be configured or their license enabled so that the workbook can contain inventory information about these features.
@@ -32,16 +31,17 @@ Each system details must be in the following format:
 
 If the 7-Mode Transition Tool service or the system on which this tool is installed is restarted, then the system details added to the tool are lost and the system must be added to the tool again.
 
+.Steps
 . If you want to use the latest Interoperability Matrix (IMT) data for transition assessment:
  .. Download the IMT data from the Interoperability Matrix, and then save it:
   ... From the Reports menu, click *Complete Daily Exports*.
   ... In the Complete Daily Exports dialog box, enter FAS in the search field.
   ... Download the ONTAP SAN Host excel file, and then save it.
 https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
- .. From the CLI, import the IMT data by using the transition imt import command.
- .. Verify that the import is successful by using the transition imt show command.
+ .. From the CLI, import the IMT data by using the `transition imt import` command.
+ .. Verify that the import is successful by using the `transition imt show` command.
 +
-*Troubleshooting:* If the IMT data import operation fails, you can revert to the previous data by using the transition imt restore command.
+*Troubleshooting:* If the IMT data import operation fails, you can revert to the previous data by using the `transition imt restore` command.
 . Log in to the 7-Mode Transition Tool, and then click *Collect & Assess* in the home page.
 . Click *Add Systems*.
 . In the Add System window, perform one of the following actions:
@@ -67,7 +67,7 @@ If the assessment status of a system is Ready, then you can perform transition a
 +
 The assessment workbook (report name appended with "`AssessmentWorkbook`") and assessment executive summary (report name appended with "`AssessmentExecutiveSummary`") reports are generated in XML format.
 +
-You can access the assessment workbook, assessment summary, and inventory XML files that are used to generate the assessment report from the ...etc/webapp/transition-gui/tmc folder.
+You can access the assessment workbook, assessment summary, and inventory XML files that are used to generate the assessment report from the `...etc/webapp/transition-gui/tmc` folder.
 . View the assessment workbook in Microsoft Excel and assessment executive summary in Microsoft Word by using Microsoft Office 2007 or later versions.
 +
 In the assessment workbook, see the Transition Feasibility (CFT), Config Precheck Summary, Config Precheck Details, and CFT Precheck Summary tabs for copy-free transition assessment details.
@@ -76,4 +76,4 @@ In the assessment executive summary, see the Copy-Free Transition Feasibility se
 +
 You might have to enable macros in Excel to view the assessment workbook.
 +
-In the data collection summary of the assessment workbook, if the access status of a system is FAILED, then the inventory information for that system is invalid. In the assessment executive summary, the value of some of the fields of this system is displayed as Not Assessed.
+In the data collection summary of the assessment workbook, if the access status of a system is `FAILED`, then the inventory information for that system is invalid. In the assessment executive summary, the value of some of the fields of this system is displayed as `Not Assessed`.

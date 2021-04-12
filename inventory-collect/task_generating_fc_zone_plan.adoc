@@ -1,7 +1,7 @@
 ---
 permalink: inventory-collect/task_generating_fc_zone_plan.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, generate, fc, zone, plan, transition
 summary: 'After collecting information about the Data ONTAP systems, hosts, and FC switches, you can generate the FC zone plan, which is used to configure the switches in the cluster after migration.'
 ---
 = Generating the FC zone plan
@@ -18,8 +18,11 @@ The cluster can be connected either to the same switch as the 7-Mode system or t
 +
 xref:concept_supported_configurations_for_generating_an_fc_zone_plan.adoc[Supported configurations for generating an FC zone plan]
 
+.Steps
 . In the CLI, navigate to the ICT directory.
-. From the CLI, generate the FC zone plan: `ict --cmd generate-fc-zones --source-filers 7-mode-ip1,7mode-ip2 --dest-svm cluster-name:vserver-name --fc-switches switch-name:vsan-id1,vsan-id2 7mode_cdot_switch_inventory.xml`
+. From the CLI, generate the FC zone plan:
++
+`*ict --cmd generate-fc-zones --source-filers _7-mode-ip1,7mode-ip2_ --dest-svm _cluster-name:vserver-name_ --fc-switches _switch-name:vsan-id1,vsan-id2_ 7mode_cdot_switch_inventory.xml*`
 +
 You must enter the VSAN ID for the Cisco switches.
 +

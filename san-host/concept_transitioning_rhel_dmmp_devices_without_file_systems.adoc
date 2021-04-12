@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_transitioning_rhel_dmmp_devices_without_file_systems.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, rhel, dmmp, device, file, system
 summary: 'Before transition of a Red Hat Enterprise Linux \(RHEL\) DMMP device without a file system, you must verify that the DMMP device does not have a file system. You must also perform specific steps to prepare for the cutover phase, and after transition you must replace the WWID.'
 ---
 = Transitioning RHEL DMMP devices without file systems

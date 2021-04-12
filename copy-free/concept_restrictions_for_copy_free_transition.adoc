@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_restrictions_for_copy_free_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, aggregates, volumes, restrictions
 summary: 'You must be aware of certain restrictions for transitioning 7-Mode aggregates and volumes. Some of the restrictions are due to features that are not supported in ONTAP. For some restrictions, you can perform a corrective action that enables you to continue with the transition.'
 ---
 = Restrictions for transitioning 7-Mode aggregates and volumes
@@ -33,7 +33,7 @@ Transition is blocked if any of the 7-Mode aggregates and volumes selected for t
 
 * Offline
 * Restricted
-* Inconsistent (wafl inconsistent)
+* Inconsistent (`wafl inconsistent`)
 
 == FlexClone volumes
 
@@ -53,6 +53,6 @@ You cannot transition volumes with qtrees, where the qtrees are owned by a diffe
 
 The inode to parent pathname translations must be enabled on each volume. You can enable the parent to pathname translations by turning off the no_i2p option:
 
-`vol options vol_name no_i2p off`
+`*vol options _vol_name_ no_i2p off*`
 
 You do not have to wait for the i2p scan to finish, and you can continue with the transition preparation.

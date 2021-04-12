@@ -1,8 +1,8 @@
 ---
 permalink: snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, transition, volumes, snapmirror, ontap, clustered, data
+summary: 'You can transition 7-Mode volumes in a NAS and SAN environment to clustered Data ONTAP volumes by using clustered Data ONTAP SnapMirror commands. You must then set up the protocols, services, and other configuration on the cluster after the transition is complete'
 ---
 = Transitioning 7-Mode volumes using SnapMirror
 :icons: font

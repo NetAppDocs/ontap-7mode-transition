@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/reference_failed_to_boot_7_mode_controller_in_maintenance_mode.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, failed, boot, controller, maintenance, mode
 summary: 'The export and halt operation fails with the error message: Failed to boot the 7-Mode controller in maintenance mode. You must manually halt and boot the controller in the maintenance mode and rerun the operation.'
 ---
 = Failed to boot the 7-Mode controller in maintenance mode
@@ -9,39 +9,42 @@ summary: 'The export and halt operation fails with the error message: Failed to 
 :imagesdir: ../media/
 
 [.lead]
-The export and halt operation fails with the error message: Failed to boot the 7-Mode controller in maintenance mode. You must manually halt and boot the controller in the maintenance mode and rerun the operation.
+The export and halt operation fails with the error message: `Failed to boot the 7-Mode controller in maintenance mode`. You must manually halt and boot the controller in the maintenance mode and rerun the operation.
 
 == Workaround
 
-. Halt the 7-Mode storage system: `halt -f -t 0`
-. At the LOADER prompt, record the values set for the bootarg.init.console_muted and bootarg.init.console_level boot boot parameters:
+. Halt the 7-Mode storage system:
 +
-`printenv bootarg.init.console_muted`
+`*halt -f -t 0*`
+. At the LOADER prompt, record the values set for the `*bootarg.init.console_muted*` and `*bootarg.init.console_level boot*` boot parameters:
 +
-`printenv bootarg.init.console_level`
+`*printenv bootarg.init.console_muted*`
++
+`*printenv bootarg.init.console_level*`
 
 . Disable the console messages by setting the following boot parameters:
 +
-`setenv bootarg.init.console_muted "true"`
+`*setenv bootarg.init.console_muted "true"*`
 +
-`setenv bootarg.init.console_level "-1"`
+`*setenv bootarg.init.console_level "-1"*`
 
 . From the 7-Mode Transition Tool, rerun the export and halt operation.
 . From the 7-Mode storage system, set the boot parameters to their original values, as recorded in Step 2:
 +
+[options="header"]
 |===
 | If the boot parameters are...| Enter the following commands...
 a|
 Not set previously with any value (undefined)
 a|
-    `unsetenv bootarg.init.console_muted`
-+
-`unsetenv bootarg.init.console_level`
+`*unsetenv bootarg.init.console_muted*`
+
+`*unsetenv bootarg.init.console_level*`
 a|
 Set with a value previously
 a|
-    `unsetenv bootarg.init.console_muted "original_value"`
-+
-`unsetenv bootarg.init.console_level "original_value"`
-+
+`*unsetenv bootarg.init.console_muted "_original_value_"*`
+
+`*unsetenv bootarg.init.console_level "_original_value_"*`
+
 |===

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_preparing_for_copy_based_transition.html
 sidebar: sidebar
-keywords: preparing for migration
+keywords: ontap, copy, based, transition, prepare
 summary: 'Before initiating a data copy operation from 7-Mode to ONTAP, you must understand the requirements and restrictions for migration, and complete certain tasks on the 7-Mode system and the cluster.'
 ---
 = Preparing for copy-based transition
@@ -27,4 +27,4 @@ xref:reference_transition_preparation_checklist.adoc[Transition preparation chec
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT_v2.0%2F%2FTransitioned_Data_ONTAP_features[7MTT v2.0/Transitioned Data ONTAP features]
 
-https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+link:https://mysupport.netapp.com/matrix/imt.jsp?components=68128;&solution=1&isHWU&src=IMT[NetApp Interoperability Matrix Tool^]

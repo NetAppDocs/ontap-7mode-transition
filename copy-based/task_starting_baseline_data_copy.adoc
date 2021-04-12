@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_starting_baseline_data_copy.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, start, baseline, copy
 summary: 'After you create a project and complete the precheck operation, you must initiate data copy from the 7-Mode volumes to ONTAP. You can start baseline data copy operation for individual projects. You should stop unnecessary system processes and network activity during the data copy.'
 ---
 = Starting baseline data copy
@@ -30,6 +30,7 @@ The source and destination systems should have optimum CPU utilization and memor
 
 * Number of 7-Mode volume SnapMirror transfers occurring during the data copy
 
+.Steps
 . From Dashboard, select the project for which you want to start the baseline data copy.
 . Click *Start Baseline*.
 +

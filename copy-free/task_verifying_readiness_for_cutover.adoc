@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_verifying_readiness_for_cutover.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, verify, cutover, ready, systems
 summary: 'Before disconnecting client access, you can verify the readiness of the 7-Mode system for storage cutover, such as verifying whether the SP or RLM is configured on the 7-Mode system and whether the disk shelves, aggregates, and volumes are ready for transition. You can manually fix any issues before the export operation, thereby reducing the downtime.'
 ---
 = Verifying that 7-Mode systems are ready for cutover
@@ -13,6 +13,7 @@ Before disconnecting client access, you can verify the readiness of the 7-Mode s
 
 You can run this operation multiple times before the export and halt operation is initiated.
 
+.Steps
 . Click *Check Readiness* to verify that the 7-Mode systems are ready for cutover.
 +
 Although this operation is optional, it is a best practice to verify the readiness of the systems and fix issues before the export operation in order to minimize the storage cutover window.

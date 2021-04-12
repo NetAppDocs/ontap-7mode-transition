@@ -1,8 +1,8 @@
 ---
 permalink: command-map/reference_copyright.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, command, map, transition, copyright
+summary: 'Copyright information for Command Map for 7-Mode Administrators Guide.'
 ---
 = Copyright
 :icons: font

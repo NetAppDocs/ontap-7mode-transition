@@ -1,7 +1,7 @@
 ---
 permalink: command-map/concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, command, map, transition, clustered, commands, options, configuration, file, maps, interpret
 summary: 'If you are moving from Data ONTAP running in 7-Mode to clustered Data ONTAP, you might find it handy to refer to the command maps, which show the clustered Data ONTAP equivalents of 7-Mode commands, options, and configuration files.'
 ---
 = How to interpret the clustered Data ONTAP commands, options, and configuration files maps for 7-Mode administrators
@@ -23,14 +23,17 @@ The Command Map for 7-Mode Administrators includes the following mappings of 7-M
 
 Although the Data ONTAP command-line interface (CLI) is significantly reorganized for cluster operations, many of the commands have 7-Mode-compatible shortcut versions that require no change to scripts or other automated tasks. These shortcut versions are listed first and in *bold* in the tables here. Shortcut versions that are not 7-Mode-compatible are listed next, followed by the full, long-form version of the commands:
 
+[options="header"]
 |===
 | 7-Mode command| Clustered Data ONTAP command
 a|
-aggr add
+`aggr add`
 a|
-*aggr add* aggr add-disks
+`*aggr add*`
 
-storage aggregate add-disks
+`aggr add-disks`
+
+`storage aggregate add-disks`
 
 |===
 If no *bold* shortcut is listed, a 7-Mode-compatible version is not available. Not all forms of the commands are shown in the table. The CLI is extremely flexible, allowing multiple abbreviated forms.
@@ -39,15 +42,15 @@ If no *bold* shortcut is listed, a 7-Mode-compatible version is not available. N
 
 A cluster has three different shells for CLI commands:
 
-* The clustershell is the native shell, started automatically when you log in to the cluster.
+* The _clustershell_ is the native shell, started automatically when you log in to the cluster.
 +
 It provides all the commands you need to configure and manage the cluster.
 
-* The nodeshell is a special shell that enables you to run a subset of 7-Mode commands.
+* The _nodeshell_ is a special shell that enables you to run a subset of 7-Mode commands.
 +
-These commands take effect only at the node level. You can switch from the clustershell to a nodeshell session to run nodeshell commands interactively, or you can run a single nodeshell command from the clustershell. You can recognize a command as a nodeshell command if it has the (long) form `system node run -node {nodename|local} commandname`.
+These commands take effect only at the node level. You can switch from the clustershell to a nodeshell session to run nodeshell commands interactively, or you can run a single nodeshell command from the clustershell. You can recognize a command as a nodeshell command if it has the (long) form `system node run -node {_nodename_|local} commandname`.
 
-* The systemshell is a low-level shell used only for diagnostic and troubleshooting purposes.
+* The _systemshell_ is a low-level shell used only for diagnostic and troubleshooting purposes.
 +
 It is not intended for general administrative purposes. Access the systemshell only with guidance from technical support.
 
@@ -55,12 +58,13 @@ It is not intended for general administrative purposes. Access the systemshell o
 
 When you see a 7-Mode-compatible shortcut version of a nodeshell command, it is assumed that you are running the command from the nodeshell. To switch to the nodeshell, enter the following:
 
-`system node run -node {nodename|local}`
+`*system node run -node {_nodename_|local}*`
 
-Other forms of the nodeshell command must be run from the clustershell.
+Other forms of the `nodeshell` command must be run from the clustershell.
 
 == Where to go for more information
 
+[options="header"]
 |===
 | If you want to...| For more information...
 a|

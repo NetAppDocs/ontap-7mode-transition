@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_preparing_for_migration.html
 sidebar: sidebar
-keywords: preparing for migration
+keywords: ontap, transition, copy, free, prepare
 summary: 'Before starting the copy-free transition, you must identify the 7-Mode HA pair to transition, understand the requirements and restrictions for migration, and prepare the 7-Mode systems and cluster for transition. You must also be aware of the Data ONTAP features that are supported and unsupported for transition.'
 ---
 = Preparing for copy-free transition

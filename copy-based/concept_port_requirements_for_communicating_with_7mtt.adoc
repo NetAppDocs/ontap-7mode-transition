@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_port_requirements_for_communicating_with_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, port, requirements, communicating, tool
 summary: 'The 7-Mode Transition Tool communicates with the 7-Mode system and the cluster over certain ports. You must ensure that these ports on the 7-Mode system and the cluster are open to allow communication with the 7-Mode Transition Tool.'
 ---
 = Port requirements for communicating with the 7-Mode Transition Tool
@@ -48,15 +48,15 @@ To transition netgroups and CIFS local users and groups, the following requireme
 
 * Port 8088 of the 7-Mode Transition Tool must be available.
 +
-For an alternative to port 8088, you must change the port specified by the tool.http.port parameter in the transition-tool.conf file of the 7-Mode Transition Tool installation directory.
+For an alternative to port 8088, you must change the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file of the 7-Mode Transition Tool installation directory.
 +
 NOTE: You must restart the 7-Mode Transition Tool service after changing the port in the configuration file.
 
 * Each node in the cluster must have at least one data LIF configured for the target SVM.
-* All SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the tool.http.port parameter in the transition-tool.conf file.
+* All SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
 +
 NOTE: You must verify that firewalls do not block this traffic.
 
 *Related information*
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-isg/home.html[7-Mode Transition Tool installation and administration]
+https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/install-admin/index.html[7-Mode Transition Tool installation and administration]

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_transition_overview.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, overview
 summary: 'Transitioning to clustered ONTAP involves identifying your current environment, defining the transition scope, designing the optimal configuration of the destination systems, planning how to migrate data and configurations, and making necessary environmental updates.'
 ---
 = Transition overview

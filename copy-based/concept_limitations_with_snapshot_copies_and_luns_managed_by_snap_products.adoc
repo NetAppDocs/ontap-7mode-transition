@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_limitations_with_snapshot_copies_and_luns_managed_by_snap_products.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, limitations, snapshot, lun, snapdrive, snapmanager
 summary: 'When transitioning to clustered Data ONTAP 8.3, SnapDrive and SnapManager backup verification and restore operations fail on the transitioned 7-Mode Snapshot copies. When transitioning to clustered Data ONTAP 8.3.1, SnapManager for Microsoft Exchange Server \(SME\) backup verification and SnapManager for Hyper-V \(SMHV\) restore operations of files fail on the transitioned 7-Mode Snapshot copies.'
 ---
 = Limitations with 7-Mode Snapshot copies of LUNs managed by SnapDrive and SnapManager after transition

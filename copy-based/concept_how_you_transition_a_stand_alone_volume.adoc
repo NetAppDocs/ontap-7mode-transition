@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_how_you_transition_a_stand_alone_volume.html
 sidebar: sidebar
-keywords: 7-Mode Transition Tool
+keywords: ontap, copy, based, transition, stand, alone, volume
 summary: 'Transitioning a stand-alone volume includes different phases: preparation, data copy, apply configuration \(precutover\), and storage cutover. After completing transition, you must perform some post-transition steps before resuming client access. Understanding what occurs during each phase helps you manage your transition efficiently.'
 ---
 = How you transition a stand-alone volume
@@ -13,6 +13,7 @@ Transitioning a stand-alone volume includes different phases: preparation, data 
 
 image::../media/transition_singlevol.gif[The following illustration describes different phases of transition, such as preparation, data copy, precutover, and storage cutover,]
 
+[options="header"]
 |===
 | Phase| Steps
 a|
@@ -75,7 +76,7 @@ In this phase, information about the 7-Mode system and the cluster, volumes, and
 . Collects IP addresses that must be configured on the SVM:
  ** Selects the IP addresses that exist on the 7-Mode system.
  ** Specifies new IP addresses that must be configured on the SVM.
-*Note:* Transitioning of iSCSI and FC LIFs (SAN) is not supported by the tool. You must manually configure SAN LIFs on the SVM before transition.
+NOTE: Transitioning of iSCSI and FC LIFs (SAN) is not supported by the tool. You must manually configure SAN LIFs on the SVM before transition.
 . Creates data copy schedules for baseline copy and incremental updates.
 . If the project contains SnapLock volumes, collects information about the read-write SnapLock volumes for which Chain of Custody verification is required and the details of the ONTAP volume that stores the fingerprint data that is generated during the Chain of Custody verification operation.
 +
@@ -179,10 +180,11 @@ You must perform the Chain of Custody verification operation. The tool performs 
 . Calculates the fingerprint for each WORM file on the 7-Mode volumes (enumerated in the previous step) and calculates the fingerprint for the corresponding WORM file on the transitioned ONTAP volumes.
 . Generates a report with details about the number of files with matched and unmatched fingerprints, and the reason for the mismatch.
 
-NOTE:
-
+[NOTE]
+====
 * The Chain of Custody verification operation is supported only for read-write SnapLock volumes that have file names with only ASCII characters.
 * This operation can take a significant amount of time based on the number of files on the 7-Mode SnapLock volumes.
+====
 
 == Post-transition steps
 

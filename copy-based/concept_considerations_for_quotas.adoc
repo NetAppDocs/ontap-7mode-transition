@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_quotas.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, quotas
 summary: 'You must be aware of how quotas are transitioned when “apply configuration” \(precutover\) is run in read-only and read-write mode.'
 ---
 = Considerations for quotas

@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_copy_free_transition_using_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, 7, mode, tool
 summary: 'The 7-Mode Transition Tool enables you to collect inventory and to assess 7-Mode controllers, hosts, switches, and applications for transition. After assessment, you can use a copy-free transition to migrate your data and configurations to ONTAP. In copy-free transition, you disconnect all the disk shelves from a 7-Mode HA pair and connect them to an HA pair in the target cluster.'
 ---
 = Copy-free transition by using 7-Mode Transition Tool

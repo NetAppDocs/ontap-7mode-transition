@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_reconfiguration_of_vmware_software_iscsi_initiator.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, reconfiguration, vmware, software, iscsi, initiator
 summary: 'If your ESXi host accessed your Data ONTAP operating in 7-Mode system with the VMware software iSCSI initiator, then after transition from 7-Mode to clustered Data ONTAP, you must reconfigure the VMware software iSCSI initiator on your ESXi host and enable it to discover the new clustered Data ONTAP target.'
 ---
 = Reconfiguration of VMware software iSCSI initiator after transition

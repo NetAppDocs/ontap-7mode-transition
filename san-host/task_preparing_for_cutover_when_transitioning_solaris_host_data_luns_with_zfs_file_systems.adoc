@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_for_cutover_when_transitioning_solaris_host_data_luns_with_zfs_file_systems.html
 sidebar: sidebar
-keywords: 
+keywords: cutover, ontap, san, host, transition, host, data, lun, nfs, file, system
 summary: 'If you are transitioning a Solaris host data LUN with ZFS file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.'
 ---
 = Preparing for cutover phase when transitioning Solaris host data LUNs with ZFS file systems
@@ -19,17 +19,24 @@ For copy-based transitions, perform these steps before initiating the Storage Cu
 
 For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode operation in 7MTT.
 
+.Steps
 . Stop I/O on all mount points.
 . Shut down each application accessing the LUNs according to the recommendations of the application vendor.
-. Export the zpool: `zpool export pool-name`
+. Export the zpool:
++
+`*zpool export _pool-name_*`
 +
 ----
 # zpool export n_pool
 ----
 
 . Verify that the zpools are exported:
- ** Should list the zpool that is exported: `zpool import`
- ** Should not list the zpool that is exported: `zpool list`
+ ** Should list the zpool that is exported:
+ +
+ `*zpool import*`
+ ** Should not list the zpool that is exported:
+ +
+ `*zpool list*`
 
 +
 ----

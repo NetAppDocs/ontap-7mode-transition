@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_adding_controllers_and_clusters.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, add, controllers, clusters
 summary: 'Before you start the transition, you must add the 7-Mode controllers, including both nodes of a 7-Mode HA pair, and the clusters that are required for the transition. You should add the clusters using the cluster-management interface.'
 ---
 = Adding controllers and clusters
@@ -16,6 +16,7 @@ Before you start the transition, you must add the 7-Mode controllers, including 
 +
 If the 7-Mode Transition Tool service is restarted, the tool prompts in the project dashboard for information about controllers and cluster that are part of active projects.
 
+.Steps
 . From the top pane, click *Storage Systems*.
 . In the *Hostname* field, enter the FQDN or IP address of the 7-Mode controller or the ONTAP system.
 +

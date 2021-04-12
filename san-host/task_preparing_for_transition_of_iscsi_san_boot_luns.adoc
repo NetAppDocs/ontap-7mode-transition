@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_for_transition_of_iscsi_san_boot_luns.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, iscsi, san, boot, lun
 summary: 'Before you transition an iSCSI SAN boot LUN, you must perform specific steps on the host. Transition of Red Hat Enterprise Linux \(RHEL\) 5.x is not supported. Transition of RHEL 6 is supported.'
 ---
 = Preparing for transition of iSCSI SAN boot LUNs
@@ -27,21 +27,26 @@ You must have the following information from the _Inventory Assessment Workbook_
 
 This procedure applies to copy-based transitions and copy-free transitions.
 
-. Verify that the DMMP device exists in the /dev/mapper directory: `ls /dev/mapper/DMMP_device_name`
+.Steps
+. Verify that the DMMP device exists in the /dev/mapper directory:
++
+`*ls /dev/mapper/__DMMP_device_name__*`
 +
 If the DMMP device is not displayed, the device might be using an alias or a user-friendly name.
 
-. Determine whether the DMMP device is part of an LVM: `blkid`
+. Determine whether the DMMP device is part of an LVM:
 +
-If the DMMP device TYPE value is LVM2_member, the DMMP is part of an LVM.
+`*blkid*`
++
+If the DMMP device `TYPE` value is `LVM2_member`, the DMMP is part of an LVM.
 
-. Obtain the mount point details of the / and /boot partitions from the /etc/fstab file:
- ** If the /boot partition is installed on a DMMP device, check how it is referenced to mount in the /etc/fstab file at boot time.
- ** If the /boot partition is mounted using the file system UUID that you obtained using the blkid command output, then no pretransition change are required.
-. If the /boot partition is referenced in /etc/fstab file by its DMMP device name, replace the DMMP device name with the file system UUID name.
-. For iSCSI SAN booted hosts, edit the /boot/grub/grub.conf file to create a new kernel command-line entry that includes the clustered Data ONTAP controller's IQN number and iSCSI session information.
+. Obtain the mount point details of the `/` and `/boot` partitions from the `/etc/fstab` file:
+ ** If the `/boot` partition is installed on a DMMP device, check how it is referenced to mount in the `/etc/fstab` file at boot time.
+ ** If the `/boot` partition is mounted using the file system UUID that you obtained using the `blkid` command output, then no pretransition change are required.
+. If the /boot partition is referenced in `/etc/fstab` file by its DMMP device name, replace the DMMP device name with the file system UUID name.
+. For iSCSI SAN booted hosts, edit the `/boot/grub/grub.conf` file to create a new kernel command-line entry that includes the clustered Data ONTAP controller's IQN number and iSCSI session information.
 +
-This example shows the /boot/grub/grub.conf file before editing. The kernel command line has the 7-Mode controller's IQN number and iSCSI session information.
+This example shows the `/boot/grub/grub.conf` file before editing. The kernel command line has the 7-Mode controller's IQN number and iSCSI session information.
 +
 ----
 title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64)
@@ -50,7 +55,7 @@ title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64)
 	initrd /initramfs-2.6.32-431.el6.x86_64.img
 ----
 +
-This example shows the /boot/grub/grub.conf file after adding a new title with the cDOT suffix, and the new kernel command line with the clustered Data ONTAP controller's IQN number and iSCSI session information:
+This example shows the `/boot/grub/grub.conf` file after adding a new title with the cDOT suffix, and the new kernel command line with the clustered Data ONTAP controller's IQN number and iSCSI session information:
 +
 ----
 title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64) - cDOT
@@ -59,7 +64,7 @@ title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64) - cDOT
 	initrd /initramfs-2.6.32-431.el6.x86_64.img
 ----
 
-. Back up the existing initramfs file.
+. Back up the existing `initramfs` file.
 +
 ----
 # cd /boot
@@ -67,15 +72,15 @@ title Red Hat Enterprise Linux Server (2.6.32-431.el6.x86_64) - cDOT
 71.el6.x86_64.img.img_bak
 ----
 
-. Update the 7-Mode kernel line in the /boot/grub/grub.conf file with the backup initrd image name.
+. Update the 7-Mode kernel line in the `/boot/grub/grub.conf` file with the backup `initrd` image name.
 +
-For RHEL 6.4 and later, verify that the clustered Data ONTAP kernel line is appended with "`rdloaddriver=scsi_dh_alua`" in the /boot/grub/grub.conf file.
+For RHEL 6.4 and later, verify that the clustered Data ONTAP kernel line is appended with "`rdloaddriver=scsi_dh_alua`" in the `/boot/grub/grub.conf` file.
 
-. If the /boot/grub/grub.conf file is updated, then update the kernel initial RAM disk (initramfs).
+. If the `/boot/grub/grub.conf` file is updated, then update the kernel initial RAM disk (`initramfs`).
 +
-The initramfs file must be re-created so that the new clustered Data ONTAP IQN number and iSCSI sessions are referenced, and so that the host establishes an iSCSI connection with clustered Data ONTAP controllers at boot time.
+The `initramfs` file must be re-created so that the new clustered Data ONTAP IQN number and iSCSI sessions are referenced, and so that the host establishes an iSCSI connection with clustered Data ONTAP controllers at boot time.
 
-. Re-create the initrd image by using the dracut -force --add multipath --verbose command.
+. Re-create the `initrd` image by using the `dracut -force --add multipath --verbose` command.
 
 *Related information*
 

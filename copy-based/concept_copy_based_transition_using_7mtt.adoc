@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_copy_based_transition_using_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, 7, mode, tool
 summary: 'The 7-Mode Transition Tool enables you to perform copy-based transition by collecting information and assessing 7-Mode controllers, hosts, switches, and applications for transition. You can then migrate your data and configurations from 7-Mode to ONTAP.'
 ---
 = Copy-based transition by using the 7-Mode Transition Tool

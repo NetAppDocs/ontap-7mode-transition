@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_rolling_back_luns_to_7_mode_after_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, rolling, lun, 7, mode
 summary: 'If you are not satisfied with the performance of your clustered Data ONTAP LUNs, you can rollback from clustered Data ONTAP to Data ONTAP operating in 7-Mode for copy-free transitions \(CFTs\). Rollback is not supported for copy-based transitions \(CBTs\). Rollback is only supported on certain hosts.'
 ---
 = Rolling back LUNs to 7-Mode after transition

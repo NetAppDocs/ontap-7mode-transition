@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_transitioning_volumes_using_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, migrate, data, configuration, volumes
 summary: 'To migrate volumes or a volume SnapMirror relationship by using the 7-Mode Transition Tool, you must first configure projects, start a baseline copy, and complete the projects.'
 ---
 = Migrating data and configuration from 7-Mode volumes

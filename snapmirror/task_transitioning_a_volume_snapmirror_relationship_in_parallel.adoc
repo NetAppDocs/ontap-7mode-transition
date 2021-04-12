@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/task_transitioning_a_volume_snapmirror_relationship_in_parallel.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, snapmirror, volume, relationship, parallel
 summary: 'You can transition the primary and secondary volumes of a 7-Mode SnapMirror relationship in parallel and in the same cutover window. You must then manually set up the volume SnapMirror relationship in the ONTAP clusters after transition. You must use this method for transitioning SnapLock Compliance volumes.'
 ---
 = Transitioning a volume SnapMirror relationship in parallel

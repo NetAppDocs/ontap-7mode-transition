@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_gathering_cabling_information_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, gather, cabling, information
 summary: 'Before starting copy-free transition, you must gather information about the adapters, ports, disk shelves, and storage connectivity of your 7-Mode controllers, and then plan how to connect the 7-Mode disk shelves to the target cluster nodes.'
 ---
 = Gathering cabling information for transition
@@ -17,9 +17,11 @@ xref:reference_copy_free_transition_cabling_worksheet.adoc[Copy-free transition 
 
 . Use Config Advisor to perform a health check on the 7-Mode storage and cabling and collect cabling data.
 +
-You should use the 7-Mode Install Checks option from the "`Data ONTAP 7 and 8 (7-Mode)`" execution profile.
+You should use the `7-Mode Install Checks` option from the "`Data ONTAP 7 and 8 (7-Mode)`" execution profile.
 
-. Gather the required information about each 7-Mode controller by using the following command: `sysconfig slot_number`
+. Gather the required information about each 7-Mode controller by using the following command:
++
+`*sysconfig _slot_number_*`
 +
 You can use the output of this command to identify which ports are used for disk shelf connectivity.
 +
@@ -39,7 +41,9 @@ host1> sysconfig 3
                 1 shelf with IOM3
 ----
 
-. From the cluster, run the following nodeshell command on each node: `system node run -node node_name -command sysconfig -a`
+. From the cluster, run the following nodeshell command on each node:
++
+`*system node run -node _node_name_ -command sysconfig -a*`
 +
 You can use the output of this command to obtain information about the available ports and expansion card slots.
 

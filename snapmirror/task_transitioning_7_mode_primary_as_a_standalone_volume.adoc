@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/task_transitioning_7_mode_primary_as_a_standalone_volume.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, snapmirror, primary, stand, alone, volume
 summary: 'After the 7-Mode primary volume is back online after a disaster, you must transition the 7-Mode primary volume. Because all SnapMirror relationships to the 7-Mode primary volume are broken and deleted at this stage, you can transition a stand-alone volume for this type of transition.'
 ---
 = Transitioning the 7-Mode primary as a stand-alone volume
@@ -11,8 +11,9 @@ summary: 'After the 7-Mode primary volume is back online after a disaster, you m
 [.lead]
 After the 7-Mode primary volume is back online after a disaster, you must transition the 7-Mode primary volume. Because all SnapMirror relationships to the 7-Mode primary volume are broken and deleted at this stage, you can transition a stand-alone volume for this type of transition.
 
+.Steps
 . Copy data from the 7-Mode volume to the clustered Data ONTAP volume:
- .. If you want to configure the TCP window size for the SnapMirror relationship between the 7-Mode system and the SVM, create a SnapMirror policy of type async-mirror with the window-size-for-tdp-mirror option.
+ .. If you want to configure the TCP window size for the SnapMirror relationship between the 7-Mode system and the SVM, create a SnapMirror policy of type `async-mirror` with the `window-size-for-tdp-mirror` option.
 +
 You must then apply this policy to the TDP SnapMirror relationship between the 7-Mode system and the SVM.
 +
@@ -22,7 +23,7 @@ You can configure the TCP window size in the range of 256 KB to 7 MB for improvi
 cluster1::> snapmirror policy create -vserver vs1 –policy tdp_policy -window-size-for-tdp-mirror 5MB -type async-mirror
 ----
 
- .. Use the snapmirror create command with the relationship type as TDP to create a SnapMirror relationship between the 7-Mode system and the SVM.
+ .. Use the `snapmirror create` command with the relationship type as TDP to create a SnapMirror relationship between the 7-Mode system and the SVM.
 +
 If you have created a SnapMirror policy to configure the TCP window size, you must apply the policy to this SnapMirror relationship.
 +
@@ -31,14 +32,14 @@ cluster1::> snapmirror create -source-path system7mode:dataVol20 -destination-pa
 Operation succeeded: snapmirror create the relationship with destination vs1:dst_vol.
 ----
 
- .. Use the snapmirror initialize command to start the baseline transfer.
+ .. Use the `snapmirror initialize` command to start the baseline transfer.
 +
 ----
 cluster1::> snapmirror initialize -destination-path vs1:dst_vol
 Operation is queued: snapmirror initialize of destination vs1:dst_vol.
 ----
 
- .. Use the snapmirror show command to monitor the status.
+ .. Use the `snapmirror show` command to monitor the status.
 +
 ----
 cluster1::>snapmirror show -destination-path vs1:dst_vol
@@ -97,19 +98,20 @@ Last Transfer Network Compression Ratio: 1:1
 
  .. Depending on whether you want to update the clustered Data ONTAP volume manually or by setting up a SnapMirror schedule, perform the appropriate action:
 +
+[options="header"]
 |===
 | If you want to...| Then...
 a|
 Update transfers manually
 a|
 
-  ... Use the snapmirror update command.
+  ... Use the `snapmirror update` command.
 +
 ----
 cluster1::> snapmirror update -destination-path vs1:dst_vol
 ----
 
-  ... Use the snapmirror show command to monitor the data copy status.
+  ... Use the `snapmirror show` command to monitor the data copy status.
 +
 ----
 cluster1::> snapmirror show -destination-path vs1:dst_vol
@@ -133,25 +135,25 @@ cluster1::> snapmirror show -destination-path vs1:dst_vol
          Total Transfer Time in Seconds: 11
 ----
 
-  ... Go to link:task_transitioning_a_stand_alone_volume.md#STEP_33254BEE7D2648F0A9C08FF48CF8E0F3[task_transitioning_a_stand_alone_volume.md#STEP_33254BEE7D2648F0A9C08FF48CF8E0F3].
+  ... Go to link:task_transitioning_a_stand_alone_volume.md#STEP_33254BEE7D2648F0A9C08FF48CF8E0F3[3].
 
 a|
 Perform scheduled update transfers
 a|
 
-  ... Use the job schedule cron create command to create a schedule for update transfers.
+  ... Use the `job schedule cron create` command to create a schedule for update transfers.
 +
 ----
 cluster1::> job schedule cron create -name 15_minute_sched -minute 15
 ----
 
-  ... Use the snapmirror modify command to apply the schedule to the SnapMirror relationship.
+  ... Use the `snapmirror modify` command to apply the schedule to the SnapMirror relationship.
 +
 ----
 cluster1::> snapmirror modify -destination-path vs1:dst_vol -schedule 15_minute_sched
 ----
 
-  ... Use the snapmirror show command to monitor the data copy status.
+  ... Use the `snapmirror show` command to monitor the data copy status.
 +
 ----
 cluster1::> snapmirror show -destination-path vs1:dst_vol
@@ -178,50 +180,50 @@ cluster1::> snapmirror show -destination-path vs1:dst_vol
 +
 |===
 . If you have a schedule for incremental transfers, perform the following steps when you are ready to perform cutover:
- .. Use the snapmirror quiesce command to disable all future update transfers.
+ .. Use the `snapmirror quiesce` command to disable all future update transfers.
 +
 ----
 cluster1::> snapmirror quiesce -destination-path vs1:dst_vol
 ----
 
- .. Use the snapmirror modify command to delete the SnapMirror schedule.
+ .. Use the `snapmirror modify` command to delete the SnapMirror schedule.
 +
 ----
 cluster1::> snapmirror modify -destination-path vs1:dst_vol -schedule ""
 ----
 
- .. If you quiesced the SnapMirror transfers earlier, use the snapmirror resume command to enable SnapMirror transfers.
+ .. If you quiesced the SnapMirror transfers earlier, use the `snapmirror resume` command to enable SnapMirror transfers.
 +
 ----
 cluster1::> snapmirror resume -destination-path vs1:dst_vol
 ----
 . Wait for any ongoing transfers between the 7-Mode volumes and the clustered Data ONTAP volumes to finish, and then disconnect client access from the 7-Mode volumes to start cutover.
-. Use the snapmirror update command to perform a final data update to the clustered Data ONTAP volume.
+. Use the `snapmirror update` command to perform a final data update to the clustered Data ONTAP volume.
 +
 ----
 cluster1::> snapmirror update -destination-path vs1:dst_vol
 Operation is queued: snapmirror update of destination vs1:dst_vol.
 ----
 
-. Use the snapmirror show command to verify that the last transfer was successful.
-. Use the snapmirror break command to break the SnapMirror relationship between the 7-Mode volume and the clustered Data ONTAP volume.
+. Use the `snapmirror show` command to verify that the last transfer was successful.
+. Use the `snapmirror break` command to break the SnapMirror relationship between the 7-Mode volume and the clustered Data ONTAP volume.
 +
 ----
 cluster1::> snapmirror break -destination-path vs1:dst_vol
 [Job 60] Job succeeded: SnapMirror Break Succeeded
 ----
 
-. If your volumes have LUNs configured, at the advanced privilege level, use the lun transition 7-mode show command to verify that the LUNs were transitioned.
+. If your volumes have LUNs configured, at the advanced privilege level, use the `lun transition 7-mode show` command to verify that the LUNs were transitioned.
 +
-You can also use the lun show command on the clustered Data ONTAP volume to view all of the LUNs that were successfully transitioned.
+You can also use the `lun show` command on the clustered Data ONTAP volume to view all of the LUNs that were successfully transitioned.
 
-. Use the snapmirror delete command to delete the SnapMirror relationship between the 7-Mode volume and the clustered Data ONTAP volume.
+. Use the `snapmirror delete` command to delete the SnapMirror relationship between the 7-Mode volume and the clustered Data ONTAP volume.
 +
 ----
 cluster1::> snapmirror delete -destination-path vs1:dst_vol
 ----
 
-. Use the snapmirror release command to remove the SnapMirror relationship information from the 7-Mode system.
+. Use the `snapmirror release` command to remove the SnapMirror relationship information from the 7-Mode system.
 +
 ----
 system7mode> snapmirror release dataVol20 vs1:dst_vol

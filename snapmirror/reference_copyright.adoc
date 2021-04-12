@@ -1,8 +1,8 @@
 ---
 permalink: snapmirror/reference_copyright.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, 7, mode, transition, snapmirror, copyright
+summary: 'Copyright information for 7-Mode Data Transition Using SnapMirror Technology.'
 ---
 = Copyright
 :icons: font

@@ -1,7 +1,7 @@
 ---
 permalink: inventory-collect/reference_syntax_and_options.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, syntax, option, ict, inventory, collection, tool
 summary: 'Inventory Collection Tool \(ICT\) commands collect configuration and inventory information from controllers and hosts that are specified either in the command-line interface \(CLI\) or in a text file that contains system details. You can use syntax and options with the ICT commands.'
 ---
 = Syntax and options
@@ -13,12 +13,12 @@ Inventory Collection Tool (ICT) commands collect configuration and inventory inf
 
 == Syntax
 
-* `+ict --cmd collect [--output <inventory.xml>] <uri> [<uri> ...]+`
-* `ict --cmd collect [--output <inventory.xml>] --input <credential_file.txt>`
-* `+ict --cmd generate-fc-zones --source-filers <filer-ip>[,<filer-ip>] --dest-svm <cluster-name:svm-name> --fc-switches <switch-ip>[:<vsan-id>][,<switch-ip>[:<vsan-id>] ... ] <inventory_xml> [<inventory_xml> ...]+`
-* `+ict --cmd generate-fc-zones --source-filers <filer-ip>[<filer-ip>] --dest-svm <cluster-name:svm-name> --fc-switches <switch-ip>[:<vsan-id>][,<switch-ip>[:<vsan-id>] ... ] --fc-switches-target <switch-ip>[:<vsan-id>][,<switch-ip>[:<vsan-id>] ... ] <inventory_xml> [<inventory_xml> ...]+`
-* `ict --help`
-* `ict --version`
+* `*ict --cmd collect [--output <inventory.xml>] <uri> [<uri> ...]*`
+* `*ict --cmd collect [--output <inventory.xml>] --input <credential_file.txt>*`
+* `*ict --cmd generate-fc-zones --source-filers <filer-ip>[,<filer-ip>] --dest-svm <cluster-name:svm-name> --fc-switches <switch-ip>[:<vsan-id>][,<switch-ip>[:<vsan-id>] ... ] <inventory_xml> [<inventory_xml> ...]*`
+* `*ict --cmd generate-fc-zones --source-filers <filer-ip>[<filer-ip>] --dest-svm <cluster-name:svm-name> --fc-switches <switch-ip>[:<vsan-id>][,<switch-ip>[:<vsan-id>] ... ] --fc-switches-target <switch-ip>[:<vsan-id>][,<switch-ip>[:<vsan-id>] ... ] <inventory_xml> [<inventory_xml> ...]*`
+* `*ict --help*`
+* `*ict --version*`
 
 == Options
 
@@ -30,47 +30,47 @@ The text file must contain system details of each system in a separate line:
 
 If a password is `*` or omitted either in the CLI or text file, then the user is prompted to enter a password in the CLI. The following options are available to run the ICT:
 
-* --help
+* `--help`
 +
 Shows the help message and exits.
 
-* --version
+* `--version`
 +
 Prints the tool version and exits.
 
-* --cmd [collect|generate-fc-zones]
+* `--cmd [collect|generate-fc-zones]`
 +
 collect: Collects configuration and inventory information from controllers and hosts.
 +
 generate-fc-zones: Generates FC Zone planner document on a given inventory.
 
-* --output <filename[.xml[.gz]]>
+* `--output <filename[.xml[.gz]]>`
 +
 Specifies the location where the files are generated. If the file name is suffixed with "`.gz`" , then the file is compressed. This option generates two files (reports): Inventory Report and Inventory Report Workbook.
 
-* --input <credentials_file.txt>
+* `--input <credentials_file.txt>`
 +
-Specifies the location where the file with system credentials is saved. This option is not used in --cmd generate-fc- zones.
+Specifies the location where the file with system credentials is saved. This option is not used in `--cmd generate-fc-` zones.
 +
 NOTE: Only ASCII encoded text file is supported.
 
-* uri format(ontap|windows|vmware|linux|cisco|brocade)://[(<user>|<domain_user>)[:(<password>|*)]@](<hostname>|<ip>)
+* uri format(`ontap|windows|vmware|linux|cisco|brocade)://[(<user>|<domain_user>)[:(<password>|*)]@](<hostname>|<ip>`)
 +
 Specifies the system type, IP address, and credentials of the controller or host. If the password provided is `*`, or if no passwords are provided, then the user is prompted to enter a password in the command line.
 
-* --source-filers
+* `--source-filers`
 +
 Specifies comma-separated IP address of the source controllers to be used in generating the FC Zone Plan.
 
-* --dest-svm
+* `--dest-svm`
 +
-Specifies the destination clustered Data ONTAP SVM formatted as cluster-name:svm-name to be used in generating the FC Zone Plan.
+Specifies the destination clustered Data ONTAP SVM formatted as `_cluster-name:svm-name_` to be used in generating the FC Zone Plan.
 
-* --fc-switches
+* `--fc-switches`
 +
-Lists the FC switches for which the FC Zone Plan has to be generated. It is a comma-separated list of switch identifiers. For Cisco, FC switches should be formatted as switch-ip:vsan-id and for Brocade, FC switches should be formatted as switch-ip. For example, 10.61.187.6:200,10.61.187.7:200 (Cisco) or 10.61.187.4,10.61.187.5 (Brocade)
+Lists the FC switches for which the FC Zone Plan has to be generated. It is a comma-separated list of switch identifiers. For Cisco, FC switches should be formatted as `_switch-ip:vsan-id_` and for Brocade, FC switches should be formatted as `_switch-ip_`. For example, 10.61.187.6:200,10.61.187.7:200 (Cisco) or 10.61.187.4,10.61.187.5 (Brocade)
 
-* --fc-switches-target
+* `--fc-switches-target`
 +
 Specifies the list of FC switches (connected to the cluster) for which the FC Zone Plan has to be generated. It is a comma-separated list of target switch identifiers that are listed in the same sequence as origin FC switches (--fc-switches). The FC zoning script is generated for each origin switch added to the fc-switches parameter list. This is an optional parameter.
 

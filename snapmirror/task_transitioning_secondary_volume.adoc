@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/task_transitioning_secondary_volume.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, snapmirror, volume, secondary
 summary: 'Transitioning a secondary volume involves creating a SnapMirror relationship, performing a baseline transfer, performing incremental updates, and setting up a SnapMirror relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.'
 ---
 = Transitioning a secondary volume
@@ -13,15 +13,16 @@ Transitioning a secondary volume involves creating a SnapMirror relationship, pe
 
 The secondary cluster and storage virtual machine (SVM) must already be set up.
 
+.Steps
 . Copy data from the 7-Mode volume to the clustered Data ONTAP volume:
- .. Use the snapmirror create command with the relationship type as TDP to create a SnapMirror relationship between the 7-Mode system and the SVM.
+ .. Use the `snapmirror create` command with the relationship type as TDP to create a SnapMirror relationship between the 7-Mode system and the SVM.
 +
 ----
 sec_cluster::> snapmirror create -source-path sec_system:dst_7_vol -destination-path dst_vserver:dst_c_vol -type TDP
 Operation succeeded: snapmirror create the relationship with destination dst_vserver:dst_c_vol.
 ----
 
- .. Use the snapmirror initialize command to start the baseline transfer.
+ .. Use the `snapmirror initialize` command to start the baseline transfer.
 +
 ----
 sec_cluster::> snapmirror initialize -destination-path dst_vserver:dst_c_vol
@@ -30,19 +31,20 @@ Operation is queued: snapmirror initialize of destination dst_vserver:dst_c_vol.
 
  .. Depending on whether you want to update the clustered Data ONTAP volume manually or by setting up a SnapMirror schedule, perform the appropriate action:
 +
+[options="header"]
 |===
 | If you want to...| Then...
 a|
 Update transfers manually
 a|
 
-  ... Use the snapmirror update command.
+  ... Use the `snapmirror update` command.
 +
 ----
 sec_cluster::> snapmirror update -destination-path dst_vserver:dst_c_vol
 ----
 
-  ... Use the snapmirror show command to monitor the data copy status.
+  ... Use the `snapmirror show` command to monitor the data copy status.
 +
 ----
 sec_cluster::> snapmirror show -destination-path dst_vserver:dst_c_vol
@@ -67,25 +69,25 @@ sec_cluster::> snapmirror show -destination-path dst_vserver:dst_c_vol
          Total Transfer Time in Seconds: 11
 ----
 
-  ... Go to <<STEP_33254BEE7D2648F0A9C08FF48CF8E0F3,#STEP_33254BEE7D2648F0A9C08FF48CF8E0F3>>.
+  ... Go to step 3.
 
 a|
 Perform scheduled update transfers
 a|
 
-  ... Use the job schedule cron create command to create a schedule for update transfers.
+  ... Use the `job schedule cron create` command to create a schedule for update transfers.
 +
 ----
 sec_cluster::> job schedule cron create -name 15_minute_sched -minute 15
 ----
 
-  ... Use the snapmirror modify command to apply the schedule to the SnapMirror relationship.
+  ... Use the `snapmirror modify` command to apply the schedule to the SnapMirror relationship.
 +
 ----
 sec_cluster::> snapmirror modify -destination-path dst_vserver:dst_c_vol -schedule 15_minute_sched
 ----
 
-  ... Use the snapmirror show command to monitor the data copy status.
+  ... Use the `snapmirror show` command to monitor the data copy status.
 +
 ----
 sec_cluster::> snapmirror show -destination-path dst_vserver:dst_c_vol
@@ -113,77 +115,77 @@ sec_cluster::> snapmirror show -destination-path dst_vserver:dst_c_vol
 +
 |===
 . If you have a schedule for incremental transfers, perform the following steps when you are ready to perform cutover:
- .. Use the snapmirror quiesce command to disable all future update transfers.
+ .. Use the `snapmirror quiesce` command to disable all future update transfers.
 +
 ----
 sec_cluster::> snapmirror quiesce -destination-path dst_vserver:dst_vol
 ----
 
- .. Use the snapmirror modify command to delete the SnapMirror schedule.
+ .. Use the `snapmirror modify` command to delete the SnapMirror schedule.
 +
 ----
 sec_cluster::> snapmirror modify -destination-path dst_vserver:dst_vol -schedule ""
 ----
 
- .. If you quiesced the SnapMirror transfers earlier, use the snapmirror resume command to enable SnapMirror transfers.
+ .. If you quiesced the SnapMirror transfers earlier, use the `snapmirror resume` command to enable SnapMirror transfers.
 +
 ----
 sec_cluster::> snapmirror resume -destination-path dst_vserver:dst_vol
 ----
 . Wait for any ongoing transfers between the 7-Mode volumes and the clustered Data ONTAP volumes to finish, and then disconnect client access from the 7-Mode volumes to start cutover.
-. Use the snapmirror update command to perform a final data update to the clustered Data ONTAP volume.
+. Use the `snapmirror update` command to perform a final data update to the clustered Data ONTAP volume.
 +
 ----
 sec_cluster::> snapmirror update -destination-path dst_vserver:dst_vol
 Operation is queued: snapmirror update of destination dst_vserver:dst_vol.
 ----
 
-. Use the snapmirror show command to verify that the last transfer was successful.
-. Use the snapmirror break command to break the SnapMirror relationship between the 7-Mode secondary volume and the clustered Data ONTAP secondary volume.
+. Use the `snapmirror show` command to verify that the last transfer was successful.
+. Use the `snapmirror break` command to break the SnapMirror relationship between the 7-Mode secondary volume and the clustered Data ONTAP secondary volume.
 +
 ----
 sec_cluster::> snapmirror break -destination-path dst_vserver:dst_vol
 [Job 60] Job succeeded: SnapMirror Break Succeeded
 ----
 
-. If your volumes have LUNs configured, at the advanced privilege level, use the lun transition 7-mode show command to verify that the LUNs were transitioned.
+. If your volumes have LUNs configured, at the advanced privilege level, use the `lun transition 7-mode show` command to verify that the LUNs were transitioned.
 +
-You can also use the lun show command on the clustered Data ONTAP volume to view all of the LUNs that were successfully transitioned.
+You can also use the `lun show` command on the clustered Data ONTAP volume to view all of the LUNs that were successfully transitioned.
 
-. Use the snapmirror delete command to delete the SnapMirror relationship between the 7-Mode secondary volume and the clustered Data ONTAP secondary volume.
+. Use the `snapmirror delete` command to delete the SnapMirror relationship between the 7-Mode secondary volume and the clustered Data ONTAP secondary volume.
 +
 ----
 sec_cluster::> snapmirror delete -destination-path dst_vserver:dst_vol
 ----
 
-. Use the snapmirror release command to remove the SnapMirror relationship information from the 7-Mode system.
+. Use the `snapmirror release` command to remove the SnapMirror relationship information from the 7-Mode system.
 +
 ----
 system7mode> snapmirror release dataVol20 vs1:dst_vol
 ----
 
 . Establish a disaster recovery relationship between the 7-Mode primary volume and clustered Data ONTAP secondary volume:
- .. Use the vserver peer transition create command to create an SVM peer relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
+ .. Use the `vserver peer transition create` command to create an SVM peer relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
 +
 ----
 sec_cluster::> vserver peer transition create -local-vserver dst_vserver -src-filer-name src_system
 Transition peering created
 ----
 
- .. Use the job schedule cron create command to create a job schedule that matches the schedule configured for the 7-Mode SnapMirror relationship.
+ .. Use the `job schedule cron create` command to create a job schedule that matches the schedule configured for the 7-Mode SnapMirror relationship.
 +
 ----
 sec_cluster::> job schedule cron create -name 15_minute_sched -minute 15
 ----
 
- .. Use the snapmirror create command to create a SnapMirror relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
+ .. Use the `snapmirror create` command to create a SnapMirror relationship between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
 +
 ----
 sec_cluster::> snapmirror create -source-path src_system:src_7_vol -destination-path dst_vserver:dst_c_vol -type TDP -schedule 15_minute_sched
 Operation succeeded: snapmirror create the relationship with destination dst_vserver:dst_c_vol.
 ----
 
- .. Use the snapmirror resync command to resynchronize the clustered Data ONTAP secondary volume.
+ .. Use the `snapmirror resync` command to resynchronize the clustered Data ONTAP secondary volume.
 +
 For successful resynchronization, a common 7-Mode Snapshot copy must exist between the 7-Mode primary volume and the clustered Data ONTAP secondary volume.
 +

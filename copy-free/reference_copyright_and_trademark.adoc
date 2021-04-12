@@ -1,8 +1,8 @@
 ---
 permalink: copy-free/reference_copyright_and_trademark.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, transition, copy, free, copyright, trademark
+summary: 'Copyright and trademark for the Copy-Free Transition Guide.'
 ---
 = Copyright and trademark
 :icons: font

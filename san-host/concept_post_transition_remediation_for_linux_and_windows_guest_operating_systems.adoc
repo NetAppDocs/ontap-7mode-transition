@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_post_transition_remediation_for_linux_and_windows_guest_operating_systems.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, remediation, linux, windows, guest, operating, systems
 summary: 'Linux and Windows guest operating systems might require additional remediation after transition of LUNs from Data ONTAP operating in 7-Mode to clustered Data ONTAP.'
 ---
 = Post-transition remediation for Linux and Windows guest operating systems
@@ -15,7 +15,7 @@ For copy-based transitions, do the following after completing the Storage Cutove
 
 * Linux
 +
-If the mount points are defined in the /etc/fstab file, you must mount the LUN (mount --a).
+If the mount points are defined in the `/etc/fstab `file, you must mount the LUN (`mount --a`).
 
 * Windows
 +

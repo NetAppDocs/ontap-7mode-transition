@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_downtime_at_precutover_phase_of_esxi_host_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, downtime, apply, configurations, precutover, phase, esxi, host
 summary: 'You must plan for downtime at the apply configuration \(precutover\) phase while transitioning ESXi hosts.'
 ---
 = Downtime at apply configuration (precutover) phase of ESXi host transition

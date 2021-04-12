@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_troubleshooting_web_interface_issues.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, troubleshoot, issues
 summary: 'You need to be aware of some of the common issues with the 7-Mode Transition Tool and the steps to resolve them.'
 ---
 = Troubleshooting issues

@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_transition_of_san_boot_luns_on_aix_hosts_with_fc_fcoe_configurations.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, san, boot, lun, aix, fc, fcoe, configurations
 summary: 'If you transition a SAN boot LUN on an AIX host with an FC or FCoE configuration from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\), you must perform specific steps before and after transition to remediate transition issues on the host.'
 ---
 = Transition of SAN boot LUNs on AIX hosts with FC/FCoE configurations

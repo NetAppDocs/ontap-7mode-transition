@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_for_cutover_when_transitioning_solaris_host_sun_volume_manager_data_luns.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, cutover, phase, solaris, host, sun, volume, manager
 summary: 'If you are transitioning a Solaris host data LUN with Sun Volume Manager from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.'
 ---
 = Preparing for cutover phase when transitioning Solaris host Sun Volume Manager data LUNs
@@ -21,14 +21,22 @@ For copy-free transitions, perform these steps before initiating the Export & Ha
 
 . Stop I/O on all mount points.
 . Shut down each application accessing the LUNs according to the recommendations of the application vendor.
-. Unmount all of the mount points: `umount mount_point`
+. Unmount all of the mount points:
++
+`*umount _mount_point_*`
 +
 ----
 #umount /d1
 #umount /d2
 ----
 
-. Perform the following operations on metaset: `metaset –s set-name –A disable``metaset –s set-name –r``metaset –s set-name –P`
+. Perform the following operations on metaset:
++
+`*metaset –s _set-name_ –A disable*`
++
+`metaset –s _set-name_ –r`
++
+`*metaset –s _set-name_ –P*`
 +
 ----
 metaset -s n_vg -A disable

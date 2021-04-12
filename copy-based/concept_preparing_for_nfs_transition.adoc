@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_preparing_for_nfs_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, prepare, nfs
 summary: 'If NFS is licensed and NFS service is running on the systems operating in 7-Mode, you must manually prepare the cluster and target SVM for transitioning NFS configurations. You must also be aware of what configurations are transitioned.'
 ---
 = Preparing for NFS transition

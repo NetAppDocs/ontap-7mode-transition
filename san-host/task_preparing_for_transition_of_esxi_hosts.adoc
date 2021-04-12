@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_for_transition_of_esxi_hosts.html
 sidebar: sidebar
-keywords: 
+keywords: transition, esxi, host
 summary: 'You must complete several prerequisite tasks before you use the 7-Mode Transition Tool \(7MTT\) to transition your ESXi hosts from Data ONTAP operating in 7-Mode to ONTAP.'
 ---
 = Preparing for transition of ESXi hosts
@@ -11,7 +11,8 @@ summary: 'You must complete several prerequisite tasks before you use the 7-Mode
 [.lead]
 You must complete several prerequisite tasks before you use the 7-Mode Transition Tool (7MTT) to transition your ESXi hosts from Data ONTAP operating in 7-Mode to ONTAP.
 
-. Configure clustered Data ONTAP as described in the _7-Mode Transition Tool Copy-Based Transition Guide_ or the _7-Mode Transition Tool Copy-Free Transition Guide_ based on the type of transition that you are performing.
+.Steps
+. Configure clustered Data ONTAP as described in the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-based/index.html[7-Mode Transition Tool Copy-Based Transition Guide] or the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] based on the type of transition that you are performing.
 . Gather the following information for the ESXi hosts that you are transitioning:
  ** IP address
  ** Host name
@@ -20,7 +21,7 @@ You must complete several prerequisite tasks before you use the 7-Mode Transitio
 +
 You can use the Collect and Assess feature to generate the zoning plan.
 
-. Use the Interoperability Matrix to verify that the following are supported for transition to clustered Data ONTAP:
+. Use the link:https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool] to verify that the following are supported for transition to clustered Data ONTAP:
  ** Your version of Data ONTAP operating in 7-Mode
 +
 In some cases, you might have to upgrade your version of Data ONTAP operating in 7-Mode to a 7MTT SAN compatible version. For example, Data ONTAP 7.3.7 operating in 7-Mode is not compatible for transitions using the 7MTT. If you are running this version, you must upgrade it before initiating transition.
@@ -34,10 +35,6 @@ For iSCSI, only software initiators are supported. For FC and FCoE, only QLogic 
 VMware HA and DRS are not supported during transition.
 
 *Related information*
-
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61584[NetApp Documentation: 7-Mode Transition Tool]
-
-https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
 
 http://kb.vmware.com/kb/2032893[Retaining resource pools when disabling VMware DRS clusters in the vSphere Web Client]
 

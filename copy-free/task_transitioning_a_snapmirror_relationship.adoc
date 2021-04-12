@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_transitioning_a_snapmirror_relationship.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, snapmirror, relationship
 summary: 'You can transition the secondary HA pair first, set up a staggered SnapMirror relationship between the 7-Mode primary volumes and clustered Data ONTAP secondary volumes, and then transition the primary HA pair later. In some scenarios, you must transition the secondary and primary HA pairs of a 7-Mode SnapMirror relationship in parallel.'
 ---
 = Transitioning a SnapMirror relationship

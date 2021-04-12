@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_deleting_a_project.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, delete, project
 summary: 'If you do not want a project, you can delete it from the Dashboard.'
 ---
 = Deleting a project

@@ -1,7 +1,7 @@
 ---
 permalink: command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, command, map, transition, configuration, files, clustered, data, ontap
 summary: 'In Data ONTAP operating in 7-Mode, you typically use flat files to configure the storage system. In clustered Data ONTAP, you use configuration commands. You need to know how 7-Mode configuration files map to clustered Data ONTAP configuration commands.'
 ---
 = How 7-Mode configuration files map to clustered Data ONTAP commands
@@ -11,67 +11,74 @@ summary: 'In Data ONTAP operating in 7-Mode, you typically use flat files to con
 [.lead]
 In Data ONTAP operating in 7-Mode, you typically use flat files to configure the storage system. In clustered Data ONTAP, you use configuration commands. You need to know how 7-Mode configuration files map to clustered Data ONTAP configuration commands.
 
+[options="header"]
 |===
 | 7-Mode configuration file| Clustered Data ONTAP configuration command
 a|
-/etc/cifs_homedir.cfg
+`/etc/cifs_homedir.cfg`
 a|
-vserver cifs home-directory search-path
+`vserver cifs home-directory search-path`
 a|
-/etc/exports
+`/etc/exports`
 a|
-vserver export-policy
+`vserver export-policy`
 a|
-/etc/hosts
+`/etc/hosts`
 a|
-vserver services dns hosts
+`vserver services dns hosts`
 a|
-/etc/hosts.equiv
+`/etc/hosts.equiv`
 a|
-Not applicable. The security login commands create user access profiles.
+Not applicable.
+
+The `security login` commands create user access profiles.
 
 a|
-/etc/messages
+`/etc/messages`
 a|
-event log show
+`event log show`
 a|
-/etc/motd
+`/etc/motd`
 a|
-security login motd modify
+`security login motd modify`
 a|
-/etc/nsswitch.conf
+`/etc/nsswitch.conf`
 a|
-vserver modify
+`vserver modify`
 a|
-/etc/rc
+`/etc/rc`
 a|
-In clustered Data ONTAP, the retention of node configuration information processed at boot is transferred to other internal files that retain the configuration information. In Data ONTAP operating in 7-Mode, features configured in memory are also retained in the /etc/rc file to be replayed at boot and reconfigured.
+In clustered Data ONTAP, the retention of node configuration information processed at boot is transferred to other internal files that retain the configuration information.
+
+In Data ONTAP operating in 7-Mode, features configured in memory are also retained in the `/etc/rc` file to be replayed at boot and reconfigured.
 
 a|
-/etc/quotas
+`/etc/quotas`
 a|
-volume quota
+`volume quota`
 a|
-/etc/resolv.conf
+`/etc/resolv.conf`
 a|
-vserver services dns modify
+`vserver services dns modify`
 a|
-/etc/snapmirror.allow
+`/etc/snapmirror.allow`
 a|
-Intercluster relationships exist between two clusters. Intracluster relationships exist between two nodes on the same cluster. Authentication of the remote cluster occurs during the creation of the cluster peering relationship.
+Intercluster relationships exist between two clusters.
 
-Intracluster snapmirror create commands can be performed only by the cluster administrator to enforce per storage virtual machine (SVM) security.
+Intracluster relationships exist between two nodes on the same cluster. Authentication of the remote cluster occurs during the creation of the cluster peering relationship.
+
+Intracluster `snapmirror create` commands can be performed only by the cluster administrator to enforce per storage virtual machine (SVM) security.
 
 a|
-/etc/snapmirror.conf
+`/etc/snapmirror.conf`
 a|
-snapmirror create
+`snapmirror create`
 a|
-/etc/symlink.translations
+`/etc/symlink.translations`
 a|
-vserver cifs symlink
+`vserver cifs symlink`
 a|
-/etc/usermap.cfg
+`/etc/usermap.cfg`
 a|
-vserver name-mapping create
+`vserver name-mapping create`
 |===

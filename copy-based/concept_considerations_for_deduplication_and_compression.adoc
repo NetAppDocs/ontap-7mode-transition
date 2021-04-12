@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_considerations_for_deduplication_and_compression.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, deduplication, compression
 summary: 'When using compression, the source and the destination volumes must belong to a 64-bit aggregate. All compression and deduplication savings on the source volume are retained over the network during transition. After transition, the destination volume inherits all of the compression and deduplication attributes and storage savings from the source volume.'
 ---
 = Considerations for deduplication and compression
@@ -23,4 +23,4 @@ For deduplication and compression to take effect on any new data written on the 
 
 Beginning with Data ONTAP 8.1, deduplication maintains a partially ordered fingerprint database in the volume along with the aggregate copy. As a result, the destination system will have the space savings from the source volume as well as a copy of the ordered fingerprint database. After migration, when volume efficiency is run on the new volume for the first time, the aggregate fingerprint database is automatically constructed from the copy in the destination volume. This can result in a one-time increase in the time it takes for volume efficiency operations to complete.
 
-If your source volume is running a Data ONTAP operating in 7-Mode prior to 8.1, you must run the volume efficiency start command with the -scan-old-data option parameter to optimize space savings. After the migration is complete, you should verify whether the deduplication schedule meets your requirements on your cluster and consider switching to a volume efficiency policy.
+If your source volume is running a Data ONTAP operating in 7-Mode prior to 8.1, you must run the `volume efficiency start` command with the `-scan-old-data option` parameter to optimize space savings. After the migration is complete, you should verify whether the deduplication schedule meets your requirements on your cluster and consider switching to a volume efficiency policy.

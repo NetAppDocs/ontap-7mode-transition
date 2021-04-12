@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_post_transition_requirements_for_esxi_hosts.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, post, remediation, esxi, host
 summary: 'After you transition LUNs for ESXi hosts from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\), you must perform a series of remediation tasks to bring your LUNs online and begin servicing data.'
 ---
 = Post-transition remediation requirements for ESXi hosts

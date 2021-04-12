@@ -1,7 +1,7 @@
 ---
 permalink: snapmirror/reference_7_mode_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, version, transition, requirements, data, clustered
 summary: 'You should be aware of the versions of Data ONTAP operating in 7-Mode that are supported for transitioning to clustered Data ONTAP 8.3 or later.'
 ---
 = 7-Mode version requirements for transition

@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_making_a_san_boot_lun_primary_for_hp_ux_emulex_hbas_after_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, san, boot, lun, primary, hp, ux, emulex, hba
 summary: 'If your Data ONTAP operating in 7-Mode HP-UX host was SAN booted, you must make the SAN boot LUN the primary boot LUN after transition to clustered Data ONTAP.'
 ---
 = Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after transition
@@ -15,7 +15,10 @@ Your data migration must be complete and your boot LUN must be mapped to your ho
 
 For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool. Copy-free transitions are not supported on HP-UX hosts.
 
-. From the shell prompt, list the Emulex HBAs: `drivers`
+.Steps
+. From the shell prompt, list the Emulex HBAs:
++
+`*drivers*`
 . Select the Emulex HBA, and then press Enter.
 . Select *Setup Utility*.
 . Select *Configure Boot Parameters*.
@@ -29,7 +32,9 @@ For copy-based transitions, perform these steps after completing the Storage Cut
 Your boot LUN is displayed.
 
 . Press *Esc* until you return to the shell prompt.
-. Display your LUN to obtain the path of the LUN from which you want to boot: `map -r`
+. Display your LUN to obtain the path of the LUN from which you want to boot:
++
+`*map -r*`
 +
 The LUN paths are listed under the Device column. The bootable SAN disk are displayed under the mapping table column and have "`WWN`" and "`Part 1`" in the output string.
 
@@ -37,10 +42,22 @@ The LUN paths are listed under the Device column. The bootable SAN disk are disp
 +
 An example of a LUN path is fs0.
 
-. Exit the EFI shell: `cd efi`
-. Enter the HPUX directory: `cd hpux`
-. Make the new clustered Data ONTAP SAN boot LUN the primary boot LUN: `bcfg boot add 1 hpux.efi "HP-UX-Primary Boot"`
+. Exit the EFI shell:
++
+`*cd efi*`
+. Enter the HPUX directory:
++
+`*cd hpux*`
+. Make the new clustered Data ONTAP SAN boot LUN the primary boot LUN:
++
+`*bcfg boot add 1 hpux.efi "HP-UX-Primary Boot"*`
 . Manually update the HBA BIOS by making an entry in the EFI for the SAN boot LUN.
-. Create an alternate boot path: `bcfg boot add 2 hpux.efi “HPUX alternate boot”`
-. Create a third boot path: `bcfg boot add 2 hpux.efi “HPUX third boot”`
-. Create a fourth boot path: `bcfg boot add 2 hpux.efi “HPUX fourth boot”`
+. Create an alternate boot path:
++
+`*bcfg boot add 2 hpux.efi “HPUX alternate boot”*`
+. Create a third boot path:
++
+`*bcfg boot add 2 hpux.efi “HPUX third boot”*`
+. Create a fourth boot path:
++
+`*bcfg boot add 2 hpux.efi “HPUX fourth boot”*`

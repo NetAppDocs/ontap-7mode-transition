@@ -1,7 +1,7 @@
 ---
 permalink: inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, transition, collect, storage, host, inventory, information
 summary: 'Inventory Collect Tool enables you to collect information about clustered Data ONTAP and 7-Mode systems, switches, hosts, and the applications running on these hosts and to create an inventory report. You can then import the inventory report to the 7-Mode Transition Tool for transition assessment.'
 ---
 = Collecting storage and host inventory information
@@ -21,6 +21,4 @@ If you cannot install the 7-Mode Transition Tool in your environment due to secu
 
 Inventory Collect Tool is a stand-alone utility that does not require any installation.
 
-Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[Release Notes] for the latest information about supported target releases and known issues.

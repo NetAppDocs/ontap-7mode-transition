@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_considerations_for_local_users_and_groups_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, cifs, local, users, group
 summary: 'You must be aware of the considerations for running the transition operations when migrating CIFS local users and groups.'
 ---
 = Considerations for transitioning CIFS local users and groups
@@ -19,11 +19,17 @@ The SVM must have only BUILTIN CIFS local users and groups for transition.
 +
 You must contact technical support if the number of local users and groups in 7-Mode exceeds the limit defined in ONTAP.
 
-* A local user account with an empty password or local user accounts with passwords containing more than 14 characters on the 7-Mode system are transitioned to ONTAP software with the password `cifsUser@1`.
+* A local user account with an empty password or local user accounts with passwords containing more than 14 characters on the 7-Mode system are transitioned to ONTAP software with the password `*cifsUser@1*`.
 +
-After the transition is complete, you can access these users from the Windows system by using the password `cifsUser@1`. You must then manually change the password for such CIFS local users on the SVM by using the following command: `cifs users-and-groups local-user set-password -vserver svm_name -user-name user_name`.
+After the transition is complete, you can access these users from the Windows system by using the password `*cifsUser@1*`. You must then manually change the password for such CIFS local users on the SVM by using the following command:
++
+`*cifs users-and-groups local-user set-password -vserver _svm_name_ -user-name _user_name_*`.
 
-* If the 7-Mode Transition Tool IP address is not reachable from the target ONTAP software, the 7-Mode Transition Tool blocks the transition of CIFS local users and groups to the ONTAP software during the precheck phase. If you see this error during the precheck phase, use the `network ping -node local -destination ip_address` command to make sure the 7-Mode Transition Tool IP address is reachable from the target ONTAP software. You can edit the\etc\conf\transition-tool.conf file that is installed with the 7-Mode Transition Tool to modify any configuration option that is used by the tool, such as the 7-Mode Transition Tool IP address.
+* If the 7-Mode Transition Tool IP address is not reachable from the target ONTAP software, the 7-Mode Transition Tool blocks the transition of CIFS local users and groups to the ONTAP software during the precheck phase. If you see this error during the precheck phase, use the
++
+`*network ping -node local -destination _ip_address_*`
++
+command to make sure the 7-Mode Transition Tool IP address is reachable from the target ONTAP software. You can edit the `\etc\conf\transition-tool.conf` file that is installed with the 7-Mode Transition Tool to modify any configuration option that is used by the tool, such as the 7-Mode Transition Tool IP address.
 * The SVM to which the local users and groups are transitioned must have a data LIF.
 * If a local group has multiple member system identifiers (SIDs) mapped to a single domain user or group on the 7-Mode system, the 7-Mode Transition Tool blocks the transition of local users and groups to ONTAP during the precheck phase.
 +

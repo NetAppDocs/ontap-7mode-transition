@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_aborting_a_subproject.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, abort, project
 summary: 'You might want to abort a running project, for example, when the performance of the controller or the cluster is impacted. You can abort a running project from the Dashboard.'
 ---
 = Aborting a project
@@ -25,6 +25,7 @@ Only the copy operation from the 7-Mode primary volume to the corresponding ONTA
 
 NOTE: If the 7-Mode project is aborted, the only option is to delete the project. It is not possible to resume or restart the project after it is aborted.
 
+.Steps
 . From the Dashboard, select the project that you want to abort.
 . Click *Abort*.
 . From the cluster, delete the ONTAP volumes that were created as part of the transition.

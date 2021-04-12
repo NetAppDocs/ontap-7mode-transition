@@ -1,7 +1,7 @@
 ---
 permalink: install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, install, uninstall, linux, transition, copy, based
 summary: 'You can download and install the 7-Mode Transition Tool on a Linux system by using the command-line interface. When required, you can uninstall the 7-Mode Transition Tool.'
 ---
 = Installing or uninstalling the 7-Mode Transition Tool on Linux (Copy-based transition only)

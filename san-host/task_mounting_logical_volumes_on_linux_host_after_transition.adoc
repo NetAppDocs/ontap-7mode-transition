@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_mounting_logical_volumes_on_linux_host_after_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, mount, logical, volumes, linux, hosts
 summary: 'After the transition from ONTAP operating in 7-Mode to clustered Data ONTAP, your logical volumes are offline. You must mount those logical volumes for your LUNs to be accessible to your hosts.'
 ---
 = Mounting logical volumes on Linux hosts after transition
@@ -11,45 +11,76 @@ summary: 'After the transition from ONTAP operating in 7-Mode to clustered Data 
 [.lead]
 After the transition from ONTAP operating in 7-Mode to clustered Data ONTAP, your logical volumes are offline. You must mount those logical volumes for your LUNs to be accessible to your hosts.
 
-If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the _7-Mode Transition Tool Copy-Free Transition Guide_ for details.
+If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
 
 * For copy-based transitions (CBTs), perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
 * For CFTs, perform these steps after the Import Data & Configuration operation in the 7MTT.
 
 . Generate the 7-Mode to clustered Data ONTAP LUN mapping file:
- ** For copy-based transitions, run the following command from the Linux host where the 7MTT is installed: `transition cbt export lunmap -p project-name -o file_path`
+ ** For copy-based transitions, run the following command from the Linux host where the 7MTT is installed:
+ +
+`*transition cbt export lunmap -p _project-name_ -o _file_path_*`
 +
-For example: `transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv`
+For example:
++
+`*transition cbt export lunmap -p SanWorkLoad -o c:/Libraires/Documents/7-to-C-LUN-MAPPING.csv*`
 
- ** For copy-free transitions, run the following command from the system where the 7MTT is installed: `transition cft export lunmap -p project-name -s svm-name -o output-file`
+ ** For copy-free transitions, run the following command from the system where the 7MTT is installed:
 +
-For example: `transition cft export lunmap -p SanWorkLoad -s svml -0 c:/Libraries/Documents/7-to-C-LUN-MAPPING-svml.csv`
+`*transition cft export lunmap -p p_roject-name_ -s _svm-name_ -o _output-file_*`
++
+For example:
++
+`*transition cft export lunmap -p SanWorkLoad -s svml -0 c:/Libraries/Documents/7-to-C-LUN-MAPPING-svml.csv*`
 +
 NOTE: You must run this command for each of your storage virtual machines (SVMs).
+
 . Remove the SCSI devices created for 7-Mode LUNs:
- ** To remove all of the SCSI devices: `rescan-scsi-bus.sh -r`
- ** To remove each SCSI device individually: `echo 1> /sys/block/SCSI_ID/delete`
+ ** To remove all of the SCSI devices:
+ +
+`*rescan-scsi-bus.sh -r*`
+ ** To remove each SCSI device individually:
+ +
+`*echo 1> /sys/block/__SCSI_ID__/delete*`
 +
 This command must be executed on all 7-Mode LUN SCSI devices. See the SCSI Device ID column on the SAN Host LUNs tab of the _Inventory Assessment Workbook_ to identify the SCSI device IDs for the LUNs.
-. Discover new ONTAP LUNs: `rescan-scsi-bus.sh`
-. Configure DMMP devices for ONTAP LUNs: `multipath`
-. Verify that ONTAP LUNs are discovered: `sanlun lun show`
-. Determine the new ONTAP LUN device handle ID: `multipath -ll Device_handle_name`
-. Import the volume group: `vgimport vg_name`
-. Verify the volume group status: `vgdisplay`
-. Enable logical volumes: `vgchange -ay vg_name`
-. Verify the logical volume status: `lvdisplay`
+. Discover new ONTAP LUNs:
++
+`*rescan-scsi-bus.sh*`
+. Configure DMMP devices for ONTAP LUNs:
++
+`*multipath*`
+. Verify that ONTAP LUNs are discovered:
++
+`*sanlun lun show*`
+. Determine the new ONTAP LUN device handle ID:
++
+`*multipath -ll _Device_handle_name_*`
+. Import the volume group:
++
+`*vgimport _vg_name_*`
+. Verify the volume group status:
++
+`*vgdisplay*`
+. Enable logical volumes:
++
+`*vgchange -ay _vg_name_*`
+. Verify the logical volume status:
++
+`*lvdisplay*`
 +
 The LV status should be displayed as "`available`".
 
-. Mount the logical volumes from the ONTAP LUN to its respective mount point directory: `mount lv_namemount_point`
+. Mount the logical volumes from the ONTAP LUN to its respective mount point directory:
 +
-If the mount points are defined in the etc/fstab file, you can use the mount -a command to mount the logical volumes.
+`mount _lv_namemount_point_`
++
+If the mount points are defined in the `etc/fstab` file, you can use the `mount -a` command to mount the logical volumes.
 
-. Verify the mount points: `mount`
+. Verify the mount points:
++
+`*mount*`
 
 *Related information*
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-cft/home.html[Copy-free transition]
 
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

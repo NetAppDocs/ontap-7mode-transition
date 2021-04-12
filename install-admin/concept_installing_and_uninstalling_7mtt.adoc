@@ -1,7 +1,7 @@
 ---
 permalink: install-admin/concept_installing_and_uninstalling_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, install, uninstall, transition, windows
 summary: 'You can download and install the 7-Mode Transition Tool on a Windows system by using the standard wizard-based installer. However, if you have a previously installed version of the 7-Mode Transition Tool, you need to be aware of certain prerequisites before doing so.'
 ---
 = Installing or uninstalling the 7-Mode Transition Tool on a Windows system

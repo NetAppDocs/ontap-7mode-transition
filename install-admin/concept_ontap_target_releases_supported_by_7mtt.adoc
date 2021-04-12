@@ -1,7 +1,7 @@
 ---
 permalink: install-admin/concept_ontap_target_releases_supported_by_7mtt.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, 7, mode, install, target, release, support, transition, tool
 summary: 'Release support for ONTAP transition target clusters depends on the transition method you want to use, copy-based or copy-free, and on the version of the 7-Mode Transition Tool.'
 ---
 = ONTAP target releases supported by the 7-Mode Transition Tool
@@ -11,12 +11,11 @@ summary: 'Release support for ONTAP transition target clusters depends on the tr
 [.lead]
 Release support for ONTAP transition target clusters depends on the transition method you want to use, copy-based or copy-free, and on the version of the 7-Mode Transition Tool.
 
-Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[Release Notes] for the latest information about supported target releases and known issues.
 
 Copy-based transitions are supported to these ONTAP target releases.
 
+[options="header"]
 |===
 | If your transition target is running ...| You must use this 7-Mode Transition Tool version ...
 a|
@@ -24,12 +23,16 @@ ONTAP 9.8 or earlier supported release
 a|
 3.3.3
 a|
-ONTAP 9.7P2 or later 9.7 P release**Note:** Earlier 9.7 releases are not supported.
+ONTAP 9.7P2 or later 9.7 P release
+
+NOTE: Earlier 9.7 releases are not supported.
 
 a|
 3.3.2
 a|
-ONTAP 9.6P7 or later 9.6 P release**Note:** Earlier 9.6 releases are not supported.
+ONTAP 9.6P7 or later 9.6 P release
+
+NOTE: Earlier 9.6 releases are not supported.
 
 a|
 3.3.2

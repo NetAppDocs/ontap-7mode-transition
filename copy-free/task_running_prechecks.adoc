@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_running_prechecks.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, runn, prechecks
 summary: 'You can run prechecks to identify any issues before you start a transition. Prechecks verify that the 7-Mode sources, ONTAP targets, and configurations are valid for your transition. You can run prechecks any number of times.'
 ---
 = Running prechecks
@@ -20,6 +20,7 @@ After the prechecks are complete, the result summary is displayed in the dialog 
 +
 NOTE: The prechecks usually take only a few minutes to run, but the duration of the precheck phase depends on the number and type of errors or warnings that you resolve.
 
+.Steps
 . Choose an option under *Apply Type Filter* to filter the results:
  ** To view all messages related to security, select *Error*, *Warning*, *Informational*, and *Security Only*.
  ** To view all error messages related to security, select *Error* and *Security Only*.

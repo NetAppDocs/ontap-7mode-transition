@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_planning_a_copy_free_transition_project.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, plan, project
 summary: 'Planning a copy-free transition project involves selecting the source 7-Mode controllers and target cluster nodes, mapping 7-Mode volumes to a storage virtual machine \(SVM\), selecting the LIFs to be transitioned, and running prechecks.'
 ---
 = Planning a copy-free transition project

@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_transition_of_san_boot_luns.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, san, boot, lun
 summary: 'You must reboot SAN boot LUNs before you transition from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\). You must perform specific steps to prepare for the cutover phase, and after transition you must discover your LUNs.'
 ---
 = Transitioning of SAN boot LUNs

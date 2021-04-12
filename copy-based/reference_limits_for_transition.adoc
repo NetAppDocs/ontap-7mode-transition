@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/reference_limits_for_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, limits
 summary: 'When you transition volumes using the 7-Mode Transition Tool, you should consider certain limits for assessment, such as the number of controllers and hosts that can be assessed simultaneously. For migration, you should review the number of volumes in a project and number of projects that can be run simultaneously.'
 ---
 = Limits for transition
@@ -13,6 +13,7 @@ When you transition volumes using the 7-Mode Transition Tool, you should conside
 
 The following table lists the number of controllers and hosts that can be assessed simultaneously:
 
+[options="header"]
 |===
 | Parameter| Maximum limit
 a|
@@ -28,10 +29,12 @@ Number of ESXi hosts
 a|
 10
 |===
-*Note:* The maximum number of 7-Mode controllers in a single assessment depends on the number of objects, such as number of volumes, qtrees, quota, and exports.
+
+NOTE: The maximum number of 7-Mode controllers in a single assessment depends on the number of objects, such as number of volumes, qtrees, quota, and exports.
 
 The following table lists the number of volumes in a project and the number of projects that can be run simultaneously during migration:
 
+[options="header"]
 |===
 | Parameter| Maximum limit
 a|

@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_guidelines_for_deciding_when_to_cutover.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, decide, perform, cutover
 summary: 'Because transition cutover is disruptive to clients, you must plan the activity to minimize the downtime. You must schedule the cutover during a low-activity window. You should update the ONTAP volumes and wait for the transfers to complete before disconnecting clients and initiating storage cutover for reducing the downtime.'
 ---
 = Guidelines for deciding when to perform cutover

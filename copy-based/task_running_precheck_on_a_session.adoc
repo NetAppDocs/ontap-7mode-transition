@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_running_precheck_on_a_session.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, run, prechecks
 summary: 'After creating a transition session, you can validate the session to verify whether the 7-Mode environment can be transitioned by using the transition precheck command. You can verify the compatibility between the 7-Mode storage system and the SVM for factors such as features and security settings.'
 ---
 = Running prechecks
@@ -9,13 +9,16 @@ summary: 'After creating a transition session, you can validate the session to v
 :imagesdir: ../media/
 
 [.lead]
-After creating a transition session, you can validate the session to verify whether the 7-Mode environment can be transitioned by using the transition precheck command. You can verify the compatibility between the 7-Mode storage system and the SVM for factors such as features and security settings.
+After creating a transition session, you can validate the session to verify whether the 7-Mode environment can be transitioned by using the `transition precheck` command. You can verify the compatibility between the 7-Mode storage system and the SVM for factors such as features and security settings.
 
 The transition session must be in the preparation state.
 
-The transition cbt precheck command generates a detailed error message report. Issues identified in the report are assigned different severity levels, depending on the impact of the issue on the transition process. Because some errors can hinder the transition, you must perform corrective actions for errors and warnings. You should also review the impact of messages of other severity levels before proceeding with the transition.
+The `transition cbt precheck` command generates a detailed error message report. Issues identified in the report are assigned different severity levels, depending on the impact of the issue on the transition process. Because some errors can hinder the transition, you must perform corrective actions for errors and warnings. You should also review the impact of messages of other severity levels before proceeding with the transition.
 
-. Verify the compatibility for transition: `transition cbt precheck -p project_name`
+.Steps
+. Verify the compatibility for transition:
++
+`*transition cbt precheck -p _project_name_*`
 +
 ----
 7-Mode Transition Tool>transition cbt precheck -p project_finance

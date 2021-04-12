@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_parallel.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, primary, secondary, system, snapmirror, relationship, parallel
 summary: 'You can transition the primary and secondary HA pairs that contain the volumes of a 7-Mode SnapMirror relationship in parallel. You must then manually set up the volume SnapMirror relationship in clustered Data ONTAP after transition. The SnapMirror relationship is retained after transition without requiring a rebaseline.'
 ---
 = Transitioning primary and secondary systems in a SnapMirror relationship in parallel
@@ -17,6 +17,7 @@ xref:task_preparing_cluster_for_transitioning_volume_snapmirror_relationships.ad
 
 You must transition both the secondary and primary HA pairs in the same cutover window.
 
+.Steps
 . From the 7-Mode Transition Tool, perform a copy-free transition of the two HA pairs that contain the primary and secondary volumes of the 7-Mode volume SnapMirror relationship.
 +
 Before transitioning the 7-Mode HA pair that contains the secondary volumes, no manual intervention is required for the 7-Mode SnapMirror relationships. This ensures that the 7-Mode secondary volumes are transitioned as read-only volumes to ONTAP.
@@ -31,13 +32,17 @@ https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System
 +
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-cg/home.html[Volume disaster recovery express preparation]
 
-. On the destination volume, resynchronize the source volume and destination volume of the SnapMirror relationship: `snapmirror resync`
+. On the destination volume, resynchronize the source volume and destination volume of the SnapMirror relationship:
++
+`*snapmirror resync*`
 +
 IMPORTANT: At least one common Snapshot copy must exist between the source and destination volumes.
 +
-*Troubleshooting:* SnapMirror resynchronization fails if the common Snapshot copy was created in a Data ONTAP release earlier than 8.1. You can use the -fs-version parameter with the volume snapshot show command in the advanced privilege level to view the release in which the Snapshot copy was created. If you encounter this issue, break the SnapMirror relationship and then perform the resynchronization.
+*Troubleshooting:* SnapMirror resynchronization fails if the common Snapshot copy was created in a Data ONTAP release earlier than 8.1. You can use the `-fs-version` parameter with the `volume snapshot show` command in the advanced privilege level to view the release in which the Snapshot copy was created. If you encounter this issue, break the SnapMirror relationship and then perform the resynchronization.
 
-. Monitor the status of the SnapMirror data transfers: `snapmirror show`
+. Monitor the status of the SnapMirror data transfers:
++
+`*snapmirror show*`
 +
 IMPORTANT: You must not perform any operation, such as volume move or SnapMirror break, on the source and destination volumes until the resynchronization is completed successfully. Ensure that the resynchronization does not get aborted and completes successfully; otherwise, the volumes can go to an inconsistent state.
 

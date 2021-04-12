@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_collecting_tool_logs.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, download, log, files
 summary: 'The 7-Mode Transition Tool creates log files that provide processing details of the transition assessment and migration operations run on your system.'
 ---
 = Downloading transition log files
@@ -11,11 +11,12 @@ summary: 'The 7-Mode Transition Tool creates log files that provide processing d
 [.lead]
 The 7-Mode Transition Tool creates log files that provide processing details of the transition assessment and migration operations run on your system.
 
+.Steps
 . Click *Logs* in the top menu.
 . Click *Collect Project Logs* to collect logs related to all of the projects.
 . To collect logs for a given projects, locate the projects from the project list, and then click *Download*.
 +
-The logs are downloaded as a .zip file, and the folder name is the timestamp.
+The logs are downloaded as a `.zip` file, and the folder name is the timestamp.
 
 *Related information*
 

@@ -1,8 +1,8 @@
 ---
 permalink: san-host/reference_copyright.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, san, host, transition, copyright
+summary: 'Copyright information for the SAN Host Transition and Remediation Guide.'
 ---
 = Copyright
 :icons: font

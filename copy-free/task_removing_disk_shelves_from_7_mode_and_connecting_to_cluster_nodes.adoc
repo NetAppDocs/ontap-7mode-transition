@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_removing_disk_shelves_from_7_mode_and_connecting_to_cluster_nodes.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, disconnect, disk, shelves, connect, cluster, node
 summary: 'Cabling the 7-Mode disk shelves to the target cluster nodes is a manual process. After cabling the disk shelves, it is a best practice to verify the cabling by using Config Advisor. You can then verify the cabling by using the 7-Mode Transition Tool. The tool performs only a subset of the checks that are performed by Config Advisor.'
 ---
 = Disconnecting disk shelves from the 7-Mode system and connecting to cluster nodes
@@ -20,6 +20,7 @@ You must be aware of some of the considerations for connecting SAS disk shelves:
 +
 For example, IOM6e (controller)--IOM6 (shelf)--IOM3 (shelf)--IOM3 (shelf) is a supported configuration. But IOM6e (controller)--IOM3 (shelf)--IOM6 (shelf)--IOM3 (shelf) is not a supported configuration.
 
+.Steps
 . Check the disk shelf IDs in the 7-Mode HA pair and the target cluster nodes:
  .. If there are duplicate shelf IDs (if the 7-Mode disk shelf IDs are used for the disk shelves in the target cluster nodes), change the disk shelf IDs.
   *** For SAS disk shelves, a valid shelf ID is 00 through 99.
@@ -32,12 +33,16 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1112854[DS14mk2 FC, and DS1
 . Power off the 7-Mode disk shelves.
 . Depending on whether additional ports are available on the target cluster nodes, choose one of the following options:
 +
+[options="header"]
 |===
 | If...| Then...
 a|
 Additional ports are available to connect the disk shelves
 a|
-Connect the disk shelves in a new stack to the target cluster nodes in a multipath configuration.    *Note:* It is the best practice to connect the disk shelves to a separate stack. The 7-Mode Transition Tool detects the availability of the required number of ports on the target cluster nodes when prechecks are run.
+Connect the disk shelves in a new stack to the target cluster nodes in a multipath configuration.
+
+NOTE: It is the best practice to connect the disk shelves to a separate stack. The 7-Mode Transition Tool detects the availability of the required number of ports on the target cluster nodes when prechecks are run.
+
 a|
 Ports are not available to connect the disk shelves
 a|
@@ -72,7 +77,9 @@ https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor[NetApp 
 +
 A message listing the important considerations for this operation is displayed.
 +
-*Troubleshooting:* If there are missing disks in an aggregate, the aggregate becomes degraded and the cabling verification fails. If the number of missing disks is within a permissible limit, you can continue the transition with the degraded aggregates by running the following command from the 7-Mode Transition Tool CLI: `transition cft aggregate degraded-transition -p project_name -n 7-mode_host_name -a 7-mode_aggregate_name -i acknowledge`
+*Troubleshooting:* If there are missing disks in an aggregate, the aggregate becomes degraded and the cabling verification fails. If the number of missing disks is within a permissible limit, you can continue the transition with the degraded aggregates by running the following command from the 7-Mode Transition Tool CLI:
++
+`*transition cft aggregate degraded-transition -p _project_name_ -n 7-__mode_host_name__ -a _7-mode_aggregate_name_ -i acknowledge*`
 +
 You can then rerun the cabling verification operation and continue with the transition. You must ensure that there are enough spare disks in the target cluster node to reconstruct these RAID groups after the aggregates are transitioned.
 

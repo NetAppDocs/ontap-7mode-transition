@@ -1,7 +1,7 @@
 ---
 permalink: san-host/concept_transitioning_solaris_host_data_luns_with_zfs_file_systems.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, solaris, host, data, lun, zfs, file, systems
 summary: 'If you transition a Solaris host data LUN with ZFS file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\), you must perform specific steps before and after transition to remediate transition issues on the host.'
 ---
 = Transitioning Solaris host data LUNs with ZFS file systems

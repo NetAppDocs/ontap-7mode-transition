@@ -1,8 +1,8 @@
 ---
 permalink: copy-free/task_performing_copy_free_transition_of_7_mode_aggregates.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: ontap, transition, copy, free, aggregates, transition
+summary: 'The copy-free transition workflow involves planning a project, applying 7-Mode configurations to the SVMs, exporting the 7-Mode system information and halting the 7-Mode system, manually cabling the disk shelves to cluster nodes, and importing the 7-Mode data and configurations.'
 ---
 = Transitioning 7-Mode aggregates using copy-free transition
 :icons: font

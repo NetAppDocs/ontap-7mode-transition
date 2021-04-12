@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_phases_of_copy_free_transition.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, phases
 summary: 'Copy-free transition using the 7-Mode Transition Tool consists of the following phases: planning, SVM provisioning, exporting and halting, cabling, importing, preproduction testing, starting production, and committing. You should understand the phases to manage the transition effectively.'
 ---
 = Phases of copy-free transition

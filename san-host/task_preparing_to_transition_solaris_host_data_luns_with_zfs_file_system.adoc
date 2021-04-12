@@ -1,7 +1,7 @@
 ---
 permalink: san-host/task_preparing_to_transition_solaris_host_data_luns_with_zfs_file_system.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, san, host, transition, solaris, host, data, lun, zfs
 summary: 'Before you transition Solaris host LUNs with ZFS file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must gather information you need for the transition process.'
 ---
 = Preparing to transition Solaris host data LUNs with ZFS file system
@@ -13,7 +13,10 @@ Before you transition Solaris host LUNs with ZFS file systems from Data ONTAP op
 
 This applies to copy-based transitions and copy-free transitions.
 
-. On the 7-Mode controller, identify the name of the LUN to be transitioned: `lun show`
+.Steps
+. On the 7-Mode controller, identify the name of the LUN to be transitioned:
++
+`*lun show*`
 +
 ----
  fas8040-shu01> lun show
@@ -23,7 +26,9 @@ This applies to copy-based transitions and copy-free transitions.
         /vol/zfs/zfs2                  6g (6442450944)    (r/w, online, mapped)
 ----
 
-. On the host, locate the SCSI device file name for the LUN: `sanlun lun show`
+. On the host, locate the SCSI device file name for the LUN:
++
+`*sanlun lun show*`
 +
 The SCSI device file name is located in the `device filename` column.
 +
@@ -38,8 +43,12 @@ fas8040-shu01        /vol/ufs/ufs2    /dev/rdsk/c0t60A98000383035356C2447384D396
 fas8040-shu01        /vol/ufs/ufs1    /dev/rdsk/c0t60A98000383035356C2447384D396548d0s2 scsi_vhci0 FCP        5g      7
 ----
 
-. List the zpool: `zpool list`
-. Record the zpool and get the disks associated with the zpool: `zpool status pool-name`
+. List the zpool:
++
+`*zpool list*`
+. Record the zpool and get the disks associated with the zpool:
++
+`*zpool status _pool-name_*`
 +
 ----
 # zpool list
@@ -60,7 +69,9 @@ config:
 errors: No known data errors
 ----
 
-. List and record the ZFS datasets within a ZFS storage pool: `zfs list`
+. List and record the ZFS datasets within a ZFS storage pool:
++
+`*zfs list*`
 +
 ----
 # zfs list

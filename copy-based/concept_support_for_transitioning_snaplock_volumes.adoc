@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/concept_support_for_transitioning_snaplock_volumes.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, support, snaplock, volumes
 summary: 'The 7-Mode Transition Tool supports the transition of SnapLock volumes to target clusters running any ONTAP 9.0 release except 9.6.'
 ---
 = Support for transitioning SnapLock volumes

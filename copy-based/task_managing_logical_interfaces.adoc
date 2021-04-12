@@ -1,7 +1,7 @@
 ---
 permalink: copy-based/task_managing_logical_interfaces.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, copy, based, transition, manage, logical, interfaces
 summary: 'You can add, edit, or remove 7-Mode IP addresses from a project.'
 ---
 = Managing logical interfaces
@@ -18,8 +18,10 @@ The LIFs are configured on the storage virtual machine (SVM) in the apply config
 
 IMPORTANT: FC and iSCSI LIFs are not transitioned by the 7-Mode Transition Tool.
 
+.Steps
 . Perform one of the following actions:
 +
+[options="header"]
 |===
 | If you want to...| Then...
 a|

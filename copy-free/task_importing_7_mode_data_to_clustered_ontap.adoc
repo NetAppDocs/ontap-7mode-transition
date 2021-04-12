@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/task_importing_7_mode_data_to_clustered_ontap.html
 sidebar: sidebar
-keywords: 
+keywords: ontap, transition, copy, free, import, data
 summary: 'After verifying the cabling and resolving any issues, you can run the import operation. In this phase, the disk ownership is assigned to the mapped cluster nodes, and the 7-Mode aggregates, volumes, and LUNs are converted to the ONTAP format. All the volume-level and LUN-level configurations are also applied.'
 ---
 = Importing 7-Mode data to ONTAP
@@ -26,9 +26,12 @@ The following operations are performed by the tool in this phase:
  ** Snapshot copy schedules
  ** LUN maps and igroups
 
+.Steps
 . Click *Import*.
 +
-*Troubleshooting:* If there are missing disks in an aggregate, the aggregate becomes degraded and the import operation fails. If the number of missing disks is within a permissible limit, you can continue the transition with the degraded aggregates by running the following command from the 7-Mode Transition Tool CLI: `transition cft aggregate degraded-transition -p project-name -n 7-mode-host-name -a 7-mode-aggregate-name -i acknowledge`
+*Troubleshooting:* If there are missing disks in an aggregate, the aggregate becomes degraded and the import operation fails. If the number of missing disks is within a permissible limit, you can continue the transition with the degraded aggregates by running the following command from the 7-Mode Transition Tool CLI:
++
+`*transition cft aggregate degraded-transition -p _project-name_ -n _7-mode-host-name_ -a _7-mode-aggregate-name_ -i acknowledge*`
 +
 You can then rerun the cabling verification operation and continue with the transition. You must make sure that there are enough spare disks in the target cluster node to reconstruct these RAID groups after the aggregates are transitioned.
 +
