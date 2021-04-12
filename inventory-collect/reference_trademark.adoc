@@ -1,0 +1,13 @@
+---
+permalink: inventory-collect/reference_trademark.html
+sidebar: sidebar
+keywords: ontap, 7, mode, trademark, host, storage, information
+summary: 'Trademark information for Host and Storage Information Collection Guide'
+---
+= Trademark
+:icons: font
+:imagesdir: ../media/
+
+NETAPP, the NETAPP logo, and the marks listed on the NetApp Trademarks page are trademarks of NetApp, Inc. Other company and product names may be trademarks of their respective owners.
+
+https://www.netapp.com/company/legal/trademarks/

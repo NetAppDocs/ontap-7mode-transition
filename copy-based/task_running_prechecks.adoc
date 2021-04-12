@@ -1,0 +1,33 @@
+---
+permalink: copy-based/task_running_prechecks.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, run, prechecks
+summary: 'You can run prechecks to identify any issues before you start a transition. Prechecks verify that the 7-Mode sources, ONTAP targets, and configurations are valid for your transition. You can run prechecks any number of times.'
+---
+= Running prechecks
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can run prechecks to identify any issues before you start a transition. Prechecks verify that the 7-Mode sources, ONTAP targets, and configurations are valid for your transition. You can run prechecks any number of times.
+
+The prechecks run more than 200 different checks. For example, the tool checks for items such as if volumes are online and network access exists between the systems.
+
+.Steps
+. From Dashboard, select the project for which you want to run the prechecks.
+. Click *Run Prechecks*.
++
+After the prechecks are complete, the result summary is displayed in the dialog box.
++
+NOTE: The prechecks usually take only a few minutes to run, but the duration of the precheck phase depends on the number and type of errors or warnings that you resolve.
+
+. Choose an option under *Apply Type Filter* to filter the results:
+ ** To view all messages related to security, select *Error*, *Warning*, *Informational*, and *Security Only*.
+ ** To view all error messages related to security, select *Error* and *Security Only*.
+ ** To view all warning messages related to security, select **Warning**and *Security Only*.
+ ** To view all informational messages related to security, select *Informational* and *Security Only*.
+. To save the raw results in comma-separated values (CSV) format and export the results, click *Save As CSV*.
++
+You can view the transition operations that have been performed during the transition along with the operation type, status, start time, end time, and results in the Operation History tab on the Dashboard pane.
+
+You must resolve all the errors detected by the prechecks before you start data copy. It is also a best practice to resolve all warnings prior to proceeding with the migration process. Resolution can be resolving the source issue of the warning message, implementing a workaround, or accepting the result of the issue.

@@ -1,0 +1,24 @@
+---
+permalink: snapmirror/concept_considerations_for_space_when_transitioning_san_volumes.html
+sidebar: sidebar
+keywords: ontap, 7, mode, space, considerations, transition, san, volume
+summary: 'You must ensure that sufficient space is available in the volumes during transition. In addition to the space required for storing data and Snapshot copies, the transition process also requires 1 MB of space per LUN for updating certain filesystem metadata.'
+---
+= Space considerations when transitioning SAN volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must ensure that sufficient space is available in the volumes during transition. In addition to the space required for storing data and Snapshot copies, the transition process also requires 1 MB of space per LUN for updating certain filesystem metadata.
+
+Before cutover, you can use the `df -h` command on the 7-Mode volume to verify whether free space of 1 MB per LUN is available in the volume. If the volume does not have sufficient free space available, the required amount of space must be added to the 7-Mode volume.
+
+If the transition of LUNs fails due to lack of space on the destination volume, the following EMS message is generated: `LUN.vol.proc.fail.no.space: Processing for LUNs in volume vol1 failed due to lack of space`.
+
+In this case, you must set the `filesys-size-fixed` attribute to false on the destination volume, and then add 1 MB per LUN of free space to the volume.
+
+If there are volumes containing space-reserved LUNs, growing the volume by 1MB per LUN might not provide sufficient space. In such cases, the amount of additional space that has to be added is the size of the Snapshot reserve for the volume. After space is added to the destination volume, you can use the `lun transition start` command to transition the LUNs.
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/index.jsp[NetApp Documentation: ONTAP 9]

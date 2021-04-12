@@ -1,0 +1,97 @@
+---
+permalink: install-admin/concept_system_requirements_for_7mtt_on_windows.html
+sidebar: sidebar
+keywords: ontap, 7, mode, install, system, requirements, windows, transition, tool
+summary: 'You must ensure that the Windows host meets the required configuration to install and run the 7-Mode Transition Tool.'
+---
+= System requirements for installing the 7-Mode Transition Tool on Windows systems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must ensure that the Windows host meets the required configuration to install and run the 7-Mode Transition Tool.
+
+Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[Release Notes] for the latest information about supported hosts and known issues.
+
+== Hardware requirements
+
+* Dual-core x64 processor, 1.0 GHz or more
+* 8 GB RAM
+* 40 GB free disk space
+
+== Software requirements
+
+* Your 64-bit Windows system must be running one of the following operating system versions:
+ ** Windows 7 Enterprise
+ ** Windows 7 Enterprise SP1
+ ** Windows Server 2008 Standard
+ ** Windows Server 2008 R2 Standard
+ ** Windows Server 2008 R2 Enterprise with SP1
+ ** Windows Server 2012 Standard
+ ** Windows Server 2012 R2 Standard
+ ** Windows 8.1 Enterprise
+ ** Windows Server 2012 R2 Datacenter edition
+ ** For 7-Mode Transition Tool version 3.3.2P1, you can also use one of the following operating system versions:
+  *** Windows 10 Enterprise
+  *** Windows Server 2016 Standard
+  *** Windows Server 2016 Datacenter
+  *** Windows Server 2019 Standard
+  *** Windows Server 2019 Datacenter
+ ** For 7-Mode Transition Tool version 3.3.3, you can also use one of the following operating system versions:
+  *** Windows 10 Professional
++
+NOTE: You can use a Windows virtual machine that meets the required software requirements and hardware requirements to install the 7-Mode Transition Tool.
+* 64-bit Oracle Java Runtime Environment (JRE) 1.8 update 144
++
+NOTE: If the Windows host does not have JRE or has 32-bit JRE installed, the 7-Mode Transition Tool installer automatically installs 64-bit JRE 1.8 update 144. If an earlier version of 64-bit JRE is installed, the installer automatically updates JRE to JRE 1.8 update 144.
++
+When JRE is updated automatically, the other applications that require earlier versions of JRE might be affected.
++
+NOTE: With JRE versions 1.8 update 46 or later (including JRE 1.8 update 144), for the 7-Mode Transition Tool to communicate with Data ONTAP operating in 7-Mode systems and ONTAP systems, the SSL key length on the Data ONTAP operating in 7-Mode systems and ONTAP systems must be at least 1024.
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT%3A_How_to_resolve_TLS_or_SSL_communication_issue[7MTT: How to resolve TLS or SSL communication issue]
+
+== Server configuration requirements
+
+To access the web interface, the Windows system on which the tool is installed must be configured as follows:
+
+* Port 8443 of the 7-Mode Transition Tool server must be available.
++
+If port 8443 is not available, or if you want to use a different port, you must change the port specified by the `tool.https.port` parameter in the `$INSTALL_DIR\etc\conf\transition-tool.conf` file.
++
+The best practice is to use HTTPS for accessing the web interface. However, if you want to use HTTP for accessing the web interface, port 8088 must be available. For an alternative to port 8088, you must change the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
++
+NOTE: You must restart the 7-Mode Transition Tool service after changing the port in the configuration file.
+
+* The firewall should be either turned off or configured to allow traffic on the port that is used to access the tool.
+
+To transition netgroups and CIFS local users and groups, the following requirements must be met:
+
+* Port 8088 of the 7-Mode Transition Tool must be available.
++
+For an alternative to port 8088, you must change the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file, and then restart the 7-Mode Transition Tool service.
+
+* Each node in the cluster must have at least one data LIF configured for the target SVM.
+* All of the SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
++
+NOTE: You must ensure that firewalls do not block this traffic.
+
+== Client (web interface) requirements
+
+The system that accesses the web interface must have the following:
+
+* One of the following web browsers:
+ ** Microsoft Internet Explorer 9, 10, or 11
+ ** Google Chrome 27 or later
+ ** Mozilla Firefox 20 or later
+All of the browsers must be TLS-enabled.
+
++
+NOTE: If you are using Microsoft Internet Explorer as your web browser, you must disable SSLv2.
+* A screen resolution of 1280 × 1024 or higher
+
+Every time you install a new version of the tool, you must clear the browser cache by pressing Ctrl+F5 on the system.
+
+*Related information*
+
+https://mysupport.netapp.com/NOW/products/interoperability[NetApp Interoperability]

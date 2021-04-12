@@ -1,0 +1,13 @@
+---
+permalink: command-map/reference_trademark.html
+sidebar: sidebar
+keywords: ontap, command, map, transition, trademark
+summary: 'Trademark information for Command Map for 7-Mode Administrators Guide.'
+---
+= Trademark
+:icons: font
+:imagesdir: ../media/
+
+NETAPP, the NETAPP logo, and the marks listed on the NetApp Trademarks page are trademarks of NetApp, Inc. Other company and product names may be trademarks of their respective owners.
+
+http://www.netapp.com/us/legal/netapptmlist.aspx

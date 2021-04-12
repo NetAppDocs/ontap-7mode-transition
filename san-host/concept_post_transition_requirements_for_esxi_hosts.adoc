@@ -1,0 +1,30 @@
+---
+permalink: san-host/concept_post_transition_requirements_for_esxi_hosts.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, post, remediation, esxi, host
+summary: 'After you transition LUNs for ESXi hosts from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\), you must perform a series of remediation tasks to bring your LUNs online and begin servicing data.'
+---
+= Post-transition remediation requirements for ESXi hosts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you transition LUNs for ESXi hosts from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool (7MTT), you must perform a series of remediation tasks to bring your LUNs online and begin servicing data.
+
+*Related information*
+
+xref:task_preparing_for_post_transition_esxi_host_remediation.adoc[Preparing for post-transition ESXi host remediation]
+
+xref:task_reregistering_vms_after_transition_on_non_san_boot_esxi_host_using_vsphere_client.adoc[Reregistering VMs after transition on non-SAN boot ESXi hosts using vSphere Client]
+
+xref:task_setting_up_esxi_hosts_configured_for_san_boot_after_transition.adoc[Setting up ESXi hosts configured for SAN boot after transition]
+
+xref:task_determining_whether_vmfs_volumes_need_to_be_remounted_after_transition.adoc[Determining whether VMFS volumes need to be remounted after transition]
+
+xref:task_reattaching_rdm_luns_to_vms.adoc[Reattaching RDM LUNs to VMs]
+
+xref:task_enabling_caw_on_a_datastore_using_esxi_cli.adoc[Enabling CAW on a datastore using the ESXi CLI]
+
+xref:concept_post_transition_remediation_for_linux_and_windows_guest_operating_systems.adoc[Post-transition remediation for Linux and Windows guest operating systems]
+
+xref:concept_configure_recommended_settings_for_esxi_hosts.adoc[Recommended settings for ESXi hosts after transition remediation]

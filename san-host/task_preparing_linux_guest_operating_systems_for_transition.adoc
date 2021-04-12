@@ -1,0 +1,115 @@
+---
+permalink: san-host/task_preparing_linux_guest_operating_systems_for_transition.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, linux, operating, system
+summary: 'If have 7-Mode LUNs mapped as physical compatible RDM \(PTRDM\) to Linux virtual machines \(VMs\) for the boot device, there are steps you must perform to prepare your Linux VMs for transition.'
+---
+= Preparing Linux guest operating systems for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If have 7-Mode LUNs mapped as physical compatible RDM (PTRDM) to Linux virtual machines (VMs) for the boot device, there are steps you must perform to prepare your Linux VMs for transition.
+
+* For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+* For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.
+
+.Steps
+. Obtain the SCSI device serial numbers:
++
+`*cat /boot/grub/menu.lst*`
++
+In the following example, 360a9800032466879362b45777447462d-part2 and 360a9800032466879362b45777447462d-part1 are SCSI device numbers:
++
+----
+# cat /boot/grub/menu.lst
+...
+kernel /boot/vmlinuz-3.0.13-0.27-default root=/dev/disk/by-id/scsi-
+360a9800032466879362b45777447462d-part2 resume=/dev/disk/by-id/scsi-
+360a9800032466879362b45777447462d-part1
+----
+
+. Determine the mapping between the SCSI device serial numbers and SCSI devices/partitions:
++
+`*# ls -l /dev/disk/by-id*`
++
+The following example shows how the relationship mapping is displayed. The `SCSI devices/partitions` are displayed following the `SCSI device/partition serial numbers`. In this example, `../../sda, ../../sda1, and ../../sda2` are SCSI devices/partitions.
++
+----
+lrwxrwxrwx 1 root root 9 Oct 27 06:54 scsi-360a9800032466879362b45777447462d -> ../../sda
+   lrwxrwxrwx 1 root root 10 Oct 27 05:09 scsi-360a9800032466879362b45777447462d-part1 -> ../../sda1
+   lrwxrwxrwx 1 root root 10 Oct 27 02:21 scsi-360a9800032466879362b45777447462d-part2 -> ../../sda2
+----
+
+. Determine the mapping between the SCSI device paths and the UUIDs:
++
+`*ls -l /dev/disk/by-uuid*`
++
+The following example shows how the relationship mapping is displayed. In this example, `33d43a8b-cfae-4ac4-9355-36b479cfa524` is the UUID for SCSI device/partition sda2`, `603e01f8-7873-440a-9182-878abff17143` is the UUID for SCSI device/partition sdb, and `c50b757b-0817-4c19-8291-0d14938f7f0f` is the UUID for SCSI device/partition sda1.
++
+----
+ lrwxrwxrwx 1 root root 10 Oct 27 02:21 33d43a8b-cfae-4ac4-9355-36b479cfa524 -> ../../sda2
+   lrwxrwxrwx 1 root root 9 Oct 27 06:54 603e01f8-7873-440a-9182-878abff17143 -> ../../sdb
+   lrwxrwxrwx 1 root root 10 Oct 27 05:09 c50b757b-0817-4c19-8291-0d14938f7f0f -> ../../sda1
+----
+
+. Use the UUID to update the device reference in the grub boot `menu.lst` file by matching it with the SCSI device path and SCSI serial number.
++
+----
+#blkid
+/dev/sda1: UUID="c50b757b-0817-4c19-8291-0d14938f7f0f" TYPE="swap"
+/dev/sda2: UUID="33d43a8b-cfae-4ac4-9355-36b479cfa524" TYPE="ext3"
+/dev/sdb: UUID="603e01f8-7873-440a-9182-878abff17143" SEC_TYPE="ext2" TYPE="ext3"
+----
+
+. Use the UUID you just retrieved to update the device reference in the grub boot `menu.lst` file.
++
+The following example shows the `menu.lst` file after it has been updated:
++
+----
+# Modified by YaST2. Last modification on Fri Oct 17 02:08:40 EDT 2014
+default 0
+timeout 8
+##YaST - generic_mbr
+gfxmenu (hd0,1)/boot/message
+##YaST - activate
+###Don't change this comment - YaST2 identifier: Original name: linux###
+title SUSE Linux Enterprise Server 11 SP2 - 3.0.13-0.27
+root (hd0,1)
+kernel /boot/vmlinuz-3.0.13-0.27-default root=/dev/disk/by-uuid/e5127cdf-8b30-
+418e-b0b2-35727161ef41 resume=/dev/disk/by-uuid/d9133964-d2d1-4e29-b064-7316c5ca5566
+splash=silent crashkernel=128M-:64M showopts vga=0x314
+initrd /boot/initrd-3.0.13-0.27-default
+----
+
+. Update the `/etc/fstab` file:
+ .. Use the UUID you just retrieved to update the device reference in the `/etc/fstab` file.
++
+The following example shows an `/etc/fstab` file with a SCSI serial number:
++
+----
+/dev/disk/by-id/scsi-360a9800032466879362b45777447462d-part1 swap swap
+defaults 0 0
+/dev/disk/by-id/scsi-360a9800032466879362b45777447462d-part2 / ext3
+acl,user_xattr 1 1
+proc /proc proc defaults 0 0
+sysfs /sys sysfs noauto 0 0
+debugfs /sys/kernel/debug debugfs noauto 0 0
+devpts /dev/pts devpts mode=0620,gid=5 0 0
+----
+
+ .. Replace the reference to the SCSI serial number with the UUID.
++
+The following example shows an `/etc/fstab` file that has been updated to replace the SCSI serial number with the UUID:
++
+----
+cat /etc/fstab
+UUID="c50b757b-0817-4c19-8291-0d14938f7f0f swap swap defaults
+0 0
+UUID="33d43a8b-cfae-4ac4-9355-36b479cfa524 / ext3 acl,user_xattr
+1 1
+proc /proc proc defaults 0 0
+sysfs /sys sysfs noauto 0 0
+debugfs /sys/kernel/debug debugfs noauto 0 0
+devpts /dev/pts devpts mode=0620,gid=5 0 0
+----

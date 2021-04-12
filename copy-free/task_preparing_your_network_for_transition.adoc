@@ -1,0 +1,37 @@
+---
+permalink: copy-free/task_preparing_your_network_for_transition.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, prepare, network
+summary: 'You must prepare the data network of the cluster for transition by creating logical ports \(VLANs and interface groups\).'
+---
+= Preparing the network for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must prepare the data network of the cluster for transition by creating logical ports (VLANs and interface groups).
+
+The NTP server must be configured and the time must be synchronized across the 7-Mode systems and cluster.
+
+.Steps
+. Create VLANs or interface groups on the target cluster nodes, if required:
++
+`*network port vlan create*`
++
+or
++
+`*network port ifgrp create*`
++
+To provide network connectivity after transition, you should transition the 7-Mode IP addresses to a similar network topology in ONTAP. For example, if the 7-Mode IP addresses are configured on physical ports, the IP addresses should be transitioned to appropriate physical ports in ONTAP. Similarly, IP addresses configured on VLAN ports or interface groups should be transitioned to appropriate VLAN ports or interface groups in ONTAP.
+
+. If you want SVMs in the non-default IPspace, create the required IPspaces:
++
+`*network ipspace create*`
++
+The 7-Mode IP addresses or the new LIFs that are selected for transition are created in the IPspace of the mapped SVM.
++
+NOTE: IPv6 addresses cannot be transitioned and must be configured manually post-transition.
+
+*Related information*
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]

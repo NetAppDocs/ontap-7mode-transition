@@ -1,0 +1,39 @@
+---
+permalink: copy-based/concept_guidelines_for_creating_a_data_copy_schedule.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, create, data, copy, schedule
+summary: 'The 7-Mode Transition Tool runs a scheduler that checks for the active schedule every 5 minutes. You must be aware of the requirements to make a data copy schedule active. You can manage the SnapMirror transfers effectively by following some best practices when configuring the different parameters of a data copy schedule.'
+---
+= Considerations for creating a data copy schedule
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool runs a scheduler that checks for the active schedule every 5 minutes. You must be aware of the requirements to make a data copy schedule active. You can manage the SnapMirror transfers effectively by following some best practices when configuring the different parameters of a data copy schedule.
+
+== Requirements to make a data copy schedule active
+
+* The 7-Mode Transition Tool service must be running.
++
+If the 7-Mode Transition Tool service is restarted, the SnapMirror operations are not performed until the credentials are added.
+
+* There should be at least one data copy schedule available for SnapMirror data copy operations to run.
++
+If there is no schedule available for a particular time range, the SnapMirror data copy operations are not performed during that time.
+
+* If the SnapMirror relationships are in the quiesced state, the data copy operations are not performed.
+* The system time of the 7-Mode and the cluster must be synchronized for the incremental transfers to happen according to the data copy schedule.
++
+If the 7-Mode system time is lagging behind the cluster time, the updates are scheduled more frequently than the specified update frequency. If the 7-Mode system time is ahead of the cluster time, the updates are delayed than the specified update frequency.
+
+== Best practices during data copy
+
+To improve SnapMirror replication performance, the source and destination systems should have optimum CPU utilization and memory available. Additionally, network traffic that is unrelated to the migration activity should be minimized so that the throughput is maximized and latency is minimized between the source and destination systems.
+
+== Priority for data transfers
+
+When scheduling the data copy operations, baseline or resynchronization operations take priority over the incremental transfers.
+
+When aborting the data copy operations for releasing the SnapMirror transfers, incremental transfers are aborted first, and then baseline or resynchronization operations are aborted.
+
+For incremental transfers, priority is given to the volumes that are lagging more behind the source volume based on the time elapsed from the previous update.

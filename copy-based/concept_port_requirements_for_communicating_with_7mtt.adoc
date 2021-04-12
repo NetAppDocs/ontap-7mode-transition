@@ -1,0 +1,62 @@
+---
+permalink: copy-based/concept_port_requirements_for_communicating_with_7mtt.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, port, requirements, communicating, tool
+summary: 'The 7-Mode Transition Tool communicates with the 7-Mode system and the cluster over certain ports. You must ensure that these ports on the 7-Mode system and the cluster are open to allow communication with the 7-Mode Transition Tool.'
+---
+= Port requirements for communicating with the 7-Mode Transition Tool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool communicates with the 7-Mode system and the cluster over certain ports. You must ensure that these ports on the 7-Mode system and the cluster are open to allow communication with the 7-Mode Transition Tool.
+
+== Ports that must be open on the 7-Mode systems
+
+The 7-Mode Transition Tool communicates with the 7-Mode systems by using HTTPS on port 443.
+
+The following ports are required by the cluster to communicate with the 7-Mode systems for SnapMirror replication:
+
+* 10565/TCP
+* 10566/TCP
+* 10567/TCP
+* 10568/TCP
+* 10569/TCP
+* 10670/TCP
+
+== Ports that must be open on the cluster
+
+The 7-Mode Transition Tool communicates with the cluster by using HTTPS on port 443.
+
+The following ports are required by the 7-Mode systems to communicate with the cluster for SnapMirror replication:
+
+* 10565/TCP
+* 10566/TCP
+* 10567/TCP
+* 10568/TCP
+* 10569/TCP
+* 10670/TCP
+* 11105/TCP
+
+Additionally, the 7-Mode Transition Tool performs a ping operation from the intercluster LIFs to the data copy IP address of the 7-Mode system to verify reachability.
+
+== Ports that must be open on the 7-Mode Transition Tool
+
+Port 8444 of the 7-Mode Transition Tool must be open for the web interface.
+
+To transition netgroups and CIFS local users and groups, the following requirements must be met:
+
+* Port 8088 of the 7-Mode Transition Tool must be available.
++
+For an alternative to port 8088, you must change the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file of the 7-Mode Transition Tool installation directory.
++
+NOTE: You must restart the 7-Mode Transition Tool service after changing the port in the configuration file.
+
+* Each node in the cluster must have at least one data LIF configured for the target SVM.
+* All SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
++
+NOTE: You must verify that firewalls do not block this traffic.
+
+*Related information*
+
+https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/install-admin/index.html[7-Mode Transition Tool installation and administration]

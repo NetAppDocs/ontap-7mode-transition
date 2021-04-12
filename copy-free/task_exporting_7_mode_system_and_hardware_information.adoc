@@ -1,0 +1,50 @@
+---
+permalink: copy-free/task_exporting_7_mode_system_and_hardware_information.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, exporte, storage, configurations, halt
+summary: 'The cutover window for the transition starts from the export phase. In this phase, the tool collects system information, disk shelf details, and storage configurations from the 7-Mode systems, and then halts the 7-Mode storage systems.'
+---
+= Exporting storage configurations and halting 7-Mode systems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The cutover window for the transition starts from the export phase. In this phase, the tool collects system information, disk shelf details, and storage configurations from the 7-Mode systems, and then halts the 7-Mode storage systems.
+
+* The Service Processor (SP) or Remote LAN Module (RLM) must be configured with an IPv4 address on the 7-Mode system.
+* All clients must be disconnected from the 7-Mode systems (by unmounting NFS exports, disconnecting CIFS shares, and shutting down SAN hosts), but the applicable NAS and SAN services must be running on the 7-Mode systems.
++
+IMPORTANT: You must not stop any protocol services because they are required for collecting the protocol configurations from the 7-Mode storage systems.
+
+* Any data written to the 7-Mode volumes during this operation is lost.
+* You must not perform any management operations on the 7-Mode systems during this operation.
+* The tool performs the following operations in the export phase:
+ ** Collects all volume and storage configurations
+ ** Creates a Snapshot copy of each transitioning aggregate
++
+If you decide to revert to 7-Mode at any stage of transition, these Snapshot copies are used by the tool for the revert operation.
+
+ ** Boots the 7-Mode controllers in maintenance mode
+ ** Removes disk ownerships from the 7-Mode controllers
+ ** Disables disk autoassignment on the target cluster nodes
+
+.Steps
+. Click *Export & Halt*.
++
+A message that lists important considerations for this operation is displayed.
+
+. Click the *Confirm that the client access is disconnected* check box.
+. Click *Yes* to continue with the export and halt operation.
++
+The operation results are displayed.
+
+. Wait for the operation to complete and perform the following steps to save the operation results and collect the tool logs:
+ .. Click *Save as CSV* to save the operation results in a file.
+ .. Click *Collect Tool Logs* to create a backup of all the transition log files.
++
+It is a best practice to save the log files after each transition operation.
+
+ .. Click *Close* to close the operation results window.
+
++
+If the operation takes a long time to complete, you can click *Run in Background* to exit the operation results window. You should not edit the project or perform any other task when the operation is running in the background. You can then view the operations results from the Operation History tab.

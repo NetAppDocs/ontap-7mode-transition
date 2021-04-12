@@ -1,0 +1,99 @@
+---
+permalink: san-host/task_making_san_boot_lun_primary_boot_lun_for_hp_ux_qlogic_hbas_after_transition.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, boot, lun, primary, hp, ux, logic, hbas
+summary: 'If your Data ONTAP operating in 7-Mode HP-UX host was SAN booted, you must make the SAN boot LUN the primary boot LUN after transition to clustered Data ONTAP.'
+---
+= Making a SAN boot LUN the primary boot LUN for HP-UX QLogic HBAs after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your Data ONTAP operating in 7-Mode HP-UX host was SAN booted, you must make the SAN boot LUN the primary boot LUN after transition to clustered Data ONTAP.
+
+* Your data migration must be complete.
+* Your boot LUN must be mapped to your host from your clustered Data ONTAP node.
+
+SAN boot is supported for HP-UX 11.3x on HP 9000 systems using the BCH menu and on HP Integrity servers using the HP-UX Loader (EFI).
+
+For copy-based transitions, perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool. Copy-free transitions are not supported on HP-UX hosts.
+
+.Steps
+. Open the shell prompt:
++
+`*Ctrl B*`
+. Boot to the EFI shell.
++
+The EFI shell is available only on HP Integrity systems.
+
+. Use a serial console to access the login to the service processor (MP).
+. Access the console list: `CO`
++
+This opens the EFI Boot Manager menu.
+
+. From the EFI Boot Manager menu, select the EFI shell menu option to access the EFI shell environment.
+. Identify your QLogic driver numbers:
++
+`*drivers*`
++
+The driver numbers are located in the DRV column.
+
+. Identify the corresponding controller number for each driver:
++
+`*drvcfg _driver_number_*`
++
+In the following example, `27` is the corresponding controller number for driver `23` and `26` is the corresponding controller number for driver `24`:
++
+----
+Shell> drvcfg 23
+Configurable Components
+		Drv[23]		Ctrl[27]			Lang[eng]
+
+Shell> drvcfg 24
+Configurable Components
+		Drv[24]		Ctrl[26]			Lang[eng]
+----
+
+. Open the driver BIOS:
++
+`*drvcfg _drv_number ctrl_number_ -s*`
+. Enter `*4*` to select *4. Edit Boot Settings*.
+. In Edit Boot Settings, enter `6` to select *6. EFI Variable EFIFCScanLevel*.
+. Enter `*1*` to change the value of EFI Variable EFIFCScanLevel from 0 to 1.
+. Enter `*7*` to select *7. Enable World Login*.
+. Enter `*y*` to enable world login.
+. Enter `*0*` to go to the previous menu.
+. In the Main Menu, enter `*11*` to save your changes.
+. Enter `*12*` to quit.
+. In the shell prompt, rescan your devices:
++
+`*reconnect -r*`
+. Display the LUN to obtain the path of the LUN from which you want to boot:
++
+`*map -r*`
++
+The LUN paths are listed under the Device column. The bootable SAN disk are displayed under the mapping table column and have "`WWN`" and "`Part 1`" in the output string.
+
+. Enter the LUN path of your SAN boot LUN.
++
+An example of a LUN path is fs0.
+
+. Exit the EFI shell:
++
+`*cd efi*`
+. Enter the HPUX directory:
++
+`*cd hpux*`
+. Make the new clustered Data ONTAP SAN boot LUN the primary boot LUN:
++
+`*bcfg boot add 1 hpux.efi "HP-UX-Primary Boot"*`
+. Manually update the HBA BIOS by making an entry in the EFI for the SAN boot LUN.
+. Create an alternate boot path:
++
+`*bcfg boot add 2 hpux.efi “HPUX alternate boot”*`
+. Create a third boot path:
++
+`*bcfg boot add 2 hpux.efi “HPUX third boot”*`
+. Create a fourth boot path:
++
+`*bcfg boot add 2 hpux.efi “HPUX fourth boot”*`

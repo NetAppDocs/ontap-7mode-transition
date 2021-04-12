@@ -1,0 +1,18 @@
+---
+permalink: copy-based/concept_impact_of_takeover_and_giveback_on_transition.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, impact, takeover, giveback
+summary: 'Transition operations, such as transition prepare, start, pause, resume, or complete, fail during a controller takeover or giveback.'
+---
+= Impact of takeover and giveback on transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Transition operations, such as transition prepare, start, pause, resume, or complete, fail during a controller takeover or giveback.
+
+If a transition operation fails due to a takeover, you must wait for the giveback to finish, and then run the transition operation again.
+
+If a controller takeover occurs during a baseline transfer, the transfer fails. To resume the baseline transfer from the point where it was aborted, you must wait for the giveback to finish.
+
+Data copy resumes based on the configured schedule.

@@ -1,0 +1,61 @@
+---
+permalink: copy-based/reference_ignorable_errors_during_transition.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, ignorable, errors
+summary: 'You might encounter some ignorable errors during the transition. You must acknowledge these errors before continuing with transition.'
+---
+= Ignorable errors during transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might encounter some ignorable errors during the transition. You must acknowledge these errors before continuing with transition.
+
+When you add any ignorable error category to the copy-based transition project by using the 7-Mode Transition Tool CLI, it means that you have understood the impact of the error. You must rerun the transition operation after ignoring the error. At this time, the blocking error changes to a warning message, and the error is shown as "`acknowledged`". You can continue the transition with the warning.
+
+[options="header"]
+|===
+| Category| Description
+a|
+`acknowledge-no-nonascii-filenames-in-source-volumes`
+a|
+Acknowledging this error means that you have verified that the SnapLock volumes that you have selected for the Chain of Custody verification operation do not contain any files that have file names with non-ASCII characters.
+a|
+`acknowledge-snaplock-coc-volume-autocommit-period`
+a|
+After this ignorable error is added to the project, the 7- Mode Transition Tool continues with the transition even if the autocommit period property is set on the ONTAP SnapLock volume that is configured to store the results of the SnapLock Chain of Custody verification.
+
+a|
+`nfs-qtrees-exported`
+a|
+Acknowledging this error means that you have understood the differences in the enforcement of the qtree export rules between Data ONTAP operating in 7-Mode and ONTAP. It also means that you have understood the possible manual steps that are required after the NFS exports rules are applied by the 7-Mode Transition Tool. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT_Precheck_10111_-_How_to_transition_7-Mode_volumes_that_have_qtree_level_exports[7MTT Precheck 10111 - How to transition 7-Mode volumes that have qtree level exports]
+
+a|
+`ignore-cifs-ad-domain-mismatch`
+a|
+If you acknowledge this error, the 7-Mode Transition Tool continues with the transition of CIFS configurations even if the CIFS Active Directory (AD) domain of the 7-Mode system is different from the CIFS AD domain of the target SVM. You must ensure that the CIFS AD domains of the 7-Mode system and the target SVM are trusted domains. Otherwise, the transition of CIFS configurations to the target SVM fails. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_transition_CIFS_configurations_when_Active_Directory_Domain_of_CIFS_server_on_7-Mode_and_target_SVM_are_different[How to transition CIFS configurations when Active Directory Domain of CIFS server on 7-Mode and target SVM are different]
+
+a|
+`ignore-ping-check-from-ic-lifs-to-7mode`
+a|
+After this ignorable error is added to the project, the 7-Mode Transition Tool does not run the check to ping the 7-Mode storage system from the target cluster intercluster LIFs.
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT_cbt_-_How_to_handle_the_scenario_where_7-Mode_data-copy_IP_address[7MTT Copy-Based Transition - How to handle the scenario where 7-Mode data-copy IP address is not reachable from target cluster intercluster LIFs]
+
+a|
+`ignore-secondary-snapmirror-source-check`
+a|
+After this ignorable error is added to the project, the 7-Mode Transition Tool does not check whether all of the required primary 7-Mode details are added to the secondary project. Due to this error, the 7-Mode Transition Tool might not create the SnapMirror relationships between the primary 7-Mode volumes and secondary cluster volumes during the secondary project complete (cutover) operation.
+a|
+`ignore-configuration-limits-check`
+a|
+You can use this option to acknowledge the configuration limits (precheck error) and continue with the transition. By acknowledging this error, you understand that the storage cutover time is expected to take more than 3 to 8 hours, which includes time for the export, halt, and import operations (the automated operations), and also for cabling disk shelves to the new controllers. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Storage_cutover_time_considerations_for_Copy-Free_Transition[Storage cutover time considerations for Copy-Free Transition]
+
+a|
+`mount-snaplock-volumes-using-7mode-volume-name`
+a|
+After this ignorable error is added to the project, the 7-Mode Transition Tool mounts the SnapLock volumes with the mount path `/<7-mode-volume-name>`
+a|
+`acknowledge-no-snaplock-audit-transition-to-mcc`
+a|
+After this ignorable error is added to the project, the 7-Mode Transition Tool continues with the transition even if the target cluster is in a MetroCluster configuration.
+|===

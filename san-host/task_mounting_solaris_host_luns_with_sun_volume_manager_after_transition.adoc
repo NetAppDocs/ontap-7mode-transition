@@ -1,0 +1,113 @@
+---
+permalink: san-host/task_mounting_solaris_host_luns_with_sun_volume_manager_after_transition.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, mount, solaris, host, lun, volume, manager
+summary: 'After transitioning Solaris host LUNs with Solaris Volume Manager from ONTAP operating in 7-Mode to clustered ONTAP, you must mount the LUNs.'
+---
+= Mounting Solaris host LUNs with Solaris Volume Manager after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transitioning Solaris host LUNs with Solaris Volume Manager from ONTAP operating in 7-Mode to clustered ONTAP, you must mount the LUNs.
+
+For copy-based transitions, you perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+
+For copy-free transitions, you perform these steps after the Import Data & Configuration operation in the 7MTT is complete.
+
+.Steps
+. Discover your new clustered ONTAP LUNs by rescanning the host.
+ .. Identify the FC host ports (type fc-fabric):
+ +
+`*#cfgadm _–l_*`
+ .. Unconfigure the first fc-fabric port:
+ +
+`*#cfgadm –c unconfigure _c1_*`
+ .. Unconfigure the second fc-fabric port:
+ +
+`*#cfgadm –c unconfigure _c2_*`
+ .. Repeat the steps for other fc-fabric ports.
+ .. Verify the host ports and their attached devices:
+ +
+`*# cfgadm _–al_*`
+ .. Reload the driver:
+ +
+`*# devfsadm –Cv*`
++
+`*# devfsadm –i iscsi*`
+. Verify that your clustered ONTAP LUNs have been discovered:
++
+`*sanlun lun show*`
+
+ ** The `lun-pathname` values for the clustered ONTAP LUNs should be the same as the `lun-pathname` values for the 7-Mode LUNs prior to transition.
+ ** The `mode` column should display "`C`" instead of "`7`".
+
++
+----
+# sanlun lun show
+controller(7mode)/                    device                                            host                  lun
+vserver(Cmode)       lun-pathname     filename                                          adapter    protocol   size    mode
+--------------------------------------------------------------------------------------------------------------------------
+vs_sru17_5           /vol/zfs/zfs2    /dev/rdsk/c5t600A0980383030444D2B466542485935d0s2 scsi_vhci0 FCP        6g      C
+vs_sru17_5           /vol/zfs/zfs1    /dev/rdsk/c5t600A0980383030444D2B466542485934d0s2 scsi_vhci0 FCP        6g      C
+vs_sru17_5           /vol/ufs/ufs2    /dev/rdsk/c5t600A0980383030444D2B466542485937d0s2 scsi_vhci0 FCP        5g      C
+vs_sru17_5           /vol/ufs/ufs1    /dev/rdsk/c5t600A0980383030444D2B466542485936d0s2 scsi_vhci0 FCP        5g      C
+----
+. Import disk sets into existing Solaris Volume Manager configurations, using the same disk set name:
++
+`*metaimport -s _set-name_*`
++
+----
+# metaimport -s svm
+Drives in regular diskset including disk c0t60A98000383035356C2447384D39654Ad0:
+  c0t60A98000383035356C2447384D39654Ad0
+  c0t60A98000383035356C2447384D396548d0
+More info:
+  metaimport -r -v c0t60A98000383035356C2447384D39654Ad0
+
+# metastat -s svm
+svm/d2: Concat/Stripe
+    Size: 10452992 blocks (5.0 GB)
+    Stripe 0:
+        Device                                             Start Block  Dbase   Reloc
+        /dev/dsk/c0t60A98000383035356C2447384D396548d0s0          0     No      Yes
+
+svm/d1: Concat/Stripe
+    Size: 10452992 blocks (5.0 GB)
+    Stripe 0:
+        Device                                             Start Block  Dbase   Reloc
+        /dev/dsk/c0t60A98000383035356C2447384D39654Ad0s0          0     No      Yes
+
+Device Relocation Information:
+Device                                           Reloc  Device ID
+/dev/dsk/c0t60A98000383035356C2447384D396548d0   Yes    id1,sd@n60a98000383035356c2447384d396548
+/dev/dsk/c0t60A98000383035356C2447384D39654Ad0   Yes    id1,sd@n60a98000383035356c2447384d39654a
+----
+
+. Run file system check:
++
+`*fsck -F ufs /dev/md/svm/rdsk/d1*`
++
+----
+# fsck -F ufs /dev/md/svm/rdsk/d1
+** /dev/md/svm/rdsk/d1
+** Last Mounted on /d1
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3a - Check Connectivity
+** Phase 3b - Verify Shadows/ACLs
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cylinder Groups
+3 files, 1573649 used, 3568109 free (13 frags, 446012 blocks, 0.0% fragmentation)
+----
+
+. Manually mount each of the devices using the `mount` command.
++
+----
+# /sbin/mount -F ufs -o largefiles /dev/md/svm/dsk/d1  /d1
+  # /sbin/mount -F ufs -o largefiles /dev/md/svm/dsk/d2  /d2
+----
+
+. Verify the mount point:
++
+`*df -ah*`

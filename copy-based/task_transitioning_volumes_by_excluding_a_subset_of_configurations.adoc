@@ -1,0 +1,54 @@
+---
+permalink: copy-based/task_transitioning_volumes_by_excluding_a_subset_of_configurations.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, customize, cli
+summary: 'By default, all 7-Mode configurations are transitioned to ONTAP. You can choose to exclude some or all the volume, NFS, CIFS, SAN, and name services configurations from transition by using the 7-Mode Transition Tool CLI. You can also choose to consolidate the 7-Mode NFS export rules and Snapshot schedules, and reuse an existing NFS export policy and Snapshot policy on the target SVM.'
+---
+= Customizing the transition of 7-Mode configurations by using the CLI
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+By default, all 7-Mode configurations are transitioned to ONTAP. You can choose to exclude some or all the volume, NFS, CIFS, SAN, and name services configurations from transition by using the 7-Mode Transition Tool CLI. You can also choose to consolidate the 7-Mode NFS export rules and Snapshot schedules, and reuse an existing NFS export policy and Snapshot policy on the target SVM.
+
+You must perform this task before the configuration is applied, after which any modification will be ignored.
+
+The 7-Mode Transition Tool does not perform prechecks for the configuration that is excluded.
+
+By default, all 7-Mode configurations are selected for transition.
+
+It is a best practice to run the prechecks with all configurations first, and then exclude one or more configurations in the subsequent run of the prechecks. This helps you to understand which configurations are excluded from transition and which prechecks are skipped subsequently.
+
+.Steps
+* Exclude and verify the configurations:
+ .. Exclude the configurations:
+ +
+`*transition cbt property-set -p _project_name_ -n _config_property_name_ -v true*`
++
+`_config_property_name_` is the configuration that you want to exclude.
++
+xref:reference_configurations_that_can_be_excluded.adoc[Configurations that can be excluded from transition]
+
+ .. Verify the value of the property that is set for excluding the configuration:
++
+`*transition cbt property-get -p _project_name_ -n _config_property_name_*`
+* Consolidate NFS export rules for transition:
+ ** Consolidate similar 7-Mode NFS export rules to a single export policy in clustered Data ONTAP, which can then be applied to the transitioned volume or qtree:
+ +
+`*transition cbt property-set -p _project_name_ -n _nfs-consolidate-similiar-7mode-exports_ -v true*`
++
+If the `nfs-consolidate-similiar-7mode-exports` property is set to `false`, the 7-Mode Transition Tool creates a new NFS export policy in ONTAP for each 7-Mode NFS export rule.
+
+ ** Reuse an existing NFS export policy on the SVM that matches the export policy that will be created by the tool, which can be applied to the transitioned volumes or qtrees:
+ +
+`*transition cbt property-set -p _project_name_ -n _nfs-reuse-matching-svm-export-policies_ -v true*`
+* Consolidate Snapshot schedules for transition:
+ ** Consolidate similar 7-Mode Snapshot schedules to a single Snapshot policy in ONTAP, which can then be applied to the transitioned volume:
+ +
+`*transition cbt property-set -p _project_name_ -n _consolidate-similar-7mode-snapshot-policies_ -v true*`
++
+If the `consolidate-similar-7mode-snapshot-policies` property is set to false, the 7-Mode Transition Tool creates a new Snapshot policy in ONTAP for each Snapshot schedule.
+
+ ** Reuse an existing Snapshot policy on the SVM that matches the Snapshot policy that will be created by the tool, which can be applied to the transitioned volumes:
+ +
+`*transition cbt property-set -p _project_name_ -n _reuse-matching-svm-snapshot-policies_ -v true*`

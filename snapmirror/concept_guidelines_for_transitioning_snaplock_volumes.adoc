@@ -1,0 +1,29 @@
+---
+permalink: snapmirror/concept_guidelines_for_transitioning_snaplock_volumes.html
+sidebar: sidebar
+keywords: ontap, 7, mode, transition, guidelines, snaplock, volumes, requirements
+summary: 'You can transition 7-Mode SnapLock volumes to SnapLock volumes created in ONTAP 9.5 or earlier. You must be aware of the requirements and guidelines for transitioning SnapLock volumes.'
+---
+= Guidelines for transitioning SnapLock volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition 7-Mode SnapLock volumes to SnapLock volumes created in ONTAP 9.5 or earlier. You must be aware of the requirements and guidelines for transitioning SnapLock volumes.
+
+* Transition of 7-Mode SnapLock volumes is not supported if the SnapLock volumes contain LUNs.
+* You can transition 7-Mode SnapLock Enterprise volumes only to SnapLock Enterprise volumes in ONTAP 9.5 or earlier.
+* You can transition 7-Mode SnapLock Compliance volumes only to SnapLock Compliance volumes in ONTAP 9.5 or earlier.
+* When transitioning a 7-Mode volume SnapMirror relationship, you can use staggered transition (transition secondary first and then primary) only for SnapLock Enterprise volumes.
++
+SnapMirror disaster recovery (DR) relationship between 7-Mode primary volumes and ONTAP secondary volumes is supported only for SnapLock Enterprise volumes, but not for SnapLock Compliance volumes.
++
+xref:task_transitioning_a_data_protection_relationship.adoc[Transitioning a volume SnapMirror relationship in a staggered configuration]
+
+* You must transition a 7-Mode volume SnapMirror relationship between SnapLock Compliance volumes by transitioning the primary and secondary volumes in parallel.
++
+xref:task_transitioning_a_volume_snapmirror_relationship_in_parallel.adoc[Transitioning a volume SnapMirror relationship in parallel]
+
+*Related information*
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[Archive and compliance using SnapLock technology]

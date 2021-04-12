@@ -1,0 +1,27 @@
+---
+permalink: copy-based/concept_considerations_for_transitioning_of_7_mode_snaplock_options.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, snaplock, options, 7, mode
+summary: 'The 7-Mode Transition Tool supports the transition of a few 7-Mode options that are related to SnapLock volumes.'
+---
+= Considerations for transitioning of 7-Mode SnapLock options
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The 7-Mode Transition Tool supports the transition of a few 7-Mode options that are related to SnapLock volumes.
+
+Data ONTAP operating in 7-Mode has the following options that are related to SnapLock volumes:
+
+* `snaplock.autocommit_period`
++
+This option is at a volume level in ONTAP, and is transitioned to ONTAP during the transition.
+
+* `snaplock.compliance.write_verify`
++
+This option is not applicable in ONTAP.
+
+* `snaplock.log.default_retention`
+* `snaplock.log.maximum_size`
+
+Although the `snaplock.log.default_retention` and `snaplock.log.maximum_size` options are supported in ONTAP, the settings configured in these options are not transitioned by the 7-Mode Transition Tool. You must manually set these options for audit volumes after the transition is completed.

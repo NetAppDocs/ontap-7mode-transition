@@ -1,0 +1,30 @@
+---
+permalink: copy-based/concept_considerations_for_transitioning_unix_users_and_groups.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, netgroups, unix, user, groups
+summary: 'Netgroup configuration is transitioned only if the 7-Mode /etc/netgroup file is less than 5 MB in size. UNIX users and groups are transitioned only if the total number of UNIX users and groups on the SVM do not exceed the limits for users and groups in ONTAP.'
+---
+= Considerations for transitioning netgroups and UNIX users and groups
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Netgroup configuration is transitioned only if the 7-Mode `/etc/netgroup` file is less than 5 MB in size. UNIX users and groups are transitioned only if the total number of UNIX users and groups on the SVM do not exceed the limits for users and groups in ONTAP.
+
+== Considerations for netgroups
+
+If the `/etc/netgroup` file on 7-Mode is greater than 5 MB, the netgroup configuration is not transitioned. You must perform one of the following actions to continue with the transition:
+
+* Exclude the transition of netgroups.
+* Move the netgroup configuration to NIS or LDAP servers before transition.
+
+== Considerations for UNIX users and groups
+
+If the total number of transitioning UNIX users and groups exceed the limit of UNIX users and groups in ONTAP, the 7-Mode Transition Tool blocks the transition. You must perform one of the following actions to continue with the transition:
+
+* Exclude the transition of UNIX users and groups.
+* Move the UNIX users and groups to NIS or LDAP servers before transition.
+
+*Related information*
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]

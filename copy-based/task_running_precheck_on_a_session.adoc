@@ -1,0 +1,53 @@
+---
+permalink: copy-based/task_running_precheck_on_a_session.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, run, prechecks
+summary: 'After creating a transition session, you can validate the session to verify whether the 7-Mode environment can be transitioned by using the transition precheck command. You can verify the compatibility between the 7-Mode storage system and the SVM for factors such as features and security settings.'
+---
+= Running prechecks
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After creating a transition session, you can validate the session to verify whether the 7-Mode environment can be transitioned by using the `transition precheck` command. You can verify the compatibility between the 7-Mode storage system and the SVM for factors such as features and security settings.
+
+The transition session must be in the preparation state.
+
+The `transition cbt precheck` command generates a detailed error message report. Issues identified in the report are assigned different severity levels, depending on the impact of the issue on the transition process. Because some errors can hinder the transition, you must perform corrective actions for errors and warnings. You should also review the impact of messages of other severity levels before proceeding with the transition.
+
+.Steps
+. Verify the compatibility for transition:
++
+`*transition cbt precheck -p _project_name_*`
++
+----
+7-Mode Transition Tool>transition cbt precheck -p project_finance
+
+[1/14 ] Project status checks                                                  [    Errors     ]
+
+Operation summary:
+------------------
+The 'precheck' operation on the project 'project_finance' has failed.
+
+ 1  Errors - Failed!
+
+Do you want to see a detailed report {yes, no} [yes]:
+
+1 Errors:
+---------
+90202: Checking whether any of the 7-Mode volumes are in 'offline' state.                              [     Error     ]
+  > Following volumes are in 'offline' state.
+  > CORRECTIVE-ACTION: Bring offline volumes online by using the following command: 'vol online
+  > <volume_name>'.
+  > AFFECTED-OBJECTS: { vol2 }
+
+Next suggested steps:
+---------------------
+1. Review the 'precheck' operation results, fix all blocking errors and run the 'precheck' operation again.
+2. Use the 'transition job-results -j 6e33e0a7-bb36-49df-91f3-2e52cbfa3074' command to see the results of this
+operation.
+
+Ran precheck for project 'project_finance'.
+----
+
+You must resolve all of the errors that might cause problems with the transition before starting the data copy from the 7-Mode volumes.

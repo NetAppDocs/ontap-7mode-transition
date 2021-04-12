@@ -1,0 +1,14 @@
+---
+permalink: copy-based/concept_considerations_for_flexclone_volumes.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, flexclone, volume
+summary: 'When transitioning FlexClone volumes to the SVM, the clones are split from the parent volumes and are transitioned as FlexVol volumes to the destination cluster. As a result, the clone hierarchy and storage efficiency are lost in the transition process.'
+---
+= Considerations for FlexClone volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When transitioning FlexClone volumes to the SVM, the clones are split from the parent volumes and are transitioned as FlexVol volumes to the destination cluster. As a result, the clone hierarchy and storage efficiency are lost in the transition process.
+
+If the target cluster is running Data ONTAP 8.3 or earlier, FlexClone volumes cannot be created from Snapshot copies that are transitioned from 7-Mode. You can create FlexClone volumes only from new Snapshot copies that are created after the volume is transitioned to ONTAP. Beginning with clustered Data ONTAP 8.3.1, you can create FlexClone volumes from Snapshot copies that are transitioned from 7-Mode.

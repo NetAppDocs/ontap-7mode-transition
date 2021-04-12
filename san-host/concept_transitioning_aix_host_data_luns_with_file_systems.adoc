@@ -1,0 +1,12 @@
+---
+permalink: san-host/concept_transitioning_aix_host_data_luns_with_file_systems.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, transition, host, aix, data, lun
+summary: 'If you transition an AIX host data LUN with a file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool \(7MTT\), you must perform specific steps before and after transition to remediate transition issues on the host.'
+---
+= Transitioning AIX host data LUNs with file systems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you transition an AIX host data LUN with a file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP using the 7-Mode Transition Tool (7MTT), you must perform specific steps before and after transition to remediate transition issues on the host.

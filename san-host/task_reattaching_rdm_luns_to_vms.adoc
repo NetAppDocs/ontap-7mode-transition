@@ -1,0 +1,34 @@
+---
+permalink: san-host/task_reattaching_rdm_luns_to_vms.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, rdm, lun, vm
+summary: 'For VMs attached to Raw Device Mapped \(RDM\) LUNs to function after transition, you must remove the RDM disks hosting the LUN from the VM. Then you must reattach the RDM disks to the VM based on the LUN serial number provided by the 7-Mode Transition Tool \(7MTT\).'
+---
+= Reattaching RDM LUNs to VMs
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+For VMs attached to Raw Device Mapped (RDM) LUNs to function after transition, you must remove the RDM disks hosting the LUN from the VM. Then you must reattach the RDM disks to the VM based on the LUN serial number provided by the 7-Mode Transition Tool (7MTT).
+
+* For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7MTT.
+* For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode Systems operation in the 7MTT.
+
+.Steps
+. In the _Inventory Assessment Workbook_, navigate to the *Host VM Disk Details* tab.
+. Identify the ESXi host VM with PTRDM or NPTRDM in the *Type* column.
+. Note the VM name, the disk path details in the *Disk* column, and the naa ID from the *Device Mapped* column.
+. Verify that the naa ID is listed in the 7MTT mapping file that was generated after transition.
+. Verify that the naa ID has a corresponding new naa ID in the *LUN WWID* column of the mapping file.
++
+This is the new clustered Data ONTAP LUN naa ID.
+
+. Use the clustered Data ONTAP LUN naa ID from the *LUN WWID* column and the disk path details to reattach the clustered Data ONTAP LUN to the VM.
+
+*Related information*
+
+xref:task_removing_stale_rdm_using_vsphere_client.adoc[Removing stale RDMs using vSphere Client]
+
+xref:task_reattaching_rdm_to_vms_using_vsphere_client.adoc[Reattaching RDM to VMs using vSphere Client]
+
+xref:task_reattaching_rdm_using_esxi_cli_console.adoc[Reattaching RDM using ESXi the CLI/console]

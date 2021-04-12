@@ -1,0 +1,51 @@
+---
+permalink: copy-based/concept_limitations_with_snapshot_copies_and_luns_managed_by_snap_products.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, limitations, snapshot, lun, snapdrive, snapmanager
+summary: 'When transitioning to clustered Data ONTAP 8.3, SnapDrive and SnapManager backup verification and restore operations fail on the transitioned 7-Mode Snapshot copies. When transitioning to clustered Data ONTAP 8.3.1, SnapManager for Microsoft Exchange Server \(SME\) backup verification and SnapManager for Hyper-V \(SMHV\) restore operations of files fail on the transitioned 7-Mode Snapshot copies.'
+---
+= Limitations with 7-Mode Snapshot copies of LUNs managed by SnapDrive and SnapManager after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When transitioning to clustered Data ONTAP 8.3, SnapDrive and SnapManager backup verification and restore operations fail on the transitioned 7-Mode Snapshot copies. When transitioning to clustered Data ONTAP 8.3.1, SnapManager for Microsoft Exchange Server (SME) backup verification and SnapManager for Hyper-V (SMHV) restore operations of files fail on the transitioned 7-Mode Snapshot copies.
+
+Depending on the SnapDrive or SnapManager that is used on the host connected to the 7-Mode system and the Data ONTAP version running on your cluster, 7-Mode Transition Tool displays a warning message for this limitation during precheck.
+
+NOTE: All SnapDrive and SnapManager backup verification and restore operations are supported on any newly created Snapshot copies in clustered Data ONTAP.
+
+== Workaround for backup and restore operations using SnapDrive and SnapManager in clustered Data ONTAP 8.3
+
+Perform the one of the following actions:
+
+* Retain the 7-Mode systems till the 7-Mode Snapshot copies expire.
++
+You can use the 7-Mode system to restore a file from a LUN in the 7-Mode Snapshot copy and then migrate it to clustered Data ONTAP, if required.
+
+* Use single file SnapRestore in ONTAP to restore the LUN from a 7-Mode Snapshot copy to the active file system, and then mount the restored LUN for single file restore.
+
+== Workaround for backup and restore operations using SME and SMHV in ONTAP 8.3.1 and later supported releases
+
+Perform the one of the following actions:
+
+* Verify that the SnapManager backups created in 7-Mode are valid before you perform a storage cutover to ONTAP.
+* Create a clone of the volume in ONTAP from the transitioned 7-Mode Snapshot copies, and then mount the LUN on the cloned volume for backup verification and restore operations.
+
+The best practice is to retain the 7-Mode systems till the 7-Mode Snapshot copies expire.
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30034[NetApp Documentation: SnapManager for Microsoft Exchange Server]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30055[NetApp Documentation: SnapManager for Hyper-V]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30037[NetApp Documentation: SnapManager for SAP]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30040[NetApp Documentation: SnapManager for Oracle]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30050[NetApp Documentation: SnapDrive for UNIX]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30049[NetApp Documentation: SnapDrive for Windows (current releases)]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30041[NetApp Documentation: SnapManager for Microsoft SQL Server]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30036[NetApp Documentation: SnapManager for Microsoft SharePoint]

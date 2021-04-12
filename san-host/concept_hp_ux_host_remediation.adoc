@@ -1,0 +1,18 @@
+---
+permalink: san-host/concept_hp_ux_host_remediation.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, hp, ux, host, remediation
+summary: 'If you are using the 7-Mode Transition Tool \(7MTT\) to move from Data ONTAP operating in 7-Mode to clustered Data ONTAP in a SAN environment, you must perform a series of steps on your HP-UX host before and after the transition to avoid transition complications.'
+---
+= HP-UX host remediation
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are using the 7-Mode Transition Tool (7MTT) to move from Data ONTAP operating in 7-Mode to clustered Data ONTAP in a SAN environment, you must perform a series of steps on your HP-UX host before and after the transition to avoid transition complications.
+
+*Related information*
+
+xref:task_making_a_san_boot_lun_primary_for_hp_ux_emulex_hbas_after_transition.adoc[Making a SAN boot LUN the primary boot LUN for HP-UX Emulex HBAs after transition]
+
+xref:task_making_san_boot_lun_primary_boot_lun_for_hp_ux_qlogic_hbas_after_transition.adoc[Making a SAN boot LUN the primary boot LUN for HP-UX QLogic HBAs after transition]

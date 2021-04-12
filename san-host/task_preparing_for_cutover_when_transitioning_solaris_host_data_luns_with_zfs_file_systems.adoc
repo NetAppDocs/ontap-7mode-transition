@@ -1,0 +1,58 @@
+---
+permalink: san-host/task_preparing_for_cutover_when_transitioning_solaris_host_data_luns_with_zfs_file_systems.html
+sidebar: sidebar
+keywords: cutover, ontap, san, host, transition, host, data, lun, nfs, file, system
+summary: 'If you are transitioning a Solaris host data LUN with ZFS file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.'
+---
+= Preparing for cutover phase when transitioning Solaris host data LUNs with ZFS file systems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are transitioning a Solaris host data LUN with ZFS file system from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must perform certain steps before entering the cutover phase.
+
+If you are using an FC configuration, fabric connectivity and zoning to the clustered Data ONTAP nodes must be established.
+
+If you are using an iSCSI configuration, the iSCSI sessions to the clustered Data ONTAP nodes must be discovered and logged in.
+
+For copy-based transitions, perform these steps before initiating the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+
+For copy-free transitions, perform these steps before initiating the Export & Halt 7-Mode operation in 7MTT.
+
+.Steps
+. Stop I/O on all mount points.
+. Shut down each application accessing the LUNs according to the recommendations of the application vendor.
+. Export the zpool:
++
+`*zpool export _pool-name_*`
++
+----
+# zpool export n_pool
+----
+
+. Verify that the zpools are exported:
+ ** Should list the zpool that is exported:
+ +
+ `*zpool import*`
+ ** Should not list the zpool that is exported:
+ +
+ `*zpool list*`
+
++
+----
+# zpool export n_pool
+
+# zpool list
+no pools available
+
+# zpool import
+  pool: n_pool
+    id: 5049703405981005579
+ state: ONLINE
+action: The pool can be imported using its name or numeric identifier.
+config:
+
+        n_pool                                   ONLINE
+          c0t60A98000383035356C2447384D396550d0  ONLINE
+          c0t60A98000383035356C2447384D39654Ed0  ONLINE
+----

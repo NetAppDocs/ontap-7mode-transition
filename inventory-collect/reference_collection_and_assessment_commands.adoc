@@ -1,0 +1,217 @@
+---
+permalink: inventory-collect/reference_collection_and_assessment_commands.html
+sidebar: sidebar
+keywords: collection, assessment, commands, transition, 7, mode, inventory, collect, tool, ict
+summary: 'The Inventory Collect Tool \(ICT\) collects inventory information from controllers, hosts, and FC switches by using a list of commands to generate an inventory XML report; assesses the features and functionalities of these systems; and identifies how these features and functionalities work in the clustered Data ONTAP version that is selected for transition.'
+---
+= Collection and assessment commands
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Inventory Collect Tool (ICT) collects inventory information from controllers, hosts, and FC switches by using a list of commands to generate an inventory XML report; assesses the features and functionalities of these systems; and identifies how these features and functionalities work in the clustered Data ONTAP version that is selected for transition.
+
+== ONTAP 7-Mode APIs
+ ** `aggr-list-info`
+ ** `cf-status`
+ ** `cifs-homedir-paths-get`
+ ** `cifs-list-config`
+ ** `cifs-nbalias-names-get`
+ ** `cifs-share-acl-list-iter-start`
+ ** `cifs-share-list-iter-start`
+ ** `cifs-status`
+ ** `disk-list-info`
+ ** `fcp-adapter-list-info`
+ ** `fpolicy-list-info`
+ ** `igroup-list-info`
+ ** `iscsi-interface-list-info`
+ ** `iscsi-node-get-name`
+ ** `license-list-info`
+ ** `license-v2-list-info`
+ ** `lun-get-comment`
+ ** `lun-list-info`
+ ** `lun-map-list-info`
+ ** `net-config-get-active`
+ ** `nfs-exportfs-list-rules`
+ ** `nfs-exportfs-list-rules-2`
+ ** `nfs-exportfs-list-rules-2`
+ ** `nfs-status`
+ ** `options-get`
+ ** `options-list-info`
+ ** `qtree-list-iter-start`
+ ** `quota-list-entries-iter-start`
+ ** `quota-report-iter-start`
+ ** `registry-list-info-iter-start`
+ ** `sis-status`
+ ** `snapmirror-get-status`
+ ** `snapmirror-list-schedule`
+ ** `snapmirror-list-sync-schedule`
+ ** `snapshot-get-schedule`
+ ** `snapshot-list-info`
+ ** `snapshot-volume-info`
+ ** `snapvault-primary-relationship-status-list-iter-start`
+ ** `snapvault-secondary-relationship-status-list-iter-start`
+ ** `snmp-status`
+ ** `storage-disk-get-iter`
+ ** `system-available-replication-transfers`
+ ** `system-get-info`
+ ** `system-get-ontapi-version`
+ ** `system-get-version`
+ ** `useradmin-group-list`
+ ** `useradmin-role-list`
+ ** `useradmin-user-list`
+ ** `vfiler-get-allowed-protocols`
+ ** `vfiler-get-status`
+ ** `vfiler-list-info`
+ ** `volume-charmap-get`
+ ** `volume-get-filer-info`
+ ** `volume-get-language`
+ ** `volume-list-info-iter-start`
+ ** `volume-options-list-info`
+
+== ONTAP 7-Mode CLI
+ ** `cifs shares`
+ ** `ic primary show`
+ ** `ifconfig -a`
+ ** `ifconfig vip`
+ ** `ifgrp status`
+ ** `ls $volumes_path/metadir/slag/`
+ ** `printflag wafl_metadata_visible`
+ ** `rdfile $root_vol/etc/cifsconfig_share.cfg`
+ ** `rdfile $root_vol/etc/group`
+ ** `rdfile $root_vol/etc/hosts`
+ ** `rdfile $root_vol/etc/krb5auto.conf`
+ ** `rdfile $root_vol/etc/mcrc`
+ ** `rdfile $root_vol/etc/netgroup`
+ ** `rdfile $root_vol/etc/nsswitch.conf`
+ ** `rdfile $root_vol/etc/passwd`
+ ** `rdfile $root_vol/etc/resolv.conf`
+ ** `rdfile $root_vol/etc/snapmirror.conf`
+ ** `rdfile $root_vol/etc/symlink.translations`
+ ** `rdfile $root_vol/etc/usermap.cfg`
+ ** `rdfile $vfiler_roots/etc/cifsconfig_share.cfg`
+ ** `rdfile $vfiler_roots/etc/group`
+ ** `rdfile $vfiler_roots/etc/hosts`
+ ** `rdfile $vfiler_roots/etc/krb5auto.conf`
+ ** `rdfile $vfiler_roots/etc/mcrc`
+ ** `rdfile $vfiler_roots/etc/netgroup`
+ ** `rdfile $vfiler_roots/etc/nsswitch.conf`
+ ** `rdfile $vfiler_roots/etc/passwd`
+ ** `rdfile $vfiler_roots/etc/resolv.conf`
+ ** `rdfile $vfiler_roots/etc/snapmirror.conf`
+ ** `rdfile $vfiler_roots/etc/symlink.translations`
+ ** `rdfile $vfiler_roots/etc/usermap.cfg`
+ ** `rlm status`
+ ** `routed status`
+ ** `route -sn`
+ ** `setflag wafl_metadata_visible 0`
+ ** `setflag wafl_metadata_visible 1`
+ ** `snapvault status -l`
+ ** `sysconfig -A`
+ ** `uptime`
+ ** `vfiler status -a`
+ ** `vlan stat`
+
+== ONTAP 7-Mode NetApp Manageability SDK
+ ** `cluster-identity-get`
+ ** `cluster-node-get-iter`
+ ** `fcp-adapter-get-iter`
+ ** `fcp-initiator-get-iter`
+ ** `fcp-interface-get-iter`
+ ** `lun-get-iter`
+ ** `lun-map-get-iter`
+ ** `net-interface-get-iter`
+ ** `system-get-node-info-iter`
+ ** `system-get-version`
+ ** `volume-get-iter`
+ ** `vserver-get-iter`
+
+== Windows
+ ** `HKEY_LOCAL_MACHINE\\SOFTWARE\\NetApp*
+ ** `HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall`
+ ** `select * from MPIO_Registered_DSM`
+ ** `select * from MSCluster_Cluster`
+ ** `select * from MSCluster_Disk`
+ ** `select * from MSCluster_Node`
+ ** `select * from MSCluster_NodeToActiveResource`
+ ** `select * from MSCluster_Resource`
+ ** `select * from MSCluster_ResourceToDisk`
+ ** `select * from MSFC_FCAdapterHBAAttributes`
+ ** `select * from MSFC_FibrePortHBAAttributes`
+ ** `select * from MSiSCSI_HBAInformation`
+ ** `select * from MSiSCSIInitiator_MethodClass`
+ ** `select * from Win32_ComputerSystem`
+ ** `select * from Win32_DiskDrive`
+ ** `select * from Win32_OperatingSystem`
+ ** `select * from Win32_PnPSignedDriver where DeviceClass = "SCSIADAPTER"`
+ ** `select * from Win32_Product`
+
+== Linux CLI
+ ** blkid
+ ** `cat /boot/grub/device.map`
+ ** `cat /etc/grub.conf`
+ ** `cat /etc/iscsi/initiatorname.iscsi`
+ ** `cman_tool nodes`
+ ** `cman_tool status`
+ ** `df -h`
+ ** `dmidecode -t system`
+ ** `find /etc -maxdepth 1 -name *-release -type f -print -exec cat -v {} \;`
+ ** `for file in /sys/block/sd***; do echo ${file/\#\/sys}; scsi_id -p 0x80 -g -x -a -s ${file/#\/sys}; done`
+ ** `for file in /sys/class/scsi_host/****; do echo; for ent in ${file}/****; do echo -n "$ent: "; if [ -f "${ent}" ]; then if [ -r "${ent}" ]; then cat -v -s ${ent} 2>/dev/null; if [ "$?" != "0" ]; then echo; fi; fi; else echo; fi; done; done`
+ ** `for file in /sys/class/fc_host/****; do echo; for ent in ${file}/****; do echo -n "$ent: "; if [ -f "${ent}" ]; then if [ -r "${ent}" ]; then cat -v -s ${ent} 2>/dev/null; if [ "$?" != "0" ]; then echo; fi; fi; else echo; fi; done; done`
+ ** `iscsiadm -m node`
+ ** `lsb_release -a`
+ ** `lvdisplay -m`
+ ** `mount`
+ ** `rpm -qa --qf "%{NAME}___%{SUMMARY}___%{VENDOR}___%{PROVIDEVERSION}\n"`
+ ** `sanlun fcp show adapter -v`
+ ** `sanlun lun show -pv`
+ ** `sanlun lun show -v`
+ ** `sanlun version`
+ ** `san_version`
+ ** `sfdisk -uS -l`
+ ** `uname -a`
+ ** `vxclustadm nidmap`
+ ** `vxclustadm -v nodestate`
+
+== VMware CLI
+ ** `esxcfg-info -a -F xml`
+ ** `esxcfg-mpath -l`
+ ** `esxcfg-scsidevs -a`
+ ** `esxcfg-scsidevs -l`
+ ** `esxcli software vib get`
+ ** `find /proc/scsi -type f | while read line; do echo $line; cat $line; done`
+ ** `san_version`
+ ** `uname -m`
+ ** `uname -n`
+ ** `/usr/lib/vmware/vmkmgmt_keyval/vmkmgmt_keyval -a`
+ ** `/usr/lib/vmware/vm-support/bin/dump-vmdk-rdm-info.sh $vmx_paths`
+ ** `vim-cmd /vmsvc/getallvms`
+ ** `vim-cmd vmsvc/snapshot.get $vm_ids`
+ ** `vmkload_mod -s nmp`
+ ** `vmware -l`
+ ** `vmware -v`
+
+== Cisco CLI
+ ** `show fcdomain domain-list`
+ ** `show flogi database`
+ ** `show switchname`
+ ** `show version`
+ ** `show vsan`
+ ** `show zoneset`
+ ** `show zoneset active`
+ ** `uname -m`
+ ** `nsshow`
+ ** `switchshow`
+ ** `version`
+ ** `zoneshow`
+ ** `vim-cmd vmsvc/snapshot.get $vm_ids`
+ ** `vmkload_mod -s nmp`
+ ** `vmware -l`
+ ** `vmware -v`
+
+== Brocade CLI
+ ** `nsshow`
+ ** `switchshow`
+ ** `version`
+ ** `zoneshow`

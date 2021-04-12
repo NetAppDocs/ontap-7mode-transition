@@ -1,0 +1,62 @@
+sidebar:
+  entries:
+    - title: 7-Mode Transition
+      url: /index.html
+    - title: Release Notes
+      url: /releasenotes.html
+    - section: command-map
+    - section: install-admin
+    - section: copy-based
+    - section: copy-free
+    - section: inventory-collect
+    - section: snapmirror
+    - section: san-host
+    - title: Legal notices
+      url: /legal-notices.html
+
+homepage:
+  tiles:
+    - title: Get started
+      links:
+        - title: What's new
+          summary: What's new with 7-Mode Transition
+          url: releasenotes.html
+        - title: Install the 7-Mode Transition Tool
+          summary: Use the tool collect inventory of 7-Mode controllers, hosts, switches, and applications, and assess their readiness for transition
+          url: /install-admin/concept_transition_to_clustered_ontap_using_7mtt.html
+        - title: Collect data needed for transition
+          summary: Discover how to collect information essential to your transition
+          url: /inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html
+    - title: Command map for 7-mode administrators
+      links:
+        - title: How 7-Mode commands map to ONTAP commands
+          summary: Find the ONTAP equivalents of 7-Mode commands
+          url: /command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html
+        - title: How 7-Mode options map to ONTAP commands
+          summary: View how 7-Mode the options commands map to ONTAP command parameters
+          url: "/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html"
+        - title: How 7-Mode configuration files map to clustered Data ONTAP commands
+          summary: View how 7-Mode configuration files map to clustered Data ONTAP configuration commands
+          url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html"
+    - title: Ways to transition
+      links:
+        - title: Copy-based transition
+          summary: Understand the copy-based transition workflow
+          url: /copy-based/concept_copy_based_transition_workflow.html
+        - title: Copy-free transition
+          summary: Understand the copy-free transition workflow
+          url: /copy-free/task_copy_free_transition_workflow.html
+        - title: Transition data using SnapMirror
+          summary: Understand how to transition data from 7-Mode using SnapMirror commands
+          url: /snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html
+    - title: SAN host transition and remediation
+      links:
+        - title: VMware ESXi
+          summary: Understand pre/post transition steps for ESXi
+          url: /san-host/concept_vmware_esxi_host_remediation.html
+        - title: RHEL
+          summary: Understand pre/post transition steps for RHEL
+          url: /san-host/concept_linux_host_remediation.html
+        - title: Windows
+          summary: Understand pre/post transition steps for Windows
+          url: /san-host/concept_windows_host_remediation.html

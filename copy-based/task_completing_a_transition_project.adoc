@@ -1,0 +1,53 @@
+---
+permalink: copy-based/task_completing_a_transition_project.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, complete, project
+summary: 'You can complete a transition by completing the individual projects. Because this operation is disruptive, you should evaluate when to run it. When transitioning volumes in a SnapMirror relationship, the secondary project must be completed before completing the transition of the primary project.'
+---
+= Completing a transition project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can complete a transition by completing the individual projects. Because this operation is disruptive, you should evaluate when to run it. When transitioning volumes in a SnapMirror relationship, the secondary project must be completed before completing the transition of the primary project.
+
+The storage cutover is completed in a few minutes. The time required for the clients to remount the data varies. The timing of the storage cutover or outage window depends on the following factors:
+
+* Final update
++
+The final update of the data depends on the amount of change in the source data since the last update. Incremental transfers minimize the amount of data that has to be transferred during cutover.
+
+* Reconnecting clients
++
+If updates are required for each client to connect to the cluster, the number of clients that have to be updated determines the cutover time.
+
+Outages apply only to the volumes that are being migrated. You do not need to shut down the entire source 7-Mode storage system. Volumes on the source system that are not being migrated can remain online and accessible.
+
+. From the Migration Dashboard, select the project that you want to complete.
+. Disconnect client access manually.
+. Click *Complete Transition*.
+ .. If you want to keep the 7-Mode source volumes online after the transition, clear the *Take source volumes offline after transition* checkbox.
++
+By default, this option is selected, and the source volumes are taken offline.
+
+ .. If you have selected SnapLock volumes for Chain of Custody verification, select the *I understand that I must not take 7-Mode SnapLock volumes offline during Chain of Custody verification* checkbox to keep the SnapLock volumes online after transition.
+ .. If you have selected the transition of a SnapMirror relationship between clusters that are running ONTAP 9.3 or later supported releases, select the *I understand that I must manually convert SnapMirror relationship type from data_protection to extended_data_protection* checkbox.
+ .. Select the *Customize the number of concurrent SnapMirror transfers and Throttle limit for this operation* checkbox to specify the number of SnapMirror data copy operations and the throttle limit.
+ .. Click *Continue*.
+
++
+The results of the cutover operation are displayed.
+
+The 7-Mode IP addresses selected for the transition are unconfigured from the 7-Mode storage system, and the associated LIFs created before the cutover are brought to the administrative up state. The 7-Mode volumes are offline.
+
+From the cluster, run the vserver check lif-multitenancy run command to verify that the name servers are reachable by using the transitioned LIFs.
+
+NOTE: If you have created a new LIF, the users and applications of the transitioned volumes must be remapped to the drives by using the new IP addresses and ports after all of the projects have been completed.
+
+If you have completed the transition of a SnapMirror relationship between clusters that are running ONTAP 9.3 or later supported releases, you must convert the SnapMirror relationship from type DP to type XDP.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html[Data protection]
+
+*Related information*
+
+xref:concept_guidelines_for_deciding_when_to_cutover.adoc[Guidelines for deciding when to perform cutover]

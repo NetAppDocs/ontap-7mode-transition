@@ -1,0 +1,31 @@
+---
+permalink: copy-based/task_pausing_and_resuming_a_subproject.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, pause, resume, project
+summary: 'You can pause and resume a project for which data copy has started.'
+---
+= Pausing and resuming a project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can pause and resume a project for which data copy has started.
+
+When you pause a primary project, only the copy operation from the 7-Mode primary volume to the corresponding clustered Data ONTAP primary volume is paused. The data copy from the 7-Mode primary volume to the ONTAP secondary volume continues to run according to the schedule. This ensures continued data protection for the primary volumes.
+
+. From Dashboard, select the project that you want to pause.
+. Click *Pause*.
++
+The data copy operation for all the volumes in the project is stopped.
++
+If the baseline transfer for a volume is in progress and there is no Snapshot copy checkpoint created for the SnapMirror relationships, the pause operation is ignored for the volume. Wait for the Snapshot copy checkpoint to be created and run the pause operation again.
+
+. Click *Resume*.
++
+The copy operation resumes from the point where it was paused.
++
+NOTE: The data copy operation is resumed based on the active schedule available at that time.
+
+*Related information*
+
+xref:task_starting_baseline_data_copy.adoc[Starting baseline data copy]

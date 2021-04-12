@@ -1,0 +1,33 @@
+---
+permalink: copy-free/task_adding_controllers_and_clusters.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, add, controllers, clusters
+summary: 'Before you start the transition, you must add the 7-Mode controllers, including both nodes of a 7-Mode HA pair, and the clusters that are required for the transition. You should add the clusters using the cluster-management interface.'
+---
+= Adding controllers and clusters
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you start the transition, you must add the 7-Mode controllers, including both nodes of a 7-Mode HA pair, and the clusters that are required for the transition. You should add the clusters using the cluster-management interface.
+
+* For a copy-free transition, you must add the cluster, and not the cluster nodes that are the target of transition.
+* The 7-Mode controllers and clusters information that you provide is not persistent.
++
+If the 7-Mode Transition Tool service is restarted, the tool prompts in the project dashboard for information about controllers and cluster that are part of active projects.
+
+.Steps
+. From the top pane, click *Storage Systems*.
+. In the *Hostname* field, enter the FQDN or IP address of the 7-Mode controller or the ONTAP system.
++
+For a cluster, you can specify the IP address or FQDN of the cluster-management interface. For a 7-Mode controller, you must specify the IP address of the default vFiler unit, because the IP addresses of individual vFiler units are not accepted.
+
+. Enter the administrator credentials for the specified host, and then click *Add*.
++
+The 7-Mode controllers are added to the "`7-Mode Controllers`" table and clusters are added to the "`Clustered Data ONTAP Systems`" table.
+
+. Repeat Steps 2 and 3 to add all of the controllers and clusters that you require for the transition.
+. If the Status column indicates that the credentials of the system are missing or the credentials have changed from what was initially entered in the tool, click the image:../media/delete_me_edit_schedule.gif[] icon, and then enter the credentials again.
+. Click *Next*.
++
+The Select Source Systems screen is displayed.

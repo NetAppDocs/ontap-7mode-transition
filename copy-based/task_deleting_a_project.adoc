@@ -1,0 +1,17 @@
+---
+permalink: copy-based/task_deleting_a_project.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, delete, project
+summary: 'If you do not want a project, you can delete it from the Dashboard.'
+---
+= Deleting a project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you do not want a project, you can delete it from the Dashboard.
+
+. From the DashboardProjects Groups pane, click the project group to which the project belongs.
+. From the Group Summary pane, click *Modify*, and then click *Delete*.
++
+You cannot delete a project if the project has failed during the cutover stage.

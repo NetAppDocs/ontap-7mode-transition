@@ -1,0 +1,42 @@
+---
+permalink: install-admin/task_modifying_default_configuration_settings_of_7mtt.html
+sidebar: sidebar
+keywords: ontap, 7, mode, install, modify, configuration, options, transition, tool
+summary: 'You can edit the $INSTALL_DIR\\etc\\... file to modify any configuration option that is used by the 7-Mode Transition Tool. This file contains information about all of the configurable options that are necessary for the tool to operate.'
+---
+= Modifying the configuration options of the 7-Mode Transition Tool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can edit the `$INSTALL_DIR\etc\...` file to modify any configuration option that is used by the 7-Mode Transition Tool. This file contains information about all of the configurable options that are necessary for the tool to operate.
+
+The file contains various options; for example, you can specify the port on which the tool service starts, and the port that the tool uses to communicate with the 7-Mode system or cluster.
+
+.Steps
+. From the system in which the 7-Mode Transition Tool is installed, open the `$INSTALL_DIR\etc\conf\transition-tool.conf` file from the installation directory, and then modify it.
++
+Port 8443 or 8088 must be available for the 7-Mode Transition Tool to communicate with the 7-Mode system and cluster. If port 8443 or 8088 is not available or if you want to use a different port, you must change the port specified by the `tool.https.port` option in the `transition-tool.conf` file. If port 8088 is not available or if you want to use a different port, you must change the port specified by the `tool.http.port` option in the `transition-tool.conf` file.
+
+. Restart the 7-Mode Transition Tool service for the new values to take effect:
++
+[options="header"]
+|===
+| If your system type is...| Do the following...
+a|
+Windows
+a|
+
+ .. Click *Start* > *Control Panel* > *System and Security* > *Administrative Tools* > *Services*.
+ .. Right-click the *NetApp 7-Mode Transition Tool* service, and then click *Stop*.
+ .. Right-click the *NetApp 7-Mode Transition Tool* service again, and then click *Start*.
+
+a|
+Linux
+a|
+Run the following command:
+
+`*service transition-service restart*`
+|===
+
+. After the 7-Mode Transition Tool service is restarted, add the 7-Mode system and cluster credentials again.

@@ -1,0 +1,12 @@
+---
+permalink: snapmirror/task_preparing_for_transition.html
+sidebar: sidebar
+keywords: ontap, 7, mode, transition, prepare, storage, system, cluster
+summary: 'Before you start the transition, you must prepare the 7-Mode storage system and cluster before transitioning 7-Mode volumes to clustered Data ONTAP. You must also create a transition peer relationship between the 7-Mode system and the storage virtual machine \(SVM\).'
+---
+= Preparing for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you start the transition, you must prepare the 7-Mode storage system and cluster before transitioning 7-Mode volumes to clustered Data ONTAP. You must also create a transition peer relationship between the 7-Mode system and the storage virtual machine (SVM).

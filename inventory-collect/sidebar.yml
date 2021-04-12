@@ -1,0 +1,29 @@
+section: inventory-collect
+title: Host and Storage Information Collection Guide
+entries:
+- title: Host and storage transition information collection
+  url: "/inventory-collect/index.html"
+  entries:
+  - title: Collecting storage and host inventory information
+    url: "/inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html"
+    entries:
+    - title: ONTAP target releases supported by the 7-Mode Transition Tool
+      url: "/inventory-collect/concept_ontap_target_releases_supported_by_7mtt.html"
+    - title: System requirements for running the Inventory Collect Tool
+      url: "/inventory-collect/concept_system_requirements_for_running_ict.html"
+    - title: Storage, host, and FC switches version requirements for inventory collection
+      url: "/inventory-collect/concept_storage_and_host_version_requirements.html"
+    - title: Preparing the 7-Mode systems and hosts for inventory collection
+      url: "/inventory-collect/task_preparing_7_mode_systems_for_inventory_collection.html"
+    - title: Supported configurations for generating an FC zone plan
+      url: "/inventory-collect/concept_supported_configurations_for_generating_an_fc_zone_plan.html"
+    - title: Syntax and options
+      url: "/inventory-collect/reference_syntax_and_options.html"
+    - title: Collecting inventory and generating inventory report
+      url: "/inventory-collect/task_collecting_inventory_and_generating_inventory_report.html"
+    - title: Generating the FC zone plan
+      url: "/inventory-collect/task_generating_fc_zone_plan.html"
+    - title: Collection and assessment commands
+      url: "/inventory-collect/reference_collection_and_assessment_commands.html"
+    - title: Where to find information about transition assessment
+      url: "/inventory-collect/concept_where_to_find_information_about_transition_assessment.html"

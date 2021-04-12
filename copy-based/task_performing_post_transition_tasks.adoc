@@ -1,0 +1,34 @@
+---
+permalink: copy-based/task_performing_post_transition_tasks.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, perform, manual, post, tasks
+summary: 'After the storage cutover finishes successfully and transition is completed, you must perform some post-transition tasks for configuring features that are not transitioned, before enabling client access to the ONTAP volumes.'
+---
+= Performing manual post-transition tasks
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After the storage cutover finishes successfully and transition is completed, you must perform some post-transition tasks for configuring features that are not transitioned, before enabling client access to the ONTAP volumes.
+
+.Steps
+. Manual: Perform the required steps to configure features that were not transitioned, as listed in the precheck report.
++
+For example, you must manually configure IPv6 and FPolicy after transition.
+
+. Delete or consolidate the configurations that are transitioned.
++
+The 7-Mode Transition Tool creates a new instance for all configurations that are transitioned from 7-Mode. Therefore, there might be several instances of some configurations, such as cron schedules, that might need to be consolidated or deleted manually.
+
+. SAN transition: Manually reconfigure the hosts.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SAN host transition and remediation]
+
+. Ensure that the SVM is ready to serve data to the clients by verifying the following:
+ ** The volumes on the SVM are online and read/write.
+ ** The IP addresses on the SVM are up and reachable from the name servers.
+. Redirect client access to the ONTAP volumes.
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/index.jsp[NetApp Documentation: ONTAP 9]

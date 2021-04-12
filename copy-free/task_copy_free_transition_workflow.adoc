@@ -1,0 +1,14 @@
+---
+permalink: copy-free/task_copy_free_transition_workflow.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, workflow
+summary: 'The copy-free transition workflow includes preparing for the transition, performing the transition, and completing the transition. Some of these tasks must be done manually on the 7-Mode systems and the cluster.'
+---
+= Copy-free transition workflow
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The copy-free transition workflow includes preparing for the transition, performing the transition, and completing the transition. Some of these tasks must be done manually on the 7-Mode systems and the cluster.
+
+image::../media/cft_highlevel_workflow.gif[]

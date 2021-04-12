@@ -1,0 +1,59 @@
+---
+permalink: copy-based/reference_limits_for_transition.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, limits
+summary: 'When you transition volumes using the 7-Mode Transition Tool, you should consider certain limits for assessment, such as the number of controllers and hosts that can be assessed simultaneously. For migration, you should review the number of volumes in a project and number of projects that can be run simultaneously.'
+---
+= Limits for transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When you transition volumes using the 7-Mode Transition Tool, you should consider certain limits for assessment, such as the number of controllers and hosts that can be assessed simultaneously. For migration, you should review the number of volumes in a project and number of projects that can be run simultaneously.
+
+The following table lists the number of controllers and hosts that can be assessed simultaneously:
+
+[options="header"]
+|===
+| Parameter| Maximum limit
+a|
+Number of controllers
+a|
+50
+a|
+Number of hosts
+a|
+20
+a|
+Number of ESXi hosts
+a|
+10
+|===
+
+NOTE: The maximum number of 7-Mode controllers in a single assessment depends on the number of objects, such as number of volumes, qtrees, quota, and exports.
+
+The following table lists the number of volumes in a project and the number of projects that can be run simultaneously during migration:
+
+[options="header"]
+|===
+| Parameter| Maximum limit
+a|
+Number of volumes in a project
+a|
+160
+a|
+Recommended limit for the total number of volumes across all active projects in the web interface at any given time
+a|
+240
+a|
+Maximum number of active project at any given time
+a|
+50
+
+NOTE: If you have 50 active projects, you can replicate data from 50 7-Mode storage systems and their associated SnapMirror destinations.
+
+a|
+Number of data copy schedules per project
+a|
+7
+|===

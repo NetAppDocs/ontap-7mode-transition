@@ -1,0 +1,70 @@
+---
+permalink: copy-based/concept_data_and_configuration_migration_process.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, data, configuration, migration, process
+summary: 'The data and configuration migration process using the 7-Mode Transition Tool consists of the following phases: preparation, baseline data copy, apply configuration \(precutover\), and storage cutover. If you have SnapLock volumes for Chain of Custody verification, Chain of Custody verification is additional phase after the cutover.'
+---
+= Data and configuration migration process
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The data and configuration migration process using the 7-Mode Transition Tool consists of the following phases: preparation, baseline data copy, apply configuration (precutover), and storage cutover. If you have SnapLock volumes for Chain of Custody verification, Chain of Custody verification is additional phase after the cutover.
+
+The following image shows the different phases in the migration process:
+
+image::../media/transition_operational_flow.gif[]
+
+== Preparation
+
+In this phase, prechecks are run to verify feature functionality. The process checks the 7-Mode storage systems to verify that the volumes and configuration are ready to be migrated to ONTAP. It checks that the cluster is configured properly and can support the transition. Any errors must be resolved before continuing with the transition. Although the tool allows you to continue without resolving warnings, you must understand the impact of the warnings before proceeding with the transition. You can run the prechecks multiple times to verify that all of the errors have been resolved.
+
+Although the precheck step and assessment steps performed during the assessment appear to be similar, there are differences. The precheck step is a more detailed test that is focused on the specific storage systems that have been identified as the migration source (7-Mode) and destination (ONTAP) systems. The assessment step only evaluates the migration source systems, checking feature and functionality differences with ONTAP.
+
+== Baseline data copy
+
+New volumes are created on the SVM, a SnapMirror relationship is established between the 7-Mode and ONTAP volumes, and a baseline transfer is performed. After the baseline is complete, incremental transfers are automatically run according to a user-defined data copy schedule. Clients and servers accessing the source storage remain online while this step is completed.
+
+Copying data requires CPU, memory, and storage access, which results in additional resources being used on the source storage system. It is a best practice to schedule data copy activity to occur during off-peak times (preferably, CPU usage should be around 50%).
+
+== Apply configuration (precutover)
+
+This phase includes SnapMirror incremental transfers; configuration information is applied to the ONTAP system, SVM, and volumes. Optionally, you can also test the ONTAP volumes that are being transitioned before storage cutover.
+
+Although a majority of the configuration is applied, some actions are deferred to storage cutover: for example, applying quotas.
+
+The 7-Mode IP addresses selected for the transition are created in the administrative down state. The new IP addresses selected for the transition are created in the administrative up state. These new IP addresses can be used to verify data access during precutover testing.
+
+It is a best practice to run the apply configuration (precutover) phase a few days or weeks before the planned cutover window. This activity helps to verify that all of the configurations are applied properly and whether any changes are required.
+
+TIP: Although incremental updates are not required, it is a best practice to perform an incremental transfer as close to the storage cutover as possible to minimize the time that clients are disconnected.
+
+== Storage cutover
+
+At a high level during storage cutover, clients are disconnected, a final data transfer is performed, the SnapMirror relationship is broken, and clients are manually reconnected.
+
+Disconnecting clients or servers from the source storage volume prevents additional writes from being performed while the final copy is being executed. Before disconnecting clients, it is a best practice to perform an incremental update to minimize the downtime.
+
+Storage access must be disconnected only for the volumes that are being migrated. Access to storage can be discontinued from the storage side or the client side. The best practice is to discontinue connectivity from the storage side. For example, if a CIFS client is accessing a volume named "`user01`" on a 7-Mode storage system, you can use the `cifs terminate -v user01` command to disable access to all of the CIFS shares on the volume (discontinuing client access from the storage side). The IP addresses, mount points, or even share names might change as a result of the migration, and therefore client access might be discontinued from the client side as well. As long as clients cannot write any new data to the storage container that is being migrated, you can use either or both of these methods for discontinuing access.
+
+After clients are disconnected, the 7-Mode Transition Tool executes a final copy so that both the source and destination datasets are at parity. The 7-Mode Transition Tool configures the data LIFs on the SVM. Some configuration changes that were not transitioned during precutover, such as applying SAN configurations and quotas, are also applied to the SVM at this time.
+
+After storage cutover is complete, you can manually reconnect the clients and validate data access. Validating data access involves verifying that clients are accessing the ONTAP system properly and that all permissions are working as expected.
+
+== Chain of Custody verification for SnapLock volumes
+
+You can trigger the Chain of Custody operation for the SnapLock volumes in the project after the transition is complete. This operation is not mandatory and is required only if Chain of Custody verification is essential for the transition of SnapLock volumes. You can perform this operation for all SnapLock volumes in the project or for a subset of SnapLock volumes in the project. The Chain of Custody verification is supported for both compliance and enterprise SnapLock volumes. The Chain of Custody verification is supported only for read-write SnapLock volumes, and is not supported for read-only SnapLock volumes.
+
+IMPORTANT: The Chain of Custody verification is not supported for SnapLock volume that have file names with non-ASCII characters.
+
+The verification workflow is supported only in the 7-Mode Transition Tool GUI and is not supported in the CLI workflow.
+
+The Chain of Custody verification operation performs the following:
+
+* Enumerates all of the WORM files from 7-Mode volumes
+* Calculates the fingerprint for each WORM file enumerated previously on both 7-Mode volumes and transitioned ONTAP volumes
+* Generates a report with details about the number of files with matched and unmatched fingerprints, and the reason for the mismatch
+
+Fingerprint data for all WORM files is stored in an ONTAP volume provided during the planning phase.
+
+NOTE: Based on the number of files on the 7-Mode volumes, the Chain of Custody verification process can take a significant amount of time (days or weeks).

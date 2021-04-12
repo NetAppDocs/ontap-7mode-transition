@@ -1,0 +1,22 @@
+---
+permalink: snapmirror/task_transitioning_volumes.html
+sidebar: sidebar
+keywords: ontap, 7, mode, snapmirror, transition, volume, data, protection, relationship, stand, alone
+summary: 'You can transition a stand-alone volume or volumes that are in data protection relationships \(in volume SnapMirror relationships\) by using SnapMirror technology.'
+---
+= Transitioning volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition a stand-alone volume or volumes that are in data protection relationships (in volume SnapMirror relationships) by using SnapMirror technology.
+
+If an ongoing scheduled update is aborted due to an NDO operation (takeover or aggregate relocation), then the update will automatically resume after the NDO operation is complete.
+
+If you transition a stand-alone volume or a volume SnapMirror relationship with LUNs, you must create igroups and map LUNs. You must then perform the required post-transition tasks on the hosts before configuring access to the transitioned clustered Data ONTAP volumes.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SAN host transition and remediation]
+
+*Related information*
+
+xref:task_transitioning_7_mode_volumes_using_snapmirror.adoc[Transitioning 7-Mode volumes using SnapMirror]

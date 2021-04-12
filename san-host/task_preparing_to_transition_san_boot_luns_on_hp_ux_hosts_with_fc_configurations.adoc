@@ -1,0 +1,50 @@
+---
+permalink: san-host/task_preparing_to_transition_san_boot_luns_on_hp_ux_hosts_with_fc_configurations.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, hp, ux, hosts, fc, configurations
+summary: 'Before you transition a SAN boot LUN on an HP-UX host with an FC configuration, you must record the name of the 7-Mode LUN on which HP-UX is installed, the SCSI device name for that LUN, the Agile naming convention, and the WWID.'
+---
+= Preparing to transition SAN boot LUNs on HP-UX hosts with FC configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you transition a SAN boot LUN on an HP-UX host with an FC configuration, you must record the name of the 7-Mode LUN on which HP-UX is installed, the SCSI device name for that LUN, the Agile naming convention, and the WWID.
+
+. From the console of the 7-Mode controller, display your 7-Mode LUNs to identify the LUN name on which the "`HPUX11v3 March 2014`" operating system is installed:
++
+`*lun show*`
+. Obtain the SCSI device name for the LUN:
++
+`*sanlun lun show -p*`
++
+In this example, the transition LUN is bootlun_94. The SCSI devices for this LUN are `/dev/dsk/c14t0d0`, `/dev/dsk/c27t0d0`, `/dev/dsk/c40t0d0`, and `/dev/dsk/c31t0d0` .
++
+----
+        ONTAP Path: f8040-211-183:/vol/vol_183/bootlun_94
+               LUN: 0
+          LUN Size: 100g
+       Host Device: /dev/rdisk/disk6
+              Mode: 7
+Multipath Provider: None
+host      vserver   /dev/dsk
+path      path      filename           host     vserver
+state     type      or hardware path   adapter  LIF
+-----     -------   ----------------   -------  -------
+up        secondary /dev/dsk/c14t0d0   fcd0     fc4
+up        primary   /dev/dsk/c27t0d0   fcd0     fc2
+up        primary   /dev/dsk/c40t0d0   fcd1     fc1
+up        secondary /dev/dsk/c31t0d0   fcd1     fc3
+----
+
+. Identify the WWID for the LUN on the host:
++
+`*scsimgr get_info -D _SCSI_device_name_ |grep WWID*`
++
+In the following example, the LUN WWID for device `/dev/rdisk/disk6` is 0x600a09804d537739422445386b75556:
++
+----
+bash-2.05# scsimgr get_info -D /dev/rdisk/disk6 | grep WWID
+World Wide Identifier (WWID)      = 0x600a09804d537739422445386b755564
+bash-2.05#
+----

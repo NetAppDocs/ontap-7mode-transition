@@ -1,0 +1,9 @@
+---
+permalink: install-admin/reference_copyright_and_trademark.html
+sidebar: sidebar
+keywords: ontap, 7, mode, install, copyright, trademark, machine, translation
+summary: 'Copyright and trademark information for 7-Mode Transition Tool Installation and Setup Guide.'
+---
+= Copyright, trademark, and machine translation
+:icons: font
+:imagesdir: ../media/

@@ -1,0 +1,65 @@
+---
+permalink: copy-based/task_managing_logical_interfaces.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, manage, logical, interfaces
+summary: 'You can add, edit, or remove 7-Mode IP addresses from a project.'
+---
+= Managing logical interfaces
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can add, edit, or remove 7-Mode IP addresses from a project.
+
+The LIFs are configured on the storage virtual machine (SVM) in the apply configuration (precutover) phase:
+
+* Existing 7-Mode IP addresses are created in the administrative "`down`" state.
+* New IP addresses are created in the administrative "`up`" state.
+
+IMPORTANT: FC and iSCSI LIFs are not transitioned by the 7-Mode Transition Tool.
+
+.Steps
+. Perform one of the following actions:
++
+[options="header"]
+|===
+| If you want to...| Then...
+a|
+Edit an existing LIF
+a|
+
+ .. Click image:../media/edit_schedule.gif[] .
+ .. In the Modify LIF dialog box, make the required changes, and then click *Save*.
+
+a|
+Remove an existing LIF
+a|
+
+ .. Click image:../media/delete_schedule.gif[] in the table.
++
+NOTE: You can remove a LIF only when the project is in the preparation, baseline data copy, pause, precutover, or update state. However, you cannot remove a LIF if the cutover operation has failed.
+
+ .. Click *Select 7-Mode LIF*.
+ .. Select the 7-Mode IP addresses for transition.
+ .. Enter the target node and target port details.
+ .. Click *Save*.
+
+a|
+Add a 7-Mode IP address
+a|
+
+ ** Click *Select 7-Mode LIF*.
+ ** Select the 7-Mode IP addresses for transition.
+ ** Enter the target node and target port details.
+ ** Click *Save*.
+
+a|
+Add a new LIF
+a|
+
+ .. Click *Add New LIF* below the table.
+ .. Enter the required values.
+ .. Click *Save*.
+
++
+|===

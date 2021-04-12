@@ -1,0 +1,39 @@
+---
+permalink: copy-based/task_aborting_a_subproject.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, abort, project
+summary: 'You might want to abort a running project, for example, when the performance of the controller or the cluster is impacted. You can abort a running project from the Dashboard.'
+---
+= Aborting a project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might want to abort a running project, for example, when the performance of the controller or the cluster is impacted. You can abort a running project from the Dashboard.
+
+You must consider the following before aborting projects that transition volumes with SnapMirror relationships:
+
+* If both projects have been started, aborting one project aborts the associated project.
++
+For example, if you abort a primary project, the secondary project is also aborted.
+
+* If the abort operation fails on the current project, the associated project is not aborted.
+* If only one active project is aborted, the start operation on the associated project fails.
+* When you abort a primary project, the copy operation from the 7-Mode primary volume to the ONTAP secondary volume is not aborted.
++
+Only the copy operation from the 7-Mode primary volume to the corresponding ONTAP primary volume is aborted.
+
+NOTE: If the 7-Mode project is aborted, the only option is to delete the project. It is not possible to resume or restart the project after it is aborted.
+
+.Steps
+. From the Dashboard, select the project that you want to abort.
+. Click *Abort*.
+. From the cluster, delete the ONTAP volumes that were created as part of the transition.
+. From the 7-Mode system, release the SnapMirror relationships to the ONTAP volumes.
+. If you abort a volume SnapMirror relationship, you must do the following:
+ .. Break and delete the SnapMirror relationship between the 7-Mode primary volumes and ONTAP secondary volumes.
+ .. From the primary 7-Mode system, release the SnapMirror relationships to the ONTAP secondary volumes.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr/GUID-5CB10C70-AC11-41C0-8C16-B4D0DF916E9B.html[ONTAP 9 commands]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1511537[Data ONTAP 8. 2 Commands: Manual Page Reference for 7-Mode, Volume 1]

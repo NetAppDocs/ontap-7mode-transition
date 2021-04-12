@@ -1,0 +1,24 @@
+---
+permalink: copy-free/reference_required_tools_and_documentation.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, tools, documentation, required
+summary: 'The Config Advisor is the required tool for copy-free transition. You should use Config Advisor to verify the cabling of the disk shelves. Additional documentation is also available for SAN host remediation.'
+---
+= Tools and documentation required for copy-free transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Config Advisor is the required tool for copy-free transition. You should use Config Advisor to verify the cabling of the disk shelves. Additional documentation is also available for SAN host remediation.
+
+== Config Advisor
+
+You should use the "`Transition`" execution profile in Config Advisor to verify the cabling after the 7-Mode disk shelves are connected to the target cluster nodes.
+
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor[NetApp Downloads: Config Advisor]
+
+== Documentation
+
+Describes the pre-transition and post-transition steps that have to be performed on SAN hosts when transitioning using copy-free transition.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-sanspl/home.html[SAN host transition and remediation]

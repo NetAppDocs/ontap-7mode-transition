@@ -1,0 +1,26 @@
+---
+permalink: copy-based/concept_transition_overview.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, overview
+summary: 'Transitioning to clustered ONTAP involves identifying your current environment, defining the transition scope, designing the optimal configuration of the destination systems, planning how to migrate data and configurations, and making necessary environmental updates.'
+---
+= Transition overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Transitioning to clustered ONTAP involves identifying your current environment, defining the transition scope, designing the optimal configuration of the destination systems, planning how to migrate data and configurations, and making necessary environmental updates.
+
+Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+
+You must first collect information about the current environment, including both the current storage environment as well as the hosts and applications. After collecting the storage inventory, you can assess the current features and functionality that are used and identify any differences in the ONTAP version selected. You can use 7-Mode Transition Tool to perform these tasks.
+
+You can then define your migration project. This involves identifying what volumes and workloads you want to migrate together, then you can design your cluster, and plan your transition. You can begin planning your migration by first selecting the optimal migration method. When designing your cluster, you can use the information gathered about your storage environment to map existing configuration items to their equivalent items in ONTAP. For example, a 7-Mode volume should be mapped to an SVM and a volume in ONTAP and an IP address that will be transitioned should be mapped to LIFs. You should also determine if any environmental changes have to be made on the ONTAP system.
+
+Implementation includes deploying and configuring the cluster, migrating data, applying configuration changes, disconnecting clients and reconnecting to the destination ONTAP system, verifying access, as well as performing any necessary environmental changes.
+
+*Related information*
+
+http://docs.netapp.com/ontap-9/index.jsp[NetApp Documentation: ONTAP 9]

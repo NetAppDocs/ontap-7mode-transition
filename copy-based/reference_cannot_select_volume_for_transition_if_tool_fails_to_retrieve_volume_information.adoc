@@ -1,0 +1,16 @@
+---
+permalink: copy-based/reference_cannot_select_volume_for_transition_if_tool_fails_to_retrieve_volume_information.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, tool, fails, volume, information
+summary: 'The Volume selection pane displays the Failed to retrieve volume information error message when you try to select a volume. This error usually occurs if the controller is busy.'
+---
+= Cannot select a volume for transition if the tool fails to retrieve the volume information
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Volume selection pane displays the `Failed to retrieve volume information` error message when you try to select a volume. This error usually occurs if the controller is busy.
+
+== Workaround
+
+Wait until the controller is not busy, and then select the volume again.

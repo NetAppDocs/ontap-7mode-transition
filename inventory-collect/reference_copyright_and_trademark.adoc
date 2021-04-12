@@ -1,0 +1,9 @@
+---
+permalink: inventory-collect/reference_copyright_and_trademark.html
+sidebar: sidebar
+keywords: 7, mode, copyright, host, storage, information, collection, transition, copyright, trademark
+summary: 'Copyright and trademark for Host and Storage Information Collection Guide.'
+---
+= Copyright, trademark, and machine translation
+:icons: font
+:imagesdir: ../media/

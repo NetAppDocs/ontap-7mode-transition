@@ -1,0 +1,12 @@
+---
+permalink: copy-free/concept_troubleshooting_transition_issues.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, troubleshooting, issues
+summary: 'You should be aware of how to troubleshoot issues with the 7-Mode Transition Tool and where to look for log files. When you use the 7-Mode Transition Tool, you might see error messages that identify the issue and provide the solution.'
+---
+= Troubleshooting transition issues
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should be aware of how to troubleshoot issues with the 7-Mode Transition Tool and where to look for log files. When you use the 7-Mode Transition Tool, you might see error messages that identify the issue and provide the solution.

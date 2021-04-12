@@ -1,0 +1,142 @@
+---
+permalink: san-host/task_mounting_solaris_host_luns_with_zfs_file_systems_after_transition.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, mount, solaris, host, lun, zfs, file, system
+summary: 'After transitioning Solaris host LUNs with ZFS file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must mount the LUNs.'
+---
+= Mounting Solaris host LUNs with ZFS file systems after transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transitioning Solaris host LUNs with ZFS file systems from Data ONTAP operating in 7-Mode to clustered Data ONTAP, you must mount the LUNs.
+
+For copy-based transitions, you perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
+
+For copy-free transitions, you perform these steps after the Import Data & Configuration operation in the 7MTT is complete.
+
+. Discover your new clustered Data ONTAP LUNs by rescanning the host.
+ .. Identify the FC Host Ports (type fc-fabric):
+ +
+`*#cfgadm –l*`
+ .. Unconfigure the 1st fc-fabric port:
+ +
+`*#cfgadm –c unconfigure c1*`
+ .. Unonfigure the second fc-fabric port:
+ +
+`*#cfgadm –c unconfigure c2*`
+ .. Repeat the steps for other fc-fabric ports.
+ .. Verify that the information about the host ports and their attached devices is correct:
+ +
+`*# cfgadm –al*`
+ .. Reload the driver:
+ +
+`*# devfsadm –Cv*`
+`*# devfsadm –i iscsi*`
+. Verify that your clustered Data ONTAP LUNs have been discovered:
++
+`*sanlun lun show*`
+ ** The `lun-pathname` values for the clustered Data ONTAP LUNs should be the same as the `lun-pathname` values for the 7-Mode LUNs prior to transition.
+ ** The `mode` column should display "`C`" instead of "`7`".
+
++
+----
+# sanlun lun show
+controller(7mode)/                    device                                            host                  lun
+vserver(Cmode)       lun-pathname     filename                                          adapter    protocol   size    mode
+--------------------------------------------------------------------------------------------------------------------------
+vs_sru17_5           /vol/zfs/zfs2    /dev/rdsk/c5t600A0980383030444D2B466542485935d0s2 scsi_vhci0 FCP        6g      C
+vs_sru17_5           /vol/zfs/zfs1    /dev/rdsk/c5t600A0980383030444D2B466542485934d0s2 scsi_vhci0 FCP        6g      C
+vs_sru17_5           /vol/ufs/ufs2    /dev/rdsk/c5t600A0980383030444D2B466542485937d0s2 scsi_vhci0 FCP        5g      C
+vs_sru17_5           /vol/ufs/ufs1    /dev/rdsk/c5t600A0980383030444D2B466542485936d0s2 scsi_vhci0 FCP        5g      C
+----
+. Check for zpools that are available to import:
++
+`*zpool import*`
++
+----
+# zpool import
+  pool: n_vg
+    id: 3605589027417030916
+ state: ONLINE
+action: The pool can be imported using its name or numeric identifier.
+config:
+
+        n_vg                                     ONLINE
+          c0t600A098051763644575D445443304134d0  ONLINE
+          c0t600A098051757A46382B445441763532d0  ONLINE
+----
+
+. Import the zpools that were used for transition by pool name or using the pool ID:
+ ** `*zpool import _pool-name_*`
+ ** `*zpool import _pool-id_*`
+
++
+----
+# zpool list
+no pools available
+
+# zpool import
+  pool: n_pool
+    id: 5049703405981005579
+ state: ONLINE
+action: The pool can be imported using its name or numeric identifier.
+config:
+
+        n_pool                                   ONLINE
+          c0t60A98000383035356C2447384D396550d0  ONLINE
+          c0t60A98000383035356C2447384D39654Ed0  ONLINE
+
+# zpool import n_pool
+----
++
+----
+# zpool import 5049703405981005579
+
+[59] 09:55:53 (root@sunx2-shu04) /tmp
+# zpool list
+NAME     SIZE  ALLOC   FREE  CAP  HEALTH  ALTROOT
+n_pool  11.9G  2.67G  9.27G  22%  ONLINE  -
+----
+. Check whether the zpool is online by doing one of the following:
+ ** `*zpool status*`
+ ** `*zpool list*`
+
++
+----
+# zpool status
+  pool: n_pool
+ state: ONLINE
+ scan: none requested
+config:
+
+        NAME                                     STATE     READ WRITE CKSUM
+        n_pool                                   ONLINE       0     0     0
+          c0t60A98000383035356C2447384D396550d0  ONLINE       0     0     0
+          c0t60A98000383035356C2447384D39654Ed0  ONLINE       0     0     0
+
+errors: No known data errors
+----
++
+----
+# zpool list
+NAME     SIZE  ALLOC   FREE  CAP  HEALTH  ALTROOT
+n_pool  11.9G  2.67G  9.27G  22%  ONLINE  -
+----
+. Verify the mount points by using one of the following commands:
+ ** `*zfs list*`
+ ** `*df –ah*`
+
++
+----
+# zfs list
+NAME           USED  AVAIL  REFER  MOUNTPOINT
+n_pool        2.67G  9.08G   160K  /n_pool
+n_pool/pool1  1.50G  2.50G  1.50G  /n_pool/pool1
+n_pool/pool2  1.16G  2.84G  1.16G  /n_pool/pool2
+
+#df –ah
+n_pool                  12G   160K   9.1G     1%    /n_pool
+n_pool/pool1           4.0G   1.5G   2.5G    38%    /n_pool/pool1
+n_pool/pool2           4.0G   1.2G   2.8G    30%    /n_pool/pool2
+----

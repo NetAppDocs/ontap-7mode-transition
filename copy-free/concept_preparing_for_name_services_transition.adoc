@@ -1,0 +1,12 @@
+---
+permalink: copy-free/concept_preparing_for_name_services_transition.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, name, services, prepare
+summary: 'Name service configurations that include DNS, LDAP, NIS, hosts, name services switch, UNIX users and groups, and netgroups configurations are transitioned by the 7-Mode Transition Tool. You must be aware of some considerations before transitioning name services configurations.'
+---
+= Preparing to transition name services
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Name service configurations that include DNS, LDAP, NIS, hosts, name services switch, UNIX users and groups, and netgroups configurations are transitioned by the 7-Mode Transition Tool. You must be aware of some considerations before transitioning name services configurations.

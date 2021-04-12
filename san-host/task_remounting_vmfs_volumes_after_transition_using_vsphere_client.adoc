@@ -1,0 +1,33 @@
+---
+permalink: san-host/task_remounting_vmfs_volumes_after_transition_using_vsphere_client.html
+sidebar: sidebar
+keywords: ontap, san, host, transition, remount, vmfs, volumes, vshpere, client
+summary: 'After transition, you must remount your VMFS volumes to bring your datastores and virtual machines \(VMs\) to their pretransition states. If you are not familiar with the ESXi CLI or it is more convenient in your environment, you can use vSphere Client to remount your volumes.'
+---
+= Remounting VMFS volumes after transition using vSphere Client
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After transition, you must remount your VMFS volumes to bring your datastores and virtual machines (VMs) to their pretransition states. If you are not familiar with the ESXi CLI or it is more convenient in your environment, you can use vSphere Client to remount your volumes.
+
+These steps apply to volumes and spanned volumes.
+
+.Steps
+. Log in to the ESXi host or the vCenter Server managing the ESXi host.
+. Under *Hosts and Clusters*, select the ESXi host.
+. Navigate to *Configuration* > *Hardware* > *Storage*.
+. In the upper-right corner, click *Add storage*.
+. Select *Disk/LUN*.
+. Click *Next*.
+. In the list of LUNs, locate the *VMFS_label* column displaying the name of the datastore.
+. Select the LUN to complete the remount operation.
++
+If you are remounting a spanned VMFS volume, the first LUN in the span is marked "`head`". You must select the "`head`" LUN to complete the remount operation.
+
+. Click *Next*.
+. In the Select VMFS Mount Options window, select *Keep the existing signature*.
+. Complete the wizard.
+. Repeat these steps for all of the LUNs displaying the datastore name in the VMFS_label column.
++
+Datastores are remounted and VMs are active.

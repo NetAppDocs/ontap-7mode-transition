@@ -1,0 +1,68 @@
+---
+permalink: copy-free/concept_requirements_for_copy_free_transition.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, requirements
+summary: 'You should be aware of the requirements for 7-Mode systems, clusters, ONTAP releases, and disk shelves for copy-free transition.'
+---
+= Requirements for copy-free transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should be aware of the requirements for 7-Mode systems, clusters, ONTAP releases, and disk shelves for copy-free transition.
+
+Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+
+* *Platform models*
++
+Copy-free transition is supported only on mid-end and high-end FAS systems and IBM N series systems. The https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool] has the latest information about the supported platforms for 7-Mode systems and the target cluster nodes.
+
+* *Data ONTAP in 7-Mode source systems*
++
+For a list of the 7-Mode releases supported for migration by the 7-Mode Transition Tool, see the https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool]
+
+* *ONTAP target systems*
++
+7-Mode Transition Tool version 3.3.1 supports transition to the following ONTAP releases by using the copy-free method:
+
+ ** ONTAP 9.4 and earlier ONTAP 9 releases
+ ** Clustered Data ONTAP 8.3.2 and later 8.x releases
+*Note:* You cannot use the 7-Mode Transition Tool to transition to ONTAP 9.5 or later using the copy-free method. To do so, you must first transition to ONTAP 9.4 using 7-Mode Transition Tool 3.3.1 and then upgrade your cluster to ONTAP 9.5 or later. 7-Mode Transition Tool 3.3.2 does not support copy-free transitions.
+
+* *HA configuration*
++
+The 7-Mode controllers and target cluster nodes must be in an HA configuration. The HA pairs must be healthy, and none of the nodes can be in takeover mode. Stand-alone controllers are not supported for copy-free transition.
+
+* *Disk shelf models*
++
+The following disk shelf models are supported:
+
+ ** DS4486
+ ** DS4246
+ ** DS4243
++
+NOTE: The disk shelf model DS4243 is not supported with ONTAP 9.2 and ONTAP 9.4. This model is supported with all ONTAP 9.2 patch releases starting with ONTAP 9.2P1 and with ONTAP 9.3. 7-Mode Transition Tool 3.3.1 supports transition with the disk shelf model DS4243 for copy-free transition to ONTAP 9.2P1 through ONTAP 9.3.
+
+ ** DS2246
+ ** DS14mk4 FC (not supported in ONTAP 9.0 and later)
+ ** DS14mk2 AT (not supported in ONTAP 9.0 and later)
+
+NOTE: The disk shelf model DS14mk2 FC is not supported.
+
+* *Disk firmware*
++
+You must download and install the latest disk qualification package, disk firmware, and disk shelf and ACP firmware on the 7-Mode systems and target cluster nodes.
++
+https://mysupport.netapp.com/NOW/download/tools/diskqual/[NetApp Downloads: Disk Qualification Package]
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-drive-firmware[NetApp Downloads: Disk Drive Firmware]
++
+https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware[NetApp Downloads: Disk Shelf Firmware]
+
+* *Tool to verify cabling*
++
+After connecting the 7-Mode disk shelves to the target cluster nodes during the transition, you must use Config Advisor to verify the cabling.
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor[NetApp Downloads: Config Advisor]

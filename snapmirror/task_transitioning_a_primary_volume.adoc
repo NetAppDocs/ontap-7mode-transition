@@ -1,0 +1,238 @@
+---
+permalink: snapmirror/task_transitioning_a_primary_volume.html
+sidebar: sidebar
+keywords: ontap, 7, mode, transition, primary, volume, snapmirror
+summary: 'Transitioning a primary volume involves copying data from the 7-Mode primary volumes to the clustered Data ONTAP primary volumes, deleting the disaster recovery relationship between the 7-Mode primary and clustered Data ONTAP secondary volumes, and establishing a SnapMirror relationship between the clustered Data ONTAP primary and secondary volumes.'
+---
+= Transitioning a primary volume
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Transitioning a primary volume involves copying data from the 7-Mode primary volumes to the clustered Data ONTAP primary volumes, deleting the disaster recovery relationship between the 7-Mode primary and clustered Data ONTAP secondary volumes, and establishing a SnapMirror relationship between the clustered Data ONTAP primary and secondary volumes.
+
+The primary cluster and SVM must already be set up.
+
+.Steps
+. Copy the data from the 7-Mode primary volume to the clustered Data ONTAP primary volume:
+ .. Use the `snapmirror create` command with the relationship type as TDP to create a SnapMirror relationship between the 7-Mode system and the SVM.
++
+----
+pri_cluster::> snapmirror create -source-path src_system:finance -destination-path src_vserver:src_c_vol -type TDP
+Operation succeeded: snapmirror create the relationship with destination src_vserver:src_c_vol.
+----
+
+ .. Use the `snapmirror initialize` command to start the baseline transfer.
++
+----
+pri_cluster::> snapmirror  initialize -destination-path src_vserver:src_c_vol
+Operation is queued: snapmirror initialize of destination src_vserver:src_c_vol.
+----
+
+ .. Depending on whether you want to update the clustered Data ONTAP volume manually or by setting up a SnapMirror schedule, perform the appropriate action:
++
+[options="header"]
+|===
+| If you want to...| Then...
+a|
+Update transfers manually
+a|
+
+  ... Use the `snapmirror update` command.
++
+----
+pri_cluster::> snapmirror update -destination-path src_vserver:src_c_vol
+----
+
+  ... Use the `snapmirror show` command to monitor the data copy status.
++
+----
+pri_cluster::> snapmirror show -destination-path src_vserver:src_c_vol
+                            Source Path: pri_system:src_7_vol
+                       Destination Path: src_vserver:src_c_vol
+                      Relationship Type: TDP
+                Relationship Group Type: none
+                    SnapMirror Schedule: -
+                 SnapMirror Policy Type: async-mirror
+                      SnapMirror Policy: DPDefault
+                            Tries Limit: -
+                      Throttle (KB/sec): unlimited
+                           Mirror State: Snapmirrored
+ ...
+           Number of Successful Updates: 1
+               Number of Failed Updates: 0
+           Number of Successful Resyncs: 0
+               Number of Failed Resyncs: 0
+            Number of Successful Breaks: 0
+                Number of Failed Breaks: 0
+                   Total Transfer Bytes: 473163808768
+         Total Transfer Time in Seconds: 43405
+----
+
+  ... Go to step 3.
+
+a|
+Perform scheduled update transfers
+a|
+
+  ... Use the `job schedule cron create` command to create a schedule for update transfers.
++
+----
+pri_cluster::> job schedule cron create -name 15_minute_sched -minute 15
+----
+
+  ... Use the `snapmirror modify` command to apply the schedule to the SnapMirror relationship.
++
+----
+pri_cluster::> snapmirror modify -destination-path src_vserver:src_c_vol -schedule 15_minute_sched
+----
+
+  ... Use the snapmirror show command to monitor the data copy status.
++
+----
+pri_cluster::> snapmirror show -destination-path src_vserver:src_c_vol
+                            Source Path: pri_system:src_7_vol
+                       Destination Path: src_vserver:src_c_vol
+                      Relationship Type: TDP
+                Relationship Group Type: none
+                    SnapMirror Schedule: 15_minute_sched
+                 SnapMirror Policy Type: async-mirror
+                      SnapMirror Policy: DPDefault
+                            Tries Limit: -
+                      Throttle (KB/sec): unlimited
+                           Mirror State: Snapmirrored
+...
+           Number of Successful Updates: 1
+               Number of Failed Updates: 0
+           Number of Successful Resyncs: 0
+               Number of Failed Resyncs: 0
+            Number of Successful Breaks: 0
+                Number of Failed Breaks: 0
+                   Total Transfer Bytes: 473163808768
+         Total Transfer Time in Seconds: 43405
+----
+
++
+|===
+. If you have a schedule for incremental transfers, perform the following steps when you are ready to perform cutover:
+ .. Use the `snapmirror quiesce` command to disable all future update transfers.
++
+----
+pri_cluster::> snapmirror quiesce -destination-path src_vserver:src_c_vol
+----
+
+ .. Use the `snapmirror modify` command to delete the SnapMirror schedule.
++
+----
+pri_cluster::> snapmirror modify -destination-path src_vserver:src_c_vol -schedule ""
+----
+
+ .. If you quiesced the SnapMirror transfers earlier, use the `snapmirror resume` command to enable SnapMirror transfers.
++
+----
+pri_cluster::> snapmirror resume -destination-path src_vserver:src_c_vol
+----
+. Create an SVM peer relationship between the clustered Data ONTAP secondary and primary SVMs.
+ .. Use the `cluster peer create` command to create a cluster peer relationship.
++
+----
+pri_cluster::> cluster peer create -peer-addrs cluster2-d2, 10.98.234.246 -timeout 60
+
+Notice: Choose a passphrase of 8 or more characters. To ensure the authenticity of the peering relationship, use a phrase or sequence of characters that would be hard to guess.
+
+Enter the passphrase: ********
+Confirm the passphrase: ********
+----
+
+ .. From the source cluster, use the `vserver peer create` command to create the SVM peer relationship between the clustered Data ONTAP primary and secondary volumes.
++
+----
+pri_cluster::> vserver peer create -vserver src_vserver -peervserver src_c_vserver -applications snapmirror -peer-cluster sec_cluster
+----
+
+ .. From the destination cluster, use the `vserver peer accept` command to accept the SVM peer request and establish the SVM peer relationship.
++
+----
+sec_cluster::> vserver peer accept -vserver dst_vserver -peervserver src_vserver
+----
+. From the destination cluster, use the `snapmirror quiesce` command to suspend any data transfers between the 7-Mode primary volume and the clustered Data ONTAP secondary volume if a schedule is set up for update transfers.
++
+----
+sec_cluster::> snapmirror quiesce -destination-path dst_vserver:dst_c_vol
+----
+
+. Monitor the data copy operation and initiate cutover:
+ .. Wait for any ongoing transfers from the 7-Mode primary volumes to the clustered Data ONTAP primary and clustered Data ONTAP secondary volumes to finish, and then disconnect client access from the 7-Mode primary volume to start cutover.
+ .. Use the `snapmirror update` command to perform a final data update to the clustered Data ONTAP primary volume from the 7-Mode primary volume.
++
+----
+pri_cluster::> snapmirror update -destination-path src_vserver:src_c_vol
+----
+
+ .. Use the `snapmirror break` command to break the SnapMirror relationship between the 7-Mode primary volume and clustered Data ONTAP primary volume.
++
+----
+pri_cluster::> snapmirror  break -destination-path src_vserver:src_c_vol
+[Job 1485] Job is queued: snapmirror break for destination src_vserver:src_c_vol.
+----
+
+ .. If your volumes have LUNs configured, at the advanced privilege level, use the `lun transition 7-mode show` command to verify that the LUNs have been transitioned.
++
+You can also use the `lun show` command on the clustered Data ONTAP volume to view all of the LUNs that were successfully transitioned.
+
+ .. Use the `snapmirror delete` command to delete the relationship.
++
+----
+pri_cluster::> snapmirror  delete -destination-path src_vserver:src_c_vol
+----
+
+ .. Use the `snapmirror release` command to remove the SnapMirror relationship information from the 7-Mode system.
++
+----
+system7mode> snapmirror release dataVol20 vs1:dst_vol
+----
+. From the destination cluster, break and delete the disaster recovery relationship between the 7-Mode primary volume and clustered Data ONTAP secondary volume.
+ .. Use the `snapmirror break` command to break the disaster recovery relationship between the 7-Mode primary volume and clustered Data ONTAP secondary volume.
++
+----
+sec_cluster::> snapmirror  break -destination-path dst_vserver:dst_c_vol
+[Job 1485] Job is queued: snapmirror break for destination dst_vserver:dst_c_vol.
+----
+
+ .. Use the `snapmirror delete` command to delete the relationship.
++
+----
+sec_cluster::> snapmirror  delete -destination-path dst_vserver:dst_c_vol
+----
+
+ .. Use the `snapmirror release` command to remove the SnapMirror relationship information from the 7-Mode system.
++
+----
+system7mode> snapmirror release dataVol20 vs1:dst_vol
+----
+. From the destination cluster, establish a SnapMirror relationship between the clustered Data ONTAP primary and secondary volumes:
+ .. Use the `snapmirror create` command to create a SnapMirror relationship between the clustered Data ONTAP primary and secondary volumes.
++
+----
+sec_cluster::> snapmirror create -source-path src_vserver:src_c_vol -destination-path dst_vserver:dst_c_vol -type DP -schedule 15_minute_sched
+----
+
+ .. Use the `snapmirror resync` command to resynchronize the SnapMirror relationship between the clustered Data ONTAP volumes.
++
+For successful resynchronization, a common Snapshot copy must exist between the clustered Data ONTAP primary and secondary volumes.
++
+----
+sec_cluster::> snapmirror  resync -destination-path dst_vserver:dst_c_vol
+----
+
+ .. Use the `snapmirror show` command to verify that the status of SnapMirror resynchronization shows `SnapMirrored`.
++
+NOTE: You must ensure that the SnapMirror resynchronization is successful to make the clustered Data ONTAP secondary volume available for read-only access.
+
+You must delete the SVM peer relationship between the 7-Mode system and the SVM when all the required volumes in the 7-Mode system are transitioned to the SVM.
+
+*Related information*
+
+xref:task_recovering_from_a_failed_lun_transition.adoc[Recovering from a failed LUN transition]
+
+xref:task_configuring_a_tcp_window_size_for_snapmirror_relationships.adoc[Configuring a TCP window size for SnapMirror relationships]

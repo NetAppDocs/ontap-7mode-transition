@@ -1,0 +1,12 @@
+---
+permalink: copy-free/task_completing_post_transition_tasks_for_a_copy_free_transition.html
+sidebar: sidebar
+keywords: ontap, transition, copy, free, complete
+summary: 'Completing the transition involves manually verifying the transitioned volumes and configurations, testing your workload, starting production, and then committing the copy-free transition project. Because rollback is not allowed after the commit operation, you should verify all workloads and start production for a brief duration to evaluate if rollback is required.'
+---
+= Completing the transition
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Completing the transition involves manually verifying the transitioned volumes and configurations, testing your workload, starting production, and then committing the copy-free transition project. Because rollback is not allowed after the commit operation, you should verify all workloads and start production for a brief duration to evaluate if rollback is required.

@@ -1,0 +1,27 @@
+---
+permalink: install-admin/task_enabling_login_for_users_not_part_of_administrator_group.html
+sidebar: sidebar
+keywords: ontap, 7, mode, install, enable, login, user, administrator, group
+summary: 'By default, users must be members of the Administrator group on the Windows system on which the 7-Mode Transition Tool is installed. At any time, you can enable login for users who are not members of the Administrators group and who cannot install the tool but are authenticated to use the Windows system on which the tool is installed.'
+---
+= Enabling login for users not part of the Administrator group
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+By default, users must be members of the Administrator group on the Windows system on which the 7-Mode Transition Tool is installed. At any time, you can enable login for users who are not members of the Administrators group and who cannot install the tool but are authenticated to use the Windows system on which the tool is installed.
+
+.Steps
+. Log in to the Windows host using admin privileges.
+. Modify the configuration file of the tool to enable users who are not part of the Administrator group to log in to the tool:
+ .. Open the `\etc\conf\transition-tool.conf` file from the installation directory.
+ .. Set the value of the `tool.login.non.admin.enabled` parameter in the `transition-tool.conf` file to true.
+ .. Save the file.
+. Restart the transition service.
+ .. Click *Start* > *Control Panel* > *System and Services* > *Administrative Tools* > *Services*.
+ .. Right-click the *NetApp 7-Mode Transition Tool* service and click *Stop*.
+ .. Right-click the *NetApp 7-Mode Transition Tool* service again and click *Start*.
+
+*Related information*
+
+xref:task_modifying_default_configuration_settings_of_7mtt.adoc[Modifying the configuration options of the 7-Mode Transition Tool]

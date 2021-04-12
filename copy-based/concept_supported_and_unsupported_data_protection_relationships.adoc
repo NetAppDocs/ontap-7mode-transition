@@ -1,0 +1,42 @@
+---
+permalink: copy-based/concept_supported_and_unsupported_data_protection_relationships.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, data, protection, supported, unsupported, configurations
+summary: 'You can transition a volume that is part of a SnapMirror relationship. However, some data protection and disaster recovery configurations are not supported for transition and therefore you have to perform some manual steps for transitioning these configurations.'
+---
+= Data protection transition: supported and unsupported configurations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can transition a volume that is part of a SnapMirror relationship. However, some data protection and disaster recovery configurations are not supported for transition and therefore you have to perform some manual steps for transitioning these configurations.
+
+== Supported configurations
+
+You can transition volume SnapMirror relationships by using the 7-Mode Transition Tool. You can also transition 7-Mode volumes from a MetroCluster Configuration to a MetroCluster Configuration in ONTAP 8.3 and later supported releases.
+
+== Unsupported configurations
+
+* SnapVault relationships
++
+Volumes that are the source of a SnapVault relationship can be migrated; however, the SnapVault relationship is not transitioned. A volume that is the destination of a SnapVault relationship can be migrated only after the SnapVault backups are stopped.
++
+http://www.netapp.com/us/media/tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
+
+* Qtree SnapMirror relationships
++
+Volumes with qtrees that are the source of a qtree SnapMirror relationship can be transitioned, but the qtree SnapMirror relationship is not transitioned. A volume with a qtree that is the destination of a qtree SnapMirror relationship can be migrated only after the qtree SnapMirror relationship is broken.
+
+* Disaster recovery vFiler unit
++
+Volumes that are the source of a disaster recovery vFiler unit can be migrated; however, the disaster recovery vFiler unit is not transitioned. A volume that is the destination of a disaster recovery vFiler unit can be migrated only after the disaster recovery relationship is deleted.
+
+* NDMP configuration
++
+After the transition is complete, you must manually set up backup policies for the transitioned volumes in ONTAP.
++
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ptbrg/home.html[Data protection using tape backup]
+
+* Synchronous SnapMirror relationships
++
+This feature is not supported in ONTAP; however, the volumes that are part of the relationship can be transitioned.

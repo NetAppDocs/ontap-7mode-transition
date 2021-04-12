@@ -1,0 +1,29 @@
+---
+permalink: install-admin/task_uninstalling_7mtt.html
+sidebar: sidebar
+keywords: ontap, 7, mode, install, uninstall, transition, tool, windows
+summary: 'You can uninstall the 7-Mode Transition Tool by using the Windows Uninstall program utility.'
+---
+= Uninstalling the 7-Mode Transition Tool on a Windows system
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can uninstall the 7-Mode Transition Tool by using the Windows Uninstall program utility.
+
+* You must have completed all in-progress transitions.
++
+IMPORTANT: Installing a newer version or reinstalling the same version of the tool does not allow you to access the transition operations started by the uninstalled instance.
+
+* If the 7-Mode Transition Tool is running, it must be closed.
+
+Java Runtime Environment (JRE) is not removed as part of the uninstallation.
+
+.Steps
+. Click *Start* > *Control Panel* > *Uninstall a program*.
+. Select the 7-Mode Transition Tool from the list of programs and click *Uninstall*.
+. Complete the steps in the wizard to uninstall the 7-Mode Transition Tool.
++
+You can choose to save the project details and logs for troubleshooting purposes.
+
+You must create a backup of the log files if you choose to retain the log files during uninstallation. The 7-Mode Transition Tool installer installs the tool to the same folder and overwrites the log files the next time you run it.

@@ -1,0 +1,75 @@
+---
+permalink: copy-based/task_starting_data_copy_for_a_transition_session.html
+sidebar: sidebar
+keywords: ontap, copy, based, transition, start, data, copy, project
+summary: 'You can initiate a data copy from 7-Mode volumes to ONTAP volumes for a baseline transfer. The baseline transfer starts when the data copy schedules configured in a project becomes active. After the baseline transfer is complete, the ONTAP volumes are updated periodically based on the data copy schedule.'
+---
+= Starting data copy for a transition project
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can initiate a data copy from 7-Mode volumes to ONTAP volumes for a baseline transfer. The baseline transfer starts when the data copy schedules configured in a project becomes active. After the baseline transfer is complete, the ONTAP volumes are updated periodically based on the data copy schedule.
+
+* You must have run a precheck on the project and resolved all errors.
+* You must have configured a dedicated, high-bandwidth, low-latency network between the source and destination systems for data transfer.
++
+NOTE: You can use SnapMirror multipathing to balance the data transfer load between the two paths.
+
+* A data copy schedule must be configured for the session.
+
+If you are transitioning to an existing SVM, the volumes are created during this operation. If you are transitioning to a new SVM, the SVM and its volumes get created during this operation.
+
+SnapMirror relationships are created between 7-Mode and ONTAP volumes.
+
+.Steps
+. Start the data copy:
++
+`*transition start -p _project_name_*`
++
+If the start operation fails and data copy is not started, you must resolve the issues and run the `transition start` command again.
++
+----
+7-Mode Transition Tool>transition start -p project_finance
+
+[1/17 ] Project status checks                                      [      Ok       ]
+[2/17 ] Validating 7-Mode system information                       [      Ok       ]
+[3/17 ] Validating 7-Mode volumes information                      [      Ok       ]
+[4/17 ] Validating Cluster-Mode system information                 [      Ok       ]
+[5/17 ] Validating Cluster-Mode volume information                 [      Ok       ]
+[6/17 ] Validating LIF information                                 [ Notifications ]
+[7/17 ] WAFL prechecks                                             [      Ok       ]
+[8/17 ] UNIX users and groups prechecks                            [   Warnings    ]
+[9/17 ] SnapMirror prechecks                                       [ Notifications ]
+[10/17] NFS prechecks                                              [   Warnings    ]
+[11/17] Networking prechecks                                       [ Notifications ]
+[12/17] CIFS prechecks                                             [   Warnings    ]
+[13/17] Name services prechecks                                    [   Warnings    ]
+[14/17] SAN prechecks                                              [      Ok       ]
+[15/17] Creating Cluster-Mode volumes                              [      Ok       ]
+[16/17] Establishing SnapMirror relationships between the 7-Mode and Cluster-Mode volumes                                                            [      Ok       ]
+[17/17] Initializing SnapMirror relationships between the 7-Mode and Cluster-Mode volumes                                                            [      Ok       ]
+
+Operation summary:
+------------------
+The 'start' operation is completed with warnings and notifications.
+
+ 0  Errors - No action required
+22  Warnings - Need your attention!
+16  Notifications - Please review
+102  Informational messages
+
+Do you want to see a detailed report {yes, no} [yes]:
+
+22 Warnings:
+------------
+20362: Checking whether 7-Mode UNIX groups' names are in use in the Vserver 'vs2'.  [    Warning    ]
+  > The following 7-Mode UNIX groups' names are already in use in the Vserver 'vs2'.
+  > AFFECTED-OBJECTS: { daemon }
+
+20372: Checking whether 7-Mode UNIX groups' ids are in use in the Vserver 'vs2'.    [    Warning    ]
+  > The following 7-Mode UNIX groups' ids are already in use in the Vserver 'vs2'.
+  > AFFECTED-OBJECTS: { daemon }
+----
++
+The project moves to the copy-baseline state. After the baseline transfer is completed, the project moves to the copy-update state.

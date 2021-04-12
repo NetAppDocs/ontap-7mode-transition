@@ -1,0 +1,13 @@
+---
+permalink: snapmirror/reference_trademark.html
+sidebar: sidebar
+keywords: ontap, 7, mode, transition, snapmirror, trademark
+summary: 'Trademark information for 7-Mode Data Transition Using SnapMirror Technology.'
+---
+= Trademark
+:icons: font
+:imagesdir: ../media/
+
+NETAPP, the NETAPP logo, and the marks listed on the NetApp Trademarks page are trademarks of NetApp, Inc. Other company and product names may be trademarks of their respective owners.
+
+https://www.netapp.com/company/legal/trademarks/
