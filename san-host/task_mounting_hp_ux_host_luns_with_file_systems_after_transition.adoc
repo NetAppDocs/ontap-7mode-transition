@@ -50,7 +50,3 @@ Filesystem          kbytes     used     avail     used   Mounted on
 /dev/vg01/lvol1   23592960   1050952   22189796    5%   /mnt/qa/vg01
 /dev/vg01/lvol2   23592960    588480   22645044    3%   /mnt/qa/vg02
 ----
-
-*Related information*
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

@@ -1,9 +1,7 @@
 section: san-host
 title: SAN host transition and remediation
+url: "/san-host/index.html"
 entries:
-- title: SAN host transition and remediation
-  url: "/san-host/index.html"
-  entries:
   - title: ONTAP target releases supported by the 7-Mode Transition Tool
     url: "/san-host/concept_ontap_target_releases_supported_by_7mtt.html"
   - title: 7-Mode Transition Tool transition phases
