@@ -1,9 +1,7 @@
 section: install-admin
 title: 7-Mode Transition Tool installation and administration
+url: "/install-admin/index.html"
 entries:
-- title: 7-Mode Transition Tool installation and administration
-  url: "/install-admin/index.html"
-  entries:
   - title: Transition to clustered ONTAP by using the 7-Mode Transition Tool
     url: "/install-admin/concept_transition_to_clustered_ontap_using_7mtt.html"
     entries:

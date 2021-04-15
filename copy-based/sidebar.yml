@@ -1,9 +1,7 @@
 section: copy-based
 title: Copy-based transition
+url: "/copy-based/index.html"
 entries:
-- title: Copy-based transition
-  url: "/copy-based/index.html"
-  entries:
   - title: Transition overview
     url: "/copy-based/concept_transition_overview.html"
     entries:

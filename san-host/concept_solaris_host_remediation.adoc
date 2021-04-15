@@ -17,7 +17,7 @@ The following scenarios are not supported for any transition workflow (support f
 +
 You can set up a SAN boot LUN to work in a Veritas dynamic multipathing (DMP) environment or a Solaris MPxIO environment by running the Solaris Host Utilities and using the FC protocol. The method you use to set up a SAN boot LUN can vary, depending on your volume manager and file system.
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMP1148981[Solaris Host Utilities 6.2 Installation and Setup Guide]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2748974[Solaris Host Utilities 6.2 Installation and Setup Guide]
 
 * Solaris host clustering transition
 * Veritas configuration

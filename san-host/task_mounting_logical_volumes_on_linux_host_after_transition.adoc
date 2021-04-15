@@ -11,7 +11,7 @@ summary: 'After the transition from ONTAP operating in 7-Mode to clustered Data 
 [.lead]
 After the transition from ONTAP operating in 7-Mode to clustered Data ONTAP, your logical volumes are offline. You must mount those logical volumes for your LUNs to be accessible to your hosts.
 
-If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
+If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the link:https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
 
 * For copy-based transitions (CBTs), perform these steps after completing the Storage Cutover operation in the 7-Mode Transition Tool (7MTT).
 * For CFTs, perform these steps after the Import Data & Configuration operation in the 7MTT.
@@ -80,7 +80,3 @@ If the mount points are defined in the `etc/fstab` file, you can use the `mount 
 . Verify the mount points:
 +
 `*mount*`
-
-*Related information*
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

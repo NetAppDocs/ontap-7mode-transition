@@ -56,7 +56,3 @@ NOTE: You must restart the 7-Mode Transition Tool service after changing the por
 * All SVM data LIFs must be able to communicate with the 7-Mode Transition Tool port 8088 or the port specified by the `tool.http.port` parameter in the `transition-tool.conf` file.
 +
 NOTE: You must verify that firewalls do not block this traffic.
-
-*Related information*
-
-https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/install-admin/index.html[7-Mode Transition Tool installation and administration]

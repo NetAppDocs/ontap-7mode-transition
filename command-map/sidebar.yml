@@ -1,14 +1,12 @@
 section: command-map
-title: Command map for 7-mode administrators
+title: Command map for 7-Mode administrators
+url: "/command-map/index.html"
 entries:
-- title: Command map for 7-Mode administrators
-  url: "/command-map/index.html"
-  entries:
-  - title: How 7-Mode commands map to ONTAP commands
-    url: "/command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html"
-  - title: How 7-Mode options map to ONTAP commands
-    url: "/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html"
-  - title: How 7-Mode configuration files map to clustered Data ONTAP commands
-    url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html"
-  - title: How to interpret the clustered Data ONTAP commands, options, and configuration files maps for 7-Mode administrators
-    url: "/command-map/concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.html"
+- title: How 7-Mode commands map to ONTAP commands
+  url: "/command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html"
+- title: How 7-Mode options map to ONTAP commands
+  url: "/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html"
+- title: How 7-Mode configuration files map to clustered Data ONTAP commands
+  url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html"
+- title: How to interpret the clustered Data ONTAP commands, options, and configuration files maps for 7-Mode administrators
+  url: "/command-map/concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.html"
