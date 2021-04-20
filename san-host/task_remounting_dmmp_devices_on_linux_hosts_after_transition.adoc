@@ -11,7 +11,7 @@ summary: 'After transition from ONTAP operating in 7-Mode to clustered Data ONTA
 [.lead]
 After transition from ONTAP operating in 7-Mode to clustered Data ONTAP, you must remount your DMMP devices for RHEL 5 and RHEL 6. Your 7-Mode LUNs are not accessible to the host until your DMMP devices are mounted.
 
-If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
+If you are doing a copy-free transition (CFT), procedures for vol rehost must be complete. See the link:https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
 
 * For copy-based transitions, perform these steps after completing the Storage cutover operation in the 7-Mode Transition Tool (7MTT).
 * For CFTs perform these steps after the Import Data & Configuration operation in the 7MTT is complete.
@@ -78,9 +78,3 @@ If the mount points are defined in the `/etc/fstab` file, you can run the `mount
 . Verify the mount points:
 +
 `*mount*`
-
-*Related information*
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-cft/home.html[Copy-free transition]
-
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-dctg/home.html[Copy-based transition]

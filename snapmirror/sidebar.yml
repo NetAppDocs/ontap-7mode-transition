@@ -1,9 +1,7 @@
 section: snap-mirror
 title: 7-Mode data transition using SnapMirror
+url: "/snapmirror/index.html"
 entries:
-- title: 7-Mode data transition using SnapMirror
-  url: "/snapmirror/index.html"
-  entries:
   - title: Transitioning 7-Mode volumes using SnapMirror
     url: "/snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html"
     entries:

@@ -1,9 +1,7 @@
 section: copy-free
 title: Copy-free transition
+url: "/copy-free/index.html"
 entries:
-- title: Copy-free transition
-  url: "/copy-free/index.html"
-  entries:
   - title: Transition overview
     url: "/copy-free/concept_transition_overview.html"
     entries:

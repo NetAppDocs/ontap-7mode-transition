@@ -15,8 +15,8 @@ The _7-Mode Transition Tool SAN Host Transition and Remediation Guide_ provides 
 
 *Related information*
 
-xref:/copy-based/index.html[Copy-based transition]
+xref:../copy-based/index.html[Copy-based transition]
 
-xref:/copy-free/index.html[Copy-free transition]
+xref:../copy-free/index.html[Copy-free transition]
 
-xref:/install-admin/index.html[7-Mode Transition Tool installation and administration]
+xref:../install-admin/index.html[7-Mode Transition Tool installation and administration]

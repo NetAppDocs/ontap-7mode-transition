@@ -1,9 +1,7 @@
 section: inventory-collect
 title: Host and Storage Information Collection Guide
+url: "/inventory-collect/index.html"
 entries:
-- title: Host and storage transition information collection
-  url: "/inventory-collect/index.html"
-  entries:
   - title: Collecting storage and host inventory information
     url: "/inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html"
     entries:
