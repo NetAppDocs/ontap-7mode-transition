@@ -8,6 +8,10 @@ summary: 'You must set up the cluster before transitioning a 7-Mode system and e
 :icons: font
 :imagesdir: ../media/
 
+//
+//updated the networking link to github
+//
+
 [.lead]
 You must set up the cluster before transitioning a 7-Mode system and ensure that the cluster meets requirements such as setting up LIFs and verifying network connectivity for transition.
 
@@ -57,7 +61,7 @@ system7mode is alive
 
 For multipathing, you must have two intercluster LIFs on each node.
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]
+https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management]
 
 *Related information*
 

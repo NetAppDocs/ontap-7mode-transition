@@ -8,12 +8,16 @@ summary: 'You can transition 7-Mode volumes in a NAS and SAN environment to clus
 :icons: font
 :imagesdir: ../media/
 
+//
+//update rn and networking links to gh
+//
+
 [.lead]
 You can transition 7-Mode volumes in a NAS and SAN environment to clustered Data ONTAP volumes by using clustered Data ONTAP SnapMirror commands. You must then set up the protocols, services, and other configuration on the cluster after the transition is complete.
 
 *Recommendation:* You should use the 7-Mode Transition Tool for copy-based transition to transition 7-Mode volumes because the tool provides prechecks to verify both 7-Mode and the cluster in every step of the migration process, which helps you to avoid many potential issues. The tool significantly simplifies the migration of all protocols, network, and services configurations along with the data migration.
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+http://docs.netapp.com/us-en/ontap-7mode-transition/releasenotes.html[7-Mode Transition Tool Release Notes]
 
 This procedure provides the high-level tasks you have to perform for transition using SnapMirror.
 
@@ -27,10 +31,10 @@ After data migration finishes, you must perform the following tasks:
 
 * Optional: Create a data LIF on the SVM to enable client access.
 +
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management].
+https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management].
 
 * Configure protocols, networking, and services on the SVM.
- ** https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management].
+ ** https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management].
  ** http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-cifs/home.html[SMB/CIFS management]
  ** https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
 * Create igroups and map LUNs
