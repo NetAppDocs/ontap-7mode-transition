@@ -25,10 +25,6 @@ You can use host-based transition methods to transition traditional volumes.
 +
 http://www.netapp.com/us/media/tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
 
-* SnapLock volumes
-+
-The transition of SnapLock volumes is supported for all of the latest ONTAP releases.
-
 * FlexCache volumes
 
 == Volume states
