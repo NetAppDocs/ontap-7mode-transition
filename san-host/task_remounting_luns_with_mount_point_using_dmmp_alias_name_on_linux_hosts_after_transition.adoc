@@ -8,12 +8,16 @@ summary: 'After transition from ONTAP operating in 7-Mode to clustered Data ONTA
 :icons: font
 :imagesdir: ../media/
 
+//
+//Fix copy-free link
+//
+
 [.lead]
 After transition from ONTAP operating in 7-Mode to clustered Data ONTAP, you must remount your LUNs with mount points. The7-Mode volumes are offline and the 7-Mode LUNs are not accessible to your hosts.
 
 If you are doing a copy-free transition (CFT), procedures for `vol rehost` must be complete.
 
-See the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
+See the link:https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for details.
 
 * For copy-based transitions (CBTs), perform these steps after completing the Storage Cutover operation in the 7MTT.
 * For CFTs, perform these steps after the Import Data & Configuration operation in the 7MTT.
