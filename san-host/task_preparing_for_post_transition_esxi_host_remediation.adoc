@@ -8,6 +8,10 @@ summary: 'After the 7-Mode Transition Tool \(7MTT\) transition is complete, you 
 :icons: font
 :imagesdir: ../media/
 
+//
+//Fix copy=free link
+//
+
 [.lead]
 After the 7-Mode Transition Tool (7MTT) transition is complete, you must perform various ESXi host remediation tasks. There are several steps you must complete before you can perform those tasks.
 
@@ -41,4 +45,4 @@ NOTE: You must run this command for each of your storage virtual machines (SVMs)
 . Verify that zoning is appropriate for the new clustered Data ONTAP target.
 . If you are doing a copy-free transition (CFT), run `vol rehost`.
 +
-See the link:https://review.docs.netapp.com/us-en/ontap-7mode-transition_catalyst-adoc/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for `vol rehost` procedures.
+See the link:https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/index.html[7-Mode Transition Tool Copy-Free Transition Guide] for `vol rehost` procedures.

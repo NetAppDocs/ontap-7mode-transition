@@ -4,9 +4,14 @@ sidebar: sidebar
 keywords: ontap, transition, copy, free, port, requirements, 7, mode, tool
 summary: 'The 7-Mode Transition Tool communicates with the 7-Mode system and the cluster over certain ports. You must ensure that these ports on the 7-Mode system and the cluster are open to allow communication with the 7-Mode Transition Tool.'
 ---
+
 = Port requirements for communicating with the 7-Mode Transition Tool
 :icons: font
 :imagesdir: ../media/
+
+//
+//add link to github for 7MTT install and admin
+//
 
 [.lead]
 The 7-Mode Transition Tool communicates with the 7-Mode system and the cluster over certain ports. You must ensure that these ports on the 7-Mode system and the cluster are open to allow communication with the 7-Mode Transition Tool.
@@ -38,4 +43,4 @@ NOTE: You must verify that firewalls do not block this traffic.
 
 *Related information*
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-7mtt-isg/home.html[7-Mode Transition Tool installation and administration]
+http://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/index.html[7-Mode Transition Tool installation and administration]

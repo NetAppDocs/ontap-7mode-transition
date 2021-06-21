@@ -8,6 +8,10 @@ summary: 'You must be aware of certain restrictions for transitioning 7-Mode vol
 :icons: font
 :imagesdir: ../media/
 
+//
+//update snaplock bullet in volume types as per BURT 1390606
+//
+
 [.lead]
 You must be aware of certain restrictions for transitioning 7-Mode volumes. Some of the restrictions are due to features that are not supported in ONTAP. For some restrictions, you can perform a corrective action that enables you to continue with the transition.
 
@@ -20,10 +24,6 @@ The following types of volumes are not supported for transition:
 You can use host-based transition methods to transition traditional volumes.
 +
 http://www.netapp.com/us/media/tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
-
-* SnapLock volumes
-+
-The transition of SnapLock volumes is supported to ONTAP releases 9.0 through 9.5.
 
 * FlexCache volumes
 

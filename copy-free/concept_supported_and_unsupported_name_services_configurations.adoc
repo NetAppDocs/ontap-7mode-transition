@@ -8,6 +8,10 @@ summary: 'You must be aware of the name services configurations that are transit
 :icons: font
 :imagesdir: ../media/
 
+//
+//add networking github link
+//
+
 [.lead]
 You must be aware of the name services configurations that are transitioned by the 7-Mode Transition Tool. Some name services configurations are not transitioned to ONTAP because either these are not supported in ONTAP or these must be manually transitioned.
 
@@ -54,4 +58,4 @@ xref:task_customizing_configurations_for_transition.adoc[Customizing the transit
 
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]
+https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management]

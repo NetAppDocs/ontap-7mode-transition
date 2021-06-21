@@ -8,6 +8,10 @@ summary: 'You must be aware of the SAN configurations that are transitioned by t
 :icons: font
 :imagesdir: ../media/
 
+//
+//10-Jun-2021, added networking github repo link
+//
+
 [.lead]
 You must be aware of the SAN configurations that are transitioned by the 7-Mode Transition Tool. You should also be aware of the 7-Mode SAN features that are not supported in ONTAP, so that you can take any necessary actions before the transition.
 
@@ -74,4 +78,6 @@ You must manually configure igroups that are bound to a portset after transition
 
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management/ONTAP 9.7 and earlier]
+
+https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management/ONTAP 9.8 and later]

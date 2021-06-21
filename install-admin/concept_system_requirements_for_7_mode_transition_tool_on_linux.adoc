@@ -8,10 +8,14 @@ summary: 'You must ensure that the Linux host has the required configuration to 
 :icons: font
 :imagesdir: ../media/
 
+//
+//update release notes to github link
+//
+
 [.lead]
 You must ensure that the Linux host has the required configuration to install and run the 7-Mode Transition Tool.
 
-Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[Release Notes] for the latest information about supported hosts and known issues.
+Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.com/us-en/ontap-7mode-transition/releasenotes.html[Release Notes] for the latest information about supported hosts and known issues.
 
 == Hardware requirements
 
