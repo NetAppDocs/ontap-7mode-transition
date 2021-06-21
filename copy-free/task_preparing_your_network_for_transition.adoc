@@ -8,6 +8,10 @@ summary: 'You must prepare the data network of the cluster for transition by cre
 :icons: font
 :imagesdir: ../media/
 
+//
+//add networking github link
+//
+
 [.lead]
 You must prepare the data network of the cluster for transition by creating logical ports (VLANs and interface groups).
 
@@ -34,4 +38,4 @@ NOTE: IPv6 addresses cannot be transitioned and must be configured manually post
 
 *Related information*
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management]
+https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management]

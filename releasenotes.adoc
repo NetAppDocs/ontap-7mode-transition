@@ -6,6 +6,6 @@ summary: Describes new features, upgrade notes, fixed issues, known limitations,
 ---
 = 7-Mode Transition Tool Release Notes
 
-The link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2875292[7-Mode Transition Release Notes] describe new features, upgrade notes, fixed issues, known limitations, and known issues.
+The link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2877318[7-Mode Transition Release Notes] describe new features, upgrade notes, fixed issues, known limitations, and known issues.
 
 You are required to sign on to the NetApp Support Site to access the Release Notes.
