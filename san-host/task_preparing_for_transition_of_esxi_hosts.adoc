@@ -1,8 +1,8 @@
 ---
 permalink: san-host/task_preparing_for_transition_of_esxi_hosts.html
 sidebar: sidebar
-keywords: transition, esxi, host
-summary: 'You must complete several prerequisite tasks before you use the 7-Mode Transition Tool \(7MTT\) to transition your ESXi hosts from Data ONTAP operating in 7-Mode to ONTAP.'
+keywords: transition, esxi, host, initiator, hba driver, collect assess feature
+summary: Tasks to complete before you transition ESXi hosts from Data ONTAP
 ---
 = Preparing for transition of ESXi hosts
 :icons: font
@@ -10,6 +10,7 @@ summary: 'You must complete several prerequisite tasks before you use the 7-Mode
 
 //
 //Fix copy based/free links
+//25-June-2021 Added keywords and tweaked summary
 //
 
 [.lead]
