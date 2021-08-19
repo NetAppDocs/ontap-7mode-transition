@@ -10,6 +10,7 @@ summary: 'Transitioning to clustered ONTAP involves identifying your current env
 
 //
 //10-Jun-2021, updated the release notes link
+// fix broken RN link as per BURT 1421896
 //
 
 [.lead]
@@ -17,7 +18,7 @@ Transitioning to clustered ONTAP involves identifying your current environment, 
 
 Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
 
-link:releasenotes.html[7-Mode Transition Tool Release Notes]
+link:https://docs.netapp.com/us-en/ontap-7mode-transition/releasenotes.html[7-Mode Transition Tool Release Notes^]
 
 You must first collect information about the current environment, including both the current storage environment as well as the hosts and applications. After collecting the storage inventory, you can assess the current features and functionality that are used and identify any differences in the ONTAP version selected. You can use 7-Mode Transition Tool to perform these tasks.
 
