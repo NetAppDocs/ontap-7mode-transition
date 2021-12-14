@@ -13,7 +13,7 @@ Release support for ONTAP transition target clusters depends on the transition m
 
 Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+https://docs.netapp.com/us-en/ontap-7mode-transition/releasenotes.html[7-Mode Transition Tool Release Notes]
 
 Copy-based transitions are supported to these ONTAP target releases.
 
