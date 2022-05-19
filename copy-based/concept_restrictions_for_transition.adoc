@@ -38,6 +38,6 @@ However, you can transition all of the volumes in a vFiler unit by selecting the
 +
 Transitioning such a volume causes the qtree to become inaccessible.
 
-* Transitioned volumes cannot be converted to FlexGroup volumes.
-
 The precheck operation displays information about some of these restrictions.
+
+// GH 13 remove bullet "Transitioned volumes cannot be converted to FlexGroup volumes."
