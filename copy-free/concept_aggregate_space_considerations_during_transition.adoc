@@ -1,7 +1,7 @@
 ---
 permalink: copy-free/concept_aggregate_space_considerations_during_transition.html
 sidebar: sidebar
-keywords: ontap, transition, copy, free, aggregate, space, requirements
+keywords: transition, copy, free, aggregate, space, requirements
 summary: 'Before transition, you must ensure that the 7-Mode aggregates have adequate free space. The 7-Mode Transition Tool performs various space checks on the aggregates based on the physical space, logical space, space occupied by Snapshot copies, and space guarantee settings. You must also be aware of the space considerations with Flash Pool aggregates.'
 ---
 = Aggregate space requirements for transition
