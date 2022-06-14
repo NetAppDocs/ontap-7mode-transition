@@ -16,6 +16,14 @@ Transitioning a stand-alone volume involves creating a SnapMirror relationship, 
 +
 xref:task_preparing_for_transition.adoc[Preparing for transition]
 
+NetApp recommends you provision the destination ONTAP volume to match the attributes of the 7-mode source volume. Some of the attributes to match include:
+
+* Volume size: The ONTAP volume must be at least the size of the 7-Mode volume.
+* Language: The ONTAP volume setting should match the setting of the 7-Mode volume.
+
+The 7-Mode Transition Tool automatically provisions the ONTAP volume with attributes that match the 7-Mode volume.
+
+
 .Steps
 . Copy data from the 7-Mode volume to the clustered Data ONTAP volume:
  .. If you want to configure the TCP window size for the SnapMirror relationship between the 7-Mode system and the SVM, create a SnapMirror policy of type `async-mirror` with the `window-size-for-tdp-mirror` option.
