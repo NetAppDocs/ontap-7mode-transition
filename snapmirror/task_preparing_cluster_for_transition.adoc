@@ -8,10 +8,6 @@ summary: 'You must set up the cluster before transitioning a 7-Mode system and e
 :icons: font
 :imagesdir: ../media/
 
-//
-//updated the networking link to github
-//
-
 [.lead]
 You must set up the cluster before transitioning a 7-Mode system and ensure that the cluster meets requirements such as setting up LIFs and verifying network connectivity for transition.
 
@@ -38,7 +34,7 @@ You can set up local LIFs that are in the default IPspace or intercluster LIFs o
 `*network interface create -vserver _svm_name_ -lif _intercluster_lif_ -role intercluster -home-node _home_node_ -home-port _home_port_ -address _ip_address_ -netmask _netmask_*`
 +
 ----
-cluster1::> network interface create -vserver cluster1-01 -lif intercluster_lif -role intercluster -home-node cluster1-01 -home-port e0c -address 192.0.2.130 -netmask 255.255.255.0
+cluster1::> network interface create -vserver cluster1 -lif intercluster_lif -role intercluster -home-node cluster1-01 -home-port e0c -address 192.0.2.130 -netmask 255.255.255.0
 ----
 
  .. Create a static route for the intercluster LIF:
@@ -63,8 +59,13 @@ For multipathing, you must have two intercluster LIFs on each node.
 
 https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management]
 
-*Related information*
+.Related information
 
 xref:task_creating_a_transition_peering_relationship.adoc[Creating a transition peer relationship]
 
 https://mysupport.netapp.com/site/docs-and-kb[NetApp Documentation: Product Library A-Z]
+
+//
+//updated the networking link to github
+//16-JUN-2022 GH-17
+//
