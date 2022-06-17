@@ -59,7 +59,7 @@ For multipathing, you must have two intercluster LIFs on each node.
 
 https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management]
 
-*Related information*
+.Related information
 
 xref:task_creating_a_transition_peering_relationship.adoc[Creating a transition peer relationship]
 
