@@ -13,7 +13,7 @@ You should be aware of the requirements for 7-Mode systems, clusters, ONTAP rele
 
 Be sure to consult the current 7-Mode Transition Tool _Release Notes_ for the latest information about supported target releases and known issues.
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-72c-rn/home.html[7-Mode Transition Tool Release Notes]
+link:https://docs.netapp.com/us-en/ontap-7mode-transition/releasenotes.html[7-Mode Transition Tool Release Notes]
 
 * *Platform models*
 +
@@ -66,3 +66,4 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware[NetApp 
 After connecting the 7-Mode disk shelves to the target cluster nodes during the transition, you must use Config Advisor to verify the cabling.
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor[NetApp Downloads: Config Advisor]
+//link updated for 7mtt 3.5.0 BURT 1484474 Mairead July 2022
