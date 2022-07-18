@@ -66,4 +66,4 @@ https://mysupport.netapp.com/site/downloads/firmware/disk-shelf-firmware[NetApp 
 After connecting the 7-Mode disk shelves to the target cluster nodes during the transition, you must use Config Advisor to verify the cabling.
 +
 https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor[NetApp Downloads: Config Advisor]
-//link updated for 7mtt 3.5.0 BURT 1484474 Mairead July 2022
+//link updated for 7MTT 3.5.0 BURT 1484474 Mairead July 2022
