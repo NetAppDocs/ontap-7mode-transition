@@ -45,13 +45,13 @@ Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.co
   *** Windows 10 Professional
 +
 NOTE: You can use a Windows virtual machine that meets the required software requirements and hardware requirements to install the 7-Mode Transition Tool.
-* 64-bit Oracle Java Runtime Environment (JRE) 1.8 update 144
+* 64-bit Oracle Java Runtime Environment (JRE) 1.8 update 331
 +
-NOTE: If the Windows host does not have JRE or has 32-bit JRE installed, the 7-Mode Transition Tool installer automatically installs 64-bit JRE 1.8 update 144. If an earlier version of 64-bit JRE is installed, the installer automatically updates JRE to JRE 1.8 update 144.
+NOTE: If the Windows host does not have JRE or has 32-bit JRE installed, the 7-Mode Transition Tool installer automatically installs 64-bit JRE 1.8 update 331. If an earlier version of 64-bit JRE is installed, the installer automatically updates JRE to JRE 1.8 update 331.
 +
 When JRE is updated automatically, the other applications that require earlier versions of JRE might be affected.
 +
-NOTE: With JRE versions 1.8 update 46 or later (including JRE 1.8 update 144), for the 7-Mode Transition Tool to communicate with Data ONTAP operating in 7-Mode systems and ONTAP systems, the SSL key length on the Data ONTAP operating in 7-Mode systems and ONTAP systems must be at least 1024.
+NOTE: With JRE versions 1.8 update 46 or later (including JRE 1.8 update 331), for the 7-Mode Transition Tool to communicate with Data ONTAP operating in 7-Mode systems and ONTAP systems, the SSL key length on the Data ONTAP operating in 7-Mode systems and ONTAP systems must be at least 1024.
 +
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/7MTT%3A_How_to_resolve_TLS_or_SSL_communication_issue[7MTT: How to resolve TLS or SSL communication issue]
 
@@ -99,3 +99,4 @@ Every time you install a new version of the tool, you must clear the browser cac
 *Related information*
 
 https://mysupport.netapp.com/NOW/products/interoperability[NetApp Interoperability]
+//mairead 7MTT 3.5.0 30th june2022
