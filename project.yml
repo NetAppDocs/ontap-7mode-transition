@@ -22,6 +22,11 @@ sidebar:
     - section: san-host
     - title: Legal notices
       url: /reference_legal_notices.html
+      
+product-family: 
+  name: ONTAP
+  repo: ontap-family
+  sidebar_label: All ONTAP product documentation
 
 homepage:
   tiles:
