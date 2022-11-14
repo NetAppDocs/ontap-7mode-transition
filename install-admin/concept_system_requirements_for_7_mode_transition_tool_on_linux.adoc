@@ -33,7 +33,7 @@ Be sure to consult the current 7-Mode Transition Tool link:http://docs.netapp.co
 +
 NOTE: You can use a Linux virtual machine that meets the required software and hardware requirements to install the 7-Mode Transition Tool.
 
-* 64-bit Oracle JRE 1.8 update 45
+* 64-bit Oracle JRE 1.8 update 331
 * 7-zip utility (`rpmforge-release-0.3.6-1.el5.rf.x86_64.rpm`)
 
 NOTE: JRE 1.8 and the 7-zip utility must be installed on the Linux system before configuring the 7-Mode Transition Tool.
