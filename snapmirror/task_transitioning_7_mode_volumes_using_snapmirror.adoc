@@ -13,7 +13,8 @@ summary: 'You can transition 7-Mode volumes in a NAS and SAN environment to clus
 //
 
 [.lead]
-Beginning with ONTAP 9.12.1, you can no longer transition 7-Mode volumes using SnapMirror. //BURT 1493828
+Beginning with ONTAP 9.12.1, you can no longer transition 7-Mode volumes using SnapMirror technology. 
+//BURT 1493828 Nov 29 2022
 
 However, for ONTAP 9.11.1 and earlier releases you can transition 7-Mode volumes in a NAS and SAN environment to clustered Data ONTAP volumes by using clustered Data ONTAP SnapMirror commands. You must then set up the protocols, services, and other configuration on the cluster after the transition is complete.
 
