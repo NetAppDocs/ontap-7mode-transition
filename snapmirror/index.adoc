@@ -9,4 +9,4 @@ summary: "Describes the transition of data from 7-Mode systems to ONTAP by using
 :imagesdir: ../media/
 
 [.lead]
-Describes the transition of data from 7-Mode systems to ONTAP by using SnapMirror commands.
+Describes the transition of data from 7-Mode systems to ONTAP by using SnapMirror commands. 
