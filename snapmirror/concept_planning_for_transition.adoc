@@ -21,6 +21,9 @@ SnapMirror relationships between 7-Mode and clustered ONTAP volumes are supporte
 * ONTAP 9.7P2 and later 9.7 releases
 * ONTAP 9.6P7 and later 9.6 releases
 * ONTAP 9.0 to ONTAP 9.5
+* ONTAP 9.9.1 and later releases
+* ONTAP 9.10.1 and later releases 
+
 
 You can use SnapMirror to transition data in the following scenarios:
 
