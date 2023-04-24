@@ -12,8 +12,8 @@ summary: 'You can transition 7-Mode SnapLock volumes to SnapLock volumes created
 To transition 7-Mode SnapLock volumes to ONTAP 9, you must be aware of these requirements and guidelines.
 
 * Transition of 7-Mode SnapLock volumes is not supported if the SnapLock volumes contain LUNs.
-* You can transition 7-Mode SnapLock Enterprise volumes to SnapLock Enterprise volumes in any ONTAP 9.0+ release except 9.6.
-* You can transition 7-Mode SnapLock Compliance volumes only to SnapLock Compliance volumes in any ONTAP 9.0+ release except 9.6.
+* You can transition 7-Mode SnapLock Enterprise volumes to SnapLock Enterprise volumes in any ONTAP 9 release, except for ONTAP 9.6.
+* You can transition 7-Mode SnapLock Compliance volumes to SnapLock Compliance volumes in any ONTAP 9 release, except for ONTAP 9.6.
 * When transitioning a 7-Mode volume SnapMirror relationship, you can use staggered transition (transition secondary first and then primary) only for SnapLock Enterprise volumes.
 +
 SnapMirror disaster recovery (DR) relationship between 7-Mode primary volumes and ONTAP secondary volumes is supported only for SnapLock Enterprise volumes, but not for SnapLock Compliance volumes.
@@ -26,9 +26,9 @@ xref:task_transitioning_a_volume_snapmirror_relationship_in_parallel.adoc[Transi
 
 * Starting with ONTAP 9.10.1, SnapLock and non-SnapLock volumes can be created in the same aggregate.
 +
-To transition 7-Mode SnapLock volumes to ONTAP 9.10.1+, the ONTAP volumes must be created manually with the `-snaplock-type {non-snaplock|compliance|enterprise}` flag. After manual volume creation, manage the transition with The 7-Mode Transition Tool.
+To transition 7-Mode SnapLock volumes to ONTAP 9.10.1 or later, you must manually create the ONTAP volumes with the `-snaplock-type {non-snaplock|compliance|enterprise}` flag. After manually creating the volumes, manage the transition with the 7-Mode Transition Tool.
 +
-If the 7-Mode Transition Tool creates the volume on ONTAP 9.10.1+, the volume is not created as a SnapLock volume and this results in a failed SnapMirror baseline.
+If you use the 7-Mode Transition Tool to create a volume in ONTAP 9.10.1 or later, the volume is not created as a SnapLock volume and this results in a failed SnapMirror baseline.
 
 
 *Related information*
