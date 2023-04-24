@@ -36,5 +36,4 @@ If the 7-Mode Transition Tool creates the volume on ONTAP 9.10.1+, the volume is
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[Archive and compliance using SnapLock technology^]
 
 // 2023-03-03, GH issue #27
-// 2023-03-22, GH issue #27
 // 2023-03-30, GH issue #27
