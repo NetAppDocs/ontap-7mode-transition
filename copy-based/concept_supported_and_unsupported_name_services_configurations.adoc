@@ -56,6 +56,6 @@ You must manually configure the following LDAP options on the SVMs:
 
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[NFS management]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html[Network and LIF management/ONTAP 9.7 and earlier]
+https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management]
 
-https://docs.netapp.com/us-en/ontap/networking/index.html[Network and LIF management/ONTAP 9.8 and later]
+// 2023-05-12, GH issue #32
