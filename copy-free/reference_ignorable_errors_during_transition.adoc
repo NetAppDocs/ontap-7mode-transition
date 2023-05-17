@@ -69,14 +69,14 @@ Qtree export rules are present in the 7-Mode system.
 
 Acknowledging this error means that you have understood the differences in the qtree export rules between Data ONTAP operating in 7-Mode and ONTAP. You might have to perform some manual steps after the NFS exports rules are applied by the 7-Mode Transition Tool.
 
-https://kb.netapp.com/support/index?page=content&id=8010371[NetApp KB Article 8010371:7MTT Precheck 10111 - Transitioning 7-Mode volumes that have qtree-level exports]
+https://kb.netapp.com/onprem/ontap/da/NAS/7MTT_Precheck_10111_-_How_to_transition_7-Mode_volumes_that_have_qtree_level_exports[7MTT Precheck 10111 - Transitioning 7-Mode volumes that have qtree-level exports]
 
 a|
 `ignore-configuration-limits-check`
 a|
 Objects and configurations to be transitioned exceed a certain limit.The storage cutover can take a long time and you must prepare for the downtime.
 
-https://kb.netapp.com/support/index?page=content&id=3014882[NetApp KB Article 3014882: Considerations for reducing the storage cutover time during Copy-Free Transition]
+https://kb.netapp.com/onprem/ontap/os/Storage_cutover_time_considerations_for_Copy-Free_Transition[Considerations for reducing the storage cutover time during Copy-Free Transition]
 
 a|
 `ignore-cifs-ad-domain-mismatch`
@@ -174,3 +174,5 @@ Some of the transitioned aggregates are offline.
 a|
 All of the offline aggregates are brought online.
 |===
+
+// 2023-05-12, GH issue #32
