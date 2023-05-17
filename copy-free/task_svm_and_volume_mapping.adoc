@@ -13,7 +13,7 @@ You should map each 7-Mode controller in the HA pair to a target SVM. If you hav
 
 You must have created the SVMs on the target cluster.
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html[Cluster management using System Manager]
+https://docs.netapp.com/us-en/ontap/concept_administration_overview.html[Cluster management with System Manager]
 
 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[System administration]
 
@@ -64,3 +64,5 @@ By default, the target clustered Data ONTAP volume has the same name as the 7-Mo
 . Click *Next*.
 +
 The Networking screen is displayed.
+
+// 2023-05-12, GH issue #32
