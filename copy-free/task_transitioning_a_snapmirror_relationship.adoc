@@ -19,4 +19,6 @@ After transitioning the primary and secondary HA pairs, you must manually set up
 
 *Related information*
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help/GUID-DF04A607-30B0-4B98-99C8-CB065C64E670.html[Cluster management using System Manager]
+https://docs.netapp.com/us-en/ontap/concept_administration_overview.html[Cluster management with System Manager]
+
+// 2023-05-12, GH issue #32
