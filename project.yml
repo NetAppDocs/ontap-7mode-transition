@@ -26,8 +26,7 @@ sidebar:
 product-family: 
   name: ONTAP
   repo: ontap-family
-  sidebar_label: All ONTAP product documentation
-
+  
 homepage:
   tiles:
     - title: Get started
