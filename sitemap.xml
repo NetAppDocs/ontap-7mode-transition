@@ -1,0 +1,3645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_7mtt_transition_phases.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_aggregate_space_considerations_during_transition.html</loc>
+        
+      
+      <lastmod>2022-06-07T20:20:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_aix_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_cifs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_cifs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_collecting_and_assessing_inventory_information.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_collecting_and_assessing_inventory_information.html</loc>
+        
+      
+      <lastmod>2022-07-18T11:43:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html</loc>
+        
+      
+      <lastmod>2021-06-14T00:46:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_comparison_of_copy_free_transition_and_copy_based_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_configure_recommended_settings_for_esxi_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_chain_of_custody_verification_for_7_mode_snaplock_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_deduplication_and_compression.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_flexclone_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_local_users_and_groups_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_considerations_for_local_users_and_groups_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_quotas.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_considerations_for_space_when_transitioning_san_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_space_when_transitioning_san_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_considerations_for_space_when_transitioning_san_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_7_mode_ip_addresses.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_considerations_for_transitioning_7_mode_ip_addresses.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_dns_and_ldap_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_considerations_for_transitioning_dns_and_ldap_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_of_7_mode_snaplock_options.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_of_snaplock_audit_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_of_snaplock_compliance_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_of_snaplock_enterprise_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_transitioning_unix_users_and_groups.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_considerations_for_transitioning_unix_users_and_groups.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_considerations_for_using_snapmirror_for_transition.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_considerations_for_using_snapmirror_for_transition.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_copy_based_transition_using_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_copy_based_transition_workflow.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_copy_free_transition_using_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_data_and_configuration_migration_process.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_downtime_at_precutover_phase_of_esxi_host_transition.html</loc>
+        
+      
+      <lastmod>2021-06-14T01:21:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_esxi_versions_and_features_supported_for_san_transitions_using_7mtt.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_exceptions_and_known_issues_when_transitioning_san_hosts_to_clustered_ontap.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_features_and_volumes_not_supported_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_guidelines_for_creating_a_data_copy_schedule.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_guidelines_for_deciding_when_to_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_guidelines_for_transitioning_snaplock_volumes.html</loc>
+        
+      
+      <lastmod>2023-04-24T15:29:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_how_nfs_exports_are_transitioned.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_how_nfs_exports_are_transitioned.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_how_to_identify_vm_snapshots_that_must_be_removed_before_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/concept_how_to_interpret_clustered_ontap_command_maps_for_7_mode_administrators.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_how_you_can_use_assessment_executive_summary_for_transition_assessment.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_how_you_can_use_assessment_executive_summary_for_transition_assessment.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_how_you_transition_a_stand_alone_volume.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_how_you_transition_volumes_in_a_snapmirror_relationship.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_hp_ux_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_impact_of_takeover_and_giveback_on_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_installing_and_uninstalling_7mtt.html</loc>
+        
+      
+      <lastmod>2022-06-29T17:09:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_installing_and_uninstalling_7mtt_on_linux.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_licensing_requirements_for_transition.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_limitations_with_snapshot_copies_and_luns_managed_by_snap_products.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_linux_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_log_files_for_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_log_files_for_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_managing_a_transition_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_managing_snapmirror_transfers_and_schedule.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_nfs_configurations_supported_unsupported_or_requiring_manual_steps_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_ontap_target_releases_supported_by_7mtt.html</loc>
+        
+      
+      <lastmod>2022-07-11T17:19:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/concept_ontap_target_releases_supported_by_7mtt.html</loc>
+        
+      
+      <lastmod>2022-07-11T17:19:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_ontap_target_releases_supported_by_7mtt.html</loc>
+        
+      
+      <lastmod>2021-12-08T15:43:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_phases_of_copy_free_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_planning_for_transition.html</loc>
+        
+      
+      <lastmod>2022-12-14T11:25:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_port_requirements_for_communicating_with_7mtt.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_port_requirements_for_communicating_with_7mtt.html</loc>
+        
+      
+      <lastmod>2021-06-11T19:27:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_post_transition_remediation_for_linux_and_windows_guest_operating_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_post_transition_requirements_for_esxi_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_preparing_data_protection_features_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_preparing_data_protection_features_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_preparing_for_cifs_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_preparing_for_copy_based_transition.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_preparing_for_cutover_when_transitioning_san_boot_luns.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_preparing_for_metrocluster_configuration_transition.html</loc>
+        
+      
+      <lastmod>2021-06-11T18:41:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_preparing_for_migration.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_preparing_for_name_services_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_preparing_for_name_services_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_preparing_for_nfs_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_preparing_for_nfs_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_preparing_for_smb_cifs_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_preparing_windows_guest_operating_systems_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_prerequisites_for_transitioning_cifs_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_prerequisites_for_transitioning_cifs_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_prerequisites_to_transition_nfs_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_prerequisites_to_transition_nfs_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_reconfiguration_of_vmware_software_iscsi_initiator.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_requirements_for_copy_based_transition.html</loc>
+        
+      
+      <lastmod>2022-07-11T17:19:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_requirements_for_copy_free_transition.html</loc>
+        
+      
+      <lastmod>2022-07-18T11:43:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_restrictions_during_preproduction_testing.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_restrictions_for_copy_free_transition.html</loc>
+        
+      
+      <lastmod>2021-06-15T22:11:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_restrictions_for_copy_free_transition.html</loc>
+        
+      
+      <lastmod>2021-06-14T01:46:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_restrictions_for_transition.html</loc>
+        
+      
+      <lastmod>2022-05-17T22:49:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_reverting_a_copy_free_transition_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_rolling_back_luns_to_7_mode_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_san_transition_supported_and_unsupported_configurations_and_required_manual_steps.html</loc>
+        
+      
+      <lastmod>2021-06-11T19:27:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_scenarios_for_selecting_volumes_in_a_session.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_severity_levels_for_precheck_messages.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_severity_levels_for_precheck_messages.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_solaris_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/concept_storage_and_host_version_requirements.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_storage_and_host_version_requirements.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_storage_host_fc_switches_version_requirements.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_support_for_transitioning_snaplock_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_supported_and_unsupported_data_protection_relationships.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_supported_and_unsupported_data_protection_relationships.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_supported_and_unsupported_name_services_configurations.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_supported_and_unsupported_name_services_configurations.html</loc>
+        
+      
+      <lastmod>2021-06-11T19:27:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/concept_supported_configurations_for_generating_an_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_supported_configurations_for_generating_an_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_supported_configurations_for_generating_an_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_system_requirements_for_7_mode_transition_tool_on_linux.html</loc>
+        
+      
+      <lastmod>2022-06-30T14:16:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_system_requirements_for_7mtt_on_windows.html</loc>
+        
+      
+      <lastmod>2022-06-30T14:16:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/concept_system_requirements_for_running_ict.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transition_of_san_boot_luns.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transition_of_san_boot_luns_on_aix_hosts_with_fc_fcoe_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_transition_overview.html</loc>
+        
+      
+      <lastmod>2021-08-19T20:33:09+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_transition_overview.html</loc>
+        
+      
+      <lastmod>2022-07-15T13:49:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_transition_terminology.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_transition_terminology.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_transition_to_clustered_ontap_using_7mtt.html</loc>
+        
+      
+      <lastmod>2021-06-14T00:46:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_aix_host_data_luns_with_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_hp_ux_host_luns_with_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_hp_ux_host_san_boot_luns_with_fc_fcoe_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_linux_host_file_systems_on_lvm_devices.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_luns_with_mount_points_using_dmmp_alias_names.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_luns_with_mount_points_using_dmmp_devices_names.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_rhel_dmmp_devices_without_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_solaris_host_data_luns_with_sun_volume_manager.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_transitioning_solaris_host_data_luns_with_zfs_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_transitioning_volumes_using_7mtt_cli.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_troubleshooting_transition_issues.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/concept_troubleshooting_web_interface_issues.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/concept_troubleshooting_web_interface_issues.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_types_of_san_boot_luns_supported_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/concept_unsupported_7_mode_san_functions.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_vmware_esxi_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_what_the_inventory_collect_tool_is.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/concept_when_to_revert_and_when_to_call_technical_support_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/concept_where_to_find_information_about_transition_assessment.html</loc>
+        
+      
+      <lastmod>2021-06-14T00:46:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/concept_windows_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/generic_machine_translation_disclaimer.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/generic_machine_translation_disclaimer.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/generic_machine_translation_disclaimer.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/generic_machine_translation_disclaimer.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/</loc>
+        
+      
+      <lastmod>2021-04-08T08:43:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/</loc>
+        
+      
+      <lastmod>2021-04-08T08:43:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/</loc>
+        
+      
+      <lastmod>2022-11-25T14:14:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/</loc>
+        
+      
+      <lastmod>2021-04-08T08:43:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/</loc>
+        
+      
+      <lastmod>2021-04-08T08:43:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/</loc>
+        
+      
+      <lastmod>2021-04-08T08:43:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/</loc>
+        
+      
+      <lastmod>2023-12-18T11:27:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/reference_7_mode_ontap_version_requirements_for_transitioning_volumes_using_snapmirror.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_cannot_proceed_from_volume_mapping_pane_if_selected_svm_has_no_aggregate.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_cannot_select_a_secondary_volume_from_volume_selection_pane.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_cannot_select_volume_for_transition_if_tool_fails_to_retrieve_volume_information.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/reference_collection_and_assessment_commands.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:08:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_commands_for_managing_transition_sessions.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_compression_fails_to_start_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_configurations_that_can_be_excluded.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_copy_free_transition_cabling_worksheet.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_copy_free_transition_project_planning_worksheet.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/reference_copyright.html</loc>
+        
+      
+      <lastmod>2021-06-11T18:41:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/reference_copyright_and_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_example_consolidating_nfs_export_rules_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_example_consolidating_nfs_export_rules_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_failed_to_boot_7_mode_controller_in_maintenance_mode.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html</loc>
+        
+      
+      <lastmod>2021-04-08T08:32:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html</loc>
+        
+      
+      <lastmod>2021-04-08T08:32:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_ignorable_errors_during_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_ignorable_errors_during_transition.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_installation_or_uninstallation_of_7mtt_is_blocked.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_interfaces_and_transition_capabilities_available_on_windows_and_linux.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/reference_legal_notices.html</loc>
+        
+      
+      <lastmod>2021-04-08T08:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_limits_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_reinstalling_or_upgrading_7mtt_fails_on_windows_system.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_required_tools_and_documentation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/reference_syntax_and_options.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_tool_installation_fails_with_incompatible_os_error.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/command-map/reference_trademark.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/reference_transition_preparation_checklist.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/reference_troubleshooting.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/reference_windows_compatibility_assistant_notification_displayed_while_installing.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/releasenotes.html</loc>
+        
+      
+      <lastmod>2022-07-15T13:49:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition//search.html</loc>
+        
+      
+      <lastmod>2024-02-11T23:26:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_aborting_a_subproject.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_acknowledging_errors_to_continue_with_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_acknowledging_errors_to_continue_with_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_adding_controllers_and_clusters.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_adding_controllers_and_clusters.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_applying_7_mode_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_applying_configurations_to_ontap_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_applying_svm_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_assessing_controllers_and_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_assessing_controllers_and_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_booting_from_san_boot_lun_on_aix_hosts_with_fc_fcoe_configurations_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_bringing_windows_hosts_online_after_transition.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/task_collecting_inventory_and_generating_inventory_report.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_collecting_tool_logs.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_collecting_tool_logs.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_committing_7_mode_aggregates_to_clustered_ontap_format.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_completing_a_transition_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_completing_chain_of_custody_verification.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_completing_post_transition_tasks_for_a_copy_free_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_completing_transition_process.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_configuring_a_tcp_window_size_for_snapmirror_relationships.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_configuring_zones_by_using_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_configuring_zones_by_using_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_configuring_zones_by_using_fc_zone_planner.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_consolidating_snapshot_policies_and_cron_schedules_on_transitioned_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_copy_free_transition_workflow.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_creating_a_transition_peering_relationship.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:12:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_creating_a_transition_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_creating_a_transition_session.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_creating_san_lifs_before_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_creating_san_lifs_before_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_creating_schedule_for_snapmirror_transfers.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_customizing_configurations_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_customizing_configurations_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_deleting_7_mode_volume_snapshot_copies_from_transitioned_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_deleting_a_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_deleting_vm_snapshots_using_vsphere_client.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_determining_whether_vmfs_volumes_need_to_be_remounted_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_discovering_san_boot_luns_after_transition.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_editing_a_subproject.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_editing_or_deleting_snapmirror_transfer_schedule.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_enabling_caw_on_a_datastore_using_esxi_cli.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_enabling_login_for_users_not_part_of_administrator_group.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_expanding_an_aggregate_to_64_bit_format_without_adding_storage.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_expanding_an_aggregate_to_64_bit_format_without_adding_storage.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_exporting_7_mode_system_and_hardware_information.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_finding_and_removing_32_bit_data_from_source_volumes_and_snapshot_copies.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_finding_and_removing_32_bit_data_from_source_volumes_and_snapshot_copies.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_gathering_cabling_information_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_gathering_pretransition_information_from_inventory_assessment_workbook.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_generating_an_assessment_report_by_adding_systems_to_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_generating_an_assessment_report_by_importing_inventory_report_xml.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_generating_an_assessment_report_by_importing_inventory_report_xml.html</loc>
+        
+      
+      <lastmod>2022-07-18T11:43:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/task_generating_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_generating_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_generating_fc_zone_plan.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_importing_7_mode_data_to_clustered_ontap.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_installing_7_mode_transition_tool_on_linux.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_installing_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_logging_in_to_tool.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_making_a_san_boot_lun_primary_for_hp_ux_emulex_hbas_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_making_san_boot_lun_primary_boot_lun_for_hp_ux_qlogic_hbas_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_managing_logical_interfaces.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_modifying_default_configuration_settings_of_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_mounting_aix_host_luns_with_file_systems_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_mounting_hp_ux_host_luns_with_file_systems_after_transition.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_mounting_logical_volumes_on_linux_host_after_transition.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_mounting_solaris_host_luns_with_sun_volume_manager_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_mounting_solaris_host_luns_with_zfs_file_systems_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_pausing_and_resuming_a_subproject.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_performing_a_transition_rollback.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_performing_copy_free_transition_of_7_mode_aggregates.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_performing_manual_configuration_tasks.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_performing_on_demand_snapmirror_update_operation.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_performing_post_transition_tasks.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_planning_a_copy_free_transition_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_post_transition_task_for_a_metrocluster_configuration.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_preparing_7_mode_system_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_7_mode_system_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_7_mode_system_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/inventory-collect/task_preparing_7_mode_systems_for_inventory_collection.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_7_mode_systems_for_inventory_collection.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_7_mode_systems_for_inventory_collection.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_7_mode_volumes_and_aggregates_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_7_mode_volumes_and_aggregates_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_preparing_cluster_for_transition.html</loc>
+        
+      
+      <lastmod>2022-06-17T15:43:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_cluster_for_transition.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_cluster_for_transition.html</loc>
+        
+      
+      <lastmod>2021-04-11T23:39:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_cluster_for_transitioning_volume_snapmirror_relationships.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_aix_data_luns_with_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_aix_hosts_with_fc_fcoe_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_hp_ux_host_data_luns_with_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_linux_host_dmmp_device_without_file_system.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_linux_host_file_systems_on_lvm_devices.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_luns_with_mounts_using_dmmp_aliases_on_linux_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_solaris_host_data_luns_with_zfs_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_solaris_host_sun_volume_manager_data_luns.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_cutover_when_transitioning_windows_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_post_transition_esxi_host_remediation.html</loc>
+        
+      
+      <lastmod>2021-06-14T01:21:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_for_san_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_for_san_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_preparing_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_transition_of_esxi_hosts.html</loc>
+        
+      
+      <lastmod>2021-06-25T16:20:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_transition_of_fc_or_fcoe_san_boot_luns.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_for_transition_of_iscsi_san_boot_luns.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_linux_guest_operating_systems_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_network_for_transition.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_rhel_luns_for_transition_using_the_cli.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_rhel_luns_transition_using_inventory_assessment_workbook.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_preparing_san_hosts_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_san_hosts_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_to_transition_aix_data_host_luns_with_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_to_transition_hp_ux_host_luns_with_file_systems.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_to_transition_san_boot_luns_on_aix_hosts_with_fc_fcoe_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_to_transition_san_boot_luns_on_hp_ux_hosts_with_fc_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_to_transition_solaris_host_data_luns_with_sun_volume_manager.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_to_transition_solaris_host_data_luns_with_zfs_file_system.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_preparing_windows_hosts_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_preparing_your_network_for_transition.html</loc>
+        
+      
+      <lastmod>2021-06-11T19:27:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_reattaching_rdm_luns_to_vms.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_reattaching_rdm_to_vms_using_vsphere_client.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_reattaching_rdm_using_esxi_cli_console.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_recovering_from_a_disaster_at_7_mode_site_during_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_recovering_from_a_failed_lun_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_recovering_from_a_failed_lun_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_recovering_from_a_failed_lun_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_redirecting_clients_to_clustered_ontap_primary_volume_after_disaster.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_redirecting_clients_to_clustered_ontap_secondary_volume.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_rehosting_volumes_from_different_svms_to_a_single_svm.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_remounting_dmmp_devices_on_linux_hosts_after_transition.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_remounting_luns_with_mount_point_using_dmmp_alias_name_on_linux_hosts_after_transition.html</loc>
+        
+      
+      <lastmod>2021-06-14T01:21:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_remounting_vmfs_volumes_after_transition_using_esxi_cli_console.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_remounting_vmfs_volumes_after_transition_using_vsphere_client.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_removing_disk_shelves_from_7_mode_and_connecting_to_cluster_nodes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_removing_stale_rdm_using_vsphere_client.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_removing_vm_snapshots_using_esxi_cli.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_removing_volumes_from_a_project.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_replacing_7_mode_wwids_on_linux_host_after_transition_of_luns.html</loc>
+        
+      
+      <lastmod>2021-04-15T13:52:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_reregistering_vms_after_transition_on_non_san_boot_esxi_host_using_vsphere_client.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_resuming_a_failed_snapmirror_transfer_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_rhel_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_rolling_back_clustered_ontap_luns_back_to_7_mode_on_windows_hosts.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_running_manual_steps_for_rolling_back_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_running_precheck_on_a_session.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_running_prechecks.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_running_prechecks.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_selecting_lifs_to_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_selecting_source_7_mode_systems_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_selecting_target_cluster_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_setting_up_esxi_hosts_configured_for_san_boot_after_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_setting_up_sp_or_rlm_for_transition.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_starting_baseline_data_copy.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_starting_data_copy_for_a_transition_session.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_svm_and_volume_mapping.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_data_luns_on_hp_ux_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_data_luns_on_solaris_hosts_with_sun_volume_manager_svm_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_data_luns_on_solaris_hosts_with_zfs_file_system_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_dmmp_devices_on_rhel_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_dmmp_devices_with_file_systems_on_rhel_hosts_before_cutover_phase.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_luns_with_file_systems_on_lvm_devices_before_cutover_phase.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_luns_with_mounts_using_dmmp_aliases_on_rhel_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_san_boot_luns_on_rhel_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_transitioned_luns_and_esxi_host_applications_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_transitioned_luns_on_aix_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_transitioned_luns_on_windows_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_transitioned_san_boot_luns_on_aix_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_testing_transitioned_san_boot_luns_on_hp_ux_hosts_before_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_testing_workloads_and_applications.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_7_mode_primary_as_a_standalone_volume.html</loc>
+        
+      
+      <lastmod>2022-04-20T21:07:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html</loc>
+        
+      
+      <lastmod>2022-12-02T20:23:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_a_data_protection_relationship.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_transitioning_a_metrocluster_configuration_if_a_switchover_or_switchback_event_occurs.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_a_primary_volume.html</loc>
+        
+      
+      <lastmod>2021-04-11T22:48:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_transitioning_a_snapmirror_relationship.html</loc>
+        
+      
+      <lastmod>2023-05-12T15:41:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_a_stand_alone_volume.html</loc>
+        
+      
+      <lastmod>2022-06-14T20:49:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_a_volume_snapmirror_relationship_in_parallel.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_disaster_recovery_relationship.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_parallel.html</loc>
+        
+      
+      <lastmod>2021-06-11T19:27:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_transitioning_primary_and_secondary_systems_of_a_snapmirror_relationship_in_staggered_way.html</loc>
+        
+      
+      <lastmod>2021-06-11T19:27:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_secondary_volume.html</loc>
+        
+      
+      <lastmod>2021-04-11T22:48:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_transitioning_to_clustered_ontap_8_3_from_a_7_mode_version_with_32_bit_data.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_transitioning_to_clustered_ontap_8_3_from_a_7_mode_version_with_32_bit_data.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/snapmirror/task_transitioning_volumes.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_transitioning_volumes_by_excluding_a_subset_of_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_transitioning_volumes_using_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_uninstalling_7_mode_transition_tool_on_linux.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/install-admin/task_uninstalling_7mtt.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_verifying_readiness_for_cutover.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_verifying_rhel_5_luns_are_ready_for_transition_using_cli.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_verifying_rhel_6_ddmp_devices_are_ready_for_transition_using_cli.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/san-host/task_verifying_that_rhel_luns_are_ready_for_transition_using_inventory_assessment_workbook.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-free/task_verifying_transition_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-7mode-transition/copy-based/task_viewing_transitioned_san_configurations.html</loc>
+        
+      
+      <lastmod>2021-03-25T12:25:57+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
