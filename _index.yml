@@ -1,0 +1,39 @@
+indexpage:
+  title: 7-Mode Transition Documentation
+  lead: The 7-Mode Transition documentation includes information to help you install and setup the 7-Mode Transition Tool, transition data using SnapMirror commands, perform a copy-base or copy-free transition, collect information for transition, and complete pre- and post transition procedures for SAN hosts.
+  summary: 7-Mode Transition documentation includes information to help you install and setup the 7-Mode Transition Tool, transition data using SnapMirror commands, perform a copy-based or copy-free transition, collect information for transition, and complete pre/post transition procedures for SAN hosts.
+  keywords: transition, copy, free, 7-mode transition
+  tiles:
+    - title: Get started
+      links:
+        - title: What's new
+          url: releasenotes.html
+        - title: Install the 7-Mode Transition Tool
+          url: /install-admin/concept_transition_to_clustered_ontap_using_7mtt.html
+        - title: Collect data needed for transition
+          url: /inventory-collect/concept_collecting_host_and_storage_inventory_information_for_transition_assessment.html
+    - title: Command map for 7-mode administrators
+      links:
+        - title: How 7-Mode commands map to ONTAP commands
+          url: /command-map/reference_how_7_mode_commands_map_to_clustered_ontap_commands.html
+        - title: How 7-Mode options map to ONTAP commands
+          url: "/command-map/reference_how_7_mode_options_map_to_clustered_ontap_commands.html"
+        - title: How 7-Mode configuration files map to ONTAP commands
+          url: "/command-map/reference_how_7_mode_configuration_files_map_to_clustered_ontap_commands.html"
+    - title: Ways to transition
+      links:
+        - title: Copy-based transition
+          url: /copy-based/concept_copy_based_transition_workflow.html
+        - title: Copy-free transition
+          url: /copy-free/task_copy_free_transition_workflow.html
+        - title: Transition data using SnapMirror
+          url: /snapmirror/task_transitioning_7_mode_volumes_using_snapmirror.html
+    - title: SAN host transition and remediation
+      links:
+        - title: VMware ESXi
+          url: /san-host/concept_vmware_esxi_host_remediation.html
+        - title: Red Hat Enterprise Linux
+          url: /san-host/concept_linux_host_remediation.html
+        - title: Windows
+          url: /san-host/concept_windows_host_remediation.html
+
