@@ -31,7 +31,7 @@ Based on the volume and controller configurations and the precheck summary, the 
 
 For most of the configurations, the 7-Mode Transition Tool is the recommended tool for transition. However, there are some workloads that cannot be transitioned by using the 7-Mode Transition Tool, and for those you should use an application-based or host-based migration method.
 
-http://www.netapp.com/us/media/tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
+https://www.netapp.com/pdf.html?item=/media/19510-tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)^]
 
 == Storage inventory
 
