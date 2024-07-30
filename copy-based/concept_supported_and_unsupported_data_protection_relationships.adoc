@@ -21,7 +21,7 @@ You can transition volume SnapMirror relationships by using the 7-Mode Transitio
 +
 Volumes that are the source of a SnapVault relationship can be migrated; however, the SnapVault relationship is not transitioned. A volume that is the destination of a SnapVault relationship can be migrated only after the SnapVault backups are stopped.
 +
-https://www.netapp.com/pdf.html?item=/media/19510-tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)]
+https://www.netapp.com/pdf.html?item=/media/19510-tr-4052.pdf[NetApp Technical Report 4052: Successfully Transitioning to Clustered Data ONTAP (Data ONTAP 8.2.x and 8.3)^]
 
 * Qtree SnapMirror relationships
 +
