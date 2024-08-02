@@ -22,4 +22,4 @@ xref:task_finding_and_removing_32_bit_data_from_source_volumes_and_snapshot_copi
 
 *Related information*
 
-http://www.netapp.com/us/media/tr-3978.pdf[NetApp Technical Report 3978: In-Place Expansion of 32-Bit Aggregates to 64-Bit Overview and Best Practices]
+https://www.netapp.com/pdf.html?item=/media/19679-tr-3978.pdf[NetApp Technical Report 3978: In-Place Expansion of 32-Bit Aggregates to 64-Bit Overview and Best Practices^]
