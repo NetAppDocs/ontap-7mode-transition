@@ -42,4 +42,4 @@ Extent name: naa.600a098054314c6c445d446f79716475:1 range: 0 - 409599
 
 *Related information*
 
-http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1011387[VMware KB: vSphere handling of LUNs detected as snapshot LUNs]
+https://knowledge.broadcom.com/external/article?articleNumber=323142[Broadcom KB: vSphere handling of LUNs detected as snapshot LUNs]

@@ -56,7 +56,7 @@ You can plan to move the expansion cards from the 7-Mode systems if they are als
 +
 https://hwu.netapp.com[NetApp Hardware Universe]
 
- .. Plan the destination ports to use for the disk shelf cabling.
+ .. [[destination-port]]Plan the destination ports to use for the disk shelf cabling.
 +
 The selection of the destination ports depends on some of the following factors:
 
@@ -67,7 +67,7 @@ The selection of the destination ports depends on some of the following factors:
 . Go to the data center to physically record the port connections on the 7-Mode controllers and target cluster nodes in the cabling worksheet:
  .. Record the used ports on the 7-Mode controllers in the cabling worksheet.
  .. Record the used ports on the target cluster nodes in the cabling worksheet.
- .. Record the destination ports to be used for connecting the 7-Mode disk shelves, as planned in Step <<STEP_D0CFE719A0384F7FA5D9E73C8EA6C2E7,#STEP_D0CFE719A0384F7FA5D9E73C8EA6C2E7>>.
+ .. Record the destination ports to be used for connecting the 7-Mode disk shelves, as planned in the <<destination-port,previous step>>.
  .. Ensure that you have the right cables for connecting the disk shelves.
 +
 You should identify any issues with cabling based on the new disk shelf stack location.
