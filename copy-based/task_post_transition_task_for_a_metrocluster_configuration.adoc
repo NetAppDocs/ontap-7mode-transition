@@ -14,8 +14,8 @@ The cron job schedules created during transition are not replicated to the remot
 Storage cutover for the 7-Mode active site must have been completed successfully.
 
 .Steps
-. Record the cron job messages generated at the storage cutover to identify the job schedules that must be replicated to the remote site.
+. [[first-step]]Record the cron job messages generated at the storage cutover to identify the job schedules that must be replicated to the remote site.
 +
 image::../media/mcc_cron_jobs.gif[]
 
-. From the cluster CLI of the remote site, run the `job schedule cron create` commands recorded in <<STEP_F72D5FA759564336A365328A3414D57A,Step 1>>.
+. From the cluster CLI of the remote site, run the `job schedule cron create` commands recorded in <<first-step,the previous step>>.
